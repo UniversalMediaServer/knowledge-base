@@ -1,0 +1,8 @@
+{
+  "label": "Installation",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Most operating systems/environments do not need documentation for installation. This section is for those that do."
+  }
+}
