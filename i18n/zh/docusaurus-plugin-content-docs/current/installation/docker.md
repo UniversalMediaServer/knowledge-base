@@ -1,6 +1,6 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.  Understand what they do, and ignore or customize as necessary.
 
 ## Fedora Linux Preparation
 
@@ -65,6 +65,9 @@ docker ps -a;
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
+docker container logs [-f] UMS;
+docker exec -it UMS /bin/sh;
+docker diff UMS;
 ```
 
 For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
@@ -77,11 +80,11 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+Matching error messages can be seen using journalctl, so it is an SELinux problem. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux. Seems to be container-selinux.
 
 ## References
 
