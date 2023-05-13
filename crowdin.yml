@@ -2,4 +2,4 @@ files:
   - source: /docs/**/*
     ignore:
       - '*/img'
-    translation: /i18n/%locale_with_underscore%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/**/%original_file_name%
