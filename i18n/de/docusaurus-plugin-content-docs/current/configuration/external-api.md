@@ -344,9 +344,6 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
-    <audiotrackid>ID</audiotrackid>
-[...]
-</ums-tags>
 ```
 
 | Intention                       | Add song to playlist                                                                                                                                                              |
@@ -373,9 +370,6 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 ```XML
 <ums-tags>
 [...]
-    <audiotrackid>ID</audiotrackid>
-[...]
-</ums-tags>
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
@@ -436,18 +430,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 [...]
-
-    public String executeCall() throws IOException
-    {
-        String postBody = "1e0eee38-a9f6-49bf-84d0-45d0647799af";
-        String apiKey = "secret_password";
-        RequestBody body = RequestBody.create(postBody, MediaType.parse("application/text"));
-        String requestUrl = "http://127.0.0.1:5001/api/like/likealbum";
-        Request request = new Request.Builder().url(requestUrl).addHeader("api-key", apiKey).post(body).build();
-        Call call = okClient.newCall(request);
-        Response response = call.execute();
-        return response.body().string();
-    }
 
     public String executeCall() throws IOException
     {
