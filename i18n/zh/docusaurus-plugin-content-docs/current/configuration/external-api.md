@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intention                       | Rescans a partial subtree of the file system.                                                                        |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescanFileOrFolder`                                                                              |
+| POST BODY                       | PATH_TO_SCAN                                                                                                       |
+| POST BODY example / description | example: "/music/pop/Madonna". example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
+| Available since                 | 10.4.2                                                                                                               |
 
 Example:
 
@@ -164,7 +164,7 @@ This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f
 
 ### Rating
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
 
 While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
 
@@ -189,13 +189,13 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 
 Reads song rating from database
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. Response body contains the rating information. |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                                       |
+| POST BODY                       | `musicbrainzTrackId`                                                                                                                                   |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                                                   |
+| RESPONSE BODY example           | 3                                                                                                                                                      |
+| Available since                 | 10.20                                                                                                                                                  |
 
 Example:
 
@@ -226,13 +226,13 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 Reads song rating from database
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. Response body contains the rating information. |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                                                |
+| POST BODY                       | trackId                                                                                                                                                      |
+| POST BODY example / description | 32                                                                                                                                                           |
+| RESPONSE BODY example           | 3                                                                                                                                                            |
+| Available since                 | 11.0                                                                                                                                                         |
 
 Example:
 
@@ -244,7 +244,7 @@ This call reads the user rating of a song identified by UMS audiotrack-id `32`.
 
 ### Backup / Restore
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
 
 #### backup liked albums
 
@@ -292,19 +292,19 @@ Edit UMS.conf and configure a managed playlist folder by setting 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+for enabling this service. By default this service is disabled. for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
 
 #### list all playlists
 
 Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is Besides playlist name, the playlists `playlistId` is |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`                            |
+| REQUEST TYPE          | GET                                                                                                                                                                                                        |
+| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                                               |
+| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                             |
+| Available since       | 11.0                                                                                                                                                                                                       |
 
 Example:
 
@@ -316,7 +316,7 @@ This call will list list all available playlist.
 
 #### list server accessible playlists
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+These are all playlist known to UMS (database/cache enabled). Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs. These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
 | Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -341,6 +341,9 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 ```XML
 <ums-tags>
 [...]
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
@@ -370,6 +373,9 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 ```XML
 <ums-tags>
 [...]
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
@@ -442,8 +448,20 @@ import okhttp3.Response;
         Response response = call.execute();
         return response.body().string();
     }
+
+    public String executeCall() throws IOException
+    {
+        String postBody = "1e0eee38-a9f6-49bf-84d0-45d0647799af";
+        String apiKey = "secret_password";
+        RequestBody body = RequestBody.create(postBody, MediaType.parse("application/text"));
+        String requestUrl = "http://127.0.0.1:5001/api/like/likealbum";
+        Request request = new Request.Builder().url(requestUrl).addHeader("api-key", apiKey).post(body).build();
+        Call call = okClient.newCall(request);
+        Response response = call.execute();
+        return response.body().string();
+    }
 ```
 
 ## HTTP return codes
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character | Set a `api_key` in UMS.conf with a length of 12 or more character |
