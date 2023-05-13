@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Intro
+# Giriş
 
 This website contains the official documentation for using UMS.
 
