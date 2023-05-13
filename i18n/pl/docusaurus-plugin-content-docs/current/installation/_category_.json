@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Instalacja",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "wygenerowany indeks",
+    "description": "Większość systemów operacyjnych/środowisk nie potrzebuje dokumentacji do instalacji. Ta sekcja dotyczy tych, które potrzebują."
   }
 }
