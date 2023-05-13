@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Przewodniki",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "wygenerowany indeks",
+    "description": "Jak używać UMS"
   }
 }
