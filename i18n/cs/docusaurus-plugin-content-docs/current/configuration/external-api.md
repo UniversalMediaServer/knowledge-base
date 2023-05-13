@@ -1,35 +1,35 @@
-# External API
+# Externí API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Externí API umožňuje programům přístup k funkcím UMS pomocí HTTP hovoru.
 
-## How to enable the external API
+## Jak povolit externí API
 
-Edit UMS.conf and configure an api_key like this
+Upravte UMS.conf a nakonfigurujte api_key jako toto
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`secret_password`_ musí mít minimálně 12 znaků.
 
-## API usage
+## Využití API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Pokud je externí API povoleno, API je dostupné s POST hovorem na /api/COMMAND
 
-### Folder Scanning
+### Skenování složky
 
-#### rescan
+#### znovu skenovat
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Úmysl                     | Rescanuje kompletní knihovnu          |
+| ------------------------- | ------------------------------------- |
+| URI                       | `/api/folderscanner/znovu naskenovat` |
+| POST BODY                 | NIC                                   |
+| Příklad / popis POST BODY | Tento příkaz nepotřebuje žádný obsah  |
+| Dostupné od               | 10.4.2                                |
 
 :::info
-This can be slow for large libraries
+Toto může být pomalé pro velké knihovny :
 :::
 
-Example:
+Příklad:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,7 +37,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
+| Úmysl                           | Rescans a partial subtree of the file system.                                         |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
