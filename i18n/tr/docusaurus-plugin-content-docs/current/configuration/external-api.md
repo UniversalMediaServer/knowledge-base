@@ -1,8 +1,8 @@
 # Harici API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Harici API, programların bir HTTP çağrısıyla UMS işlevlerine erişmesini veya bunları tetiklemesini sağlar.
 
-## How to enable the external API
+## Harici API nasıl etkinleştirilir
 
 Edit UMS.conf and configure an api_key like this
 
