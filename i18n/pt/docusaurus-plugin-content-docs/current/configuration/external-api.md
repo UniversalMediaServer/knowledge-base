@@ -344,6 +344,9 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
 ```
 
 | Intention                       | Add song to playlist                                                                                                                                                              |
@@ -370,6 +373,9 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 ```XML
 <ums-tags>
 [...]
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
@@ -420,14 +426,16 @@ This call creates a new playlist file named `Contemporary.m3u8` in the managed p
 This code snippet shows how to use the API with okhttp3 library.
 
 ```Java
-import nextcp.dto.Config;
-import nextcp.dto.UmsServerApiKey;
-import okhttp3.Call;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import nextcp.dto. Config;
+import nextcp.dto. UmsServerApiKey;
+import okhttp3. Call;
+import okhttp3. MediaType;
+import okhttp3. OkHttpClient;
+import okhttp3. Request;
+import okhttp3. RequestBody;
+import okhttp3.
+
+    Response;
 
 [...]
 
@@ -437,7 +445,7 @@ import okhttp3.Response;
         String apiKey = "secret_password";
         RequestBody body = RequestBody.create(postBody, MediaType.parse("application/text"));
         String requestUrl = "http://127.0.0.1:5001/api/like/likealbum";
-        Request request = new Request.Builder().url(requestUrl).addHeader("api-key", apiKey).post(body).build();
+        Request request = new Request. Builder().url(requestUrl).addHeader("api-key", apiKey).post(body).build();
         Call call = okClient.newCall(request);
         Response response = call.execute();
         return response.body().string();
