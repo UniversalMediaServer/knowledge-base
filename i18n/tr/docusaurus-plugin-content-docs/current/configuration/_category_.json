@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Yapılandırma",
+  "position": 2,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "oluşturulmuş-dizin",
+    "description": "UMS nasıl yapılandırılır"
   }
 }
