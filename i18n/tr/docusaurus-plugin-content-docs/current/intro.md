@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # Giriş
 
-This website contains the official documentation for using UMS.
+Bu web sitesi, UMS’yi kullanmak için resmi belgeleri içerir.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+3 ana bölüme ayrılmıştır: Yapılandırma, Kılavuzlar ve Kurulum.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Eğer buraya belirli bilgileri aramak için geldiyseniz ve bulamadıysanız, ekleyebilmemiz için lütfen GitHub’da bize bildirin.
