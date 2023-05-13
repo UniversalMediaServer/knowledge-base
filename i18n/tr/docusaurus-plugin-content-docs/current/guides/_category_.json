@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Kılavuzlar",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "oluşturulmuş-dizin",
+    "description": "UMS nasıl kullanılır"
   }
 }
