@@ -14,9 +14,9 @@ The _`secret_password`_ must have a minimum of 12 chars.
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### Folder Scanning
+### Klasör Tarama
 
-#### rescan
+#### yeniden tara
 
 | Intention                       | Rescans the complete library       |
 | ------------------------------- | ---------------------------------- |
@@ -44,7 +44,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 | POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
 | Available since                 | 10.4.2                                                                                |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
