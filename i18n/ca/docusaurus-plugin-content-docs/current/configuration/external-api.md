@@ -1,69 +1,75 @@
-# External API
+# Aplicacions externes
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Sense clau Text del paràgraf XPath: /p[1]
 
 ## How to enable the external API
 
-Edit UMS.conf and configure an api_key like this
+Editeu UMS.conf i configureu una api_key com aquesta
 
-`api_key = secret_password`
+`api_key = contrasenya_secreta`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+La _`contrasenya_secreta`_ ha de tenir un mínim de 12 caràcters.
 
-## API usage
+## Ús de l'API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Si l'API externa està habilitada, es pot accedir a l'API amb una trucada POST a /api/COMMAND
 
-### Folder Scanning
+### Escaneig de carpetes
 
-#### rescan
+#### Tornar a escanejar
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Sense clau Capçalera de la taula XPath: /table[1]/thead/tr/th[1] | Sense clau Capçalera de la taula XPath: /table[1]/thead/tr/th[2] |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Sense clau Dades de la taula XPath: /table[1]/tbody/tr[1]/td[1]  | `Sense clau
+Text
+XPath: /table[1]/tbody/tr[1]/td[2]/code`        |
+| Sense clau Dades de la taula XPath: /table[1]/tbody/tr[2]/td[1]  | Sense clau Dades de la taula XPath: /table[1]/tbody/tr[2]/td[2]  |
+| Sense clau Dades de la taula XPath: /table[1]/tbody/tr[3]/td[1]  | Sense clau Dades de la taula XPath: /table[1]/tbody/tr[3]/td[2]  |
+| Sense clau Dades de la taula XPath: /table[1]/tbody/tr[4]/td[1]  | Sense clau Dades de la taula XPath: /table[1]/tbody/tr[4]/td[2]  |
 
 :::info
-This can be slow for large libraries
+Això pot ser lent per a biblioteques grans
 :::
 
-Example:
+Exemple:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+Sense clau
+Text
+XPath: /pre[1]/code
 ```
 
-#### rescanFileOrFolder
+#### Sense clau Títol 4 XPath: /h4[2]
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Sense clau Capçalera de la taula XPath: /table[2]/thead/tr/th[1] | Sense clau Capçalera de la taula XPath: /table[2]/thead/tr/th[2]                               |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| No key Table Data XPath: /table[2]/tbody/tr[1]/td[1]             | `Sense clau
+Text
+XPath: /table[2]/tbody/tr[1]/td[2]/code`                                      |
+| Sense clau Dades de la taula XPath: /table[2]/tbody/tr[2]/td[1]  | Sense clau Dades de la taula XPath: /table[2]/tbody/tr[2]/td[2]                                |
+| Sense clau Dades de la taula XPath: /table[2]/tbody/tr[3]/td[1]  | Exemple: "/music/pop/Madonna". El camí ha de ser l'arrel o una subcarpeta d'un camí compartit. |
+| Disponible des de                                                | Sense clau Dades de la taula XPath: /table[2]/tbody/tr[4]/td[2]                                |
 
-Example:
+Exemple:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "clau-api: contrasenya_secreta" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Sense clau Títol 3 XPath: /h3[2
 
-#### like song
+#### Sense clau Títol 4 XPath: /h4[3]
 
-Song will be marked as liked.
+La cançó es marcarà com que t'agrada.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Intenció                       | Com una cançó identificada per "musicBrainz trackId"            |
+| ------------------------------ | --------------------------------------------------------------- |
+| URI                            | `<span class="s1">/api/like/likesong</span>`        |
+| POST BODY                      | `musicBrainz_trackID`                                           |
+| POST BODY exemple / descripció | b8695995-45e9-405d-b4aa-e50e8760fe25                            |
+| Disponible des de              | Sense clau Dades de la taula XPath: /table[3]/tbody/tr[4]/td[2] |
 
-Example:
+Exemple:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
