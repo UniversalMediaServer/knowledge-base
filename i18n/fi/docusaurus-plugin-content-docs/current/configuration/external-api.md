@@ -1,62 +1,62 @@
-# External API
+# Ulkoinen API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Ulkoinen API mahdollistaa ohjelmien pääsyn tai UMS-toimintojen käyttöä HTTP kutsulla.
 
-## How to enable the external API
+## Kuinka ottaa ulkoinen API käyttöön
 
-Edit UMS.conf and configure an api_key like this
+Muokkaa UMS.conf ja määrittää api_key tällä tavalla
 
-`api_key = secret_password`
+`api_key = salainen_salasana`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+Nimikkeessä _`salainen_salasana`_ on oltava vähintään 12 merkkiä.
 
-## API usage
+## APIn käyttö
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Jos ulkoinen API on käytössä, API on käytettävissä POST kutsulla /api/KOMENTO
 
-### Folder Scanning
+### Kansion skannaus
 
-#### rescan
+#### uudelleenskannaa
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Tarkoitus                     | Uudelleenskanaa koko kirjaston         |
+| ----------------------------- | -------------------------------------- |
+| URI                           | `/api/folderscanner/rescan`            |
+| POST BODY                     | NONE                                   |
+| POST BODY esimerkki / selitys | Tämä komento ei tarvitse body-sisältöä |
+| Saatavilla alkaen             | 10.4.2                                 |
 
-:::info
-This can be slow for large libraries
+::info  
+Tämä voi olla hidas suurille kirjastoille
 :::
 
-Example:
+Esimerkki:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: salainen_salasana" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Tarkoitus                     | Skannaa uudelleen osan tiedostojärjestelmän alihakemistosta                         |
+| ----------------------------- | ----------------------------------------------------------------------------------- |
+| URI                           | `/api/folderscanner/rescanFileOrFolder`                                             |
+| POST BODY                     | SKANNATTAVA_POLKU                                                                   |
+| POST BODY esimerkki / selitys | esimerkki: "/music/pop/Madonna". Polun on oltava jaetun polun juuri- tai alikansio. |
+| Saatavilla alkaen             | 10.4.2                                                                              |
 
-Example:
+Esimerkki:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: salainen_salasana" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Musiikista (albumit ja laulut) tykkääminen
 
-#### like song
+#### tykkää kappaleesta
 
-Song will be marked as liked.
+Kappale merkitään tykätyksi.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
+| Tarkoitus                       | Like a song identified by musicBrainz trackId            |
 | ------------------------------- | -------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/likesong</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                    |
