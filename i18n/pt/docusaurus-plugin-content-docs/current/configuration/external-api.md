@@ -18,50 +18,50 @@ Se a API externa estiver ativada, a API estará acessível com uma chamada POST 
 
 #### Pesquisar novamente
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intenção                         | Pesquisar toda a biblioteca novamente |
+| -------------------------------- | ------------------------------------- |
+| URI                              | `/api/folderscanner/rescan`           |
+| POST BODY                        | NENHUM                                |
+| Exemplo / descrição do POST BODY | This command needs no body content    |
+| Disponível desde                 | 10.4.2                                |
 
 :::info
-This can be slow for large libraries
+Isto pode ser demorado para bibliotecas grandes
 :::
 
-Example:
+Exemplo:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: senha_secreta" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intenção                         | Pesquisar novamente uma sub-árvore parcial do sistema de arquivos.                                    |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| URI                              | `/api/folderscanner/rescanFileOrFolder`                                                               |
+| POST BODY                        | PATH_TO_SCAN                                                                                        |
+| Exemplo / descrição do POST BODY | exemplo: "/music/pop/Madonna". O caminho deve ser a raiz ou uma subpasta de um caminho compartilhado. |
+| Disponível desde                 | 10.4.2                                                                                                |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n-H "api-key: senha_secreta" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Curtindo Música (álbuns e músicas)
 
-#### like song
+#### curtir música
 
-Song will be marked as liked.
+A música será marcada como curtida.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Intenção                         | Curtir uma música identificada pelo trackId da música Brainz |
+| -------------------------------- | ------------------------------------------------------------ |
+| URI                              | `<span class="s1">/api/like/likesong</span>`     |
+| POST BODY                        | `musicBrainz_trackID`                                        |
+| Exemplo / descrição do POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                         |
+| Disponível desde                 | 10.20                                                        |
 
 Example:
 
@@ -123,64 +123,64 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### descurtir álbum
 
-Remove album like state.
+Remover curtir/descurtir do álbum.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intenção                         | Descurtir uma música identificada pelo trackId da música Brainz |
+| -------------------------------- | --------------------------------------------------------------- |
+| URI                              | `<span class="s1">/api/like/</span>dislikealbum`    |
+| POST BODY                        | `musicBrainz_releaseID`                                         |
+| Exemplo / descrição do POST BODY | 1e0eee38-a9f6-49bf-84d0-45d0647799af                            |
+| Disponível desde                 | 10.20                                                           |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
+curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta chamada removeu o curtir/descurtir do álbum identificado pelo relead-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` do musicbrainz.
 
-#### is album liked
+#### é um álbum curtido
 
-Check album like state.
+Verificar curtir/descurtir do álbum.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intenção                         | Verificar se o álbum foi curtido identificado pelo releaseID do musicBrainz |
+| -------------------------------- | --------------------------------------------------------------------------- |
+| URI                              | `<span class="s1">/api/like/</span>dislikealbum`                |
+| POST BODY                        | `musicBrainz_releaseID`                                                     |
+| Exemplo / descrição do POST BODY | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                        |
+| RESPONSE BODY                    | "TRUE" or "FALSE"                                                           |
+| Disponível desde                 | 10.20                                                                       |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
+curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: senha_secreta -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Esta chamada verifica se o álbum identificado pelo relead-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` do musicbrainz foi curtido.
 
-### Rating
+### Classificação
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+A API de avaliação é responsável pela avaliação de músicas. Informações de avaliação são salvas no banco de dados interno (cache habilitado) e, opcionalmente, no próprio arquivo. Se`o audio_update_rating_tag = true` estiver definido em UMS.conf, o campo de classificação IDv3 também é atualizado no arquivo de música (se o formato do arquivo de músicas for suportado).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Ao navegar pelo servidor de diretórios de conteúdo, MusicBrainzTrackID (se disponível) e audiotrackID são entregues no metadado `desc` dentro do elemento DIDL.
 
-#### set rating
+#### defina a classificação
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Intenção                         | Define a classificação em estrelas (0 - 5) em uma música identificada pelo trackId do musicBrainz |
+| -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| URI                              | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`   |
+| POST BODY                        | `musicbrainzTrackId` /`stars`                                                                     |
+| Exemplo / descrição do POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                                                              |
+| Disponível desde                 | 10.20                                                                                             |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
+curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/rating/setrating
 ```
 
 This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
@@ -237,68 +237,68 @@ Reads song rating from database
 Example:
 
 ```shell
-curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
+curl -d "32" -w "%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Esta chamada lê a classificação do usuário de uma música identificada pelo audiotrack-id `32` do UMS.
 
 ### Backup / Restore
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Entradas "álbum curtido" gerenciadas pelo usuário podem salvas em uma subpasta do diretório de perfil chamada `database_backup`. O nome de arquivo é `MUSIC_BRAINZ_RELEASE_LIKE`. Caso o banco de dados do UMS seja apagado, basta chamar restaurar.
 
-#### backup liked albums
+#### fazer backup de álbuns curtidos
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Fazer backup da tabela `MUSIC_BRAINZ_RELEASE_LIKE` para o sistema de arquivos
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Intenção         | Fazer backup de músicas curtidas para o sistema de arquivos                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| URI              | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE     | GET                                                                                                   |
+| RESPONSE BODY    | `OK` ou mensagem de erro                                                                              |
+| Disponível desde | 10.20                                                                                                 |
 
-Example:
+Exemplo:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: senha_secreta" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Esta chamada criará um arquivo de backup contendo álbuns curtidos.
 
-#### restore liked albums
+#### restaurar álbuns curtidos
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Restaura tabela `MUSIC_BRAINZ_RELEASE_LIKE` do sistema de arquivos
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intenção         | restaurar músicas curtidas do arquivo de backup                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI              | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE     | GET                                                                                                                                        |
+| RESPONSE BODY    | `OK` ou mensagem de erro                                                                                                                   |
+| Disponível desde | 10.20                                                                                                                                      |
 
-Example:
+Exemplo:
 
 ```
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: senha_secreta" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Esta chamada restaura o arquivo de backup.
 
-### Playlist
+### Lista de reprodução
 
-#### enable service
+#### ativar serviço
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Edite o UMS.conf e configure uma pasta de lista de reprodução gerenciada configurando 
 
-`<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
+`<span class="s1">managed_playlist_folder</span> = CAMINHO_PARA_PASTA`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+por ativar esse serviço. Por padrão, este serviço está desativado. O caminho da pasta de listas de reprodução deve estar abaixo do caminho de `<span class="s1">pastas</span>` compartilhadas de listas de reprodução alterado por esta API para ser visível pelo UMS.
 
-#### list all playlists
+#### listar todas as listas de reprodução
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Leia as listas de reprodução disponíveis. Estes nomes de listas de reprodução precisam ser usados nas chamadas subsequentes para adicionar ou remover músicas.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
+| Intenção              | Entrega todas as listas de reprodução (`m3u`, `m3u8` e `pls`) disponíveis na pasta configurada. Além do nome da lista de reprodução, a lista `playlistId` é                     |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE          | GET                                                                                                                                                                             |
@@ -355,17 +355,17 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 | RESPONSE BODY                   | NONE                                                                                                                                                                              |
 | Available since                 | 11.0                                                                                                                                                                              |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Isso adiciona a música com o ID `123` na listas de reprodução `Pop`.
 
-#### removing songs from playlists
+#### Remover Músicas da Lista de Reprodução
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+O `audiotrackid` requerido é entregue durante solicitações de navegação UPnP e pode ser extraído do atributo de resposta `descMetadata` do DIDL
 
 ```XML
 <ums-tags>
@@ -377,7 +377,7 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
+| Intenção                        | Remove música da lista de reprodução                                                                                                                                                   |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
 | REQUEST TYPE                    | POST                                                                                                                                                                                   |
