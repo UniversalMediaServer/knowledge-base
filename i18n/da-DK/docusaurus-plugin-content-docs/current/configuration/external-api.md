@@ -1,32 +1,32 @@
-# External API
+# Ekstern API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Den eksterne API lader programmer tilgå eller udløse UMS-funktionaliteter via et HTTP-kald.
 
-## How to enable the external API
+## Sådan aktiveres den eksterne API
 
-Edit UMS.conf and configure an api_key like this
+Redigér UMS.conf og opsæt en api_key som denne
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`hemmelig_adgangskode`_ skal udgøre mindst 12 tegn.
 
-## API usage
+## API-brug
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Er den eksterne API aktiveret, er den tilgængelig med et POST-kald til /api/COMMAND
 
-### Folder Scanning
+### Mappeskanning
 
-#### rescan
+#### Genskan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Genskanner hele biblioteket            |
+| ------------------------------- | -------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`            |
+| POST BODY                       | INGEN                                  |
+| POST BODY-eksempel/-beskrivelse | Denne kommando behøver ingen brødtekst |
+| Tilgængelig fra                 | 10.4.2                                 |
 
 :::info
-This can be slow for large libraries
+Dette kan gå langsomt ved store biblioteker
 :::
 
 Example:
