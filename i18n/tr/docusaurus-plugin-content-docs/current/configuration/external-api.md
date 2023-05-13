@@ -1,4 +1,4 @@
-# External API
+# Harici API
 
 The external API enables programs to access or trigger UMS functionalities with a HTTP call.
 
@@ -14,9 +14,9 @@ The _`secret_password`_ must have a minimum of 12 chars.
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### Folder Scanning
+### Klasör Tarama
 
-#### rescan
+#### yeniden tara
 
 | Intention                       | Rescans the complete library       |
 | ------------------------------- | ---------------------------------- |
