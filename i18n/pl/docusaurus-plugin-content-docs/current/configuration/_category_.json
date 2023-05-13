@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Konfiguracja",
+  "position": 2,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "wygenerowany indeks",
+    "description": "Jak skonfigurować UMS"
   }
 }
