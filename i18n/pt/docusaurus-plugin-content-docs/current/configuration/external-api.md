@@ -377,35 +377,35 @@ O `audiotrackid` requerido é entregue durante solicitações de navegação UPn
 
 ``
 
-| Intenção                        | Remove música da lista de reprodução                                                                                                                                                   |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Intenção                         | Remove música da lista de reprodução                                                                                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                              | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE                     | POST                                                                                                                                                                                   |
+| POST BODY                        | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| Exemplo / descrição do POST BODY | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY                    | NONE                                                                                                                                                                                   |
+| Disponível desde                 | 11.0                                                                                                                                                                                   |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Isso remove a música com o ID `123` da lista de reprodução `Pop`.
 
-#### create new playlists
+#### Cria novas listas de reprodução
 
-Playlist name should be provided without any path and without file extensions. 
+O nome da lista de reprodução deve ser fornecido sem o caminho e sem extensões de arquivo. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Intenção                         | Criando novas listas de reprodução na pasta de listas de reprodução gerenciada                                                                                                 |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                              | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE                     | POST                                                                                                                                                                           |
+| POST BODY                        | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">NOME_DA_LISTA_DE_REPRODUÇÃO</span>`                                           |
+| Exemplo / descrição do POST BODY | Contemporânea                                                                                                                                                                  |
+| RESPONSE BODY                    | NONE                                                                                                                                                                           |
+| Disponível desde                 | 11.0                                                                                                                                                                           |
 
 Example:
 
