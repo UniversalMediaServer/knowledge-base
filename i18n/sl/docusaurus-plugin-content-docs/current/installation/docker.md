@@ -1,6 +1,6 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Some of these steps may not apply to your installation.  Understand what they do, and ignore or customise as necessary.
 
 ## Fedora Linux Preparation
 
