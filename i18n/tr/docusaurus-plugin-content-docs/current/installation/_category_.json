@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Kurulum",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "oluşturulmuş-dizin",
+    "description": "Çoğu işletim sistemi/ortamı kurulum için belgelere ihtiyaç duymaz. Bu bölüm bunu yapmak isteyenler içindir."
   }
 }
