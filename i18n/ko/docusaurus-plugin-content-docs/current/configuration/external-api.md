@@ -1,35 +1,35 @@
-# 외부 API
+# External API
 
-외부 API를 사용하면 프로그램이 HTTP 호출로 UMS 기능에 액세스하거나 트리거할 수 있습니다.
+The external API enables programs to access or trigger UMS functionalities with a HTTP call.
 
-## 외부 API를 활성화하는 방법
+## How to enable the external API
 
-UMS.conf를 편집하고 다음과 같이 api_key를 구성합니다
+Edit UMS.conf and configure an api_key like this
 
 `api_key = secret_password`
 
-_`secret_password`_은 최소 12자여야 합니다.
+The _`secret_password`_ must have a minimum of 12 chars.
 
-## API 사용법
+## API usage
 
-외부 API가 활성화된 경우 /api/COMMAND에 대한 POST 호출을 통해 API에 액세스할 수 있습니다
+If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### 폴더 검색
+### Folder Scanning
 
-#### 다시 검색
+#### rescan
 
-| 의도           | 전체 라이브러리를 다시 검색합니다          |
-| ------------ | --------------------------- |
-| URI          | `/api/folderscanner/rescan` |
-| 본문           | 없음                          |
-| 본문 후 예시 / 설명 | 이 명령에는 본문 내용이 필요하지 않습니다     |
-| 이후 사용 가능     | 10.4.2                      |
+| Intention                       | Rescans the complete library       |
+| ------------------------------- | ---------------------------------- |
+| URI                             | `/api/folderscanner/rescan`        |
+| POST BODY                       | NONE                               |
+| POST BODY example / description | This command needs no body content |
+| Available since                 | 10.4.2                             |
 
-:::정보
-대형 라이브러리의 경우 속도가 느릴 수 있습니다
+:::info
+This can be slow for large libraries
 :::
 
-예제:
+Example:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,31 +37,31 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| 의도           | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                             |
-| ------------ | ------------------------------------------------------- |
-| URI          | `/api/folderscanner/rescanFileOrFolder`                 |
-| 본문           | PATH_TO_SCAN                                          |
-| 본문 후 예시 / 설명 | 예제: "/music/pop/Madonna". 경로는 공유 경로의 루트 또는 하위 폴더여야 합니다. |
-| 이후 사용 가능     | 10.4.2                                                  |
+| Intention                       | Rescans a partial subtree of the file system.                                         |
+| ------------------------------- | ------------------------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
+| POST BODY                       | PATH_TO_SCAN                                                                        |
+| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
+| Available since                 | 10.4.2                                                                                |
 
-예제:
+Example:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### 음악을 좋아함 (앨범 및 노래)
+### Liking Music (albums and songs)
 
-#### 좋아하는 노래
+#### like song
 
-노래는 좋아요로 표시됩니다.
+Song will be marked as liked.
 
-| 의도           | 음악으로 확인된 노래처럼 Brainz trackId                             |
-| ------------ | -------------------------------------------------------- |
-| URI          | `<span class="s1">/api/like/likesong</span>` |
-| 본문           | `musicBrainz_trackID`                                    |
-| 본문 후 예시 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| 이후 사용 가능     | 10.20                                                    |
+| Intention                       | Like a song identified by musicBrainz trackId            |
+| ------------------------------- | -------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY                       | `musicBrainz_trackID`                                    |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Available since                 | 10.20                                                    |
 
 Example:
 
@@ -110,7 +110,7 @@ This call adds the liked attribute of the album identified by musicbrainz releas
 
 Set album like state to true.
 
-| Intention                       | musicBrainz releaseID로 식별된 앨범에 좋아요를 누르기                   |
+| Intention                       | Likes an album identified by musicBrainz releaseID        |
 | ------------------------------- | --------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span>likealbum` |
 | POST BODY                       | `musicBrainz_releaseID`                                   |
@@ -127,34 +127,34 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 Remove album like state.
 
-| Intention  | musicBrainz releaseID로 식별된 노래 싫어요 표시하기                       |
-| ---------- | ------------------------------------------------------------ |
-| URI        | `<span class="s1">/api/like/</span>dislikealbum` |
-| 본문         | `musicBrainz_releaseID`                                      |
-| 본문 예시 / 설명 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| 이후 사용 가능   | 10.20                                                        |
+| Intention                       | Dislike a song identified by musicBrainz releaseID           |
+| ------------------------------- | ------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY                       | `musicBrainz_releaseID`                                      |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Available since                 | 10.20                                                        |
 
-예제:
+Example:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-이 호출은 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`로 식별된 앨범의 좋아요 속성을 제거했습니다.
+This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### 앨범 좋아요
+#### is album liked
 
-앨범 좋아요 상태를 확인합니다.
+Check album like state.
 
-| 의도         | musicBrainz releaseID로 앨범이 '좋아요'를 받았는지 확인하기                  |
-| ---------- | ------------------------------------------------------------ |
-| URI        | `<span class="s1">/api/like/</span>isalbumliked` |
-| 본문         | `musicBrainz_releaseID`                                      |
-| 본문 예시 / 설명 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| 응답 본문      | "TRUE" 또는 "FALSE"                                            |
-| 이후 사용 가능   | 10.20                                                        |
+| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| ------------------------------- | ------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
+| POST BODY                       | `musicBrainz_releaseID`                                      |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
+| Available since                 | 10.20                                                        |
 
-예제:
+Example:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
