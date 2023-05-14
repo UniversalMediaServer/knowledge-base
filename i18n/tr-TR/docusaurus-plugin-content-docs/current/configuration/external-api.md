@@ -12,13 +12,13 @@ _`gizli_parola`_ en az 12 karakterden oluşmak zorundadır.
 
 ## API kullanımı
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Eğer harici API etkinleştirildiyse, API’ye /api/COMMAND’a yapılan bir POST çağrısıyla erişilebilir.
 
 ### Klasör Tarama
 
 #### yeniden tara
 
-| Intention                       | Rescans the complete library       |
+| Niyet                           | Tüm kütüphaneyi yeniden tarar      |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
