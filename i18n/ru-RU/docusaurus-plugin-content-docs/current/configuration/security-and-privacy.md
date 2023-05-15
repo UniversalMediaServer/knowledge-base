@@ -14,16 +14,16 @@ ip_filter = 192.168.1.4, 192.168.1.32
 
 ## Разрешенный список
 
-Разрешить перечисление - это метод, который позволяет вам настраивать корневую папку для каждого рендера. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Разрешить перечисление - это метод, который позволяет вам настраивать корневую папку для каждого рендера. This makes it possible to share different folder sets to different renderers. Он работает следующим образом: для вашего UMS.conf (в настоящее время нет графических настроек) вы добавляете строки тегов формата. ption = значение, в котором тег является IP адресом или именем рендера. Имя рендеринга должно быть с пробелами изменено на _ (подчеркивание). Этот вариант является одним из
 
-- folders
+- папки
 - vfolders
-- web
-- hide_set
+- Web
+- скрыть
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+Значение зависит от опции. Последние 4 - логические значения. for folders and virtualfolders it is a list of folders.
 
-Example
+Пример
 
 ```
 folders = 
@@ -32,11 +32,11 @@ hide_video_settings = false
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Это будет для IP-адреса 192.168.1.1:
 
 - Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- Скрывать папку "Настройки сервера"
+- Скрыть список недавно воспроизведенных
 
 All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
 
@@ -44,7 +44,7 @@ If an option is not present it will fallback to the "global" config or if that i
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. Например:
 ```
 192.168.1.1.name=.*private.*
 ```
@@ -58,9 +58,9 @@ will remove all files that have c:\tst in their path etc.
 
 If no rule are set in the "UMS.deny" file, the files/folders will be added.
 
-Hiding folders
+Скрытые папки
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Управление видимостью виртуальных папок. Эти настройки можно найти в файле UMS.conf. Чтобы скрыть некоторые папки во время просмотра, просто установите значение "true" или установите галочку на вкладке "Навигация/общий доступ " в расширенном режиме GUI.
 
 ```
 hide_recently_played_folder =true
@@ -72,11 +72,11 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Чтобы скрыть веб-папку, вам нужно снять галочку Включение внешней сети во вкладке Общие настройки с расширенного GUI режима или изменить значение `external_network =' на false в вашем UMS. onf файл. Это даст побочный эффект и автоматическое обновление не будет работать. Изменения, сделанные из интерфейса, будут действовать после перезапуска.
 
-## PIN code
+## PIN-код
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Все вышеперечисленные методы ограничивают доступ к различным устройствам. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). PIN-код решает эту проблему. Он позволяет скрыть папки/медиа за PIN-кодом, который необходимо ввести с помощью рендера. По умолчанию ввод представляет собой последовательность цифр (0-9) точно так же, как код банкомата. Я настоятельно предлагаю, чтобы вы использовали цифровые коды, по мере того как становится трудно напечатать из рендерера. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. Например:
 ```
 .*private.*,1234
 ```
