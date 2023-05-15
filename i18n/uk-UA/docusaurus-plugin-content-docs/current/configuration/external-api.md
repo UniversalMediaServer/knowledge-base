@@ -1,8 +1,8 @@
-# External API
+# Зовнішній API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Зовнішній API дозволяє програмам отримувати доступ або викликати функціональність UMS за допомогою HTTP-виклику.
 
-## How to enable the external API
+## Як увімкнути зовнішній API
 
 Edit UMS.conf and configure an api_key like this
 
