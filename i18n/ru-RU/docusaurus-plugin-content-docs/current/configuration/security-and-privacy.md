@@ -1,4 +1,4 @@
-# Security and Privacy
+# Безопасность и конфиденциальность
 
 UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
 
@@ -12,9 +12,9 @@ Example to allow only 2 addresses
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## Разрешенный список
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Разрешить перечисление - это метод, который позволяет вам настраивать корневую папку для каждого рендера. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
 
 - folders
 - vfolders
