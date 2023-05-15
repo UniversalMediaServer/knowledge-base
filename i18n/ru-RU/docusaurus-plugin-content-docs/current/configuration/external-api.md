@@ -1,60 +1,60 @@
-# External API
+# Внешний API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Внешний API позволяет программам получать доступ к функциям UMS или запускать их с помощью HTTP-вызова.
 
-## How to enable the external API
+## Как включить внешний API
 
-Edit UMS.conf and configure an api_key like this
+Отредактируйте UMS.conf и настройте api_key следующим образом
 
-`api_key = secret_password`
+`api_key = секретный_пароль`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`secret_password`_ должен содержать не менее 12 символов.
 
-## API usage
+## Использование API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Если внешний API включен, API доступен с помощью POST вызова в /api/COMMAND
 
-### Folder Scanning
+### Сканирование папок
 
-#### rescan
+#### повторное сканирование
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Повторно пересканировать всю библиотеку    |
+| ------------------------------- | ------------------------------------------ |
+| URI                             | `/api/сканер папок/повторное сканирование` |
+| POST BODY                       | NONE                                       |
+| POST BODY example / description | This command needs no body content         |
+| Доступно с                      | 10.4.2                                     |
 
-:::info
-This can be slow for large libraries
+::info  
+Это может быть медленно для больших библиотек
 :::
 
-Example:
+Пример:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescanFileOrFolder
+#### Повторно сканировать файл или папку
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
+| Intention                       | Пересканирует частично дерево файловой системы.                                       |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
 | POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
 | Available since                 | 10.4.2                                                                                |
 
-Example:
+Пример:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Нравится музыка (альбомы и песни)
 
-#### like song
+#### нравится песня
 
-Song will be marked as liked.
+Песня будет отмечена как понравившаяся.
 
 | Intention                       | Like a song identified by musicBrainz trackId            |
 | ------------------------------- | -------------------------------------------------------- |
@@ -96,9 +96,9 @@ Check if song is liked.
 | POST BODY                       | `musicBrainz_trackID`                                                                           |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
 | RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Доступно с                      | 10.20                                                                                           |
 
-Example:
+Пример:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
@@ -106,7 +106,7 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### нравится альбом
 
 Set album like state to true.
 
@@ -117,24 +117,24 @@ Set album like state to true.
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
 | Available since                 | 10.20                                                     |
 
-Example:
+Пример:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### не нравится альбом
 
 Remove album like state.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intention                          | Dislike a song identified by musicBrainz releaseID           |
+| ---------------------------------- | ------------------------------------------------------------ |
+| URI                                | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY                          | `musicBrainz_releaseID`                                      |
+| Пример / описание текста сообщения | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Доступно с                         | 10.20                                                        |
 
-Example:
+Пример:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
@@ -142,17 +142,17 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### нравится альбом
 
 Check album like state.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intention                       | Проверьте, понравился ли альбом, указанный в MusicBrainz ReleaseID |
+| ------------------------------- | ------------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`       |
+| POST BODY                       | `musicBrainz_releaseID`                                            |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                               |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                                  |
+| Available since                 | 10.20                                                              |
 
 Example:
 
@@ -175,9 +175,9 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Доступно с                      | 10.20                                                                                           |
 
-Example:
+Пример:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
@@ -185,19 +185,19 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key
 
 This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
 
-#### get rating
+#### получить оценку
 
-Reads song rating from database
+Считывает рейтинг песни из базы данных
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Intention                       | Получите рейтинг песни в звездах (0 - 5) по MusicBrainz TrackID. Текст ответа содержит информацию о рейтинге. |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`              |
+| POST BODY                       | `musicbrainzTrackId`                                                                                          |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                          |
+| RESPONSE BODY example           | 3                                                                                                             |
+| Доступно с                      | 10.20                                                                                                         |
 
-Example:
+Пример:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
@@ -226,13 +226,13 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 Reads song rating from database
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Intention                          | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
+| POST BODY                          | trackId                                                                                                       |
+| Пример / описание текста сообщения | 32                                                                                                            |
+| Пример ОТВЕТА                      | 3                                                                                                             |
+| Available since                    | 11.0                                                                                                          |
 
 Example:
 
@@ -250,14 +250,14 @@ User managed "liked album" entries can be backed up into a profile-directory sub
 
 Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Intention     | backup liked songs to filesystem                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| URI           | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE  | ПОЛУЧИТЬ                                                                                              |
+| RESPONSE BODY | `OK` or error message                                                                                 |
+| Доступно с    | 10.20                                                                                                 |
 
-Example:
+Пример:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
@@ -269,52 +269,52 @@ This call will create a backup file containing liked albums.
 
 Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intention         | восстановить понравившиеся песни из файла резервной копии                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                                                                   |
+| СОДЕРЖАНИЕ ОТВЕТА | `OK` или сообщение об ошибке                                                                                                               |
+| Доступно с        | 10.20                                                                                                                                      |
 
-Example:
+Пример:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Этот вызов восстанавливает файл резервной копии.
 
-### Playlist
+### Плейлист
 
-#### enable service
+#### Включить службу
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Отредактируйте UMS.conf и настройте папку управляемого списка воспроизведения, установив 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+для включения этой службы. По умолчанию эта служба отключена. Путь к папке плейлиста должен быть расположен под настроенным общим `<span class="s1">каталогом</span>` для изменения плейлиста, созданным этим API, который будет виден UMS.
 
-#### list all playlists
+#### список всех плейлистов
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Читать доступные плейлисты Эти имена плейлистов должны использоваться для последующих звонков для добавления или удаления песен.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intention         | Доставляет все поддерживаемые (`m3u`, `m3u8` и `pls`) и доступные плейлисты из настроенной папки. Кроме имени плейлиста `плейлист`                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                                                                                                        |
+| СОДЕРЖАНИЕ ОТВЕТА | JSON массив имён плейлистов                                                                                                                                                     |
+| Пример ОТВЕТА     | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Доступно с        | 11.0                                                                                                                                                                            |
 
-Example:
+Пример:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list list all available playlist.
+Этот вызов выведет список всех доступных плейлистов.
 
-#### list server accessible playlists
+#### список доступных на сервере плейлистов
 
 These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
@@ -358,7 +358,7 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 | RESPONSE BODY                   | NONE                                                                                                                                                                              |
 | Available since                 | 11.0                                                                                                                                                                              |
 
-Example:
+Пример:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
@@ -383,16 +383,16 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Intention                          | Remove song from playlist                                                                                                                                                              |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE                       | СООБЩЕНИЕ                                                                                                                                                                              |
+| POST BODY                          | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| Пример / описание текста сообщения | 123/Pop                                                                                                                                                                                |
+| СОДЕРЖАНИЕ ОТВЕТА                  | ОТСУТСТВУЕТ                                                                                                                                                                            |
+| Доступно с                         | 11.0                                                                                                                                                                                   |
 
-Example:
+Пример:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
@@ -410,10 +410,10 @@ Playlist name should be provided without any path and without file extensions. 
 | REQUEST TYPE                    | POST                                                                                                                                                                           |
 | POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
 | POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| СОДЕРЖАНИЕ ОТВЕТА               | ОТСУТСТВУЕТ                                                                                                                                                                    |
+| Доступно с                      | 11.0                                                                                                                                                                           |
 
-Example:
+Пример:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
@@ -462,6 +462,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP коды возврата
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Установите `api_key` в UMS.conf с длиной 12 или более символов |
