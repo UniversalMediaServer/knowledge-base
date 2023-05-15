@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Посібники",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generated-index",
+    "description": "Як використовувати UMS"
   }
 }
