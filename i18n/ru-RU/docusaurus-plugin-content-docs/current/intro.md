@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
-slug: /
+sidebar_position: "\"No key\" -> Нет ключа\n\"Block element text (div)\" -> Текст блочного элемента (div)"
+slug: "\"No key\" -> Нет ключа\n\"Block element text (div)\" -> Текст блочного элемента (div)"
 ---
 
-# Intro
+# Введение
 
-This website contains the official documentation for using UMS.
+Этот веб-сайт содержит официальную документацию по использованию UMS.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Он разделен на 3 основных раздела: Конфигурация, руководства и установка.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Если вы искали конкретную информацию и не нашли ее, пожалуйста, сообщите нам об этом на GitHub, чтобы мы могли добавить ее.
