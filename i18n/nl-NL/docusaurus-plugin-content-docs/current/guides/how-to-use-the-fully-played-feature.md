@@ -20,7 +20,7 @@ To mark all files within a shared directory as fully played:
 
 On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
 
-![Open the GUI](./img/how-to-use-the-fully-played-feature.png)
+![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Removing fully played status / unplaying
 
