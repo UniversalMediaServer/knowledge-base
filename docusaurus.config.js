@@ -31,9 +31,14 @@ const config = {
     defaultLocale: 'en-US',
     locales: ['en-US', 'en-GB'],
   },
-
-  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
-
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        'indexBlog': false,
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
