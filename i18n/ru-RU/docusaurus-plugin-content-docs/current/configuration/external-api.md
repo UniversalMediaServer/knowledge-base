@@ -56,41 +56,41 @@ curl -d "ПУТЬ_ К_СКАНИРОВАНИЮ" -w "%{http_code}\n" -H "api-key:
 
 Песня будет отмечена как понравившаяся.
 
-| Замысел                         | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Замысел                              | желаемая песня, идентифицированная с помощью MusicBrainz TrackID         |
+| ------------------------------------ | ------------------------------------------------------------------------ |
+| URI                                  | `<span class="s1">/api/нравится/lпонравившаяся песня</span>` |
+| Содержание сообщения                 | `musicBrainz_trackID`                                                    |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | b8695995-45e9-405d-b4aa-e50e8760fe25                                     |
+| Доступно с                           | 10.20                                                                    |
 
-Example:
-
-```shell
-curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
-```
-
-#### dislike song
-
-Song will not be disliked
-
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
-
-Example:
+Пример:
 
 ```shell
-curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
+curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-ключ: секретный_пароль" -X СООБЩЕНИЕ http://localhost:5001/api/нравится/понравившаяся песня
 ```
 
-#### is song liked
+#### не нравится песня
 
-Check if song is liked.
+Песня не нравится
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
+| Замысел                              | Не нравится песня, идентифицированная MusicBrainz TrackID             |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/нравится/</span>песня не нравится` |
+| Содержание сообщения                 | `musicBrainz_trackID`                                                 |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | b8695995-45e9-405d-b4aa-e50e8760fe25                                  |
+| Доступно с                           | 10.20                                                                 |
+
+Пример:
+
+```shell
+curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-ключ: секретный_пароль" -X POST http://localhost:5001/api/нравится/песня не нравится
+```
+
+#### песня понравилась
+
+Проверьте, нравится ли песне.
+
+| Замысел                         | Проверьте, понравилась ли песня, идентифицированная с помощью MusicBrainz TrackID               |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                                                           |
