@@ -12,18 +12,18 @@ _`gizli_parola`_ en az 12 karakterden oluşmak zorundadır.
 
 ## API kullanımı
 
-Eğer harici API etkinleştirildiyse, API’ye /api/COMMAND’a yapılan bir POST çağrısıyla erişilebilir.
+Eğer harici API etkinleştirildiyse, API’ye /api/KOMUT olarak yapılan bir POST çağrısıyla erişilebilir.
 
 ### Klasör Tarama
 
-#### yeniden tara
+#### rescan
 
-| Niyet                           | Tüm kütüphaneyi yeniden tarar      |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Niyet                      | Tüm kütüphaneyi yeniden tarar              |
+| -------------------------- | ------------------------------------------ |
+| URI                        | `/api/folderscanner/rescan`                |
+| POST BODY                  | YOK                                        |
+| POST BODY örnek / açıklama | Bu komutun gövde içeriğine ihtiyacı yoktur |
+| Şu tarihten beri mevcut    | 10.4.2                                     |
 
 :::info
 This can be slow for large libraries
