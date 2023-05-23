@@ -26,13 +26,13 @@ Eğer harici API etkinleştirildiyse, API’ye /api/KOMUT olarak yapılan bir PO
 | Şu tarihten beri mevcut    | 10.4.2                                     |
 
 :::info
-This can be slow for large libraries
+Bu, büyük kütüphaneler için yavaş olabilir
 :::
 
-Example:
+Örnek:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
