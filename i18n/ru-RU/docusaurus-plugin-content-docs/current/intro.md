@@ -1,6 +1,6 @@
 ---
-sidebar_position: "\"No key\" -> Нет ключа\n\"Block element text (div)\" -> Текст блочного элемента (div)"
-slug: "\"No key\" -> Нет ключа\n\"Block element text (div)\" -> Текст блочного элемента (div)"
+sidebar_position: 1
+slug: /
 ---
 
 # Введение
