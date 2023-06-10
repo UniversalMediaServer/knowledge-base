@@ -1,35 +1,35 @@
-# External API
+# Ekstern API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Den eksterne API lader programmer tilgå eller udløse UMS-funktionaliteter via et HTTP-kald.
 
-## How to enable the external API
+## Sådan aktiveres den eksterne API
 
-Edit UMS.conf and configure an api_key like this
+Redigér UMS.conf og opsæt en api_key som denne
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`hemmelig_adgangskode`_ skal udgøre mindst 12 tegn.
 
-## API usage
+## API-brug
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Er den eksterne API aktiveret, er den tilgængelig med et POST-kald til /api/COMMAND
 
-### Folder Scanning
+### Mappeskanning
 
-#### rescan
+#### Genskan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Genskanner hele biblioteket            |
+| ------------------------------- | -------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`            |
+| POST BODY                       | INGEN                                  |
+| POST BODY-eksempel/-beskrivelse | Denne kommando behøver ingen brødtekst |
+| Tilgængelig fra                 | 10.4.2                                 |
 
 :::info
-This can be slow for large libraries
+Dette kan gå langsomt ved store biblioteker
 :::
 
-Example:
+Eks.:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,48 +37,48 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intention                       | Genskanner et delvist filsystemundertræ.                                                 |
+| ------------------------------- | ---------------------------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescanFileOrFolder`                                                  |
+| POST BODY                       | PATH_TO_SCAN                                                                           |
+| POST BODY-eksempel/-beskrivelse | eks.: "/music/pop/Madonna". Sti skal være roden eller en undermappe til en delt søgesti. |
+| Tilgængelig fra                 | 10.4.2                                                                                   |
 
-Example:
+Eks.:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Musiktilknytning (album og numre)
 
-#### like song
+#### synes om nummer
 
-Song will be marked as liked.
+Nummer favoritmarkeres.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
+| Intention                       | Synes om et nummer identificeret af musicBrainz trackId  |
 | ------------------------------- | -------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/likesong</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| POST BODY-eksempel/-beskrivelse | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Tilgængelig fra                 | 10.20                                                    |
 
-Example:
+Eks.:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### synes ikke om nummer
 
-Song will not be disliked
+Nummer markeres ikke som synes ikke om
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intention                       | Synes ikke om et nummer identificeret af musicBrainz trackId |
+| ------------------------------- | ------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>dislikesong`  |
+| POST BODY                       | `musicBrainz_trackID`                                        |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                         |
+| Available since                 | 10.20                                                        |
 
 Example:
 
@@ -86,16 +86,16 @@ Example:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### er et synes om-nummer
 
-Check if song is liked.
+Tjek om det er et synes om-nummer.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
+| Intention                       | Tjek om det er et synes om-nummer identificeret af musicBrainz trackId                          |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                                                           |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
+| SVAR BODY                       | `SAND` eller `FORKERT`                                                                          |
 | Available since                 | 10.20                                                                                           |
 
 Example:
@@ -104,13 +104,13 @@ Example:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Dette kald tilføjer albummets synes om-attribut identificeret af musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### synes om-album
 
-Set album like state to true.
+Angiv albumtilstand som sand.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
+| Intention                       | Synes om et albun identificeret af musicBrainz releaseID  |
 | ------------------------------- | --------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span>likealbum` |
 | POST BODY                       | `musicBrainz_releaseID`                                   |
@@ -123,16 +123,16 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### synes ikke om album
 
-Remove album like state.
+Fjern albumtilstanden synes om.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intention                       | Synes ikke om et nummer identificeret af musicBrainz releaseID |
+| ------------------------------- | -------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>dislikealbum`   |
+| POST BODY                       | `musicBrainz_releaseID`                                        |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                           |
+| Available since                 | 10.20                                                          |
 
 Example:
 
@@ -140,19 +140,19 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Dette kald fjerner albummets synes om-attribut identificeret af musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### er album synes om
 
-Check album like state.
+Tjek albums synes om-tilstand.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intention                       | Tjek om det er et synes om-album identificeret af musicBrainz releaseID |
+| ------------------------------- | ----------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`            |
+| POST BODY                       | `musicBrainz_releaseID`                                                 |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                    |
+| RESPONSE BODY                   | "SAND" eller "FORKERT"                                                  |
+| Available since                 | 10.20                                                                   |
 
 Example:
 
@@ -160,11 +160,11 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Dette kald tjekker om albummet er identificeret af musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-### Rating
+### Bedømmelse
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Bedømmelses-API'en er ansvarlig for nummerbedømmelse. Bedømmelsesoplysninger gemmes i den interne database (cache-aktiveret) og evt. i selve filen. Er `audio_update_rating_tag = true` sat i UMS. onf IDv3, opdateres bedømmelsesfeltet også i nummerfilen (hvis nummerfilformatet understøttes).
 
 While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
 

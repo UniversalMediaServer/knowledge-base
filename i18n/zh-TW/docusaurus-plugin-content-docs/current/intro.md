@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
-# Intro
+# 簡介
 
-This website contains the official documentation for using UMS.
+本網站具有使用 UMS 的官方文件。
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+將分為三節：設定、使用指引、與安裝
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+如果你來到這裡要尋找特定資訊但沒找到，請到 Github 上讓我們知道，以便未來加入該資訊。

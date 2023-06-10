@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.  Understand what they do, and ignore or customize as necessary.
+部份步驟也許不適用於你的安裝過程。  請理解步驟要達成什麼目的，並忽視或修改成你需要的。
 
-## Fedora Linux Preparation
+## Fedora Linux 準備過程
 
-For operating system support and service packages.
+對作業系統支援與服務套件所需，
 
 ```
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
@@ -12,7 +12,7 @@ sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+重新登入或重開機
 
 ```
 sudo systemctl start docker;
@@ -22,13 +22,13 @@ sudo chown core:docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+掛上儲存裝置到主機上，並聯結到指定目錄，設成唯讀。
 
-## Container Setup
+## 容器 (Container) 設置
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+掛載以下裝置(VOLUME)和埠：
+- 影音目錄 VOLUME /media
+- 個人化目錄包含 UMS.conf VOLUME /profile
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 

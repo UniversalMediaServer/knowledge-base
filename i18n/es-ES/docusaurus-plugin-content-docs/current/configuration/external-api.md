@@ -344,8 +344,14 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
+    <ums-tags>
+[...]
     <audiotrackid>ID</audiotrackid>
 [...]
+</ums-tags>
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
 </ums-tags>
 ```
 
@@ -376,8 +382,14 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
     <audiotrackid>ID</audiotrackid>
 [...]
 </ums-tags>
+    <ums-tags>
+[...]
     <audiotrackid>ID</audiotrackid>
 [...]
+</ums-tags>
+    <audiotrackid>ID</audiotrackid>
+[...]
+</ums-tags>
 </ums-tags>
 ```
 

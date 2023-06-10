@@ -10,7 +10,7 @@ Edit UMS.conf and configure an api_key like this
 
 The _`secret_password`_ must have a minimum of 12 chars.
 
-## API usage
+## API の説明
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 

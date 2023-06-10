@@ -402,7 +402,7 @@ Playlist name should be provided without any path and without file extensions. 
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
 | REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">NAZWA_LISTY_ODTWARZANIA</span>`                                               |
 | POST BODY example / description | Contemporary                                                                                                                                                                   |
 | RESPONSE BODY                   | NONE                                                                                                                                                                           |
 | Available since                 | 11.0                                                                                                                                                                           |

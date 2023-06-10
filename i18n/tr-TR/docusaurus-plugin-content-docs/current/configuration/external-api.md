@@ -12,27 +12,27 @@ _`gizli_parola`_ en az 12 karakterden oluşmak zorundadır.
 
 ## API kullanımı
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Eğer harici API etkinleştirildiyse, API’ye /api/KOMUT olarak yapılan bir POST çağrısıyla erişilebilir.
 
 ### Klasör Tarama
 
-#### yeniden tara
+#### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Niyet                      | Tüm kütüphaneyi yeniden tarar              |
+| -------------------------- | ------------------------------------------ |
+| URI                        | `/api/folderscanner/rescan`                |
+| POST BODY                  | YOK                                        |
+| POST BODY örnek / açıklama | Bu komutun gövde içeriğine ihtiyacı yoktur |
+| Şu tarihten beri mevcut    | 10.4.2                                     |
 
 :::info
-This can be slow for large libraries
+Bu, büyük kütüphaneler için yavaş olabilir
 :::
 
-Example:
+Örnek:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
