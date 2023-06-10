@@ -189,13 +189,13 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 
 Считывает рейтинг песни из базы данных
 
-| Intention                       | Получите рейтинг песни в звездах (0 - 5) по MusicBrainz TrackID. Текст ответа содержит информацию о рейтинге. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`              |
-| POST BODY                       | `musicbrainzTrackId`                                                                                          |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                          |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Доступно с                      | 10.20                                                                                                         |
+| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Текст ответа содержит информацию о рейтинге. |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`            |
+| POST BODY                       | `musicbrainzTrackId`                                                                                        |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                        |
+| RESPONSE BODY example           | 3                                                                                                           |
+| Доступно с                      | 10.20                                                                                                       |
 
 Пример:
 
@@ -226,7 +226,7 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 Reads song rating from database
 
-| Intention                          | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
+| Intention                          | Получите рейтинг песни в звездах (0 - 5) по MusicBrainz TrackID. Текст ответа содержит информацию о рейтинге. |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | URI                                | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
 | POST BODY                          | trackId                                                                                                       |
@@ -296,7 +296,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 
 #### список всех плейлистов
 
-Читать доступные плейлисты Эти имена плейлистов должны использоваться для последующих звонков для добавления или удаления песен.
+Читать доступные плейлисты Читать доступные плейлисты Эти имена плейлистов должны использоваться для последующих звонков для добавления или удаления песен.
 
 | Замысел           | Доставляет все поддерживаемые (`m3u`, `m3u8` и `pls`) и доступные плейлисты из настроенной папки. Кроме имени плейлиста `плейлист`                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
