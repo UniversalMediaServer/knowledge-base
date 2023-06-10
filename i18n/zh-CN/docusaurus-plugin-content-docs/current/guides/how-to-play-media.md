@@ -4,15 +4,15 @@ This article will explain the 4 main ways to play video, audio and images via UM
 
 ## 1: Play from a renderer interface
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access.
+When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access.
 
 The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
 
 ## 2: Push from the UMS interface to a renderer
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting. It is a similar concept to casting.
+The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting. It is a similar concept to casting. It is a similar concept to casting.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV. In this case it is the Panasonic VIERA VT60 Series TV.  
+1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV. In this case it is the Panasonic VIERA VT60 Series TV. In this case it is the Panasonic VIERA VT60 Series TV.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
 2. Click on the renderer image to open the control panel  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
@@ -22,18 +22,18 @@ The UMS interface itself has the ability to "push" media to renderers if they su
 
 ## 3: Play on the web interface
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features. In many ways it offers our most advanced UI and features.
+The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features. In many ways it offers our most advanced UI and features. In many ways it offers our most advanced UI and features.
 
-1. Open the web interface. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
+1. Open the web interface. Open the web interface. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
    ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
+2. Clicking that will open the web interface in your default browser. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
    ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
 
 ## 4: Push from the web interface to a renderer
 
 Similar to above in option 2, you can push your media to a renderer via our web interface.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail. It is on the lower right of the thumbnail.  
+1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail. It is on the lower right of the thumbnail. It is on the lower right of the thumbnail.  
    ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
 2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
    ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
