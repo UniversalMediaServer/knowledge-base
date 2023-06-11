@@ -1,35 +1,35 @@
 # Externe API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Die externe API macht es möglich, auf UMS Funktionen mit einem HTTP-Aufruf zu Zugreifen.
 
-## How to enable the external API
+## Wie die externe API aktiviert wird
 
-Edit UMS.conf and configure an api_key like this
+Bearbeite die UMS.conf und erstelle einen api_key wie hier
 
-`api_key = secret_password`
+`api_key = geheimes_Passwort`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+Das _`Geheime_Passwort`_ muss mindestens 12 Zeichen haben.
 
-## API usage
+## API-Nutzung
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Wenn die externe API aktiviert ist, kann man mit einem POST-Aufruf nach /api/BEFEHL  sie erreichen
 
-### Folder Scanning
+### Das Scannen von Ordnern
 
-#### rescan
+#### Neu einlesen
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Scannt die komplette Bibliothek neu ein. |
+| ------------------------------- | ---------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`              |
+| POST BODY                       | NONE                                     |
+| POST BODY example / description | This command needs no body content       |
+| Verfügbar seit                  | 10.4.2                                   |
 
 :::info
-This can be slow for large libraries
+Kann bei einer großen Bibliothek länger dauern
 :::
 
-Example:
+Beispiel:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
