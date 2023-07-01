@@ -1,4 +1,4 @@
-# How to improve support for my device
+# Como melhorar o suporte para o meu dispositivo
 
 If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
 
