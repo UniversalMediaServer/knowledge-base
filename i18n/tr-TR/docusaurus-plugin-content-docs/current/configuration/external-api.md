@@ -23,7 +23,7 @@ Eğer harici API etkinleştirildiyse, API’ye /api/KOMUT olarak yapılan bir PO
 | URI                        | `/api/folderscanner/rescan`                |
 | POST BODY                  | YOK                                        |
 | POST BODY örnek / açıklama | Bu komutun gövde içeriğine ihtiyacı yoktur |
-| Şu tarihten beri mevcut    | 10.4.2                                     |
+| Şu sürümden beri mevcut    | 10.4.2                                     |
 
 :::info
 Bu, büyük kütüphaneler için yavaş olabilir
@@ -37,17 +37,17 @@ curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/fo
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Niyet                      | Dosya sisteminin kısmi bir alt ağacını yeniden tarar.                                         |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| URI                        | `/api/folderscanner/rescanFileOrFolder`                                                       |
+| POST BODY                  | TARANACAK_YOL                                                                                 |
+| POST BODY örnek / açıklama | örnek: "/music/pop/Madonna". Yol, paylaşılan bir yolun kök veya alt klasörü olmak zorundadır. |
+| Şu sürümden beri mevcut    | 10.4.2                                                                                        |
 
 Örnek:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "TARANACAK_YOL" -w "%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
 ### Liking Music (albums and songs)
