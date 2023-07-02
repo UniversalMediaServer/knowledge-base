@@ -50,20 +50,20 @@ curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/fo
 curl -d "TARANACAK_YOL" -w "%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Müzik Beğenme (albümler ve şarkılar)
 
 #### like song
 
-Song will be marked as liked.
+Şarkı beğenildi olarak işaretlenecektir.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Niyet                      | musicBrainz trackId tarafından tanımlanan bir şarkıyı beğenin |
+| -------------------------- | ------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/likesong</span>`      |
+| POST BODY                  | `musicBrainz_trackID`                                         |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                          |
+| Şu sürümden beri mevcut    | 10.20                                                         |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
@@ -71,16 +71,16 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike song
 
-Song will not be disliked
+Şarkı beğenilmeyecektir
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Niyet                      | musicBrainz trackId tarafından tanımlanan bir şarkıyı beğenmeyin |
+| -------------------------- | ---------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>dislikesong`      |
+| POST BODY                  | `musicBrainz_trackID`                                            |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                             |
+| Şu sürümden beri mevcut    | 10.20                                                            |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
@@ -88,9 +88,9 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### is song liked
 
-Check if song is liked.
+Şarkının beğenilip beğenilmediğini denetleyin.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
+| Niyet                           | Check if song is liked identified by musicBrainz trackId                                        |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                                                           |
