@@ -90,15 +90,15 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Şarkının beğenilip beğenilmediğini denetleyin.
 
-| Niyet                           | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Niyet                      | musicBrainz trackId tarafından tanımlanan şarkının beğenilip beğenilmediğini denetleyin         |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                  | `musicBrainz_trackID`                                                                           |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY              | `TRUE` veya `FALSE`                                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
