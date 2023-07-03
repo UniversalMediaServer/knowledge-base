@@ -56,12 +56,12 @@ curl -d "TARANACAK_YOL" -w "%{http_code}\n" -H "api-key: gizli_parola" -X POST h
 
 Şarkı beğenildi olarak işaretlenecektir.
 
-| Niyet                      | musicBrainz trackId tarafından tanımlanan bir şarkıyı beğenin |
-| -------------------------- | ------------------------------------------------------------- |
-| URI                        | `<span class="s1">/api/like/likesong</span>`      |
-| POST BODY                  | `musicBrainz_trackID`                                         |
-| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                          |
-| Şu sürümden beri mevcut    | 10.20                                                         |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıyı beğenir   |
+| -------------------------- | -------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY                  | `musicBrainz_trackID`                                    |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Şu sürümden beri mevcut    | 10.20                                                    |
 
 Örnek:
 
@@ -73,12 +73,12 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Şarkı beğenilmeyecektir
 
-| Niyet                      | musicBrainz trackId tarafından tanımlanan bir şarkıyı beğenmeyin |
-| -------------------------- | ---------------------------------------------------------------- |
-| URI                        | `<span class="s1">/api/like/</span>dislikesong`      |
-| POST BODY                  | `musicBrainz_trackID`                                            |
-| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                             |
-| Şu sürümden beri mevcut    | 10.20                                                            |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıyı beğenmez     |
+| -------------------------- | ----------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY                  | `musicBrainz_trackID`                                       |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Şu sürümden beri mevcut    | 10.20                                                       |
 
 Örnek:
 
@@ -90,7 +90,7 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Şarkının beğenilip beğenilmediğini denetleyin.
 
-| Niyet                      | musicBrainz trackId tarafından tanımlanan şarkının beğenilip beğenilmediğini denetleyin         |
+| Niyet                      | musicBrainz trackId ile tanımlanan şarkının beğenilip beğenilmediğini denetler                  |
 | -------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                        | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                  | `musicBrainz_trackID`                                                                           |
@@ -104,20 +104,20 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenildi özniteliğini ekler.
 
 #### like album
 
-Set album like state to true.
+Albüm beğenme durumunu true olarak ayarlayın.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Niyet                      | musicBrainz releaseID ile tanımlanan bir albümü beğenir   |
+| -------------------------- | --------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>likealbum` |
+| POST BODY                  | `musicBrainz_releaseID`                                   |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
+| Şu sürümden beri mevcut    | 10.20                                                     |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
@@ -125,52 +125,52 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike album
 
-Remove album like state.
+Albüm beğenme durumunu kaldırın.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Niyet                      | musicBrainz releaseID ile tanımlanan bir şarkıyı beğenmez    |
+| -------------------------- | ------------------------------------------------------------ |
+| URI                        | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY                  | `musicBrainz_releaseID`                                      |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Şu sürümden beri mevcut    | 10.20                                                        |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenildi özniteliğini kaldırır.
 
 #### is album liked
 
-Check album like state.
+Albüm beğenme durumunu denetleyin.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Niyet                      | musicBrainz releaseID ile tanımlanan albümün beğenilip beğenilmediğini denetler |
+| -------------------------- | ------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>isalbumliked`                    |
+| POST BODY                  | `musicBrainz_releaseID`                                                         |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                            |
+| RESPONSE BODY              | "TRUE" veya "FALSE"                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenilip beğenilmediğini denetler.
 
-### Rating
+### Değerlendirme
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Değerlendirme API’si, şarkıları değerlendirmekten sorumludur. Değerlendirme bilgileri dahili veritabanına (önbellek etkin) ve isteğe bağlı olarak dosyanın kendisine kaydedilir. Eğer UMS.conf içinde  `audio_update_rating_tag = true` olarak ayarlanırsa, IDv3 değerlendirme alanı da şarkı dosyasında güncellenir (şarkı dosyası biçimi destekleniyorsa).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+İçerik dizini sunucusuna gözatarken, MusicBrainzTrackID (varsa) ve audiotrackID, DIDL öğesi içinde `desc` üstverisi olarak teslim edilir.
 
 #### set rating
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
+| Niyet                           | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
