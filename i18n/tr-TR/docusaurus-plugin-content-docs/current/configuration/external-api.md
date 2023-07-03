@@ -162,11 +162,11 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenilip beğenilmediğini denetler.
 
-### Değerlendirme
+### Derecelendirme
 
-Değerlendirme API’si, şarkıları değerlendirmekten sorumludur. Değerlendirme bilgileri dahili veritabanına (önbellek etkin) ve isteğe bağlı olarak dosyanın kendisine kaydedilir. Eğer UMS.conf içinde  `audio_update_rating_tag = true` olarak ayarlanırsa, IDv3 değerlendirme alanı da şarkı dosyasında güncellenir (şarkı dosyası biçimi destekleniyorsa).
+Derecelendirme API’si, şarkıları değerlendirmekten sorumludur. Derecelendirme bilgileri dahili veritabanına (önbellek etkin) ve isteğe bağlı olarak dosyanın kendisine kaydedilir. Eğer UMS.conf içinde  `audio_update_rating_tag = true` olarak ayarlanırsa, IDv3 derecelendirme alanı da şarkı dosyasında güncellenir (şarkı dosyası biçimi destekleniyorsa).
 
-İçerik dizini sunucusuna gözatarken, MusicBrainzTrackID (varsa) ve audiotrackID, DIDL öğesi içinde `desc` üstverisi olarak teslim edilir.
+İçerik dizini sunucusuna göz atarken, MusicBrainzTrackID (varsa) ve audiotrackID, DIDL öğesi içinde `desc` üstverisi olarak teslim edilir.
 
 #### set rating
 
