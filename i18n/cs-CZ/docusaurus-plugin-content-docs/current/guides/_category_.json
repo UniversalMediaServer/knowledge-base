@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Návody",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generovaný index",
+    "description": "Jak používat UMS"
   }
 }
