@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Úvod
 
-This website contains the official documentation for using UMS.
+Tato webová stránka obsahuje oficiální dokumentaci pro používání UMS.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Je rozdělen na 3 hlavní oddíly: Konfigurace, návody a instalace.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Pokud jste přišli sem a nenašli jste žádné konkrétní informace, dejte nám prosím vědět na GitHub, abychom je mohli přidat.
