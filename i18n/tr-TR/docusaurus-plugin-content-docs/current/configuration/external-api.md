@@ -170,14 +170,14 @@ Derecelendirme API’si, şarkıları değerlendirmekten sorumludur. Derecelendi
 
 #### set rating
 
-| Niyet                           | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıda derecelendirmeyi yıldızlarla (0 - 5) ayarlar     |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| POST BODY                  | `musicbrainzTrackId` /`stars`                                                                   |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| Şu sürümden beri mevcut    | 10.20                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
