@@ -14,16 +14,16 @@ ip_filter = 192.168.1.4, 192.168.1.32
 
 ## Seznam povolení
 
-Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  The render name should be with spaces changed to _ (underscore) instead. Možnost je jedna z
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+Hodnota je závislá na volbě. Poslední 4 jsou logické hodnoty. pro složky a virtualní složky je to seznam složek.
 
-Example
+Příklad
 
 ```
 folders = 
@@ -32,19 +32,19 @@ hide_video_settings = false
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Toto bude pro IP adresu 192.168.1.1:
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- Sdílet složku c:\child_safe
+- Skrýt složku nastavení serveru
+- Skrýt seznam naposledy přehrávaných
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Všechny ostatní přehrávače budou používat "globální" nastavení, např. viz všechny složky a nastavení serveru.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Pokud není tato možnost k dispozici, bude použita k nastavení "globální", nebo pokud není tato volba zobrazena na výchozí hodnotu.
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+Seznam povolených může měnit pouze vzhled kořenové složky. Ale pokud máte smíšené věci (máte 10 složek, ale pouze jedna by měla být omezena na děti). Pro kontrolu přístupu k jednotlivým složkám (nebo médiím) můžete použít UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
 ```
 192.168.1.1.name=.*private.*
 ```
