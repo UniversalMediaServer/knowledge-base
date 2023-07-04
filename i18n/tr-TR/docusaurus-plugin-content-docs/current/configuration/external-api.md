@@ -170,7 +170,7 @@ Derecelendirme API’si, şarkıları değerlendirmekten sorumludur. Derecelendi
 
 #### set rating
 
-| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıda derecelendirmeyi yıldızlarla (0 - 5) ayarlar     |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıda derecelendirmeyi yıldız (0 - 5) olarak ayarlar   |
 | -------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                        | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                  | `musicbrainzTrackId` /`stars`                                                                   |
@@ -183,21 +183,21 @@ Derecelendirme API’si, şarkıları değerlendirmekten sorumludur. Derecelendi
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Bu çağrı, musicbrainz parça kimliği `b8695995-45e9-405d-b4aa-e50e8760fe25` ile tanımlanan tüm şarkıların kullanıcı derecelendirmesini `3` olarak ayarlar.
 
 #### get rating
 
-Reads song rating from database
+Veritabanından şarkı derecelendirmesini okur
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Niyet                      | musicBrainz trackID ile şarkı derecelendirmesini yıldız (0 - 5) olarak alır. Yanıt gövdesi derecelendirme bilgilerini içerir. |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                              |
+| POST BODY                  | `musicbrainzTrackId`                                                                                                          |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                          |
+| RESPONSE BODY örnek        | 3                                                                                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                                                                         |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
