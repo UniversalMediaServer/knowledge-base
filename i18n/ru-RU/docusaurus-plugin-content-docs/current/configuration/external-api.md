@@ -398,20 +398,20 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Это удаляет песню с ID `123` из плейлиста `Pop`.
 
-#### create new playlists
+#### создать новые плейлисты
 
-Playlist name should be provided without any path and without file extensions. 
+Имя плейлиста должно быть предоставлено без пути и без расширения файлов. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| ТИП ЗАПРОСА                     | СООБЩЕНИЕ                                                                                                                                                                      |
-| Содержание сообщения            | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Современный                                                                                                                                                                    |
-| СОДЕРЖАНИЕ ОТВЕТА               | ОТСУТСТВУЕТ                                                                                                                                                                    |
-| Доступно с                      | 11.0                                                                                                                                                                           |
+| Замысел                              | Создание новых плейлистов в управляемой папке плейлиста                                                                                                                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| ТИП ЗАПРОСА                          | СООБЩЕНИЕ                                                                                                                                                                      |
+| Содержание сообщения                 | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | Современный                                                                                                                                                                    |
+| СОДЕРЖАНИЕ ОТВЕТА                    | ОТСУТСТВУЕТ                                                                                                                                                                    |
+| Доступно с                           | 11.0                                                                                                                                                                           |
 
 Пример:
 
@@ -419,7 +419,7 @@ Playlist name should be provided without any path and without file extensions. 
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Этот вызов создает новый файл списка воспроизведения с именем `Contemporary.m3u8` в папке управляемого списка воспроизведения.
 
 ## Пример кода Java
 
