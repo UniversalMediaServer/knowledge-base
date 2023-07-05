@@ -220,29 +220,29 @@ Bu çağrı, musicbrainz parça kimliği `b8695995-45e9-405d-b4aa-e50e8760fe25` 
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Bu çağrı, audiotrack kimliği `32` ile tanımlanan şarkıların kullanıcı derecelendirmesini `3` olarak ayarlar.
 
 #### get rating by audiotrack id
 
-Reads song rating from database
+Veritabanından şarkı derecelendirmesini okur
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Niyet                      | UMS dahili audiotrackID ile şarkı derecelendirmesini yıldız (0 - 5) olarak alır. Yanıt gövdesi derecelendirme bilgilerini içerir. |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                     |
+| POST BODY                  | trackId                                                                                                                           |
+| POST BODY örnek / açıklama | 32                                                                                                                                |
+| RESPONSE BODY örnek        | 3                                                                                                                                 |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                              |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Bu çağrı, UMS audiotrack-id `32` ile tanımlanan bir şarkının kullanıcı derecelendirmesini okur.
 
-### Backup / Restore
+### Yedekleme / Geri yükleme
 
 User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
 
