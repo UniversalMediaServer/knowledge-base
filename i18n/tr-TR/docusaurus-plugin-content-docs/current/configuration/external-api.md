@@ -203,18 +203,18 @@ Veritabanından şarkı derecelendirmesini okur
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Bu çağrı, musicbrainz parça kimliği `b8695995-45e9-405d-b4aa-e50e8760fe25` ile tanımlanan bir şarkının kullanıcı derecelendirmesini okur.
 
 #### set rating by audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Niyet                      | UMS dahili audiotrackID ile tanımlanan bir şarkıda derecelendirmeyi yıldız (0 - 5) olarak ayarlar              |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY                  | `trackID` /`stars`                                                                                             |
+| POST BODY örnek / açıklama | 32                                                                                                             |
+| Şu sürümden beri mevcut    | 11.0                                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
