@@ -244,7 +244,7 @@ Bu çağrı, UMS audiotrack-id `32` ile tanımlanan bir şarkının kullanıcı 
 
 ### Yedekleme / Geri yükleme
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Kullanıcı tarafından yönetilen "beğenilen albüm" girişleri, `database_backup` adlı bir profil dizini alt klasörüne yedeklenebilir. Dosya adı `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
 
 #### backup liked albums
 
