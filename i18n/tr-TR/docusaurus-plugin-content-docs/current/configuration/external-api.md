@@ -288,7 +288,7 @@ Bu çağrı, yedekleme dosyasını geri yükler.
 
 #### enable service
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+UMS.conf dosyasını düzenleyin ve ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
