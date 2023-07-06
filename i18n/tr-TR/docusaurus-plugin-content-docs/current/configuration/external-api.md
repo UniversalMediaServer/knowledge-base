@@ -244,47 +244,47 @@ Bu çağrı, UMS audiotrack-id `32` ile tanımlanan bir şarkının kullanıcı 
 
 ### Yedekleme / Geri yükleme
 
-Kullanıcı tarafından yönetilen "beğenilen albüm" girişleri, `database_backup` adlı bir profil dizini alt klasörüne yedeklenebilir. Dosya adı `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Kullanıcı tarafından yönetilen "beğenilen albüm" girişleri, `database_backup` adlı bir profil dizini alt klasörüne yedeklenebilir. Dosya adı `MUSIC_BRAINZ_RELEASE_LIKE`’dır. UMS veritabanının silinmesi durumunda geri yüklemeyi çağırmanız yeterlidir.
 
 #### backup liked albums
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+`MUSIC_BRAINZ_RELEASE_LIKE` tablosunu dosya sistemine yedekler
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Niyet                   | Beğenilen şarkıları dosya sistemine yedekler                                                          |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE            | GET                                                                                                   |
+| RESPONSE BODY           | `OK` veya hata iletisi                                                                                |
+| Şu sürümden beri mevcut | 10.20                                                                                                 |
 
-Example:
+Örnek:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Bu çağrı, beğenilen albümleri içeren bir yedekleme dosyası oluşturacaktır.
 
 #### restore liked albums
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+`MUSIC_BRAINZ_RELEASE_LIKE` tablosunu dosya sisteminden geri yükler
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Niyet                   | Beğenilen şarkıları yedekleme dosyasından geri yükler                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                     | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE            | GET                                                                                                                                        |
+| RESPONSE BODY           | `OK` veya hata iletisi                                                                                                                     |
+| Şu sürümden beri mevcut | 10.20                                                                                                                                      |
 
-Example:
+Örnek:
 
 ```
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Bu çağrı, yedekleme dosyasını geri yükler.
 
-### Playlist
+### Çalma listesi
 
 #### enable service
 
