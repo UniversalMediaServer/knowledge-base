@@ -292,27 +292,27 @@ Bu hizmeti etkinleştirmek için UMS.conf dosyasını düzenleyin ve 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-parametresini ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın. Varsayılan olarak bu hizmet etkisizleştirilmiştir. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+parametresini ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın. Varsayılan olarak bu hizmet etkisizleştirilmiştir. Çalma listesi klasörü yolu, UMS tarafından görünür olması için bu API tarafından yapılan değiştirilmiş çalma listesi için yapılandırılmış bir paylaşılan `<span class="s1">klasörler</span>` yolunun altında bulunmalıdır.
 
 #### list all playlists
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Mevcut çalma listelerini okur. Bu çalma listesi adları, sonraki çağrılarda şarkı eklemek veya kaldırmak için kullanılmak zorundadır.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Niyet                   | Tüm desteklenen (`m3u`, `m3u8` ve `pls`) ve yapılandırılmış klasördeki mevcut çalma listelerini sunar. Çalma listesi adının yanı sıra `playlistId` oynatma listeleri            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| REQUEST TYPE            | GET                                                                                                                                                                             |
+| RESPONSE BODY           | Çalma listesi adlarının JSON dizilimi                                                                                                                                           |
+| RESPONSE BODY örnek     | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Şu sürümden beri mevcut | 11.0                                                                                                                                                                            |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list list all available playlist.
+Bu çağrı, mevcut tüm çalma listelerini listeleyecek.
 
 #### list server accessible playlists
 
