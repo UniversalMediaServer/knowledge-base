@@ -288,11 +288,11 @@ Bu çağrı, yedekleme dosyasını geri yükler.
 
 #### enable service
 
-UMS.conf dosyasını düzenleyin ve ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın 
+Bu hizmeti etkinleştirmek için UMS.conf dosyasını düzenleyin ve 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+parametresini ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın. Varsayılan olarak bu hizmet etkisizleştirilmiştir. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
 
 #### list all playlists
 
