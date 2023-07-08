@@ -396,21 +396,21 @@ Bu, kimliği `123` olan şarkıyı `Pop` çalma listesinden kaldırır.
 
 #### create new playlists
 
-Playlist name should be provided without any path and without file extensions. 
+Çalma listesi adı herhangi bir yol ve dosya uzantısı olmadan sağlanmalıdır. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Niyet                      | Yönetilen çalma listesi klasöründe yeni çalma listeleri oluşturma                                                                                                              |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                           |
+| POST BODY                  | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">ÇALMALİSTESİ_ADI</span>`                                                      |
+| POST BODY örnek / açıklama | Modern                                                                                                                                                                         |
+| RESPONSE BODY              | YOK                                                                                                                                                                            |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
+curl -d "Modern" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
 This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
