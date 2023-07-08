@@ -1,13 +1,13 @@
-# How to use the "Fully played" feature
+# Jak používat funkci "Plně přehrané"
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+Funkce "Plně přehrané" vám umožní sledovat soubory, které jste plně přehráli; pro video to znamená, že jste sledovali alespoň 92 % a pro zvuk jste poslouchali alespoň 92 %.
 
-## Setup
+## Nastavení
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Tato funkce je ve výchozím nastavení povolena, takže pokud jste nic nezměnili, můžete ji použít. Pokud funkce nefunguje, zkontrolujte, zda tyto kroky nebyly vráceny:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
+1. Na kartě **Navigační nastavení** vyberte zaškrtávací políčko **Povolit cache**. Toto je ve výchozím nastavení povoleno.
+2. Na kartě **Navigační nastavení** vyberte akci **Akce plně přehráno**. Zejména se ujistěte, že jste nevybrali **Nic**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
 3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
 
 ## Marking files as fully played automatically
