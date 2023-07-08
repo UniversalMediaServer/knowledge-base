@@ -1,11 +1,11 @@
-# How to improve support for my device
+# Jak zlepšit podporu pro mé zařízení
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Pokud vaše zařízení nic neudělá, jako je prohlížení složek nebo přehrávání souboru, může být možné to opravili změnou nastavení v konfiguračním souboru přehrávače. Různá zařízení/přehrávače/klienti různými způsoby komunikují se servery, jako je UMS, takže konfigurační soubor říká UMS jak mluvit stejným jazykem jako vaše zařízení.
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Máme výchozí soubor s konfigurací přehrávače, který obsahuje dokumentaci všech našich nastavení.  Viz nejnovější verze na https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRender.conf
 
-Common settings to look at are `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, and `ChunkedTransfer`.
+Běžná nastavení jsou `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, a `ChunkedTransfer`.
 
-As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+Kromě toho se můžete podívat na další konfigurace přehrávačů ve složce "renderers" ve vaší instalační složce, aby jste zjistili co dělají. Někdy budete potřebovat pomoc, kterou Vám můžeme dát na našem fóru, a prosím nezapomeňte nám říci o zlepšení, když jej provedete, aby ostatní uživatelé s vaším zařízením mohli mít z opravy prospěch. Zmíníme Vás v našem oznámení o vydání a v seznamu změn.
 
-If you have a new renderer config to contribute to the project, please create a **Pull Request** on our GitHub repository https://github.com/UniversalMediaServer/UniversalMediaServer
+Pokud máte novou konfiguraci přehrávače pro přispění k projektu, vytvořte prosím **Pull Request** na našem GitHub repozitáři https://github.com/UniversalMediaServer/UniversalMediaServer
