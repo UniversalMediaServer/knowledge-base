@@ -1,35 +1,35 @@
-# External API
+# 외부 API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+외부 API를 사용하면 프로그램이 HTTP 호출로 UMS 기능에 액세스하거나 트리거할 수 있습니다.
 
-## How to enable the external API
+## 외부 API를 활성화하는 방법
 
-Edit UMS.conf and configure an api_key like this
+UMS.conf를 편집하고 다음과 같이 api_key를 구성합니다
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`secret_password`_은 최소 12자여야 합니다.
 
-## API usage
+## API 사용법
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+외부 API가 활성화된 경우 /api/COMMAND에 대한 POST 호출을 통해 API에 액세스할 수 있습니다
 
-### Folder Scanning
+### 폴더 검색
 
-#### rescan
+#### 다시 검색
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| 의도         | 전체 라이브러리를 다시 검색합니다          |
+| ---------- | --------------------------- |
+| URI        | `/api/folderscanner/rescan` |
+| 본문         | 없음                          |
+| 본문 예시 / 설명 | 이 명령에는 본문 내용이 필요하지 않습니다     |
+| 다음부터 사용 가능 | 10.4.2                      |
 
-:::info
-This can be slow for large libraries
+:::정보
+대형 라이브러리의 경우 속도가 느릴 수 있습니다
 :::
 
-Example:
+예제:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| 의도              | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                                                           |
+| --------------- | ------------------------------------------------------------------------------------- |
+| URI             | `/api/folderscanner/rescanFileOrFolder`                                               |
+| 본문              | PATH_TO_SCAN                                                                        |
+| 본문 예시 / 설명      | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
+| Available since | 10.4.2                                                                                |
 
 Example:
 
@@ -312,7 +312,7 @@ Example:
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+이 호출은 사용 가능한 모든 재생 목록을 나열합니다.
 
 #### list server accessible playlists
 
