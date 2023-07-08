@@ -336,7 +336,7 @@ Bu çağrı, UMS tarafından erişilebilen tüm mevcut çalma listelerini listel
 
 #### adding songs to playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Gerekli `audiotrackid`, UPnP tarama istekleri sırasında teslim edilir ve `descMetadata` DIDL yanıt özniteliğinden çıkarılabilir
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Niyet                      | Çalma listesine şarkı ekler                                                                                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                              |
+| POST BODY                  | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY örnek / açıklama | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY              | YOK                                                                                                                                                                               |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                              |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Bu, kimliği `123` olan şarkıyı `Pop` çalma listesine ekler.
 
 #### removing songs from playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Gerekli `audiotrackid`, UPnP tarama istekleri sırasında teslim edilir ve `descMetadata` DIDL yanıt özniteliğinden çıkarılabilir
 
 ```XML
 <ums-tags>
@@ -377,22 +377,22 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Niyet                      | Şarkıyı çalma listesinden kaldırır                                                                                                                                                     |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                                   |
+| POST BODY                  | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY örnek / açıklama | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY              | YOK                                                                                                                                                                                    |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                                   |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Bu, kimliği `123` olan şarkıyı `Pop` çalma listesinden kaldırır.
 
 #### create new playlists
 
