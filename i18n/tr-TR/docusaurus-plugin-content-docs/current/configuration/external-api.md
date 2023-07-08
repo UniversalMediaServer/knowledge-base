@@ -312,7 +312,7 @@ Mevcut çalma listelerini okur. Bu çalma listesi adları, sonraki çağrılarda
 curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Bu çağrı, mevcut tüm çalma listelerini listeleyecek.
 
 #### list server accessible playlists
 
