@@ -1,12 +1,12 @@
-# How to solve connection problems
+# Jak řešit problémy s připojením
 
-This page provides solutions for the most common connection problems our users encounter.
+Tato stránka nabízí řešení nejběžnějších problémů s připojením s nimiž se setkávají naši uživatelé.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS detekuje přehrávač, ale přehrávač  nezjistí UMS
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+K tomu obvykle dochází, když má váš počítač více než jedno aktivní síťové připojení (například jedno pevné a jedno bezdrátové připojení). Můžete to vyřešit nastavením, které síťové rozhraní chcete:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. Otevřít UMS
+2. Vyberte záložku `Obecné nastavení`
+3. Rozbalit rozevírací seznam `Vynutit síťové připojení na rozhraní:` a vybrat si požadované rozhraní. V rozbalovacím seznamu může být spousta možností. Ten, který chcete, bude mít obvykle IP adresu v závorkách za jménem, například:  
+   ![Otevřít GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)

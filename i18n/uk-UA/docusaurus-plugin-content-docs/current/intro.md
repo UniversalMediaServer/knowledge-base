@@ -5,8 +5,8 @@ slug: /
 
 # Intro
 
-This website contains the official documentation for using UMS.
+Цей сайт містить офіційну документацію з використання UMS.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Він розділений на 3 основні розділи: Налаштування, Посібники та Встановлення.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Якщо ви прийшли сюди, шукаючи конкретну інформацію і не знайшли її, будь ласка, повідомте нам про це на GitHub, щоб ми могли її додати.

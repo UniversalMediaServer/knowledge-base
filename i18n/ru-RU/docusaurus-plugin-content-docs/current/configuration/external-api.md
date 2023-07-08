@@ -164,18 +164,18 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 ### Рейтинг
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Rating API отвечает за рейтинг песен. Информация о рейтинге сохраняется во внутренней базе данных (кэш включен) и, при необходимости, в самом файле. Если в UMS.conf задано значение `audio_update_rating_tag = true`, поле оценки IDv3 также обновляется в файле песни (если поддерживается формат файла песни).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+При просмотре сервера каталогов содержимого MusicBrainzTrackID (если доступно) и audiotrackID передаются как метаданные `desc` в элементе DIDL.
 
 #### установить рейтинг
 
-| Замысел                         | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| Содержание сообщения            | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Доступно с                      | 10.20                                                                                           |
+| Замысел                              | Установите рейтинг в звездах (0 - 5) для песни, идентифицированной с помощью MusicBrainz TrackID |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| URI                                  | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`  |
+| Содержание сообщения                 | `musicbrainzTrackId` /`stars`                                                                    |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                           |
+| Доступно с                           | 10.20                                                                                            |
 
 Пример:
 
@@ -183,19 +183,19 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Этот вызов устанавливает рейтинг пользователей всех песен, идентифицированных musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` до `3`.
 
-#### получить оценку
+#### установить рейтинг
 
 Считывает рейтинг песни из базы данных
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Текст ответа содержит информацию о рейтинге. |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`            |
-| POST BODY                       | `musicbrainzTrackId`                                                                                        |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                        |
-| RESPONSE BODY example           | 3                                                                                                           |
-| Доступно с                      | 10.20                                                                                                       |
+| Замысел                              | Получите рейтинг песни в звездах (0 - 5) с помощью внутреннего audiotrackID UMS. Текст ответа содержит информацию о рейтинге. |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                              |
+| Содержание сообщения                 | `musicbrainzTrackId`                                                                                                          |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                          |
+| Пример ОТВЕТА                        | 3                                                                                                                             |
+| Доступно с                           | 10.20                                                                                                                         |
 
 Пример:
 
@@ -203,11 +203,11 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Этот вызов считывает пользовательский рейтинг песни, идентифицированной по идентификатору трека musicbrainz `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
-#### set rating by audiotrack id
+#### установите рейтинг по идентификатору audiotrack id
 
-| Замысел                              | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
+| Замысел                              | Установите оценку в звездах (0 - 5) для песни, идентифицированной с помощью внутреннего audiotrackID UMS       |
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | URI                                  | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | Содержание сообщения                 | `trackID` /`stars`                                                                                             |
@@ -220,41 +220,41 @@ This call reads the user rating of a song identified by the musicbrainz track-id
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Этот вызов устанавливает пользовательский рейтинг песен, определенный по audiotrackid `32`, на `3`.
 
 #### получить рейтинг по ID аудиотрека
 
-Reads song rating from database
+Считывает рейтинг песни из базы данных
 
-| Intention                          | Получите рейтинг песни в звездах (0 - 5) по MusicBrainz TrackID. Текст ответа содержит информацию о рейтинге. |
+| Замысел                            | Получите рейтинг песни в звездах (0 - 5) по MusicBrainz TrackID. Текст ответа содержит информацию о рейтинге. |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | URI                                | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                          | trackId                                                                                                       |
+| Содержание сообщения               | идентификатор трека                                                                                           |
 | Пример / описание текста сообщения | 32                                                                                                            |
 | Пример ОТВЕТА                      | 3                                                                                                             |
-| Available since                    | 11.0                                                                                                          |
+| Доступно с                         | 11.0                                                                                                          |
 
-Example:
+Пример:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Этот вызов считывает пользовательский рейтинг песни, идентифицированной UMS audiotrack-id `32`.
 
-### Backup / Restore
+### Резервное копирование / восстановление
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Управляемые пользователем записи "понравившегося альбома" могут быть скопированы в подпапку каталога профиля с именем `database_backup`. Имя файла `MUSIC_BRAINZ_RELEASE_LIKE`. В случае, если база данных UMS будет удалена, просто вызовите функцию восстановления.
 
-#### backup liked albums
+#### резервное копирование любимых альбомов
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Таблица резервного копирования `MUSIC_BRAINZ_RELEASE_LIKE` в файловую систему
 
 | Замысел           | резервное копирование понравившихся песен в файловую систему                                          |
 | ----------------- | ----------------------------------------------------------------------------------------------------- |
 | URI               | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
 | ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                              |
-| СОДЕРЖАНИЕ ОТВЕТА | `OK` or error message                                                                                 |
+| СОДЕРЖАНИЕ ОТВЕТА | `OK` или сообщение об ошибке                                                                          |
 | Доступно с        | 10.20                                                                                                 |
 
 Пример:
@@ -263,11 +263,11 @@ Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Этот вызов создаст резервную копию файла, содержащего понравившиеся альбомы
 
-#### restore liked albums
+#### восстановить понравившиеся альбомы
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Восстановление таблицы `MUSIC_BRAINZ_RELEASE_LIKE` из файловой системы
 
 | Замысел           | восстановить понравившиеся песни из файла резервной копии                                                                                  |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -296,7 +296,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 
 #### список всех плейлистов
 
-Читать доступные плейлисты Читать доступные плейлисты Читать доступные плейлисты Эти имена плейлистов должны использоваться для последующих звонков для добавления или удаления песен.
+Читать доступные плейлисты Читать доступные плейлисты Читать доступные плейлисты Читать доступные плейлисты Эти имена плейлистов должны использоваться для последующих звонков для добавления или удаления песен.
 
 | Замысел           | Доставляет все поддерживаемые (`m3u`, `m3u8` и `pls`) и доступные плейлисты из настроенной папки. Кроме имени плейлиста `плейлист`                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -312,18 +312,18 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-Этот вызов выведет список всех доступных плейлистов.
+This call will list all available playlists.
 
 #### список доступных на сервере плейлистов
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Все эти плейлисты известны UMS (базы данных/кэш включен). Эти имена плейлистов должны использоваться при последующих вызовах для добавления или удаления песен. ID плейлиста может быть использован для перехода непосредственно к плейлисту, просматривая `объект` `$DBID$PLAYLIST$` базы данных.
 
-| Замысел           | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
+| Замысел           | Предоставляет все поддерживаемые (`m3u`, `m3u8` и `pls`) и доступные плейлисты из настроенной папки                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI               | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                                                                                 |
 | СОДЕРЖАНИЕ ОТВЕТА | Массив имен плейлистов в формате JSON                                                                                                                    |
-| Пример ОТВЕТА     | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Пример ОТВЕТА     | [{"playlistName":"Джаз","playlistId":5},{"playlistName":"Графики","playlistId":343}]                                                                     |
 | Доступно с        | ветвь разработки                                                                                                                                         |
 
 Пример:
@@ -336,7 +336,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 #### добавление треков в плейлисты
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Требуемый `audiotrackid` предоставляется во время запросов браузера UPnP и может быть извлечен из атрибута ответа DIDL `descMetadata`
 
 ```XML
 <ums-tags>
@@ -355,8 +355,8 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 | ТИП ЗАПРОСА                          | СООБЩЕНИЕ                                                                                                                                                                         |
 | Содержание сообщения                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
 | Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                        | NONE                                                                                                                                                                              |
-| Available since                      | 11.0                                                                                                                                                                              |
+| RESPONSE BODY                        | ОТСУТСТВУЕТ                                                                                                                                                                       |
+| Доступно с                           | 11.0                                                                                                                                                                              |
 
 Пример:
 
@@ -364,11 +364,11 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Это добавляет песню с ID `123` в плейлист `Pop`.
 
-#### removing songs from playlists
+#### Удалить песни из плейлиста
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Требуемый `audiotrackid` предоставляется во время запросов браузера UPnP и может быть извлечен из атрибута ответа DIDL `descMetadata`
 
 ```XML
 <ums-tags>
@@ -383,11 +383,11 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                          | Remove song from playlist                                                                                                                                                              |
+| Замысел                            | Удалить песню из плейлиста                                                                                                                                                             |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                       | СООБЩЕНИЕ                                                                                                                                                                              |
-| POST BODY                          | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| ТИП ЗАПРОСА                        | СООБЩЕНИЕ                                                                                                                                                                              |
+| Содержание сообщения               | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
 | Пример / описание текста сообщения | 123/Pop                                                                                                                                                                                |
 | СОДЕРЖАНИЕ ОТВЕТА                  | ОТСУТСТВУЕТ                                                                                                                                                                            |
 | Доступно с                         | 11.0                                                                                                                                                                                   |
@@ -398,20 +398,20 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Это удаляет песню с ID `123` из плейлиста `Pop`.
 
-#### create new playlists
+#### создать новые плейлисты
 
-Playlist name should be provided without any path and without file extensions. 
+Имя плейлиста должно быть предоставлено без пути и без расширения файлов. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| ТИП ЗАПРОСА                     | СООБЩЕНИЕ                                                                                                                                                                      |
-| Содержание сообщения            | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Современный                                                                                                                                                                    |
-| СОДЕРЖАНИЕ ОТВЕТА               | ОТСУТСТВУЕТ                                                                                                                                                                    |
-| Доступно с                      | 11.0                                                                                                                                                                           |
+| Замысел                              | Создание новых плейлистов в управляемой папке плейлиста                                                                                                                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| ТИП ЗАПРОСА                          | СООБЩЕНИЕ                                                                                                                                                                      |
+| Содержание сообщения                 | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | Современный                                                                                                                                                                    |
+| СОДЕРЖАНИЕ ОТВЕТА                    | ОТСУТСТВУЕТ                                                                                                                                                                    |
+| Доступно с                           | 11.0                                                                                                                                                                           |
 
 Пример:
 
@@ -419,7 +419,7 @@ Playlist name should be provided without any path and without file extensions. 
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Этот вызов создает новый файл списка воспроизведения с именем `Contemporary.m3u8` в папке управляемого списка воспроизведения.
 
 ## Пример кода Java
 

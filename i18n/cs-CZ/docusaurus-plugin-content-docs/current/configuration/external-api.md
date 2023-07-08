@@ -1,35 +1,35 @@
-# External API
+# Externí API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Externí API umožňuje programům přístup k funkcím UMS pomocí volání HTTP protokolu.
 
-## How to enable the external API
+## Jak povolit externí API
 
-Edit UMS.conf and configure an api_key like this
+Upravte UMS.conf a nakonfigurujte api_key podobně jako toto
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`secret_password`_ musí mít minimálně 12 znaků.
 
-## API usage
+## Využití API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Pokud je externí API povoleno, API je dostupné s POST voláním na /api/COMMAND
 
-### Folder Scanning
+### Skenování složky
 
-#### rescan
+#### Znovu prohledat
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Úmysl                     | Rescanuje kompletní knihovnu         |
+| ------------------------- | ------------------------------------ |
+| URI                       | `/api/folderscanner/rescan`          |
+| POST BODY                 | NONE                                 |
+| Příklad / popis POST BODY | Tento příkaz nepotřebuje žádný obsah |
+| Dostupné od               | 10.4.2                               |
 
 :::info
-This can be slow for large libraries
+Toto může být pomalé pro velké knihovny :
 :::
 
-Example:
+Příklad:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,31 +37,31 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Úmysl                     | Rescanuje částečnou větev souborového systému.                                               |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| URI                       | `/api/folderscanner/rescanFileOrder`                                                         |
+| POST BODY                 | PATH_TO_SCAN                                                                               |
+| Příklad / popis POST BODY | příklad: "/music/pop/Madonna". Cesta musí být kořenový adresář nebo podsložka sdílené cesty. |
+| Dostupné od               | 10.4.2                                                                                       |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Líbí se hudba (alba a skladby)
 
-#### like song
+#### líbí se song
 
-Song will be marked as liked.
+Skladba bude označena jako „oblíbená“.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Úmysl                     | Oblíbená píseň identifikovaná musicBrainz trackId        |
+| ------------------------- | -------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY                 | `musicBrainz_trackID`                                    |
+| Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Dostupné od               | 10.20                                                    |
 
 Example:
 
@@ -312,7 +312,7 @@ Example:
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list list all available playlist.
+Tento požadavek bude zobrazovat všechny dostupné seznamy skladeb.
 
 #### list server accessible playlists
 

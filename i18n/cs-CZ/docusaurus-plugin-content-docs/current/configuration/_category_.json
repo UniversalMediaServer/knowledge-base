@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Nastavení",
+  "position": 2,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generovaný index",
+    "description": "Jak nakonfigurovat UMS"
   }
 }

@@ -1,29 +1,29 @@
-# Security and Privacy
+# Bezpečnost a soukromí
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS je DLNA server. Nyní je DLNA protokol, který nemá žádnou skutečnou představu o "uživateli". Například se nemusíte přihlásit do televizoru. To vede k tomu, že všechny přehrávače získají přístup ke stejným údajům. To nemusí být to, co chcete. Například pokud máte dvě složky kids_safe a kids_unsafe můžete chtít, aby přehrávače v místnosti pro děti měly přístup pouze do složky kids_safe . UMS poskytuje řadu metod pro kontrolu přístupu. 
 
-## IP filter
+## IP filtr
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+Filtrování IP je nejrestriktivnější metodou, kterou UMS poskytuje. Chcete-li použít, zadejte čárkou oddělený seznam IP adres, které mají povoleno připojit se.  Přehravač jehož adresa neodpovídá záznamům v seznamu, jednoduše zruší provoz (velmi brzy v UMS). Nebude mít přístup k žádným složkám (ani neuvidí kořenovou složku). Použij tuto metodu k úplnému vyloučení dětí. Více informací naleznete v popisu ip_filtru v UMS.conf.
 
-Example to allow only 2 addresses
+Příklad pro povolení pouze 2 adres
 
 ```
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## Seznam povolení
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  The render name should be with spaces changed to _ (underscore) instead. Možnost je jedna z
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+Hodnota je závislá na volbě. Poslední 4 jsou logické hodnoty. pro složky a virtualní složky je to seznam složek.
 
-Example
+Příklad
 
 ```
 folders = 
@@ -32,19 +32,19 @@ hide_video_settings = false
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Toto bude pro IP adresu 192.168.1.1:
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- Sdílet složku c:\child_safe
+- Skrýt složku nastavení serveru
+- Skrýt seznam naposledy přehrávaných
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Všechny ostatní přehrávače budou používat "globální" nastavení, např. viz všechny složky a nastavení serveru.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Pokud není tato možnost k dispozici, bude použita k nastavení "globální", nebo pokud není tato volba zobrazena na výchozí hodnotu.
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+Seznam povolených může měnit pouze vzhled kořenové složky. Ale pokud máte smíšené věci (máte 10 složek, ale pouze jedna by měla být omezena na děti). Pro kontrolu přístupu k jednotlivým složkám (nebo médiím) můžete použít UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
 ```
 192.168.1.1.name=.*private.*
 ```

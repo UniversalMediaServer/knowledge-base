@@ -1,10 +1,10 @@
-# Docker
+# Dokovací modul
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Některé z těchto kroků se na vaši instalaci nevztahují.  Pochopit, co dělají, a podle potřeby ignorovat nebo přizpůsobit.
 
-## Fedora Linux Preparation
+## Příprava Linuxu Fedora
 
-For operating system support and service packages.
+Pro podporu operačního systému a balíčky služeb.
 
 ```
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
@@ -12,7 +12,7 @@ sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Znovu se přihlašte nebo restartujte počítač.
 
 ```
 sudo systemctl start docker;
@@ -22,17 +22,17 @@ sudo chown core:docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+Připojit úložiště k hostování a odkazovat do tohoto adresáře, pravděpodobně pouze pro čtení.
 
-## Container Setup
+## Nastavení kontejneru
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+Připojit následující svazky a porty:
+- Složka médií VOLUME /media
+- Složka profilu obsahující UMS.conf VOLUME /profil
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Zobrazit/povolit tyto porty hostitele: 1044, 5001, 9001
 
-The following scripts does those steps:
+Následující skripty dělají tyto kroky:
 ```
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
@@ -55,35 +55,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Vyšetřování problémů/problémů
 
-### General
+### Obecná ustanovení
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Přesto nezáměrně zastaví kontejner při provedení prohlídky..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Podrobné logy v terminálu: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problém s připojením
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Použití Fedora CoreOS, jsem měl přístup a oprávnění odepřen problémy se spojením spojení.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Namísto toho může být doporučeno použít funkci pojmenovaných objemů řízenou dokovací stanicí, ale vyhnout se této složitosti, Zjistil jsem, že další :Z jako přípona pro svázanou hodnotu volby deskriptoru povolený přístup kontejneru k hostitelským souborům. Místo toho lze použít i :z, ale bezpečnostní doporučení mohou naznačovat, že zdroje jsou izolovanější mezi aplikacemi/servisním prostředím spíše než sdílenými.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+Pomocí deníku můžete vidět odpovídající chybové zprávy, takže je to problém SELinux. Řešením by bylo spustit chcon -Rt svirt_sandbox_file_t host_dir, ale to se také zdá být odrazující.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Nejedná se o záležitost na pracovní stanici Fedory, ale domnívám se, že manulni instalace balíčku to vyřeší.  Vypadá to na container-selinux
 
-## References
+## Odkazy
 
 - https://hub.docker.com/r/universalmediaserver/ums
 - https://hub.docker.com/r/atamariya/ums/

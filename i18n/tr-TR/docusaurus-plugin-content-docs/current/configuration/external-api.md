@@ -23,7 +23,7 @@ Eğer harici API etkinleştirildiyse, API’ye /api/KOMUT olarak yapılan bir PO
 | URI                        | `/api/folderscanner/rescan`                |
 | POST BODY                  | YOK                                        |
 | POST BODY örnek / açıklama | Bu komutun gövde içeriğine ihtiyacı yoktur |
-| Şu tarihten beri mevcut    | 10.4.2                                     |
+| Şu sürümden beri mevcut    | 10.4.2                                     |
 
 :::info
 Bu, büyük kütüphaneler için yavaş olabilir
@@ -37,33 +37,33 @@ curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/fo
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Niyet                      | Dosya sisteminin kısmi bir alt ağacını yeniden tarar.                                         |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| URI                        | `/api/folderscanner/rescanFileOrFolder`                                                       |
+| POST BODY                  | TARANACAK_YOL                                                                                 |
+| POST BODY örnek / açıklama | örnek: "/music/pop/Madonna". Yol, paylaşılan bir yolun kök veya alt klasörü olmak zorundadır. |
+| Şu sürümden beri mevcut    | 10.4.2                                                                                        |
 
 Örnek:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "TARANACAK_YOL" -w "%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Müzik Beğenme (albümler ve şarkılar)
 
 #### like song
 
-Song will be marked as liked.
+Şarkı beğenildi olarak işaretlenecektir.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıyı beğenir   |
+| -------------------------- | -------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY                  | `musicBrainz_trackID`                                    |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Şu sürümden beri mevcut    | 10.20                                                    |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
@@ -71,16 +71,16 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike song
 
-Song will not be disliked
+Şarkı beğenilmeyecektir
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıyı beğenmez     |
+| -------------------------- | ----------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY                  | `musicBrainz_trackID`                                       |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Şu sürümden beri mevcut    | 10.20                                                       |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
@@ -88,36 +88,36 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### is song liked
 
-Check if song is liked.
+Şarkının beğenilip beğenilmediğini denetleyin.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Niyet                      | musicBrainz trackId ile tanımlanan şarkının beğenilip beğenilmediğini denetler                  |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                  | `musicBrainz_trackID`                                                                           |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY              | `TRUE` veya `FALSE`                                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenildi özniteliğini ekler.
 
 #### like album
 
-Set album like state to true.
+Albüm beğenme durumunu true olarak ayarlayın.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Niyet                      | musicBrainz releaseID ile tanımlanan bir albümü beğenir   |
+| -------------------------- | --------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>likealbum` |
+| POST BODY                  | `musicBrainz_releaseID`                                   |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
+| Şu sürümden beri mevcut    | 10.20                                                     |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
@@ -125,218 +125,218 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike album
 
-Remove album like state.
+Albüm beğenme durumunu kaldırın.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Niyet                      | musicBrainz releaseID ile tanımlanan bir şarkıyı beğenmez    |
+| -------------------------- | ------------------------------------------------------------ |
+| URI                        | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY                  | `musicBrainz_releaseID`                                      |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Şu sürümden beri mevcut    | 10.20                                                        |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenildi özniteliğini kaldırır.
 
 #### is album liked
 
-Check album like state.
+Albüm beğenme durumunu denetleyin.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Niyet                      | musicBrainz releaseID ile tanımlanan albümün beğenilip beğenilmediğini denetler |
+| -------------------------- | ------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/like/</span>isalbumliked`                    |
+| POST BODY                  | `musicBrainz_releaseID`                                                         |
+| POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                            |
+| RESPONSE BODY              | "TRUE" veya "FALSE"                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Bu çağrı, musicbrainz yayım kimliği `1e0eee38-a9f6-49bf-84d0-45d0647799af` ile tanımlanan albümün beğenilip beğenilmediğini denetler.
 
-### Rating
+### Derecelendirme
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Derecelendirme API’si, şarkıları değerlendirmekten sorumludur. Derecelendirme bilgileri dahili veritabanına (önbellek etkin) ve isteğe bağlı olarak dosyanın kendisine kaydedilir. Eğer UMS.conf içinde  `audio_update_rating_tag = true` olarak ayarlanırsa, IDv3 derecelendirme alanı da şarkı dosyasında güncellenir (şarkı dosyası biçimi destekleniyorsa).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+İçerik dizini sunucusuna göz atarken, MusicBrainzTrackID (varsa) ve audiotrackID, DIDL öğesi içinde `desc` üstverisi olarak teslim edilir.
 
 #### set rating
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Niyet                      | musicBrainz trackId ile tanımlanan bir şarkıda derecelendirmeyi yıldız (0 - 5) olarak ayarlar   |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| POST BODY                  | `musicbrainzTrackId` /`stars`                                                                   |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| Şu sürümden beri mevcut    | 10.20                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Bu çağrı, musicbrainz parça kimliği `b8695995-45e9-405d-b4aa-e50e8760fe25` ile tanımlanan tüm şarkıların kullanıcı derecelendirmesini `3` olarak ayarlar.
 
 #### get rating
 
-Reads song rating from database
+Veritabanından şarkı derecelendirmesini okur
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Niyet                      | musicBrainz trackID ile şarkı derecelendirmesini yıldız (0 - 5) olarak alır. Yanıt gövdesi derecelendirme bilgilerini içerir. |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                              |
+| POST BODY                  | `musicbrainzTrackId`                                                                                                          |
+| POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                          |
+| RESPONSE BODY örnek        | 3                                                                                                                             |
+| Şu sürümden beri mevcut    | 10.20                                                                                                                         |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Bu çağrı, musicbrainz parça kimliği `b8695995-45e9-405d-b4aa-e50e8760fe25` ile tanımlanan bir şarkının kullanıcı derecelendirmesini okur.
 
 #### set rating by audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Niyet                      | UMS dahili audiotrackID ile tanımlanan bir şarkıda derecelendirmeyi yıldız (0 - 5) olarak ayarlar              |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY                  | `trackID` /`stars`                                                                                             |
+| POST BODY örnek / açıklama | 32                                                                                                             |
+| Şu sürümden beri mevcut    | 11.0                                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Bu çağrı, audiotrack kimliği `32` ile tanımlanan şarkıların kullanıcı derecelendirmesini `3` olarak ayarlar.
 
 #### get rating by audiotrack id
 
-Reads song rating from database
+Veritabanından şarkı derecelendirmesini okur
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Niyet                      | UMS dahili audiotrackID ile şarkı derecelendirmesini yıldız (0 - 5) olarak alır. Yanıt gövdesi derecelendirme bilgilerini içerir. |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                     |
+| POST BODY                  | trackId                                                                                                                           |
+| POST BODY örnek / açıklama | 32                                                                                                                                |
+| RESPONSE BODY örnek        | 3                                                                                                                                 |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                              |
 
-Example:
+Örnek:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Bu çağrı, UMS audiotrack-id `32` ile tanımlanan bir şarkının kullanıcı derecelendirmesini okur.
 
-### Backup / Restore
+### Yedekleme / Geri yükleme
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Kullanıcı tarafından yönetilen "beğenilen albüm" girişleri, `database_backup` adlı bir profil dizini alt klasörüne yedeklenebilir. Dosya adı `MUSIC_BRAINZ_RELEASE_LIKE`’dır. UMS veritabanının silinmesi durumunda geri yüklemeyi çağırmanız yeterlidir.
 
 #### backup liked albums
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+`MUSIC_BRAINZ_RELEASE_LIKE` tablosunu dosya sistemine yedekler
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Niyet                   | Beğenilen şarkıları dosya sistemine yedekler                                                          |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE            | GET                                                                                                   |
+| RESPONSE BODY           | `OK` veya hata iletisi                                                                                |
+| Şu sürümden beri mevcut | 10.20                                                                                                 |
 
-Example:
+Örnek:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Bu çağrı, beğenilen albümleri içeren bir yedekleme dosyası oluşturacaktır.
 
 #### restore liked albums
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+`MUSIC_BRAINZ_RELEASE_LIKE` tablosunu dosya sisteminden geri yükler
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Niyet                   | Beğenilen şarkıları yedekleme dosyasından geri yükler                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                     | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE            | GET                                                                                                                                        |
+| RESPONSE BODY           | `OK` veya hata iletisi                                                                                                                     |
+| Şu sürümden beri mevcut | 10.20                                                                                                                                      |
 
-Example:
+Örnek:
 
 ```
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Bu çağrı, yedekleme dosyasını geri yükler.
 
-### Playlist
+### Çalma listesi
 
 #### enable service
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Bu hizmeti etkinleştirmek için UMS.conf dosyasını düzenleyin ve 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+parametresini ayarlayarak yönetilen bir çalma listesi klasörü yapılandırın. Varsayılan olarak bu hizmet etkisizleştirilmiştir. Çalma listesi klasörü yolu, UMS tarafından görünür olması için bu API tarafından yapılan değiştirilmiş çalma listesi için yapılandırılmış bir paylaşılan `<span class="s1">klasörler</span>` yolunun altında bulunmalıdır.
 
 #### list all playlists
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Mevcut çalma listelerini okur. Bu çalma listesi adları, sonraki çağrılarda şarkı eklemek veya kaldırmak için kullanılmak zorundadır.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Niyet                   | Tüm desteklenen (`m3u`, `m3u8` ve `pls`) ve yapılandırılmış klasördeki mevcut çalma listelerini sunar. Çalma listesi adının yanı sıra `playlistId` oynatma listeleri            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| REQUEST TYPE            | GET                                                                                                                                                                             |
+| RESPONSE BODY           | Çalma listesi adlarının JSON dizilimi                                                                                                                                           |
+| RESPONSE BODY örnek     | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Şu sürümden beri mevcut | 11.0                                                                                                                                                                            |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list list all available playlist.
+Bu çağrı, tüm mevcut çalma listelerini listeleyecek.
 
 #### list server accessible playlists
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Bunların tümü UMS tarafından bilinen çalma listeleridir (veritabanı/önbellek etkin). Bu çalma listesi adları, sonraki çağrılarda şarkı eklemek veya kaldırmak için kullanılmak zorundadır. Çalma listesi kimliği, `objectId` `$DBID$PLAYLIST$` concat databaseId’ye göz atarak doğrudan çalma listesine gitmek için kullanılabilir.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
-| Available since       | dev branch                                                                                                                                               |
+| Niyet                   | Tüm desteklenen (`m3u`, `m3u8` ve `pls`) ve yapılandırılmış klasördeki mevcut çalma listelerini sunar                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| REQUEST TYPE            | GET                                                                                                                                                      |
+| RESPONSE BODY           | Çalma listesi adlarının JSON dizilimi                                                                                                                    |
+| RESPONSE BODY örnek     | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Şu sürümden beri mevcut | dev dalı                                                                                                                                                 |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Bu çağrı, UMS tarafından erişilebilen tüm mevcut çalma listelerini listeleyecek.
 
 #### adding songs to playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Gerekli `audiotrackid`, UPnP tarama istekleri sırasında teslim edilir ve `descMetadata` DIDL yanıt özniteliğinden çıkarılabilir
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Niyet                      | Çalma listesine şarkı ekler                                                                                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                              |
+| POST BODY                  | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY örnek / açıklama | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY              | YOK                                                                                                                                                                               |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                              |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Bu, kimliği `123` olan şarkıyı `Pop` çalma listesine ekler.
 
 #### removing songs from playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Gerekli `audiotrackid`, UPnP tarama istekleri sırasında teslim edilir ve `descMetadata` DIDL yanıt özniteliğinden çıkarılabilir
 
 ```XML
 <ums-tags>
@@ -377,40 +377,40 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Niyet                      | Şarkıyı çalma listesinden kaldırır                                                                                                                                                     |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                                   |
+| POST BODY                  | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY örnek / açıklama | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY              | YOK                                                                                                                                                                                    |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                                   |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Bu, kimliği `123` olan şarkıyı `Pop` çalma listesinden kaldırır.
 
 #### create new playlists
 
-Playlist name should be provided without any path and without file extensions. 
+Çalma listesi adı herhangi bir yol ve dosya uzantısı olmadan sağlanmalıdır. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Niyet                      | Yönetilen çalma listesi klasöründe yeni çalma listeleri oluşturma                                                                                                              |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE               | POST                                                                                                                                                                           |
+| POST BODY                  | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">ÇALMALİSTESİ_ADI</span>`                                                      |
+| POST BODY örnek / açıklama | Modern                                                                                                                                                                         |
+| RESPONSE BODY              | YOK                                                                                                                                                                            |
+| Şu sürümden beri mevcut    | 11.0                                                                                                                                                                           |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
+curl -d "Modern" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
 This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
