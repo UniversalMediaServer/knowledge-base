@@ -320,7 +320,7 @@ Example:
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list list all available playlist.
+This call will list all available playlists.
 
 #### list server accessible playlists
 
