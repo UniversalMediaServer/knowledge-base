@@ -312,27 +312,27 @@ Mevcut çalma listelerini okur. Bu çalma listesi adları, sonraki çağrılarda
 curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-Bu çağrı, mevcut tüm çalma listelerini listeleyecek.
+Bu çağrı, tüm mevcut çalma listelerini listeleyecek.
 
 #### list server accessible playlists
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Bunların tümü UMS tarafından bilinen çalma listeleridir (veritabanı/önbellek etkin). Bu çalma listesi adları, sonraki çağrılarda şarkı eklemek veya kaldırmak için kullanılmak zorundadır. Çalma listesi kimliği, `objectId` `$DBID$PLAYLIST$` concat databaseId’ye göz atarak doğrudan çalma listesine gitmek için kullanılabilir.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
-| Available since       | dev branch                                                                                                                                               |
+| Niyet                   | Tüm desteklenen (`m3u`, `m3u8` ve `pls`) ve yapılandırılmış klasördeki mevcut çalma listelerini sunar                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| REQUEST TYPE            | GET                                                                                                                                                      |
+| RESPONSE BODY           | Çalma listesi adlarının JSON dizilimi                                                                                                                    |
+| RESPONSE BODY örnek     | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Şu sürümden beri mevcut | dev dalı                                                                                                                                                 |
 
-Example:
+Örnek:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Bu çağrı, UMS tarafından erişilebilen tüm mevcut çalma listelerini listeleyecek.
 
 #### adding songs to playlists
 
