@@ -312,7 +312,7 @@ Example:
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Tento požadavek bude zobrazovat všechny dostupné seznamy skladeb.
 
 #### list server accessible playlists
 
