@@ -7,25 +7,25 @@ Funkce "Plně přehrané" vám umožní sledovat soubory, které jste plně pře
 Tato funkce je ve výchozím nastavení povolena, takže pokud jste nic nezměnili, můžete ji použít. Pokud funkce nefunguje, zkontrolujte, zda tyto kroky nebyly vráceny:
 
 1. Na kartě **Navigační nastavení** vyberte zaškrtávací políčko **Povolit cache**. Toto je ve výchozím nastavení povoleno.
-2. Na kartě **Navigační nastavení** vyberte akci **Akce plně přehráno**. Zejména se ujistěte, že jste nevybrali **Nic**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+2. Na kartě **Navigační nastavení** vyberte akci **Akce plně přehráno**. Zejména se ujistěte, že jste nevybrali **Nic**. Ve výchozím nastavení je to **Označit média** , která překryjí ikonu náhledu a označí, že byla sledována.
+3. Na kartě **Sdílený obsah** najdete složku, kterou chcete sledovat, a vyberte zaškrtávací políčko **Sledovat přehrávání souborů**.
 
-## Marking files as fully played automatically
+## Označit soubory jako plně přehrané automaticky
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Po dokončení nastavení stačí pouze hrát 92% nebo více ze souboru.
 
-## Marking files as fully played manually
+## Označit soubory jako plně přehrané ručně
 
-To mark all files within a shared directory as fully played:
+Chcete-li označit všechny soubory ve sdíleném adresáři za plně přehrané:
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Na záložce **Sdílený obsah** klikněte pravým tlačítkem myši na adresář, který chcete označit jako plně přehraný, a pak klikněte **označit obsah plně přehraný**
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Otevřít GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Odstranění plně přehraného stavu / nepřerušované přehrávání
 
-To "unplay" a file, you can do one of the following options:
+Chcete-li soubor "odhrát", můžete provést jednu z následujících možností:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Přejmenovat soubor jakýmkoliv způsobem. Poté jej můžete vrátit na původní název, protože UMS jej vymaže z mezipaměti, když změníte název.
+- Přesunout soubor do jiného adresáře. Poté jej můžete vložit zpět do původního adresáře protože UMS vymaže záznam ze své mezipaměti při přesunutí souboru.
+- Pro "unplay" celý sdílený adresář na záložce **Sdílený obsah** Klepněte pravým tlačítkem myši na adresář a označte jej jako nepřehraný, a klepněte na tlačítko **Označit obsah nepřehraný**.
