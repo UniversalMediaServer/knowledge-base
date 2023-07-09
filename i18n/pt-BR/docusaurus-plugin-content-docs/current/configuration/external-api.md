@@ -69,78 +69,78 @@ Exemplo:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Descurtir uma música
 
 A música será descurtida
 
-| Intenção                        | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intenção                      | Descurtir uma música identificada pelo trackId do musicBrainz |
+| ----------------------------- | ------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>dislikesong`   |
+| POST BODY                     | `musicBrainz_trackID`                                         |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                          |
+| Disponível desde              | 10.20                                                         |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### É uma música curtida
 
-Check if song is liked.
+Checar se uma música foi curtida.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Intenção                      | Checar se uma música foi curtida identificada pelo trackId do musicBrainz                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                     | `musicBrainz_trackID`                                                                           |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY                 | `VERDADEIRO` ou `FALSO`                                                                         |
+| Disponível desde              | 10.20                                                                                           |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta chamada acrescenta o atributo curtido do álbum identificado pelo release-id do musicBrainz `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### Curtir um álbum
 
-Set album like state to true.
+Definir o estado de curtido de um álbum para verdadeiro.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Intenção                      | Curtir um álbum identificado pelo releaseId do musicBrainz |
+| ----------------------------- | ---------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>likealbum`  |
+| POST BODY                     | `musicBrainz_releaseID`                                    |
+| POST BODY exemplo / descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                       |
+| Disponível desde              | 10.20                                                      |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Descurtir um álbum
 
-Remove album like state.
+Remover o estado de curtido de um álbum.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intenção                      | Descurtir uma música identificada pelo releaseId do musicBrainz |
+| ----------------------------- | --------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>dislikealbum`    |
+| POST BODY                     | `musicBrainz_releaseID`                                         |
+| POST BODY exemplo / descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                            |
+| Disponível desde              | 10.20                                                           |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta chamada removeu o atributo curtido do álbum identificado pelo release-id do musicBrainz `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
 #### is album liked
 
