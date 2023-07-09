@@ -1,69 +1,69 @@
-# External API
+# API Externa
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+A API externa permite que programas acessem ou acionem as funcionalidades do UMS com uma chamada HTTP.
 
-## How to enable the external API
+## Como ativar a API Externa
 
-Edit UMS.conf and configure an api_key like this
+Edite o arquivo UMS.conf e configure uma "api_key" assim:
 
-`api_key = secret_password`
+`api_key = senha_secreta`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+A _`senha_secreta`_ deve conter um número mínimo de 12 caracteres.
 
-## API usage
+## Uso da API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Se a API Externa estiver habilitada, a API estará acessível com uma chamada POST para o endereço /api/COMMAND
 
-### Folder Scanning
+### Escaneamento das pastas
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intenção                        | Escanear novamente a biblioteca de mídia completa |
+| ------------------------------- | ------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`                       |
+| POST BODY                       | NONE                                              |
+| POST BODY example / description | Este comando não necessita de conteúdo no BODY    |
+| Disponível desde                | 10.4.2                                            |
 
-:::info
-This can be slow for large libraries
+:::Informação
+Este comando pode ser bem lento para bibliotecas de mídia grandes
 :::
 
-Example:
+Exemplo:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: senha_secreta" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intenção                      | Escanear novamente uma subárvore parcial do sistema de arquivos.                                               |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                           | `/api/folderscanner/rescanFileOrFolder`                                                                        |
+| POST BODY                     | CAMINHO_PARA_ESCANEAR                                                                                        |
+| POST BODY exemplo / descrição | exemplo: "/music/pop/Madonna". O caminho deve ser a raiz da pasta ou uma subpasta de um caminho compartilhado. |
+| Disponível desde              | 10.4.2                                                                                                         |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "CAMINHO_PARA_ESCANEAR" -w "%{http_code}\n" -H "api-key: senha_secreta" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Curtindo Músicas (álbuns e músicas)
 
 #### like song
 
-Song will be marked as liked.
+A música será marcada como curtida.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Intenção                      | Curtir uma música identificada por um trackId do musicBrainz |
+| ----------------------------- | ------------------------------------------------------------ |
+| URI                           | `<span class="s1">/api/like/likesong</span>`     |
+| POST BODY                     | `musicBrainz_trackID`                                        |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                         |
+| Disponível desde              | 10.20                                                        |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
@@ -71,9 +71,9 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike song
 
-Song will not be disliked
+A música será descurtida
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
+| Intenção                        | Dislike a song identified by musicBrainz trackId            |
 | ------------------------------- | ----------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span>dislikesong` |
 | POST BODY                       | `musicBrainz_trackID`                                       |
