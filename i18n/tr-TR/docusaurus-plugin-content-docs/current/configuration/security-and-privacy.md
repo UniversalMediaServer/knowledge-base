@@ -1,10 +1,10 @@
 # Güvenlik ve Gizlilik
 
-UMS bir DLNA sunucusudur. Artık DLNA, gerçek bir "kullanıcı" kavramına sahip olmayan bir protokoldür. Örneğin, TV’nizde "oturum açmak" zorunda değilsiniz. Bu, tüm işleyicilerin aynı verilere erişmesine yol açar. İstediğiniz bu olmayabilir. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS bir DLNA sunucusudur. Artık DLNA, gerçek bir "kullanıcı" kavramına sahip olmayan bir protokoldür. Örneğin, TV’nizde "oturum açmak" zorunda değilsiniz. Bu, tüm işleyicilerin aynı verilere erişmesine yol açar. İstediğiniz bu olmayabilir. Örneğin, eğer çocuklara_güvenli ve çocuklara_güvenli_değil olmak üzere iki klasörünüz varsa, çocuk odasındaki işleyicileri sadece çocuklara_güvenli klasörüne erişim sağlayacak şekilde kısıtlamak isteyebilirsiniz. UMS, erişimi denetlemek için bir dizi yöntem sağlar. 
 
-## IP filter
+## IP süzgeci
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+IP süzme, UMS’nin sağladığı en kısıtlayıcı yöntemdir. Kullanmak için bağlanmasına izin verilen IP adreslerinin virgülle ayrılmış bir listesini sağlarsınız. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
 
 Example to allow only 2 addresses
 
