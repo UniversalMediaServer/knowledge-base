@@ -14,7 +14,7 @@ ip_filter = 192.168.1.4, 192.168.1.32
 
 ## Seznam povolení
 
-Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  The render name should be with spaces changed to _ (underscore) instead. Možnost je jedna z
+Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  Název přehrávače by měl být namísto toho s mezerami změněn na _ (podtržítko). Možnost je jedna z
 
 - folders
 - vfolders

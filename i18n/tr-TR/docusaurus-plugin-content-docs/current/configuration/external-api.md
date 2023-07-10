@@ -413,11 +413,11 @@ Bu, kimliği `123` olan şarkıyı `Pop` çalma listesinden kaldırır.
 curl -d "Modern" -w "\n%{http_code}\n" -H "api-key: gizli_parola" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Bu çağrı, yönetilen çalma listesi klasöründe `Contemporary.m3u8` adlı yeni bir çalma listesi dosyası oluşturur.
 
-## Java code example
+## Java kodu örneği
 
-This code snippet shows how to use the API with okhttp3 library.
+Bu kod parçacığı, API’nin okhttp3 kütüphanesi ile nasıl kullanılacağını gösterir.
 
 ```Java
 import nextcp.dto.Config;
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP dönüş kodları
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | TAMAM | | 204 | hiçbir içeriğin döndürülmemesi gerekiyorsa başarılı | | 401 | geçersiz API anahtarı | | 404 | istenen nesne bulunamadı | | 417 | API isteği başarısız oldu | | 503 | harici api etkin değil. UMS.conf dosyasında 12 veya daha fazla karakter uzunluğunda bir `api_anahtarı` ayarlayın |
