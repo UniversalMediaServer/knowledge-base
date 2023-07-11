@@ -56,68 +56,68 @@ curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: salainen_salasana" -X PO
 
 Kappale merkitään tykätyksi.
 
-| Tarkoitus                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Tarkoitus                     | Tykkää kappaleesta, joka on tunnistettu musicBrainz trackId:n avulla |
+| ----------------------------- | -------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/likesong</span>`             |
+| POST BODY                     | `musicBrainz_trackID`                                                |
+| POST BODY esimerkki / selitys | b8695995-45e9-405d-b4aa-e50e8760fe25                                 |
+| Saatavilla alkaen             | 10.20                                                                |
 
-Example:
+Esimerkki:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### ole tykkäämättä kappaleesta
 
-Song will not be disliked
+Kappaleesta ei tykätä
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Tarkoitus                     | Ole tykkäämättä kappaleesta, joka on tunnistettu musicBrainz trackId:n avulla |
+| ----------------------------- | ----------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>dislikesong`                   |
+| POST BODY                     | `musicBrainz_trackID`                                                         |
+| POST BODY esimerkki / selitys | b8695995-45e9-405d-b4aa-e50e8760fe25                                          |
+| Saatavilla alkaen             | 10.20                                                                         |
 
-Example:
+Esimerkki:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### onko kappaleesta tykätty
 
-Check if song is liked.
+Tarkista onko kappaleesta tykätty
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Tarkoitus                     | Tarkista onko kappaleesta, joka on tunnistettu musicBrainz trackId:n avulla, tykätty            |
+| ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                     | `musicBrainz_trackID`                                                                           |
+| POST BODY esimerkki / selitys | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| VASTUUSKEHYS                  | `TRUE` tai `FALSE`                                                                              |
+| Saatavilla alkaen             | 10.20                                                                                           |
 
-Example:
+Esimerkki:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Tämä kutsu lisää tykkään attribuutin albumiin, joka on yksilöity musicBrainzin release-id:llä `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### tykkää albumista
 
-Set album like state to true.
+Aseta albumin tykätty tila todeksi.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Tarkoitus                     | Tykkää albumista, joka on tunnistettu musicBrainz releaseID:n avulla |
+| ----------------------------- | -------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>likealbum`            |
+| POST BODY                     | `musicBrainz_releaseID`                                              |
+| POST BODY esimerkki / selitys | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                 |
+| Saatavilla alkaen             | 10.20                                                                |
 
-Example:
+Esimerkki:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
