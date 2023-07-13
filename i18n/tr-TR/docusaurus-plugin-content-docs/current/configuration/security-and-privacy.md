@@ -4,9 +4,9 @@ UMS bir DLNA sunucusudur. Artık DLNA, gerçek bir "kullanıcı" kavramına sahi
 
 ## IP süzgeci
 
-IP süzme, UMS’nin sağladığı en kısıtlayıcı yöntemdir. Kullanmak için bağlanmasına izin verilen IP adreslerinin virgülle ayrılmış bir listesini sağlarsınız. Adresi listedeki girişlerle eşleşmeyen bir işleme, trafiğinin yoksayılmasını sağlayacak (UMS ile çok erken). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+IP süzme, UMS’nin sağladığı en kısıtlayıcı yöntemdir. Kullanmak için bağlanmasına izin verilen IP adreslerinin virgülle ayrılmış bir listesini sağlarsınız. Adresi listedeki girişlerle eşleşmeyen bir işleme, basitçe trafiğinin yoksayılmasını sağlayacak (UMS ile çok erkenden). HİÇBİR klasöre erişemeyecektir (bir kök klasöri bile görmeyecek). Çocukları tamamen engellemek için bu yöntemi kullanın. Daha fazla ayrıntı için UMS.conf dosyasında ip_filter açıklamasına bakın.
 
-Example to allow only 2 addresses
+Sadece 2 adrese izin verme örneği
 
 ```
 ip_filter = 192.168.1.4, 192.168.1.32
