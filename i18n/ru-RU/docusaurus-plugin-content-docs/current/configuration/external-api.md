@@ -312,7 +312,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+В этом вызове будут перечислены все доступные списки воспроизведения.
 
 #### список доступных на сервере плейлистов
 
