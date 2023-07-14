@@ -12,24 +12,24 @@ A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
 ## Utilização da API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Se a API externa estiver ativada, a API estará acessível através de um pedido POST para /api/COMMAND
 
-### Folder Scanning
+### Verificação de Pastas
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intenção                      | Verificar toda a biblioteca.                |
+| ----------------------------- | ------------------------------------------- |
+| URI                           | `/api/folderscanner/rescan`                 |
+| POST BODY                     | NONE                                        |
+| POST BODY examplo / descrição | Este comando não precisa de corpo no pedido |
+| Disponível desde              | 10.4.2                                      |
 
 :::info
-This can be slow for large libraries
+Isto pode ser lento para bibliotecas grandes
 :::
 
-Example:
+Exemplo:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,33 +37,33 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intenção                      | Verificar parte do sistema de ficheiros.                                                           |
+| ----------------------------- | -------------------------------------------------------------------------------------------------- |
+| URI                           | `/api/folderscanner/rescanFileOrFolder`                                                            |
+| POST BODY                     | PATH_TO_SCAN                                                                                     |
+| POST BODY examplo / descrição | exemplo: "/music/pop/Madonna". O caminho deve ser a raiz ou uma subpasta de um caminho partilhado. |
+| Disponível desde              | 10.4.2                                                                                             |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Gostos em Músicas (Álbuns e Canções)
 
 #### like song
 
-Song will be marked as liked.
+A música será marcada com Gosto.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Intenção                      | Colocar gosto numa música identificada pelo trackId da musicBrainz. |
+| ----------------------------- | ------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/likesong</span>`            |
+| POST BODY                     | `musicBrainz_trackID`                                               |
+| POST BODY examplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                |
+| Disponível desde              | 10.20                                                               |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
@@ -71,14 +71,14 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### dislike song
 
-Song will not be disliked
+Música deixará de estar marcada com Gosto.
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intenção                      | Retirar gosto numa música identificada pelo trackId da musicBrainz. |
+| ----------------------------- | ------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>dislikesong`         |
+| POST BODY                     | `musicBrainz_trackID`                                               |
+| POST BODY examplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                |
+| Available since               | 10.20                                                               |
 
 Example:
 
