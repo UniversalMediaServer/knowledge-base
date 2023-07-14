@@ -1,16 +1,16 @@
-# External API
+# API Externa
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+A API externa permite que programas acedam ou acionem funcionalidades UMS com um pedido HTTP.
 
-## How to enable the external API
+## Como ativar a API externa
 
-Edit UMS.conf and configure an api_key like this
+Editar UMS.conf e configurar uma api_key como esta
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
-## API usage
+## Utilização da API
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
@@ -306,13 +306,13 @@ Read available playlists. These playlist names have to be used for subsequent ca
 | RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
 | Available since       | 11.0                                                                                                                                                                            |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Este comando listará todas as listas de reprodução disponíveis.
 
 #### list server accessible playlists
 
