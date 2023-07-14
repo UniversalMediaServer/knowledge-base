@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Introdução
 
-This website contains the official documentation for using UMS.
+Este site contém a documentação oficial para utilização do UMS.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Está dividido em 3 seções principais: Configuração, Guias e Instalação.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Se está à procura de informações específicas e não as encontrou, por favor, avise no GitHub para que possamos adicioná-las.
