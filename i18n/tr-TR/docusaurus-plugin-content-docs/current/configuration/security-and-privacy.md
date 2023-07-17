@@ -12,7 +12,7 @@ Sadece 2 adrese izin verme örneği
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## İzinli listesi
 
 Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
 
