@@ -12,35 +12,35 @@ Sadece 2 adrese izin verme örneği
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## İzinli listesi
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+İzinli listesi oluşturma, temelde kök klasörü işleme başına özelleştirmenize izin veren bir yöntemdir. Bu, farklı klasör kümelerini farklı işleyicilerle paylaşılmasını mümkün kılar. Şu şekilde çalışır: UMS.conf dosyanız (şu anda GKA seçeneği yoktur) için etiketin ya bir IP adresi ya da bir işleme adı olduğu tag.option = value biçimi satırlarını ekleyin. İşleme adındaki boşluklar bunun yerine _ (alt çizgi) olarak değiştirilmelidir. Seçenek şunlardan biridir:
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+Değer, seçeneğe bağlıdır. Son 4, boolean değeridir. Klasörler ve sanal klasörler için bir klasör listesidir.
 
-Example
+Örnek
 
 ```
 folders = 
 hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
+192.168.1.1.folders = c:\\çocuk_güvenliği
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Bu, 192.168.1.1 IP adresi için olacak:
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- c:\çocuk_güvenliği klasörünü paylaşın
+- Sunucu Ayarları klasörünü gizleyin
+- Son çalınanlar listesini gizleyin
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Diğer tüm işleyiciler "genel" ayarları, yani tüm klasörleri görecek ve Sunucu Ayarlarını kullanacaktır.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Eğer bir seçenek mevcut değilse, "genel" yapılandırmaya geri dönecek veya bu varsayılan değerde mevcut değilse.
 
 ## UMS.deny
 
