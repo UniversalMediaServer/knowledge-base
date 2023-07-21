@@ -44,23 +44,23 @@ Eğer bir seçenek mevcut değilse, "genel" yapılandırmaya geri dönecek veya 
 
 ## UMS.deny
 
-Beyaz liste sadece kök klasör görünümünü değiştirebilir. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+Beyaz liste sadece kök klasör görünümünü değiştirebilir. Ancak, karışık bir şeyiniz varsa (10 klasörünüz var, ancak sadece biri çocuklar için sınırlandırılmalıdır). Tek tek klasörlere (veya ortama) erişimi denetlemek için UMS.deny dosyasını kullanabilirsiniz. Aşağıdaki gibi çalışır: UMS.conf dosyanızla aynı dizine UMS.deny adlı bir dosya ekleyin ve bu dosyanın içine etiket ekleyin.[name|file|sys]=regex Eklenmesi gereken her klasör/dosya için UMS, düzenli ifadeyi klasör adına veya dosya adına uygulayacak ve eğer düzenli ifade eşleşirse klasör/dosya EKLENMEYECEKTİR. Örneğin:
 ```
 192.168.1.1.name=.*private.*
 ```
 
-will remove all folders/files which has the word private in it.
+içinde private kelimesi bulunan tüm klasörleri/dosyaları kaldıracak.
 ```
 192.168.1.1.file=c:\\tst.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+dosya yolunda vb. içinde c:\tst bulunan tüm dosyaları kaldıracak.
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+Eğer "UMS.deny" dosyasında herhangi bir kural ayarlanmamışsa, dosyalar/klasörler eklenecektir.
 
-Hiding folders
+Klasörleri gizleme
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Sanal klasörlerin görünürlüğünü denetleyin. Bu ayarlar, UMS.conf dosyasında bulunabilir. Göz atarken bazı klasörleri gizlemek için değerlerini true olarak ayarlayın veya gelişmiş GKA kipinden Gezinti/Paylaşım Ayarları sekmesinde bunları işaretleyin.
 
 ```
 hide_recently_played_folder =true
