@@ -44,7 +44,7 @@ Eğer bir seçenek mevcut değilse, "genel" yapılandırmaya geri dönecek veya 
 
 ## UMS.deny
 
-Beyaz liste sadece kök klasör görünümünü değiştirebilir. Ancak, karışık bir şeyiniz varsa (10 klasörünüz var, ancak sadece biri çocuklar için sınırlandırılmalıdır). Tek tek klasörlere (veya ortama) erişimi denetlemek için UMS.deny dosyasını kullanabilirsiniz. Aşağıdaki gibi çalışır: UMS.conf dosyanızla aynı dizine UMS.deny adlı bir dosya ekleyin ve bu dosyanın içine etiket ekleyin.[name|file|sys]=regex Eklenmesi gereken her klasör/dosya için UMS, düzenli ifadeyi klasör adına veya dosya adına uygulayacak ve eğer düzenli ifade eşleşirse klasör/dosya EKLENMEYECEKTİR. Örneğin:
+Beyaz liste sadece kök klasör görünümünü değiştirebilir. Ancak, karışık bir şeyiniz varsa (10 klasörünüz var, ancak sadece biri çocuklar için sınırlandırılmalıdır). Tek tek klasörlere (veya ortama) erişimi denetlemek için UMS.deny dosyasını kullanabilirsiniz. Şu şekilde çalışır: UMS.conf dosyanızla aynı dizine UMS.deny adlı bir dosya ekleyin ve bu dosyanın içine etiket ekleyin.[name|file|sys]=regex Eklenmesi gereken her klasör/dosya için UMS, düzenli ifadeyi klasör adına veya dosya adına uygulayacak ve eğer düzenli ifade eşleşirse klasör/dosya EKLENMEYECEKTİR. Örneğin:
 ```
 192.168.1.1.name=.*private.*
 ```
@@ -76,12 +76,12 @@ Web klasörünü gizlemek için gelişmiş GKA kipinde Genel Yapılandırma sekm
 
 ## PIN kodu
 
-Yukarıdaki yöntemlerin tümü, çeşitli işleyicilerden erişimi kısıtlar. Ancak, bir klasörü görmesine izin verilen bir işlemeye erişiminiz varsa, bu yöntemler size yardımcı olmayacaktır (eğer çocukların oturma odasındaki tüm ortama erişimi olan televizyona erişimi varsa, o zaman bu ortama erişimleri vardır). PIN kodu bu sorunu çözer. Klasörleri/ortamı, işlemeden girmek zorunda olduğunuz bir PIN kodunun arkasına gizlemenizi sağlar. Varsayılan olarak giriş, tıpkı bir ATM kodu gibi bir rakam (0-9) dizisidir. İşleyiciden yazmak zorlaştığı için rakam tabanlı kodlar kullanmanızı şiddetle tavsiye ederim. Ama biraz fazla paranoyaksanız, harf ekleyebilirsiniz. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Yukarıdaki yöntemlerin tümü, çeşitli işleyicilerden erişimi kısıtlar. Ancak, bir klasörü görmesine izin verilen bir işlemeye erişiminiz varsa, bu yöntemler size yardımcı olmayacaktır (eğer çocukların oturma odasındaki tüm ortama erişimi olan televizyona erişimi varsa, o zaman bu ortama erişimleri vardır). PIN kodu bu sorunu çözer. Klasörleri/ortamı, işlemeden girmek zorunda olduğunuz bir PIN kodunun arkasına gizlemenizi sağlar. Varsayılan olarak giriş, tıpkı bir ATM kodu gibi bir rakam (0-9) dizisidir. İşleyiciden yazmak zorlaştığı için rakam tabanlı kodlar kullanmanızı şiddetle tavsiye ederim. Ama biraz fazla paranoyaksanız, harf ekleyebilirsiniz. Şu şekilde çalışır: UMS.code adlı bir dosyayı UMS.conf dosyanızla aynı dizine ekleyin ve regexp "UMS.deny" dosyasındaki gibi düzenli bir ifade olacağından ve code ise klasöre/ortama erişim vereceği kod olacağından bu dosyaya regexp,code parametrelerini ekleyin. Kodda uzunluk düzenlemesi yoktur. Örneğin:
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Klasör/ortam "private" kelimesini içeriyorsa ve doğru kod 1234 ise sizi bir kod girmeye zorlayacak. The code then stays valid for 4 hours (if you don't change that time).
 
 ## Custom Device Configuration
 
