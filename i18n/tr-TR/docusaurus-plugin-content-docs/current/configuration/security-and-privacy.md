@@ -81,25 +81,25 @@ Yukarıdaki yöntemlerin tümü, çeşitli işleyicilerden erişimi kısıtlar. 
 .*private.*,1234
 ```
 
-Klasör/ortam "private" kelimesini içeriyorsa ve doğru kod 1234 ise sizi bir kod girmeye zorlayacak. The code then stays valid for 4 hours (if you don't change that time).
+Klasör/ortam "private" kelimesini içeriyorsa ve doğru kod 1234 ise sizi bir kod girmeye zorlayacak. Kod daha sonra 4 saat boyunca geçerli kalır (eğer bu süreyi değiştirmezseniz).
 
-## Custom Device Configuration
+## Özel Cihaz Yapılandırması
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Herhangi bir yapılandırma özelliği, varsayılan UMS ayarlarını geçersiz kılmak için özel bir cihaz yapılandırması oluşturularak cihaz bazında da ayarlanabilir (tam ayrıntı için Özel Cihaz Yapılandırması Oluşturma bölümüne bakın).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Örneğin, çocukların TV’sini özelleştirmek için:
+- İşleyicinin GKA açılır panelinin sağ üst kısmındaki 'Bu cihazı özelleştir' düğmesine tıklayın ve yapılandırma için bir ad belirtin.
+- Açılan yeni conf dosyasında, TV için geçersiz kılmak istediğiniz herhangi bir ayarı ekleyin, örn. sunucu adını değiştirmek ve farklı klasörler belirtmek için:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Özel Cihaz profili
+# Tüm olası işleyici seçeneklerinin açıklamaları için DefaultRenderer.conf dosyasına
+#  ve program seçenekleri için UMS.conf dosyasına bakın.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Bu dosyadaki seçenekler, aşağıda listelenen belirli Sony Bravia EX cihaz(ları)ı için varsayılan ayarları geçersiz kılar.
+# Cihazları, birden fazlaysa virgülle ayırarak uuid’ye (veya uuid yoksa adrese) göre belirtin.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
-server_name = Kid Stuff
-folders = c:\kids\stuff, c:\kids\otherstuff
+server_name = Çocuk Şeyleri
+folders = c:\cocuklar\seyler, c:\cocuklar\digerseyler
 ```
