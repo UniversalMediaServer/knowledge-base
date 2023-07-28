@@ -1,8 +1,8 @@
-# How to play media
+# Ortam nasıl oynatılır
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Bu makale, UMS aracılığıyla görüntü, ses ve resimleri oynatmanın 4 ana yolunu açıklayacaktır.
 
-## 1: Play from a renderer interface
+## 1: Bir işleyici arayüzünden oynatma
 
 When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
 
