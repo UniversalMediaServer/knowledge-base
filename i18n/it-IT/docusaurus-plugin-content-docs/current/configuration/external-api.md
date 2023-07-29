@@ -292,51 +292,51 @@ Modificare UMS.conf per configurare una cartella della playlist impostando 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-per abilitare questo servizio. Per impostazione predefinita questo servizio è disabilitato. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+per abilitare questo servizio. Per impostazione predefinita questo servizio è disabilitato. Il percorso della cartella della playlist dovrebbe essere situato sotto un percorso di una cartella condivisa `<span class="s1">folders</span>` per la playlist modificata da questa API per essere visibile da UMS.
 
 #### list all playlists
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Legge le playlist disponibili. Questi nomi di playlist devono essere usati per le chiamate successive per aggiungere o rimuovere brani.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
+| Scopo                 | Fornisce tutti i supportati (`m3u`, `m3u8` e `pls`) e le playlist disponibili per la cartella configurata. Oltre al nome della playlist, la playlist `playlistId` è             |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
+| RESPONSE BODY         | Array JSON dei nomi delle playlist                                                                                                                                              |
 | RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Disponibile da        | 11.0                                                                                                                                                                            |
 
-Example:
+Esempio:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Questa chiamata elencherà tutte le playlist disponibili.
 
 #### list server accessible playlists
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Queste sono tutte playlist note a UMS (database/cache abilitato). Questi nomi di playlist devono essere usati per le chiamate successive per aggiungere o rimuovere brani. L'ID della playlist può essere utilizzato per navigare direttamente alla playlist sfogliando l' `objectId` `$DBID$PLAYLIST$` con concatenato databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
+| Intention             | Fornisce tutti i supportati (`m3u`, `m3u8` e `pls`) e le playlist disponibili per la cartella configurata.                                               |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
+| RESPONSE BODY         | Array JSON dei nomi delle playlist                                                                                                                       |
 | RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
-| Available since       | dev branch                                                                                                                                               |
+| Disponibile da        | dev branch                                                                                                                                               |
 
-Example:
+Esempio:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Questa chiamata elencherà tutte le playlist disponibili accessibili da UMS.
 
 #### adding songs to playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+L'`audiotrackid` è restituito durante la richiesta di browse UPnP e può essere estratto dall'attributo `descMetadata` della risposta DIDL
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
+| Scopo                           | Aggiunge brano alla playlist                                                                                                                                                      |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
 | REQUEST TYPE                    | POST                                                                                                                                                                              |
 | POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
 | POST BODY example / description | 123/Pop                                                                                                                                                                           |
 | RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Disponibile da                  | 11.0                                                                                                                                                                              |
 
-Example:
+Esempio:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Aggiunge la canzone con l'ID `123` alla playlist `Pop`.
 
 #### removing songs from playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+L'`audiotrackid` è restituito durante la richiesta di browse UPnP e può essere estratto dall'attributo `descMetadata` della risposta DIDL
 
 ```XML
 <ums-tags>
@@ -377,47 +377,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
+| Scopo                           | Rimuove brano dalla playlist                                                                                                                                                           |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
 | REQUEST TYPE                    | POST                                                                                                                                                                                   |
 | POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
 | POST BODY example / description | 123/Pop                                                                                                                                                                                |
 | RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Disponibile da                  | 11.0                                                                                                                                                                                   |
 
-Example:
+Esempio:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Rimuove la canzone con l'ID `123` dalla playlist `Pop`.
 
 #### create new playlists
 
-Playlist name should be provided without any path and without file extensions. 
+Il nome della playlist deve essere fornito senza alcun percorso e senza estensioni di file. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
+| Scopo                           | Creazione di nuove playlist nella cartella delle playlist gestite                                                                                                              |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
 | REQUEST TYPE                    | POST                                                                                                                                                                           |
 | POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
 | POST BODY example / description | Contemporary                                                                                                                                                                   |
 | RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Disponibile da                  | 11.0                                                                                                                                                                           |
 
-Example:
+Esempio:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Questa chiamata crea un nuovo file di playlist chiamato `Contemporary.m3u8` nella cartella di playlist gestita.
 
-## Java code example
+## Esempio di codice Java
 
-This code snippet shows how to use the API with okhttp3 library.
+Questo pezzo di codice mostra come usare l'API con la libreria okhttp3.
 
 ```Java
 import nextcp.dto.Config;
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## Codici di stato HTTP
 
 | 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
