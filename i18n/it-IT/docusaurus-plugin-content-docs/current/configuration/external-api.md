@@ -288,11 +288,11 @@ Questa chiamata ripristina il file di backup.
 
 #### enable service
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Modificare UMS.conf per configurare una cartella della playlist impostando 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+per abilitare questo servizio. Per impostazione predefinita questo servizio è disabilitato. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
 
 #### list all playlists
 
