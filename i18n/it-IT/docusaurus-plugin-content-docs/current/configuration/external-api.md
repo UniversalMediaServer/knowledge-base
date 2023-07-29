@@ -1,35 +1,35 @@
 # External API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Le API esterne consentono ai programmi di accedere o attivare funzionalità di UMS con chiamate HTTP.
 
-## How to enable the external API
+## Come abilitare le API esterne
 
-Edit UMS.conf and configure an api_key like this
+Modificare UMS.conf e configurare un api_key come:
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+La _`secret_password`_ deve avere un minimo di 12 caratteri.
 
-## API usage
+## Utilizzo API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Se l'API esterna è abilitata, l'API è accessibile con una chiamata POST a /api/COMANDO
 
-### Folder Scanning
+### Scansione cartelle
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Scopo                           | Riscansiona la libreria completa                        |
+| ------------------------------- | ------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`                             |
+| POST BODY                       | NONE                                                    |
+| POST BODY example / description | Questo comando non ha bisogno di contenuti per il corpo |
+| Available since                 | 10.4.2                                                  |
 
 :::info
 This can be slow for large libraries
 :::
 
-Example:
+Esempio:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,7 +37,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
+| Scopo                           | Riscansiona un sottoalbero parziale del file system.                                  |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
