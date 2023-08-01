@@ -12,9 +12,9 @@ Bunun uygulanması, işleyiciye göre büyük ölçüde değişir, ancak temel i
 
 UMS arayüzünün kendisi, UPnP özelliğini destekliyorlarsa ortamı işleyicilere "yolla" yeteneğine sahiptir. Rol dağıtımıyla benzer bir kavramdır.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
+1. UMS kullanıcı arayüzünü açın ve ortamı yollamak istediğiniz işleyiciyi belirleyin. Bu durumda bu Panasonic VIERA VT60 Serisi TV’dir.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
+2. Denetim panelini açmak için işleyici resmine tıklayın  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
 3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
    ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
