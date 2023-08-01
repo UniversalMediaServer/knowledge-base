@@ -8,9 +8,9 @@ Bu makale, UMS aracılığıyla görüntü, ses ve resimleri oynatmanın 4 ana y
 
 Bunun uygulanması, işleyiciye göre büyük ölçüde değişir, ancak temel işlevsellik aynıdır; seçtiğiniz ortama gidin ve oynatmak için seçin.
 
-## 2: Push from the UMS interface to a renderer
+## 2: UMS arayüzünden bir işleyiciye yollayın
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+UMS arayüzünün kendisi, UPnP özelliğini destekliyorlarsa ortamı işleyicilere "yolla" yeteneğine sahiptir. Rol dağıtımıyla benzer bir kavramdır.
 
 1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
