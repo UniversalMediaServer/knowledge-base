@@ -6,7 +6,7 @@ Bu makale, UMS aracılığıyla görüntü, ses ve resimleri oynatmanın 4 ana y
 
 İşleyiciniz UMS’ye DLNA/UPnP aracılığıyla bağlandığında, işleyiciye bağlı olarak sıkça "Ortam Sunucuları" veya benzeri bir menüde görüntülenecektir. Oradan UMS’ye girebilir ve erişmek istediğiniz ortama göz atabilirsiniz.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Bunun uygulanması, işleyiciye göre büyük ölçüde değişir, ancak temel işlevsellik aynıdır; seçtiğiniz ortama gidin ve oynatmak için seçin.
 
 ## 2: Push from the UMS interface to a renderer
 
