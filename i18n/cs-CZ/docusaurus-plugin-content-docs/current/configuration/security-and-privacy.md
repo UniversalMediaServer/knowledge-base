@@ -56,11 +56,11 @@ odstraní všechny složky/soubory, které obsahují slovo "private"
 
 odstraní všechny soubory, které mají "c:\tst" ve svém názvu své atd.
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+Pokud nejsou v souboru "UMS.deny" nastavena žádná pravidlo, budou přidány soubory/složky.
 
-Hiding folders
+Skrytí složek
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Ovládá viditelnost virtuálních složek. Tato nastavení naleznete v souboru UMS.conf. Pro skrytí některých složek při prohlížení stačí nastavit jejich hodnotu na hodnotu true, nebo je zaškrtněte v záložce Navigace/Nastavení sdílení v pokročilém režimu GUI.
 
 ```
 hide_recently_played_folder =true
