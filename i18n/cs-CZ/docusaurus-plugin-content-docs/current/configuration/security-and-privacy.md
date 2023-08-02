@@ -44,17 +44,17 @@ Pokud není tato možnost k dispozici, bude použita k nastavení "globální", 
 
 ## UMS.deny
 
-Seznam povolených může měnit pouze vzhled kořenové složky. Ale pokud máte smíšené věci (máte 10 složek, ale pouze jedna by měla být omezena na děti). Pro kontrolu přístupu k jednotlivým složkám (nebo médiím) můžete použít UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+Seznam povolených může měnit pouze vzhled kořenové složky. Ale pokud máte smíšené věci (máte 10 složek, ale pouze jedna by měla být omezena na děti). Pro kontrolu přístupu k jednotlivým složkám (nebo médiím) můžete použít UMS.deny. Funguje následovně: Přidejte soubor s názvem UMS.deny do stejného adresáře jako soubor UMS.conf a uvnitř tohoto souboru přidejte tag.[name|file|sys]=regex. Pro každou složku/soubor, který by měl být přidán, UMS použije regulární výraz na název složky nebo název souboru a pokud regulární výraz odpovídá složce/souboru NEBUDE přidán. Například:
 ```
 192.168.1.1.name=.*private.*
 ```
 
-will remove all folders/files which has the word private in it.
+odstraní všechny složky/soubory, které obsahují slovo "private"
 ```
 192.168.1.1.file=c:\\tst.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+odstraní všechny soubory, které mají "c:\tst" ve svém názvu své atd.
 
 If no rule are set in the "UMS.deny" file, the files/folders will be added.
 
