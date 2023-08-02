@@ -63,13 +63,13 @@ Skladba bude označena jako „oblíbená“.
 | Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
 | Dostupné od               | 10.20                                                    |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### nelíbí se píseň
 
 Song will not be disliked
 
