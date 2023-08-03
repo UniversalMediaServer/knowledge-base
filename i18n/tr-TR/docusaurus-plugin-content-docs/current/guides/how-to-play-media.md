@@ -1,26 +1,26 @@
-# How to play media
+# Ortam nasıl oynatılır
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Bu makale, UMS aracılığıyla görüntü, ses ve resimleri oynatmanın 4 ana yolunu açıklayacaktır.
 
-## 1: Play from a renderer interface
+## 1: Bir işleyici arayüzünden oynatın
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+İşleyiciniz UMS’ye DLNA/UPnP aracılığıyla bağlandığında, işleyiciye bağlı olarak sıkça "Ortam Sunucuları" veya benzeri bir menüde görüntülenecektir. Oradan UMS’ye girebilir ve erişmek istediğiniz ortama göz atabilirsiniz.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Bunun uygulanması, işleyiciye göre büyük ölçüde değişir, ancak temel işlevsellik aynıdır; seçtiğiniz ortama gidin ve oynatmak için seçin.
 
-## 2: Push from the UMS interface to a renderer
+## 2: UMS arayüzünden bir işleyiciye yollayın
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+UMS arayüzünün kendisi, UPnP özelliğini destekliyorlarsa ortamı işleyicilere "yolla" yeteneğine sahiptir. Rol dağıtımıyla benzer bir kavramdır.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
+1. UMS kullanıcı arayüzünü açın ve ortamı yollamak istediğiniz işleyiciyi belirleyin. Bu durumda bu Panasonic VIERA VT60 Serisi TV’dir.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
+2. Denetim panelini açmak için işleyici resmine tıklayın  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
+3. Sağ alt kısımdaki klasör simgesine tıklayarak yollamak istediğiniz dosyayı seçin ve sol alt kısım doldurulacaktır. Eğer bu pencerede oynatıcı denetimlerini görmüyorsanız, işleyiciniz bu işlevselliği desteklemiyor demektir. İşleyiciniz için destek eklemiş olabileceklerinden, işleyicinize yönelik donanım yazılımı/yazılım güncellemelerini gözden geçirdiğinizden emin olun.  
    ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+4. Artık, ya giriş kutusunun hemen sağındaki artı simgesine tıklayarak bir oynatma listesi oluşturabilir ya da giriş kutusunun ortasının hemen üzerindeki oynat simgesine tıklayarak, işleyicinizde oynatmaya başlatabileceği dosyayı işleyicinize yollayabilirsiniz.
 
-## 3: Play on the web interface
+## 3: Web arayüzünde oynatın
 
 The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
 
