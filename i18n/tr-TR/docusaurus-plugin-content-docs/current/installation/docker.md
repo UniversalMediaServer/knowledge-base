@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Bu adımlardan bazıları kurulumunuza uygulanmayabilir.  Ne yaptıklarını anlayın ve gerekirse yoksayın ya da özelleştirin.
 
-## Fedora Linux Preparation
+## Fedora Linux Hazırlığı
 
-For operating system support and service packages.
+İşletim sistemi desteği ve hizmet paketleri için.
 
 ```
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
@@ -12,7 +12,7 @@ sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Yeniden oturum açın veya makineyi yeniden başlatın.
 
 ```
 sudo systemctl start docker;
@@ -22,17 +22,17 @@ sudo chown core:docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+Anamakineye depolamayı bağlayın ve bu dizine bağlantılayın, muhtemelen salt okunurdur.
 
-## Container Setup
+## Kapsayıcı Ayarlama
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+Aşağıdaki birimleri ve bağlantı noktalarını bağlayın:
+- Ortam klasörü VOLUME /media
+- UMS.conf VOLUME /profile içeren profil klasörü
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Anamakineden şu bağlantı noktalarını ortaya çıkarın/yönlendirin: 1044, 5001, 9001.
 
-The following scripts does those steps:
+Aşağıdaki komut kodları bu adımları gerçekleştirir:
 ```
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
@@ -55,35 +55,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Sorunları/Sıkıntıları Araştırma
 
-### General
+### Genel
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Araştırma bittiğinde yine de istemeden kapsayıcıyı durdurur.
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Terminaldeki ayrıntılı günlükler için: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Bağlama sorunu
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Fedora CoreOS kullanarak, bind mount’ları kullanmaya çalışırken erişim/izin verilmedi sorunları yaşadım.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Adlandırılmış birimler yerine Docker tarafından yönetilen yeteneğinin kullanılması önerilebilir, ancak bu karmaşıklıktan kaçınmak için bind mount’un tanımlayıcı seçenek değerinin bir soneki olarak ek :Z’nin, anamakine dosyalarına kapsayıcı yazma erişimine izin verdiğini buldum. Bunun yerine :z de kullanılabilir, ancak güvenlik tavsiyesi, kaynakların uygulama/hizmet ortamları arasında paylaşılmak yerine daha izole tutulmasını önerebilir.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+Eşleşen hata iletileri, journalctl kullanılarak görülebilir, bu nedenle bu bir SELinux sorunudur. Bunun çözümü, chcon -Rt svirt_sandbox_file_t host_dir komutunu çalıştırmak olacaktır, ancak bu pek de olası görünmez.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Garip bir şekilde bu, Fedora Workstation’da bir sorun değildir, ancak sanırım bunu yüklemek, bununla başa çıkmak için el ile bir paket ekler. Container-selinux gibi görünüyor.
 
-## References
+## Başvurular
 
 - https://hub.docker.com/r/universalmediaserver/ums
 - https://hub.docker.com/r/atamariya/ums/
