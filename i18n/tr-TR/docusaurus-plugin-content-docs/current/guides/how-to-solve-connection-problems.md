@@ -2,11 +2,11 @@
 
 Bu sayfa, kullanıcılarımızın karşılaştığı en yaygın bağlantı sorunlarına yönelik çözümler sunmaktadır.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS, işleyiciyi algılar, ancak işleyiciyi UMS’yi algılamaz
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+Bu genellikle bilgisayarınızda birden fazla etkin ağ bağlantısı (örneğin, bir kablolu ve bir kablosuz) olduğunda olur. Hangi ağ arayüzünü istediğinizi ayarlayarak çözebilirsiniz:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. UMS’yi açın
+2. `Genel Ayarlar` sekmesini seçin
+3. `Şu arayüzde ağ oluşturmaya zorla:` açılır menüsünü genişletin ve istediğiniz arayüzü seçin. Açılır menüde birçok seçenek olabilir. İstediğinizin genellikle adından sonra parantez içinde bir IP adresi olacaktır, örneğin:  
+   ![GKA’yı açın](@site/docs/guides/img/how-to-solve-connection-problems.png)
