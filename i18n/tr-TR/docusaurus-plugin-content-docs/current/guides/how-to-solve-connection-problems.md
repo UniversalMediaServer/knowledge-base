@@ -1,6 +1,6 @@
-# How to solve connection problems
+# Bağlantı sorunları nasıl çözülür
 
-This page provides solutions for the most common connection problems our users encounter.
+Bu sayfa, kullanıcılarımızın karşılaştığı en yaygın bağlantı sorunlarına yönelik çözümler sunmaktadır.
 
 ## UMS detects renderer, but renderer does not detect UMS
 
