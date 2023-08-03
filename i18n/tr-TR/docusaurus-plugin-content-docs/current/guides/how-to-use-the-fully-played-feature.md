@@ -1,10 +1,10 @@
-# How to use the "Fully played" feature
+# "Tamamen oynatılmış" özelliği nasıl kullanılır
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+"Tamamen oynatılmış" özelliği, tamamen oynattığınız dosyaları takip etmenizi sağlar; bir görüntü için en az %92’sini izlediniz ve ses için en az %92’sini dinlediniz anlamına gelir.
 
-## Setup
+## Ayarlama
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Bu özellik varsayılan olarak etkindir, bu nedenle herhangi bir değişiklik yapmadıysanız onu kullanabilirsiniz. Eğer özellik çalışmıyorsa, lütfen şu adımların geri alınıp alınmadığını gözden geçirin:
 
 1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
 2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
