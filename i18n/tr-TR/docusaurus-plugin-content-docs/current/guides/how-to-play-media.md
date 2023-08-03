@@ -2,7 +2,7 @@
 
 Bu makale, UMS aracılığıyla görüntü, ses ve resimleri oynatmanın 4 ana yolunu açıklayacaktır.
 
-## 1: Bir işleyici arayüzünden oynatma
+## 1: Bir işleyici arayüzünden oynatın
 
 İşleyiciniz UMS’ye DLNA/UPnP aracılığıyla bağlandığında, işleyiciye bağlı olarak sıkça "Ortam Sunucuları" veya benzeri bir menüde görüntülenecektir. Oradan UMS’ye girebilir ve erişmek istediğiniz ortama göz atabilirsiniz.
 
@@ -16,11 +16,11 @@ UMS arayüzünün kendisi, UPnP özelliğini destekliyorlarsa ortamı işleyicil
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
 2. Denetim panelini açmak için işleyici resmine tıklayın  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
+3. Sağ alt kısımdaki klasör simgesine tıklayarak yollamak istediğiniz dosyayı seçin ve sol alt kısım doldurulacaktır. Eğer bu pencerede oynatıcı denetimlerini görmüyorsanız, işleyiciniz bu işlevselliği desteklemiyor demektir. İşleyiciniz için destek eklemiş olabileceklerinden, işleyicinize yönelik donanım yazılımı/yazılım güncellemelerini gözden geçirdiğinizden emin olun.  
    ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+4. Artık, ya giriş kutusunun hemen sağındaki artı simgesine tıklayarak bir oynatma listesi oluşturabilir ya da giriş kutusunun ortasının hemen üzerindeki oynat simgesine tıklayarak, işleyicinizde oynatmaya başlatabileceği dosyayı işleyicinize yollayabilirsiniz.
 
-## 3: Play on the web interface
+## 3: Web arayüzünde oynatın
 
 The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
 
