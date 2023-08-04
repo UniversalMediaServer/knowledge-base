@@ -1,12 +1,12 @@
-# How to use the "Fully played" feature
+# A "Teljesen lejátszott" funkció használata
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+A "Teljesen lejátszott" funkció segítségével nyomon követheti a teljesen lejátszott fájlokat; videó esetében ez azt jelenti, hogy legalább 92%-ban megnézte, hang esetében pedig legalább 92%-ban meghallgatta.
 
-## Setup
+## Beállítás
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Ez a funkció alapértelmezés szerint engedélyezve van, így ha nem változtatott semmit, akkor használhatja. Ha a funkció nem működik, ellenőrizze, hogy ezeket a lépéseket nem csinálták-e vissza:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
+1. A **Navigációs beállítások** lapon jelölje be a **A gyorsítótár engedélyezése** jelölőnégyzetet. Ez alapértelmezés szerint engedélyezve van.
 2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
 3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
 
