@@ -67,7 +67,7 @@ docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-Részletes naplók a terminálban: <&gt;&gt; UMS.conf</code>
+Részletes naplók a terminálban: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
