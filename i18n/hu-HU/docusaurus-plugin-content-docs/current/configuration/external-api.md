@@ -1,4 +1,4 @@
-# External API
+# Külső API
 
 The external API enables programs to access or trigger UMS functionalities with a HTTP call.
 
