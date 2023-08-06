@@ -73,137 +73,137 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Song will not be disliked
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intention                 | Dislike a song identified by musicBrainz trackId            |
+| ------------------------- | ----------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY                 | `musicBrainz_trackID`                                       |
+| Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Dostupné od               | 10.20                                                       |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### skladba se líbí
 
-Check if song is liked.
+Zkontrolujte, zda se skladba líbí.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Úmysl                     | Zkontrolujte, zda je skladba líbí, identifikována podle musicBrainz trackId                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                 | `musicBrainz_trackID`                                                                           |
+| Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY             | `TRUE` or `FALSE`                                                                               |
+| Dostupné od               | 10.20                                                                                           |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Toto volání přidává oblíbený atribut alba identifikovaný podle musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### Album se mi líbí
 
-Set album like state to true.
+Nastaví album se líbí jako true.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Úmysl                     | Líbí se vám album identifikované podle musicBrainz releaseID |
+| ------------------------- | ------------------------------------------------------------ |
+| URI                       | `<span class="s1">/api/like/</span>likealbum`    |
+| POST BODY                 | `musicBrainz_releaseID`                                      |
+| Příklad / popis POST BODY | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Dostupné od               | 10.20                                                        |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### albume se vám nelíbí
 
-Remove album like state.
+Odstranit album se líbí status.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Úmysl                     | Nemám rád skladbu identifikovanou musicBrainz releaseID      |
+| ------------------------- | ------------------------------------------------------------ |
+| URI                       | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY                 | `musicBrainz_releaseID`                                      |
+| Příklad / popis POST BODY | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Dostupné od               | 10.20                                                        |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Tento příkaz odstraní atribut alba  "je oblíbené" identifikované musicbrainz release-id `1e0ee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### album se líbí
 
-Check album like state.
+Zkontrolujte oblíbenost alba.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Úmysl                     | Zkontrolujte, zda se album líbí pomocí musicBrainz releaseID |
+| ------------------------- | ------------------------------------------------------------ |
+| URI                       | `<span class="s1">/api/like/</span>isalbumliked` |
+| POST BODY                 | `musicBrainz_releaseID`                                      |
+| Příklad / popis POST BODY | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| RESPONSE BODY             | "TRUE" nebo "FALSE"                                          |
+| Dostupné od               | 10.20                                                        |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Tento příkaz kontroluje, zda se líbí album identifikované v musicbrainz release-id `1e0ee38-a9f6-49bf-84d0-45d0647799af`.
 
-### Rating
+### Hodnocení
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+API hodnocení je zodpovědné za hodnocení skladeb. Hodnotící informace jsou uloženy v interní databázi (povolena mezipaměť) a volitelně v samotném souboru. Pokud je `audio_update_rating_tag = true` nastaveno v UMS.conf pole pro hodnocení IDv3 je také aktualizováno v souboru skladby (pokud je podporován formát souboru).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Při procházení adresáře obsahu, MusicBrainzTrackID (je-li k dispozici) a audiotrackID jsou dodány jako `desc` metadata v rámci DIDL elementu.
 
-#### set rating
+#### nastavit hodnocení
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Úmysl                     | Nastavte hodnocení v hvězdách (0 - 5) pro skladbu identifikovanou musicBrainz trackId           |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| POST BODY                 | `musicbrainzTrackId` /`stars`                                                                   |
+| Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| Dostupné od               | 10.20                                                                                           |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Tento příkaz nastavuje uživatelské hodnocení všech skladeb identifikovaných podle musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` na `3`.
 
-#### get rating
+#### získej hodnocení
 
-Reads song rating from database
+Čte hodnocení skladeb z databáze
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Úmysl                     | Získejte hodnocení skladeb v hvězdách (0 - 5) od musicBrainz trackID. Odpověď obsahuje ratingové informace. |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`            |
+| POST BODY                 | `musicbrainzTrackId`                                                                                        |
+| Příklad / popis POST BODY | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                        |
+| Příklad RESPONSE BODY     | 3                                                                                                           |
+| Dostupné od               | 10.20                                                                                                       |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Toto volání čte uživatelské hodnocení písně označené musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
 #### set rating by audiotrack id
 

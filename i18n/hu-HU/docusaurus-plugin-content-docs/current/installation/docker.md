@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Előfordulhat, hogy ezek közül néhány lépés nem vonatkozik az Ön telepítésére.  Értse meg, hogy mit csinálnak, és szükség szerint hagyja figyelmen kívül vagy alakítsa át őket.
 
-## Fedora Linux Preparation
+## Fedora Linux előkészítés
 
-For operating system support and service packages.
+Operációs rendszer-támogatás és szervizcsomagok.
 
 ```
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
@@ -12,7 +12,7 @@ sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Jelentkezzen be újra, vagy indítsa újra a gépet.
 
 ```
 sudo systemctl start docker;
@@ -22,17 +22,17 @@ sudo chown core:docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+Csatlakoztassa a tárhelyet a hosztra, és linkelje be azt a könyvtárat, valószínűleg csak olvashatóan.
 
-## Container Setup
+## Konténer beállítása
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+A következő kötetek és portok csatlakoztatása:
+- Média mappa VOLUME /media
+- Az UMS.conf-ot tartalmazó profil mappa VOLUME /profile
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+A következő portok feltárása/továbbítása az állomásról: 1044, 5001, 9001.
 
-The following scripts does those steps:
+A következő szkriptek elvégzik ezeket a lépéseket:
 ```
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
@@ -55,35 +55,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Problémák/problémák kivizsgálása
 
-### General
+### Általános
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Még mindig véletlenül leállítja a konténert, amikor befejezte a vizsgálatot..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Részletes naplók a terminálban: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Mount hiba
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+A Fedora CoreOS-t használva hozzáférési/engedélyezési problémáim voltak, amikor megpróbáltam használni a kötési kötéseket.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Lehet, hogy a Docker által kezelt, nevesített kötetek képességének használata ajánlott ehelyett, de ennek a bonyolultságnak az elkerülése érdekében úgy találtam, hogy a bind mount descriptor opció értékének további :Z utótagja lehetővé teszi a konténer írási hozzáférését az állomásfájlokhoz. :z is használható helyette, de a biztonsági tanácsok azt javasolhatják, hogy az erőforrásokat inkább az alkalmazás/szolgáltatás környezetek között elkülönítve tartsuk, mintsem megosztva.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+A megfelelő hibaüzenetek a journalctl segítségével láthatók, tehát SELinux problémáról van szó. A megoldás erre a chcon -Rt svirt_sandbox_file_t host_dir futtatása lenne, de ez is elvetendőnek tűnik.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Furcsa módon ez nem probléma a Fedora Workstation-en, de azt hiszem, a kézi telepítéssel hozzáadtam egy csomagot, ami ezt kezeli. Úgy tűnik, hogy a container-selinux.
 
-## References
+## Referenciák
 
 - https://hub.docker.com/r/universalmediaserver/ums
 - https://hub.docker.com/r/atamariya/ums/

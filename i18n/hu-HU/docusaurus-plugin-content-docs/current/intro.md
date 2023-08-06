@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Bevezető
 
-This website contains the official documentation for using UMS.
+Ez a weboldal tartalmazza az UMS használatának hivatalos dokumentációját.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+3 fő részre oszlik: Konfiguráció, Útmutatók és Telepítés.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Ha konkrét információt keresett itt, de nem találta, kérjük, jelezze nekünk a GitHubon, hogy hozzáadhassuk.

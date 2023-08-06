@@ -1,12 +1,12 @@
-# How to solve connection problems
+# Hogyan lehet megoldani a csatlakozási problémákat
 
-This page provides solutions for the most common connection problems our users encounter.
+Ez az oldal megoldásokat kínál a leggyakoribb csatlakozási problémákra, amelyekkel felhasználóink találkoznak.
 
-## UMS detects renderer, but renderer does not detect UMS
+## Az UMS érzékeli a megjelenítőt, de a megjelenítő nem érzékeli az UMS-t
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+Ez általában akkor fordul elő, ha a számítógépen egynél több aktív hálózati kapcsolat van (például egy vezetékes és egy vezeték nélküli). Ezt úgy oldhatja meg, hogy beállítja, hogy melyik hálózati interfészt szeretné:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. Nyissa meg az UMS-t
+2. Válassza az `Általános beállítások` lapot.
+3. Bontsa ki a `Hálózati kapcsolat kényszerítése az interfészen:` legördülő listát, és válassza ki a kívánt adaptert. A legördülő listában sok lehetőség lehet. A kívántnak általában a név után zárójelben szerepel például az IP-cím:  
+   ![A GUI megnyitása](@site/docs/guides/img/how-to-solve-connection-problems.png)

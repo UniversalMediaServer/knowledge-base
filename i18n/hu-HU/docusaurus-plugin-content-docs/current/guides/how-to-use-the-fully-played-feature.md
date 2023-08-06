@@ -1,31 +1,31 @@
-# How to use the "Fully played" feature
+# A "Teljesen lejátszott" funkció használata
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+A "Teljesen lejátszott" funkció segítségével nyomon követheti a teljesen lejátszott fájlokat; videó esetében ez azt jelenti, hogy legalább 92%-ban megnézte, hang esetében pedig legalább 92%-ban meghallgatta.
 
-## Setup
+## Beállítás
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Ez a funkció alapértelmezés szerint engedélyezve van, így ha nem változtatott semmit, akkor használhatja. Ha a funkció nem működik, ellenőrizze, hogy ezeket a lépéseket nem csinálták-e vissza:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. A **Navigációs beállítások** lapon jelölje be a **A gyorsítótár engedélyezése** jelölőnégyzetet. Ez alapértelmezés szerint engedélyezve van.
+2. A **Navigációs beállítások** lapon válassza ki a **Teljesen lejátszott műveletet**. Különösen győződjön meg arról, hogy nem választotta a **Nem csinál semmit** lehetőséget. Ez alapértelmezés szerint **Mark media**, ami egy ikont helyez el a miniatűr képen, jelezve, hogy azt megnézték.
+3. A **Megosztott tartalom** lapon keresse meg a nyomon követni kívánt mappát, és jelölje be a **Fájlok lejátszott állapotának figyelése** jelölőnégyzetet a sorban.
 
-## Marking files as fully played automatically
+## A fájlok automatikus teljes lejátszásként való megjelölése
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+A beállítási lépések elvégzése után már csak a fájl legalább 92%-át kell lejátszania.
 
-## Marking files as fully played manually
+## A fájlok manuálisan teljesen lejátszottként való megjelölése
 
-To mark all files within a shared directory as fully played:
+A megosztott könyvtárban lévő összes fájl teljes lejátszásként való megjelölése:
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+A **Megosztott tartalom** lapon kattintson a jobb gombbal arra a könyvtárra, amelyet teljesen lejátszottnak szeretne jelölni, majd kattintson a **Tartalom teljesen lejátszottnak jelölése** gombra.
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![A GUI megnyitása](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Teljesen lejátszott állapot eltávolítása / lejátszás megszüntetése
 
-To "unplay" a file, you can do one of the following options:
+Egy fájl lejátszásának megszüntetéséhez a következő lehetőségek valamelyikét választhatja:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Nevezze át a fájlt tetszőleges módon. Ezt követően visszaállíthatja az eredeti nevet, mivel az UMS a név megváltoztatásakor törölte a bejegyzést a gyorsítótárából.
+- A fájl áthelyezése egy másik könyvtárba. Ezt követően visszahelyezheti az eredeti könyvtárba, mivel az UMS törölte a bejegyzést a gyorsítótárából, amikor áthelyezte a fájlt.
+- Egy teljes megosztott könyvtár "lejátszásának megszüntetéséhez" kattintson a **Megosztott tartalom** lapon a jobb gombbal a könyvtárra, amelyet lejátszás nélküliként szeretne megjelölni, majd kattintson a **Tartalom megjelölése lejátszás nélkül** gombra.

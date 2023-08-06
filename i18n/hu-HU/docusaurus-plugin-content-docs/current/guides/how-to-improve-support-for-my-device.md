@@ -1,11 +1,11 @@
-# How to improve support for my device
+# Hogyan javíthatom a készülékem támogatását
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Ha a készülék nem tud semmit sem csinálni, például nem tud mappákat böngészni vagy nem tud lejátszani egy fájlt, akkor a renderelő konfigurációs fájl beállításainak módosításával lehet, hogy orvosolni tudja a problémát. A különböző eszközök/megjelenítők/kliensek különböző módon kommunikálnak az UMS-hez hasonló szerverekkel, ezért a konfigurációs fájl megmondja az UMS-nek, hogyan beszéljen ugyanazon a nyelven, mint az Ön eszköze.
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Van egy alapértelmezett renderelő konfigurációs fájlunk, amely tartalmazza az összes renderelő beállítás dokumentációját. A legfrissebb verzió a https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf oldalon található.
 
-Common settings to look at are `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, and `ChunkedTransfer`.
+A következő általános beállításokat érdemes megnézni: `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize` és `ChunkedTransfer`.
 
-As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+Ezen kívül megnézheted a többi megjelenítő konfigurációját is a telepítési könyvtárad "renderers" mappájában, hogy lásd, mit csinálnak. Néha segítségre lesz szüksége, amit a fórumunkon tudunk megadni, és kérjük, ne felejtsen el szólni nekünk a javításról, ha elvégezte, hogy más felhasználók is részesülhessenek a javításból. A kiadási közleményünkben és a changelogban meg fogjuk említeni.
 
-If you have a new renderer config to contribute to the project, please create a **Pull Request** on our GitHub repository https://github.com/UniversalMediaServer/UniversalMediaServer
+Ha van egy új megjelenítőlő konfigurációd, amivel hozzá szeretnél járulni a projekthez, kérjük, hozz létre egy **Pull Request**-et a GitHub tárolónkban https://github.com/UniversalMediaServer/UniversalMediaServer
