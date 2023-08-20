@@ -244,9 +244,9 @@ Toto volání čte uživatelské hodnocení skladby identifikované pomocí UMS 
 
 ### Zálohování / Obnovení
 
-Uživatelem spravované "like album" položky mohou být zálohovány do adresáře s názvem `database_backup`. Název souboru je `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Uživatelem spravované "like album" položky mohou být zálohovány do adresáře s názvem `database_backup`. Název souboru je `MUSIC_BRAINZ_RELEASE_LIKE`. Pokud bude databáze UMS smazána, stačí volat obnovu.
 
-#### backup liked albums
+#### zálohování oblíbených alb
 
 Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
 
