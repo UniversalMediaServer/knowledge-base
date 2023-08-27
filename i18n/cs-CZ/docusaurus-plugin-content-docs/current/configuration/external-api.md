@@ -71,9 +71,9 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### nelíbí se píseň
 
-Song will not be disliked
+Skladba se nebude nelíbit
 
-| Intention                 | Dislike a song identified by musicBrainz trackId            |
+| Úmysl                     | Nelíbí se vám skladba identifikovaná musicBrainz trackId    |
 | ------------------------- | ----------------------------------------------------------- |
 | URI                       | `<span class="s1">/api/like/</span>dislikesong` |
 | POST BODY                 | `musicBrainz_trackID`                                       |
@@ -205,48 +205,48 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Toto volání čte uživatelské hodnocení písně označené musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
-#### set rating by audiotrack id
+#### nastavit hodnocení podle audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Úmysl                     | Nastaví hodnocení v hvězdičkách (0–5) skladby identifikované interním audiotrackID.                            |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY                 | `trackID` /`stars`                                                                                             |
+| Příklad / popis POST BODY | 32                                                                                                             |
+| Dostupné od               | 11.0                                                                                                           |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Toto volání nastavuje uživatelské hodnocení skladeb identifikovaných audiotrack id`32` na `3`.
 
-#### get rating by audiotrack id
+#### získej hodnocení pomocí audiotrack id
 
-Reads song rating from database
+Čte hodnocení skladeb z databáze
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Úmysl                     | Získejte hodnocení skladeb ve hvězdách (0 - 5) od UMS interních audiotrackID. Odpověď obsahuje ratingové informace. |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`       |
+| POST BODY                 | trackId                                                                                                             |
+| Příklad / popis POST BODY | 32                                                                                                                  |
+| Příklad RESPONSE BODY     | 3                                                                                                                   |
+| Dostupné od               | 11.0                                                                                                                |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Toto volání čte uživatelské hodnocení skladby identifikované pomocí UMS audiotrack-id `32`.
 
-### Backup / Restore
+### Zálohování / Obnovení
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Uživatelem spravované "like album" položky mohou být zálohovány do adresáře s názvem `database_backup`. Název souboru je `MUSIC_BRAINZ_RELEASE_LIKE`. Pokud bude databáze UMS smazána, stačí volat obnovu.
 
-#### backup liked albums
+#### zálohování oblíbených alb
 
 Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
 
