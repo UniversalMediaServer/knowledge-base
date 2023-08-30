@@ -12,13 +12,13 @@ Das _`Geheime_Passwort`_ muss mindestens 12 Zeichen haben.
 
 ## API-Nutzung
 
-Wenn die externe API aktiviert ist, kann man mit einem POST-Aufruf nach /api/BEFEHL  sie erreichen
+Wenn die externe API aktiviert ist, ist sie mit einem POST-Aufruf von /api/BEFEHL erreichbar
 
 ### Das Scannen von Ordnern
 
-#### Neu einlesen
+#### Neu durchsuchen
 
-| Ziel                            | Liest alle Ordner neu ein.                   |
+| Absicht                         | Liest die komplette Bibliothek neu ein.      |
 | ------------------------------- | -------------------------------------------- |
 | URI/URL                         | `/api/folderscanner/rescan`                  |
 | POST BODY                       | KEINE                                        |
@@ -131,40 +131,40 @@ Den "mögen" Status des Albums löschen
 | ------------------------------- | --------------------------------------------------------------------------------------------------- |
 | URI/URL                         | `<span class="s1">/api/like/</span>dislikealbum`                                        |
 | POST BODY                       | `musicBrainz_releaseID`                                                                             |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                |
-| Available since                 | 10.20                                                                                               |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                |
+| Verfügbar seit Version:         | 10.20                                                                                               |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Dieser Aufruf hat das liked Attribut des Albums entfernt, welches durch eine musicbrainz release-id 1e0eee38-a9f6-49bf-84d0-45d0647799af identifiziert wird.
 
-#### magst Du das Album
+#### gefällt Dir das Album
 
-Prüfe den "mögen" Status des Albums
+Prüfe den like Status des Albums
 
-| Absicht                         | Prüfe, ob das Album  als ein Album gekennzeichnet ist, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| Absicht                         | Prüfe, ob das Album, das durch eine musicBrainz Kennnummer identifiziert wird  als ein Album gekennzeichnet ist, dass Du magst |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked`                                                                   |
+| URI/URL                         | `<span class="s1">/api/like/</span>isalbumliked`                                                                   |
 | POST BODY                       | `musicBrainz_releaseID`                                                                                                        |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                                           |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                                                                                              |
-| Available since                 | 10.20                                                                                                                          |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                                           |
+| RESPONSE BODY                   | TRUE" oder "FALSE"                                                                                                             |
+| Verfügbar seit Version:         | 10.20                                                                                                                          |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Dieser Aufruf prüft, ob für das Album, das mit der musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` identifiziert ist, das like Attribut gesetzt ist.
 
-### Rating
+### Bewertung
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Das Bewertungs-API sorgt für die Bewertung von Liedern. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
 
 While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
 
