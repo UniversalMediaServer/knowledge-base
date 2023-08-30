@@ -164,108 +164,108 @@ Dieser Aufruf prüft, ob für das Album, das mit der musicbrainz release-id `1e0
 
 ### Bewertung
 
-Das Bewertungs-API sorgt für die Bewertung von Liedern. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Das Bewertungs-API sorgt für die Bewertung von Liedern. Bewertungsinformation wird in der internen Datenbank gespeichert (Zwischenspeicher aktiviert) und optional in der Datei selbst. Wenn `audio_update_rating_tag = true` in UMS.conf gesetzt ist, wird das IDv3-Bewertungsfeld auch in der Song-Datei aktualisiert (wenn das Song-Dateiformat unterstützt wird).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Beim Durchsuchen des Content-Verzeichnis-Servers werden MusicBrainzTrackID (falls verfügbar) und audiotrackID als `desc` Metadaten innerhalb des DIDL-Elements ausgegeben.
 
-#### set rating
+#### setze Bewertung
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Absicht                         | Setze Bewertung in Sternen (0 - 5) für ein Lied, das von musicBrainz trackId identifiziert wurde |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| URI/URL                         | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`  |
+| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                    |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                           |
+| Verfügbar seit Version:         | 10.20                                                                                            |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Dieser Aufruf legt die Benutzerbewertung aller Lieder fest, die mit der Musikbrainz-Track-ID ` b8695995-45e9-405d-b4aa-e50e8760fe25`identifiziert wurden, auf `3`.
 
-#### get rating
+#### lies die Bewertung
 
-Reads song rating from database
+Liedbewertung aus Datenbank lesen
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Absicht                           | Die Liedbewertung in Sternen (0-5) nach musicBrainz trackID auslesen. Der Inhalt der Antwort enthält die Bewertungsinformationen. |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                           | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                  |
+| POST BODY                         | `musicbrainzTrackId`                                                                                                              |
+| POST BODY Beispiel / Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                              |
+| RESPONSE BODY [ Inhalt] Beispiel  | 3                                                                                                                                 |
+| Verfügbar seit Version:           | 10.20                                                                                                                             |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Dieser Aufruf liest die Benutzer-Bewertung eines Liedes, das von der musicbrainz Track-ID `b8695995-45e9-405d-b4aa-e50e8760fe25` identifiziert wurde.
 
-#### set rating by audiotrack id
+#### Setze Bewertung nach audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Absicht                           | Setze Bewertung in Sternen (0 - 5) für ein Lied, das durch eine UMS interne AudiotrackID identifiziert wurde   |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI/URL                           | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY                         | `trackID` /`stars`                                                                                             |
+| POST BODY Beispiel / Beschreibung | 32                                                                                                             |
+| Verfügbar seit Version:           | 11.0                                                                                                           |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Dieser Aufruf legt die Benutzerbewertung eines Liedes fest, das mit der Audiospur-ID`32` bis `3` identifiziert wurde.
 
-#### get rating by audiotrack id
+#### erhalte Bewertung nach Audiospur id
 
-Reads song rating from database
+Liedbewertung aus Datenbank lesen
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Absicht                                  | Lies die Bewertung des Lieds in Sternen (0 - 5) gemäß UMS interner AudiotrackID. Der Inhalt der Antwort enthält die Bewertungsinformation. |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI/URL                                  | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                              |
+| POST BODY [Sende den Inhalt der Anfrage] | trackId                                                                                                                                    |
+| POST BODY Beispiel / Beschreibung        | 32                                                                                                                                         |
+| RESPONSE BODY Beispiel                   | 3                                                                                                                                          |
+| Verfügbar seit Version:                  | 11.0                                                                                                                                       |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Dieser Aufruf liest die Benutzerbewertung eines Liedes, das durch die UMS Audiotrack-ID `32` identifiziert wurde.
 
-### Backup / Restore
+### Backup / Wiederherstellung
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Benutzerverwaltete "liked album"-Einträge können in einem Profilverzeichnis mit dem Namen `database_backup` gesichert werden. Der Dateiname ist `MUSIC_BRAINZ_RELEASE_LIKE`. Falls die UMS Datenbank gelöscht wird, rufen Sie einfach die Wiederherstellung auf.
 
-#### backup liked albums
+#### favorisierte Alben sichern
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Tabelle `MUSIC_BRAINZ_RELEASE_LIKE`  im Dateisystem sichern
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Absicht                        | Sichere favorisierte Lieder im Dateisystem                                                            |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| URI/URL                        | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE [Typ der Anfrage] | GET                                                                                                   |
+| RESPONSE BODY                  | `OK` oder Fehlermeldung                                                                               |
+| Verfügbar seit Version:        | 10.20                                                                                                 |
 
-Example:
+Beispiel:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
+curl -w "%{http_code}\n" -H "api-key: geheimes_Passwort"  -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Dieser Aufruf erzeugt eine Sicherungsdatei mit favorisierten Alben erstellen.
 
-#### restore liked albums
+#### Favorisierte Alben wiederherstellen.
 
 Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 
