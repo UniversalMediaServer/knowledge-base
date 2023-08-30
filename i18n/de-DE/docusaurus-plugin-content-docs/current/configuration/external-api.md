@@ -117,7 +117,7 @@ Setze Album auf "gefällt mir"
 | POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                         |
 | Verfügbar seit Version:         | 10.20                                                                                                        |
 
-Example:
+Beispiel
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
