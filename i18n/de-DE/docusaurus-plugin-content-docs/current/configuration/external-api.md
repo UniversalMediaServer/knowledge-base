@@ -267,76 +267,76 @@ Dieser Aufruf erzeugt eine Sicherungsdatei mit favorisierten Alben erstellen.
 
 #### Favorisierte Alben wiederherstellen.
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Stellt die Tabelle `MUSIC_BRAINZ_RELEASE_LIKE` aus dem Dateisystem wieder her.
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Absicht                        | favorisierte Lieder aus Backup-Datei wiederherstellen                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI/URL                        | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE [Typ der Anfrage] | GET                                                                                                                                        |
+| RESPONSE BODY                  | `OK` oder Fehlermeldung                                                                                                                    |
+| Verfügbar seit Version:        | 10.20                                                                                                                                      |
 
-Example:
+Beispiel:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Dieser Aufruf stellt die Sicherungsdatei wieder her.
 
-### Playlist
+### Wiedergabeliste
 
-#### enable service
+#### Dienst aktivieren
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Bearbeiten Sie UMS.conf und konfigurieren Sie einen verwalteten Wiedergabelistenordner in den Einstellungen 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+um den Dienst zu aktivieren. Standardmäßig ist dieser Dienst deaktiviert. Der Pfad zum Wiedergabelistenordner sollte unter einem konfigurierten gemeinsamen `<span class="s1">Ordner</span>` Pfad für die durch diese API geänderte Wiedergabeliste für UMS sichtbar gemacht werden.
 
-#### list all playlists
+#### alle Playlisten auflisten
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Verfügbare Wiedergabelisten lesen. Diese Playlist-Namen müssen für nachfolgende Anrufe verwendet werden, um Lieder hinzuzufügen oder zu entfernen.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Absicht                        | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem konfiguriertem Ordner. Besides playlist name, the playlists `playlistId` is       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| REQUEST TYPE [Typ der Anfrage] | GET                                                                                                                                                                             |
+| RESPONSE BODY                  | JSON-Array der Playlist-Namen                                                                                                                                                   |
+| RESPONSE BODY Beispiel         | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Verfügbar seit Version:        | 11.0                                                                                                                                                                            |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Dieser Anruf listet alle verfügbaren Wiedergabelisten auf.
 
-#### list server accessible playlists
+#### zugängliche Wiedergabelisten des Servers auflisten
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Dies sind alle UMS bekannten Wiedergabelisten (Datenbank/Cache aktiviert). Diese Playlist-Namen müssen für nachfolgende Anrufe verwendet werden, um Lieder hinzuzufügen oder zu entfernen. Die Playlist-ID kann benutzt werden, um direkt zur Wiedergabeliste zu navigieren, indem Sie die `objectId` `$DBID$PLAYLIST$` verkettet mit der databaseId durchsuchen.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
-| Available since       | dev branch                                                                                                                                               |
+| Absicht                          | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem konfigurierten Ordner                                      |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                          | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| REQUEST TYPE [Typ der Anfrage]   | GET                                                                                                                                                      |
+| RESPONSE BODY                    | JSON-Array der Playlist-Namen                                                                                                                            |
+| RESPONSE BODY [ Inhalt] Beispiel | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Verfügbar seit Version:          | Entwicklungszweig                                                                                                                                        |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Dieser Anruf listet alle verfügbaren Wiedergabelisten auf, die für UMS zugänglich sind.
 
-#### adding songs to playlists
+#### Lieder zur Wiedergabeliste hinzufügen
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Die benötigte `audiotrackid` wird während UPnP Browse Requests ausgeliefert und kann aus dem DIDL Response-Attribut `descMetadata` extrahiert werden
 
 ```XML
 <ums-tags>
@@ -355,26 +355,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Absicht                                  | Titel zur Playlist hinzufügen                                                                                                                                                     |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| REQUEST TYPE [Typ der Anfrage]           | POST                                                                                                                                                                              |
+| POST BODY [Sende den Inhalt der Anfrage] | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY Beispiel / Beschreibung        | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY                            | KEINE                                                                                                                                                                             |
+| Verfügbar seit Version:                  | 11.0                                                                                                                                                                              |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Dies fügt den Song mit der ID `123` zur Playlist `Pop` hinzu.
 
-#### removing songs from playlists
+#### Titel von Wiedergabeliste entfernen
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Die benötigte `audiotrackid` wird während UPnP Browse Requests ausgeliefert und kann aus dem DIDL Response-Attribut `descMetadata` extrahiert werden
 
 ```XML
 <ums-tags>
@@ -395,47 +395,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Absicht                                  | Titel von Wiedergabeliste entfernen                                                                                                                                                    |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE [Typ der Anfrage]           | POST                                                                                                                                                                                   |
+| POST BODY [Sende den Inhalt der Anfrage] | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY Beispiel / Beschreibung        | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY                            | KEINE                                                                                                                                                                                  |
+| Verfügbar seit Version:                  | 11.0                                                                                                                                                                                   |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Dies entfernt den Song mit der ID `123` aus der Playlist `Pop`.
 
-#### create new playlists
+#### neue Wiedergabelisten erstellen
 
-Playlist name should be provided without any path and without file extensions. 
+Der Name der Wiedergabeliste sollte ohne Pfad und ohne Dateiendungen angegeben werden. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Absicht                                  | Neue Wiedergabelisten im verwalteten Wiedergabelistenordner erstellen                                                                                                          |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI/URL                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE [Typ der Anfrage]           | POST                                                                                                                                                                           |
+| POST BODY [Sende den Inhalt der Anfrage] | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| POST BODY Beispiel / Beschreibung        | Zeitgenössisch                                                                                                                                                                 |
+| RESPONSE BODY                            | KEINE                                                                                                                                                                          |
+| Verfügbar seit Version:                  | 11.0                                                                                                                                                                           |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Dieser Aufruf erzeugt eine neue Wiedergabeliste mit dem Namen `Contemporary.m3u8` im verwalteten Wiedergabelistenordner.
 
-## Java code example
+## Java-Code-Beispiel
 
-This code snippet shows how to use the API with okhttp3 library.
+Dieser Code-Ausschnitt zeigt, wie man die API mit der okhttp3-Bibliothek benutzt.
 
 ```Java
 import nextcp.dto.Config;
@@ -486,6 +486,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP Statuscodes
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | Erfolg, wenn kein Inhalt zurückgegeben werden soll | | 401 | ungültiger api key | | 404 | angefordertes Objekt kann nicht gefunden werden | | 417 | API Anfrage fehlgeschlagen | | 503 | Externe api ist nicht aktiviert. Lege einen `api_key` in UMS.conf mit einer Länge von 12 oder mehr Zeichen fest |
