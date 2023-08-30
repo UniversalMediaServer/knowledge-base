@@ -56,66 +56,66 @@ curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheimes_Passwort" -X PO
 
 Das Lied wird als gemocht markiert
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Absicht                         | Kennzeichne ein Lied, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| ------------------------------- | --------------------------------------------------------------------------------------------- |
+| URI/URL                         | `<span class="s1">/api/like/likesong</span>`                                      |
+| POST BODY                       | `musicBrainz_trackID`                                                                         |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                          |
+| Verfügbar seit Version:         | 10.20                                                                                         |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Lied nicht mögen
 
-Song will not be disliked
+Das Lied wird nicht als unerwünscht gekennzeichnet
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Absicht                         | Kennzeichne ein Lied, dass Du NICHT magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| URI/URL                         | `<span class="s1">/api/like/</span>dislikesong`                                         |
+| POST BODY                       | `musicBrainz_trackID`                                                                               |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                |
+| Verfügbar seit Version:         | 10.20                                                                                               |
 
-Example:
+Beispiel:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### Magst Du das Lied
 
-Check if song is liked.
+Prüfe, ob Du das Lied magst
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Absicht                         | Prüfe, ob das Lied  als ein Lied gekennzeichnet ist, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                         | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>`                              |
+| POST BODY                       | `musicBrainz_trackID`                                                                                                        |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                         |
+| RESPONSE BODY                   | TRUE oder FALSE                                                                                                              |
+| Verfügbar seit Version:         | 10.20                                                                                                                        |
 
-Example:
+Besipiel
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Dieser Aufruf fügt das liked Attribut des Albums, welches durch eine musicbrainz release-id 1e0eee38-a9f6-49bf-84d0-45d0647799af identifiziert wird.
 
-#### like album
+#### Album "Gefällt mir"
 
-Set album like state to true.
+Setze Album auf "gefällt mir"
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Absicht                         | Kennzeichnet ein Album, das durch eine musicBrainz Kennnummer identifiziert wird, als ein Albu, das Du magst |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| URI/URL                         | `<span class="s1">/api/like/</span>likealbum`                                                    |
+| POST BODY                       | `musicBrainz_releaseID`                                                                                      |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                         |
+| Verfügbar seit Version:         | 10.20                                                                                                        |
 
 Example:
 
@@ -123,16 +123,16 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Album gefällt mir nicht
 
-Remove album like state.
+Den "mögen" Status des Albums löschen
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Absicht                         | Kennzeichne ein Lied, dass Du NICHT magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| URI/URL                         | `<span class="s1">/api/like/</span>dislikealbum`                                        |
+| POST BODY                       | `musicBrainz_releaseID`                                                                             |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                |
+| Available since                 | 10.20                                                                                               |
 
 Example:
 
@@ -142,17 +142,17 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### magst Du das Album
 
-Check album like state.
+Prüfe den "mögen" Status des Albums
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Absicht                         | Prüfe, ob das Album  als ein Album gekennzeichnet ist, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`                                                                   |
+| POST BODY                       | `musicBrainz_releaseID`                                                                                                        |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                                           |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                                                                                              |
+| Available since                 | 10.20                                                                                                                          |
 
 Example:
 
