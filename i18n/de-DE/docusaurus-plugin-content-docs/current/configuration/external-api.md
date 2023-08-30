@@ -18,12 +18,12 @@ Wenn die externe API aktiviert ist, kann man mit einem POST-Aufruf nach /api/BEF
 
 #### Neu einlesen
 
-| Intention                       | Scannt die komplette Bibliothek neu ein. |
-| ------------------------------- | ---------------------------------------- |
-| URI                             | `/api/folderscanner/rescan`              |
-| POST BODY                       | NONE                                     |
-| POST BODY example / description | This command needs no body content       |
-| Verfügbar seit                  | 10.4.2                                   |
+| Ziel                            | Liest alle Ordner neu ein.                   |
+| ------------------------------- | -------------------------------------------- |
+| URI/URL                         | `/api/folderscanner/rescan`                  |
+| POST BODY                       | KEINE                                        |
+| POST BODY Beispiel/Beschreibung | Dieses Kommando erfordert keinen body Inhalt |
+| Verfügbar seit                  | 10.4.2                                       |
 
 :::info
 Kann bei einer großen Bibliothek länger dauern
@@ -32,29 +32,29 @@ Kann bei einer großen Bibliothek länger dauern
 Beispiel:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{http_code}\n" -H "api-key: geheimes_Passwort" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Ziel                            | Liest einen Teilpfad des Dateisystems neu ein                                                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI/URL                         | ` 	/api/folderscanner/rescanFileOrFolder`                                                                                                      |
+| POST BODY                       | PATH_TO_SCAN                                                                                                                                 |
+| POST BODY Beispiel/Beschreibung | Beispiel/Beschreibung Beispiel: "/music/pop/Madonna" Der Pfad muss das Wurzelverzeichnis oder ein Unterordner eines freigegebenen Pfades sein. |
+| Verfügbar seit Version:         | 10.4.2                                                                                                                                         |
 
-Example:
+Beispiel
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheimes_Passwort" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Musik gut finden
 
-#### like song
+#### ein Lied gut finden
 
-Song will be marked as liked.
+Das Lied wird als gemocht markiert
 
 | Intention                       | Like a song identified by musicBrainz trackId            |
 | ------------------------------- | -------------------------------------------------------- |
