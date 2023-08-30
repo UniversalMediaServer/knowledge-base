@@ -1,66 +1,66 @@
 # Sicherheit & Datenschutz
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS ist ein DLNA-Server. Nun ist DLNA ein Protokoll, das keine wirkliche Vorstellung von einem "Benutzer" hat. Sie müssen sich beispielsweise nicht auf Ihren Fernseher einloggen. Dies führt dazu, dass alle renderer Zugang zu den gleichen Daten erhalten. Das ist vielleicht nicht das, was Sie wollen. Wenn Sie zum Beispiel zwei Ordner kids_safe und kids_unsafe haben, können Sie wollen, dass die Renderer im Kinderzimmer nur Zugriff auf den kids_safe Ordner haben. UMS bietet eine Reihe von Methoden zur Kontrolle des Zugriffs. 
 
-## IP filter
+## IP-Filter
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+IP-Filterung ist die restriktivste Methode, die UMS bietet. Um Sie zu verwenden, geben Sie eine kommaseparierte Liste von IP-Adressen an, die sich verbinden dürfen. Der Netzwerkverkehr eines Renderers, dessen Adresse nicht mit den Einträgen in der Liste übereinstimmt, wird einfach verworfen (sehr früh durch UMS). Er ist nicht in der Lage, auf IRGENDEINEN Ordner zuzugreifen (er wird nicht einmal einen Wurzelordner sehen). Benutzen Sie diese Methode, um die Kinder komplett auszuschließen. Weitere Details finden Sie in der Beschreibung von ip_filter in UMS.conf .
 
-Example to allow only 2 addresses
+Beispiel um nur 2 Adressen zu erlauben
 
 ```
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## Zulassungsliste
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Auflistung zuzulassen ist eine Methode, mit der Sie den Root-Ordner auf der Basis des Renderers anpassen können. Dies ermöglicht es, verschiedene Ordnersätze an verschiedene Renderer weiterzugeben. Es funktioniert wie folgt: Zu Ihrer UMS.conf (derzeit keine GUI Optionen) fügen Sie Zeilen mit tag.option = Wert hinzu, bei dem es sich entweder um eine IP-Adresse oder einen Renderernamen handelt. In einem Renderernamen solltenLeerzeichen durch  _ (Unterstrich) ersetzt werden. Die Option ist eine von
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+Der Wert ist abhängig von der Option. Die letzten 4 sind boolesche Werte. für Ordner und virtuelle Ordner ist es eine Liste von Ordnern.
 
-Example
+Beispiel
 
 ```
 folders = 
 hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
+192.168.1.1.folders = c:\child_safe
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Dies wird für die IP-Adresse 192.168.1.1:
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- Teile den Ordner c:\child_safe
+- Den Ordner "Servereinstellungen" ausblenden
+- Kürzlich gespielte Liste ausblenden
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Alle anderen Renderer verwenden die "globalen" Einstellungen, d.h. e alle Ordner und die Server-Einstellungen sehen.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Wenn eine Option nicht vorhanden ist, wird sie auf die "globale"Konfiguration gesetzt, oder wenn diese nicht vorhanden ist, auf den Standardwert.
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+Die Whitelist kann nur das Aussehen des Root-Ordners ändern. Aber wenn Sie die Dinge gemischt haben (Sie haben 10 Ordner, aber nur einer sollte auf die Kinder beschränkt sein). Um den Zugriff auf einzelne Ordner (oder Medien) zu kontrollieren, können Sie UMS.deny verwenden. Es funktioniert wie folgt: Fügen Sie eine Datei namens UMS.deny in das gleiche Verzeichnis wie Ihre UMS.conf-Datei hinzu und fügen Sie dieser Datei Tags hinzu: tag.[name|file|sys]=regex Für jeden hinzuzufügenden Ordner/Datei wird UMS den regulären Ausdruck auf den Ordnernamen oder Dateinamen anwenden und wenn der reguläre Ausdruck mit dem Ordner/Datei übereinstimmt, wird er/sie NICHT hinzugefügt. Zum Beispiel:
 ```
 192.168.1.1.name=.*private.*
 ```
 
-will remove all folders/files which has the word private in it.
+entfernt alle Verzeichnisse/Dateien, die das Wort privat enthalten.
 ```
 192.168.1.1.file=c:\\tst.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+entfernt alle Dateien, die c:\tst im Pfad enthalten, usw.
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+Wenn in der Datei "UMS.deny" keine Regeln gesetzt sind, werden die Dateien/Ordner hinzugefügt.
 
-Hiding folders
+Ordner verstecken
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Steuern Sie die Sichtbarkeit der virtuellen Ordner. Diese Einstellungen finden Sie in der UMS.conf-Datei. Um einige Ordner während des Surfens auszublenden, setzen Sie einfach ihren Wert auf true oder markieren Sie sie im Reiter Navigation/Freigabe Einstellungen aus dem erweiterten GUI-Modus.
 
 ```
 hide_recently_played_folder =true
@@ -72,11 +72,11 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Um den Webordner auszublenden, müssen Sie das externe Netzwerk in der Registerkarte Allgemein der Konfiguration im erweiterten GUI-Modus deaktivieren oder den Wert „external_network = false“ in Ihrer UMS.conf Datei setzen. Dies hat den Nebeneffekt, dass der automatische Updater nicht funktioniert. Die Änderungen an der GUI werden nach einem Neustart wirksam.
 
-## PIN code
+## PIN Code
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Alle oben genannten Methoden beschränken den Zugriff durch verschiedene Renderer. Aber wenn Sie Zugang zu einem Renderer erhalten, dem es erlaubt ist, einen Ordner zu sehen, werden Ihnen diese Methoden nicht helfen (wenn die Kinder Zugang zum Wohnzimmer TV haben, der Zugang zu allen Medien hat, dann haben sie Zugang zu diesen Medien). Der PIN-Code löst dieses Problem. Sie können Ordner/Medien hinter einem PIN-Code verstecken, den Sie VOM Renderer aus eingeben müssen. Standardmäßig ist die Eingabe eine Abfolge von Ziffern (0-9) genau wie ein Geldautomaten-Code. Ich empfehle Ihnen dringend, Ziffern-basierte Codes zu verwenden, da es ansonsten schwierig ist, diese im Renderer einzugeben. Aber wenn Sie extra paranoid sind, können Sie Buchstaben hinzufügen. Es funktioniert folgendermassen: Fügen Sie eine Datei UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*private.*,1234
 ```
