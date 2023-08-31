@@ -298,7 +298,7 @@ um den Dienst zu aktivieren. Standardmäßig ist dieser Dienst deaktiviert. Der 
 
 Verfügbare Wiedergabelisten lesen. Diese Playlist-Namen müssen für nachfolgende Anrufe verwendet werden, um Lieder hinzuzufügen oder zu entfernen.
 
-| Absicht                        | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem konfiguriertem Ordner. Besides playlist name, the playlists `playlistId` is       |
+| Absicht                        | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem konfiguriertem Ordner. Neben dem Playlist-Namen ist die Playlist `PlaylistId`     |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI/URL                        | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE [Typ der Anfrage] | GET                                                                                                                                                                             |
