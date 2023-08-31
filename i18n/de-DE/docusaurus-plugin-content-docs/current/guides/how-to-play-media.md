@@ -1,4 +1,4 @@
-# How to play media
+# Wie man Medien abspielt
 
 This article will explain the 4 main ways to play video, audio and images via UMS.
 
