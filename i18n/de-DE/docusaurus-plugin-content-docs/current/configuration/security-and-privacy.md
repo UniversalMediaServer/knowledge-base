@@ -85,19 +85,19 @@ Es zwingt Sie, einen Code einzugeben, wenn der Ordner/Medien das Wort "privat" e
 
 ## Benutzerdefinierte Gerätekonfiguration
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Jede Konfigurationseigenschaft kann auch auf einer Geräte-Basis festgelegt werden, indem eine benutzerdefinierte Gerätekonfiguration erstellt wird, um die Standardeinstellungen für UMS zu überschreiben (vollständige Informationen hierzu finden Sie unter Erstellen einer benutzerdefinierten Gerätekonfiguration).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Zum Beispiel, um das Kinder-TV anzupassen:
+- Klicken Sie auf die Schaltfläche 'Dieses Gerät anpassen' oben rechts im GUI-Popup des Renderers und geben Sie einen Namen für die Konfiguration an.
+- In der neuen conf-Datei, die sich öffnet, fügen Sie alle Einstellungen hinzu, die Sie für den TV überschreiben möchten., z.B. um den Servernamen zu ändern und verschiedene Ordner anzugeben:
 ```
-#----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+#--------------------------------------------------------------------------------------------
+# Benutzerdefiniertes Geräteprofil
+# Siehe DefaultRenderer.conf für Beschreibungen aller möglichen Renderer-Optionen
+# und UMS.conf für Programmoptionen.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Die Einstellungen in dieser Datei überschreiben die Standardeinstellungen für das/die unten aufgeführte(n) spezielle(n) Sony Bravia EX-Gerät(e) .
+# Geben Sie Geräte durch uuid an  (oder Adresse, wenn keine uuid), durch Kommas getrennt, wenn es mehrere Geräte sind.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
