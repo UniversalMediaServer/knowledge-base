@@ -14,7 +14,7 @@ Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu sen
 
 1. Öffnen Sie die UMS Oberfläche und identifizieren Sie den Renderer an den Sie die Medien senden möchten. In diesem Fall ist es die Panasonic VIERA VT60 Serie TV.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Klicken Sie auf das Renderer-Bild, um das Bedienfeld zu öffnen  
+2. Click on the renderer image to open the control panel  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
 3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
    ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
