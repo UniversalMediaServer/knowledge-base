@@ -1,16 +1,16 @@
 # Wie man Medien abspielt
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Dieser Artikel erklärt die 4 wichtigsten Möglichkeiten zum Abspielen von Video, Audio und Bildern über UMS.
 
-## 1: Play from a renderer interface
+## 1: Wiedergabe von einer Renderer-Schnittstelle
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Wenn Ihr Renderer mit UMS über DLNA/UPnP verbunden ist, wird es oft in einem Menü mit dem Namen "Media Servers" oder etwas ähnliches angezeigt, je nach Renderer. Von hier aus kannst Du Dich mit UMS verbinden und die Medien anzeigen, auf die Du zugreifen möchtest.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Die Implementierung variiert je nach Renderer, aber die Kernfunktionalität ist dieselbe; navigieren Sie zu den ausgewählten Medien und wählen Sie sie zum Abspielen aus.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Von der UMS Schnittstelle auf einen Renderer senden
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu senden, wenn sie diese UPnP Funktion unterstützen. It is a similar concept to casting.
 
 1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
