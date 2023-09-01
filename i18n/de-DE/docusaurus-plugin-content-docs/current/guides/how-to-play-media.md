@@ -10,9 +10,9 @@ Die Implementierung variiert je nach Renderer, aber die Kernfunktionalität ist 
 
 ## 2: Von der UMS Schnittstelle auf einen Renderer senden
 
-Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu senden, wenn sie diese UPnP Funktion unterstützen. It is a similar concept to casting.
+Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu senden, wenn sie diese UPnP Funktion unterstützen. Es ist ein ähnliches Konzept wie eine Sendung.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
+1. Öffnen Sie die UMS Oberfläche und identifizieren Sie den Renderer an den Sie die Medien senden möchten. In diesem Fall ist es die Panasonic VIERA VT60 Serie TV.  
    ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
 2. Click on the renderer image to open the control panel  
    ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
