@@ -8,7 +8,7 @@ Wenn Ihr Renderer mit UMS über DLNA/UPnP verbunden ist, wird es oft in einem Me
 
 Die Implementierung variiert je nach Renderer, aber die Kernfunktionalität ist dieselbe; navigieren Sie zu den ausgewählten Medien und wählen Sie sie zum Abspielen aus.
 
-## 2: Von der UMS Schnittstelle auf einen Renderer senden
+## 2: Von der UMS Schnittstelle zu einem Renderer senden
 
 Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu senden, wenn sie diese UPnP Funktion unterstützen. Es ist ein ähnliches Konzept wie eine Sendung.
 
