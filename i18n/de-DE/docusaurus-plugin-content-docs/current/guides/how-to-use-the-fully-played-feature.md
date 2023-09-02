@@ -1,31 +1,31 @@
-# How to use the "Fully played" feature
+# Wie man die "Voll abgespielt" Funktion nutzt
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+Mit der Funktion "Voll abgespielt" behalten Sie den Überblick über die Dateien, die Sie vollständig abgespielt haben; für ein Video bedeutet es, dass Sie mindestens 92 % gesehen haben, und für Audio haben Sie mindestens 92 % gehört.
 
 ## Setup
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Diese Funktion ist standardmäßig aktiviert. Wenn Sie also nichts geändert haben, können Sie sie verwenden. Wenn die Funktion nicht funktioniert, überprüfen Sie bitte, dass diese Schritte nicht rückgängig gemacht wurden:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. Wählen Sie auf der Registerkarte **Navigationseinstellungen** die Option **Cache** aktivieren. Dies ist standardmäßig aktiviert.
+2. Wählen Sie auf der Registerkarte **Navigationseinstellungen** Ihre ** "Voll abgespielt" Aktion** aus. Vergewissern Sie sich insbesondere, dass Sie nicht**keine Aktion** ausgewählt haben. Dies ist standardmäßig **Medien markieren**, das ein Symbol auf dem Vorschaubild anzeigt, um darzustellen, dass es gesehen wurde.
+3. Auf der Registerkarte **Geteilte Inhalte** suchen Sie den Ordner, den Sie überwachen wollen, und aktivieren Sie das **Wiedergabe-Status der Dateien überwachen** Kontrollkästchen in dieser Zeile.
 
-## Marking files as fully played automatically
+## Dateien als "Voll abgespielt" markieren
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Nachdem Sie die Setup-Schritte abgeschlossen haben, müssen Sie lediglich 92% oder mehr einer Datei abspielen.
 
-## Marking files as fully played manually
+## Dateien als "Voll abgespielt" markieren
 
-To mark all files within a shared directory as fully played:
+Um alle Dateien in einem freigegebenen Verzeichnis als "Voll abgespielt" zu markieren:
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Auf der Registerkarte **Geteilte Inhalte** klicken Sie mit der rechten Maustaste auf das Verzeichnis, das Sie als vollständig wiedergeben möchten, und klicken Sie dann auf **Inhalte markieren, die vollständig abgespielt werden**
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![GUI öffnen](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Status "Voll abgespielt" entfernen / als nicht abgespielt markieren
 
-To "unplay" a file, you can do one of the following options:
+Um eine Datei als nicht abgespielt zu markieren, können Sie eine der folgenden Optionen wählen:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Benennen Sie die Datei in irgendeiner Weise um. Danach können Sie ihn wieder auf seinen ursprünglichen Namen setzen weil UMS den Eintrag aus dem Cache gelöscht hat, wenn Sie den Namen geändert haben.
+- Verschieben Sie die Datei in ein anderes Verzeichnis. Danach können Sie ihn wieder in sein ursprüngliches Verzeichnis setzen weil UMS den Eintrag aus dem Cache gelöscht hat, wenn Sie die Datei verschoben haben.
+- Um ein ganzes freigegebenes Verzeichnis als ungespielt ui markieren klicken Sie mit der rechten Maustaste im Register **Geteilte Inhalte** auf das Verzeichnis, das Sie als ungespielt markieren wollen, und klicken Sie dann auf **Inhalte auf ungespiel setzen**.
