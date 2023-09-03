@@ -248,9 +248,9 @@ Uživatelem spravované "like album" položky mohou být zálohovány do adresá
 
 #### zálohování oblíbených alb
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Zálohovat tabulku `MUSIC_BRAINZ_RELEASE_LIKE` do souborového systému
 
-| Intention       | backup liked songs to filesystem                                                                      |
+| Úmysl           | zálohování oblíbených skladeb do souborového systému                                                  |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
 | URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
 | REQUEST TYPE    | GET                                                                                                   |
