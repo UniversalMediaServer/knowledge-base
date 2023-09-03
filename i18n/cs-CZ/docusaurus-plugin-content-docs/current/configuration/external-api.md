@@ -250,55 +250,55 @@ Uživatelem spravované "like album" položky mohou být zálohovány do adresá
 
 Zálohovat tabulku `MUSIC_BRAINZ_RELEASE_LIKE` do souborového systému
 
-| Úmysl           | zálohování oblíbených skladeb do souborového systému                                                  |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Úmysl         | zálohování oblíbených skladeb do souborového systému                                                  |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| URI           | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE  | GET                                                                                                   |
+| RESPONSE BODY | `OK` nebo chybová zpráva                                                                              |
+| Dostupné od   | 10.20                                                                                                 |
 
-Example:
+Příklad:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Tento volání vytvoří záložní soubor obsahující oblíbená alba.
 
-#### restore liked albums
+#### obnovit oblíbené alba
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Obnoví tabulku `MUSIC_BRAINZ_RELEASE_LIKE` ze souborového systému
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Úmysl         | obnovit oblíbené skladby ze záložního souboru                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI           | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE  | GET                                                                                                                                        |
+| RESPONSE BODY | `OK` nebo chybová zpráva                                                                                                                   |
+| Dostupné od   | 10.20                                                                                                                                      |
 
-Example:
+Příklad:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Tento volání obnoví záložní soubor.
 
-### Playlist
+### Seznam stop
 
-#### enable service
+#### Povolit službu
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Upravte UMS.conf a nakonfigurujte spravovanou složku playlistu 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+pro povolení této služby. Ve výchozím nastavení je tato služba zakázána. Cesta ke složce playlistu by měla být umístěna pod nakonfigurovanou sdílenou `<span class="s1">složkou</span>` pro změnu playlistu, kterou toto API vidí UMS.
 
-#### list all playlists
+#### seznam všech playlistů
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Číst dostupné seznamy skladeb. Tyto názvy playlistu musí být použity pro následná volání pro přidání nebo odebrání skladeb.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
+| Úmysl                 | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE          | GET                                                                                                                                                                             |
