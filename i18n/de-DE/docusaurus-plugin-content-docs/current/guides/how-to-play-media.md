@@ -1,39 +1,39 @@
-# How to play media
+# Wie man Medien abspielt
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Dieser Artikel erklärt die 4 wichtigsten Möglichkeiten zum Abspielen von Video, Audio und Bildern über UMS.
 
-## 1: Play from a renderer interface
+## 1: Wiedergabe von einer Renderer-Schnittstelle
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Wenn Ihr Renderer mit UMS über DLNA/UPnP verbunden ist, wird es oft in einem Menü mit dem Namen "Media Servers" oder etwas ähnliches angezeigt, je nach Renderer. Von hier aus kannst Du Dich mit UMS verbinden und die Medien anzeigen, auf die Du zugreifen möchtest.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Die Implementierung variiert je nach Renderer, aber die Kernfunktionalität ist dieselbe; navigieren Sie zu den ausgewählten Medien und wählen Sie sie zum Abspielen aus.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Von der UMS Schnittstelle zu einem Renderer senden
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+Die UMS Schnittstelle selbst hat die Möglichkeit, Medien an die Renderer zu senden, wenn sie diese UPnP Funktion unterstützen. Es ist ein ähnliches Konzept wie eine Sendung.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. Öffnen Sie die UMS Oberfläche und identifizieren Sie den Renderer an den Sie die Medien senden möchten. In diesem Fall ist es die Panasonic VIERA VT60 Serie TV.  
+   ![Die GUI öffnen](@site/docs/guides/img/how-to-play-media-1.png)
+2. Klicken Sie auf das Renderer-Bild, um das Bedienfeld zu öffnen  
+   ![Renderer Steuerung](@site/docs/guides/img/how-to-play-media-2.png)
+3. Wählen Sie die gewünschte Datei aus, indem Sie auf das Ordnersymbol unten rechts klicken und es wird links unten ausgefüllt. Wenn Sie die Spieler-Steuerelemente in diesem Fenster nicht sehen, unterstützt Ihr Renderer diese Funktion nicht. Stellen Sie sicher, dass Sie Firmware/Software-Aktualisierungen für Ihren Renderer prüfen,da diese Unterstützung möglicherweise hinzugefügt wurde  
+   ![Ausgewählte Datei](@site/docs/guides/img/how-to-play-media-3.png)
+4. Jetzt kannst du entweder eine Wiedergabeliste erstellen, indem du auf das Plus-Symbol rechts neben dem Eingabefeld klickst oder Du kannst die Datei zu Deinem Renderer senden, indem Du auf das Play-Icon direkt über der Mitte des Eingabefeldes klickst , damit die Wiedergabe Deinem Renderer beginnt.
 
-## 3: Play on the web interface
+## 3: Wiedergabe über die Weboberfläche
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+Die Web-Schnittstelle kann überall in Ihrem lokalen Netzwerk aufgerufen werden, auch auf Computern und Renderern. In vielerlei Hinsicht bietet es unsere fortschrittlichste Benutzeroberfläche und Funktionen.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Öffnen Sie die Web-Schnittstelle. Wenn du die Adresse kennst, die du erreichen kannst, ansonsten ist es eine einfache Möglichkeit, auf die Schaltfläche "Web-Schnittstelle" auf unserer Benutzeroberfläche zu klicken  
+   ![Das Webinterface öffnen](@site/docs/guides/img/how-to-play-media-4.png)
+2. Klicken öffnet das Webinterface in Ihrem Standard-Browser. Von dort aus kannst du zu deiner Datei navigieren und klicken, um sie abzuspielen  
+   ![Video auf dem Webinterface](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 2: Von der UMS Schnittstelle zu einem Renderer senden
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+Ähnlich wie oben in Option 2 können Sie Ihre Medien über unsere Web-Schnittstelle an einen Renderer senden.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Klicken Sie auf das kleine Cast-Symbol für eine Datei beim Durchsuchen eines Verzeichnisses. Es befindet sich rechts unten neben dem Vorschaubild.  
+   ![Senden Symbol](@site/docs/guides/img/how-to-play-media-6.png)
+2. Dadurch wird ein schwebendes Mini-Bedienfeld angezeigt, das Sie verwenden können, um die Wiedergabe der Datei zu steuern und dynamische Wiedergabelisten zu verwalten, wenn Sie es auswählen.  
+   ![Schwebendes Bedienfeld](@site/docs/guides/img/how-to-play-media-7.png)

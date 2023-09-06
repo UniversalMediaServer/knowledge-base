@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Verstehen Sie, wie sie funktionieren, und ignorieren sie Sie oder passen Sie sie an, wenn nötig.
 
-## Fedora Linux Preparation
+## Fedora Linux Vorbereitung
 
-For operating system support and service packages.
+Für Betriebssystem-Support und Service-Pakete.
 
 ```
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
@@ -12,7 +12,7 @@ sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Erneut anmelden oder den Rechner neu starten.
 
 ```
 sudo systemctl start docker;
@@ -22,17 +22,17 @@ sudo chown core:docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+Speicher auf dem Server einbinden, um zu diesem Verzeichnis zu verlinken, wahrscheinlich schreibgeschützt.
 
-## Container Setup
+## Container-Setup
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+Verbinden Sie die folgenden Volumes und Ports:
+- Medienordner VOLUME /media
+- Profilordner mit UMS.conf VOLUME /profile
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Diese Ports vom Server freigeben/weiterleiten: 1044, 5001, 9001.
 
-The following scripts does those steps:
+Die folgenden Skripte erledigen diese Schritte:
 ```
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
@@ -55,35 +55,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Probleme und Probleme untersuchen
 
-### General
+### Allgemein
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker Anhang [--no-stdin] UMS; # Ungewollt den Container stoppen, wenn die Prüfung abgeschlossen wird..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Für detaillierte Protokolle geben Sie im Terminal ein: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Einbindungsprobleme
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Bei der Verwendung von Fedora CoreOS hatte ich Zugriff/Erlaubnis verweigert bei der Verwendung von Bind Mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Es kann empfohlen werden, stattdessen die Docker-gesteuerte, benannte Volumenfunktion zu verwenden, um diese Komplexität zu vermeiden. Ich habe festgestellt, dass der zusätzliche :Z als Suffix für die Deskriptor-Option des Bind Mounts Container Schreibzugriff auf Host-Dateien erlaubt. :z kann stattdessen auch verwendet werden, aber Sicherheitsbetrachtungen könnten dazu führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert gehalten werden statt gemeinsam genutzt.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+Passende Fehlermeldungen können mit Journalctl gesehen werden, so dass es sich um ein SELinux-Problem handelt. Die Lösung dafür wäre "chcon -Rt svirt_sandbox_file_t host_dir" auszuführen, aber davon wird aich abgeraten.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Anscheinend Container-selinux.
 
-## References
+## Verweise
 
 - https://hub.docker.com/r/universalmediaserver/ums
 - https://hub.docker.com/r/atamariya/ums/
