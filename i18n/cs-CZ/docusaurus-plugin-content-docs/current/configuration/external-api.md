@@ -334,7 +334,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 This call will list list all available playlist accessible by UMS.
 
-#### adding songs to playlists
+#### přidávání skladeb do playlistu
 
 The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
 
@@ -363,7 +363,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 
 This adds the song with the ID `123` to the playlist `Pop`.
 
-#### removing songs from playlists
+#### odebírání skladeb z playlistu
 
 The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
 
@@ -394,7 +394,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 
 This removes the song with the ID `123` from the playlist `Pop`.
 
-#### create new playlists
+#### vytvořit nový playlist
 
 Playlist name should be provided without any path and without file extensions. 
 
@@ -415,9 +415,9 @@ curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X PO
 
 This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
 
-## Java code example
+## Příklad kódu Java
 
-This code snippet shows how to use the API with okhttp3 library.
+Tento úryvek kódu ukazuje, jak používat API v knihovně okhttp3.
 
 ```Java
 import nextcp.dto.Config;
