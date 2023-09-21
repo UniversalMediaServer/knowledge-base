@@ -1,6 +1,6 @@
 # How to play media
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Questo articolo spiegherà i 4 modi principali per riprodurre video, audio e immagini via UMS
 
 ## 1: Play from a renderer interface
 
