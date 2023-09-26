@@ -1,20 +1,20 @@
 # Безопасность и конфиденциальность
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS - это DLNA-сервер. Теперь DLNA - это протокол, не имеющий реального понятия "пользователь". Например, вам не нужно "входить" в телевизор. Это приводит к тому, что все рендереры получают доступ к одним и тем же данным. И это может быть не тем, что вы хотите. Например, если у вас есть две папки kids_safe и kids_unsafe, может потребоваться, чтобы рендереры в детской комнате имели доступ только к папке kids_safe. UMS предоставляет ряд методов управления доступом. 
 
-## IP filter
+## Фильтр по IP
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+Фильтрация по IP-адресу - наиболее ограничительный метод у UMS . Для его использования укажите список IP-адресов, разделённых запятыми, которым разрешено подключаться. Рендеры, адрес которых не соответствует записям в списке, просто отбрасывают свой трафик (очень рано по UMS). У них не будет доступа к ЛЮБЫМ папкам (не будет видна даже корневая папка). Используйте этот метод, чтобы полностью заблокировать детей. См. более подробную информацию в описании ip_filter в UMS.conf.
 
-Example to allow only 2 addresses
+Пример разрешения только двух адресов
 
 ```
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Разрешенный список
+## Разрешённый список
 
-Разрешить перечисление - это метод, который позволяет вам настраивать корневую папку для каждого рендера. This makes it possible to share different folder sets to different renderers. Он работает следующим образом: для вашего UMS.conf (в настоящее время нет графических настроек) вы добавляете строки тегов формата. ption = значение, в котором тег является IP адресом или именем рендера. Имя рендеринга должно быть с пробелами изменено на _ (подчеркивание). Этот вариант является одним из
+Allowlisting - это метод, позволяющий настроить корневую папку для каждого рендеринга. Это позволяет использовать разные наборы папок для разных рендереров. Это работает следующим образом: вы добавляете в UMS.conf (сейчас без графических настроек) строки формата тег.опция = значение, где тег - это IP-адрес или имя рендера. В имени рендера пробелы должны быть заменены на _ (подчёркивание). Этот вариант является одним из
 
 - папки
 - vfolders
