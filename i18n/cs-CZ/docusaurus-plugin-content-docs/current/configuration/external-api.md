@@ -298,15 +298,15 @@ pro povolení této služby. Ve výchozím nastavení je tato služba zakázána
 
 Číst dostupné seznamy skladeb. Tyto názvy playlistu musí být použity pro následná volání pro přidání nebo odebrání skladeb.
 
-| Úmysl                 | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
+| Úmysl                 | Dodává všechny podporované (`m3u`, `m3u8` a `pls`) a dostupné seznamy skladeb z nakonfigurované složky. Kromě názvu playlistu je playlist `playlistId`                          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| RESPONSE BODY         | JSON pole jmen playlistu                                                                                                                                                        |
+| Příklad RESPONSE BODY | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Dostupné od           | 11.0                                                                                                                                                                            |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
