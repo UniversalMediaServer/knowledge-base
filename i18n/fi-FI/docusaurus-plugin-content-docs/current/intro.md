@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Johdanto
 
-This website contains the official documentation for using UMS.
+Tällä sivustolla on viralliset ohjeet UMS:n käyttöön.
 
 It is split into 3 main sections: Configuration, Guides, and Installation.
 
