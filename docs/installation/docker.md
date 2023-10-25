@@ -1,21 +1,28 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore or customize as necessary.
+Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
 
-## Fedora Linux Preparation
+## Preparation
 
 For operating system support and service packages.
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 Re-login or restart the machine.
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ Mount storage to host and link into that directory, probably read-only.
 
 ## Container Setup
 
-Mount following volumes and ports:
-- Media folder VOLUME /media
-- Profile folder containing UMS.conf VOLUME /profile
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
-The following scripts does those steps:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -77,11 +85,11 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files.
-:z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files.
+`:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
 Matching error messages can be seen using journalctl, so it is an SELinux problem.
-The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
 
