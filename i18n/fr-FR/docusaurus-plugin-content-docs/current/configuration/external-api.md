@@ -6,9 +6,9 @@ L'API externe permet aux programmes tiers d'accéder ou de déclencher des fonct
 
 Modifiez UMS.conf et configurez une api_key comme ceci
 
-`api_key = mot_de_passe_secret`
+`api_key = secret_password`
 
-Le _`mot_de_passe_secret`_ doit avoir un minimum de 12 caractères.
+Le _`secret_password`_ doit avoir un minimum de 12 caractères.
 
 ## Utilisation de l'API
 
@@ -18,21 +18,21 @@ Si l'API externe est activée, elle sera accessible via un appel POST sur /api/C
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Relance une analyse complète de la bibliothèque                      |
+| ------------------------------- | -------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`                                          |
+| POST BODY                       |                                                                      |
+| POST BODY example / description | Cette commande ne requiert aucun contenu dans le corps de la requête |
+| Disponible depuis               | 10.4.2                                                               |
 
 :::info
-This can be slow for large libraries
+Cela peut être lent pour les grandes bibliothèques
 :::
 
-Example:
+Exemple :
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+
 ```
 
 #### rescanFileOrFolder
