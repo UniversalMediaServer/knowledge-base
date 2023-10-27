@@ -1,21 +1,28 @@
 # Docker
 
-Előfordulhat, hogy ezek közül néhány lépés nem vonatkozik az Ön telepítésére.  Értse meg, hogy mit csinálnak, és szükség szerint hagyja figyelmen kívül vagy alakítsa át őket.
+Előfordulhat, hogy ezek közül néhány lépés nem vonatkozik az Ön telepítésére.  Understand what they do, and ignore, or customize as necessary.
 
-## Fedora Linux előkészítés
+## Preparation
 
 Operációs rendszer-támogatás és szervizcsomagok.
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 Jelentkezzen be újra, vagy indítsa újra a gépet.
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ Csatlakoztassa a tárhelyet a hosztra, és linkelje be azt a könyvtárat, való
 
 ## Konténer beállítása
 
-A következő kötetek és portok csatlakoztatása:
-- Média mappa VOLUME /media
-- Az UMS.conf-ot tartalmazó profil mappa VOLUME /profile
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 A következő portok feltárása/továbbítása az állomásról: 1044, 5001, 9001.
 
-A következő szkriptek elvégzik ezeket a lépéseket:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -77,9 +85,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 A Fedora CoreOS-t használva hozzáférési/engedélyezési problémáim voltak, amikor megpróbáltam használni a kötési kötéseket.
 
-Lehet, hogy a Docker által kezelt, nevesített kötetek képességének használata ajánlott ehelyett, de ennek a bonyolultságnak az elkerülése érdekében úgy találtam, hogy a bind mount descriptor opció értékének további :Z utótagja lehetővé teszi a konténer írási hozzáférését az állomásfájlokhoz. :z is használható helyette, de a biztonsági tanácsok azt javasolhatják, hogy az erőforrásokat inkább az alkalmazás/szolgáltatás környezetek között elkülönítve tartsuk, mintsem megosztva.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-A megfelelő hibaüzenetek a journalctl segítségével láthatók, tehát SELinux problémáról van szó. A megoldás erre a chcon -Rt svirt_sandbox_file_t host_dir futtatása lenne, de ez is elvetendőnek tűnik.
+A megfelelő hibaüzenetek a journalctl segítségével láthatók, tehát SELinux problémáról van szó. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Furcsa módon ez nem probléma a Fedora Workstation-en, de azt hiszem, a kézi telepítéssel hozzáadtam egy csomagot, ami ezt kezeli. Úgy tűnik, hogy a container-selinux.
 
