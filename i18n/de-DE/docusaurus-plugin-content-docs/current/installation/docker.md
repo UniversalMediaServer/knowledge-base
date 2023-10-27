@@ -1,21 +1,28 @@
 # Docker
 
-Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Verstehen Sie, wie sie funktionieren, und ignorieren sie Sie oder passen Sie sie an, wenn nötig.
+Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Understand what they do, and ignore, or customize as necessary.
 
-## Fedora Linux Vorbereitung
+## Preparation
 
 Für Betriebssystem-Support und Service-Pakete.
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 Erneut anmelden oder den Rechner neu starten.
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ Speicher auf dem Server einbinden, um zu diesem Verzeichnis zu verlinken, wahrsc
 
 ## Container-Setup
 
-Verbinden Sie die folgenden Volumes und Ports:
-- Medienordner VOLUME /media
-- Profilordner mit UMS.conf VOLUME /profile
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 Diese Ports vom Server freigeben/weiterleiten: 1044, 5001, 9001.
 
-Die folgenden Skripte erledigen diese Schritte:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -77,9 +85,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Bei der Verwendung von Fedora CoreOS hatte ich Zugriff/Erlaubnis verweigert bei der Verwendung von Bind Mounts.
 
-Es kann empfohlen werden, stattdessen die Docker-gesteuerte, benannte Volumenfunktion zu verwenden, um diese Komplexität zu vermeiden. Ich habe festgestellt, dass der zusätzliche :Z als Suffix für die Deskriptor-Option des Bind Mounts Container Schreibzugriff auf Host-Dateien erlaubt. :z kann stattdessen auch verwendet werden, aber Sicherheitsbetrachtungen könnten dazu führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert gehalten werden statt gemeinsam genutzt.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-Passende Fehlermeldungen können mit Journalctl gesehen werden, so dass es sich um ein SELinux-Problem handelt. Die Lösung dafür wäre "chcon -Rt svirt_sandbox_file_t host_dir" auszuführen, aber davon wird aich abgeraten.
+Passende Fehlermeldungen können mit Journalctl gesehen werden, so dass es sich um ein SELinux-Problem handelt. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Anscheinend Container-selinux.
 
