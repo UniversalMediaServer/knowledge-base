@@ -1,38 +1,38 @@
-# External API
+# API externe
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+L'API externe permet aux programmes tiers d'accéder ou de déclencher des fonctionnalités UMS avec un appel HTTP.
 
-## How to enable the external API
+## Comment activer l'API externe
 
-Edit UMS.conf and configure an api_key like this
+Modifiez UMS.conf et configurez une api_key comme ceci
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+Le _`secret_password`_ doit avoir un minimum de 12 caractères.
 
-## API usage
+## Utilisation de l'API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Si l'API externe est activée, elle sera accessible via un appel POST sur /api/COMMAND
 
-### Folder Scanning
+### Analyse des dossiers
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | Relance une analyse complète de la bibliothèque                      |
+| ------------------------------- | -------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`                                          |
+| POST BODY                       |                                                                      |
+| POST BODY example / description | Cette commande ne requiert aucun contenu dans le corps de la requête |
+| Disponible depuis               | 10.4.2                                                               |
 
 :::info
-This can be slow for large libraries
+Cela peut être lent pour les grandes bibliothèques
 :::
 
-Example:
+Exemple :
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+
 ```
 
 #### rescanFileOrFolder

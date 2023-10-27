@@ -1,21 +1,28 @@
 # Dokovací modul
 
-Některé z těchto kroků se na vaši instalaci nevztahují.  Pochopit, co dělají, a podle potřeby ignorovat nebo přizpůsobit.
+Některé z těchto kroků se na vaši instalaci nevztahují.  Understand what they do, and ignore, or customize as necessary.
 
-## Příprava Linuxu Fedora
+## Preparation
 
 Pro podporu operačního systému a balíčky služeb.
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 Znovu se přihlašte nebo restartujte počítač.
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ Připojit úložiště k hostování a odkazovat do tohoto adresáře, pravděpo
 
 ## Nastavení kontejneru
 
-Připojit následující svazky a porty:
-- Složka médií VOLUME /media
-- Složka profilu obsahující UMS.conf VOLUME /profil
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 Zobrazit/povolit tyto porty hostitele: 1044, 5001, 9001
 
-Následující skripty dělají tyto kroky:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -77,9 +85,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Použití Fedora CoreOS, jsem měl přístup a oprávnění odepřen problémy se spojením spojení.
 
-Namísto toho může být doporučeno použít funkci pojmenovaných objemů řízenou dokovací stanicí, ale vyhnout se této složitosti, Zjistil jsem, že další :Z jako přípona pro svázanou hodnotu volby deskriptoru povolený přístup kontejneru k hostitelským souborům. Místo toho lze použít i :z, ale bezpečnostní doporučení mohou naznačovat, že zdroje jsou izolovanější mezi aplikacemi/servisním prostředím spíše než sdílenými.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-Pomocí deníku můžete vidět odpovídající chybové zprávy, takže je to problém SELinux. Řešením by bylo spustit chcon -Rt svirt_sandbox_file_t host_dir, ale to se také zdá být odrazující.
+Pomocí deníku můžete vidět odpovídající chybové zprávy, takže je to problém SELinux. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Nejedná se o záležitost na pracovní stanici Fedory, ale domnívám se, že manulni instalace balíčku to vyřeší.  Vypadá to na container-selinux
 

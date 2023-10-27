@@ -1,21 +1,28 @@
 # Docker
 
-Bu adımlardan bazıları kurulumunuza uygulanmayabilir.  Ne yaptıklarını anlayın ve gerekirse yoksayın ya da özelleştirin.
+Bu adımlardan bazıları kurulumunuza uygulanmayabilir.  Understand what they do, and ignore, or customize as necessary.
 
-## Fedora Linux Hazırlığı
+## Preparation
 
 İşletim sistemi desteği ve hizmet paketleri için.
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 Yeniden oturum açın veya makineyi yeniden başlatın.
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ Anamakineye depolamayı bağlayın ve bu dizine bağlantılayın, muhtemelen sal
 
 ## Kapsayıcı Ayarlama
 
-Aşağıdaki birimleri ve bağlantı noktalarını bağlayın:
-- Ortam klasörü VOLUME /media
-- UMS.conf VOLUME /profile içeren profil klasörü
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 Anamakineden şu bağlantı noktalarını ortaya çıkarın/yönlendirin: 1044, 5001, 9001.
 
-Aşağıdaki komut kodları bu adımları gerçekleştirir:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -77,9 +85,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Fedora CoreOS kullanarak, bind mount’ları kullanmaya çalışırken erişim/izin verilmedi sorunları yaşadım.
 
-Adlandırılmış birimler yerine Docker tarafından yönetilen yeteneğinin kullanılması önerilebilir, ancak bu karmaşıklıktan kaçınmak için bind mount’un tanımlayıcı seçenek değerinin bir soneki olarak ek :Z’nin, anamakine dosyalarına kapsayıcı yazma erişimine izin verdiğini buldum. Bunun yerine :z de kullanılabilir, ancak güvenlik tavsiyesi, kaynakların uygulama/hizmet ortamları arasında paylaşılmak yerine daha izole tutulmasını önerebilir.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-Eşleşen hata iletileri, journalctl kullanılarak görülebilir, bu nedenle bu bir SELinux sorunudur. Bunun çözümü, chcon -Rt svirt_sandbox_file_t host_dir komutunu çalıştırmak olacaktır, ancak bu pek de olası görünmez.
+Eşleşen hata iletileri, journalctl kullanılarak görülebilir, bu nedenle bu bir SELinux sorunudur. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Garip bir şekilde bu, Fedora Workstation’da bir sorun değildir, ancak sanırım bunu yüklemek, bununla başa çıkmak için el ile bir paket ekler. Container-selinux gibi görünüyor.
 
