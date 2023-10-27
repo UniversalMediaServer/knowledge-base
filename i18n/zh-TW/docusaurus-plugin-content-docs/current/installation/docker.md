@@ -1,21 +1,28 @@
 # Docker
 
-部份步驟也許不適用於你的安裝過程。  請理解步驟要達成什麼目的，並忽視或修改成你需要的。
+部份步驟也許不適用於你的安裝過程。  Understand what they do, and ignore, or customize as necessary.
 
-## Fedora Linux 準備過程
+## Preparation
 
 對作業系統支援與服務套件所需，
 
+### Debian Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+
+### Fedora Linux
+
+Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+
+#### Extra instructions
+
 ```
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo;
-sudo dnf install docker-ce;
 sudo usermod -a -G docker <username>;
 ```
 
 重新登入或重開機
 
 ```
-sudo systemctl start docker;
 sudo mkdir /srv/UMS;
 sudo chcon -t svirt_sandbox_file_t /srv/UMS;
 sudo chown core:docker /srv/UMS;
@@ -26,14 +33,15 @@ chmod -R g+w /srv/UMS;
 
 ## 容器 (Container) 設置
 
-掛載以下裝置(VOLUME)和埠：
-- 影音目錄 VOLUME /media
-- 個人化目錄包含 UMS.conf VOLUME /profile
+Mount the following volumes:
+- Media folder `/media`
+- Profile folder containing UMS.conf `/profile`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
-The following scripts does those steps:
+The following scripts accomplish that (using the fish shell):
 ```
+sudo su -;
 set rootDir "/home/UMS/.config/UMS";
 mkdir -p "$rootDir/data";
 ​
@@ -89,9 +97,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional :Z as a suffix to the bind mount's descriptor option value allowed container write access to host files. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared. :z can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged.
+Matching error messages can be seen using journalctl, so it is an SELinux problem. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run chcon -Rt svirt_sandbox_file_t host_dir, but that also seems discouraged. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux.
 
