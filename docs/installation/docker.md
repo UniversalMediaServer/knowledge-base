@@ -109,3 +109,4 @@ Strangely this is not an issue on Fedora Workstation, but I guess installing it 
 - https://www.universalmediaserver.com/download/#docker
 - https://www.universalmediaserver.com/forum/viewtopic.php?t=12922
 - https://www.universalmediaserver.com/forum/viewtopic.php?t=14580
+- https://www.universalmediaserver.com/forum/viewtopic.php?p=47952
