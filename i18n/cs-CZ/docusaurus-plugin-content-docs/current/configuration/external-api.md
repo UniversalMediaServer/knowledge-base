@@ -314,19 +314,19 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 Tento požadavek bude zobrazovat všechny dostupné seznamy skladeb.
 
-#### list server accessible playlists
+#### seznam playlistů na serveru
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Všechny tyto playlisty jsou známy UMS (databáze/mezipaměti). Tyto názvy playlistu musí být použity pro následné dotazy pro přidání nebo odebrání skladeb. ID playlistu může být použito k přímé navigaci do playlistu prohlížením `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
+| Úmysl                 | Dodá všechny podporované (`m3u`, `m3u8` a `pls`) a dostupné seznamy skladeb z nakonfigurované složky                                                     |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
 | RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
-| Available since       | dev branch                                                                                                                                               |
+| Příklad RESPONSE BODY | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Dostupné od           | vývojová větev                                                                                                                                           |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
