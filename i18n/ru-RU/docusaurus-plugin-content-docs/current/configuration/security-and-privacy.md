@@ -26,37 +26,37 @@ Allowlisting - это метод, позволяющий настроить ко
 Пример
 
 ```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
+папки =
+скрыть_видео_установки = ложь
+192.168.1.1.папки = c:\\родительский_контроль
+192.168.1.1.скрыть_настройки = верно
 ```
 
 Это будет для IP-адреса 192.168.1.1:
 
-- Share the folder c:\child_safe
+- Предоставить общий доступ к папке c:\родительский_контроль
 - Скрывать папку "Настройки сервера"
 - Скрыть список недавно воспроизведенных
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Все остальные средства визуализации будут использовать "глобальные" настройки, т.е. просматривать все папки и настройки сервера.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Если параметр отсутствует, он вернется к "глобальной" конфигурации , а если его нет к значению по умолчанию.
 
-## UMS.deny
+## UMS.отказать
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. Например:
+Белый список может изменить только внешний вид корневой папки. Но если у вас смешанные файлы (у вас есть 10 папок, но только одна должна быть доступна для детей). Чтобы контролировать доступ к отдельным папкам (или носителям), вы можете использовать UMS.запретить. Это работает следующим образом: Добавьте файл с именем US.запретить в том же каталоге, что и ваш файл UMS.conf, и внутри этого файла добавьте тег.[имя|файл|система]=регулярное выражение Для каждой папки/файла, которые должны быть добавлены, UMS применит регулярное выражение к имени папки или файла, и если регулярное выражение совпадает, папка/файл добавляться не будет. Например:
 ```
-192.168.1.1.name=.*private.*
-```
-
-will remove all folders/files which has the word private in it.
-```
-192.168.1.1.file=c:\\tst.*
+192.168.1.1.имя=.*приватный.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+удалит все папки/файлы, в которых есть приватные слова.
+```
+192.168.1.1.файл=c:\\тест.*
+```
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+удалит все файлы, которые имеют c:\тест в их пути и т.д.
+
+Если в файле "UMS.отказать" не задано никаких правил, файлы/папки будут добавлены.
 
 Скрытые папки
 
@@ -76,30 +76,30 @@ hide_live_subtitles_folder =true
 
 ## PIN-код
 
-Все вышеперечисленные методы ограничивают доступ к различным устройствам. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). PIN-код решает эту проблему. Он позволяет скрыть папки/медиа за PIN-кодом, который необходимо ввести с помощью рендера. По умолчанию ввод представляет собой последовательность цифр (0-9) точно так же, как код банкомата. Я настоятельно предлагаю, чтобы вы использовали цифровые коды, по мере того как становится трудно напечатать из рендерера. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. Например:
+Все вышеперечисленные методы ограничивают доступ к различным устройствам. Но если вы можете получить доступ к рендеру, которому разрешено просматривать папку, эти методы вам не помогут (если у детей есть доступ к телевизору в гостиной, у которого есть доступ ко всем носителям, то у них есть доступ к этому носителю). PIN-код решает эту проблему. Он позволяет скрыть папки/медиа за PIN-кодом, который необходимо ввести с помощью рендера. По умолчанию ввод представляет собой последовательность цифр (0-9) точно так же, как код банкомата. Я настоятельно предлагаю, чтобы вы использовали цифровые коды, по мере того как становится трудно напечатать из рендерера. Но если вы слишком параноидальны, вы можете добавить буквы. Это работает следующим образом: Добавьте файл с именем UMS.code в тот же каталог, что и ваш UMS.conf, и к этому файлу добавьте regexp, код, где regexp - это регулярное выражение, как в файле "UMS.deny", а code - это код, который предоставит доступ к папке / носителю. В коде нет никаких ограничений по длине. Например:
 ```
-.*private.*,1234
+.*частный.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Заставит вас ввести код, если папка/носитель содержит слово "приватный", а правильный код - 1234. Затем код остается действительным в течение 4 часов (если вы не измените это время).
 
-## Custom Device Configuration
+## Пользовательская конфигурация устройства
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Любое свойство конфигурации также можно задать для каждого устройства, создав пользовательскую конфигурацию устройства, чтобы переопределить настройки UMS по умолчанию (более подробную информацию смотрите в разделе Создание пользовательской конфигурации устройства).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Например, чтобы настроить детский телевизор:
+- Нажмите кнопку "Настроить это устройство" в правом верхнем углу всплывающей панели графического интерфейса средства визуализации и укажите имя для конфигурации.
+- В открывшемся новом файле conf добавьте любые настройки, которые вы хотите переопределить для телевизора, например, изменить имя сервера и указать разные папки:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Пользовательский профиль устройства
+# Смотрите DefaultRenderer.conf для описания всех возможных параметров средства визуализации
+# и UMS.conf для параметров программы.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Параметры в этом файле переопределяют настройки по умолчанию для конкретных устройств Sony Bravia EX, перечисленных ниже.
+# Укажите устройства по uuid (или адресу, если uuid отсутствует), разделяя их запятыми, если их больше одного.
 
-device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
-server_name = Kid Stuff
-folders = c:\kids\stuff, c:\kids\otherstuff
+устройство = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
+имя_сервера = Kid Stuff
+Папки с настройками для детей = c:\kids\stuff , c:\kids\otherstuff
 ```

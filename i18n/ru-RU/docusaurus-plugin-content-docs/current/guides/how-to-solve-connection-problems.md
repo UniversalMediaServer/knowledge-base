@@ -1,12 +1,12 @@
-# How to solve connection problems
+# Как решить проблемы с подключением
 
-This page provides solutions for the most common connection problems our users encounter.
+На этой странице представлены решения наиболее распространенных проблем с подключением, с которыми сталкиваются наши пользователи.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS обнаруживает средство визуализации, но средство визуализации не обнаруживает UMS
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+Обычно это происходит, когда ваш компьютер имеет более одного активного сетевого подключения (например, одно проводное и одно беспроводное). Вы можете решить эту проблему, установив, какой сетевой интерфейс вам нужен:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. Открыть UMS
+2. Выберите вкладку `Общие настройки`
+3. Разверните раскрывающийся список `Принудительное подключение к сети в интерфейсе:` и выберите нужный интерфейс. В выпадающем списке может быть много вариантов. Тот, который вам нужен, обычно будет иметь IP-адрес в скобках после имени, например:  
+   ![Откройте графический интерфейс](@site/docs/guides/img/how-to-solve-connection-problems.png)

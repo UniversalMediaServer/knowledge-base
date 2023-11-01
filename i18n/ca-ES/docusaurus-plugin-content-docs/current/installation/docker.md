@@ -1,20 +1,20 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+Some of these steps may not apply to your installation.  Entendre el que fan i ignorar o personalitzar segons sigui necessari.
 
-## Preparation
+## Preparació
 
 For operating system support and service packages.
 
-### Debian Linux
+### Linux Debian
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Instal·leu Docker (motor): https://docs.docker.com/engine/install/debian/
 
-### Fedora Linux
+### Linux Fedora
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Instal·leu Docker (motor): https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Instruccions addicionals
 
 ```
 sudo usermod -a -G docker <username>;
@@ -23,33 +23,30 @@ sudo usermod -a -G docker <username>;
 Re-login or restart the machine.
 
 ```
-sudo mkdir /srv/UMS;
-sudo chcon -t svirt_sandbox_file_t /srv/UMS;
-sudo chown core:docker /srv/UMS;
+sudo su -;
+mkdir /srv/UMS;
+chcon -t svirt_sandbox_file_t /srv/UMS;
+chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only.
+Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+
+Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
 
 ## Container Setup
 
-Mount the following volumes:
+Munta els volums següents:
 - Media folder `/media`
 - Profile folder containing UMS.conf `/profile`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Fer-ho amb els scripts següents (utilitzant la closca de peix):
 ```
 sudo su -;
-set rootDir "/home/UMS/.config/UMS";
+set rootDir "$HOME/.config/UMS";
 mkdir -p "$rootDir/data";
-​
-for file in "UMS.conf" "WEB.conf" "ffmpeg.webfilters"
-  wget -P "$rootDir" \
-    "https://raw.githubusercontent.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/$file" \
-  ;
-end
 ​
 docker pull universalmediaserver/ums;
 ​
@@ -85,28 +82,27 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Potser sigui recomanable utilitzar la capacitat de volums amb nom gestionada per Docker, però per evitar aquesta complexitat, vaig trobar que el `:Z` addicional com a sufix del valor de l'opció de descriptor del muntatge d'enllaç permetia l'escriptura del contenidor. accés als fitxers host. ​Consulta els detalls També es pot utilitzar I`:z`, però els consells de seguretat poden suggerir mantenir els recursos més aïllats entre entorns d'aplicació/servei, en lloc de compartir-los.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Matching error messages can be seen using journalctl, so it is an SELinux problem. La solució per a això seria executar `chcon -Rt svirt_sandbox_file_t` host_dir, però això també sembla desanimat.
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
 
 ## References
 
-- https://hub.docker.com/r/universalmediaserver/ums
-- https://hub.docker.com/r/atamariya/ums/
-- https://www.universalmediaserver.com/forum/viewtopic.php?t=14580
+- https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
+- https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
+- https://fedora.pkgs.org/36/docker-ce-x86_64/docker-ce-20.10.16-3.fc36.x86_64.rpm.html#Install_HowTo
+- https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/docker/Dockerfile
 - https://github.com/UniversalMediaServer/UniversalMediaServer/issues/1841
 - https://github.com/UniversalMediaServer/UniversalMediaServer/issues/1841#issuecomment-672849793
-- https://docs.docker.com/engine/install/fedora/
-- https://docs.docker.com/engine/install/fedora/#install-using-the-repository
+- https://github.com/UniversalMediaServer/UniversalMediaServer/pull/1599
+- https://github.com/UniversalMediaServer/UniversalMediaServer/tree/master/src/main/external-resources
+- https://hub.docker.com/r/universalmediaserver/ums
+- https://hub.docker.com/r/atamariya/ums/
 - https://pkgs.org/download/docker-ce
-- https://fedora.pkgs.org/36/docker-ce-x86_64/docker-ce-20.10.16-3.fc36.x86_64.rpm.html#Install_HowTo
 - https://support.universalmediaserver.com/
 - https://www.universalmediaserver.com/download/#docker
 - https://www.universalmediaserver.com/forum/viewtopic.php?t=12922
-- https://github.com/UniversalMediaServer/UniversalMediaServer/pull/1599
-- https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/docker/Dockerfile
-- https://github.com/UniversalMediaServer/UniversalMediaServer/tree/master/src/main/external-resources
-- https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
-- https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
+- https://www.universalmediaserver.com/forum/viewtopic.php?t=14580
+- https://www.universalmediaserver.com/forum/viewtopic.php?p=47952

@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# Sissejuhatus
 
-This website contains the official documentation for using UMS.
+See veebisait sisaldab UMS-i kasutamise ametlikku dokumentatsiooni.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+See on jagatud kolmeks põhiosaks: konfiguratsioon, juhendid ja installimine.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Kui otsisite siia konkreetset teavet, kuid ei leidnud seda, andke meile GitHubis teada, et saaksime selle lisada.
