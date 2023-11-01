@@ -8,7 +8,7 @@
 
 `api_key = секретный_пароль`
 
-_`secret_password`_ должен содержать не менее 12 символов.
+_`секретный_пароль`_ должен содержать не менее 12 символов.
 
 ## Использование API
 
@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-ключ: секретный_пароль" http
 
 #### Пересканировать файл или папку
 
-| Намерение                            | Частичное пересканирование дерева файловой системы.                                                 |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| URI                                  | `/api/сканируемые папки/повторно сканировать файл или папку`                                        |
-| Содержание сообщения                 | ПУТЬ_ К_СКАНИРОВАНИЮ                                                                                |
-| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | пример: "/music/pop/Madonna". Путь должен быть корневой папкой или вложенной папкой общего доступа. |
-| Доступно с                           | 10.4.2                                                                                              |
+| Намерение                            | Частичное пересканирование дерева файловой системы.                                                   |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| URI                                  | `/api/сканируемые папки/повторно сканировать файл или папку`                                          |
+| Содержание сообщения                 | ПУТЬ_ К_СКАНИРОВАНИЮ                                                                                  |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | пример: "/music/pop/Madonna". Путь должен быть к корневой папке или к вложенной папке общего доступа. |
+| Доступно с                           | 10.4.2                                                                                                |
 
 Пример:
 
@@ -260,7 +260,7 @@ curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://lo
 Пример:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
+curl -w "%{http_code}\n" -H "api-ключ: секретный_пароль" http://localhost:5001/api/понравившиеся/дублированные альбомы
 ```
 
 Этот вызов создаст резервную копию файла, содержащего понравившиеся альбомы
@@ -279,7 +279,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 Пример:
 
 ```
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
+curl -w "%{http_code}\n" -H "api-ключ: секретный_пароль" http://localhost:5001/api/понравившиеся/дублированные альбомы
 ```
 
 Этот вызов восстанавливает файл резервной копии.
@@ -303,13 +303,13 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5
 | URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                                                                                                        |
 | СОДЕРЖАНИЕ ОТВЕТА | JSON массив имён плейлистов                                                                                                                                                     |
-| Пример ОТВЕТА     | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Пример ОТВЕТА     | `<span class="s1">["Поп","Джаз","Классика"]</span>`                                                                                                                 |
 | Доступно с        | 11.0                                                                                                                                                                            |
 
 Пример:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -X GET http://localhost:5001/api/список воспроизведения/получить все списки воспроизведения
 ```
 
 В этом вызове будут перечислены все доступные списки воспроизведения.
@@ -329,7 +329,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 Пример:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
+curl -d "" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -X GET http://localhost:5001/api/список воспроизведения/получение списков воспроизведения сервера
 ```
 
 Этот вызов выведет список всех имеющихся плейлистов, доступных UMS.
@@ -354,14 +354,14 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 | URI                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
 | ТИП ЗАПРОСА                          | СООБЩЕНИЕ                                                                                                                                                                         |
 | Содержание сообщения                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                        | ОТСУТСТВУЕТ                                                                                                                                                                       |
+| Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | 123/Поп                                                                                                                                                                           |
+| СОДЕРЖАНИЕ ОТВЕТА                    | ОТСУТСТВУЕТ                                                                                                                                                                       |
 | Доступно с                           | 11.0                                                                                                                                                                              |
 
 Пример:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -X POST http://localhost:5001/api/список воспроизведения/добавить песню в список воспроизведения
 ```
 
 Это добавляет песню с ID `123` в плейлист `Pop`.
@@ -388,14 +388,14 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 | URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
 | ТИП ЗАПРОСА                        | СООБЩЕНИЕ                                                                                                                                                                              |
 | Содержание сообщения               | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| Пример / описание текста сообщения | 123/Pop                                                                                                                                                                                |
+| Пример / описание текста сообщения | 123/Поп                                                                                                                                                                                |
 | СОДЕРЖАНИЕ ОТВЕТА                  | ОТСУТСТВУЕТ                                                                                                                                                                            |
 | Доступно с                         | 11.0                                                                                                                                                                                   |
 
 Пример:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
+curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -X POST http://localhost:5001/api/список воспроизведения/удалить песню из списка воспроизведения
 ```
 
 Это удаляет песню с ID `123` из плейлиста `Pop`.
@@ -408,7 +408,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | URI                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
 | ТИП ЗАПРОСА                          | СООБЩЕНИЕ                                                                                                                                                                      |
-| Содержание сообщения                 | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| Содержание сообщения                 | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">Название списка воспроизведения</span>`                                       |
 | Пример СОДЕРЖАНИЯ СООБЩЕНИЯ/описание | Современный                                                                                                                                                                    |
 | СОДЕРЖАНИЕ ОТВЕТА                    | ОТСУТСТВУЕТ                                                                                                                                                                    |
 | Доступно с                           | 11.0                                                                                                                                                                           |
@@ -416,7 +416,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 Пример:
 
 ```shell
-curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
+curl -d "Современный" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -X POST http://localhost:5001/api/список воспроизведения/создать список воспроизведения
 ```
 
 Этот вызов создает новый файл списка воспроизведения с именем `Contemporary.m3u8` в папке управляемого списка воспроизведения.
@@ -464,4 +464,4 @@ import okhttp3.Response;
 
 ## HTTP коды возврата
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Установите `api_key` в UMS.conf с длиной 12 или более символов |
+| 200 | OK | | 204 | успех, если предполагается, что содержимое не будет возвращено | | 401 | недопустимый ключ api | | 404 | запрошенный объект не найден | | 417 | сбой запроса API | | 503 | внешний api не включен. Установите `api_key` в UMS.conf с длиной 12 или более символов |
