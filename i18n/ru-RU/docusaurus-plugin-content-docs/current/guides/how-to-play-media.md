@@ -1,39 +1,39 @@
-# How to play media
+# Как воспроизводить мультимедиа
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+В этой статье будут описаны 4 основных способа воспроизведения видео, аудио и изображений с помощью UMS.
 
-## 1: Play from a renderer interface
+## 1: Воспроизведение из интерфейса средства визуализации
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Когда ваш рендерер подключен к UMS через DLNA/UPnP, часто он отображается в меню под названием "Медиа-серверы" или что-то подобное, в зависимости от рендерера. Оттуда вы можете войти в UMS и перейти к носителю, к которому хотите получить доступ.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Реализация этого сильно варьируется в зависимости от средства визуализации, но основная функциональность одна и та же; перейдите к выбранному вами носителю и выберите его для воспроизведения.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Переход из интерфейса UMS в средство визуализации
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+Сам интерфейс UMS имеет возможность "отправлять" мультимедиа в средства визуализации, если они поддерживают функцию UPnP. Это концепция, аналогичная кастингу.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. Откройте пользовательский интерфейс UMS и определите средство визуализации, в которое вы хотите отправить мультимедиа. В данном случае это телевизор Panasonic VIERA серии VT60.  
+   ![Откройте графический интерфейс](@site/docs/guides/img/how-to-play-media-1.png)
+2. Нажмите на отрисованное изображение, чтобы открыть панель управления  
+   ![Управление средством визуализации](@site/docs/guides/img/how-to-play-media-2.png)
+3. Выберите файл, который вы хотите переместить, нажав на значок папки в правом нижнем углу, и он будет заполнен в левом нижнем углу. Если вы не видите элементы управления проигрывателем в этом окне, ваш рендерер не поддерживает эту функциональность. Проверьте наличие обновлений прошивки/программного обеспечения для вашего рендерера, так как они могут добавить поддержку  
+   ![Выбран файл](@site/docs/guides/img/how-to-play-media-3.png)
+4. Теперь вы можете либо создать список воспроизведения, щелкнув значок плюса справа от поля ввода, либо вы можете отправить файл в свой рендерер, щелкнув значок воспроизведения чуть выше середины поля ввода, что запустит его воспроизведение в вашем рендерере.
 
-## 3: Play on the web interface
+## 3: Воспроизведение в веб-интерфейсе
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+Доступ к веб-интерфейсу возможен в любом месте вашей локальной сети, в том числе на компьютерах и устройствах. Во многих отношениях он предлагает наш самый продвинутый интерфейс и функции.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Откройте веб-интерфейс Если вы знаете адрес, вы можете перейти по нему, в противном случае простой способ - нажать кнопку веб-интерфейса в нашем пользовательском интерфейсе  
+   ![Откройте веб-интерфейс](@site/docs/guides/img/how-to-play-media-4.png)
+2. Нажав, вы откроете веб-интерфейс в вашем браузере по умолчанию. Оттуда вы можете перейти к своему файлу и нажать, чтобы воспроизвести его  
+   ![Видео в веб-интерфейсе](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 4: Переход из веб-интерфейса в средство визуализации
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+Как и выше в варианте 2, вы можете отправить медиа на средство визуализации через наш веб-интерфейс.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Щелкните по маленькому значку файла при просмотре каталога. Он находится в правом нижнем углу миниатюры.  
+   ![Иконка в режиме ожидания](@site/docs/guides/img/how-to-play-media-6.png)
+2. При этом появится мини-плавающая панель управления, которую вы можете использовать для управления воспроизведением файла и управления динамическими списками воспроизведения, если захотите.  
+   ![Плавающая панель управления](@site/docs/guides/img/how-to-play-media-7.png)
