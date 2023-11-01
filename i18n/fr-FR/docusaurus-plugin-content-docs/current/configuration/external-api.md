@@ -18,7 +18,7 @@ Si l'API externe est activée, elle sera accessible via un appel POST sur /api/C
 
 #### rescan
 
-| Intention                       | Relance une analyse complète de la bibliothèque                      |
+| Intention                       | Ré-analyse complète de la bibliothèque                               |
 | ------------------------------- | -------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescan`                                          |
 | POST BODY                       |                                                                      |
@@ -35,19 +35,19 @@ Exemple :
 
 ```
 
-#### rescanFileOrFolder
+####
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+|                   | Ré-analyse partielle du système de fichiers                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+|                   | ``                                                                                                   |
+|                   |                                                                                                      |
+|                   | exemple: "/music/pop/Madonna". Le chemin doit être la racine ou un sous-dossier d'un chemin partagé. |
+| Disponible depuis | 10.4.2                                                                                               |
 
-Example:
+Exemple :
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+
 ```
 
 ### Liking Music (albums and songs)
