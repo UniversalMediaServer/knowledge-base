@@ -23,13 +23,16 @@ sudo usermod -a -G docker <username>;
 Erneut anmelden oder den Rechner neu starten.
 
 ```
-sudo mkdir /srv/UMS;
-sudo chcon -t svirt_sandbox_file_t /srv/UMS;
-sudo chown core:docker /srv/UMS;
+sudo su -;
+mkdir /srv/UMS;
+chcon -t svirt_sandbox_file_t /srv/UMS;
+chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Speicher auf dem Server einbinden, um zu diesem Verzeichnis zu verlinken, wahrscheinlich schreibgeschützt.
+Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+
+Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
 
 ## Container-Setup
 
@@ -42,14 +45,8 @@ Diese Ports vom Server freigeben/weiterleiten: 1044, 5001, 9001.
 The following scripts accomplish that (using the fish shell):
 ```
 sudo su -;
-set rootDir "/home/UMS/.config/UMS";
+set rootDir "$HOME/.config/UMS";
 mkdir -p "$rootDir/data";
-​
-for file in "UMS.conf" "WEB.conf" "ffmpeg.webfilters"
-  wget -P "$rootDir" \
-    "https://raw.githubusercontent.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/$file" \
-  ;
-end
 ​
 docker pull universalmediaserver/ums;
 ​
@@ -93,20 +90,19 @@ Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermut
 
 ## Verweise
 
-- https://hub.docker.com/r/universalmediaserver/ums
-- https://hub.docker.com/r/atamariya/ums/
-- https://www.universalmediaserver.com/forum/viewtopic.php?t=14580
+- https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
+- https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
+- https://fedora.pkgs.org/36/docker-ce-x86_64/docker-ce-20.10.16-3.fc36.x86_64.rpm.html#Install_HowTo
+- https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/docker/Dockerfile
 - https://github.com/UniversalMediaServer/UniversalMediaServer/issues/1841
 - https://github.com/UniversalMediaServer/UniversalMediaServer/issues/1841#issuecomment-672849793
-- https://docs.docker.com/engine/install/fedora/
-- https://docs.docker.com/engine/install/fedora/#install-using-the-repository
+- https://github.com/UniversalMediaServer/UniversalMediaServer/pull/1599
+- https://github.com/UniversalMediaServer/UniversalMediaServer/tree/master/src/main/external-resources
+- https://hub.docker.com/r/universalmediaserver/ums
+- https://hub.docker.com/r/atamariya/ums/
 - https://pkgs.org/download/docker-ce
-- https://fedora.pkgs.org/36/docker-ce-x86_64/docker-ce-20.10.16-3.fc36.x86_64.rpm.html#Install_HowTo
 - https://support.universalmediaserver.com/
 - https://www.universalmediaserver.com/download/#docker
 - https://www.universalmediaserver.com/forum/viewtopic.php?t=12922
-- https://github.com/UniversalMediaServer/UniversalMediaServer/pull/1599
-- https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/docker/Dockerfile
-- https://github.com/UniversalMediaServer/UniversalMediaServer/tree/master/src/main/external-resources
-- https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
-- https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
+- https://www.universalmediaserver.com/forum/viewtopic.php?t=14580
+- https://www.universalmediaserver.com/forum/viewtopic.php?p=47952
