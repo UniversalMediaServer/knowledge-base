@@ -30,7 +30,7 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Připojit úložiště k hostování a odkazovat do tohoto adresáře, pravděpodobně pouze pro čtení. `mount <Videos-Share> '/srv/UMS/Videos'`
 
 Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
 
