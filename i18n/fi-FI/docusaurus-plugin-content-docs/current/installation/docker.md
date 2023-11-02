@@ -36,11 +36,11 @@ Testiesimerkki: Yksinkertainen symlinkki toiseen isäntäjärjestelmän polkuun 
 
 ## Kontin asetukset
 
-Mount the following volumes:
+Yhdistä seuraavat kansiot:
 - Mediakansio `/media`
 - Profiili kansio, joka sisältää UMS.confin `/profile`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Avaa/uudelleenohjaa nämä portit isännältä: 1044, 5001, 9001.
 
 Seuraavat skriptit suorittavat tämän (käyttäen fish-terminaalia):
 ```
