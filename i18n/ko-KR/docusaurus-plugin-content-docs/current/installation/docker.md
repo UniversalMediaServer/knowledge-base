@@ -30,9 +30,9 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+저장소를 호스트에 마운트하고 해당 디렉터리 (아마도 읽기 전용)에 링크합니다. `마운트 <Videos-Share> '/srv/UMS/비디오'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+테스트 예: 도커 컨테이너의 장착된 볼륨 경로 외부에는 호스트 시스템의 다른 경로에 대한 접근이 없기 때문에 호스트 시스템의 다른 경로에 대한 단순한 동기화는 작동하지 않을 수 있다.  대신 이 위치에 있는 파일을 복사해 보십시오.
 
 ## Container Setup
 
@@ -56,8 +56,6 @@ docker create --name UMS \
   -v "$HOME/.config/UMS":/root/.config/UMS \
   universalmediaserver/ums \
 ;
-​
-docker start UMS;
 ```
 
 ## Investigating Problems/Issues
