@@ -30,9 +30,9 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Munta l'emmagatzematge per allotjar-ho i enllaça amb aquest directori, probablement només de lectura. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Exemple de prova: És possible que l'enllaç simbòlic senzill a una altra ruta del sistema amfitrió no funcioni, ja que no hi haurà accés fora de la ruta de volum muntada per al contenidor docker.  Proveu de copiar fitxers dins d'aquesta ubicació.
 
 ## Container Setup
 
