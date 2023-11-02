@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Ymmärtää, mitä ne tekevät, ja sivuuttaa, tai muokata tarvittaessa.
+Jotkin näistä vaiheista eivät välttämättä koske asennustasi.  Ymmärtää, mitä ne tekevät, ja sivuuttaa, tai muokata tarvittaessa.
 
 ## Valmistelu
 
-For operating system support and service packages.
+Käyttöjärjestelmän tuki- ja huoltopakettien osalta.
 
 ### Debian Linux
 
@@ -20,7 +20,7 @@ Asenna Docker (Engine): https://docs.docker.com/engine/install/fedora/
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Kirjaudu uudelleen tai käynnistä kone uudelleen.
 
 ```
 sudo su -;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Liitä tallennustila isäntään ja linkitä hakemistoon, todennäköisesti vain-luku. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Testiesimerkki: Yksinkertainen symlinkki toiseen isäntäjärjestelmän polkuun ei välttämättä toimi, koska siihen ei ole pääsyä dockeriin kiinnitetyn polun ulkopuolelta.  Yritä kopioida tiedostot tämän sijainnin sisällä.
 
-## Container Setup
+## Kontin asetukset
 
 Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+- Mediakansio `/media`
+- Profiili kansio, joka sisältää UMS.confin `/profile`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Seuraavat skriptit suorittavat tämän (käyttäen fish-terminaalia):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,19 +60,19 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Ongelmien tarkasteleminen
 
-### General
+### Yleistä
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Jostain syystä tahattomasti pysäyttää säiliön kun tarkastus on valmis..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Yksityiskohtaiset lokit ovat terminaalissa: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
@@ -88,7 +88,7 @@ Matching error messages can be seen using journalctl, so it is an SELinux proble
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
 
-## References
+## Viittaukset
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
