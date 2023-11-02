@@ -32,7 +32,7 @@ chmod -R g+w /srv/UMS;
 
 Připojit úložiště k hostování a odkazovat do tohoto adresáře, pravděpodobně pouze pro čtení. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Zkušební příklad: Jednoduché symbolické propojení s jinou cestou v systému hostitele nemusí fungovat, vzhledem k tomu, že k němu nebude mít přístup z vnějšku.  Zkuste místo toho zkopírovat soubory uvnitř tohoto umístění.
 
 ## Nastavení kontejneru
 
