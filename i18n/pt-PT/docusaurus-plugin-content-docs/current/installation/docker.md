@@ -1,20 +1,20 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+Some of these steps may not apply to your installation.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
 
-## Preparation
+## Preparação
 
 For operating system support and service packages.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
 
-#### Extra instructions
+#### Instruções adicionais
 
 ```
 sudo usermod -a -G docker <username>;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Monte o armazenamento nativo e ligue-o nesse pasta, provavelmente só de leitura. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Exemplo de teste: Simulação simbólica simples, para caminho diferente no sistema nativo pode não funcionar, já que não haverá acesso a ele fora do  caminho do volume montado para a pasta do docker.  Em vez disso, tente copiar para esta pasta.
 
 ## Container Setup
 
-Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+Monte os seguintes volumes:
+- Pasta de mídia `/media`
+- Pasta de perfil contendo UMS.conf `/profile`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Os seguintes scripts realizam isso (processo escama de peixe):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -82,9 +82,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Pode ser recomendável usar a capacidade de administração do Docker de nomes por volume, mas para evitar essa complexidade, Descobri que o adicional `:Z` como opção sufixo para descritor de montagem permitir o acesso de escrita ao suporte dos arquivos nativos. `:z` pode ser usado em alternativa, mas aconselha-sepor segurança manter os recursos mais isolados nos ambientes aplicativo/serviço, ao invés de partilhados.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Matching error messages can be seen using journalctl, so it is an SELinux problem. A solução seria executar `chcon -Rt svirt_sandbox_file_t` host_dir, mas isso também parece desencorajado.
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
 
