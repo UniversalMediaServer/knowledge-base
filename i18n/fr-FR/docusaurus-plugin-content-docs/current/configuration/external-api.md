@@ -50,109 +50,109 @@ Exemple :
 
 ```
 
-### Liking Music (albums and songs)
+### J'aime la musique (albums et chansons)
 
-#### like song
+#### Aimer la chanson
 
-Song will be marked as liked.
+La chanson sera marquée comme aimée.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Intention                            | Comme une chanson identifiée par musicBrainz trackId     |
+| ------------------------------------ | -------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/likesong</span>` |
+| POSTER LE CODE                       | `musicBrainz_trackID`                                    |
+| POSTER LE CODE exemple / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Disponible depuis                    | 10.20                                                    |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Je n'aime pas la chanson
 
-Song will not be disliked
+La chanson sera appréciée
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intention                            | Ne pas aimer une chanson identifiée par musicBrainz trackId |
+| ------------------------------------ | ----------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/</span>dislikesong` |
+| POSTER LE CODE                       | `musicBrainz_trackID`                                       |
+| POSTER LE CODE exemple / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Disponible depuis                    | 10.20                                                       |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### est une chanson aimée
 
-Check if song is liked.
+Vérifier si la chanson est aimée.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Intention                            | Vérifier si la chanson est aimée identifier par musicBrainz trackId                             |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POSTER LE CODE                       | `musicBrainz_trackID`                                                                           |
+| POSTER LE CODE exemple / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSABILITÉ                       | `Vrai` ou `Faux`                                                                                |
+| Disponible depuis                    | 10.20                                                                                           |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Cet appel ajoute l'attribut aimé de l'album identifié par musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### Aimez cet album
 
-Set album like state to true.
+Définissez l’état de l’album sur Vrai.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Intention                            | Aime un album identifié par musicBrainz releaseID         |
+| ------------------------------------ | --------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/</span>likealbum` |
+| POSTER LE CODE                       | `musicBrainz_releaseID`                                   |
+| POSTER LE CODE exemple / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
+| Disponible depuis                    | 10.20                                                     |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Je n'aime pas l'album
 
-Remove album like state.
+Supprimer l'état de l'album.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intention                            | Je n'aime pas une chanson identifiée par musicBrainz releaseID |
+| ------------------------------------ | -------------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/</span>dislikealbum`   |
+| POSTER LE CODE                       | `musicBrainz_releaseID`                                        |
+| POSTER LE CODE exemple / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                           |
+| Disponible depuis                    | 10.20                                                          |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Cet appel a supprimé l'attribut aimé de l'album identifié par musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### est un album aimé
 
-Check album like state.
+Vérifier l'état de l'album.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intention                       | Vérifier si l'album est aimé identifié par musicBrainz releaseID |
+| ------------------------------- | ---------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`     |
+| POST BODY                       | `musicBrainz_releaseID`                                          |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                             |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                                |
+| Available since                 | 10.20                                                            |
 
 Example:
 
