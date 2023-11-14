@@ -146,15 +146,15 @@ Cet appel a supprimé l'attribut aimé de l'album identifié par musicbrainz rel
 
 Vérifier l'état de l'album.
 
-| Intention                       | Vérifier si l'album est aimé identifié par musicBrainz releaseID |
-| ------------------------------- | ---------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked`     |
-| POST BODY                       | `musicBrainz_releaseID`                                          |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                             |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                                |
-| Available since                 | 10.20                                                            |
+| Intention                            | Vérifier si l'album est aimé identifié par musicBrainz releaseID |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| URI                                  | `<span class="s1">/api/like/</span>isalbumliked`     |
+| POSTER LE CODE                       | `musicBrainz_releaseID`                                          |
+| POSTER LE CODE exemple / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                             |
+| RESPONSABILITÉ                       | "Vrai" ou "Faux"                                                 |
+| Disponible depuis                    | 10.20                                                            |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
