@@ -282,17 +282,17 @@ Cet appel restaure le fichier de sauvegarde.
 
 ### Liste de lecture
 
-#### enable service
+#### Activez le service
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Editer UMS.conf et configurer un dossier de playlist géré par paramètre 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+pour activer ce service. Par défaut, ce service est désactivé. Le chemin du dossier de la liste de lecture doit être situé sous un dossier `<span class="s1">configuré <span class="s1"> dossier</span>` pour la liste de lecture modifiée par cette API pour être visible par UMS.
 
-#### list all playlists
+#### lister toutes les playlists
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Lire les playlists disponibles. These playlist names have to be used for subsequent calls to add or remove songs.
 
 | Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
