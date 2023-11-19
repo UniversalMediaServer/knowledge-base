@@ -238,49 +238,49 @@ Exemple :
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-### Backup / Restore
+### Sauvegarde et restauration
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Les entrées "album aimé" gérées par l'utilisateur peuvent être sauvegardées dans un sous-répertoire de profil nommé `database_backup`. Le nom du fichier est `MUSIC_BRAINZ_RELEASE_LIKE`. Dans le cas où la base de données UMS serait supprimée, il suffit de la restaurer.
 
-#### backup liked albums
+#### sauvegarder les albums aimés
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Sauvegarde de la table `MUSIC_BRAINZ_RELEASE_LIKE` vers le système de fichiers
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Intention         | sauvegarder les chansons favorites vers le système de fichiers                                        |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| TYPE DE DEMANDE   | GET                                                                                                   |
+| RESPONSABILITÉ    | `OK` ou message d'erreur                                                                              |
+| Disponible depuis | 10.20                                                                                                 |
 
-Example:
+Exemple :
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Cet appel va créer un fichier de sauvegarde contenant les albums aimés.
 
-#### restore liked albums
+#### Restaurer les albums favoris
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Sauvegarde de la table `MUSIC_BRAINZ_RELEASE_LIKE` vers le système de fichiers
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intention         | restaurer les chansons favorites à partir du fichier de sauvegarde                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| TYPE DE DEMANDE   | GET                                                                                                                                        |
+| RESPONSABILITÉ    | `OK` ou message d'erreur                                                                                                                   |
+| Disponible depuis | 10.20                                                                                                                                      |
 
-Example:
+Exemple :
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Cet appel restaure le fichier de sauvegarde.
 
-### Playlist
+### Liste de lecture
 
 #### enable service
 
