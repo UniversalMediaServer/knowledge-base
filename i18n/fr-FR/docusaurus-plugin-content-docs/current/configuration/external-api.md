@@ -292,15 +292,15 @@ pour activer ce service. Par défaut, ce service est désactivé. Le chemin du d
 
 #### lister toutes les playlists
 
-Lire les playlists disponibles. These playlist names have to be used for subsequent calls to add or remove songs.
+Lire les playlists disponibles. Ces noms de playlist doivent être utilisés pour les appels suivants pour ajouter ou supprimer des morceaux.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intention             | Fournit toutes les listes de lecture prises en charge (`m3u`, `m3u8` et `pls`) et disponibles à partir du dossier configuré. Outre le nom de la playlist, les playlists `playlistId` sont |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`           |
+| TYPE DE DEMANDE       | GET                                                                                                                                                                                       |
+| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                              |
+| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                            |
+| Available since       | 11.0                                                                                                                                                                                      |
 
 Example:
 
