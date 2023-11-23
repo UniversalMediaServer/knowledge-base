@@ -30,9 +30,9 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Подключите хранилище к хосту и перейдите по ссылке в этот каталог, доступный только для чтения. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Пример теста: Простая символическая ссылка на другой путь в хост-системе может не сработать, поскольку к нему не будет доступа за пределами пути к подключенному тому для контейнера docker.  Вместо этого попробуйте скопировать файлы в это место.
 
 ## Установка контейнера
 

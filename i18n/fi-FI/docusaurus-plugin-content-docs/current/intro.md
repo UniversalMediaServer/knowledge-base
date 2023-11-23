@@ -7,6 +7,6 @@ slug: /
 
 Tällä sivustolla on viralliset ohjeet UMS:n käyttöön.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Se on jaettu kolmeen pääosioon: asetukset, ohjeet, ja asennus.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Jos tulit tänne etsimään erityisiä tietoja ja et löytänyt niitä, kerro meille GitHubissa, jotta voimme lisätä sen.

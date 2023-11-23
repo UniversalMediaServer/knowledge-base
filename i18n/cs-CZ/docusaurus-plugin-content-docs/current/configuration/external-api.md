@@ -332,11 +332,11 @@ Příklad:
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Toto volání bude zobrazovat seznam všech dostupných playlistů, které jsou dostupné pomocí UMS.
 
-#### přidávání skladeb do playlistu
+#### přidávání skladeb do playlistů
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Požadovaný `audiotrackid` je doručen během prohlížení požadavků UPnP a lze jej extrahovat z DIDL atributu odezvy `descMetadata`
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Úmysl                     | Přidat skladbu do seznamu skladeb                                                                                                                                                 |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| REQUEST TYPE              | POST                                                                                                                                                                              |
+| POST BODY                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| Příklad / popis POST BODY | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY             | NONE                                                                                                                                                                              |
+| Dostupné od               | 11.0                                                                                                                                                                              |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Toto přidá píseň s ID `123` do playlistu `Pop`.
 
-#### odebírání skladeb z playlistu
+#### odstranění skladeb ze seznamů skladeb
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+Požadovaný `audiotrackid` je doručen během prohlížení požadavků UPnP a lze jej extrahovat z DIDL atributu odezvy `descMetadata`
 
 ```XML
 <ums-tags>
@@ -377,43 +377,43 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Úmysl                     | Odstranit skladbu ze seznamu skladeb                                                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                       | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE              | POST                                                                                                                                                                                   |
+| POST BODY                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| Příklad / popis POST BODY | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY             | NONE                                                                                                                                                                                   |
+| Dostupné od               | 11.0                                                                                                                                                                                   |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Tímto odstraníte skladbu s ID `123` z playlistu `Pop`.
 
-#### vytvořit nový playlist
+#### vytvořit nové seznamy skladeb
 
-Playlist name should be provided without any path and without file extensions. 
+Název playlistu by měl být uveden bez cesty a bez přípony souborů. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Úmysl                     | Vytváření nových seznamů skladeb ve spravované složce seznamu skladeb                                                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                       | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE              | POST                                                                                                                                                                           |
+| POST BODY                 | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| Příklad / popis POST BODY | Současný                                                                                                                                                                       |
+| RESPONSE BODY             | NONE                                                                                                                                                                           |
+| Dostupné od               | 11.0                                                                                                                                                                           |
 
-Example:
+Příklad:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Toto volání vytvoří nový soubor playlistu s názvem `Contemporary.m3u8` ve spravované složce playlistu.
 
 ## Příklad kódu Java
 
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP návratové kódy
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | Úspěch, pokud nemá být žádný obsah vrácen | | 401 | neplatný api klíč | | 404 | Požadovaný objekt nebyl nalezen | | 417 | API požadavek selhal | | 503 | externí api není povoleno. Nastavte `api_key` v UMS.conf o délce 12 nebo více znaků |
