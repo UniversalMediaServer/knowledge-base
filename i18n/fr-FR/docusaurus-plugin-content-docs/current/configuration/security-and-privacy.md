@@ -14,16 +14,16 @@ ip_filter = 192.168.1.4, 192.168.1.32
 
 ## Liste des autorisations
 
-La liste autorisée est une méthode qui vous permet de personnaliser le dossier racine pour chaque rendu. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+La liste autorisée est une méthode qui vous permet de personnaliser le dossier racine pour chaque rendu. Cela permet de partager différents ensembles de dossiers avec des moteurs de rendu différents. Le fonctionnement est le suivant : Dans votre UMS.conf (actuellement pas d'options GUI) vous ajoutez des lignes au format tag.option = value où tag est soit une adresse IP soit un nom de rendu. Le nom du rendu doit être remplacé par _ (underscore). L'option est l'une des suivantes
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+La valeur dépend de l'option. Les 4 dernières sont des valeurs booléennes. pour les dossiers et les dossiers virtuels, il s'agit d'une liste de dossiers.
 
-Example
+Exemple
 
 ```
 folders = 
@@ -32,7 +32,7 @@ hide_video_settings = false
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+Il s'agit de l'adresse IP 192.168.1.1 :
 
 - Share the folder c:\child_safe
 - Hide the Server Settings folder
