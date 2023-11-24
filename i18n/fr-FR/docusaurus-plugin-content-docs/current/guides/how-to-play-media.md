@@ -1,12 +1,12 @@
-# How to play media
+# Comment lire les médias
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Cet article explique les quatre principales façons de lire des vidéos, des fichiers audio et des images via l'UMS.
 
-## 1: Play from a renderer interface
+## 1 : Jouer depuis une interface de rendu
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Lorsque votre moteur de rendu est connecté à l'UMS via DLNA/UPnP, il s'affiche souvent dans un menu intitulé "Média Serveurs" ou quelque chose de similaire, en fonction du moteur de rendu. À partir de là, vous pouvez entrer dans l'UMS et naviguer jusqu'au média auquel vous voulez accéder.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+La mise en œuvre de cette fonction varie considérablement d'un moteur de rendu à l'autre, mais la fonctionnalité de base est la même : naviguez jusqu'au média choisi et sélectionnez-le pour le lire.
 
 ## 2: Push from the UMS interface to a renderer
 
