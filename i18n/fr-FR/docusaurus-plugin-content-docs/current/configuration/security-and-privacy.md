@@ -34,17 +34,17 @@ hide_video_settings = false
 
 Il s'agit de l'adresse IP 192.168.1.1 :
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- Partager le dossier c:\child_safe
+- Masquer le dossier "Paramètres du serveur"
+- Masquer la liste "Joués récemment"
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Tous les autres moteurs de rendu utiliseront les paramètres "globaux", c'est-à-dire qu'ils verront tous les dossiers, et les paramètres du serveur.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+Si une option n'est pas présente, la configuration "globale" sera utilisée ou, si elle n'est pas présente, la valeur par défaut sera utilisée.
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+La liste blanche ne peut modifier que l'apparence du dossier racine. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
 ```
 192.168.1.1.name=.*private.*
 ```
