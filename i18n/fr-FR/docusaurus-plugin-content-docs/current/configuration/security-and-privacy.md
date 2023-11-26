@@ -76,28 +76,28 @@ Pour cacher le dossier Web, vous devrez décocher l'option Activer le réseau ex
 
 ## Code PIN
 
-Toutes les méthodes ci-dessus restreignent l'accès à partir de différents moteurs de rendu. Mais si vous pouvez avoir accès à un rendu qui est autorisé à voir un dossier, ces méthodes ne vous aideront pas (si les enfants ont accès à la télévision du salon qui ont accès à tous les médias, alors ils ont accès à ces médias). Le code PIN résout ce problème. Il vous permet de masquer les dossiers/médias derrière un code PIN que vous devez saisir à partir du rendu. Par défaut, l'entrée est une séquence de chiffres (0-9) comme un code ATM. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Toutes les méthodes ci-dessus restreignent l'accès à partir de différents moteurs de rendu. Mais si vous pouvez avoir accès à un rendu qui est autorisé à voir un dossier, ces méthodes ne vous aideront pas (si les enfants ont accès à la télévision du salon qui ont accès à tous les médias, alors ils ont accès à ces médias). Le code PIN résout ce problème. Il vous permet de masquer les dossiers/médias derrière un code PIN que vous devez saisir à partir du rendu. Par défaut, l'entrée est une séquence de chiffres (0-9) comme un code ATM. Je vous conseille vivement d'utiliser des codes à base de chiffres, car il est difficile de les saisir à partir du moteur de rendu. Mais si vous êtes très paranoïaque, vous pouvez ajouter des lettres. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. Il n'y a pas de réglementation sur la longueur du code. Par exemple :
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Vous oblige à saisir un code si le dossier/média contient le mot "privé" et que le code correct est 1234. Le code reste alors valide pendant 4 heures (si vous ne le modifiez pas).
 
-## Custom Device Configuration
+## Configuration personnalisée de l'appareil
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Toute propriété de configuration peut également être définie par périphérique en créant une configuration de périphérique personnalisée pour remplacer les paramètres UMS par défaut (pour plus de détails, voir Création d'une configuration de périphérique personnalisée).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Par exemple, pour personnaliser la TV des enfants :
+- Cliquez sur le bouton 'Personnaliser ce périphérique' en haut à droite du panneau contextuel du moteur de rendu et spécifiez un nom pour la configuration.
+- Dans le nouveau fichier de configuration qui s'ouvre, ajoutez tous les paramètres que vous souhaitez remplacer pour la TV, par exemple pour changer le nom du serveur et spécifier différents dossiers :
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Profil d'appareil personnalisé
+# Voir DefaultRenderer.conf pour la description de toutes les options de rendu possibles
+# et UMS.conf pour les options du programme.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Les options de ce fichier remplacent les paramètres par défaut pour le(s) périphérique(s) Sony Bravia EX spécifique(s) répertorié(s) ci-dessous.
+# Spécifier les périphériques par uuid (ou adresse si aucun uuid), séparés par des virgules si plus d'un.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
