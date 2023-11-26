@@ -1,12 +1,12 @@
-# How to solve connection problems
+# Comment résoudre les problèmes de connexion
 
-This page provides solutions for the most common connection problems our users encounter.
+Cette page fournit des solutions aux problèmes de connexion les plus courants que nos utilisateurs rencontrent.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS détecte le moteur de rendu mais le moteur de rendu ne détecte pas UMS
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+Cela se produit généralement lorsque votre ordinateur dispose de plusieurs connexions réseau actives (par exemple, une connexion filaire et une connexion sans fil). Vous pouvez le résoudre en définissant quelle interface réseau vous voulez:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. Ouvrir UMS
+2. Sélectionnez l'onglet `Paramètres généraux`
+3. Développez la liste déroulante `Forcer la mise en réseau sur l'interface :` et sélectionnez l'interface que vous voulez. Le menu déroulant contient de nombreuses options. Celui que vous voulez possède généralement une adresse IP entre parenthèses après le nom, par exemple :  
+   ![Ouvrir l'interface](@site/docs/guides/img/how-to-solve-connection-problems.png)
