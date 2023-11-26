@@ -44,23 +44,23 @@ Si une option n'est pas présente, la configuration "globale" sera utilisée ou,
 
 ## UMS.deny
 
-La liste blanche ne peut modifier que l'apparence du dossier racine. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+La liste blanche ne peut modifier que l'apparence du dossier racine. Mais si vous avez des choses mixtes (vous avez 10 dossiers mais un seul doit être limité aux enfants). Pour contrôler l'accès à des dossiers individuels (ou à des médias), vous pouvez utiliser le UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. Par exemple :
 ```
 192.168.1.1.name=.*private.*
 ```
 
-will remove all folders/files which has the word private in it.
+supprimera tous les dossiers/fichiers qui contiennent le mot privé.
 ```
 192.168.1.1.file=c:\\tst.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+supprimera tous les fichiers qui ont c:\tst dans leur chemin, etc.
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+Si aucune règle n'est définie dans le fichier "UMS.deny", les fichiers/dossiers seront ajoutés.
 
-Hiding folders
+Cacher les dossiers
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Contrôler la visibilité des dossiers virtuels. Ces paramètres se trouvent dans le fichier UMS.conf. Pour masquer certains dossiers lors de la navigation, il suffit de définir leur valeur à true ou de les cocher dans l'onglet Paramètres de navigation / Partage depuis le mode GUI avancé.
 
 ```
 hide_recently_played_folder =true
@@ -72,11 +72,11 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Pour cacher le dossier Web, vous devrez décocher l'option Activer le réseau externe dans l'onglet Configuration générale du mode GUI avancé ou changer la valeur `external_network =' à false dans votre fichier UMS.conf Cela aura l'effet secondaire que la mise à jour automatique ne fonctionnera pas. Les modifications apportées à partir de l'interface graphique seront effectives après un redémarrage.
 
-## PIN code
+## Code PIN
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Toutes les méthodes ci-dessus restreignent l'accès à partir de différents moteurs de rendu. Mais si vous pouvez avoir accès à un rendu qui est autorisé à voir un dossier, ces méthodes ne vous aideront pas (si les enfants ont accès à la télévision du salon qui ont accès à tous les médias, alors ils ont accès à ces médias). Le code PIN résout ce problème. Il vous permet de masquer les dossiers/médias derrière un code PIN que vous devez saisir à partir du rendu. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*private.*,1234
 ```
