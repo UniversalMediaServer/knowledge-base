@@ -6,26 +6,26 @@ La fonction "Joué intégralement" vous permet de garder une trace des fichiers 
 
 Cette fonctionnalité est activée par défaut, donc si vous n'avez rien changé, vous pouvez l'utiliser. Si la fonction ne fonctionne pas, veuillez vérifier que ces étapes n'ont pas été annulées :
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. Dans l'onglet **Paramètres de navigation**, cochez la case **Activer le cache**. Cette option est activée par défaut.
+2. Dans l'onglet **Paramètres de navigation** , choisissez votre **action entièrement jouée**. Assurez-vous notamment de ne pas avoir sélectionné **Ne rien faire**. Ceci est **Marquer le média** par défaut, qui superposera une icône sur la vignette pour l'indiquer a été regardée.
+3. Dans l'onglet **Contenu partagé**, recherchez le dossier que vous souhaitez suivre et cochez la case **Surveiller l'état de lecture des fichiers** sur cette ligne.
 
-## Marking files as fully played automatically
+## Marquer automatiquement les fichiers comme étant entièrement lus
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Après avoir effectué les étapes de configuration, il vous suffit de lire 92 % ou plus d'un fichier.
 
-## Marking files as fully played manually
+## Marquer manuellement les fichiers comme étant entièrement lus
 
-To mark all files within a shared directory as fully played:
+Pour marquer tous les fichiers d'un répertoire partagé comme étant entièrement lus :
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Dans l'onglet **Contenu partagé**, cliquez avec le bouton droit de la souris sur le répertoire que vous souhaitez marquer comme étant entièrement lu, puis cliquez sur **Marquer le contenu entièrement lu**
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Ouvrir l'interface](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Suppression des statuts joués / non joués
 
-To "unplay" a file, you can do one of the following options:
+Pour "annuler" la lecture d'un fichier, vous pouvez choisir l'une des options suivantes :
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Renommer le fichier d'une manière ou d'une autre. Vous pouvez ensuite lui redonner son nom d'origine, car l'UMS aura effacé l'entrée de son cache lorsque vous avez changé le nom.
+- Déplacer le fichier vers un autre répertoire. Vous pouvez ensuite le remettre dans son répertoire d'origine, car l'UMS aura effacé l'entrée de son cache lorsque vous avez déplacé le fichier.
+- Pour « annuler » l'intégralité d'un répertoire partagé, dans l'onglet **Contenu partagé**, cliquez avec le bouton droit sur le répertoire à marquer comme non lu, puis cliquez sur **Marquer le contenu comme non lu**.
