@@ -1,10 +1,10 @@
-# How to use the "Fully played" feature
+# Comment utiliser la fonctionnalité "Joué intégralement"
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+La fonction "Joué intégralement" vous permet de garder une trace des fichiers que vous avez pleinement joués; pour une vidéo, cela signifie que vous avez regardé au moins 92 %, et pour l'audio vous avez écouté au moins 92 %.
 
-## Setup
+## Configuration
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Cette fonctionnalité est activée par défaut, donc si vous n'avez rien changé, vous pouvez l'utiliser. Si la fonction ne fonctionne pas, veuillez vérifier que ces étapes n'ont pas été annulées :
 
 1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
 2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
