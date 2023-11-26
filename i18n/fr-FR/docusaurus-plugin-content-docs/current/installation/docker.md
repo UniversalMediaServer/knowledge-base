@@ -1,10 +1,10 @@
-# Docker
+# Docker 
 
-Some of these steps may not apply to your installation.  Comprenez ce qu'elles font et ignorez-les ou personnalisez-les, si nécessaire.
+Certaines de ces étapes peuvent ne pas s'appliquer à votre installation.  Comprenez ce qu'elles font et ignorez-les ou personnalisez-les, si nécessaire.
 
 ## Préparation
 
-For operating system support and service packages.
+Pour le support du système d'exploitation et les paquets de service.
 
 ###
 
@@ -20,7 +20,7 @@ Installer Docker (Engine): https://docs.docker.com/engine/install/fedora/
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Reconnectez-vous ou redémarrez la machine.
 
 ```
 sudo su -;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Monter le stockage sur l'hôte et créer un lien dans ce répertoire, probablement en lecture seule. `monter <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Exemple de test : Un simple lien symbolique vers un autre chemin sur le système hôte peut ne pas fonctionner, car il n'y aura pas d'accès en dehors du chemin du volume monté pour le conteneur docker.  Essayez plutôt de copier des fichiers à l'intérieur de cet emplacement.
 
-## Container Setup
+## Configuration du conteneur
 
 Monter les volumes suivants :
 - Dossier média `/media`
 - Dossier de profil contenant UMS.conf `/profile`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Exposer/transférer ces ports depuis l'hôte : 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Les scripts suivants réalisent cela (en utilisant le coquillage de poisson):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -55,40 +55,37 @@ docker create --name UMS \
   -v /srv/UMS:/root/media \
   -v "$HOME/.config/UMS":/root/.config/UMS \
   universalmediaserver/ums \
-;
-​
-docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Enquêter sur les problèmes/questions
 
-### General
+### Général
 
 ```
-docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+docker ps -a ;
+#docker attach [--no-stdin] UMS ; # Arrête toujours involontairement le conteneur lorsque l'inspection est terminée...
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Pour les logs détaillés dans le terminal : `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problèmes de montage
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+En utilisant Fedora CoreOS, j'ai eu des problèmes d'accès/permission refusée en essayant d'utiliser les montages bind.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Il peut être recommandé d'utiliser la capacité de volumes nommés gérée par Docker à la place, mais pour éviter cette complexité, j'ai constaté que l'ajout de `:Z` en tant que suffixe à la valeur de l'option du descripteur du montage bind permettait au conteneur d'accéder en écriture aux fichiers de l'hôte. `:z` peut également être utilisé à la place, mais les conseils de sécurité peuvent suggérer de garder les ressources plus isolées entre les environnements d'application/service, plutôt que partagées.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Les messages d'erreur correspondants peuvent être vus en utilisant journalctl, il s'agit donc d'un problème SELinux. La solution pour cela serait d'exécuter `chcon -Rt svirt_sandbox_file_file_t` host_dir, mais cela semble également déconseillé.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Étrangement, ce n'est pas un problème sur Fedora Workstation, mais je suppose que l'installer manuellement a ajouté un paquet pour gérer cela. Il semble que ce soit un conteneur-selinux.
 
-## References
+## Références
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
