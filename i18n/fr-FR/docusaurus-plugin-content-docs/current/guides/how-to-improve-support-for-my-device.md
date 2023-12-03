@@ -1,11 +1,11 @@
-# How to improve support for my device
+# Comment améliorer la prise en charge de mon appareil
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Si votre appareil ne fait rien, comme naviguer dans des dossiers ou lire un fichier, vous pouvez peut-être le corriger en modifiant les paramètres dans le fichier de configuration du moteur de rendu. Différents appareils/renders/clients communiquent avec des serveurs comme UMS de différentes manières, de sorte que le fichier de configuration indique à UMS comment parler la même langue que votre appareil.
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Nous avons un fichier de configuration de rendu par défaut qui contient de la documentation sur tous nos paramètres de rendu . Voir la dernière version sur https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
-Common settings to look at are `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, and `ChunkedTransfer`.
+Les paramètres les plus courants sont `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize` et `ChunkedTransfer`.
 
-As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+En plus de cela, vous pouvez consulter d'autres configurations de rendu dans le dossier "renderers" de votre dossier d'installation, pour voir ce qu'ils font. Parfois, vous aurez besoin d'aide, que nous pouvons vous donner sur notre forum, et s'il vous plaît n'oubliez pas de nous parler de l'amélioration lorsque vous le faites, afin que les autres utilisateurs de votre appareil puissent bénéficier de la correction. Nous vous créditerons dans l'annonce de la version et dans le journal des modifications.
 
-If you have a new renderer config to contribute to the project, please create a **Pull Request** on our GitHub repository https://github.com/UniversalMediaServer/UniversalMediaServer
+Si vous avez une nouvelle configuration de rendu à apporter au projet, veuillez créer une **Pull Request** sur notre dépôt GitHub https://github.com/UniversalMediaServer/UniversalMediaServer

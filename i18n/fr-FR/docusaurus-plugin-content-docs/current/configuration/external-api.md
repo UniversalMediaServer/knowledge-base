@@ -388,32 +388,32 @@ Exemple :
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Cela supprime la chanson avec l'ID `123` de la playlist `Pop`.
 
-#### create new playlists
+#### Créer une nouvelle liste de lecture
 
-Playlist name should be provided without any path and without file extensions. 
+Le nom de la playlist doit être fourni sans chemin et sans extension de fichier. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Intention                            | Création de nouvelles playlists dans le dossier de playlist gérée                                                                                                              |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                                  | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| TYPE DE DEMANDE                      | POST                                                                                                                                                                           |
+| POSTER LE CODE                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| POSTER LE CODE exemple / description | Contemporain                                                                                                                                                                   |
+| CORPS DE RÉPONSE                     | AUCUN                                                                                                                                                                          |
+| Disponible depuis                    | 11.0                                                                                                                                                                           |
 
-Example:
+Exemple :
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Cet appel crée un nouveau fichier de playlist nommé `Contemporary.m3u8` dans le dossier de playlist géré.
 
-## Java code example
+## Exemple de code Java
 
-This code snippet shows how to use the API with okhttp3 library.
+Cet extrait de code montre comment utiliser l'API avec la bibliothèque okhttp3.
 
 ```Java
 import nextcp.dto.Config;
@@ -440,6 +440,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## Code retour HTTP
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Définir une `clé_api` dans UMS.conf avec une longueur de 12 caractères ou plus |

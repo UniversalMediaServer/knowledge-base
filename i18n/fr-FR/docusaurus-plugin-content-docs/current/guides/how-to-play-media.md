@@ -1,39 +1,39 @@
-# How to play media
+# Comment lire les médias
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Cet article explique les quatre principales façons de lire des vidéos, des fichiers audio et des images via l'UMS.
 
-## 1: Play from a renderer interface
+## 1 : Jouer depuis une interface de rendu
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Lorsque votre moteur de rendu est connecté à l'UMS via DLNA/UPnP, il s'affiche souvent dans un menu intitulé "Média Serveurs" ou quelque chose de similaire, en fonction du moteur de rendu. À partir de là, vous pouvez entrer dans l'UMS et naviguer jusqu'au média auquel vous voulez accéder.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+La mise en œuvre de cette fonction varie considérablement d'un moteur de rendu à l'autre, mais la fonctionnalité de base est la même : naviguez jusqu'au média choisi et sélectionnez-le pour le lire.
 
-## 2: Push from the UMS interface to a renderer
+## 2 : Transfert de l'interface UMS vers un moteur de rendu
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+L'interface UMS elle-même a la capacité de « transférer » les médias vers les moteurs de rendu s'ils prennent en charge la fonctionnalité UPnP. Il s'agit d'un concept similaire à celui du casting.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. Ouvrez l'interface UMS et identifiez le moteur de rendu vers lequel vous souhaitez transférer le média. Dans ce cas, c'est la TV Panasonic VIERA VT60 Series.  
+   ![Ouvrir l'interface](@site/docs/guides/img/how-to-play-media-1.png)
+2. Cliquez sur l'image du moteur de rendu pour ouvrir le panneau de contrôle  
+   ![Contrôle du rendu](@site/docs/guides/img/how-to-play-media-2.png)
+3. Choisissez le fichier que vous voulez transférer en cliquant sur l'icône de dossier en bas à droite et il sera renseigné en bas à gauche. Si vous ne voyez pas les commandes du lecteur dans cette fenêtre, votre moteur de rendu ne supporte pas cette fonctionnalité. Assurez-vous de vérifier les mises à jour du firmware/logiciel de votre moteur de rendu, car il est possible qu'il ait ajouté une prise en charge.  
+   ![Fichier sélectionné](@site/docs/guides/img/how-to-play-media-3.png)
+4. Maintenant vous pouvez soit créer une playlist en cliquant sur l'icône plus à droite de la zone de saisie, ou vous pouvez transférer le fichier vers votre moteur de rendu en cliquant sur l'icône de lecture juste au-dessus du milieu de la zone de saisie, qui le commencera à jouer sur votre moteur de rendu.
 
-## 3: Play on the web interface
+## 3 : Jouer sur l'interface web
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+L'interface Web est accessible n'importe où au sein de votre réseau local, y compris sur les ordinateurs et les moteurs de rendu. Il offre de nombreuses façons notre interface utilisateur et nos fonctionnalités les plus avancées.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Ouvrir l'interface web. Si vous connaissez l'adresse, vous pouvez y accéder, sinon un moyen simple consiste à cliquer sur le bouton de l'interface Web de notre interface utilisateur.  
+   ![Ouvrir l'interface web](@site/docs/guides/img/how-to-play-media-4.png)
+2. Cliquer pour ouvrir l'interface web dans votre navigateur par défaut. À partir de là, vous pouvez naviguer vers votre fichier et cliquer pour le lire  
+   ![Vidéo sur l'interface web](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 4 : Transfert de l'interface web vers un moteur de rendu
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+Similaire à ce qui précède dans l'option 2, vous pouvez transférer vos médias vers un rendu via notre interface Web.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Cliquez sur la petite icône de conversion d'un fichier lors de la navigation dans un répertoire. Il se trouve en bas à droite de la vignette.  
+   ![Icône de diffusion](@site/docs/guides/img/how-to-play-media-6.png)
+2. Cela fera apparaître un mini panneau de contrôle flottant, que vous pouvez utiliser pour contrôler la lecture du fichier, et gérer les listes de lecture dynamiques si vous le souhaitez.  
+   ![Panneau de contrôle flottant](@site/docs/guides/img/how-to-play-media-7.png)
