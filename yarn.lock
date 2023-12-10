@@ -6902,6 +6902,7 @@ __metadata:
   resolution: "knowledge-base@workspace:."
   dependencies:
     "@cmfcmf/docusaurus-search-local": "npm:^1.1.0"
+    "@docusaurus/core": "npm:2.4.3"
     "@docusaurus/module-type-aliases": "npm:2.4.3"
     "@docusaurus/preset-classic": "npm:2.4.3"
     react: "npm:^17.0.2"
