@@ -13,10 +13,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
         with:
-          node-version: current
+          node-version: 18.x
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
