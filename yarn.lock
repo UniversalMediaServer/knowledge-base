@@ -2464,7 +2464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:^1.6.22":
+"@mdx-js/react@npm:1.6.22, @mdx-js/react@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/react@npm:1.6.22"
   peerDependencies:
@@ -6905,7 +6905,9 @@ __metadata:
     "@docusaurus/core": "npm:2.4.3"
     "@docusaurus/module-type-aliases": "npm:2.4.3"
     "@docusaurus/preset-classic": "npm:2.4.3"
+    "@docusaurus/theme-common": "npm:2.4.3"
     "@docusaurus/utils-validation": "npm:2.4.3"
+    "@mdx-js/react": "npm:1.6.22"
     prism-react-renderer: "npm:1.3.5"
     react: "npm:^17.0.2"
     react-dom: "npm:^17.0.2"
