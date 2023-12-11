@@ -319,7 +319,7 @@ Il s'agit de toutes les listes de lecture connues de UMS (base de données/cache
 | URI                            | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | TYPE DE DEMANDE                | GET                                                                                                                                                      |
 | CORPS DE RÉPONSE               | Tableau JSON des noms de playlist                                                                                                                        |
-| Exemple du corps de la réponse | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Exemple du corps de la réponse | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Disponible depuis              | branche de développement                                                                                                                                 |
 
 Exemple :
