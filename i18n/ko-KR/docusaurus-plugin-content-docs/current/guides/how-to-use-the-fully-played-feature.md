@@ -1,31 +1,31 @@
-# How to use the "Fully played" feature
+# "전체 재생" 기능 사용 방법
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+전체 재생" 기능을 사용하면 완전히 재생한 파일을 추적할 수 있습니다. 비디오의 경우 92% 이상을 시청했으며 오디오의 경우 92% 이상을 시청했습니다.
 
-## Setup
+## 설정
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+이 기능은 기본적으로 활성화되어 있으므로 변경한 내용이 없으면 사용할 수 있습니다. 기능이 작동하지 않는 경우 다음 단계가 실행 취소되지 않았는지 확인하십시오:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. ** 네비게이션 설정** 탭에서 ** 캐시 사용 ** 확인란을 선택합니다. 기본적으로 활성화됩니다.
+2. ** 네비게이션 설정 ** 탭에서 ** 완전히 재생된 동작 **을 선택합니다. 특히 **아무것도 하지 않음**을 선택하지 않았는지 확인합니다. 이것은 기본적으로 **미디어 표시**이며, 이는 해당 미디어가 시청되었음을 나타내기 위해 섬네일에 아이콘을 오버레이합니다.
+3. ** 공유 컨텐츠 ** 탭에서 추적할 폴더를 찾고 해당 행에서 ** 재생된 파일 상태 모니터링<0> 확인란을 선택합니다.</li> </ol>
 
-## Marking files as fully played automatically
+## 파일을 자동으로 완전히 재생된 것으로 표시
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+설정 단계를 완료한 후에는 92% 이상의 파일을 재생하기만 하면 됩니다.
 
-## Marking files as fully played manually
+## 파일을 수동으로 완전히 재생된 것으로 표시
 
-To mark all files within a shared directory as fully played:
+공유 디렉터리 내의 모든 파일을 완전히 재생된 것으로 표시하려면:
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+**공유 콘텐츠 **탭에서 전체 재생으로 표시할 디렉터리를 마우스 오른쪽 버튼으로 클릭한 후 **완전히 재생으로 표시**를 클릭합니다
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![GUI 열기](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## 완전히 재생된 상태/재생 안 함 제거
 
-To "unplay" a file, you can do one of the following options:
+파일을 "재생 안 함"하려면 다음 옵션 중 하나를 수행할 수 있습니다:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- 어떤 식으로든 파일 이름을 바꿉니다. 이름을 변경하면 UMS가 캐시에서 항목을 지웠기 때문에 그 후 원래 이름으로 되돌릴 수 있습니다.
+- 파일을 다른 디렉터리로 이동합니다. 파일을 이동할 때 UMS가 캐시에서 항목을 지웠기 때문에 그 후 원래 디렉터리로 되돌릴 수 있습니다.
+- 전체 공유 디렉터리를 "재생 안 함"하려면 ** 공유 콘텐츠 ** 탭에서 디렉터리를 마우스 오른쪽 버튼으로 클릭하여 실행 취소로 표시한 다음 ** 콘텐츠 재생 안 함**를 클릭합니다.
