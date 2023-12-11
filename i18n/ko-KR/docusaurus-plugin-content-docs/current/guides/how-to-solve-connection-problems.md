@@ -1,12 +1,13 @@
-# How to solve connection problems
+# 연결 문제 해결 방법
 
-This page provides solutions for the most common connection problems our users encounter.
+이 페이지에서는 사용자가 직면하는 가장 일반적인 연결 문제에 대한 솔루션을 제공합니다.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS가 렌더러를 감지하지만 렌더러가 UMS를 감지하지 못함
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+일반적으로 컴퓨터에 둘 이상의 활성 네트워크 연결 (예: 유선 및 무선)이 있을 때 발생합니다. 원하는 네트워크 인터페이스를 설정하여 해결할 수 있습니다:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. UMS 열기
+2. `일반 설정`탭 선택
+3.  인터페이스에서 네트워킹 강제:/0> 드롭다운을 펼치고 원하는 인터페이스를 선택합니다. 드롭다운에 많은 옵션이 있을 수 있습니다. 원하는 IP 주소는 일반적으로 이름 뒤에 괄호로 표시됩니다. 예를 들어 다음과 같습니다:<br x-id="2" />
+<img src="@site/docs/guides/img/how-to-solve-connection-problems.png" alt="GUI 열기" /></li>
+</ol>
