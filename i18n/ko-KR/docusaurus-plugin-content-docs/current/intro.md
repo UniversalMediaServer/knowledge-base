@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: /
 ---
 
-# Intro
+# 소개
 
-This website contains the official documentation for using UMS.
+이 웹사이트에는 UMS 사용을 위한 공식 문서가 포함되어 있습니다.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+구성, 가이드, 설치의 세 가지 주요 섹션으로 구분됩니다.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+구체적인 정보를 찾으러 오셨는데 찾지 못하셨다면 추가할 수 있도록 GitHub에 알려주시기 바랍니다.
