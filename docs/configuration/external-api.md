@@ -323,7 +323,7 @@ These are all playlist known to UMS (database/cache enabled). These playlist nam
 | URI | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE | GET |
 | RESPONSE BODY | JSON array of playlist names |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}] |
+| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]` |
 | Available since | dev branch |
 
 Example:
