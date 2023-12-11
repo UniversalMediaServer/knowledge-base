@@ -1,10 +1,10 @@
-# Docker
+# 도커
 
-Some of these steps may not apply to your installation.  그들이 하는 일을 이해하고 필요에 따라 무시하거나 사용자 지정합니다.
+이러한 단계 중 일부는 설치에 적용되지 않을 수 있습니다.  그들이 하는 일을 이해하고 필요에 따라 무시하거나 사용자 지정합니다.
 
 ## 준비
 
-For operating system support and service packages.
+운영 체제 지원 및 서비스 패키지용입니다.
 
 ### Debian Linux
 
@@ -20,7 +20,7 @@ For operating system support and service packages.
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+기계를 다시 로그인하거나 다시 시작합니다.
 
 ```
 sudo su -;
@@ -34,13 +34,13 @@ chmod -R g+w /srv/UMS;
 
 테스트 예: 도커 컨테이너의 장착된 볼륨 경로 외부에는 호스트 시스템의 다른 경로에 대한 접근이 없기 때문에 호스트 시스템의 다른 경로에 대한 단순한 동기화는 작동하지 않을 수 있다.  대신 이 위치에 있는 파일을 복사해 보십시오.
 
-## Container Setup
+## 컨테이너 설정
 
 다음 볼륨을 마운트합니다:
 - 미디어 폴더 `/media`
 - UMS.conf가 있는 프로필 폴더 `/profile`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+호스트에서 이러한 포트를 노출/포워딩: 1044, 5001, 9001.
 
 다음 스크립트는 (피쉬 셸을 사용하여) 다음 작업을 수행합니다:
 ```
@@ -58,9 +58,9 @@ docker create --name UMS \
 ;
 ```
 
-## Investigating Problems/Issues
+## 문제/문제 조사
 
-### General
+### 일반
 
 ```
 docker ps -a;
@@ -70,23 +70,24 @@ docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+터미널의 상세 로그의 경우: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
-docker cp <containerName>:/var/log/UMS/root/debug.log ./;
+docker ps -a;
+#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
 ```
 
-### Mount trouble
+### 마운트 트러블
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Fedora CoreOS를 사용하여 bind mount를 사용하려고 하면 액세스/권한이 거부되었습니다.
 
 대신 도커가 관리하는 명명된 볼륨 기능을 사용하는 것이 좋습니다. 하지만 이러한 복잡성을 피하기 위해 bind mount의 descriptor 옵션 값에 접미사로 `:Z`을 추가하면 호스트 파일에 대한 컨테이너 쓰기 액세스가 가능합니다. `:z`을(를) 대신 사용할 수도 있지만, 보안 조언을 통해 공유가 아닌 애플리케이션/서비스 환경 간에 리소스를 더 격리할 것을 권장할 수도 있습니다.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. 이를 위한 솔루션은 `chcon -Rt svirt_sandbox_file_t` host_dir를 실행하는 것이지만 이 또한 권장되지 않는 것으로 보입니다.
+matching error message는 journalctl을 사용하여 볼 수 있으므로 SELinux 문제입니다. 이를 위한 솔루션은 `chcon -Rt svirt_sandbox_file_t` host_dir를 실행하는 것이지만 이 또한 권장되지 않는 것으로 보입니다.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+이상하게도 이것은 Fedora Workstation에서는 문제가 되지 않지만 수동으로 설치하면 이를 처리하기 위해 패키지가 추가된 것 같습니다. 컨테이너-selinux.인 것 같습니다.
 
-## References
+## 참조
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
