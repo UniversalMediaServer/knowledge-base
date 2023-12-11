@@ -323,7 +323,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: секретный_пароль" -
 | URI               | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | ТИП ЗАПРОСА       | ПОЛУЧИТЬ                                                                                                                                                 |
 | СОДЕРЖАНИЕ ОТВЕТА | Массив имен плейлистов в формате JSON                                                                                                                    |
-| Пример ОТВЕТА     | [{"playlistName":"Джаз","playlistId":5},{"playlistName":"Графики","playlistId":343}]                                                                     |
+| Пример ОТВЕТА     | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Доступно с        | ветвь разработки                                                                                                                                         |
 
 Пример:
