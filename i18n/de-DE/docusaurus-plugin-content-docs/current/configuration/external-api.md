@@ -323,7 +323,7 @@ Dies sind alle UMS bekannten Wiedergabelisten (Datenbank/Cache aktiviert). Diese
 | URI/URL                          | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE [Typ der Anfrage]   | GET                                                                                                                                                      |
 | RESPONSE BODY                    | JSON-Array der Playlist-Namen                                                                                                                            |
-| RESPONSE BODY [ Inhalt] Beispiel | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| RESPONSE BODY [ Inhalt] Beispiel | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Verfügbar seit Version:          | Entwicklungszweig                                                                                                                                        |
 
 Beispiel:
