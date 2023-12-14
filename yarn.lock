@@ -8629,6 +8629,7 @@ __metadata:
     "@docusaurus/core": "npm:3.0.1"
     "@docusaurus/module-type-aliases": "npm:3.0.1"
     "@docusaurus/preset-classic": "npm:3.0.1"
+    "@docusaurus/theme-common": "npm:3.0.1"
     "@docusaurus/tsconfig": "npm:^3.0.1"
     "@docusaurus/types": "npm:3.0.1"
     "@easyops-cn/docusaurus-search-local": "npm:^0.38.1"
