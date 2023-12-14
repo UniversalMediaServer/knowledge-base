@@ -323,7 +323,7 @@ Všechny tyto playlisty jsou známy UMS (databáze/mezipaměti). Tyto názvy pla
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
 | RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| Příklad RESPONSE BODY | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| Příklad RESPONSE BODY | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Dostupné od           | vývojová větev                                                                                                                                           |
 
 Příklad:

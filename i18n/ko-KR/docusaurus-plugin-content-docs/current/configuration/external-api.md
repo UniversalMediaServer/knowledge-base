@@ -37,24 +37,24 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| 의도              | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                                                           |
-| --------------- | ------------------------------------------------------------------------------------- |
-| URI             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| 본문              | PATH_TO_SCAN                                                                        |
-| 본문 예시 / 설명      | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since | 10.4.2                                                                                |
+| 의도         | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                             |
+| ---------- | ------------------------------------------------------- |
+| URI        | `/api/folderscanner/rescanFileOrFolder`                 |
+| 본문         | PATH_TO_SCAN                                          |
+| 본문 예시 / 설명 | 예제: "/music/pop/Madonna". 경로는 공유 경로의 루트 또는 하위 폴더여야 합니다. |
+| 다음부터 사용 가능 | 10.4.2                                                  |
 
-Example:
+예제:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### 좋아하는 음악 (앨범 및 노래)
 
-#### like song
+#### 좋아하는 노래
 
-Song will be marked as liked.
+노래는 좋아요로 표시됩니다.
 
 | Intention                       | Like a song identified by musicBrainz trackId            |
 | ------------------------------- | -------------------------------------------------------- |
@@ -323,7 +323,7 @@ These are all playlist known to UMS (database/cache enabled). These playlist nam
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
 | RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | [{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]                                                                      |
+| RESPONSE BODY example | `[{"playlistName":"재즈","playlistId":5},{"playlistName":"차트","playlistId":343}]`                                                                          |
 | Available since       | dev branch                                                                                                                                               |
 
 Example:

@@ -82,7 +82,7 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Použití Fedora CoreOS, jsem měl přístup a oprávnění odepřen problémy se spojením spojení.
 
-Namísto toho může být doporučeno použít funkci pojmenovaných objemů řízenou dokovací stanicí, ale vyhnout se této složitosti, Zjistil jsem, že dodatečná `:Z` jako přípona pro příponu deskriptoru povolená hodnota deskriptoru kontejneru pro zápis do hostitelských souborů. Místo toho lze použít i `:z` ale bezpečnostní doporučení mohou naznačovat, že zdroje jsou izolovanější mezi aplikacemi/servisním prostředím spíše než sdílenými.<0><0>
+Namísto toho může být doporučeno použít funkci pojmenovaných objemů řízenou dokovací stanicí, ale vyhnout se této složitosti, Zjistil jsem, že dodatečná `:Z` jako přípona pro příponu deskriptoru povolená hodnota deskriptoru kontejneru pro zápis do hostitelských souborů. Místo toho lze použít i `:z` ale bezpečnostní doporučení mohou naznačovat, že zdroje jsou izolovanější mezi aplikacemi/servisním prostředím spíše než sdílenými.
 
 Pomocí deníku můžete vidět odpovídající chybové zprávy, takže je to problém SELinux. Řešením by bylo spustit `chcon -Rt svirt_sandbox_file_t` host_dir, ale to se také nezdá být dobré.
 
