@@ -71,12 +71,6 @@ const config: Config = {
     ],
   },
   plugins: [
-    [
-      require.resolve("@cmfcmf/docusaurus-search-local"),
-      {
-        'indexBlog': false,
-      },
-    ],
   ],
   presets: [
     [
