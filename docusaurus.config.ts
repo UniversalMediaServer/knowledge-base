@@ -107,6 +107,13 @@ const config: Config = {
       },
       items: [
         {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'To main site',
+          href: 'https://www.universalmediaserver.com',
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: true,
@@ -114,13 +121,6 @@ const config: Config = {
         {
           type: 'localeDropdown',
           position: 'right',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'right',
-          label: 'To main site',
-          href: 'https://www.universalmediaserver.com',
         },
       ],
     },
