@@ -1,0 +1,8 @@
+{
+  "label": "instalace",
+  "position": 3,
+  "link": {
+    "type": "generovaný index",
+    "description": "Většina operačních systémů/prostředí nepotřebuje dokumentaci pro instalaci. Tato sekce je určena pro ty, které to dělají."
+  }
+}

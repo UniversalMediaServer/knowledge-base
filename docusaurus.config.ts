@@ -74,15 +74,20 @@ const config: Config = {
   ],
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/UniversalMediaServer/knowledge-base/edit/main',
+          editUrl: 'https://github.com/UniversalMediaServer/knowledge-base/edit/main',
+          lastVersion: '13.x',
+          versions: {
+            current: {
+              label: '14.x',
+            },
+          },
         },
         blog: false, // Optional: disable the blog plugin
         theme: {
@@ -102,15 +107,20 @@ const config: Config = {
       },
       items: [
         {
-          type: 'localeDropdown',
-          position: 'right',
-        },
-        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'right',
+          position: 'left',
           label: 'To main site',
           href: 'https://www.universalmediaserver.com',
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
     },
