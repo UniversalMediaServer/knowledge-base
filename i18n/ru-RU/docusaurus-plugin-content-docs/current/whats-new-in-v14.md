@@ -2,70 +2,70 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Что нового в версии 14
 
-## Overview
+## Обзор
 
-V14 contains major new features based on what our users have asked for.
+V14 содержит новые возможности, основанные на пожеланиях наших пользователей.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+Самые большие изменения связаны с возможностью контролировать доступ к вашему контенту. Это включает в себя улучшения в учетных записях пользователей, такие как pin-коды, аватары и группы общих папок, а также возможность отображения различного контента на разных устройствах.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Также было внесено множество обновлений в веб-настройках и интерфейсе плеера, включая добавление возможности отмечать наборы файлов (например, телесериалы) как полностью воспроизведенные и автоматическое определение предпочтений вашей системы в темном / светлом режиме.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Мы также воспользовались возможностью обновить основные версии некоторых наших зависимостей, включая [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) и генератор этой базы знаний [Docusaurus v3](https\://docusaurus.io /).
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Наконец, мы добавили сотни исправлений ошибок и улучшений производительности, а также переработали большинство кода, чтобы было проще работать, а также улучшили наши платформы тестирования, чтобы предотвратить будущие ошибки.
 
-## New features
+## Новые функции
 
-### Block/allow renderers and network devices
+### Блокировать/разрешать средства визуализации и сетевые устройства
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Теперь вы можете блокировать и разрешать доступ в зависимости от средства визуализации или сетевого устройства на главном экране в области настроек.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Пример того, как заблокировать средство визуализации](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### Разрешить или блокировать средства визуализации или сетевые устройства по умолчанию:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Теперь вы можете выбрать стратегию по умолчанию для средств визуализации и сетевых устройств. Раньше была возможна только одна стратегия - либо разрешить все, либо запретить все с помощью списка разрешений. Теперь вы можете разрешать или запрещать по умолчанию, используя списки запрещений и списки разрешений, для полного контроля.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Это делает UMS гораздо более гибкими в ситуациях совместного использования или в локальных сетях с высоким/низким уровнем доверия. Это также полезно для тех из вас, кто использует сетевые адаптеры для вашей сети, так как это может привести к нежелательному доступу от соседей.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Пример настройки сетевых параметров](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Пример настройки сетевых параметров](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-### Link person to renderer
+### Соединение со средством визуализации
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Теперь вы можете привязывать учетные записи пользователей к средствам визуализации / устройствам, что позволяет вам осуществлять независимое отслеживание воспроизведения. Например, если у вас есть телевизор в гостиной, а другой - в спальне, то на телевизор в гостиной не обязательно должно влиять то, что вы смотрите в своей спальне.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Пример того, как назначить учетную запись для средства визуализации](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Ограничить доступ к общему контенту для определенных групп
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Теперь вы можете поделиться каталогами или онлайн-контентом с определенными группами. Например, если у вас есть человек (или устройство, назначенное человеку), который является ребенком, вы можете назначить его в группу "Дети" и предоставить этой группе доступ к каталогу "Семья", но не к каталогам "Ужасы" или "Только для взрослых". Или предоставить им доступ к веб-ленте Kurzgesagt, но не к историческим подкастам.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Пример общих групп контента](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Аватары
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+У людей могут быть аватары, чтобы их было легче узнавать. Вы можете установить их на странице настроек пользователя вместе с группами пользователей
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Пример редактирования пользовательских настроек](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### Прямая интеграция с TMDB
 
-You can now link your TMDB account with UMS in the General Settings area.
+Теперь вы можете связать свою учетную запись TMDB с UMS в области общих настроек.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+Это позволяет вам редактировать метаданные на основе результатов поиска из TMDB:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Пример того, как назначить учетную запись для средства визуализации](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### More
+### Подробнее
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Полный список всех изменений в v14 см. [полный список изменений](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## Переход
 
-There are no special migration instructions for going from v13 to v14.
+Cпециальных инструкций по переходу с версии 13 на 14 не существует.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Как и в случае любого крупного обновления, если вы хотите иметь возможность вернуться к текущей версии перед обновлением, вы можете создать резервную копию каталога вашего профиля, который содержит вашу конфигурацию и локальную базу данных. Вы можете найти расположение этого каталога в верхней части страницы лог журнала программы. Найдите \`Каталог профиля: [какая-то страница]/UMS".
