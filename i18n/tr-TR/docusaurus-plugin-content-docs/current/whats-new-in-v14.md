@@ -2,27 +2,27 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# S14’te Neler Yeni
 
-## Overview
+## Genel bakış
 
-V14 contains major new features based on what our users have asked for.
+S14, kullanıcılarımızın isteklerine dayalı olarak önemli yeni özellikler içermektedir.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+En büyük değişiklikler içeriğinize erişimi denetleme yeteneğini içerir. Farklı içerikleri farklı cihazlarda görüntüleme yeteneğinin yanı sıra buna pin kodları, avatarlar ve paylaşılan klasör grupları gibi kullanıcı hesaplarında yapılan iyileştirmeler de dahildir.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Ayrıca web ayarlarında ve oynatıcı arayüzlerinde, dosya gruplarını (örn. TV dizileri) tamamen oynatılmış olarak işaretleme yeteneğinin eklenmesi ve sisteminizin koyu/açık kipi tercihinin otomatik olarak algılanması da dahil olmak üzere birçok güncelleme yapılmıştır.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Ayrıca [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) ve bu Bilgi Bankasının oluşturucusu, [Docusaurus v3](https://docusaurus.io/) dahil olmak üzere bazı bağımlılıklarımızın ana sürümlerini öne çıkarma fırsatını da değerlendirdik.
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Son olarak, gelecekteki hataları önlemek için deneme çerçevelerimizi geliştirmenin yanı sıra, yüzlerce hata düzeltmesi ve performans iyileştirmesi ekledik, üzerinde çalışmayı daha kolay hale getirmek için birçok kodu yeniden düzenledik.
 
-## New features
+## Yeni özellikler
 
-### Block/allow renderers and network devices
+### İşleyicileri ve ağ cihazlarını engelleyin/izin verin
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Artık ayarlar alanındaki Giriş ekranından işleyiciye veya ağ cihazına dayanarak erişimi engelleyebilir ve izin verebilirsiniz.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Bir işleyicinin nasıl engelleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
 ### Allow or block renderers or network devices by default:
 
