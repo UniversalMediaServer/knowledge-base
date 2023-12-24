@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Вступление
 
-This website contains the official support documentation for using Universal Media Server.
+Этот веб-сайт содержит официальную документацию по поддержке использования Universal Media Server.
 
 If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
 
