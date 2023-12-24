@@ -2,70 +2,70 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# v14의 새로운 기능
 
-## Overview
+## 개요
 
-V14 contains major new features based on what our users have asked for.
+V14에는 사용자가 요청한 내용을 기반으로 하는 주요 새로운 기능이 포함되어 있습니다.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+가장 큰 변화는 콘텐츠에 대한 액세스를 제어하는 기능입니다. 여기에는 핀 코드, 아바타 및 공유 폴더 그룹과 같은 사용자 계정의 개선과 다양한 장치에 다양한 콘텐츠를 표시할 수 있는 기능이 포함됩니다.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+또한 웹 설정 및 플레이어 인터페이스에 대한 업데이트도 많이 이루어졌는데, 여기에는 파일 세트(예: TV 시리즈)를 완전히 재생된 상태로 표시하는 기능과 시스템 암/경 모드 기본 설정을 자동으로 감지하는 기능이 추가되었습니다.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+또한 [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), 및 이 기술 자료의 생성자인 [Docusaurus v3](https://docusaurus.io/) 등)을 포함한 일부 종속성의 주요 버전을 소개할 기회도 가졌습니다.
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+마지막으로 수백 개의 버그 수정과 성능 개선을 수행하고 작업하기 쉽도록 많은 코드를 수정했으며 테스트 프레임워크를 개선하여 향후 버그를 방지했습니다.
 
-## New features
+## 새로운 기능
 
-### Block/allow renderers and network devices
+### 렌더러 및 네트워크 장치 차단/허용
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+이제 설정 영역의 홈 화면에서 렌더러 또는 네트워크 장치를 기준으로 액세스를 차단하고 허용할 수 있습니다.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![렌더 차단 방법 예] (@site/docs/img/wats-new-in v14-block-render.png)
 
-### Allow or block renderers or network devices by default:
+### 렌더러 또는 네트워크 장치를 기본적으로 허용 또는 차단:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+이제 렌더러 및 네트워크 장치에 대한 기본 전략을 선택할 수 있습니다. 이전에는 모든 것을 허용하거나 허용 목록으로 모든 것을 거부하는 등 가능한 한 가지 전략만 있었습니다. 이제 완전한 제어를 위해 기본적으로 허용 또는 거부를 거부할 수 있습니다.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+이를 통해 UMS는 공유 생활 상황이나 광범위/저신뢰 로컬 네트워크에 훨씬 더 유연합니다. 또한 네트워크에 전원선 어댑터를 사용하는 사람들에게 유용합니다. 이는 이웃의 원치 않는 액세스를 초래할 수 있기 때문입니다.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![네트워크 허용 설정 방법 예] (@site/docs/img/wats-new-inv14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![렌더링 허용 설정 방법 예] (@site/docs/img/wats-new-in v14-render-allow-preference.png)
 
-### Link person to renderer
+### 사용자를 렌더러에 연결
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+이제 사용자 계정을 렌더러/디바이스에 연결하여 독립적인 재생 추적을 할 수 있습니다. 예를 들어 거실에 TV가 있고 침실에 TV가 있다면 거실 TV는 침실에서 보는 것에 영향을 받을 필요가 없습니다.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![ 렌더러 계정 할당 방법 예] (@site/docs/img/wats-new-in-v14-account-to-ender.png)
 
-### Restrict shared content to certain groups
+### 공유 내용을 특정 그룹으로 제한
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+이제 디렉토리 또는 온라인 콘텐츠를 특정 그룹과 공유하도록 선택할 수 있습니다. 예를 들어, 자식인 사용자 (또는 사용자에게 할당된 장치)가 있는 경우, 사용자를 "어린이" 그룹에 할당하고 해당 그룹에 "가족" 디렉토리에 대한 액세스 권한을 부여할 수 있지만 "호러" 또는 "성인용" 디렉토리에는 액세스 권한을 부여할 수 없습니다. 또는 Kurzgesagt 웹 피드에 액세스할 수 있지만 히스토리 팟캐스트에는 액세스할 수 없습니다.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![공유 콘텐츠 그룹의 예] (@site/docs/img/wats-new-in v14-shared-content-group.png)
 
-### Avatars
+### 아바타
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+사람들은 한눈에 보기 쉽게 아바타를 가질 수 있습니다. 사용자 설정 페이지에서 사용자 그룹과 함께 설정할 수 있습니다
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![사용자 설정 편집 방법 예] (@site/docs/img/wats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### 직접 TMDB 통합
 
-You can now link your TMDB account with UMS in the General Settings area.
+이제 일반 설정 영역에서 TMDB 계정을 UMS와 연결할 수 있습니다.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+이렇게 하면 TMDB의 검색 결과를 기반으로 메타데이터를 편집할 수 있습니다:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![렌더에 계정을 할당하는 방법 예] (@site/docs/img/wats-new-in v14-tmdb-edit-metadata.png)
 
-### More
+### 더 보기
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+v14의 모든 변경 사항에 대한 전체 목록은 [전체 변경 로그](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md) 를 참조하십시오.
 
-## Migration
+## 마이그레이션
 
-There are no special migration instructions for going from v13 to v14.
+v13에서 v14로 이동하는 데는 특별한 마이그레이션 지침이 없습니다.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+주요 업데이트와 마찬가지로 업데이트 전에 현재 버전으로 돌아갈 수 있는 기능을 사용하려면 구성 및 로컬 데이터베이스가 포함된 프로필 디렉토리를 백업할 수 있습니다. 프로그램 로그 상단 근처에서 해당 디렉터리의 위치를 찾을 수 있습니다. '프로필 디렉토리: [some page]/UMS'를 찾습니다.
