@@ -28,13 +28,13 @@ Artık ayarlar alanındaki Giriş ekranından işleyiciye veya ağ cihazına day
 
 Artık işleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Önceden sadece tek bir strateji mümkündü: Ya her şeye izin verin ya da izinli listesiyle her şeyi reddedin. Artık tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Bu, UMS’yi paylaşılan canlı durumları veya geniş/düşük güvene sahip yerel ağlar için çok daha esnek hale getirir. Ayrıca bu, komşularınızın istenmeyen erişimine neden olabileceğinden ağınız için elektrik hattı adaptörleri kullananlarınız için de faydalıdır.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Ağ izin verme tercihinin nasıl ayarlanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![İşleyici izin verme tercihinin nasıl ayarlanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-### Link person to renderer
+### Kişiyi işleyiciye bağlantılayın
 
 You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
