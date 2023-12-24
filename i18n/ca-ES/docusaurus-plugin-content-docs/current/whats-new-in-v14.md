@@ -60,14 +60,15 @@ Ara podeu enllaçar el vostre compte de TMDB amb UMS a l'àrea de configuració 
 
 En fer-ho, podeu editar metadades basades en els resultats de la cerca de TMDB:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Exemple de com assignar un compte a un renderitzador](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Més
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Per obtenir una llista completa de tots els canvis de la v14, consulteu [el registre de canvis complet](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## Migració
 
-There are no special migration instructions for going from v13 to v14.
+No hi han instruccions especials de migració per passar de la v13 a la v14.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Com amb qualsevol actualització important, si voleu tenir la possibilitat de tornar a la vostra versió actual abans d'actualitzar, podeu fer una còpia de seguretat del directori del vostre perfil, que conté la vostra configuració i la vostra base de dades local. Podeu trobar la ubicació d'aquest directori a prop de la part superior dels registres del vostre programa.
+​ Cerqueu `Directori de perfils: [alguna pàgina]/UMS`.
