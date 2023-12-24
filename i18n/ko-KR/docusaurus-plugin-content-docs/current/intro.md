@@ -3,9 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# 소개
+# Introduction
 
-이 웹사이트에는 UMS 사용을 위한 공식 문서가 포함되어 있습니다.
+This website contains the official support documentation for using Universal Media Server.
+
+If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
 
 구성, 가이드, 설치의 세 가지 주요 섹션으로 구분됩니다.
 
