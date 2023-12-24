@@ -24,9 +24,9 @@ Artık ayarlar alanındaki Giriş ekranından işleyiciye veya ağ cihazına day
 
 ![Bir işleyicinin nasıl engelleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### İşleyicilere veya ağ cihazlarına varsayılan olarak izin verin veya engelleyin:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Artık işleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Önceden sadece tek bir strateji mümkündü: Ya her şeye izin verin ya da izinli listesiyle her şeyi reddedin. Artık tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
 This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
