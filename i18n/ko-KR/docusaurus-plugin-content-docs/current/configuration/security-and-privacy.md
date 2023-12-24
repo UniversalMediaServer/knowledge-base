@@ -1,29 +1,29 @@
-# Security and Privacy
+# 보안 및 개인 정보 보호
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS는 DLNA 서버입니다. 이제 DLNA는 "사용자"에 대한 실질적인 개념이 없는 프로토콜입니다. 예를 들어 TV에 "로그온"할 필요가 없습니다. 따라서 모든 렌더러는 동일한 데이터에 액세스할 수 있습니다. 이것은 당신이 원하는 것이 아닐 수도 있습니다. 예를 들어 kids_safe 및 kids_unsafe 폴더가 두 개 있는 경우 키즈룸의 렌더러가 kids_safe 폴더에만 액세스하도록 제한할 수 있습니다. UMS는 액세스를 제어하는 여러 가지 방법을 제공합니다. 
 
-## IP filter
+## IP 필터
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+IP 필터링은 UMS가 제공하는 가장 제한적인 방법입니다. 사용하려면 연결이 허용되는 IP 주소의 쉼표로 구분된 목록을 제공합니다. 주소가 목록의 항목과 일치하지 않는 렌더는 트래픽을 폐기합니다 (UMS에 의해 매우 초기). ANY 폴더에 액세스할 수 없습니다 (루트 폴더도 볼 수 없음). 이 방법을 사용하여 아이들을 완전히 차단합니다. 자세한 내용은 UMS.conf의 ip_filter 설명을 참조하십시오.
 
-Example to allow only 2 addresses
+2개의 주소만 허용하는 예제
 
 ```
 ip_filter = 192.168.1.4, 192.168.1.32
 ```
 
-## Allowlist
+## 허용 목록
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+허용 목록은 렌더 단위로 루트 폴더를 사용자 지정할 수 있는 방법입니다. 따라서 다른 렌더러에게 다른 폴더 세트를 공유할 수 있습니다. 다음과 같이 작동합니다. UMS.conf (현재 GUI 옵션 없음)에 형식 tag.option = value (여기서 태그는 IP 주소 또는 렌더 이름)의 행을 추가합니다. 렌더 이름은 공백을 _(밑줄)로 변경해야 합니다. 옵션은 다음 중 하나입니다
 
 - folders
 - vfolders
 - web
 - hide_set
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+값은 옵션에 따라 달라집니다. 마지막 4개는 부울 값입니다. 폴더 및 가상 폴더의 경우 폴더 목록입니다.
 
-Example
+예제:
 
 ```
 folders = 
@@ -32,35 +32,35 @@ hide_video_settings = false
 192.168.1.1.hide_set = true
 ```
 
-This will for IP address 192.168.1.1:
+IP 주소 192.168.1.1:
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+- c:\child_safe 폴더 공유
+- 서버 설정 폴더 숨기기
+- 최근 재생 목록 숨기기
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+다른 모든 렌더러는 "글로벌" 설정, 즉 모든 폴더 보기 및 서버 설정을 사용합니다.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+옵션이 표시되지 않으면 "전역" 구성으로 돌아가거나 기본값으로 표시되지 않습니다.
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+화이트리스트는 루트 폴더 모양만 수정할 수 있습니다. 그러나 혼합된 것이 있는 경우(폴더가 10개 있지만 한 개만 어린이로 제한되어야 함). 개별 폴더 (또는 미디어)에 대한 액세스를 제어하려면 UMS.deny를 사용할 수 있습니다. 다음과 같이 작동합니다: UMS.deny라는 파일을 UMS.conf 파일과 동일한 디렉토리에 추가하고 해당 파일 추가 태그 안에 추가합니다.[name|file|sys]=regex 추가해야 하는 각 폴더/파일에 대해 UMS는 폴더 이름 또는 파일 이름에 정규식을 적용하고 정규식과 일치하는 경우 폴더/파일이 추가되지 않습니다. 예를 들면:
 ```
 192.168.1.1.name=.*private.*
 ```
 
-will remove all folders/files which has the word private in it.
+private라는 단어가 포함된 모든 폴더/파일을 제거합니다.
 ```
 192.168.1.1.file=c:\\tst.*
 ```
 
-will remove all files that have c:\tst in their path etc.
+경로 등에 c:\tst가 있는 모든 파일을 제거합니다.
 
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
+"UMS.deny" 파일에 규칙이 설정되어 있지 않으면 파일/폴더가 추가됩니다.
 
-Hiding folders
+폴더 숨기기
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+가상 폴더의 가시성을 제어합니다. 이러한 설정은 UMS.conf 파일에서 확인할 수 있습니다. 탐색하는 동안 일부 폴더를 숨기려면 값을 true로 설정하거나 고급 GUI 모드의 탐색/공유 설정 탭에서 폴더를 선택합니다. 
 
 ```
 hide_recently_played_folder =true
@@ -72,32 +72,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+웹 폴더를 숨기려면 고급 GUI 모드에서 일반 구성 탭에서 외부 네트워크 사용을 해제하거나 UMS.conf 파일에서 'external_network=' 값을 false로 변경해야 합니다. 이렇게 하면 자동 업데이트기가 작동하지 않는 부작용이 발생합니다. GUI에서 변경한 내용은 재시작 후 유효합니다.
 
-## PIN code
+## PIN 코드
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+위의 모든 방법은 다양한 렌더러의 접근을 제한합니다. 그러나 폴더를 볼 수 있는 렌더에 액세스할 수 있는 경우 이러한 방법은 도움이 되지 않습니다(아이들이 모든 미디어에 액세스할 수 있는 거실 TV에 액세스할 수 있는 경우 해당 미디어에 액세스할 수 있습니다). PIN 코드가 이 문제를 해결합니다. 렌더링에서 입력해야 하는 PIN 코드 뒤에 폴더/미디어를 숨길 수 있습니다. 기본적으로 입력은 ATM 코드와 마찬가지로 숫자 (0-9)의 시퀀스입니다. 렌더러에서 입력하기가 어려워지기 때문에 디지털 기반 코드를 사용하는 것이 좋습니다. 그러나 추가 편집증이 있는 경우 문자를 추가할 수 있습니다. 다음과 같이 작동합니다: UMS.code라는 파일을 UMS.conf와 같은 디렉터리에 추가하고, regexp는 "UMS.deny" 파일과 같이 정규 표현식이고 코드는 폴더/미디어에 대한 액세스 권한을 부여하는 코드입니다. 코드에 길이 규정이 없습니다. 예를 들면:
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+폴더/미디어에 "개인"이라는 단어가 포함되어 있고 올바른 코드가 1234인 경우 코드를 입력하도록 강제합니다. 그런 다음 코드는 4시간 동안 유효합니다 (그 시간을 변경하지 않는 경우).
 
-## Custom Device Configuration
+## 사용자 지정 장치 구성
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+기본 UMS 설정을 재정의하는 사용자 지정 장치 구성을 생성하여 장치별로 모든 구성 속성을 설정할 수도 있습니다 (자세한 내용은 사용자 지정 장치 구성 생성 참조).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+예를 들어, 어린이용 TV를 사용자 지정하려면:
+- 렌더러의 GUI 팝업 패널 우측 상단에 있는 '이 장치 사용자 지정' 버튼을 클릭하고 구성의 이름을 지정합니다.
+- 여는 새 conf 파일에서 서버 이름을 변경하고 다른 폴더를 지정하는 등 TV에 대해 재정의하려는 모든 설정을 추가합니다:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# 사용자 지정 장치 프로필
+# 가능한 모든 렌더러 옵션에 대한 설명은 DefaultRender.conf를 참조
+# 프로그램 옵션에 대한 UMS.conf.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# 이 파일의 옵션은 아래 나열된 특정 Sony Bravia EX 장치의 기본 설정을 재정의합니다.
+# 장치를 uuid (또는 uuid가 없는 경우 주소)로 지정하고 둘 이상일 경우 쉼표로 구분합니다.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff

@@ -2,39 +2,39 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# S14’te Neler Yeni
 
-## Overview
+## Genel bakış
 
-V14 contains major new features based on what our users have asked for.
+S14, kullanıcılarımızın isteklerine dayalı olarak önemli yeni özellikler içermektedir.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+En büyük değişiklikler içeriğinize erişimi denetleme yeteneğini içerir. Farklı içerikleri farklı cihazlarda görüntüleme yeteneğinin yanı sıra buna pin kodları, avatarlar ve paylaşılan klasör grupları gibi kullanıcı hesaplarında yapılan iyileştirmeler de dahildir.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Ayrıca web ayarlarında ve oynatıcı arayüzlerinde, dosya gruplarını (örn. TV dizileri) tamamen oynatılmış olarak işaretleme yeteneğinin eklenmesi ve sisteminizin koyu/açık kipi tercihinin otomatik olarak algılanması da dahil olmak üzere birçok güncelleme yapılmıştır.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Ayrıca [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) ve bu Bilgi Bankasının oluşturucusu, [Docusaurus v3](https://docusaurus.io/) dahil olmak üzere bazı bağımlılıklarımızın ana sürümlerini öne çıkarma fırsatını da değerlendirdik.
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Son olarak, gelecekteki hataları önlemek için deneme çerçevelerimizi geliştirmenin yanı sıra, yüzlerce hata düzeltmesi ve performans iyileştirmesi ekledik, üzerinde çalışmayı daha kolay hale getirmek için birçok kodu yeniden düzenledik.
 
-## New features
+## Yeni özellikler
 
-### Block/allow renderers and network devices
+### İşleyicileri ve ağ cihazlarını engelleyin/izin verin
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Artık ayarlar alanındaki Giriş ekranından işleyiciye veya ağ cihazına dayanarak erişimi engelleyebilir ve izin verebilirsiniz.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Bir işleyicinin nasıl engelleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### İşleyicilere veya ağ cihazlarına varsayılan olarak izin verin veya engelleyin:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Artık işleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Önceden sadece tek bir strateji mümkündü: Ya her şeye izin verin ya da izinli listesiyle her şeyi reddedin. Artık tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Bu, UMS’yi paylaşılan canlı durumları veya geniş/düşük güvene sahip yerel ağlar için çok daha esnek hale getirir. Ayrıca bu, komşularınızın istenmeyen erişimine neden olabileceğinden ağınız için elektrik hattı adaptörleri kullananlarınız için de faydalıdır.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Ağ izin verme tercihinin nasıl ayarlanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![İşleyici izin verme tercihinin nasıl ayarlanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-### Link person to renderer
+### Kişiyi işleyiciye bağlantılayın
 
 You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 

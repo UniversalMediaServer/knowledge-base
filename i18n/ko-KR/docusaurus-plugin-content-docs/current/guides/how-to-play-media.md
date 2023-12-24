@@ -1,39 +1,39 @@
-# How to play media
+# 미디어 재생 방법
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+이 기사에서는 UMS를 통해 비디오, 오디오 및 이미지를 재생하는 4가지 주요 방법에 대해 설명합니다.
 
-## 1: Play from a renderer interface
+## 1: 렌더러 인터페이스에서 재생
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+렌더러가 DLNA/UPnP를 통해 UMS에 연결되어 있는 경우, 렌더러에 따라 "미디어 서버" 또는 이와 유사한 메뉴에 표시되는 경우가 많습니다. 거기서 UMS를 입력하고 액세스하려는 미디어를 찾을 수 있습니다.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+이를 구현하는 방법은 렌더러마다 매우 다르지만 핵심 기능은 동일합니다. 선택한 미디어로 이동하여 재생할 미디어를 선택합니다.
 
-## 2: Push from the UMS interface to a renderer
+## 2: UMS 인터페이스에서 렌더로 푸시
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+UMS 인터페이스 자체는 미디어가 UPnP 기능을 지원하는 경우 렌더러에게 "푸시"하는 기능을 가지고 있습니다. 캐스팅과 비슷한 개념입니다.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. UMS UI를 열고 미디어를 푸시할 렌더러를 식별합니다. 이 경우 Panasonic VIERA VT60 시리즈 TV입니다.  
+   ![GUI 열기](@site/docs/guides/img/how-to-play-media-1.png)
+2. 렌더러 이미지를 클릭하여 제어판을 엽니다  
+   ![렌더러 제어](@site/docs/guides/img/how-to-play-media-2.png)
+3. 오른쪽 하단의 폴더 아이콘을 클릭하여 푸시할 파일을 선택하면 왼쪽 하단에 입력됩니다. 이 창에 플레이어 컨트롤이 표시되지 않으면 렌더러는 이 기능을 지원하지 않습니다. 펌웨어/소프트웨어 업데이트에 대한 지원이 추가되었을 수 있으므로 공급업체에 대한 펌웨어/소프트웨어 업데이트를 확인해야 합니다  
+   ![선택한 파일](@site/docs/guides/img/how-to-play-media-3.png)
+4. 이제 입력 상자의 바로 오른쪽에 있는 더하기 아이콘을 클릭하여 재생 목록을 만들 수도 있고, 입력 상자의 중간 바로 위에 있는 재생 아이콘을 클릭하여 파일을 렌더링자에게 푸시하면 렌더링자에서 재생이 시작됩니다.
 
-## 3: Play on the web interface
+## 3: 웹 인터페이스에서 재생
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+웹 인터페이스는 컴퓨터 및 렌더러를 포함하여 로컬 네트워크 내의 모든 곳에서 액세스할 수 있습니다. 여러 면에서 당사의 가장 진보된 UI와 기능을 제공합니다.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. 웹 인터페이스를 엽니다. 해당 주소로 이동할 수 있는 경우 UI에서 웹 인터페이스 버튼을 클릭하는 것이 쉬운 방법입니다  
+   ![웹 인터페이스 열기](@site/docs/guides/img/how-to-play-media-4.png)
+2. 이를 클릭하면 기본 브라우저에서 웹 인터페이스가 열립니다. 거기서 파일을 탐색하고 클릭하여 재생할 수 있습니다  
+   ![웹 인터페이스의 비디오](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 4: 웹 인터페이스에서 렌더로 푸시
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+옵션 2의 위와 유사하게 웹 인터페이스를 통해 미디어를 렌더러로 푸시할 수 있습니다.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. 디렉토리를 검색할 때 파일에 대한 작은 캐스트 아이콘을 클릭합니다. 썸네일 오른쪽 하단에 있습니다.  
+   ![캐스트 아이콘](@site/docs/guides/img/how-to-play-media-6.png)
+2. 이렇게 하면 미니 부동 컨트롤 패널이 나타나 파일 재생을 제어하고 선택한 경우 동적 재생 목록을 관리하는 데 사용할 수 있습니다.  
+   ![부동 제어 패널](@site/docs/guides/img/how-to-play-media-7.png)

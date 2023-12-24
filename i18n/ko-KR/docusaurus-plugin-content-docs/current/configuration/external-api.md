@@ -361,11 +361,11 @@ Example:
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+그러면 ID가 `123`인 곡이 재생 목록 `Pop`에 추가됩니다.
 
-#### removing songs from playlists
+#### 재생 목록에서 노래 제거
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+필요한 `audiotrackid`는 UPnP 찾아보기 요청 시 전달되며 DIDL 응답 속성 `descMetadata`에서 추출할 수 있습니다
 
 ```XML
 <ums-tags>
@@ -377,47 +377,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| 의도                | 재생 목록에서 노래 제거                                                                                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| REQUEST TYPE      | POST                                                                                                                                                                                   |
+| POST BODY         | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY 예제 / 설명 | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY     | NONE                                                                                                                                                                                   |
+| 이후 사용 가능          | 11.0                                                                                                                                                                                   |
 
-Example:
+예제:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+그러면 재생 목록 ` Pop`에서 ID `123`인 곡이 제거됩니다.
 
-#### create new playlists
+#### 새 재생 목록 만들기
 
-Playlist name should be provided without any path and without file extensions. 
+재생 목록 이름은 경로 없이 파일 확장자 없이 제공되어야 합니다. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| 의도                | 관리되는 재생 목록 폴더에서 새 재생 목록 만들기                                                                                                                                                    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| REQUEST TYPE      | POST                                                                                                                                                                           |
+| POST BODY         | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| POST BODY 예제 / 설명 | Contemporary                                                                                                                                                                   |
+| RESPONSE BODY     | NONE                                                                                                                                                                           |
+| 이후 사용 가능          | 11.0                                                                                                                                                                           |
 
-Example:
+예제:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+이 호출은 관리되는 재생 목록 폴더에 `Contemporary.m3u8`이라는 이름의 새 재생 목록 파일을 만듭니다.
 
-## Java code example
+## Java 코드 예제
 
-This code snippet shows how to use the API with okhttp3 library.
+이 코드 스니펫은 okhttp3 라이브러리와 함께 API를 사용하는 방법을 보여줍니다.
 
 ```Java
 import nextcp.dto.Config;
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP 반환 코드
 
 | 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
