@@ -7,7 +7,7 @@ slug: /
 
 Этот веб-сайт содержит официальную документацию по поддержке использования Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Если вы не являетесь текущим пользователем или хотите решить, стоит ли им пользоваться, вы, вероятно, найдете полезную информацию на нашем веб-сайте [](https://www.universalmediaserver.com)
 
 Он разделен на 3 основных раздела: Конфигурация, руководства и установка.
 
