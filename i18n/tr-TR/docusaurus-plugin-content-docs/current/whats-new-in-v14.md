@@ -36,13 +36,13 @@ Bu, UMS’yi paylaşılan canlı durumları veya geniş/düşük güvene sahip y
 
 ### Kişiyi işleyiciye bağlantılayın
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Bağımsız oynatma takibine sahip olmanızı sağlayarak artık kullanıcı hesaplarını işleyicilere/cihazlara bağlantılayabilirsiniz. Örneğin, oturma odanızda ve yatak odanızda birer TV varsa, oturma odası TV’sinin yatak odanızda izlediklerinizden etkilenmesine gerek yoktur.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Paylaşılan içeriği belirli gruplarla sınırlandırın
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Artık dizinleri veya çevrimiçi içeriği belirli gruplarla paylaşmayı seçebilirsiniz. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
