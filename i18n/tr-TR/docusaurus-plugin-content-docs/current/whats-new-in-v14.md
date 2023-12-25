@@ -36,36 +36,36 @@ Bu, UMS’yi paylaşılan canlı durumları veya geniş/düşük güvene sahip y
 
 ### Kişiyi işleyiciye bağlantılayın
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Bağımsız oynatma takibine sahip olmanızı sağlayarak artık kullanıcı hesaplarını işleyicilere/cihazlara bağlantılayabilirsiniz. Örneğin, oturma odanızda ve yatak odanızda birer TV varsa, oturma odası TV’sinin yatak odanızda izlediklerinizden etkilenmesine gerek yoktur.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Paylaşılan içeriği belirli gruplarla sınırlandırın
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Artık dizinleri veya çevrimiçi içeriği belirli gruplarla paylaşmayı seçebilirsiniz. Örneğin, çocuğunuz (veya çocuğunuza atanmış bir cihazınız) varsa, onu "Çocuklar" grubuna atayabilir ve bu grubun "Aile" dizinine erişmesini sağlayabilirsiniz, ancak "Korku" veya "Sadece Yetişkin" olanlara değil. Veya onlara Kurzgesagt web bildirimine erişim verin, ancak tarih podcast’lerine erişim vermeyin.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Paylaşılan içerik gruplarına örnek](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Avatarlar
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+İnsanların bir bakışta görülmelerini kolaylaştırmak için avatarları olabilir. Bunları kullanıcı gruplarıyla birlikte kullanıcı ayarları sayfasında ayarlayabilirsiniz.
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Kullanıcı ayarlarının nasıl düzenleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### Doğrudan TMDB bütünleştirmesi
 
-You can now link your TMDB account with UMS in the General Settings area.
+Artık Genel Ayarlar alanında TMDB hesabınızı UMS’ye bağlantılayabilirsiniz.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+Bunu yapmak, TMDB’deki arama sonuçlarına dayanarak üstverileri düzenlemenizi sağlar:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Daha fazla
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+S14’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğü](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)’ne bakın.
 
-## Migration
+## Geçiş
 
-There are no special migration instructions for going from v13 to v14.
+S13’ten S14’e geçmek için özel bir geçiş talimatı yoktur.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Tüm büyük güncellemelerde olduğu gibi, güncellemeden önce şu anki sürümünüze geri dönme olanağına sahip olmak istiyorsanız, yapılandırmanızı ve yerel veritabanınızı içeren profil dizininizin yedeğini alabilirsiniz. Bu dizinin konumunu program günlüklerinizin üst kısmına yakın bir yerde bulabilirsiniz. `Profil dizini: [bazı sayfalar]/UMS`yi arayın.
