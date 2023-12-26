@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Nouveautés de la v14
 
-## Overview
+## Résumé
 
-V14 contains major new features based on what our users have asked for.
+V14 contient de nouvelles fonctionnalités majeures basées sur ce que nos utilisateurs ont demandé.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+Les changements les plus importants impliquent la possibilité de contrôler l'accès à votre contenu. Cela inclut des améliorations aux comptes utilisateurs tels que les codes PIN, les avatars et les groupes de dossiers partagés, ainsi que la possibilité d'afficher différents contenus sur différents appareils.
 
 There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
 
