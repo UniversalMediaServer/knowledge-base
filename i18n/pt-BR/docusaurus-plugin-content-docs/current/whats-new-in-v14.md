@@ -12,25 +12,25 @@ As maiores mudanças envolvem a capacidade de controlar o acesso ao seu conteúd
 
 Também houve muitas atualizações nas configurações da web e na interface do player, incluindo a adição da capacidade de marcar conjuntos de arquivos (por exemplo, uma série de TV) como totalmente reproduzida, e detecção automática de sua preferência do modo claro / escuro.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Também aproveitamos a oportunidade para incrementar as versões principais de algumas de nossas dependências, incluindo [Mantine v7](https://mantine.dev/), [NSIS v3](https\://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) e o gerador desta Base de Conhecimento, [Docusaurus v3](https://docusaurus.io/).
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Por último, incluimos centenas de correções de erros e melhorias no desempenho, e recriamos muito código para ser mais fácil de trabalhar, bem como melhoramos nossos frameworks de teste para evitar erros futuros.
 
-## New features
+## Novos Recursos
 
-### Block/allow renderers and network devices
+### Bloquear/permitir renderizadores e dispositivos de rede
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Agora você pode bloquear e permitir o acesso com base no renderizador ou no dispositivo de rede, a partir da Tela inicial na área de configurações.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Exemplo de como bloquear um renderizador](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### Permitir ou bloquear renderizadores ou dispositivos de rede por padrão:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Agora você pode escolher a estratégia padrão para renderizadores e dispositivos de rede. Anteriormente, só havia uma estratégia possível - ou permitia tudo, ou negar tudo com uma lista de permissões. Agora você pode permitir ou negar por padrão, com listas de negação ou de permissão, para controle completo.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Isto torna o UMS muito mais flexível para situações de vida partilhada ou de redes locais muito grandes ou baixa confiabilidade. Também é útil para quem usa adaptadores de linha elétrica para a sua rede, já que isso pode resultar em acesso indesejado dos vizinhos.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Exemplo de como configurar as preferências de rede](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
 ![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
