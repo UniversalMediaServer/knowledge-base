@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Novidades na v14
 
-## Overview
+## Visão Geral
 
-V14 contains major new features based on what our users have asked for.
+A v14 contém novos recursos importantes, baseados no que nossos usuários pediram.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+As maiores mudanças envolvem a capacidade de controlar o acesso ao seu conteúdo. Isto inclui melhorias para contas de usuários como códigos de PIN, avatares e grupos de pastas compartilhados. assim como a capacidade de exibir conteúdo diferente para diferentes dispositivos.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Também houve muitas atualizações nas configurações da web e na interface do player, incluindo a adição da capacidade de marcar conjuntos de arquivos (por exemplo, uma série de TV) como totalmente reproduzida, e detecção automática de sua preferência do modo claro / escuro.
 
 We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
 
