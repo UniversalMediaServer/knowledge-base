@@ -18,7 +18,7 @@ _`secret_password`_은 최소 12자여야 합니다.
 
 #### 다시 검색
 
-| Intention                       | 전체 라이브러리를 다시 검색합니다          |
+| 의도                              | 전체 라이브러리를 다시 검색합니다          |
 | ------------------------------- | --------------------------- |
 | URI                             | `/api/folderscanner/rescan` |
 | POST BODY                       | NONE                        |
@@ -29,7 +29,7 @@ _`secret_password`_은 최소 12자여야 합니다.
 대형 라이브러리의 경우 속도가 느릴 수 있습니다
 :::
 
-Example:
+예제:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,7 +37,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                             |
+| 의도                              | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                             |
 | ------------------------------- | ------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                 |
 | POST BODY                       | PATH_TO_SCAN                                          |
@@ -164,9 +164,7 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 ### 등급
 
-평점 API는 노래를 평점하는 역할을 합니다. 등급 정보는 내부 데이터베이스 (캐시 활성화)에 저장되며 선택적으로 파일 자체에 저장됩니다. UMS.conf에서 <code>audio_update_rating_tag = true` 가 설정되어 있는 경우 IDv3 등급 필드도 노래 파일에서 업데이트됩니다 (노래 파일 형식이 지원되는 경우).
-
-콘텐츠 디렉토리 서버를 탐색하는 동안 MusicBrainzTrackID (사용 가능한 경우) 및 audiotrackID는 DIDL 요소 내에서 `desc` 메타데이터로 전달됩니다.
+평점 API는 노래를 평점하는 역할을 합니다. 등급 정보는 내부 데이터베이스 (캐시 활성화)에 저장되며 선택적으로 파일 자체에 저장됩니다. UMS.conf에서 `audio_update_rating_tag = true` 가 설정되어 있는 경우 IDv3 등급 필드도 노래 파일에서 업데이트됩니다 (노래 파일 형식이 지원되는 경우).
 
 콘텐츠 디렉토리 서버를 탐색하는 동안 MusicBrainzTrackID (사용 가능한 경우) 및 audiotrackID는 DIDL 요소 내에서 `desc` 메타데이터로 전달됩니다.
 
