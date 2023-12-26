@@ -7,9 +7,7 @@ slug: /
 
 Este site contém a documentação oficial para usar o UMS.
 
-Se você já não é um usuáro e quer fazer o download dele ou decidir se vai usá-lo, você provavelmente vai achar nosso site principal,
-
-, mais útil.</p> 
+Se você já não é um usuáro e quer fazer o download dele ou decidir se vai usá-lo, você provavelmente vai achar [nosso site principal](https://www.universalmediaserver.com) mais útil.
 
 Ela é dividida em 3 seções principais: Configuração, Guias e Instalação.
 
