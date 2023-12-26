@@ -183,7 +183,7 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-이 호출은 musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`로 식별되는 모든 곡의 사용자 등급을 <0>3</0>으로 설정합니다.
+이 호출은 musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` 로 식별되는 모든 곡의 사용자 등급을 `3`으로 설정합니다.
 
 #### 등급 받기
 
