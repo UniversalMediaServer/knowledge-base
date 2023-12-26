@@ -160,11 +160,11 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-이 호출은 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af</0로 식별된 앨범이 마음에 드는지 확인합니다.</p>
+이 호출은 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`로 식별된 앨범이 마음에 드는지 확인합니다.
 
-<h3 spaces-before="0">등급</h3>
+### 등급
 
-<p spaces-before="0">평점 API는 노래를 평점하는 역할을 합니다. 등급 정보는 내부 데이터베이스 (캐시 활성화)에 저장되며 선택적으로 파일 자체에 저장됩니다. UMS.conf에서 <code>audio_update_rating_tag = true` 가 설정되어 있는 경우 IDv3 등급 필드도 노래 파일에서 업데이트됩니다 (노래 파일 형식이 지원되는 경우).
+평점 API는 노래를 평점하는 역할을 합니다. 등급 정보는 내부 데이터베이스 (캐시 활성화)에 저장되며 선택적으로 파일 자체에 저장됩니다. UMS.conf에서 `audio_update_rating_tag = true` 가 설정되어 있는 경우 IDv3 등급 필드도 노래 파일에서 업데이트됩니다 (노래 파일 형식이 지원되는 경우).
 
 콘텐츠 디렉토리 서버를 탐색하는 동안 MusicBrainzTrackID (사용 가능한 경우) 및 audiotrackID는 DIDL 요소 내에서 `desc` 메타데이터로 전달됩니다.
 
