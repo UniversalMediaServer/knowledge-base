@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Hvad er nyt i v14
 
 ## Overview
 
