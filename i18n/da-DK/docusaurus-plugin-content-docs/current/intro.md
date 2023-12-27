@@ -3,11 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Introduktion
 
-This website contains the official support documentation for using Universal Media Server.
+Denne hjemmeside indeholder den officielle support dokumentation for brug af Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Hvis du ikke er en nuværende bruger, og du ønsker at downloade den eller beslutte, om du vil bruge den, du vil sandsynligvis finde [vores hjemmeside](https://www.universalmediaserver.com) mere nyttig.
 
 It is split into 3 main sections: Configuration, Guides, and Installation.
 

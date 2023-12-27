@@ -207,73 +207,73 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 #### 오디오 트랙 ID별 등급 설정
 
-| 의도                              | UMS 내부 오디오 트랙 ID에 의해 식별된 곡에 별 (0 - 5)로 등급 설정                                                                   |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| 의도                | UMS 내부 오디오 트랙 ID에 의해 식별된 곡에 별 (0 - 5)로 등급 설정                                                                   |
+| ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY         | `trackID` /`stars`                                                                                             |
+| POST BODY 예제 / 설명 | 32                                                                                                             |
+| 이후 사용 가능          | 11.0                                                                                                           |
 
-Example:
+예제:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+이 호출은 오디오 트랙 ID `32`로 식별되는 사용자 등급을 `3`으로 설정합니다.
 
-#### get rating by audiotrack id
+#### 오디오 트랙 id별 등급 받기
 
-Reads song rating from database
+데이터베이스에서 노래 등급 읽기
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| 의도                | UMS 내부 오디오 트랙 ID로 별 (0 - 5) 단위의 노래 등급을 얻습니다. 응답 본문에는 등급 정보가 포함되어 있습니다.                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
+| POST BODY         | trackId                                                                                                       |
+| POST BODY 예제 / 설명 | 32                                                                                                            |
+| RESPONSE BODY 예제  | 3                                                                                                             |
+| 이후 사용 가능          | 11.0                                                                                                          |
 
-Example:
+예제:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+이 호출은 UMS audiotrack-id `32`로 식별된 곡의 사용자 등급을 읽습니다.
 
-### Backup / Restore
+### 백업 / 복원
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+사용자가 관리하는 "좋아용 앨범" 항목은 ` database_backup`이라는 이름의 프로필-디렉터리 하위 폴더에 백업할 수 있습니다. 파일 이름은 `MUSIC_BRAINZ_RELEASE_LIKE`입니다. UMS 데이터베이스가 삭제될 경우를 대비하여 복구를 호출합니다.
 
-#### backup liked albums
+#### 좋아요 앨범 백업
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+파일 시스템에 백업 테이블 `MUSIC_BRAINZ_RELEASE_LIKE`
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| 의도            | 좋아하는 노래를 파일 시스템에 백업                                                                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| URI           | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| REQUEST TYPE  | GET                                                                                                   |
+| RESPONSE BODY | `확인` 또는 오류 메시지                                                                                        |
+| 이후 사용 가능      | 10.20                                                                                                 |
 
-Example:
+예제:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+이 통화는 마음에 드는 앨범이 들어 있는 백업 파일을 만듭니다.
 
-#### restore liked albums
+#### 좋아요 앨범 복원
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+파일 시스템에서 테이블 `MUSIC_BRAINZ_RELEASE_LIKE` 을 복원합니다
 
-| Intention     | restore liked songs from backup file                                                                                                       |
+| 의도            | 백업 파일에서 좋아하는 노래 복원                                                                                                                         |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | URI           | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
 | REQUEST TYPE  | GET                                                                                                                                        |
-| RESPONSE BODY | `OK` or error message                                                                                                                      |
+| RESPONSE BODY | `확인` 또는 오류 메시지                                                                                                                             |
 | 이후 사용 가능      | 10.20                                                                                                                                      |
 
 예제:
@@ -282,31 +282,31 @@ Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+이 호출은 백업 파일을 복원합니다.
 
-### Playlist
+### 재생 목록
 
-#### enable service
+#### 서비스 사용
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+UMS.conf 편집 및 설정별 관리되는 재생 목록 폴더 구성 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+이 서비스를 활성화하기 위해. 기본적으로 이 서비스는 비활성화됩니다. 재생 목록 폴더 경로는 이 API에 의해 변경된 재생 목록에 대해 구성된 공유 `<span class="s1">폴더</span>`  경로 아래에 있어야 합니다.
 
-#### list all playlists
+#### 모든 재생 목록 나열
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+사용 가능한 재생 목록을 읽습니다. 이러한 재생 목록 이름은 노래를 추가하거나 제거하기 위해 후속 호출에 사용해야 합니다.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| 의도               | 구성된 폴더에서 지원되는 모든 재생 목록 (`m3u`, `m3u8` and `pls`)과 사용 가능한 재생 목록을 제공합니다. 재생 목록 이름 외에 재생 목록 `playlistId`는                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI              | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| REQUEST TYPE     | GET                                                                                                                                                                             |
+| RESPONSE BODY    | 재생 목록 이름의 JSON 배열                                                                                                                                                               |
+| RESPONSE BODY 예제 | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| 이후 사용 가능         | 11.0                                                                                                                                                                            |
 
-Example:
+예제:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
@@ -314,29 +314,29 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 이 호출은 사용 가능한 모든 재생 목록을 나열합니다.
 
-#### list server accessible playlists
+#### 목록서버 액세스 가능 재생 목록
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+이는 모두 UMS (데이터베이스/캐시 사용)에 알려진 재생 목록입니다. 이러한 재생 목록 이름은 노래를 추가하거나 제거하기 위해 후속 호출에 사용해야 합니다. 재생 목록 ID는  `objectId` `$DBID$PLAYLIST$` concat databaseId를 검색하여 재생 목록으로 직접 이동하는 데 사용할 수 있습니다.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"재즈","playlistId":5},{"playlistName":"차트","playlistId":343}]`                                                                          |
-| Available since       | dev branch                                                                                                                                               |
+| 의도               | 구성된 폴더에서 지원되는 모든 재생 목록 (`m3u`, `m3u8` and `pls`) 및 사용 가능한 재생 목록 제공                                                                                       |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI              | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| REQUEST TYPE     | GET                                                                                                                                                      |
+| RESPONSE BODY    | 재생 목록 이름의 JSON 배열                                                                                                                                        |
+| RESPONSE BODY 예제 | `[{"playlistName":"재즈","playlistId":5},{"playlistName":"차트","playlistId":343}]`                                                                          |
+| 이후 사용 가능         | dev 분기                                                                                                                                                   |
 
-Example:
+예제:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+이 통화는 UMS에서 액세스할 수 있는 모든 사용 가능한 재생 목록을 나열합니다.
 
-#### adding songs to playlists
+#### 재생목록에 노래 추가
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+필요한`audiotrackid`는 UPnP 찾아보기 요청 시 전달되며 DIDL 응답 속성 `descMetadata`에서 추출할 수 있습니다
 
 ```XML
 <ums-tags>
@@ -346,16 +346,16 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| 의도                | 재생 목록에 노래 추가                                                                                                                                                                      |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| REQUEST TYPE      | POST                                                                                                                                                                              |
+| POST BODY         | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY 예제 / 설명 | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY     | 없음                                                                                                                                                                                |
+| 이후 사용 가능          | 11.0                                                                                                                                                                              |
 
-Example:
+예제:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
@@ -383,7 +383,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 | REQUEST TYPE      | POST                                                                                                                                                                                   |
 | POST BODY         | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
 | POST BODY 예제 / 설명 | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY     | NONE                                                                                                                                                                                   |
+| RESPONSE BODY     | 없음                                                                                                                                                                                     |
 | 이후 사용 가능          | 11.0                                                                                                                                                                                   |
 
 예제:
@@ -403,8 +403,8 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 | URI               | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
 | REQUEST TYPE      | POST                                                                                                                                                                           |
 | POST BODY         | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY 예제 / 설명 | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY     | NONE                                                                                                                                                                           |
+| POST BODY 예제 / 설명 | 현대                                                                                                                                                                             |
+| RESPONSE BODY     | 없음                                                                                                                                                                             |
 | 이후 사용 가능          | 11.0                                                                                                                                                                           |
 
 예제:
@@ -446,4 +446,4 @@ import okhttp3.Response;
 
 ## HTTP 반환 코드
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | 확인 | | 204 | 콘텐츠가 반환되지 않으면 성공 | | 401 | 잘못된 api 키 | | 404 | 요청된 개체를 찾을 수 없습니다 | | 417 | API 요청 실패 | | 503 | 외부 api가 활성화되어 있지 않습니다. UMS.conf에서 길이가 12자 이상인 `api_key`설정 |
