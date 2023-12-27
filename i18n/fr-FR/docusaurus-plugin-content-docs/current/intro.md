@@ -5,9 +5,9 @@ slug: /
 
 # Introduction
 
-This website contains the official support documentation for using Universal Media Server.
+Ce site web contient la documentation officielle pour l'utilisation de Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Si vous n'êtes pas un utilisateur actuel, et que vous cherchez à le télécharger ou à décider si vous souhaitez l'utiliser, vous trouverez probablement [notre site principal](https://www.universalmediaserver.com) plus utile.
 
 Il est divisé en 3 sections principales : Configuration, Guides et Installation.
 

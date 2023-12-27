@@ -3,11 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Introdução
 
-This website contains the official support documentation for using Universal Media Server.
+Este site contém a documentação oficial para usar o UMS.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Se você já não é um usuáro e quer fazer o download dele ou decidir se vai usá-lo, você provavelmente vai achar [nosso site principal](https://www.universalmediaserver.com) mais útil.
 
 Ela é dividida em 3 seções principais: Configuração, Guias e Instalação.
 

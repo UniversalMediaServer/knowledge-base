@@ -1,6 +1,6 @@
 {
   "label": "Asetukset",
-  "position": "",
+  "position": 3,
   "link": {
     "type": "",
     "description": "Kuinka säätää UMS:n asetuksia"

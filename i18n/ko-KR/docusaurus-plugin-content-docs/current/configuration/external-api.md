@@ -56,158 +56,158 @@ curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST
 
 노래는 좋아요로 표시됩니다.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| 의도                | 음악 Brainz trackId에 의해 식별된 노래처럼                           |
+| ----------------- | -------------------------------------------------------- |
+| URI               | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY         | `musicBrainz_trackID`                                    |
+| POST BODY 예제 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| 이후 사용 가능          | 10.20                                                    |
 
-Example:
+예제:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### 싫어하는 노래
 
-Song will not be disliked
+노래는 싫어하지 않습니다
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| 의도                | musicBrainz trackId에 의해 식별된 노래를 싫어합니다                       |
+| ----------------- | ----------------------------------------------------------- |
+| URI               | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY         | `musicBrainz_trackID`                                       |
+| POST BODY 예제 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| 이후 사용 가능          | 10.20                                                       |
 
-Example:
+예제:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### 노래가 좋아요
 
-Check if song is liked.
+노래가 마음에 드는지 확인합니다.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| 의도                | musicBrainz trackId로 '좋아요'를 누른 노래가 있는지 확인                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY         | `musicBrainz_trackID`                                                                           |
+| POST BODY 예제 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY     | `TRUE` 또는 `FALSE`                                                                               |
+| 이후 사용 가능          | 10.20                                                                                           |
 
-Example:
+예제:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+이 호출은 musicbrainz release-id  `1e0eee38-a9f6-49bf-84d0-45d0647799af`에 의해 식별된 앨범의 좋아요 속성을 추가합니다.
 
-#### like album
+#### 앨범 좋아요
 
-Set album like state to true.
+상태와 같은 앨범을 true로 설정합니다.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| 의도                | musicBrainz releaseID로 식별된 앨범에 좋아요 누르기                    |
+| ----------------- | --------------------------------------------------------- |
+| URI               | `<span class="s1">/api/like/</span>likealbum` |
+| POST BODY         | `musicBrainz_releaseID`                                   |
+| POST BODY 예제 / 설명 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
+| 이후 사용 가능          | 10.20                                                     |
 
-Example:
+예제:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### 앨범 싫어요
 
-Remove album like state.
+상태처럼 앨범을 제거합니다.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| 의도         | musicBrainz releaseID로 식별된 노래 싫어요 표시하기                       |
+| ---------- | ------------------------------------------------------------ |
+| URI        | `<span class="s1">/api/like/</span>dislikealbum` |
+| POST BODY  | `musicBrainz_releaseID`                                      |
+| 본문 예시 / 설명 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| 이후 사용 가능   | 10.20                                                        |
 
-Example:
+예제:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+이 호출은 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`에 의해 식별된 앨범의 좋아요 속성을 제거했습니다.
 
-#### is album liked
+#### 앨범이 좋아요
 
-Check album like state.
+앨범 좋아요 상태를 확인합니다.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| 의도                | musicBrainz releaseID로 앨범이 좋아요를 받았는지 확인하기                    |
+| ----------------- | ------------------------------------------------------------ |
+| URI               | `<span class="s1">/api/like/</span>isalbumliked` |
+| POST BODY         | `musicBrainz_releaseID`                                      |
+| POST BODY 예제 / 설명 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| RESPONSE BODY     | "TRUE" 또는 "FALSE"                                            |
+| 이후 사용 가능          | 10.20                                                        |
 
-Example:
+예제:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+이 호출은 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`로 식별된 앨범이 마음에 드는지 확인합니다.
 
-### Rating
+### 등급
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+평점 API는 노래를 평점하는 역할을 합니다. 등급 정보는 내부 데이터베이스 (캐시 활성화)에 저장되며 선택적으로 파일 자체에 저장됩니다. UMS.conf에서 `audio_update_rating_tag = true` 가 설정되어 있는 경우 IDv3 등급 필드도 노래 파일에서 업데이트됩니다 (노래 파일 형식이 지원되는 경우).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+콘텐츠 디렉토리 서버를 탐색하는 동안 MusicBrainzTrackID (사용 가능한 경우) 및 audiotrackID는 DIDL 요소 내에서 `desc` 메타데이터로 전달됩니다.
 
-#### set rating
+#### 등급 설정
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| 의도                | musicBrainz trackId에 의해 식별된 노래에 별점 (0 - 5)으로 등급 설정                                              |
+| ----------------- | ----------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| POST BODY         | `musicbrainzTrackId` /`stars`                                                                   |
+| POST BODY 예제 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| 이후 사용 가능          | 10.20                                                                                           |
 
-Example:
+예제:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+이 호출은 musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` 로 식별되는 모든 곡의 사용자 등급을 `3`으로 설정합니다.
 
-#### get rating
+#### 등급 받기
 
-Reads song rating from database
+데이터베이스에서 노래 등급 읽기
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| 의도                | musicBrainz trackID로 별(0 - 5) 단위의 노래 등급을 얻습니다. 응답 본문에는 등급 정보가 포함되어 있습니다.                         |
+| ----------------- | ------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>` |
+| POST BODY         | `musicbrainzTrackId`                                                                             |
+| POST BODY 예제 / 설명 | b8695995-45e9-405d-b4aa-e50e8760fe25                                                             |
+| RESPONSE BODY 예제  | 3                                                                                                |
+| 이후 사용 가능          | 10.20                                                                                            |
 
-Example:
+예제:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+이 호출은 musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.에 의해 식별된 노래의 사용자 등급을 읽습니다.
 
-#### set rating by audiotrack id
+#### 오디오 트랙 ID별 등급 설정
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
+| 의도                              | UMS 내부 오디오 트랙 ID에 의해 식별된 곡에 별 (0 - 5)로 등급 설정                                                                   |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | POST BODY                       | `trackID` /`stars`                                                                                             |
@@ -269,14 +269,14 @@ This call will create a backup file containing liked albums.
 
 Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intention     | restore liked songs from backup file                                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI           | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE  | GET                                                                                                                                        |
+| RESPONSE BODY | `OK` or error message                                                                                                                      |
+| 이후 사용 가능      | 10.20                                                                                                                                      |
 
-Example:
+예제:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums

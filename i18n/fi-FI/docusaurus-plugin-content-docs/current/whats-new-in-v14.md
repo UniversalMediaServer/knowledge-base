@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Version V14 muutokset
 
-## Overview
+## Yhteenveto
 
-V14 contains major new features based on what our users have asked for.
+V14 sisältää merkittäviä uusia ominaisuuksia sen perusteella, mitä käyttäjät ovat pyytäneet.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+Suurimmat muutokset liittyvät kykyyn hallita sisällön käyttöoikeutta. Tämä sisältää parannuksia käyttäjätileihin kuten pin koodit, hahmot ja jaetut kansioryhmät, sekä kyky näyttää eri sisältöä eri laitteisiin.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+On myös ollut monia päivityksiä web-asetuksiin ja soittimen käyttöliittymiin, mukaan lukien lisäämällä kyky merkitä joukko tiedostoja (esim. TV-sarja) täysin soitettuina, ja automaattinen tunnistus järjestelmän tumman/valoisan teema mieltymyksestä.
 
 We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
 

@@ -3,11 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Johdanto
 
-This website contains the official support documentation for using Universal Media Server.
+Tällä verkkosivulla on Universal Media Server In viralliset ohjeet.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Jos et ole vielä käyttäjä, haluat ladata sen tai mietit haluatko käyttää sitä, niin löydät paremmin tietoa [viralliselta kotisivulta](https://www.universalmediaserver.com).
 
 Se on jaettu kolmeen pääosioon: asetukset, ohjeet, ja asennus.
 

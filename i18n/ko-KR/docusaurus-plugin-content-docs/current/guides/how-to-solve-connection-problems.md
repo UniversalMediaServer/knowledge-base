@@ -8,5 +8,5 @@
 
 1. UMS 열기
 2. `일반 설정`탭 선택
-3. 인터페이스에서 네트워킹 강제:/0> 드롭다운을 펼치고 원하는 인터페이스를 선택합니다. 드롭다운에 많은 옵션이 있을 수 있습니다. 원하는 IP 주소는 일반적으로 이름 뒤에 괄호로 표시됩니다. 예를 들어 다음과 같습니다:  
-   ![GUI 열기](@site/docs/guides/img/how-to-solve-connection-problems.png)
+3. ` 인터페이스에서 네트워킹 강제:` 드롭다운을 펼치고 원하는 인터페이스를 선택합니다. 드롭다운에 많은 옵션이 있을 수 있습니다. 원하는 IP 주소는 일반적으로 이름 뒤에 괄호로 표시됩니다. 예를 들어 다음과 같습니다:  
+   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
