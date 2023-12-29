@@ -30,42 +30,42 @@ Agora você pode escolher a estratégia padrão para renderizadores e dispositiv
 
 Isto torna o UMS muito mais flexível para situações de vida partilhada ou de redes locais muito grandes ou baixa confiabilidade. Também é útil para quem usa adaptadores de linha elétrica para a sua rede, já que isso pode resultar em acesso indesejado dos vizinhos.
 
-![Exemplo de como configurar as preferências de rede](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Exemplo de como configurar a preferência "permitir rede"](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Exemplo de como configurar a preferência de "permitir renderer"](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-### Link person to renderer
+### Vincular pessoa ao renderizador
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Agora você pode vincular contas de usuário a renderizações / dispositivos, possibilitando que você tenha um rastreamento de reprodução independente. Por exemplo, se você tiver uma TV na sala e outra em seu quarto, a TV da sala não precisa ser afetada por aquilo que você assiste no seu quarto.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Restringir conteúdo compartilhado a certos grupos
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Agora você pode optar por compartilhar diretórios ou conteúdo on-line com determinados grupos. Por exemplo, se você tem uma pessoa (ou um dispositivo que é atribuído a uma pessoa) que é uma criança, você pode atribuí-la para o grupo "Crianças", e dar acesso desse grupo ao diretório "Família", mas não aos diretórios "Horror" ou "Somente Adulto". Ou dar-lhe acesso ao feed de internet de Kurzgesagt, mas não aos podcasts da história.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Exemplo de grupos de conteúdo compartilhado](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Avatares
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+As pessoas podem ter avatares para facilitar uma visualização rápida. Você pode configurá-los na página de configurações do usuário, juntamente com os grupos de usuários
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Exemplo de como editar configurações do usuário](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### Integração direta TMDB
 
-You can now link your TMDB account with UMS in the General Settings area.
+Agora você pode vincular sua conta TMDB com o UMS na área de Configurações Gerais.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+Fazer isso permite que você edite metadados com base nos resultados de pesquisa do TMDB:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Mais
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Para obter uma lista completa de todas as alterações na v14, consulte o changelog completo (https\://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## Migração
 
-There are no special migration instructions for going from v13 to v14.
+Não há instruções especiais de migração para ir da v13 para a v14.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Como qualquer atualização principal, se você quiser ter a capacidade de voltar à sua versão atual antes de atualizar, você pode fazer um backup do seu diretório de perfil, que contém sua configuração e o banco de dados local. Você pode encontrar a localização desse diretório perto do topo dos seus logs do programa. Procure por `Profile directory: `[número de página]`/UMS`.
