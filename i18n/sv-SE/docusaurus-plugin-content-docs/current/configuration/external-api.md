@@ -18,7 +18,7 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
+| Avsikt                          | Rescans the complete library       |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
@@ -29,7 +29,7 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 This can be slow for large libraries
 :::
 
-Example:
+Exempel:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -37,7 +37,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
+| Avsikt                          | Rescans a partial subtree of the file system.                                         |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
