@@ -1,4 +1,4 @@
-# Security and Privacy
+# Säkerhet och sekretess
 
 UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
 
@@ -23,7 +23,7 @@ Allowlisting is a method that allows you to customize the rootfolder on a per re
 
 The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
 
-Example
+Exempel
 
 ```
 folders = 
@@ -44,7 +44,7 @@ If an option is not present it will fallback to the "global" config or if that i
 
 ## UMS.deny
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
+The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. Till exempel:
 ```
 192.168.1.1.name=.*private.*
 ```
@@ -58,7 +58,7 @@ will remove all files that have c:\tst in their path etc.
 
 If no rule are set in the "UMS.deny" file, the files/folders will be added.
 
-Hiding folders
+Döljer mappar
 
 Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
@@ -74,9 +74,9 @@ hide_live_subtitles_folder =true
 
 To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
-## PIN code
+## PIN-kod
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. Till exempel:
 ```
 .*private.*,1234
 ```
