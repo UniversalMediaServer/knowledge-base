@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # What's New in v14
 
-## Overview
+## Översikt
 
 V14 contains major new features based on what our users have asked for.
 
@@ -16,7 +16,7 @@ We also took the opportunity to bump major versions of some of our dependencies,
 
 Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
 
-## New features
+## Nya funktioner
 
 ### Block/allow renderers and network devices
 
@@ -46,7 +46,7 @@ You can now choose to share directories or online content with certain groups. F
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Avatarer
 
 People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
 
@@ -60,7 +60,7 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Mer
 
 For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 

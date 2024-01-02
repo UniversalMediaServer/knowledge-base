@@ -3,11 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Úvod
 
-This website contains the official support documentation for using Universal Media Server.
+Tato stránka obsahuje oficiální dokumentaci podpory pro použití Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Pokud nejste aktuálním uživatelem a chcete jej stáhnout nebo rozhodnout, zda ho použijete, pravděpodobně najdete [naše hlavní webové stránky](https://www.universalmediaserver.com) užitečnější.
 
 Je rozdělen na 3 hlavní oddíly: Konfigurace, návody a instalace.
 

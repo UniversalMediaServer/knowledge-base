@@ -2,41 +2,41 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Co je nového ve v14
 
-## Overview
+## Přehled
 
-V14 contains major new features based on what our users have asked for.
+V14 obsahuje nové významné funkce na základě toho, o co naši uživatelé požádali.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. To zahrnuje vylepšení uživatelských účtů, jako jsou pinové kódy, avatary a sdílené skupiny složek, stejně jako možnost zobrazit jiný obsah pro různá zařízení.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Došlo také k mnoha aktualizacím webového nastavení a rozhraní přehrávače, včetně přidání možnosti označovat sady souborů (např. . TV série) jako plně přehrávaná a automatická detekce nastavení režimu tmavý/světlý režim.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Využili jsme také příležitosti k upgradu hlavních verzí některých našich závislostí, včetně [Mantine v7](https://mantine.dev/), [NSIS v3](https\://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) a generátor této znalostní základny, [Docusaurus v3](https://docusaurus.io/).
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+A konečně, vyhodili jsme stovky opravných položek a zlepšení výkonnosti, a změnili spoustu kódu, na kterém bude snazší pracovat, stejně jako vylepšili naše testovací rámce, aby se zabránilo budoucím chybám.
 
-## New features
+## Nové funkce
 
-### Block/allow renderers and network devices
+### Blokovat/povolit přehrávače a síťová zařízení
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Nyní můžete blokovat a povolit přístup na základě přehrávače nebo síťového zařízení z domovské obrazovky v oblasti nastavení.
 
 ![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### Ve výchozím nastavení povolit nebo blokovat přehrávače nebo síťová zařízení:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Nyní si můžete vybrat výchozí strategii pro přehrávače a síťová zařízení. Dříve byla možná pouze jedna strategie - buď všechno dovolit, nebo vše popírat podle seznamu povolených. Nyní můžete ve výchozím nastavení povolit nebo odepřít, s denylisty a povolenými seznamy pro úplné ovládání.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Díky tomu je UMS mnohem pružnější pro sdílené životní situace nebo široké/malé místní sítě. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Příklad nastavení sítě povolit preferenci](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Příklad nastavení renderer povolit preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-### Link person to renderer
+### Propojit osobu s přehrávačem
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Nyní můžete propojit uživatelské účty s přehrávačem/zařízeními, což vám umožní nezávislé sledování přehrávání. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
@@ -46,13 +46,13 @@ You can now choose to share directories or online content with certain groups. F
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Avatary
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+Lidé mohou mít avatary, aby je na pohled mohli snadněji vidět. Můžete je nastavit na stránce nastavení uživatelů spolu se skupinami uživatelů
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### Přímá integrace TMDB
 
 You can now link your TMDB account with UMS in the General Settings area.
 
@@ -64,8 +64,8 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## Migrace
 
-There are no special migration instructions for going from v13 to v14.
+Neexistují žádné zvláštní pokyny pro migraci z v13 na v14.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.

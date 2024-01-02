@@ -25,7 +25,7 @@ The UMS interface itself has the ability to "push" media to renderers if they su
 The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
 
 1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
+   ![Öppna webbgränssnittet](@site/docs/guides/img/how-to-play-media-4.png)
 2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
    ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
 
