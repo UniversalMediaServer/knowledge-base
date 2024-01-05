@@ -22,7 +22,7 @@ A konečně, vyhodili jsme stovky opravných položek a zlepšení výkonnosti, 
 
 Nyní můžete blokovat a povolit přístup na základě přehrávače nebo síťového zařízení z domovské obrazovky v oblasti nastavení.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Příklad jak zablokovat přehrávač](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
 ### Ve výchozím nastavení povolit nebo blokovat přehrávače nebo síťová zařízení:
 
