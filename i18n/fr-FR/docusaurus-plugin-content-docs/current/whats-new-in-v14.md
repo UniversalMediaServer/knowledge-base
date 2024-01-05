@@ -8,7 +8,7 @@ sidebar_position: 2
 
 V14 contient de nouvelles fonctionnalités majeures basées sur ce que nos utilisateurs ont demandé.
 
-Les changements les plus importants impliquent la possibilité de contrôler l'accès à votre contenu. Cela inclut des améliorations aux comptes utilisateurs tels que les codes PIN, les avatars et les groupes de dossiers partagés, ainsi que la possibilité d'afficher différents contenus sur différents appareils.
+Les changements les plus importants impliquent la possibilité de contrôler l'accès à votre contenu. Cela inclut des améliorations aux comptes utilisateurs comme les avatars et le suivi de lecture par utilisateur, ainsi que la possibilité d'afficher du contenu différent selon l'appareil.
 
 Il y a également eu de nombreuses mises à jour des paramètres Web et des interfaces de lecteur, y compris l'ajout de la possibilité de marquer des ensembles de fichiers (e. La série télévisée) comme étant entièrement lue, et la détection automatique des préférences de votre système en mode sombre/lumière.
 
