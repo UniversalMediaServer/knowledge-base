@@ -8,7 +8,7 @@ sidebar_position: 2
 
 V14 obsahuje nové významné funkce na základě toho, o co naši uživatelé požádali.
 
-Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. To zahrnuje vylepšení uživatelských účtů, jako jsou pinové kódy, avatary a sdílené skupiny složek, stejně jako možnost zobrazit jiný obsah pro různá zařízení.
+Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
 
 Došlo také k mnoha aktualizacím webového nastavení a rozhraní přehrávače, včetně přidání možnosti označovat sady souborů (např. . TV série) jako plně přehrávaná a automatická detekce nastavení režimu tmavý/světlý režim.
 
