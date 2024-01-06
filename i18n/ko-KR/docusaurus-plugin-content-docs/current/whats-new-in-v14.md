@@ -8,9 +8,9 @@ sidebar_position: 2
 
 V14에는 사용자가 요청한 내용을 기반으로 하는 주요 새로운 기능이 포함되어 있습니다.
 
-가장 큰 변화는 콘텐츠에 대한 액세스를 제어하는 기능입니다. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+가장 큰 변화는 콘텐츠에 대한 액세스를 제어하는 기능입니다. 여기에는 아바타와 같은 사용자 계정 및 사용자별 재생 상태의 개선뿐만 아니라 다양한 장치에 다양한 콘텐츠를 표시할 수 있는 기능이 포함됩니다.
 
-또한 웹 설정 및 플레이어 인터페이스에 대한 업데이트도 많이 이루어졌는데, 여기에는 파일 세트(예: TV 시리즈)를 완전히 재생된 상태로 표시하는 기능과 시스템 암/경 모드 기본 설정을 자동으로 감지하는 기능이 추가되었습니다.
+또한 웹 설정 및 플레이어 인터페이스에 대한 업데이트도 많이 이루어졌는데, 여기에는 파일 세트 (예: TV 시리즈)를 완전히 재생된 상태로 표시하는 기능과 시스템 암/경 모드 기본 설정을 자동으로 감지하는 기능이 추가되었습니다.
 
 또한 [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), 및 이 기술 자료의 생성자인 [Docusaurus v3](https://docusaurus.io/) 등)을 포함한 일부 종속성의 주요 버전을 소개할 기회도 가졌습니다.
 
