@@ -8,7 +8,7 @@ sidebar_position: 2
 
 V14 sisältää merkittäviä uusia ominaisuuksia sen perusteella, mitä käyttäjät ovat pyytäneet.
 
-Suurimmat muutokset liittyvät kykyyn hallita sisällön käyttöoikeutta. Tämä sisältää parannuksia käyttäjätileihin kuten pin koodit, hahmot ja jaetut kansioryhmät, sekä kyky näyttää eri sisältöä eri laitteisiin.
+Suurimmat muutokset liittyvät kykyyn hallita sisällön käyttöoikeutta. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
 
 On myös ollut monia päivityksiä web-asetuksiin ja soittimen käyttöliittymiin, mukaan lukien lisäämällä kyky merkitä joukko tiedostoja (esim. TV-sarja) täysin soitettuina, ja automaattinen tunnistus järjestelmän tumman/valoisan teema mieltymyksestä.
 

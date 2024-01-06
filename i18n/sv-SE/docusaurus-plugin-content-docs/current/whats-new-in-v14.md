@@ -8,7 +8,7 @@ sidebar_position: 2
 
 V14 contains major new features based on what our users have asked for.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like pin codes, avatars, and shared folder groups, as well as the ability to display different content to different devices.
+The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
 
 There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
 

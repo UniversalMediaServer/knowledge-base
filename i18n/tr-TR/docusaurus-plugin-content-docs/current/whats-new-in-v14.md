@@ -8,7 +8,7 @@ sidebar_position: 2
 
 S14, kullanıcılarımızın isteklerine dayalı olarak önemli yeni özellikler içermektedir.
 
-En büyük değişiklikler içeriğinize erişimi denetleme yeteneğini içerir. Farklı içerikleri farklı cihazlarda görüntüleme yeteneğinin yanı sıra buna pin kodları, avatarlar ve paylaşılan klasör grupları gibi kullanıcı hesaplarında yapılan iyileştirmeler de dahildir.
+En büyük değişiklikler içeriğinize erişimi denetleme yeteneğini içerir. Buna, farklı içeriklerin farklı cihazlarda görüntülenmesi yeteneğinin yanı sıra kullanıcı başına avatarlar ve oynatma durumu gibi kullanıcı hesaplarında yapılan iyileştirmeler de dahildir.
 
 Ayrıca web ayarlarında ve oynatıcı arayüzlerinde, dosya gruplarını (örn. TV dizileri) tamamen oynatılmış olarak işaretleme yeteneğinin eklenmesi ve sisteminizin koyu/açık kipi tercihinin otomatik olarak algılanması da dahil olmak üzere birçok güncelleme yapılmıştır.
 
