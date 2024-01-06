@@ -8,7 +8,7 @@ sidebar_position: 2
 
 V14 obsahuje nové významné funkce na základě toho, o co naši uživatelé požádali.
 
-Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. To zahrnuje vylepšení uživatelských účtů, jako jsou avatary a stav přehrávání podle uživatele, stejně jako možnost zobrazit jiný obsah na různých zařízeních.
 
 Došlo také k mnoha aktualizacím webového nastavení a rozhraní přehrávače, včetně přidání možnosti označovat sady souborů (např. . TV série) jako plně přehrávaná a automatická detekce nastavení režimu tmavý/světlý režim.
 
@@ -60,9 +60,9 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Více
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Úplný seznam všech změn ve v14 naleznete v [kompletním seznamu změn](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migrace
 
