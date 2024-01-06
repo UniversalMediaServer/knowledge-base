@@ -8,7 +8,7 @@ sidebar_position: 2
 
 La V14 conté funcions noves importants basades en el que han demanat els nostres usuaris.
 
-Els canvis més importants impliquen la possibilitat de controlar l'accés al vostre contingut. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+Els canvis més importants impliquen la possibilitat de controlar l'accés al vostre contingut. Això inclou millores als comptes d'usuari, com ara codis PIN, avatars i grups de carpetes compartides, així com la possibilitat de mostrar contingut diferent, a diferents dispositius.
 
 També hi han hagut moltes actualitzacions a la configuració web i a les interfícies del reproductor, inclosa l'addició de la possibilitat de marcar conjunts de fitxers (per exemple, sèries de televisió) com a reproduïts completament i la detecció automàtica de la preferència del mode fosc/clar del vostre sistema.
 
