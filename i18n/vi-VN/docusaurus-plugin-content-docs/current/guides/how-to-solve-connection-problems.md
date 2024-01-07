@@ -1,6 +1,6 @@
-# How to solve connection problems
+# Cách để giải quyết các vấn đề kết nối
 
-This page provides solutions for the most common connection problems our users encounter.
+Trang này cung cấp các giải pháp cho những vấn đề kết nối mà người dùng hay gặp phải nhất.
 
 ## UMS detects renderer, but renderer does not detect UMS
 
