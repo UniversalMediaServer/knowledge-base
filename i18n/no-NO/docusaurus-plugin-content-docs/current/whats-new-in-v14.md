@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # What's New in v14
 
-## Overview
+## Oversikt
 
 V14 contains major new features based on what our users have asked for.
 
@@ -60,9 +60,9 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### More
+### Mer
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+For en full liste over endringer i v14, se [fullstendig endringslog]
 
 ## Migration
 
