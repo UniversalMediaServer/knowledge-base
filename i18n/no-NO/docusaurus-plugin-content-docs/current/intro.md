@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Introduksjon
 
 This website contains the official support documentation for using Universal Media Server.
 
