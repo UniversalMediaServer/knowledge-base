@@ -8,7 +8,7 @@ sidebar_position: 2
 
 A v14 contém novos recursos importantes, baseados no que nossos usuários pediram.
 
-As maiores mudanças envolvem a capacidade de controlar o acesso ao seu conteúdo. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+As maiores mudanças envolvem a capacidade de controlar o acesso ao seu conteúdo. Isto inclui melhorias para contas de usuário como avatares e status de reprodução de cada usuário, bem como a habilidade de exibir conteúdos diferentes em dispositivos diferentes.
 
 Também houve muitas atualizações nas configurações da web e na interface do player, incluindo a adição da capacidade de marcar conjuntos de arquivos (por exemplo, uma série de TV) como totalmente reproduzida, e detecção automática de sua preferência do modo claro / escuro.
 

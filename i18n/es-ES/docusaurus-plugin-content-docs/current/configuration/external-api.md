@@ -326,7 +326,7 @@ These are all playlist known to UMS (database/cache enabled). These playlist nam
 | RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Available since       | dev branch                                                                                                                                               |
 
-Example:
+Ejemplo:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
