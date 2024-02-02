@@ -66,6 +66,8 @@ Pour une liste complète de tous les changements dans la version 14, voir [le ch
 
 ## Migration
 
-Il n'y a pas d'instructions spéciales de migration pour passer de la v13 à la v14.
+The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+
+After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
 Comme pour toute mise à jour majeure, si vous voulez avoir la possibilité de revenir à votre version actuelle avant de mettre à jour, vous pouvez faire une sauvegarde du répertoire de votre profil, qui contient votre configuration et la base de données locale. Vous pouvez trouver l'emplacement de ce répertoire en haut des journaux de votre programme. Recherchez le `Répertoire Profil: [some page]/UMS`.
