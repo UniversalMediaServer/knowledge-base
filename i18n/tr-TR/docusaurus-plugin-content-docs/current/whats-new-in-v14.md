@@ -66,8 +66,8 @@ S14’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğ�
 
 ## Geçiş
 
-S14 ilk kez çalıştırıldığında biraz zaman alacak şekilde paylaşılan klasörlerinizi yeniden tarayacak. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+S14 ilk kez çalıştırıldığında biraz zaman alacak şekilde paylaşılan klasörlerinizi yeniden tarayacak. Bu işlem tamamlanmadan sunucuyu hala kullanmaya devam edebilirsiniz, ancak sunucu daha yavaş yanıt verebilir ve tamamlanmamış sonuçlar döndürebilir.
 
-After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
+Güncellemeden sonra, önbelleğini temizlemek ve gönderdiğimiz yeni verileri doğru şekilde tanımasını sağlamak için cihazınızı veya ortam oynatıcı uygulamanızı yeniden başlatmanız gerekebilir.
 
 Tüm büyük güncellemelerde olduğu gibi, güncellemeden önce şu anki sürümünüze geri dönme olanağına sahip olmak istiyorsanız, yapılandırmanızı ve yerel veritabanınızı içeren profil dizininizin yedeğini alabilirsiniz. Bu dizinin konumunu program günlüklerinizin üst kısmına yakın bir yerde bulabilirsiniz. `Profil dizini: [bazı sayfalar]/UMS`yi arayın.
