@@ -68,7 +68,7 @@ Per obtenir una llista completa de tots els canvis de la v14, consulteu [el regi
 
 ## Migració
 
-The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+La primera vegada que s'executa V14, tornarà a analitzar les carpetes compartides, cosa que pot trigar una mica. Encara podeu utilitzar el servidor abans que acabi, però és possible que respongui més lentament i torni resultats incomplets.
 
 After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
