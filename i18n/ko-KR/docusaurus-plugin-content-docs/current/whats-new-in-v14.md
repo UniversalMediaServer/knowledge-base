@@ -66,6 +66,8 @@ v14의 모든 변경 사항에 대한 전체 목록은 [전체 변경 로그](ht
 
 ## 마이그레이션
 
-v13에서 v14로 이동하는 데는 특별한 마이그레이션 지침이 없습니다.
+The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+
+After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
 주요 업데이트와 마찬가지로 업데이트 전에 현재 버전으로 돌아갈 수 있는 기능을 사용하려면 구성 및 로컬 데이터베이스가 포함된 프로필 디렉토리를 백업할 수 있습니다. 프로그램 로그 상단 근처에서 해당 디렉터리의 위치를 찾을 수 있습니다. '프로필 디렉토리: [some page]/UMS'를 찾습니다.
