@@ -68,7 +68,9 @@ Per obtenir una llista completa de tots els canvis de la v14, consulteu [el regi
 
 ## Migració
 
-No hi han instruccions especials de migració per passar de la v13 a la v14.
+The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+
+After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
 Com amb qualsevol actualització important, si voleu tenir la possibilitat de tornar a la vostra versió actual abans d'actualitzar, podeu fer una còpia de seguretat del directori del vostre perfil, que conté la vostra configuració i la vostra base de dades local. Podeu trobar la ubicació d'aquest directori a prop de la part superior dels registres del vostre programa.
 ​ Cerqueu `Directori de perfils: [alguna pàgina]/UMS`.
