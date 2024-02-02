@@ -66,8 +66,8 @@ For a full list of all changes in v14, see [the full changelog](https://github.c
 
 ## Migration
 
-The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+Ensimmäisen kerran kun V14 käynnistetään, se tarkistaa jaetut kansiot, tämä saattaa kestää jonkin aikaa. Voit edelleen käyttää palvelinta vaikkei se ole valmis, mutta se saataa regoida hitaammin ja palauttaa epätäydellisiä tuloksia.
 
-After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
+Päivityksen jälkeen saatat joutua käynnistämään laitteesi tai mediasoitinsovelluksesi uudelleen tyhjentääksesi sen välimuistin, että se saa kaiken uuden tiedon mitä sinne lähetetään.
 
 As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
