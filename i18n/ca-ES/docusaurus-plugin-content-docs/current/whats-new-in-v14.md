@@ -70,7 +70,7 @@ Per obtenir una llista completa de tots els canvis de la v14, consulteu [el regi
 
 La primera vegada que s'executa V14, tornarà a analitzar les carpetes compartides, cosa que pot trigar una mica. Encara podeu utilitzar el servidor abans que acabi, però és possible que respongui més lentament i torni resultats incomplets.
 
-After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
+Després de l'actualització, és possible que hàgiu de reiniciar el dispositiu o l'aplicació del reproductor multimèdia per esborrar la memòria cau i fer que reconegui correctament les dades noves que l'enviem.
 
 Com amb qualsevol actualització important, si voleu tenir la possibilitat de tornar a la vostra versió actual abans d'actualitzar, podeu fer una còpia de seguretat del directori del vostre perfil, que conté la vostra configuració i la vostra base de dades local. Podeu trobar la ubicació d'aquest directori a prop de la part superior dels registres del vostre programa.
 ​ Cerqueu `Directori de perfils: [alguna pàgina]/UMS`.
