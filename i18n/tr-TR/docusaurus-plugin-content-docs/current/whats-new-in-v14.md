@@ -66,7 +66,7 @@ S14’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğ�
 
 ## Geçiş
 
-The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+S14 ilk kez çalıştırıldığında biraz zaman alacak şekilde paylaşılan klasörlerinizi yeniden tarayacak. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
 
 After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
