@@ -66,6 +66,8 @@ For a full list of all changes in v14, see [the full changelog](https://github.c
 
 ## Migration
 
-There are no special migration instructions for going from v13 to v14.
+Przy pierwszym uruchomieniu V14, przeskanowane zostaną twoje udostępnione foldery, co może zająć trochę czasu. Nadal możesz użyć serwera przed zakończeniem skanowania, ale może on odpowiadać wolniej i zwracać niekompletne wyniki.
+
+Po aktualizacji może być konieczne ponowne uruchomienie urządzenia lub aplikacji odtwarzacza multimedialnego, aby wyczyścić jego pamięć podręczną i poprawnie rozpoznać nowe dane, które wysyłamy.
 
 As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.

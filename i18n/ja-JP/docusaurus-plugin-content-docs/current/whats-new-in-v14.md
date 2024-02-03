@@ -66,6 +66,8 @@ For a full list of all changes in v14, see [the full changelog](https://github.c
 
 ## Migration
 
-There are no special migration instructions for going from v13 to v14.
+初めてV14を実行すると、共有フォルダを再スキャンします。時間がかかる場合があります。 これが終了する前にもサーバーを使用できますが、よりゆっくりと応答し、不完全な結果を返す可能性があります。
+
+更新後、キャッシュを消去し送信する新しいデータを正しく認識させるために、デバイスまたはメディアプレーヤーアプリを再起動する必要があるかもしれません。
 
 As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.

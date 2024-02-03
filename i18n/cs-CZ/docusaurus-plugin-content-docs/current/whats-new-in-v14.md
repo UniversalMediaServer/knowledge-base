@@ -66,6 +66,8 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ## Migrace
 
-Neexistují žádné zvláštní pokyny pro migraci z v13 na v14.
+The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+
+After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
 
 Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.

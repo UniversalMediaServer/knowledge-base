@@ -66,6 +66,8 @@ For a full list of all changes in v14, see [the full changelog](https://github.c
 
 ## Migration
 
-There are no special migration instructions for going from v13 to v14.
+Ensimmäisen kerran kun V14 käynnistetään, se tarkistaa jaetut kansiot, tämä saattaa kestää jonkin aikaa. Voit edelleen käyttää palvelinta vaikkei se ole valmis, mutta se saataa regoida hitaammin ja palauttaa epätäydellisiä tuloksia.
+
+Päivityksen jälkeen saatat joutua käynnistämään laitteesi tai mediasoitinsovelluksesi uudelleen tyhjentääksesi sen välimuistin, että se saa kaiken uuden tiedon mitä sinne lähetetään.
 
 As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
