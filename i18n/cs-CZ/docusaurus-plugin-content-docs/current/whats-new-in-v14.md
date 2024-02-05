@@ -28,7 +28,7 @@ Nyní můžete blokovat a povolit přístup na základě přehrávače nebo sí�
 
 Nyní si můžete vybrat výchozí strategii pro přehrávače a síťová zařízení. Dříve byla možná pouze jedna strategie - buď všechno dovolit, nebo vše popírat podle seznamu povolených. Nyní můžete ve výchozím nastavení povolit nebo odepřít, s denylisty a povolenými seznamy pro úplné ovládání.
 
-Díky tomu je UMS mnohem pružnější pro sdílené životní situace nebo široké/malé místní sítě. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Díky tomu je UMS mnohem pružnější pro sdílené životní situace nebo široké/malé místní sítě. Je také užitečný pro ty z vás, které používáte adaptéry powerline pro vaši síť, protože to může mít za následek nežádoucí přístup od sousedů.
 
 ![Příklad nastavení sítě povolit preferenci](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
@@ -66,8 +66,8 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ## Migrace
 
-The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+Při prvním spuštění V14 se znovu naskenují vaše sdílené složky, což může chvíli trvat. Můžete stále používat server ještě před jeho dokončením, ale může reagovat pomaleji a vrátit neúplné výsledky.
 
-After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
+Po aktualizaci, možná budete muset restartovat aplikaci přehrávače zařízení nebo médií, abyste vymazali mezipaměť a správně rozpoznali nová data, která ji odesíláme.
 
 Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.
