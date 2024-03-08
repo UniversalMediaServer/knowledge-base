@@ -38,7 +38,7 @@ const RAW_RUNTIME_STATE =
           ["prism-react-renderer", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:2.3.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=d69c25"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -12639,7 +12639,7 @@ const RAW_RUNTIME_STATE =
           ["prism-react-renderer", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:2.3.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:18.2.0"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=d69c25"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -18102,10 +18102,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7", {\
-        "packageLocation": "./.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/",\
+      ["patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=d69c25", {\
+        "packageLocation": "./.yarn/cache/typescript-patch-5635e0237b-ef4fc2994c.zip/node_modules/typescript/",\
         "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=d69c25"]\
         ],\
         "linkType": "HARD"\
       }]\
