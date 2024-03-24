@@ -1,23 +1,23 @@
 # Docker
 
-Előfordulhat, hogy ezek közül néhány lépés nem vonatkozik az Ön telepítésére.  Understand what they do, and ignore, or customize as necessary.
+Előfordulhat, hogy ezek közül néhány lépés nem vonatkozik az Ön telepítésére.  Kérjük értelmezze, hogy mire jók egyes lépések, és hagyja figyelmen kívül, vagy alakítsa tetszése szerint.
 
-## Preparation
+## Előkészületek
 
 Operációs rendszer-támogatás és szervizcsomagok.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Telepítse a Docker-t (Motor): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Telepítse a Docker-t (Motor): https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Extra instrukciók
 
 ```
-sudo usermod -a -G docker <username>;
+sudo usermod -a -G docker <felhasználónév>;
 ```
 
 Jelentkezzen be újra, vagy indítsa újra a gépet.
