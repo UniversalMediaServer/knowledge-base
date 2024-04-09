@@ -37,7 +37,7 @@ curl -w "%{http_code}\n" -H "api-key: llave_secreta" http://localhost:5001/api/f
 
 #### rescanFileOrFolder
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
+| Encabezado de tabla             | Rescans a partial subtree of the file system.                                         |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
