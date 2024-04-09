@@ -1,11 +1,11 @@
-# How to improve support for my device
+# Hoe verbetert u de ondersteuning op uw apparaat
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Als je apparaat niets kan doen, zoals browsen in mappen of het spelen van een bestand, dan is het mogelijk op te lossen door de instellingen te wijzigen in het speler-configuratiebestand. Verschillende apparaten/renderers/clients communiceren met servers zoals UMS op verschillende manieren, dus het configuratiebestand vertelt UMS hoe die dezelfde taal spreekt als uw apparaat.
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+We hebben een standaard configuratiebestand dat documentatie bevat over al onze speler instellingen. Bekijk de nieuwste versie op https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/external-resources/renderers/DefaultRenderer.conf
 
-Common settings to look at are `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, and `ChunkedTransfer`.
+Gemeenschappelijke instellingen om te kijken zijn `SeekByTime`, `TranscodeVideo`, `TranscodedVideoFileSize`, en `ChunkedTransfer`.
 
-As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+Daarnaast kunt u een kijkje nemen in andere speler configuraties in de "renderers" map in uw installatiefolder, om te zien wat ze doen. Soms zult u hulp nodig hebben, die wij kunnen aanbieden op ons forum. Vergeet ons niet te vertellen over de verbetering die je maakt. Zo kunnen andere gebruikers met hetzelfde apparaat profiteren van jouw reparatie. We zullen u noemen in onze release aankondiging en changelog.
 
-If you have a new renderer config to contribute to the project, please create a **Pull Request** on our GitHub repository https://github.com/UniversalMediaServer/UniversalMediaServer
+Als je een nieuwe speler configuratie hebt om bij te dragen aan het project, maak dan een verzoek aan met **Pull Request** op onze GitHub: https://github.com/UniversalMediaServer/UniversalMediaServer
