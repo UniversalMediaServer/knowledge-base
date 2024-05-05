@@ -355,26 +355,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Encabezado de tabla             | Add song to playlist                                                                                                                                                              |
+| Encabezado de tabla             | Añadir canción a la lista de reproducción                                                                                                                                         |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+|                                 | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+|                                 | POST                                                                                                                                                                              |
+|                                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY ejemplo / descripción |                                                                                                                                                                                   |
+|                                 | NADA                                                                                                                                                                              |
+| Disponible desde                | 11.0                                                                                                                                                                              |
 
-Example:
+Ejemplo:
 
 ```shell
 
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Esto añade la canción con el ID `123` a la lista de reproducción `Pop`.
 
-#### removing songs from playlists
+#### Quitando canciones de las listas de reproducción
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+El `audiotrackid` requerido se entrega durante las solicitudes de navegación UPnP y se puede extraer del atributo de respuesta DIDL `descMetadata`
 
 ```XML
 <ums-tags>
@@ -395,14 +395,14 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Encabezado de tabla             | Remove song from playlist                                                                                                                                                              |
+| Encabezado de tabla             | Eliminar canción de la lista de reproducción                                                                                                                                           |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+|                                 | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+|                                 | POST                                                                                                                                                                                   |
+|                                 | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY ejemplo / descripción |                                                                                                                                                                                        |
+|                                 | NADA                                                                                                                                                                                   |
+| Disponible desde                | 11.0                                                                                                                                                                                   |
 
 Ejemplo:
 
@@ -410,20 +410,20 @@ Ejemplo:
 
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Esto elimina la canción con el ID `123` de la lista de reproducción `Pop`.
 
-#### create new playlists
+#### Crear una nueva lista de reproducción
 
-Playlist name should be provided without any path and without file extensions. 
+El nombre de la lista de reproducción debe proporcionarse sin ninguna ruta y sin extensiones de archivo. 
 
-| Encabezado de tabla             | Creating new playlists in managed playlist folder                                                                                                                              |
+| Encabezado de tabla             | Creando nuevas listas de reproducción en la carpeta de listas de reproducción gestionada                                                                                       |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | ``                                                                                                                                                                             |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+|                                 | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+|                                 | POST                                                                                                                                                                           |
+|                                 | ``                                                                                                                                                                             |
+| POST BODY ejemplo / descripción | Contemporáneo                                                                                                                                                                  |
+|                                 | NADA                                                                                                                                                                           |
+| Disponible desde                | 11.0                                                                                                                                                                           |
 
 Ejemplo:
 
@@ -431,7 +431,7 @@ Ejemplo:
 
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Esta llamada crea un nuevo archivo de lista de reproducción llamado `Contemporary.m3u8` en la carpeta de lista de reproducción administrada.
 
 ## Ejemplo de código Java
 
