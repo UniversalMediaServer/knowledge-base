@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Novedades en v14
 
-## Overview
+## Información general
 
-V14 contains major new features based on what our users have asked for.
+V14 contiene nuevas características importantes basadas en lo que nuestros usuarios han pedido.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+Los mayores cambios implican la capacidad de controlar el acceso a su contenido.
 
 There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
 
