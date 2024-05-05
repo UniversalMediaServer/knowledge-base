@@ -10,37 +10,37 @@ V14 contiene nuevas características importantes basadas en lo que nuestros usua
 
 Los mayores cambios implican la capacidad de controlar el acceso a su contenido.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+También ha habido muchas actualizaciones en la configuración web y en las interfaces del reproductor, incluyendo la posibilidad de marcar un conjunto de archivos (ej. una serie de TV) para poder reproducida completa, y la detección automática de su preferencia en modo oscuro/luz.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+También aprovechamos la oportunidad para actualizar las versiones principales de algunas de nuestras dependencias, incluyendo [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), y el generador de esta Base de Conocimiento, [Docusaurus v3](https://docusaurus.io/).
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Por último, hemos lanzado cientos de errores y mejoras de rendimiento, y se ha refactorizado un montón de código para que trabajar sea más fácil, así como mejoró nuestros frameworks de pruebas para prevenir futuros errores.
 
-## New features
+## Nuevas características
 
-### Block/allow renderers and network devices
+### Bloquear/permitir renderizadores y dispositivos de red
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Ahora puede bloquear y permitir el acceso basado en el renderizador o el dispositivo de red, desde la pantalla de inicio en el área de configuración.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Ejemplo de cómo bloquear un render](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### Permitir o bloquear renderizadores o dispositivos de red por defecto:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Ahora puede elegir la estrategia por defecto para renderizadores y dispositivos de red. Anteriormente, solo había una estrategia posible: permitir todo, o negar todo con una lista de permisos. Ahora puede permitir o denegar por defecto, con listas de denegación y listas permitidas, para un control completo.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Esto hace que UMS sea mucho más flexible para situaciones de vida compartidas o redes locales ampliadas o de baja confianza. También es útil para aquellos de ustedes que utilizan adaptadores de corriente para su red ya que esto puede resultar en un acceso no deseado por parte de sus vecinos.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Ejemplo de cómo configurar las preferencias de permiso por red](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Ejemplo de cómo configurar las preferencias de permiso por renderizador](@site/docs/img/whats-new-in-v14-render-allow-preference.png)
 
-### Link person to renderer
+### Vincular personas al renderizador
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Ahora puedes vincular cuentas de usuario a renderizadores/dispositivos, permitiéndote tener seguimiento de reproducción independiente. Por ejemplo, si usted tiene un televisor en el salón y otro en su dormitorio, el televisor del salón no necesita verse afectado por lo que se está viendo desde su habitación.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Ejemplo de cómo asignar una cuenta a un render](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Restringir contenido compartido a ciertos grupos
 
 You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
