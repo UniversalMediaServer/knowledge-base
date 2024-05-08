@@ -60,9 +60,9 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### Mark TV series and videos as fully played
+### Markér tv-serier og videoer som fuldt afspillet
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Nu kan du markere tv-serien og videoer som fuldt afspillet, i tillæg til den eksisterende evne til at gøre det ved mappe
 
 ![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
