@@ -22,7 +22,7 @@ A konečně, vyhodili jsme stovky opravných položek a zlepšení výkonnosti, 
 
 Nyní můžete blokovat a povolit přístup na základě přehrávače nebo síťového zařízení z domovské obrazovky v oblasti nastavení.
 
-![Příklad jak zablokovat přehrávač](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Příklad jak zablokovat přehrávač](@site/docs/img/whats-new-in-v14-block-rendererer.png)
 
 ### Ve výchozím nastavení povolit nebo blokovat přehrávače nebo síťová zařízení:
 
@@ -36,15 +36,15 @@ Díky tomu je UMS mnohem pružnější pro sdílené životní situace nebo šir
 
 ### Propojit osobu s přehrávačem
 
-Nyní můžete propojit uživatelské účty s přehrávačem/zařízeními, což vám umožní nezávislé sledování přehrávání. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Nyní můžete propojit uživatelské účty s přehrávačem/zařízeními, což vám umožní nezávislé sledování přehrávání. Například pokud máte TV v obývacím pokoji a další ve své ložnici, TV v obývacím pokoji nepotřebuje být ovlivněna tím co sledujete v ložnici.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Příklad jak přiřadit účet k přehrávači](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Omezit sdílený obsah pro určité skupiny
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Kids", a povolte skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k podcastům historie.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Příklad sdílených skupin obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ### Avatary
 
@@ -54,17 +54,17 @@ Lidé mohou mít avatary, aby je na pohled mohli snadněji vidět. Můžete je n
 
 ### Přímá integrace TMDB
 
-You can now link your TMDB account with UMS in the General Settings area.
+Nyní můžete propojit svůj TMDB účet s UMS v Obecném nastavení.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+To umožňuje upravit metadata založená na výsledcích vyhledávání z TMDB:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Příklad jak přiřadit účet k přehrávači](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### Mark TV series and videos as fully played
+### Označit TV série a videa za plně přehraná
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Nyní můžete označit TV seriály a videa za plně přehraná, kromě existující schopnosti to udělat s celou složkou
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Více
 
