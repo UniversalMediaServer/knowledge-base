@@ -62,6 +62,12 @@ En fer-ho, podeu editar metadades basades en els resultats de la cerca de TMDB:
 
 ![Exemple de com assignar un compte a un renderitzador](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### Més
 
 Per obtenir una llista completa de tots els canvis de la v14, consulteu [el registre de canvis complet](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).

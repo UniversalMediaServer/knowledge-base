@@ -60,6 +60,14 @@ V14에는 사용자가 요청한 내용을 기반으로 하는 주요 새로운 
 
 ![렌더에 계정을 할당하는 방법 예] (@site/docs/img/wats-new-in v14-tmdb-edit-metadata.png)
 
+### TV 시리즈 및 비디오를 완전히 재생된 것으로 표시합니다
+
+이제 폴더별로 기존의 기능 외에 TV 시리즈 및 비디오를 완전히 재생된 것으로 표시할 수 있습니다
+
+식별자 없음 (키)
+문맥 없음
+파일: whats-new-in-v14.md
+
 ### 더 보기
 
 v14의 모든 변경 사항에 대한 전체 목록은 [전체 변경 로그](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md) 를 참조하십시오.

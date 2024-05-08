@@ -60,6 +60,12 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### Markér tv-serier og videoer som fuldt afspillet
+
+Nu kan du markere tv-serien og videoer som fuldt afspillet, i tillæg til den eksisterende evne til at gøre det ved mappe
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### More
 
 For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).

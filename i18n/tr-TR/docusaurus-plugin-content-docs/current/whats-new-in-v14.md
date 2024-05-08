@@ -60,6 +60,12 @@ Bunu yapmak, TMDB’deki arama sonuçlarına dayanarak üstverileri düzenlemeni
 
 ![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### TV dizilerini ve görüntüleri tamamen oynatıldı olarak işaretleyin
+
+Artık TV dizilerini ve görüntüleri, klasöre göre varolan yapma yeteneğine ek, tamamen oynatılmış olarak işaretleyebilirsiniz.
+
+![Kullanıcı ayarlarının nasıl düzenleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### Daha fazla
 
 S14’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğü](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)’ne bakın.

@@ -35,7 +35,7 @@ Příklad:
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescanFileOrFolder
+#### znovu naskenovat soubor nebo složku
 
 | Úmysl                     | Rescanuje částečnou větev souborového systému.                                               |
 | ------------------------- | -------------------------------------------------------------------------------------------- |

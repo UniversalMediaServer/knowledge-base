@@ -1,6 +1,6 @@
-# Security and Privacy
+# Veiligheid en Privacy
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+UMS is een DLNA server. DLNA is een protocol dat in principe werkt zonder "user". Je hoeft bijvoorbeeld niet in te loggen op je TV. Dit betekent dat alle afspeelapparaten toegang hebben tot dezelfde gegevens/bestanden. Dat is misschien niet helemaal de bedoeling. Als je bijvoorbeeld twee mappen hebt, 'kindveilig' en 'kindonveilig', dan wil je waarschijnlijk dat afspeelapparaten in de kinderkamer alleen toegang hebben tot de map 'kindveilig'. UMS biedt een aantal mogelijkheden om de toegang te beheren. 
 
 ## IP filter
 

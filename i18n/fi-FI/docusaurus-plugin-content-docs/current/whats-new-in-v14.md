@@ -60,6 +60,12 @@ Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### Merkitse TV-sarjat ja videot täysin toistetuiksi
+
+Nyt voit merkitä TV-sarjan ja videot täysin toistetuksi, sen lisäksi että voi merkitä kansion täysin toistetuksi
+
+![Esimerkki siitä, miten muokata käyttäjän asetuksia](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### More
 
 For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
