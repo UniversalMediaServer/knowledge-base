@@ -12,7 +12,7 @@ Les changements les plus importants impliquent la possibilité de contrôler l'a
 
 Il y a également eu de nombreuses mises à jour des paramètres Web et des interfaces de lecteur, y compris l'ajout de la possibilité de marquer des ensembles de fichiers (e. La série télévisée) comme étant entièrement lue, et la détection automatique des préférences de votre système en mode sombre/lumière.
 
-Nous avons également profité de l'occasion pour remonter les versions majeures de certaines de nos dépendances, y compris [Mantine v7](https://mantine.dev/), [NSIS v3](https\://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), et le générateur de cette base de connaissances, [Docusaurus v3](https://docusaurus.io/).
+Nous avons également profité de l'occasion pour remonter les versions majeures de certaines de nos dépendances, y compris [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), et le générateur de cette base de connaissances, [Docusaurus v3](https://docusaurus.io/).
 
 Enfin, nous avons apporté des centaines de corrections de bugs et d'améliorations des performances, et nous avons remanié une grande partie du code pour le rendre plus facile à travailler, tout en améliorant nos cadres de test pour prévenir les bugs futurs.
 
@@ -59,6 +59,12 @@ Vous pouvez maintenant lier votre compte TMDB à UMS dans la zone Réglages Gén
 Cela vous permet de modifier les métadonnées en fonction des résultats de recherche du TMDB :
 
 ![Exemple d'attribution d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Plus d'informations
 
