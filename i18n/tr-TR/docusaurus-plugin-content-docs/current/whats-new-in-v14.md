@@ -60,11 +60,11 @@ Bunu yapmak, TMDB’deki arama sonuçlarına dayanarak üstverileri düzenlemeni
 
 ![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### Mark TV series and videos as fully played
+### TV dizilerini ve görüntüleri tamamen oynatıldı olarak işaretleyin
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Artık TV dizilerini ve görüntüleri, klasöre göre varolan yapma yeteneğine ek, tamamen oynatılmış olarak işaretleyebilirsiniz.
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Kullanıcı ayarlarının nasıl düzenleneceğine ilişkin örnek](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Daha fazla
 
