@@ -12,7 +12,7 @@ As maiores mudanças envolvem a capacidade de controlar o acesso ao seu conteúd
 
 Também houve muitas atualizações nas configurações da web e na interface do player, incluindo a adição da capacidade de marcar conjuntos de arquivos (por exemplo, uma série de TV) como totalmente reproduzida, e detecção automática de sua preferência do modo claro / escuro.
 
-Também aproveitamos a oportunidade para incrementar as versões principais de algumas de nossas dependências, incluindo [Mantine v7](https://mantine.dev/), [NSIS v3](https\://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) e o gerador desta Base de Conhecimento, [Docusaurus v3](https://docusaurus.io/).
+Também aproveitamos a oportunidade para incrementar as versões principais de algumas de nossas dependências, incluindo [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) e o gerador desta Base de Conhecimento, [Docusaurus v3](https://docusaurus.io/).
 
 Por último, incluimos centenas de correções de erros e melhorias no desempenho, e recriamos muito código para ser mais fácil de trabalhar, bem como melhoramos nossos frameworks de teste para evitar erros futuros.
 
@@ -60,9 +60,15 @@ Fazer isso permite que você edite metadados com base nos resultados de pesquisa
 
 ![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### Mais
 
-Para obter uma lista completa de todas as alterações na v14, consulte o changelog completo (https\://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Para obter uma lista completa de todas as alterações na v14, consulte o changelog completo (https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migração
 
