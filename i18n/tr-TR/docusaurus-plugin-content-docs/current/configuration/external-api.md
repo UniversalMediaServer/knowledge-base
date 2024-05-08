@@ -35,7 +35,7 @@ Bu, büyük kütüphaneler için yavaş olabilir
 curl -w "%{http_code}\n" -H "api-key: gizli_parola" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescanFileOrFolder
+#### rescan file or folder
 
 | Niyet                      | Dosya sisteminin kısmi bir alt ağacını yeniden tarar.                                         |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
