@@ -60,6 +60,12 @@ Bunu yapmak, TMDB’deki arama sonuçlarına dayanarak üstverileri düzenlemeni
 
 ![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### Daha fazla
 
 S14’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğü](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)’ne bakın.
