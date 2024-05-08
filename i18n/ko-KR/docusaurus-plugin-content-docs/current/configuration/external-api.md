@@ -35,7 +35,7 @@ _`secret_password`_은 최소 12자여야 합니다.
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescanFileOrFolder
+#### rescan file or folder
 
 | 의도         | 파일 시스템의 일부 하위 트리를 다시 검색합니다.                             |
 | ---------- | ------------------------------------------------------- |
