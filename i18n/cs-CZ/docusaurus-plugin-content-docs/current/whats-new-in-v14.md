@@ -12,7 +12,7 @@ Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. T
 
 Došlo také k mnoha aktualizacím webového nastavení a rozhraní přehrávače, včetně přidání možnosti označovat sady souborů (např. . TV série) jako plně přehrávaná a automatická detekce nastavení režimu tmavý/světlý režim.
 
-Využili jsme také příležitosti k upgradu hlavních verzí některých našich závislostí, včetně [Mantine v7](https://mantine.dev/), [NSIS v3](https\://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) a generátor této znalostní základny, [Docusaurus v3](https://docusaurus.io/).
+Využili jsme také příležitosti k upgradu hlavních verzí některých našich závislostí, včetně [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/) a generátor této znalostní základny, [Docusaurus v3](https://docusaurus.io/).
 
 A konečně, vyhodili jsme stovky opravných položek a zlepšení výkonnosti, a změnili spoustu kódu, na kterém bude snazší pracovat, stejně jako vylepšili naše testovací rámce, aby se zabránilo budoucím chybám.
 
@@ -59,6 +59,12 @@ You can now link your TMDB account with UMS in the General Settings area.
 Doing this allows you to edit metadata based on search results from TMDB:
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Více
 
