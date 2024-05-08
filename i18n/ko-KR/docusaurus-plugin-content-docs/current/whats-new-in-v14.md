@@ -60,6 +60,12 @@ V14에는 사용자가 요청한 내용을 기반으로 하는 주요 새로운 
 
 ![렌더에 계정을 할당하는 방법 예] (@site/docs/img/wats-new-in v14-tmdb-edit-metadata.png)
 
+### Mark TV series and videos as fully played
+
+Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+
+![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+
 ### 더 보기
 
 v14의 모든 변경 사항에 대한 전체 목록은 [전체 변경 로그](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md) 를 참조하십시오.
