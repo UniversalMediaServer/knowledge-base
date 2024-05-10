@@ -1,8 +1,8 @@
 # Security and Privacy
 
-## Introduction
+## Johdanto
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS palvelee mediaa kahdella eri tavalla - DLNA:n ja UPnP:n kautta, jota käytetään mediasoitinsovellusten kautta, ja HTTP(S)-kutsun kautta, joka käytetään verkkoselaimien kautta.
 
 Web browsers have easy security and privacy control by having user accounts with logins.
 
