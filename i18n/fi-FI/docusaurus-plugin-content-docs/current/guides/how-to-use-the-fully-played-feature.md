@@ -8,21 +8,21 @@ This feature is enabled by default, so if you have not changed anything, you can
 
 1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
 2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Jos haluat, että soitto-tilaa seurataan erikseen eri renderoijille, voit linkittää renderoijat eri käyttäjätileille. Jokainen tili tallentaa omat soittotilat.
 
 ## Marking files as fully played automatically
 
 After you have completed the setup steps, you just need to play 92% or more of a file.
 
-## Mark TV series, videos, or directories as fully played manually
+## Merkitse TV-sarjat, videot tai hakemistot käsin täysin toistetuksi
 
-You can mark TV series and videos as fully played directly via the web player:
+Voit merkitä TV-sarjat ja -videot täysin soitetuiksi suoraan verkkosoittimen kautta:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Esimerkki siitä, miten TV-sarjat ja videot merkitään täysin toistetuiksi](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Merkitse kaikki tiedostot jaetussa hakemistossa täysin toistettuina _vanhassa_ -asetuksessa, **Jaettu sisältö** -välilehdellä, klikkaa hiiren oikealla painikkeella hakemistoa, jonka haluat merkitä täysin pelatuksi, ja valitse sitten **Merkitse sisältö kokonaan toistetuksi**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Esimerkki siitä, miten hakemisto merkitään täysin toistetuiksi](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Removing fully played status / unplaying
 
