@@ -1,64 +1,43 @@
 # Безопасность и конфиденциальность
 
-UMS - это DLNA-сервер. Теперь DLNA - это протокол, не имеющий реального понятия "пользователь". Например, вам не нужно "входить" в телевизор. Это приводит к тому, что все рендереры получают доступ к одним и тем же данным. И это может быть не тем, что вы хотите. Например, если у вас есть две папки kids_safe и kids_unsafe, может потребоваться, чтобы рендереры в детской комнате имели доступ только к папке kids_safe. UMS предоставляет ряд методов управления доступом. 
+## Introduction
 
-## Фильтр по IP
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-Фильтрация по IP-адресу - наиболее ограничительный метод у UMS . Для его использования укажите список IP-адресов, разделённых запятыми, которым разрешено подключаться. Рендеры, адрес которых не соответствует записям в списке, просто отбрасывают свой трафик (очень рано по UMS). У них не будет доступа к ЛЮБЫМ папкам (не будет видна даже корневая папка). Используйте этот метод, чтобы полностью заблокировать детей. См. более подробную информацию в описании ip_filter в UMS.conf.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Пример разрешения только двух адресов
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## Разрешённый список
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-Allowlisting - это метод, позволяющий настроить корневую папку для каждого рендеринга. Это позволяет использовать разные наборы папок для разных рендереров. Это работает следующим образом: вы добавляете в UMS.conf (сейчас без графических настроек) строки формата тег.опция = значение, где тег - это IP-адрес или имя рендера. В имени рендера пробелы должны быть заменены на _ (подчёркивание). Параметр "опция" - это одно из следующего:
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- папки
-- vfolders
-- Web
-- скрыть
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-Параметр "значение" зависит от опции. Последние четыре - логические значения. Для папок и виртуальных папок это список папок.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Пример
+## Block/allow renderers and network devices
 
-```
-папки =
-скрыть_видео_установки = ложь
-192.168.1.1.папки = c:\\родительский_контроль
-192.168.1.1.скрыть_настройки = верно
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-Это будет для IP-адреса 192.168.1.1:
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- Предоставить общий доступ к папке c:\родительский_контроль
-- Скрывать папку "Настройки сервера"
-- Скрыть список недавно воспроизведенных
+## Link person to renderer
 
-Все остальные средства визуализации будут использовать "глобальные" настройки, т.е. просматривать все папки и настройки сервера.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-Если параметр отсутствует, он вернется к "глобальной" конфигурации , а если его нет к значению по умолчанию.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.отказать
+## Restrict shared content to certain groups
 
-Белый список может изменить только внешний вид корневой папки. Но если у вас смешанные файлы (у вас есть 10 папок, но только одна должна быть доступна для детей). Чтобы контролировать доступ к отдельным папкам (или носителям), вы можете использовать UMS.запретить. Это работает следующим образом: Добавьте файл с именем US.запретить в том же каталоге, что и ваш файл UMS.conf, и внутри этого файла добавьте тег.[имя|файл|система]=регулярное выражение Для каждой папки/файла, которые должны быть добавлены, UMS применит регулярное выражение к имени папки или файла, и если регулярное выражение совпадает, папка/файл добавляться не будет. Например:
-```
-192.168.1.1.имя=.*приватный.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-удалит все папки/файлы, в которых есть приватные слова.
-```
-192.168.1.1.файл=c:\\тест.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-удалит все файлы, которые имеют c:\тест в их пути и т.д.
-
-Если в файле "UMS.отказать" не задано никаких правил, файлы/папки будут добавлены.
-
-Скрытые папки
+## Скрытые папки
 
 Управление видимостью виртуальных папок. Эти настройки можно найти в файле UMS.conf. Чтобы скрыть некоторые папки во время просмотра, просто установите значение "true" или установите галочку на вкладке "Навигация/общий доступ " в расширенном режиме GUI.
 
