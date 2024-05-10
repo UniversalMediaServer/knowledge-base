@@ -4,38 +4,38 @@
 
 UMS palvelee mediaa kahdella eri tavalla - DLNA:n ja UPnP:n kautta, jota käytetään mediasoitinsovellusten kautta, ja HTTP(S)-kutsun kautta, joka käytetään verkkoselaimien kautta.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Verkkoselaimilla on helppo tietoturvan ja yksityisyyden hallinta käyttäjätilien kirjautumisen avulla.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Media player -sovellukset eivät yleensä tue "käyttäjän" käsitettä, joten yleensä jokainen laite saa saman sisällön. Tämä ei ehkä ole sitä, mitä haluat. Esimerkiksi, jos sinulla on kaksi kansioita lapsille ja ei_lapsille, saatat haluta rajoittaa renderöijän pääsyn lasten huoneessa vain lapsille-kansioon. Toinen yleinen tilanne on, että olet samassa verkossa kuin ihmiset, joille et halua antaa lupaa käyttää mediaasi, kuten kämppäkaverit, joten haluat estää tietyt renderoijat kokonaan.
 
-UMS provides a number of methods to control access in those situations.
+UMS tarjoaa useita menetelmiä pääsyn valvomiseksi näissä tilanteissa.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Salli tai estä renderoijat tai verkkolaitteet oletuksena
+Voit valita oletusstrategian renderoijille ja verkon laitteille. Täydellistä hallintaa varten, voit listojen avulla joko vakiona sallia tai kieltää pääsyn.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Tästä on hyötyä yhteisissä elintilanteissa tai laajoissa tai vähäluotetuissa paikallisverkoissa. Se on myös hyödyllinen niille, jotka käyttävät sähköverkossa toimivia powerline-adaptereita verkossa, koska se voi johtaa naapureiden ei-toivottuun pääsyyn mediaasi.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Esimerkki siitä, miten asetetaan salliminen verkossa](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Esimerkki siitä, miten sallitaan renderoija](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Estää/salli renderoijat ja verkkolaitteet
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Kun olet valinnut, sallitaanko vai estetäänkö tunnistamattomat renderoijat oletusarvoisesti, voit luoda kielto- tai sallittulistan aloitusruudulla asetusalueelta.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Esimerkki siitä, miten renderoija estetään](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Linkitä henkilö renderoijaan
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Voit linkittää käyttäjätilejä renderoijille/laitteille, jolloin sinulla on itsenäinen toistonseuranta. Esimerkiksi, jos sinulla on TV olohuoneessa ja toinen makuuhuoneessa, olohuoneen televisioon ei tarvitse vaikuttaa se, mitä katselet makuuhuoneessasi.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Esimerkki siitä, miten tilin määritetään renderoijalle](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Rajoita jaettua sisältöä tietyille ryhmille
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Voit nyt jakaa hakemistoja tai verkkosisältöä tiettyjen ryhmien kanssa. Jos sinulla on esimerkiksi henkilö (tai laite, joka on osoitettu henkilölle), joka on lapsi, voit määrittää ne "Lapset" ryhmälle, ja anna tälle ryhmälle pääsy "Perhe" hakemistoon, mutta ei "Kauhu" tai "Ainoastaan aikuisille" sisältöön. Tai antaa heille pääsy piirettyjen web-syötteeseen, mutta ei historia-podcasteihin.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Esimerkki jaetuista sisältöryhmistä](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Hiding folders
 
