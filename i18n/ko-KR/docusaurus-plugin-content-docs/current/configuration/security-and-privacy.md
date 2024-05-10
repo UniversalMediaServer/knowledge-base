@@ -1,8 +1,8 @@
 # 보안 및 개인 정보 보호
 
-## Introduction
+## 소개
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS는 2가지 주요한 방법으로 미디어를 제공합니다. 미디어 플래이어 앱을 이용해 DLNA/UPnP로 접근할 수 있으며, 웹브라우저를 통해 http로 연결이 가능합니다.
 
 Web browsers have easy security and privacy control by having user accounts with logins.
 
