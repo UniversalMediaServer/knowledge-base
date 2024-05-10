@@ -6,21 +6,23 @@ The "Fully played" feature lets you keep track of files you have fully played; f
 
 This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: If the feature is not working, please check that these steps have not been undone: This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: If the feature is not working, please check that these steps have not been undone:
 
-1. On the **Navigation Settings** tab, select the **Enable the cache** checkbox. This is enabled by default. This is enabled by default. This is enabled by default. This is enabled by default.
-2. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-3. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched. In particular, make sure you have not selected **Do nothing**. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
+2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
 
 ## Marking files as fully played automatically
 
 After you have completed the setup steps, you just need to play 92% or more of a file.
 
-## Marking files as fully played manually
+## Mark TV series, videos, or directories as fully played manually
 
-To mark all files within a shared directory as fully played:
+You can mark TV series and videos as fully played directly via the web player:
 
-On the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-![Open the GUI](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+
+![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Removing fully played status / unplaying
 
