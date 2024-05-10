@@ -1,64 +1,43 @@
 # Sécurité et confidentialité
 
-UMS est un serveur DLNA. Maintenant DLNA est un protocole qui n'a aucune notion réelle de "utilisateur". Vous n'avez pas à vous "connecter" à votre téléviseur par exemple. Cela signifie que tous les moteurs de rendu ont accès aux mêmes données. Ce n'est peut-être pas ce que vous souhaitez. Par exemple, si vous avez deux dossiers kids_safe et kids_unsafe vous pourriez vouloir restreindre l'accès au dossier kids_safe aux moteurs de rendu de la chambre des enfants. L'UMS propose un certain nombre de méthodes pour contrôler l'accès. 
+## Introduction
 
-## Filtre IP
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-Le filtrage IP est la méthode la plus restrictive proposée par l'UMS. Pour l'utiliser, vous devez fournir une liste d'adresses IP séparées par des virgules et qui sont autorisées à se connecter. Un rendu dont l'adresse ne correspond pas aux entrées de la liste verra simplement son trafic rejeté (très tôt par l'UMS). Il ne pourra accéder à AUCUN dossier (il ne verra même pas de dossier racine). Utilisez cette méthode pour bloquer complètement les enfants. Voir la description de ip_filter dans UMS.conf pour plus de détails.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Exemple pour autoriser seulement 2 adresses
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## Liste des autorisations
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-La liste autorisée est une méthode qui vous permet de personnaliser le dossier racine pour chaque rendu. Cela permet de partager différents ensembles de dossiers avec des moteurs de rendu différents. Le fonctionnement est le suivant : Dans votre UMS.conf (actuellement pas d'options GUI) vous ajoutez des lignes au format tag.option = value où tag est soit une adresse IP soit un nom de rendu. Le nom du rendu doit être remplacé par _ (underscore). L'option est l'une des suivantes
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-La valeur dépend de l'option. Les 4 dernières sont des valeurs booléennes. pour les dossiers et les dossiers virtuels, il s'agit d'une liste de dossiers.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Exemple
+## Block/allow renderers and network devices
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-Il s'agit de l'adresse IP 192.168.1.1 :
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- Partager le dossier c:\child_safe
-- Masquer le dossier "Paramètres du serveur"
-- Masquer la liste "Joués récemment"
+## Link person to renderer
 
-Tous les autres moteurs de rendu utiliseront les paramètres "globaux", c'est-à-dire qu'ils verront tous les dossiers, et les paramètres du serveur.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-Si une option n'est pas présente, la configuration "globale" sera utilisée ou, si elle n'est pas présente, la valeur par défaut sera utilisée.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Restrict shared content to certain groups
 
-La liste blanche ne peut modifier que l'apparence du dossier racine. Mais si vous avez des choses mixtes (vous avez 10 dossiers mais un seul doit être limité aux enfants). Pour contrôler l'accès à des dossiers individuels (ou à des médias), vous pouvez utiliser le UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. Par exemple :
-```
-192.168.1.1.name=.*private.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-supprimera tous les dossiers/fichiers qui contiennent le mot privé.
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-supprimera tous les fichiers qui ont c:\tst dans leur chemin, etc.
-
-Si aucune règle n'est définie dans le fichier "UMS.deny", les fichiers/dossiers seront ajoutés.
-
-Cacher les dossiers
+## Cacher les dossiers
 
 Contrôler la visibilité des dossiers virtuels. Ces paramètres se trouvent dans le fichier UMS.conf. Pour masquer certains dossiers lors de la navigation, il suffit de définir leur valeur à true ou de les cocher dans l'onglet Paramètres de navigation / Partage depuis le mode GUI avancé.
 

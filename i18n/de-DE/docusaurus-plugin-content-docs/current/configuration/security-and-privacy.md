@@ -1,64 +1,43 @@
 # Sicherheit & Datenschutz
 
-UMS ist ein DLNA-Server. Nun ist DLNA ein Protokoll, das keine wirkliche Vorstellung von einem "Benutzer" hat. Sie müssen sich beispielsweise nicht auf Ihren Fernseher einloggen. Dies führt dazu, dass alle renderer Zugang zu den gleichen Daten erhalten. Das ist vielleicht nicht das, was Sie wollen. Wenn Sie zum Beispiel zwei Ordner kids_safe und kids_unsafe haben, können Sie wollen, dass die Renderer im Kinderzimmer nur Zugriff auf den kids_safe Ordner haben. UMS bietet eine Reihe von Methoden zur Kontrolle des Zugriffs. 
+## Introduction
 
-## IP-Filter
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-IP-Filterung ist die restriktivste Methode, die UMS bietet. Um Sie zu verwenden, geben Sie eine kommaseparierte Liste von IP-Adressen an, die sich verbinden dürfen. Der Netzwerkverkehr eines Renderers, dessen Adresse nicht mit den Einträgen in der Liste übereinstimmt, wird einfach verworfen (sehr früh durch UMS). Er ist nicht in der Lage, auf IRGENDEINEN Ordner zuzugreifen (er wird nicht einmal einen Wurzelordner sehen). Benutzen Sie diese Methode, um die Kinder komplett auszuschließen. Weitere Details finden Sie in der Beschreibung von ip_filter in UMS.conf .
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Beispiel um nur 2 Adressen zu erlauben
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## Zulassungsliste
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-Auflistung zuzulassen ist eine Methode, mit der Sie den Root-Ordner auf der Basis des Renderers anpassen können. Dies ermöglicht es, verschiedene Ordnersätze an verschiedene Renderer weiterzugeben. Es funktioniert wie folgt: Zu Ihrer UMS.conf (derzeit keine GUI Optionen) fügen Sie Zeilen mit tag.option = Wert hinzu, bei dem es sich entweder um eine IP-Adresse oder einen Renderernamen handelt. In einem Renderernamen solltenLeerzeichen durch  _ (Unterstrich) ersetzt werden. Die Option ist eine von
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-Der Wert ist abhängig von der Option. Die letzten 4 sind boolesche Werte. für Ordner und virtuelle Ordner ist es eine Liste von Ordnern.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Beispiel
+## Block/allow renderers and network devices
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\child_safe
-192.168.1.1.hide_set = true
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-Dies wird für die IP-Adresse 192.168.1.1:
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- Teile den Ordner c:\child_safe
-- Den Ordner "Servereinstellungen" ausblenden
-- Kürzlich gespielte Liste ausblenden
+## Link person to renderer
 
-Alle anderen Renderer verwenden die "globalen" Einstellungen, d.h. e alle Ordner und die Server-Einstellungen sehen.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-Wenn eine Option nicht vorhanden ist, wird sie auf die "globale"Konfiguration gesetzt, oder wenn diese nicht vorhanden ist, auf den Standardwert.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Restrict shared content to certain groups
 
-Die Whitelist kann nur das Aussehen des Root-Ordners ändern. Aber wenn Sie die Dinge gemischt haben (Sie haben 10 Ordner, aber nur einer sollte auf die Kinder beschränkt sein). Um den Zugriff auf einzelne Ordner (oder Medien) zu kontrollieren, können Sie UMS.deny verwenden. Es funktioniert wie folgt: Fügen Sie eine Datei namens UMS.deny in das gleiche Verzeichnis wie Ihre UMS.conf-Datei hinzu und fügen Sie dieser Datei Tags hinzu: tag.[name|file|sys]=regex Für jeden hinzuzufügenden Ordner/Datei wird UMS den regulären Ausdruck auf den Ordnernamen oder Dateinamen anwenden und wenn der reguläre Ausdruck mit dem Ordner/Datei übereinstimmt, wird er/sie NICHT hinzugefügt. Zum Beispiel:
-```
-192.168.1.1.name=.*private.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-entfernt alle Verzeichnisse/Dateien, die das Wort privat enthalten.
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-entfernt alle Dateien, die c:\tst im Pfad enthalten, usw.
-
-Wenn in der Datei "UMS.deny" keine Regeln gesetzt sind, werden die Dateien/Ordner hinzugefügt.
-
-Ordner verstecken
+## Ordner verstecken
 
 Steuern Sie die Sichtbarkeit der virtuellen Ordner. Diese Einstellungen finden Sie in der UMS.conf-Datei. Um einige Ordner während des Surfens auszublenden, setzen Sie einfach ihren Wert auf true oder markieren Sie sie im Reiter Navigation/Freigabe Einstellungen aus dem erweiterten GUI-Modus.
 

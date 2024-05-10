@@ -6,21 +6,23 @@
 
 이 기능은 기본적으로 활성화되어 있으므로 변경한 내용이 없으면 사용할 수 있습니다. 기능이 작동하지 않는 경우 다음 단계가 실행 취소되지 않았는지 확인하십시오:
 
-1. ** 네비게이션 설정** 탭에서 ** 캐시 사용 ** 확인란을 선택합니다. 기본적으로 활성화됩니다.
-2. ** 네비게이션 설정 ** 탭에서 ** 완전히 재생된 동작 **을 선택합니다. 특히 **아무것도 하지 않음**을 선택하지 않았는지 확인합니다. 이것은 기본적으로 **미디어 표시**이며, 이는 해당 미디어가 시청되었음을 나타내기 위해 섬네일에 아이콘을 오버레이합니다.
-3. ** 공유 컨텐츠 ** 탭에서 추적할 폴더를 찾고 해당 행에서 ** 재생된 파일 상태 모니터링** 확인란을 선택합니다.
+1. ** 네비게이션 설정 ** 탭에서 ** 완전히 재생된 동작 **을 선택합니다. 특히 **아무것도 하지 않음**을 선택하지 않았는지 확인합니다. 이것은 기본적으로 **미디어 표시**이며, 이는 해당 미디어가 시청되었음을 나타내기 위해 섬네일에 아이콘을 오버레이합니다.
+2. ** 공유 컨텐츠 ** 탭에서 추적할 폴더를 찾고 해당 행에서 ** 재생된 파일 상태 모니터링** 확인란을 선택합니다.
+3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
 
 ## 파일을 자동으로 완전히 재생된 것으로 표시
 
 설정 단계를 완료한 후에는 92% 이상의 파일을 재생하기만 하면 됩니다.
 
-## 파일을 수동으로 완전히 재생된 것으로 표시
+## Mark TV series, videos, or directories as fully played manually
 
-공유 디렉터리 내의 모든 파일을 완전히 재생된 것으로 표시하려면:
+You can mark TV series and videos as fully played directly via the web player:
 
-**공유 콘텐츠 **탭에서 전체 재생으로 표시할 디렉터리를 마우스 오른쪽 버튼으로 클릭한 후 **완전히 재생으로 표시**를 클릭합니다
+![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-![GUI 열기](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+
+![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## 완전히 재생된 상태/재생 안 함 제거
 

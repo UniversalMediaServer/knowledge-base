@@ -1,64 +1,43 @@
 # 보안 및 개인 정보 보호
 
-UMS는 DLNA 서버입니다. 이제 DLNA는 "사용자"에 대한 실질적인 개념이 없는 프로토콜입니다. 예를 들어 TV에 "로그온"할 필요가 없습니다. 따라서 모든 렌더러는 동일한 데이터에 액세스할 수 있습니다. 이것은 당신이 원하는 것이 아닐 수도 있습니다. 예를 들어 kids_safe 및 kids_unsafe 폴더가 두 개 있는 경우 키즈룸의 렌더러가 kids_safe 폴더에만 액세스하도록 제한할 수 있습니다. UMS는 액세스를 제어하는 여러 가지 방법을 제공합니다. 
+## 소개
 
-## IP 필터
+UMS는 2가지 주요한 방법으로 미디어를 제공합니다. 미디어 플래이어 앱을 이용해 DLNA/UPnP로 접근할 수 있으며, 웹브라우저를 통해 http로 연결이 가능합니다.
 
-IP 필터링은 UMS가 제공하는 가장 제한적인 방법입니다. 사용하려면 연결이 허용되는 IP 주소의 쉼표로 구분된 목록을 제공합니다. 주소가 목록의 항목과 일치하지 않는 렌더는 트래픽을 폐기합니다 (UMS에 의해 매우 초기). ANY 폴더에 액세스할 수 없습니다 (루트 폴더도 볼 수 없음). 이 방법을 사용하여 아이들을 완전히 차단합니다. 자세한 내용은 UMS.conf의 ip_filter 설명을 참조하십시오.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-2개의 주소만 허용하는 예제
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## 허용 목록
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-허용 목록은 렌더 단위로 루트 폴더를 사용자 지정할 수 있는 방법입니다. 따라서 다른 렌더러에게 다른 폴더 세트를 공유할 수 있습니다. 다음과 같이 작동합니다. UMS.conf (현재 GUI 옵션 없음)에 형식 tag.option = value (여기서 태그는 IP 주소 또는 렌더 이름)의 행을 추가합니다. 렌더 이름은 공백을 _(밑줄)로 변경해야 합니다. 옵션은 다음 중 하나입니다
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-값은 옵션에 따라 달라집니다. 마지막 4개는 부울 값입니다. 폴더 및 가상 폴더의 경우 폴더 목록입니다.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-예제:
+## Block/allow renderers and network devices
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-IP 주소 192.168.1.1:
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- c:\child_safe 폴더 공유
-- 서버 설정 폴더 숨기기
-- 최근 재생 목록 숨기기
+## Link person to renderer
 
-다른 모든 렌더러는 "글로벌" 설정, 즉 모든 폴더 보기 및 서버 설정을 사용합니다.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-옵션이 표시되지 않으면 "전역" 구성으로 돌아가거나 기본값으로 표시되지 않습니다.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Restrict shared content to certain groups
 
-화이트리스트는 루트 폴더 모양만 수정할 수 있습니다. 그러나 혼합된 것이 있는 경우(폴더가 10개 있지만 한 개만 어린이로 제한되어야 함). 개별 폴더 (또는 미디어)에 대한 액세스를 제어하려면 UMS.deny를 사용할 수 있습니다. 다음과 같이 작동합니다: UMS.deny라는 파일을 UMS.conf 파일과 동일한 디렉토리에 추가하고 해당 파일 추가 태그 안에 추가합니다.[name|file|sys]=regex 추가해야 하는 각 폴더/파일에 대해 UMS는 폴더 이름 또는 파일 이름에 정규식을 적용하고 정규식과 일치하는 경우 폴더/파일이 추가되지 않습니다. 예를 들면:
-```
-192.168.1.1.name=.*private.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-private라는 단어가 포함된 모든 폴더/파일을 제거합니다.
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-경로 등에 c:\tst가 있는 모든 파일을 제거합니다.
-
-"UMS.deny" 파일에 규칙이 설정되어 있지 않으면 파일/폴더가 추가됩니다.
-
-폴더 숨기기
+## 폴더 숨기기
 
 가상 폴더의 가시성을 제어합니다. 이러한 설정은 UMS.conf 파일에서 확인할 수 있습니다. 탐색하는 동안 일부 폴더를 숨기려면 값을 true로 설정하거나 고급 GUI 모드의 탐색/공유 설정 탭에서 폴더를 선택합니다. 
 

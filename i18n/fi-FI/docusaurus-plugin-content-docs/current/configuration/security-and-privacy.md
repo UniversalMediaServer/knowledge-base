@@ -1,64 +1,43 @@
 # Security and Privacy
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+## Johdanto
 
-## IP filter
+UMS palvelee mediaa kahdella eri tavalla - DLNA:n ja UPnP:n kautta, jota käytetään mediasoitinsovellusten kautta, ja HTTP(S)-kutsun kautta, joka käytetään verkkoselaimien kautta.
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+Verkkoselaimilla on helppo tietoturvan ja yksityisyyden hallinta käyttäjätilien kirjautumisen avulla.
 
-Example to allow only 2 addresses
+Media player -sovellukset eivät yleensä tue "käyttäjän" käsitettä, joten yleensä jokainen laite saa saman sisällön. Tämä ei ehkä ole sitä, mitä haluat. Esimerkiksi, jos sinulla on kaksi kansioita lapsille ja ei_lapsille, saatat haluta rajoittaa renderöijän pääsyn lasten huoneessa vain lapsille-kansioon. Toinen yleinen tilanne on, että olet samassa verkossa kuin ihmiset, joille et halua antaa lupaa käyttää mediaasi, kuten kämppäkaverit, joten haluat estää tietyt renderoijat kokonaan.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS tarjoaa useita menetelmiä pääsyn valvomiseksi näissä tilanteissa.
 
-## Allowlist
+## Salli tai estä renderoijat tai verkkolaitteet oletuksena
+Voit valita oletusstrategian renderoijille ja verkon laitteille. Täydellistä hallintaa varten, voit listojen avulla joko vakiona sallia tai kieltää pääsyn.
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+Tästä on hyötyä yhteisissä elintilanteissa tai laajoissa tai vähäluotetuissa paikallisverkoissa. Se on myös hyödyllinen niille, jotka käyttävät sähköverkossa toimivia powerline-adaptereita verkossa, koska se voi johtaa naapureiden ei-toivottuun pääsyyn mediaasi.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Esimerkki siitä, miten asetetaan salliminen verkossa](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+![Esimerkki siitä, miten sallitaan renderoija](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Example
+## Estää/salli renderoijat ja verkkolaitteet
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
-```
+Kun olet valinnut, sallitaanko vai estetäänkö tunnistamattomat renderoijat oletusarvoisesti, voit luoda kielto- tai sallittulistan aloitusruudulla asetusalueelta.
 
-This will for IP address 192.168.1.1:
+![Esimerkki siitä, miten renderoija estetään](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+## Linkitä henkilö renderoijaan
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+Voit linkittää käyttäjätilejä renderoijille/laitteille, jolloin sinulla on itsenäinen toistonseuranta. Esimerkiksi, jos sinulla on TV olohuoneessa ja toinen makuuhuoneessa, olohuoneen televisioon ei tarvitse vaikuttaa se, mitä katselet makuuhuoneessasi.
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+![Esimerkki siitä, miten tilin määritetään renderoijalle](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Rajoita jaettua sisältöä tietyille ryhmille
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows: Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added. For example:
-```
-192.168.1.1.name=.*private.*
-```
+Voit nyt jakaa hakemistoja tai verkkosisältöä tiettyjen ryhmien kanssa. Jos sinulla on esimerkiksi henkilö (tai laite, joka on osoitettu henkilölle), joka on lapsi, voit määrittää ne "Lapset" ryhmälle, ja anna tälle ryhmälle pääsy "Perhe" hakemistoon, mutta ei "Kauhu" tai "Ainoastaan aikuisille" sisältöön. Tai antaa heille pääsy piirettyjen web-syötteeseen, mutta ei historia-podcasteihin.
 
-will remove all folders/files which has the word private in it.
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Esimerkki jaetuista sisältöryhmistä](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-will remove all files that have c:\tst in their path etc.
-
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
-
-Hiding folders
+## Hiding folders
 
 Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
