@@ -1,64 +1,43 @@
 # Güvenlik ve Gizlilik
 
-UMS bir DLNA sunucusudur. Artık DLNA, gerçek bir "kullanıcı" kavramına sahip olmayan bir protokoldür. Örneğin, TV’nizde "oturum açmak" zorunda değilsiniz. Bu, tüm işleyicilerin aynı verilere erişmesine yol açar. İstediğiniz bu olmayabilir. Örneğin, eğer çocuklara_güvenli ve çocuklara_güvenli_değil olmak üzere iki klasörünüz varsa, çocuk odasındaki işleyicileri sadece çocuklara_güvenli klasörüne erişim sağlayacak şekilde kısıtlamak isteyebilirsiniz. UMS, erişimi denetlemek için bir dizi yöntem sağlar. 
+## Introduction
 
-## IP süzgeci
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-IP süzme, UMS’nin sağladığı en kısıtlayıcı yöntemdir. Kullanmak için bağlanmasına izin verilen IP adreslerinin virgülle ayrılmış bir listesini sağlarsınız. Adresi listedeki girişlerle eşleşmeyen bir işleme, basitçe trafiğinin yoksayılmasını sağlayacak (UMS ile çok erkenden). HİÇBİR klasöre erişemeyecektir (bir kök klasöri bile görmeyecek). Çocukları tamamen engellemek için bu yöntemi kullanın. Daha fazla ayrıntı için UMS.conf dosyasında ip_filter açıklamasına bakın.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Sadece 2 adrese izin verme örneği
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## İzinli listesi
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-İzinli listesi oluşturma, temelde kök klasörü işleme başına özelleştirmenize izin veren bir yöntemdir. Bu, farklı klasör kümelerini farklı işleyicilerle paylaşılmasını mümkün kılar. Şu şekilde çalışır: UMS.conf dosyanız (şu anda GKA seçeneği yoktur) için etiketin ya bir IP adresi ya da bir işleme adı olduğu tag.option = value biçimi satırlarını ekleyin. İşleme adındaki boşluklar bunun yerine _ (alt çizgi) olarak değiştirilmelidir. Seçenek şunlardan biridir:
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-Değer, seçeneğe bağlıdır. Son 4, boolean değeridir. Klasörler ve sanal klasörler için bir klasör listesidir.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Örnek
+## Block/allow renderers and network devices
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\çocuk_güvenliği
-192.168.1.1.hide_set = true
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-Bu, 192.168.1.1 IP adresi için olacak:
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- c:\çocuk_güvenliği klasörünü paylaşın
-- Sunucu Ayarları klasörünü gizleyin
-- Son çalınanlar listesini gizleyin
+## Link person to renderer
 
-Diğer tüm işleyiciler "genel" ayarları, yani tüm klasörleri görecek ve Sunucu Ayarlarını kullanacaktır.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-Eğer bir seçenek mevcut değilse, "genel" yapılandırmaya geri dönecek veya bu varsayılan değerde mevcut değilse.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Restrict shared content to certain groups
 
-Beyaz liste sadece kök klasör görünümünü değiştirebilir. Ancak, karışık bir şeyiniz varsa (10 klasörünüz var, ancak sadece biri çocuklar için sınırlandırılmalıdır). Tek tek klasörlere (veya ortama) erişimi denetlemek için UMS.deny dosyasını kullanabilirsiniz. Şu şekilde çalışır: UMS.conf dosyanızla aynı dizine UMS.deny adlı bir dosya ekleyin ve bu dosyanın içine etiket ekleyin.[name|file|sys]=regex Eklenmesi gereken her klasör/dosya için UMS, düzenli ifadeyi klasör adına veya dosya adına uygulayacak ve eğer düzenli ifade eşleşirse klasör/dosya EKLENMEYECEKTİR. Örneğin:
-```
-192.168.1.1.name=.*private.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-içinde private kelimesi bulunan tüm klasörleri/dosyaları kaldıracak.
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-dosya yolunda vb. içinde c:\tst bulunan tüm dosyaları kaldıracak.
-
-Eğer "UMS.deny" dosyasında herhangi bir kural ayarlanmamışsa, dosyalar/klasörler eklenecektir.
-
-Klasörleri gizleme
+## Klasörleri gizleme
 
 Sanal klasörlerin görünürlüğünü denetleyin. Bu ayarlar, UMS.conf dosyasında bulunabilir. Göz atarken bazı klasörleri gizlemek için değerlerini true olarak ayarlayın veya gelişmiş GKA kipinden Gezinti/Paylaşım Ayarları sekmesinde bunları işaretleyin.
 
