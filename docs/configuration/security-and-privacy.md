@@ -6,7 +6,9 @@ UMS serves media in two main ways - via DLNA/UPnP to be consumed via media playe
 
 Web browsers have easy security and privacy control by having user accounts with logins.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely. UMS provides a number of methods to control access in those situations.
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+
+UMS provides a number of methods to control access in those situations.
 
 ## Allow or block renderers or network devices by default
 You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
