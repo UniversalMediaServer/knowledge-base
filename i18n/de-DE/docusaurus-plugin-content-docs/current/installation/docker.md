@@ -1,8 +1,8 @@
 # Docker
 
-Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Understand what they do, and ignore, or customize as necessary.
+Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Verstehen, was sie tun, ignorieren oder anpassen, wenn nötig.
 
-## Preparation
+## Vorbereitung
 
 Für Betriebssystem-Support und Service-Pakete.
 

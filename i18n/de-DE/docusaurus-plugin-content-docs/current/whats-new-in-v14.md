@@ -42,38 +42,38 @@ You can now link user accounts to renderers/devices, allowing you to have indepe
 
 ### Restrict shared content to certain groups
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Oder ihnen Zugriff auf den Kurzgesagt Web-Feed, aber nicht auf die Historie Podcasts.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Beispiel für gemeinsame Inhaltsgruppen](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### Avatare
 
-People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
+Menschen können Avatare haben, um sie auf einen Blick leichter zu sehen. Sie können diese auf der Benutzer-Einstellungsseite zusammen mit den Benutzergruppen festlegen
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Beispiel zum Bearbeiten von Benutzereinstellungen](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
-### Direct TMDB integration
+### Direkte TMDB-Integration
 
-You can now link your TMDB account with UMS in the General Settings area.
+Sie können nun Ihr TMDB-Konto mit UMS in den Allgemeinen Einstellungen verknüpfen.
 
-Doing this allows you to edit metadata based on search results from TMDB:
+Dies ermöglicht das Bearbeiten von Metadaten basierend auf den Suchergebnissen von TMDB:
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Beispiel, wie man einem Renderer ein Konto zuweisen kann](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### Mark TV series and videos as fully played
+### TV-Serie und Videos als vollständig abgespielt markieren
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Jetzt können Sie Fernsehserien und Videos als vollständig wiedergegeben markieren, zusätzlich zu der bestehenden Möglichkeit dies per Ordner zu tun
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Beispiel zum Bearbeiten von Benutzereinstellungen](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-### More
+### Mehr
 
-For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Eine vollständige Liste aller Änderungen in v14 findest du [das vollständige Changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migration
 
-The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
+Das erste Mal, wenn V14 läuft, wird es Ihre freigegebenen Ordner erneut durchsuchen, was einige Zeit dauern kann. Sie können den Server noch vor dem Ende verwenden, aber er kann langsamer reagieren und unvollständige Ergebnisse zurückgeben.
 
-After updating, you might need to restart your device or media player app to clear its cache and make it properly recognize the new data we are sending it.
+Nach dem Aktualisieren, möglicherweise müssen Sie Ihr Gerät oder Ihre Media-Player-App neu starten, um den Cache zu löschen und die neuen Daten, die wir versenden, richtig zu erkennen.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Wie bei jedem wichtigen Update können Sie vor dem Update auf Ihre aktuelle Version zurückgehen Sie können ein Backup Ihres Profil-Verzeichnisses erstellen, das Ihre Konfiguration und lokale Datenbank enthält. Sie finden den Ort des Verzeichnisses in der Nähe des oberen Teils Ihrer Programmprotokolle. Suchen Sie nach `Profil Verzeichnis: [beliebige Seite]/UMS`.
