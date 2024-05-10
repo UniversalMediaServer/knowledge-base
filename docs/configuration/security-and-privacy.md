@@ -1,67 +1,41 @@
 # Security and Privacy
 
-UMS is a DLNA server. Now DLNA is a protocol that doesn't have any real notion of a "user". You don't have to "logon" to your TV for example. This leads to that all renderers get access to the same data. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want restrict the renderers in the kids room to only have access to the kids_safe folder. UMS provides a number of methods to control the access. 
+## Introduction
 
-## IP filter
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-IP filtering is the most restrictive method that UMS provides. To use you supply a comma-separated list of IP-addresses that are allowed to connect. A render whose address does not match the entries in the list will simply get its traffic discarded (very early by UMS). It will not be able to access ANY folders (it will not even see a root folder). Use this method to block out the kids altogether. See description of ip_filter in UMS.conf for more details.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Example to allow only 2 addresses
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely. UMS provides a number of methods to control access in those situations.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-## Allowlist
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-Allowlisting is a method that allows you to customize the rootfolder on a per render basis. This makes it possible to share different folder sets to different renderers. It works as follow: To your UMS.conf (currently no GUI options) you add lines of format tag.option = value where tag is either an IP address or a render name. The render name should be with spaces changed to _ (underscore) instead. The option is one of
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-The value is option dependent. The last 4 are boolean values. for folders and virtualfolders it is a list of folders.
+## Block/allow renderers and network devices
 
-Example
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
-```
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-This will for IP address 192.168.1.1:
+## Link person to renderer
 
-- Share the folder c:\child_safe
-- Hide the Server Settings folder
-- Hide the Recently played list
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-All other renderers will use the "global" settings i.e. see all folders, and the Server Settings.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-If an option is not present it will fallback to the "global" config or if that isn't present to the default value.
+## Restrict shared content to certain groups
 
-## UMS.deny
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-The whitelist can only modify the rootfolder appearance. But if you have mixed things (you have 10 folders but only one should be restricted to the kids). To control access to individual folders (or media) you can use the UMS.deny. It works as follows:
-Add a file called UMS.deny into the same directory as your UMS.conf file and inside that file add tag.[name|file|sys]=regex
-For each folder/file that should be added, UMS will apply the regular expression to the folder name or filename and if the regular expression matches the folder/file will NOT be added.
-For example:
-```
-192.168.1.1.name=.*private.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-will remove all folders/files which has the word private in it.
-```
-192.168.1.1.file=c:\\tst.*
-```
-
-will remove all files that have c:\tst in their path etc.
-
-If no rule are set in the "UMS.deny" file, the files/folders will be added.
-
-Hiding folders
+## Hiding folders
 
 Control the visibility of the virtual folders. These settings can be found in UMS.conf file.
 To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
