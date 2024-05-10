@@ -1,64 +1,43 @@
 # Bezpečnost a soukromí
 
-UMS je DLNA server. Nyní je DLNA protokol, který nemá žádnou skutečnou představu o "uživateli". Například se nemusíte přihlásit do televizoru. To vede k tomu, že všechny přehrávače získají přístup ke stejným údajům. To nemusí být to, co chcete. Například pokud máte dvě složky kids_safe a kids_unsafe můžete chtít, aby přehrávače v místnosti pro děti měly přístup pouze do složky kids_safe . UMS poskytuje řadu metod pro kontrolu přístupu. 
+## Introduction
 
-## IP filtr
+UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
-Filtrování IP je nejrestriktivnější metodou, kterou UMS poskytuje. Chcete-li použít, zadejte čárkou oddělený seznam IP adres, které mají povoleno připojit se.  Přehravač jehož adresa neodpovídá záznamům v seznamu, jednoduše zruší provoz (velmi brzy v UMS). Nebude mít přístup k žádným složkám (ani neuvidí kořenovou složku). Použij tuto metodu k úplnému vyloučení dětí. Více informací naleznete v popisu ip_filtru v UMS.conf.
+Web browsers have easy security and privacy control by having user accounts with logins.
 
-Příklad pro povolení pouze 2 adres
+Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
-```
-ip_filter = 192.168.1.4, 192.168.1.32
-```
+UMS provides a number of methods to control access in those situations.
 
-## Seznam povolení
+## Allow or block renderers or network devices by default
+You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-Povolený seznam je metoda, která vám umožňuje přizpůsobit kořenovou složku podle jednotlivých přehrávačů.  Toto umožňuje sdílet různé sady složek s různými přehrávači. Funguje následovně: Do vašeho UMS.conf (momentálně nejsou žádné možnosti GUI) přidáváte řádky tag.možnost = hodnota, kde je tag buď IP adresa, nebo název přehrávače.  Název přehrávače by měl být namísto toho s mezerami změněn na _ (podtržítko). Možnost je jedna z
+This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
-- folders
-- vfolders
-- web
-- hide_set
+![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-Hodnota je závislá na volbě. Poslední 4 jsou logické hodnoty. pro složky a virtualní složky je to seznam složek.
+![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-Příklad
+## Block/allow renderers and network devices
 
-```
-folders = 
-hide_video_settings = false
-192.168.1.1.folders = c:\\child_safe
-192.168.1.1.hide_set = true
-```
+When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
-Toto bude pro IP adresu 192.168.1.1:
+![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-- Sdílet složku c:\child_safe
-- Skrýt složku nastavení serveru
-- Skrýt seznam naposledy přehrávaných
+## Link person to renderer
 
-Všechny ostatní přehrávače budou používat "globální" nastavení, např. viz všechny složky a nastavení serveru.
+You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-Pokud není tato možnost k dispozici, bude použita k nastavení "globální", nebo pokud není tato volba zobrazena na výchozí hodnotu.
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## UMS.deny
+## Restrict shared content to certain groups
 
-Seznam povolených může měnit pouze vzhled kořenové složky. Ale pokud máte smíšené věci (máte 10 složek, ale pouze jedna by měla být omezena na děti). Pro kontrolu přístupu k jednotlivým složkám (nebo médiím) můžete použít UMS.deny. Funguje následovně: Přidejte soubor s názvem UMS.deny do stejného adresáře jako soubor UMS.conf a uvnitř tohoto souboru přidejte tag.[name|file|sys]=regex. Pro každou složku/soubor, který by měl být přidán, UMS použije regulární výraz na název složky nebo název souboru a pokud regulární výraz odpovídá složce/souboru NEBUDE přidán. Například:
-```
-192.168.1.1.name=.*private.*
-```
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-odstraní všechny složky/soubory, které obsahují slovo "private"
-```
-192.168.1.1.file=c:\\tst.*
-```
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-odstraní všechny soubory, které mají "c:\tst" ve svém názvu své atd.
-
-Pokud nejsou v souboru "UMS.deny" nastavena žádná pravidlo, budou přidány soubory/složky.
-
-Skrytí složek
+## Skrytí složek
 
 Ovládá viditelnost virtuálních složek. Tato nastavení naleznete v souboru UMS.conf. Pro skrytí některých složek při prohlížení stačí nastavit jejich hodnotu na hodnotu true, nebo je zaškrtněte v záložce Navigace/Nastavení sdílení v pokročilém režimu GUI.
 
