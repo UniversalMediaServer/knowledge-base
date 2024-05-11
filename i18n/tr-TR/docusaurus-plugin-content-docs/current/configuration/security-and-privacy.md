@@ -2,24 +2,24 @@
 
 ## Giriş
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS, ortamı iki ana yolla sunar: ortam oynatıcı uygulamaları aracılığıyla tüketilecek DLNA/UPnP yoluyla ve web tarayıcıları aracılığıyla tüketilecek HTTP(S) yoluyla.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Web tarayıcıları, oturum açma bilgilerine sahip kullanıcı hesapları ile kolay güvenlik ve gizlilik denetimine sahiptir.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Ortam oynatıcı uygulamaları genellikle "kullanıcı" kavramını desteklemez, bu nedenle genellikle her cihaz aynı içeriği alır. İstediğiniz bu olmayabilir. Örneğin, eğer çocuklara_güvenli ve çocuklara_güvenli_değil olmak üzere iki klasörünüz varsa, çocukların odasındaki işleyicileri sadece çocuklara_güvenli klasörüne erişim sağlayacak şekilde kısıtlamak isteyebilirsiniz. Diğer bir yaygın durum da, ortamınıza erişmesini istemediğiniz ev arkadaşlarınız gibi kişilerle aynı ağda olmanız ve dolayısıyla belirli işleyicileri tamamen engellemek istemenizdir.
 
-UMS provides a number of methods to control access in those situations.
+UMS, bu durumlarda erişimi denetlemek için bir dizi yöntem sağlar.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## İşleyicilere veya ağ cihazlarına varsayılan olarak izin verin veya engelleyin
+İşleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Bu, paylaşılan canlı durumlar veya geniş/düşük güvene sahip yerel ağlar için kullanışlıdır. Ayrıca bu, komşularınızın istenmeyen erişimine neden olabileceğinden ağınız için elektrik hattı adaptörleri kullananlarınız için de faydalıdır.
 
 ![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
 ![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## İşleyicileri ve ağ cihazlarını engelleyin/izin verin
 
 When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 

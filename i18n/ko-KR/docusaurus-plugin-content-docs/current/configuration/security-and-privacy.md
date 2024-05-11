@@ -4,38 +4,38 @@
 
 UMS는 2가지 주요한 방법으로 미디어를 제공합니다. 미디어 플래이어 앱을 이용해 DLNA/UPnP로 접근할 수 있으며, 웹브라우저를 통해 http로 연결이 가능합니다.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+웹 브라우저는 로그인한 사용자 계정을 사용하여 쉽게 보안 및 개인 정보를 제어할 수 있습니다.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+미디어 플레이어 앱은 일반적으로 "사용자"의 개념을 지원하지 않으므로 일반적으로 모든 장치가 동일한 콘텐츠를 받습니다. 이것은 당신이 원하는 것이 아닐 수도 있습니다. 예를 들어 kids_safe 및 kids_unsafe 폴더가 두 개 있는 경우 어린이 방에 있는 렌더러가 kids_safe 폴더에만 액세스하도록 제한할 수 있습니다. 또 다른 일반적인 상황은 플랫메이트와 같이 미디어에 액세스하지 않으려는 사람들과 동일한 네트워크에 있기 때문에 특정 렌더러를 완전히 차단하려는 것입니다.
 
-UMS provides a number of methods to control access in those situations.
+UMS는 이러한 상황에서 액세스를 제어하는 여러 가지 방법을 제공합니다.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## 기본적으로 렌더러 또는 네트워크 장치 허용 또는 차단
+렌더러 및 네트워크 장치에 대한 기본 전략을 선택할 수 있습니다. 거부 목록 및 허용 목록을 사용하여 전체 제어를 기본적으로 허용하거나 거부할 수 있습니다.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+이는 공유 생활 상황이나 넓은/낮은 신뢰 지역 네트워크에 유용합니다. 또한 네트워크에 전원선 어댑터를 사용하는 분들에게도 유용합니다. 그러면 이웃에서 원치 않는 액세스가 발생할 수 있기 때문입니다.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![네트워크 허용 기본 설정을 설정하는 방법의 예](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![렌더러 허용 기본 설정을 설정하는 방법의 예](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## 렌더러 및 네트워크 장치 차단/허용
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+기본적으로 인식되지 않는 렌더러를 허용할지 차단할지를 선택한 경우 설정 영역의 홈 화면에서 거부 목록 또는 허용 목록을 작성할 수 있습니다.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![렌더를 차단하는 방법의 예](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## 개인 렌더러 링크
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+사용자 계정을 렌더러/장치에 연결하여 독립적인 재생 추적을 할 수 있습니다. 예를 들어, 거실에 TV가 있고 침실에 다른 TV가 있다면, 거실 TV는 침실에서 보는 것에 영향을 받을 필요가 없습니다.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![렌더러에 계정을 할당하는 방법의 예](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## 공유 컨텐츠를 특정 그룹으로 제한
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+이제 특정 그룹과 디렉터리 또는 온라인 콘텐츠를 공유하도록 선택할 수 있습니다. 예를 들어, 어린이인 사용자 (또는 사용자에게 할당된 장치)가 있는 경우 해당 사용자를 "어린이" 그룹에 할당하고 해당 그룹에 "가족" 디렉터리에 액세스할 수 있지만 "공포" 또는 "성인 전용" 컨텐츠에는 액세스할 수 없습니다. 또는 역사 팟캐스트가 아닌 Kurzgesagt 웹 피드에 액세스할 수 있습니다.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![공유 컨텐츠 그룹의 예](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## 폴더 숨기기
 
