@@ -2,9 +2,9 @@
 
 ## Giriş
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS, ortamı iki ana yolla sunar: ortam oynatıcı uygulamaları aracılığıyla tüketilecek DLNA/UPnP yoluyla ve web tarayıcıları aracılığıyla tüketilecek HTTP(S) yoluyla.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Web tarayıcıları, oturum açma bilgilerine sahip kullanıcı hesapları ile kolay güvenlik ve gizlilik denetimine sahiptir.
 
 Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
