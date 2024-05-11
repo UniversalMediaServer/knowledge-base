@@ -55,7 +55,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/UniversalMediaServer/knowledge-base/edit/main',
-          lastVersion: '13.x',
+          lastVersion: 'current',
           versions: {
             current: {
               label: '14.x',
