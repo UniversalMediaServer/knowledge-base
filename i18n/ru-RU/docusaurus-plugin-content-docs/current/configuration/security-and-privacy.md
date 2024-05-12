@@ -1,41 +1,41 @@
 # Безопасность и конфиденциальность
 
-## Introduction
+## Вступление
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS предоставляет медиафайлы двумя основными способами - через DLNA/UPnP для использования в приложениях медиаплеера и через HTTP (ы) для использования в веб-браузерах.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Веб-браузеры обеспечивают легкий контроль безопасности и конфиденциальности благодаря наличию учетных записей пользователей с логинами для входа в систему.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Приложения для медиаплееров обычно не поддерживают концепцию "пользователь", поэтому каждое устройство получает один и тот же контент. Возможно, это не то, чего вы хотите. Например, если у вас есть две папки kids_safe и kids_unsafe, вы можете захотеть ограничить доступ средств визуализации в детской комнате, чтобы они имели доступ только к папке kids_safe. Другая распространенная ситуация заключается в том, что вы находитесь в одной сети с людьми, которым вы не хотите предоставлять доступ к своим МЕДИА, например, с соседями по квартире, поэтому вы хотите полностью заблокировать определенные средства визуализации.
 
-UMS provides a number of methods to control access in those situations.
+UMS предоставляет ряд методов для контроля доступа в таких ситуациях.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Разрешить или блокировать средства визуализации или сетевые устройства по умолчанию:
+Вы можете выбрать стратегию по умолчанию для средств визуализации и сетевых устройств. Теперь вы можете разрешать или запрещать по умолчанию, используя списки запрещений и списки разрешений, для полного контроля.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Это делает UMS гораздо более гибкими в ситуациях совместного использования или в локальных сетях с высоким/низким уровнем доверия. Это также полезно для тех, кто использует сетевые адаптеры для своей сети, поскольку это может привести к нежелательному доступу со стороны соседей.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Пример того, как настроить параметры доступа к сети](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Пример того, как задать параметр "Разрешить визуализацию"](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Блокировать/разрешать средства визуализации и сетевые устройства
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+После того как вы выбрали, разрешать или блокировать нераспознанные средства визуализации по умолчанию, вы можете создать свой список запрещенных или разрешенных средств отображения на главном экране в области настроек.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Пример того, как заблокировать средство визуализации](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Привязать пользователя к устройству визуализации
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Вы можете привязать учетные записи пользователей к средствам визуализации / устройствам, что позволит вам независимо отслеживать воспроизведение. Например, если у вас есть телевизор в гостиной, а другой - в спальне, то то, что вы смотрите в своей спальне, не должно влиять на работу телевизора в гостиной.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Пример того, как назначить учетную запись для средства визуализации](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Ограничить доступ к общему контенту для определенных групп
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Вы можете делиться каталогами или онлайн-контентом с определенными группами. Например, если у вас есть пользователь (или устройство, назначенное пользователю), который является ребенком, вы можете назначить его в группу "Дети" и предоставить этой группе доступ к каталогу "Семья", но не к контенту "Ужасы" или "Только для взрослых". Или предоставить им доступ к веб-ленте Kurzgesagt, но не к историческим подкастам.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Пример групп общего контента](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Скрытые папки
 
