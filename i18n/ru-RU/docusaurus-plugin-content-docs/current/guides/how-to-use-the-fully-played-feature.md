@@ -8,21 +8,21 @@
 
 1. На вкладке **Настройки навигации** выберите ваше **Полностью воспроизведенное действие**. В частности, убедитесь, что вы не выбрали **ничего не делайте**. По умолчанию это **Пометка мультимедиа**, которая будет накладывать значок на миниатюру, указывая на то, что она была просмотрена.
 2. На вкладке **Общий контент** найдите папку, которую вы хотите отслеживать, и установите флажок **Отслеживать состояние воспроизведения файлов** в этой строке.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Если вы хотите, чтобы статус воспроизведения отслеживался отдельно для разных устройств, вы можете привязать их к разным учетным записям. Каждая учетная запись будет хранить свои собственные статусы воспроизведения.
 
 ## Автоматически помечать файлы как полностью воспроизводимые
 
 После того, как вы выполнили шаги по настройке, вам просто нужно воспроизвести 92% или более файла.
 
-## Mark TV series, videos, or directories as fully played manually
+## Пометьте телесериалы, видеоролики или каталоги как полностью воспроизведенные вручную
 
-You can mark TV series and videos as fully played directly via the web player:
+Вы можете помечать сериалы и видео как полностью воспроизведенные непосредственно через веб-плеер:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Пример того, как помечать сериалы и видео как полностью воспроизводимые](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Чтобы пометить все файлы в общем каталоге как полностью воспроизведенные, в _старом_ интерфейсе настроек на вкладке **Общий контент** щелкните правой кнопкой мыши каталог, который вы хотите отметить как полностью воспроизведенный, а затем нажмите **Отметить содержимое полностью воспроизведено**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Пример того, как пометить каталог как полностью воспроизведенный](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Удаление статуса "Полностью воспроизведено" / отключение воспроизведения
 
