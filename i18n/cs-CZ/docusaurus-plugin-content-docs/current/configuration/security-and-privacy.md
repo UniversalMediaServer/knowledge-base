@@ -1,21 +1,21 @@
 # Bezpečnost a soukromí
 
-## Introduction
+## Úvod
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS slouží pro média dvěma hlavními způsoby - přes DLNA/UPnP  prostřednictvím aplikací přehrávače médií, a přes HTTP(S) prostřednictvím webových prohlížečů.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Webové prohlížeče mají snadnou kontrolu zabezpečení a soukromí tím, že mají uživatelské účty s přihlašovacími údaji.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Aplikace přehrávače médií obecně nepodporují koncepci "uživatele", takže obvykle každé zařízení získává stejný obsah. To nemusí být to, co chcete. Například pokud máte dvě složky kids_safe a kids_unsafe můžete chtít, aby přehrávače v místnosti pro děti měly přístup pouze do složky kids_safe . Další společnou situací je, že jste ve stejné síti jako lidé, který nechcete dát přístup ke svým médiím, takže chcete zcela zablokovat některé přehrávače.
 
-UMS provides a number of methods to control access in those situations.
+UMS poskytuje řadu metod kontroly přístupu v těchto situacích.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Povolit nebo blokovat přehrávače nebo síťová zařízení ve výchozím nastavení
+Můžete si vybrat výchozí strategii pro přehrávače a síťová zařízení. Ve výchozím nastavení můžete povolit nebo zamítnout denylisty a povolené seznamy pro úplné ovládání.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+To je užitečné pro sdílené životní situace nebo místní sítě s nízkou důvěrou. Je také užitečný pro ty z vás, kteří používáte adaptéry powerline pro vaši síť, protože to může mít za následek nežádoucí přístup od sousedů.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Příklad povolených předvoleb sítě](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
 ![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
