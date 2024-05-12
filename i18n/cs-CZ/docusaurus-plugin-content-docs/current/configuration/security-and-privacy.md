@@ -17,25 +17,25 @@ To je užitečné pro sdílené životní situace nebo místní sítě s nízkou
 
 ![Příklad povolených předvoleb sítě](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Příklad povolených předvoleb sítě](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Blokovat/povolit přehrávače a síťová zařízení
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Když jste se rozhodli, zda ve výchozím nastavení povolit nebo blokovat neznámé přehrávače, můžete sestavit seznam zakázaných nebo je povolit z domovské obrazovky v nastavení.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Příklad blokování přehrávače](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Propojit osobu s přehrávačem
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Uživatelské účty můžete propojit s přehrávačem/zařízeními, což vám umožní nezávislé sledování přehrávání. Například pokud máte TV v obývacím pokoji a další ve své ložnici, TV v obývacím pokoji nepotřebuje být ovlivněna tím co sledujete v ložnici.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Příklad jak přiřadit účet k přehrávači](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Omezit sdílený obsah pro určité skupiny
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Kids", a povolte skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k podcastům historie.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Příklad sdílených skupin obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Skrytí složek
 
