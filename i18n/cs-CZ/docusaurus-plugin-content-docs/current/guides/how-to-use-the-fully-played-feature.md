@@ -8,21 +8,21 @@ Tato funkce je ve výchozím nastavení povolena, takže pokud jste nic nezměni
 
 1. Na kartě **Navigační nastavení** vyberte akci **Akce plně přehráno**. Zejména se ujistěte, že jste nevybrali **Nic**. Ve výchozím nastavení je to **Označit média** , která překryjí ikonu náhledu a označí, že byla sledována.
 2. Na kartě **Sdílený obsah** najdete složku, kterou chcete sledovat, a vyberte zaškrtávací políčko **Sledovat přehrávání souborů**.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Pokud chcete, aby byl stav přehrávání sledován zvlášť pro různé přehrávače, můžete propojit přehrávače s různými uživatelskými účty. Každý účet uloží své vlastní hrané stavy.
 
 ## Označit soubory jako plně přehrané automaticky
 
 Po dokončení nastavení stačí pouze hrát 92% nebo více ze souboru.
 
-## Mark TV series, videos, or directories as fully played manually
+## Označit seriály, videa nebo adresáře jako plně přehrané ručně
 
-You can mark TV series and videos as fully played directly via the web player:
+TV série a videa můžete označit za plně přehrávaná přímo prostřednictvím webového přehrávače:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Příklad toho, jak označit seriály a videa za plně přehrané](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Chcete-li označit všechny soubory ve sdíleném adresáři za plně přehrané na _starém_ Nastavení na kartě **sdílený obsah** , Klepněte pravým tlačítkem myši na adresář, který chcete označit jako plně přehraný, a pak klepněte na tlačítko **Označit obsah plně přehraný**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Příklad toho, jak označit adresáře za plně přehrané](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Odstranění plně přehraného stavu / nepřerušované přehrávání
 
