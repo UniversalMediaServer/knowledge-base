@@ -35,7 +35,7 @@ Bağımsız oynatma takibine sahip olmanızı sağlayarak kullanıcı hesapları
 
 Artık dizinleri veya çevrimiçi içeriği belirli gruplarla paylaşmayı seçebilirsiniz. Örneğin, çocuğunuz (veya çocuğunuza atanmış bir cihazınız) varsa, onu "Çocuklar" grubuna atayabilir ve bu grubun "Aile" dizinine erişmesini sağlayabilirsiniz, ancak "Korku" veya "Sadece Yetişkin" içeriğe değil. Veya onlara Kurzgesagt web bildirimine erişim verin, ancak tarih podcast’lerine erişim vermeyin.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Paylaşılan içerik grupları örneği](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Klasörleri gizleme
 
