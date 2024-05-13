@@ -11,29 +11,29 @@ Ortam oynatıcı uygulamaları genellikle "kullanıcı" kavramını desteklemez,
 UMS, bu durumlarda erişimi denetlemek için bir dizi yöntem sağlar.
 
 ## İşleyicilere veya ağ cihazlarına varsayılan olarak izin verin veya engelleyin
-İşleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
+İşleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Tam denetim için reddetme listeleri ve izin verme listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
 Bu, paylaşılan canlı durumlar veya geniş/düşük güvene sahip yerel ağlar için kullanışlıdır. Ayrıca bu, komşularınızın istenmeyen erişimine neden olabileceğinden ağınız için elektrik hattı adaptörleri kullananlarınız için de faydalıdır.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Ağ izin verme tercihinin nasıl ayarlanacağı örneği](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![İşleyici izin verme tercihinin nasıl ayarlanacağı örneği](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
 ## İşleyicileri ve ağ cihazlarını engelleyin/izin verin
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Tanınmayan işleyiciler için varsayılan olarak izin vermeyi veya engellemeyi seçtiğinizde, ayarlar alanındaki Giriş ekranından reddetme listenizi veya izin verme listenizi oluşturabilirsiniz.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Bir işleyicinin nasıl engelleneceği örneği](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Kişiyi işleyiciye bağlantılayın
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Bağımsız oynatma takibine sahip olmanızı sağlayarak kullanıcı hesaplarını işleyicilere/cihazlara bağlantılayabilirsiniz. Örneğin, oturma odanızda ve yatak odanızda birer TV varsa, oturma odası TV’sinin yatak odanızda izlediklerinizden etkilenmesine gerek yoktur.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Bir işleyiciye nasıl hesap atanacağı örneği](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Paylaşılan içeriği belirli gruplarla sınırlandırın
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Artık dizinleri veya çevrimiçi içeriği belirli gruplarla paylaşmayı seçebilirsiniz. Örneğin, çocuğunuz (veya çocuğunuza atanmış bir cihazınız) varsa, onu "Çocuklar" grubuna atayabilir ve bu grubun "Aile" dizinine erişmesini sağlayabilirsiniz, ancak "Korku" veya "Sadece Yetişkin" içeriğe değil. Veya onlara Kurzgesagt web bildirimine erişim verin, ancak tarih podcast’lerine erişim vermeyin.
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
