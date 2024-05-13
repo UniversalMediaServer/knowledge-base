@@ -35,7 +35,7 @@ Exemplo:
 curl -w "%{http_code}\n" -H "api-key: senha_secreta" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### re-escanear arquivo ou pasta
 
 | Intenção                      | Escanear novamente uma subárvore parcial do sistema de arquivos.                                               |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
