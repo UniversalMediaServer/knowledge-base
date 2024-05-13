@@ -60,7 +60,7 @@ Bunu yapmak, TMDB’deki arama sonuçlarına dayanarak üstverileri düzenlemeni
 
 ![Bir hesabın işleyiciye nasıl atanacağına ilişkin örnek](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### TV dizilerini ve görüntüleri tamamen oynatıldı olarak işaretleyin
+### TV dizilerini ve görüntüleri tamamen oynatılmış olarak işaretleyin
 
 Artık TV dizilerini ve görüntüleri, klasöre göre varolan yapma yeteneğine ek, tamamen oynatılmış olarak işaretleyebilirsiniz.
 
