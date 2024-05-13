@@ -8,21 +8,21 @@ This feature is enabled by default, so if you have not changed anything, you can
 
 1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
 2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Se você deseja que o status de reprodução seja rastreado separadamente para diferentes renderizadores, você pode vincular renderizadores a diferentes contas de usuário. Cada conta armazenará seus próprios status de reprodução
 
 ## Marking files as fully played automatically
 
 After you have completed the setup steps, you just need to play 92% or more of a file.
 
-## Mark TV series, videos, or directories as fully played manually
+## Marcar séries, vídeos ou diretórios como totalmente reproduzidos manualmente
 
-You can mark TV series and videos as fully played directly via the web player:
+Você pode marcar séries de TV e vídeos como totalmente reproduzidos diretamente pelo reprodutor da web:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Exemplo de como marcar séries de TV e vídeos como totalmente reproduzidos](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Para marcar todos os arquivos em um diretório compartilhado como totalmente reproduzidos na interface de configuração _antiga_, na aba **Conteúdo Compartilhado**, clique com o botão direito no diretório que você quer marcar como totalmente reproduzido e então clique **Marcar conteúdo totalmente reproduzido**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Exemplo de como marcar séries de TV e vídeos como totalmente reproduzidos](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Removing fully played status / unplaying
 
