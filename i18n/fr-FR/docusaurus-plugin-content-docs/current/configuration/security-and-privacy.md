@@ -2,38 +2,38 @@
 
 ## Introduction
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+L'UMS sert les médias de deux manières principales : via DLNA/UPnP pour être consommés par des applications de lecture de médias, et via HTTP(S) pour être consommés par des navigateurs web.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Les navigateurs web permettent un contrôle facile de la sécurité et de la confidentialité grâce à des comptes d'utilisateurs avec des identifiants.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Les applications du lecteur multimédia ne prennent généralement pas en charge le concept d'un « utilisateur », donc généralement chaque appareil reçoit le même contenu. Ce n'est peut-être pas ce que vous souhaitez. Par exemple, si vous avez deux dossiers kids_safe et kids_unsafe vous pourriez vouloir restreindre l'accès au dossier kids_safe aux moteurs de rendu de la chambre des enfants. Une autre situation courante est celle où vous êtes sur le même réseau que des personnes dont vous ne voulez pas qu'elles aient accès à vos médias, comme des colocataires, et vous souhaitez donc bloquer complètement certains moteurs de rendu.
 
-UMS provides a number of methods to control access in those situations.
+L'UMS propose un certain nombre de méthodes pour contrôler l'accès dans ces situations.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Autoriser ou bloquer les moteurs de rendu ou les périphériques réseau par défaut
+Vous pouvez choisir la stratégie par défaut pour les moteurs de rendu et les périphériques réseau. Vous pouvez autoriser ou refuser par défaut, avec des listes de refus et des listes d'autorisation, pour un contrôle complet.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Cette fonction est utile dans les situations de cohabitation ou dans les réseaux locaux à faible confiance ou à confiance étendue. Il est également utile pour ceux d'entre vous qui utilisent des adaptateurs de courant porteur pour leur réseau, car cela peut entraîner un accès non désiré de la part des voisins.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Exemple de définition des préférences d'autorisation du réseau](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Exemple de définition de la préférence d'autorisation du moteur de rendu](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Bloquer/autoriser les moteurs de rendu et les périphériques réseau
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Lorsque vous avez choisi d'autoriser ou de bloquer par défaut les moteurs de rendu non reconnus, vous pouvez créer votre liste de refus ou votre liste d'autorisation à partir de l'écran d'accueil, dans la zone des paramètres.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Exemple de blocage d'un moteur de rendu](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Lier la personne au moteur de rendu
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Vous pouvez lier des comptes d'utilisateurs à des restituteurs/appareils, ce qui vous permet d'avoir un suivi indépendant de la lecture. Par exemple, si vous avez une télévision dans le salon et une autre dans votre chambre, la télévision du salon n'a pas besoin d'être affectée par ce que vous regardez dans votre chambre.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Exemple d'affectation d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Restreindre le contenu partagé à certains groupes
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Vous pouvez désormais choisir de partager des répertoires ou du contenu en ligne avec certains groupes. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
