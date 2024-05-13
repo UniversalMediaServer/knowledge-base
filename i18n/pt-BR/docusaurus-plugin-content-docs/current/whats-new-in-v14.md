@@ -60,7 +60,7 @@ Fazer isso permite que você edite metadados com base nos resultados de pesquisa
 
 ![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-### Mark TV series and videos as fully played
+### Marcar séries de TV e vídeos como totalmente reproduzidas
 
 Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
 
