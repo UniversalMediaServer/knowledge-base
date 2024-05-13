@@ -26,7 +26,7 @@ Artık ayarlar alanındaki Giriş ekranından işleyiciye veya ağ cihazına day
 
 ### İşleyicilere veya ağ cihazlarına varsayılan olarak izin verin veya engelleyin:
 
-Artık işleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Önceden sadece tek bir strateji mümkündü: Ya her şeye izin verin ya da izinli listesiyle her şeyi reddedin. Artık tam denetim için reddetme listeleri ve izinli listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
+Artık işleyiciler ve ağ cihazları için varsayılan stratejiyi seçebilirsiniz. Önceden sadece tek bir strateji mümkündü: Ya her şeye izin verin ya da izinli listesiyle her şeyi reddedin. Artık tam denetim için reddetme listeleri ve izin verme listeleriyle varsayılan olarak izin verebilir veya reddedebilirsiniz.
 
 Bu, UMS’yi paylaşılan canlı durumları veya geniş/düşük güvene sahip yerel ağlar için çok daha esnek hale getirir. Ayrıca bu, komşularınızın istenmeyen erişimine neden olabileceğinden ağınız için elektrik hattı adaptörleri kullananlarınız için de faydalıdır.
 
