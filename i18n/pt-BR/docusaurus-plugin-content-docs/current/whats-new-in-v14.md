@@ -62,9 +62,9 @@ Fazer isso permite que você edite metadados com base nos resultados de pesquisa
 
 ### Marcar séries de TV e vídeos como totalmente reproduzidas
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Agora você pode marcar séries de TV e vídeos como totalmente reproduzidas, além da opção existente de fazer isso por pasta
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Exemplo de como editar configurações do usuário](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Mais
 
