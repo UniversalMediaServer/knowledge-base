@@ -1,41 +1,41 @@
 # Security and Privacy
 
-## Introduction
+## Introdução
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+O UMS serve a mídia de duas maneiras principais - via DLNA/UPnP para ser consumido através de aplicativos de mídia, e via HTTP(S) para serem consumidos através de navegadores.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Navegadores têm controle de segurança e privacidade fácil através de contas de usuário com logins.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Os aplicativos de mídia geralmente não suportam o conceito de um "usuário", então geralmente todos os dispositivos têm o mesmo conteúdo. Isso pode não ser o que você quer. Por exemplo, se você tiver duas pastas - seguro_crianças e inseguro_crianças, pode ser que se queira restringir que os renderizadores na sala de crianças só tenham acesso à pasta seguro_crianças. Outra situação comum é que você está na mesma rede que pessoas que você não quer tenham acesso à sua mídia, como colegas de quarto, então você pode querer bloquear completamente certos renderizadores.
 
-UMS provides a number of methods to control access in those situations.
+O UMS fornece uma série de métodos para controlar o acesso nessas situações.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Permitir ou bloquear renderizadores ou dispositivos de rede por padrão:
+Você pode escolher a estratégia padrão para renderizadores e dispositivos de rede. Você pode permitir ou negar por padrão, com listas de permissão ou negação, para controle completo.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Isto é útil para situações de vida compartilhadas ou redes locais de baixa confiança. Também é útil para quem usa adaptadores de linha elétrica para a sua rede, já que isso pode resultar em acesso indesejado dos vizinhos.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Exemplo de como configurar a preferência de permissão de rede](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Exemplo de como configurar a preferência de permissão de renderizadores](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Bloquear/permitir renderizadores e dispositivos de rede
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Se você escolheu permitir ou bloquear renderizadores desconhecidos por padrão você pode construir sua lista de permissão ou lista de negação da tela inicial na área de configurações.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Exemplo de como bloquear um renderizador](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Vincular pessoa ao renderizador
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Agora você pode vincular contas de usuário a renderizações / dispositivos, possibilitando que você tenha um rastreamento de reprodução independente. Por exemplo, se você tiver uma TV na sala e outra em seu quarto, a TV da sala não precisa ser afetada por aquilo que você assiste no seu quarto.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Restringir conteúdo compartilhado a grupos específicos
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Agora você pode optar por compartilhar diretórios ou conteúdo on-line com determinados grupos. Por exemplo, se você tem uma pessoa (ou um dispositivo que é atribuído a uma pessoa) que é uma criança, você pode atribuí-la para o grupo "Crianças", e dar acesso desse grupo ao diretório "Família", mas não aos diretórios "Horror" ou "Somente Adulto". Ou dar-lhe acesso ao feed de internet de Kurzgesagt, mas não aos podcasts de história.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Exemplo de grupos de conteúdo compartilhados](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Hiding folders
 

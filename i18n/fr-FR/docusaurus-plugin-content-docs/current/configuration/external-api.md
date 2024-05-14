@@ -35,7 +35,7 @@ Exemple :
 
 ```
 
-#### rescan file or folder
+#### réanalyser le fichier ou le dossier
 
 |                   | Ré-analyse partielle du système de fichiers                                                          |
 | ----------------- | ---------------------------------------------------------------------------------------------------- |
