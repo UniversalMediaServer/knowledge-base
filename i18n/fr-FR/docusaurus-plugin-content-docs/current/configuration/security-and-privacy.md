@@ -6,7 +6,7 @@ L'UMS sert les médias de deux manières principales : via DLNA/UPnP pour être 
 
 Les navigateurs web permettent un contrôle facile de la sécurité et de la confidentialité grâce à des comptes d'utilisateurs avec des identifiants.
 
-Les applications du lecteur multimédia ne prennent généralement pas en charge le concept d'un « utilisateur », donc généralement chaque appareil reçoit le même contenu. Ce n'est peut-être pas ce que vous souhaitez. Par exemple, si vous avez deux dossiers kids_safe et kids_unsafe vous pourriez vouloir restreindre l'accès au dossier kids_safe aux moteurs de rendu de la chambre des enfants. Une autre situation courante est celle où vous êtes sur le même réseau que des personnes dont vous ne voulez pas qu'elles aient accès à vos médias, comme des colocataires, et vous souhaitez donc bloquer complètement certains moteurs de rendu.
+Les applications du lecteur multimédia ne prennent généralement pas en charge le concept d'un « utilisateur », donc généralement chaque appareil reçoit le même contenu. Ce n'est peut-être pas ce que vous souhaitez. Par exemple, si vous avez deux dossiers enfants sécurisée et enfants non sécurisée vous pourriez vouloir restreindre l'accès au dossier enfants sécurisée aux moteurs de rendu de la chambre des enfants. Une autre situation courante est celle où vous êtes sur le même réseau que des personnes dont vous ne voulez pas qu'elles aient accès à vos médias, comme des colocataires, et vous souhaitez donc bloquer complètement certains moteurs de rendu.
 
 L'UMS propose un certain nombre de méthodes pour contrôler l'accès dans ces situations.
 
@@ -33,9 +33,9 @@ Vous pouvez lier des comptes d'utilisateurs à des restituteurs/appareils, ce qu
 
 ## Restreindre le contenu partagé à certains groupes
 
-Vous pouvez désormais choisir de partager des répertoires ou du contenu en ligne avec certains groupes. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Vous pouvez désormais choisir de partager des répertoires ou du contenu en ligne avec certains groupes. Par exemple, si une personne (ou un appareil attribué à une personne) est un enfant, vous pouvez l'affecter au groupe "Enfants" et lui donner accès au répertoire "Famille", mais pas au contenu "Horreur" ou "Adulte uniquement". Ou leur donner accès au flux web Kurzgesagt, mais pas aux podcasts sur l'histoire.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Exemple de groupes de contenu partagé](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Cacher les dossiers
 
