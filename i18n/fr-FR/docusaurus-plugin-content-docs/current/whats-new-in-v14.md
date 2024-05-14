@@ -60,11 +60,11 @@ Cela vous permet de modifier les métadonnées en fonction des résultats de rec
 
 ![Exemple d'attribution d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Mark TV series and videos as fully played
+### Marquer les séries télévisées et les vidéos comme étant entièrement lues
 
-Now you can mark TV series and videos as fully played, in addition to the existing ability to do it by folder
+Vous pouvez désormais marquer les séries télévisées et les vidéos comme étant entièrement lues, en plus de la possibilité existante de le faire par dossier.
 
-![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Exemple de modification des paramètres utilisateur](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 ### Plus d'informations
 
