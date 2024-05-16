@@ -12,12 +12,12 @@ The implementation of this varies greatly per renderer, but the core functionali
 
 The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
+1. Abra a UI do UMS e identifique a renderização para onde quer enviar a media In this case it is the Panasonic VIERA VT60 Series TV.  
+   ![Abra a GUI](@site/docs/guides/img/how-to-play-media-1.png)
+2. Clique na imagem de renderização para abrir o painel de controle.  
+   ![COntrole de renderização](@site/docs/guides/img/how-to-play-media-2.png)
 3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
+   ![Ficheiro seleccionado](@site/docs/guides/img/how-to-play-media-3.png)
 4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
 
 ## 3: Play on the web interface
