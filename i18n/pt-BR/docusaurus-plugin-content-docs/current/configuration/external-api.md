@@ -142,9 +142,9 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 Esta chamada removeu o atributo curtido do álbum identificado pelo release-id do musicBrainz `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### O álbum gostou
 
-Check album like state.
+Verifique o estado do álbum.
 
 | Intention                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
