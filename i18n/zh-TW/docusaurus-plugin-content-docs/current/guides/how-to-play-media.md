@@ -1,14 +1,14 @@
-#
+# How to play media
 
 This article will explain the 4 main ways to play video, audio and images via UMS.
 
 ## 1: Play from a renderer interface
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. no chinese
+When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access. From there, you can enter UMS and browse to the media you want to access.
 
-i need chinese traditional
+The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
 
-## 渲染器
+## 2: Push from the UMS interface to a renderer
 
 The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting. It is a similar concept to casting. It is a similar concept to casting. It is a similar concept to casting. It is a similar concept to casting.
 
