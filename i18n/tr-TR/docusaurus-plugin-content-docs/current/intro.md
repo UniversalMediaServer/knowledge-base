@@ -7,7 +7,7 @@ slug: /
 
 Bu web sitesi Universal Media Server’ın kullanımı için resmi destek belgelerini içerir.
 
-Eğer şu anki bir kullanıcı değilseniz ve bunu indirmek veya kullanıp kullanmayacağınıza karar vermek istiyorsanız, muhtemelen [ana web sitemizi](https://www.universalmediaserver.com) daha yararlı bulacaksınız.
+Eğer şu anda bir kullanıcı değilseniz ve bunu indirmek veya kullanıp kullanmayacağınıza karar vermek istiyorsanız, muhtemelen [ana web sitemizi](https://www.universalmediaserver.com) daha yararlı bulacaksınız.
 
 3 ana bölüme ayrılmıştır: Yapılandırma, Kılavuzlar ve Kurulum.
 
