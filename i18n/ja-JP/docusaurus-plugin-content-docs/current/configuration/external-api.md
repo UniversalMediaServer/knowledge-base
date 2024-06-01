@@ -16,7 +16,7 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 
 ### Folder Scanning
 
-#### rescan
+#### 再スキャン
 
 | Intention                       | Rescans the complete library       |
 | ------------------------------- | ---------------------------------- |
@@ -29,13 +29,13 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 This can be slow for large libraries
 :::
 
-Example:
+例:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### ファイルまたはフォルダを再スキャン
 
 | Intention                       | Rescans a partial subtree of the file system.                                         |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
