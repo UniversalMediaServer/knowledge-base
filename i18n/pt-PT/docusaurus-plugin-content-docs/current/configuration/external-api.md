@@ -6,7 +6,7 @@ A API externa permite que programas acedam ou acionem funcionalidades UMS com um
 
 Editar UMS.conf e configurar uma api_key como esta
 
-`api_key = secret_password`
+`chave_api = palavra_passe`
 
 A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
@@ -16,12 +16,12 @@ Se a API externa estiver ativada, a API estará acessível através de um pedido
 
 ### Verificação de Pastas
 
-#### rescan
+#### Pesquisar novamente
 
 | Intenção                      | Verificar toda a biblioteca.                |
 | ----------------------------- | ------------------------------------------- |
-| URI                           | `/api/folderscanner/rescan`                 |
-| POST BODY                     | NONE                                        |
+| URI                           | `/api/pesquisadepasta/novapesquisa`         |
+| CAIXA DE PUBLICAÇÃO           | NADA                                        |
 | POST BODY examplo / descrição | Este comando não precisa de corpo no pedido |
 | Disponível desde              | 10.4.2                                      |
 
@@ -35,31 +35,31 @@ Exemplo:
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### Pesquisar novamente ficheiro ou pasta
 
 | Intenção                      | Verificar parte do sistema de ficheiros.                                                           |
 | ----------------------------- | -------------------------------------------------------------------------------------------------- |
 | URI                           | `/api/folderscanner/rescanFileOrFolder`                                                            |
-| POST BODY                     | PATH_TO_SCAN                                                                                     |
+| CAIXA DE PUBLICAÇÃO           | CAMINHO_PARA_PESQUISA                                                                            |
 | POST BODY examplo / descrição | exemplo: "/music/pop/Madonna". O caminho deve ser a raiz ou uma subpasta de um caminho partilhado. |
 | Disponível desde              | 10.4.2                                                                                             |
 
 Exemplo:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+
 ```
 
 ### Gostos em Músicas (Álbuns e Canções)
 
-#### like song
+#### Gostar da música
 
 A música será marcada com Gosto.
 
 | Intenção                      | Colocar gosto numa música identificada pelo trackId da musicBrainz. |
 | ----------------------------- | ------------------------------------------------------------------- |
 | URI                           | `<span class="s1">/api/like/likesong</span>`            |
-| POST BODY                     | `musicBrainz_trackID`                                               |
+| CAIXA DE PUBLICAÇÃO           | `musicBrainz_trackID`                                               |
 | POST BODY examplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                |
 | Disponível desde              | 10.20                                                               |
 
@@ -69,34 +69,34 @@ Exemplo:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Não gostar a música
 
 Música deixará de estar marcada com Gosto.
 
 | Intenção                      | Retirar gosto numa música identificada pelo trackId da musicBrainz. |
 | ----------------------------- | ------------------------------------------------------------------- |
 | URI                           | `<span class="s1">/api/like/</span>dislikesong`         |
-| POST BODY                     | `musicBrainz_trackID`                                               |
+| CAIXA DE PUBLICAÇÃO           | `musicBrainz_trackID`                                               |
 | POST BODY examplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                |
-| Available since               | 10.20                                                               |
+| Disponível desde              | 10.20                                                               |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### Gostaram da música
 
-Check if song is liked.
+Verificar se gostaram da música.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Intenção                              | Verificar se gostaram da música identificada por musicBrainz trackId                            |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| CAIXA DE PUBLICAÇÃO                   | `musicBrainz_trackID`                                                                           |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| CAIXA DE RESPOSTA                     | `TRUE` or `FALSE`                                                                               |
+| Available since                       | 10.20                                                                                           |
 
 Example:
 
