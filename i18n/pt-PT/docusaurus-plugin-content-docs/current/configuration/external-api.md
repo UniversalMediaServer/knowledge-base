@@ -96,43 +96,43 @@ Verificar se gostaram da música.
 | CAIXA DE PUBLICAÇÃO                   | `musicBrainz_trackID`                                                                           |
 | CAIXA DE PUBLICAÇÃO exemplo/descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
 | CAIXA DE RESPOSTA                     | `TRUE` or `FALSE`                                                                               |
-| Available since                       | 10.20                                                                                           |
+| Disponível desde                      | 10.20                                                                                           |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta escolha adiciona o atributo gostado do álbum identificado por musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### Gostar do álbum
 
-Set album like state to true.
+Define o estado do álbum como true.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Intenção            | Colocar gosto num álbum identificado pelo trackId da musicBrainz. |
+| ------------------- | ----------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/like/</span>likealbum`         |
+| CAIXA DE PUBLICAÇÃO | `musicBrainz_releaseID`                                           |
+|                     | 1e0eee38-a9f6-49bf-84d0-45d0647799af                              |
+|                     | 10.20                                                             |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Não gostar do álbum
 
-Remove album like state.
+Remover gostar do estado do álbum.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intenção                              | Remover gosto numa música identificada pelo trackId da musicBrainz. |
+| ------------------------------------- | ------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/like/</span>dislikealbum`        |
+| CAIXA DE PUBLICAÇÃO                   | `musicBrainz_releaseID`                                             |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                |
+| Disponível desde                      | 10.20                                                               |
 
 Example:
 
@@ -224,38 +224,36 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 #### get rating by audiotrack id
 
-Reads song rating from database
+Lê avaliação de músicas na base de dados
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
-
-Example:
+|                                       | Obtenha a classificação da música em estrelas (0 - 5) pela ID da faixa de áudio interna  do UMS. A caixa de resposta contém informações da classificação. |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                       | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                                             |
+|                                       | Id da faixa                                                                                                                                               |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 32                                                                                                                                                        |
+| CAIXA DE RESPOSTA  exemplo            | 3                                                                                                                                                         |
+|                                       | 11.0                                                                                                                                                      |
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Esta opção lê a classificação do utilizador de uma música identificada pelo audiotrack-id UMS `32`.
 
-### Backup / Restore
+### Cópia de segurança / Restauro
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Entradas marcadas pelo utilizador como "álbum que gosto" podem ser guardadas numa sub-pasta de diretórios chamada `database_backup`. O nome de arquivo é `MUSIC_BRAINZ_RELEASE_LIKE`. No caso em que o banco de dados UMS seja apagado, basta escolher "Restaurar".
 
-#### backup liked albums
+#### Cópia de segurança de álbuns que gosto
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Cópia de segurança da tabela `MUSIC_BRAINZ_RELEASE_LIKE` no sistema de arquivos
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Intenção          | Fazer cópia de segurança das músicas com gosto para o sistema de arquivos                             |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| SOLICITAR TIPO    | GET                                                                                                   |
+| CAIXA DE RESPOSTA | `OK` ou mensagem de erro                                                                              |
+| Disponível desde  | 10.20                                                                                                 |
 
 Example:
 
