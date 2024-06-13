@@ -6,7 +6,7 @@ A API externa permite que programas acedam ou acionem funcionalidades UMS com um
 
 Editar UMS.conf e configurar uma api_key como esta
 
-`api_key = secret_password`
+`api_chave = palavra_passe`
 
 A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
@@ -134,25 +134,25 @@ Remover gostar do estado do álbum.
 | CAIXA DE PUBLICAÇÃO exemplo/descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                |
 | Disponível desde                      | 10.20                                                               |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta escolha adiciona o atributo gostado do álbum identificado por musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### é um álbum com gosto
 
-Check album like state.
+Verificar o estado de gosto do álbum
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intenção                              | Verificar se o álbum tem gosto identificado por musicBrainz trackId |
+| ------------------------------------- | ------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/like/</span>isalbumliked`        |
+| CAIXA DE PUBLICAÇÃO                   | `musicBrainz_releaseID`                                             |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                |
+| CAIXA DE RESPOSTA                     | "VERDADEIRO" ou "FALSO"                                             |
+| Disponível desde                      | 10.20                                                               |
 
 Example:
 
