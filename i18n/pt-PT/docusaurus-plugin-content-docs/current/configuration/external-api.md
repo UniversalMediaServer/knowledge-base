@@ -6,7 +6,7 @@ A API externa permite que programas acedam ou acionem funcionalidades UMS com um
 
 Editar UMS.conf e configurar uma api_key como esta
 
-`chave_api = palavra_passe`
+`api_key = secret_password`
 
 A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
@@ -255,24 +255,24 @@ Cópia de segurança da tabela `MUSIC_BRAINZ_RELEASE_LIKE` no sistema de arquivo
 | CAIXA DE RESPOSTA | `OK` ou mensagem de erro                                                                              |
 | Disponível desde  | 10.20                                                                                                 |
 
-Example:
+Exemplo:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Esta opção cria um arquivo da cópia de segurança contendo álbuns com gosto.
 
-#### restore liked albums
+#### restaurar álbuns com gosto
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Restaura tabela `MUSIC_BRAINZ_RELEASE_LIKE` a partir do sistema de ficheiros
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intenção          | Restaurar músicas com gosto do arquivo da cópia de segurança                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| SOLICITAR TIPO    | GET                                                                                                                                        |
+| CAIXA DE RESPOSTA | `OK` ou mensagem de erro                                                                                                                   |
+| Disponível desde  | 10.20                                                                                                                                      |
 
 Example:
 
