@@ -1,6 +1,6 @@
 # How to improve support for my device
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Nếu thiết bị của bạn không thực hiện được bất kỳ thao tác nào, chẳng hạn như duyệt thư mục hoặc phát tệp, bạn có thể khắc phục bằng cách thay đổi cài đặt trong tệp cấu hình trình kết xuất. Các thiết bị/trình kết xuất/máy khách khác nhau giao tiếp với các máy chủ như UMS theo những cách khác nhau, do đó, tệp cấu hình sẽ cho UMS biết cách giao tiếp cùng ngôn ngữ với thiết bị của bạn.
 
 We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
