@@ -286,11 +286,11 @@ Esta opção restaura o arquivo da cópia de segurança.
 
 #### Habilitar serviço
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Edite o UMS.conf e configure uma pasta da lista de reprodução gerida pela configuração 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+Por habilitar este serviço. Este serviço está desativado por padrão The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
 
 #### list all playlists
 
