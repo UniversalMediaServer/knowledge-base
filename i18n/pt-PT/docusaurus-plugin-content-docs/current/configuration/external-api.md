@@ -207,22 +207,22 @@ Esta opção define a classificação do utilizador de todas as músicas identif
 
 #### Definir avaliação por id da faixa de áudio
 
-| Intenção                        | Classificar com estrelas (0 - 5) uma música identificada pelo audiotrackID interno do UMS                      |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Intenção                              | Classificar com estrelas (0 - 5) uma música identificada pelo audiotrackID interno do UMS                      |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| CAIXA DE PUBLICAÇÃO                   | `trackID` /`stars`                                                                                             |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 32                                                                                                             |
+| Disponível desde                      | 11.0                                                                                                           |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Esta opção define a classificação das músicas identificadas pelo id da faixa de áudio`32` para `3`.
 
-#### get rating by audiotrack id
+#### Definir avaliação por id da faixa de áudio
 
 Lê avaliação de músicas na base de dados
 
@@ -274,17 +274,17 @@ Restaura tabela `MUSIC_BRAINZ_RELEASE_LIKE` a partir do sistema de ficheiros
 | CAIXA DE RESPOSTA | `OK` ou mensagem de erro                                                                                                                   |
 | Disponível desde  | 10.20                                                                                                                                      |
 
-Example:
+Exemplo:
 
 ```
-curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X GET http://localhost:5001/api/gosto/restaurar álbuns com gosto
 ```
 
-This call restores the backup file.
+Esta opção restaura o arquivo da cópia de segurança.
 
-### Playlist
+### Lista de reprodução
 
-#### enable service
+#### Habilitar serviço
 
 Edit UMS.conf and configure a managed playlist folder by setting 
 
