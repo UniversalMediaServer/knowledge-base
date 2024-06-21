@@ -6,7 +6,7 @@ A API externa permite que programas acedam ou acionem funcionalidades UMS com um
 
 Editar UMS.conf e configurar uma api_key como esta
 
-`api_chave = palavra_passe`
+`api_key = palavra_passe`
 
 A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
@@ -20,7 +20,7 @@ Se a API externa estiver ativada, a API estará acessível através de um pedido
 
 | Intenção                      | Verificar toda a biblioteca.                |
 | ----------------------------- | ------------------------------------------- |
-| URI                           | `/api/pesquisadepasta/novapesquisa`         |
+| URI                           | `/api/folderscanner/rescan`                 |
 | CAIXA DE PUBLICAÇÃO           | NADA                                        |
 | POST BODY examplo / descrição | Este comando não precisa de corpo no pedido |
 | Disponível desde              | 10.4.2                                      |
@@ -151,7 +151,7 @@ Verificar o estado de gosto do álbum
 | URI                                   | `<span class="s1">/api/like/</span>isalbumliked`        |
 | CAIXA DE PUBLICAÇÃO                   | `musicBrainz_releaseID`                                             |
 | CAIXA DE PUBLICAÇÃO exemplo/descrição | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                |
-| CAIXA DE RESPOSTA                     | "VERDADEIRO" ou "FALSO"                                             |
+| CAIXA DE RESPOSTA                     | "TRUE" or "FALSE"                                                   |
 | Disponível desde                      | 10.20                                                               |
 
 Exemplo:
