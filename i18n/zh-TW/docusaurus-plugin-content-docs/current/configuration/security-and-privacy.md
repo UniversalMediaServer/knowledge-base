@@ -1,6 +1,6 @@
-# Security and Privacy
+# 安全和隱私
 
-## Introduction
+## 介紹
 
 UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 
@@ -10,7 +10,7 @@ Media player apps do not generally support the concept of a "user", so usually e
 
 UMS provides a number of methods to control access in those situations.
 
-## Allow or block renderers or network devices by default
+## 預設允許或封鎖渲染器或網路裝置
 You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
 This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
@@ -19,7 +19,7 @@ This is useful for shared living situations or wide/low-trust local networks. It
 
 ![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## 封鎖／允許渲染器和網路裝置
 
 When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
 
@@ -37,7 +37,7 @@ You can now choose to share directories or online content with certain groups. F
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## 隱藏資料夾
 
 Control the visibility of the virtual folders. These settings can be found in UMS.conf file. Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
@@ -53,7 +53,7 @@ hide_live_subtitles_folder =true
 
 To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
-## PIN code
+## PIN 碼
 
 All the above methods restricts access from various renderers. All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example: The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
@@ -62,7 +62,7 @@ All the above methods restricts access from various renderers. All the above met
 
 Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time). The code then stays valid for 4 hours (if you don't change that time).
 
-## Custom Device Configuration
+## 自訂裝置配置
 
 Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 

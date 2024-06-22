@@ -2,7 +2,7 @@
 
 The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
 
-## Setup
+## 設置
 
 This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: If the feature is not working, please check that these steps have not been undone: This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: If the feature is not working, please check that these steps have not been undone: This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone: If the feature is not working, please check that these steps have not been undone:
 

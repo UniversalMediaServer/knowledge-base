@@ -2,19 +2,19 @@
 
 部份步驟也許不適用於你的安裝過程。  Understand what they do, and ignore, or customize as necessary.
 
-## Preparation
+## 準備
 
 對作業系統支援與服務套件所需，
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+安裝 Docker（引擎）：https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+安裝 Docker（引擎）：https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### 額外指示
 
 ```
 sudo usermod -a -G docker <username>;
@@ -60,9 +60,9 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## 調查問題
 
-### General
+### 一般
 
 ```
 docker ps -a;
@@ -100,7 +100,7 @@ Matching error messages can be seen using journalctl, so it is an SELinux proble
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux. Seems to be container-selinux.
 
-## References
+## 参考
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
