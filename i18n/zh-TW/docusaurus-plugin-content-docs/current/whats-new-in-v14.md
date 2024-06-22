@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # What's New in v14
 
-## Overview
+## 概覽
 
 V14 contains major new features based on what our users have asked for.
 
@@ -16,7 +16,7 @@ We also took the opportunity to bump major versions of some of our dependencies,
 
 Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
 
-## New features
+## 新功能
 
 ### Block/allow renderers and network devices
 
@@ -46,7 +46,7 @@ You can now choose to share directories or online content with certain groups. F
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-### Avatars
+### 頭像
 
 People can have avatars to make them easier to see at a glance. You can set them on the user settings page along with the user groups
 
@@ -66,11 +66,11 @@ Now you can mark TV series and videos as fully played, in addition to the existi
 
 ![Example of how to edit user settings](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-### More
+### 更多
 
 For a full list of all changes in v14, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## 遷移
 
 The first time V14 runs, it will re-scan your shared folders, which can take some time. You can still use the server before this finishes, but it might respond more slowly and return incomplete results.
 
