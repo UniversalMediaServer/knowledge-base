@@ -1,4 +1,4 @@
-# External API
+# 外部 API
 
 The external API enables programs to access or trigger UMS functionalities with a HTTP call.
 
@@ -14,7 +14,7 @@ The _`secret_password`_ must have a minimum of 12 chars.
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### Folder Scanning
+### 資料夾掃描
 
 #### rescan
 
@@ -29,7 +29,7 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 This can be slow for large libraries
 :::
 
-Example:
+範例：
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
@@ -44,7 +44,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 | POST BODY example / description | example: "/music/pop/Madonna". example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
 | Available since                 | 10.4.2                                                                                                               |
 
-Example:
+範例：
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
@@ -63,7 +63,7 @@ Song will be marked as liked.
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
 | Available since                 | 10.20                                                    |
 
-Example:
+範例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
@@ -80,7 +80,7 @@ Song will not be disliked
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
 | Available since                 | 10.20                                                       |
 
-Example:
+範例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
@@ -98,7 +98,7 @@ Check if song is liked.
 | RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
 | Available since                 | 10.20                                                                                           |
 
-Example:
+範例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
@@ -117,7 +117,7 @@ Set album like state to true.
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
 | Available since                 | 10.20                                                     |
 
-Example:
+範例：
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
@@ -134,7 +134,7 @@ Remove album like state.
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
 | Available since                 | 10.20                                                        |
 
-Example:
+範例：
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
@@ -154,7 +154,7 @@ Check album like state.
 | RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
 | Available since                 | 10.20                                                        |
 
-Example:
+範例：
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
@@ -177,7 +177,7 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
 | Available since                 | 10.20                                                                                           |
 
-Example:
+範例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
@@ -197,7 +197,7 @@ Reads song rating from database
 | RESPONSE BODY example           | 3                                                                                                                                                      |
 | Available since                 | 10.20                                                                                                                                                  |
 
-Example:
+範例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
@@ -214,7 +214,7 @@ This call reads the user rating of a song identified by the musicbrainz track-id
 | POST BODY example / description | 32                                                                                                             |
 | Available since                 | 11.0                                                                                                           |
 
-Example:
+範例：
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
@@ -234,7 +234,7 @@ Reads song rating from database
 | RESPONSE BODY example           | 3                                                                                                                                                            |
 | Available since                 | 11.0                                                                                                                                                         |
 
-Example:
+範例：
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
@@ -257,7 +257,7 @@ Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
 | RESPONSE BODY   | `OK` or error message                                                                                 |
 | Available since | 10.20                                                                                                 |
 
-Example:
+範例：
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
@@ -276,7 +276,7 @@ Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 | RESPONSE BODY   | `OK` or error message                                                                                                                      |
 | Available since | 10.20                                                                                                                                      |
 
-Example:
+範例：
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
@@ -306,7 +306,7 @@ Read available playlists. These playlist names have to be used for subsequent ca
 | RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                             |
 | Available since       | 11.0                                                                                                                                                                                                       |
 
-Example:
+範例：
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
@@ -326,7 +326,7 @@ These are all playlist known to UMS (database/cache enabled). Read available pla
 | RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
 | Available since       | dev branch                                                                                                                                               |
 
-Example:
+範例：
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
@@ -358,7 +358,7 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 | RESPONSE BODY                   | NONE                                                                                                                                                                              |
 | Available since                 | 11.0                                                                                                                                                                              |
 
-Example:
+範例：
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
@@ -392,7 +392,7 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 | RESPONSE BODY                   | NONE                                                                                                                                                                                   |
 | Available since                 | 11.0                                                                                                                                                                                   |
 
-Example:
+範例：
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
@@ -413,7 +413,7 @@ Playlist name should be provided without any path and without file extensions. 
 | RESPONSE BODY                   | NONE                                                                                                                                                                           |
 | Available since                 | 11.0                                                                                                                                                                           |
 
-Example:
+範例：
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
