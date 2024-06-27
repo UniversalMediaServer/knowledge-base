@@ -1,33 +1,33 @@
-# How to use the "Fully played" feature
+# 「再生済み」機能の使い方
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+「再生済み」機能を使用すると、再生したファイルを追跡できます。 ビデオでは、少なくとも92%を視聴していること、およびオーディオでは少なくとも92%を聴いていることを意味します。
 
-## Setup
+## セットアップ
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+この機能はデフォルトで有効になっているため、何も変更していない場合は使用できます。 機能が機能していない場合は、以下の手順が取り消されていないことを確認してください:
 
-1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+1. **ナビゲーション 設定** タブで、 **完全に再生されたアクション** を選択します。 特に、**何もしない**を選択していないことを確認してください。 これはデフォルトでは **マークメディア** です。これはサムネイル上のアイコンをオーバーレイして、監視されていることを示します。
+2. **共有コンテンツ** タブで、追跡するフォルダーを見つけて、その行の **ファイルの再生ステータスを監視する** チェックボックスをオンにします。
+3. 再生された状態を異なるレンダラーで個別に追跡したい場合は、レンダラーを別のユーザーアカウントにリンクできます。 それぞれのアカウントにはプレイ済みのステータスが保存されます。
 
-## Marking files as fully played automatically
+## 完全に再生されたファイルを自動的にマーク
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+セットアップ手順が完了したら、92%以上のファイルを再生するだけです。
 
-## Mark TV series, videos, or directories as fully played manually
+## 完全に再生されたテレビシリーズ、ビデオ、またはディレクトリを手動でマーク
 
-You can mark TV series and videos as fully played directly via the web player:
+Web プレーヤーを介して直接再生されたテレビシリーズやビデオをマークすることができます。
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![テレビシリーズや動画を完全再生としてマークする方法の例](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+_古い_設定インターフェースで共有ディレクトリ内のすべてのファイルを完全に再生済みとしてマークするには、[**共有コンテンツ**] タブで、完全に再生済みとしてマークするディレクトリを右クリックします。をクリックし、**コンテンツを完全に再生済みとしてマークする** をクリックします。
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![ディレクトリを完全に再生済みとしてマークする方法の例](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## 完全に再生された状態/再生解除を削除
 
-To "unplay" a file, you can do one of the following options:
+ファイルを「再生解除」するには、次のいずれかのオプションを使用できます。
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- 任意の方法でファイルの名前を変更します。 その後、元の名前に戻すことができます。 名前を変更すると、UMSはキャッシュからエントリをクリアしてしまいます。
+- ファイルを別のディレクトリに移動します。 その後、元のディレクトリに戻すことができます ファイルを移動したときに、UMSがキャッシュからエントリをクリアしたためです。
+- 共有ディレクトリ全体を「再生解除」するには、[**共有コンテンツ**] タブで、未再生としてマークするディレクトリを右クリックし、[**コンテンツを未再生としてマークする**] をクリックします。
