@@ -14,14 +14,14 @@ The _`secret_password`_ must have a minimum of 12 chars.
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### Folder Scanning
+### フォルダスキャン
 
 #### 再スキャン
 
-| Intention                       | Rescans the complete library       |
+| ご注意                             | 完全なライブラリを再スキャン                     |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
+|                                 | NONE                               |
 | POST BODY example / description | This command needs no body content |
 | Available since                 | 10.4.2                             |
 
@@ -197,17 +197,17 @@ Reads song rating from database
 | RESPONSE BODY example           | 3                                                                                                       |
 | Available since                 | 10.20                                                                                                   |
 
-Example:
+例
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+このコールはmusicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` によって識別された曲のユーザー評価を読み込みます。
 
-#### set rating by audiotrack id
+#### オーディオトラックIDで評価を設定
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
+| ご注意                             | UMS内部オーディオトラックIDで特定された曲の星評価（0 - 5）を設定する                                                                        |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | POST BODY                       | `trackID` /`stars`                                                                                             |
@@ -292,7 +292,7 @@ Edit UMS.conf and configure a managed playlist folder by setting 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+このサービスを有効にするために By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
 
 #### list all playlists
 
