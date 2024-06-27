@@ -1,29 +1,29 @@
-# External API
+# 外部 API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+外部 API により、プログラムは HTTP 呼び出しで UMS 機能にアクセスしたり、トリガーしたりすることができます。
 
-## How to enable the external API
+## 外部 API を有効にする方法
 
-Edit UMS.conf and configure an api_key like this
+UMS.conf を編集し、このような api_key を設定します。
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`secret_password`_ は 12 文字以上でなければなりません。
 
 ## API の説明
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+外部 API が有効になっている場合、/api/COMMAND への POST コールで API にアクセスできます。
 
 ### フォルダスキャン
 
 #### 再スキャン
 
-| ご注意                             | 完全なライブラリを再スキャン                     |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-|                                 | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| ご注意             | 完全なライブラリを再スキャン              |
+| --------------- | --------------------------- |
+| URI             | `/api/folderscanner/rescan` |
+|                 | なし                          |
+| ボディの例 / 説明      | このコマンドは本体の内容を必要としません        |
+| Available since | 10.4.2                      |
 
 :::info
 This can be slow for large libraries
@@ -42,21 +42,21 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 | URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
 | POST BODY                       | PATH_TO_SCAN                                                                        |
 | POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| 以下から利用可能：                       | 10.4.2                                                                                |
 
-Example:
+例
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: Secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### ライクした音楽（アルバムや曲）
 
-#### like song
+#### ライクした曲
 
-Song will be marked as liked.
+曲は「いいね」としてマークされます。
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
+| ご注意                             | Like a song identified by musicBrainz trackId            |
 | ------------------------------- | -------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/likesong</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                    |
@@ -73,7 +73,7 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Song will not be disliked
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
+| Intention                       | musicBrainz trackId によって識別された曲が嫌いです                         |
 | ------------------------------- | ----------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span>dislikesong` |
 | POST BODY                       | `musicBrainz_trackID`                                       |
@@ -117,17 +117,17 @@ Set album like state to true.
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
 | Available since                 | 10.20                                                     |
 
-Example:
+例
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### 嫌いなアルバム
 
-Remove album like state.
+アルバムから「いいね」を取る
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
+| ご注意                             | musicBrainz releaseID で識別された曲が嫌いです                           |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
@@ -140,13 +140,13 @@ Example:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+この呼び出しはmusicbrainz release-id `1e0ee38-a9f6-49bf-84d0-45d0647799af` で識別されたアルバムの liked 属性を削除しました。
 
-#### is album liked
+#### アルバムがいいね！されました
 
-Check album like state.
+状態のようなアルバムをチェックします。
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| ご注意                             | アルバムがmusicBrainzのreleaseIDによって認識されているかどうかを確認します              |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
@@ -164,7 +164,7 @@ This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f
 
 ### Rating
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+評価APIは曲を評価する責任があります。 Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
 
 While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
 
@@ -183,19 +183,19 @@ Example:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+このコールはmusicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` によって識別された曲のユーザー評価を読み込みます。
 
 #### get rating
 
-Reads song rating from database
+ソングレーティングをデータベースから読み込みます
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Intention                       | musicBrainzのtrackIDで星の評価を取得します。 Response body contains the rating information.                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>` |
+| POST BODY                       | `musicbrainzTrackId`                                                                             |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                             |
+| RESPONSE BODY example           | 3                                                                                                |
+| Available since                 | 10.20                                                                                            |
 
 例
 
@@ -224,9 +224,9 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 #### get rating by audiotrack id
 
-Reads song rating from database
+ソングレーティングをデータベースから読み込みます
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
+| ご注意                             | UMS内蔵のaudiotrackIDで星評価(0 - 5)を取得します。 Response body contains the rating information.                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
 | POST BODY                       | trackId                                                                                                       |
@@ -240,17 +240,17 @@ Example:
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+この呼び出しは、UMS audiotrack-id `32` によって識別された曲のユーザー評価を読み込みます。
 
-### Backup / Restore
+### バックアップ / 復元
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+ユーザー管理 "liked album" エントリは `database_backup` という名前の profile-directory サブフォルダにバックアップすることができます。 ファイル名は `MUSIC_BRAINZ_RELEASE_LIKE` です。 UMSデータベースが削除された場合は、リストアを呼び出します。
 
-#### backup liked albums
+#### お気に入りアルバムのバックアップ
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+バックアップ テーブル `MUSIC_BRAINZ_RELEASE_LIKE` をファイルシステムにする
 
-| Intention       | backup liked songs to filesystem                                                                      |
+| ご注意             | backup liked songs to filesystem                                                                      |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
 | URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
 | REQUEST TYPE    | GET                                                                                                   |
@@ -267,7 +267,7 @@ This call will create a backup file containing liked albums.
 
 #### restore liked albums
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+テーブル `MUSIC_BRAINZ_RELEASE_LIKE` をファイルシステムから復元する
 
 | Intention       | restore liked songs from backup file                                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -298,27 +298,27 @@ Edit UMS.conf and configure a managed playlist folder by setting 
 
 Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intention | サポートされているすべてのプレイリスト(`m3u`, `m3u8` と `pls`)と、設定されたフォルダから利用可能なプレイリストを提供します。 プレイリスト名のほか、プレイリスト `プレイリスト` は                                                                          |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI       | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| 要求の種類     | GET                                                                                                                                                                             |
+| 応答する体型    | プレイリスト名のJSON配列                                                                                                                                                                  |
+| リスポーン体の例  | `<span class="s1">["ポップ","ジャズ","クラシック"]</span>`                                                                                                                     |
+| 以下から利用可能： | 11.0                                                                                                                                                                            |
 
-Example:
+例
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+この通話には、利用可能なプレイリストがすべて表示されます。
 
-#### list server accessible playlists
+#### リストサーバーアクセス可能なプレイリスト
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+これらはすべてUMS(データベース/キャッシュが有効)になっているプレイリストです。 これらのプレイリスト名は、曲を追加または削除するために、その後の通話に使用する必要があります。 プレイリストIDは、 `objectId` `$DBID$PLAYLIST$` concat databaseIdをブラウズすることで、プレイリストに直接移動するために使用できます。
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
+| Intention             | サポートされているすべてのプレイリスト(`m3u`, `m3u8` と `pls`)と設定されたフォルダからプレイリストを配信します。                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
@@ -365,7 +365,7 @@ This adds the song with the ID `123` to the playlist `Pop`.
 
 #### removing songs from playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+必要な `audiotrackid` は UPnP ブラウズリクエスト中に配信され、DIDL レスポンス属性 `descMetadata` から抽出できます。
 
 ```XML
 <ums-tags>
@@ -413,7 +413,7 @@ Example:
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+この通話は、管理プレイリストフォルダーに `Contemporary.m3u8` という名前の新しいプレイリストファイルを作成します。
 
 ## Java code example
 
