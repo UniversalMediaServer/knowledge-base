@@ -1,45 +1,45 @@
-# Security and Privacy
+# セキュリティとプライバシー
 
-## Introduction
+## はじめに
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMSは主に2つの方法でメディアを提供しています - メディアプレーヤーアプリで消費されるDLNA/UPnPを介して。 そして、HTTP(S) を介してウェブブラウザ経由で消費されます。
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Webブラウザは、ログインしているユーザーアカウントを持つことによって、簡単なセキュリティとプライバシー管理を持っています。
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+メディアプレーヤーアプリは一般的に「ユーザー」の概念をサポートしていないため、通常、すべてのデバイスは同じコンテンツを取得します。 これはあなたが望むものではないかもしれません。 たとえば、kids_safeとkids_unsafeの2つのフォルダがある場合は、kids_safeフォルダへのアクセスのみをkids_safeフォルダに制限することをお勧めします。 もう一つの一般的な状況は、あなたがあなたのメディアにアクセスしたくない人と同じネットワークにいることです。 フラットメイトのように特定のレンダラーを完全にブロックしたいのです
 
-UMS provides a number of methods to control access in those situations.
+UMSは、そのような状況でアクセスを制御するためのさまざまな方法を提供します。
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## デフォルトでレンダラーまたはネットワークデバイスを許可またはブロックします
+レンダラーとネットワークデバイスのデフォルトの戦略を選択できます。 デフォルトでは、完全な制御のためにdenylistsとallowlistsを使用して、許可または拒否することができます。
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+これは、共有された生活状況や、広い/低信頼のローカルネットワークに役立ちます。 また、近隣からの不要なアクセスを引き起こす可能性があるため、ネットワークに電源ラインアダプタを使用する場合にも便利です。
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![設定方法の例](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![レンダラーの設定方法の例 設定で許可する](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## レンダラーとネットワークデバイスをブロック/許可する
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+デフォルトで認識できないレンダラーを許可するかブロックするかを選択した場合 設定エリアのホーム画面から非表示リストや許可リストを作成できます。
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![レンダラーをブロックする方法の例](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## レンダラーに担当者をリンク
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+ユーザーアカウントをレンダラー/デバイスにリンクすることで、独立した再生トラッキングが可能になります。 例えば、リビングルームにテレビがあり、寝室に別のテレビがある場合。 リビングルームのテレビは寝室で見るものの影響を受ける必要はありません
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![レンダラーにアカウントを割り当てる方法の例](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## 共有コンテンツを特定のグループに制限する
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+特定のグループとディレクトリまたはオンラインコンテンツを共有することができます。 たとえば、子供である人(または人に割り当てられたデバイス)がある場合。 「Kids」グループに割り当てることができます そして、そのグループに "Family" ディレクトリへのアクセス権を与えますが、"Horror" や "Adult Only" コンテンツは与えません。 またはKurzgesagt 網の供給にそれらにアクセスを与えなさい、しかし歴史ポッドキャスト。
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![共有コンテンツグループの例](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## フォルダを非表示
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+仮想フォルダの表示を制御します。 これらの設定は UMS.conf ファイルにあります。 参照中にフォルダを非表示にするには、値を true に設定するか、詳細なGUIモードの「ナビゲーション/共有設定」タブでチェックを入れます。
 
 ```
 hide_recently_played_folder =true
@@ -51,24 +51,24 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Webフォルダを非表示にする 詳細なGUIモードで外部ネットワークを有効にするか、UMSで`external_network ='の値をfalseに変更する必要があります。 onfファイル これにより、自動アップデータが機能しないという副作用が生じます。 GUIからの変更は、再起動後に有効になります。
 
-## PIN code
+## PIN コード
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+上記のすべてのメソッドは、様々なレンダラーからのアクセスを制限します。 しかし、フォルダを表示することが許可されているレンダリングにアクセスできる場合、それらの方法はあなたを助けません(子供たちがすべてのメディアにアクセスできるリビングルームのテレビにアクセスできる場合、彼らはそのメディアへのアクセス権を持っています)。 PINコードはこの問題を解決します。 これにより、レンダリングから入力しなければならない PIN コードの後ろにフォルダー/メディアを非表示にできます。 デフォルトでは、入力はATMコードと同様の桁数(0-9)です。 レンダラーから入力するのが難しくなるので、数字ベースのコードを使用することを強くお勧めします。 しかし、余分な妄想であれば、手紙を追加することができます。 UMS.codeというファイルをUMSと同じディレクトリに追加します。 onf とそのファイルに regexp,code を "UMS" と同様に正規表現に追加します。 「eny」ファイルとコードは、フォルダ/メディアへのアクセスを許可するコードです。 コードには長さの規制はありません。 例:
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+フォルダー/メディアに「private」という単語が含まれていて、正しいコードが1234の場合、強制的にコードを入力します。 コードは4時間有効のままです(時間を変更しない場合)。
 
-## Custom Device Configuration
+## カスタムデバイス設定
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+カスタムデバイス構成を作成してデフォルトの UMS 設定を上書きすることで、任意の構成プロパティをデバイスごとに設定することもできます(詳細については、「カスタムデバイス構成の作成」を参照してください)。
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+例えば、子供のテレビをカスタマイズするには:
+- レンダラーのGUIポップアップ・パネルの右上にある「このデバイスをカスタマイズ」ボタンをクリックし、構成の名前を指定します。
+- 開いた新しいconfファイルでは、テレビのためにオーバーライドしたいすべての設定を追加します。 をクリックします。
 ```
 #----------------------------------------------------------------------------
 # Custom Device profile
