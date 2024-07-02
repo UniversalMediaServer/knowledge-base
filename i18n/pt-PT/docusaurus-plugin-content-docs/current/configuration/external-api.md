@@ -296,23 +296,23 @@ Por habilitar este serviço. Este serviço está desativado por padrão O caminh
 
 Ler listas de reprodução disponíveis Estes nomes de listas de reprodução devem ser usados para subsequentes acções de remoção ou adição de músicas
 
-| Intenção              | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada. Ao lado do nome da lista de reprodução, as listas de reprodução  `playlistId` são |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`                          |
-|                       | GET                                                                                                                                                                                                      |
-|                       | JSON array of playlist names                                                                                                                                                                             |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                           |
-| Available since       | 11.0                                                                                                                                                                                                     |
+| Intenção         | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada. Ao lado do nome da lista de reprodução, as listas de reprodução  `playlistId` são |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI              | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`                          |
+|                  | GET                                                                                                                                                                                                      |
+|                  | Variedade JSON de nomes de listas de reprodução                                                                                                                                                          |
+|                  | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                           |
+| Disponível desde | 11.0                                                                                                                                                                                                     |
 
 Exemplo:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X GET http://localhost:5001/api/lista de reprodução/aceder a todas as listas de reprodução
 ```
 
 Este comando listará todas as listas de reprodução disponíveis.
 
-#### list server accessible playlists
+#### Enumera as listas de reprodução acessíveis no servidor
 
 These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
