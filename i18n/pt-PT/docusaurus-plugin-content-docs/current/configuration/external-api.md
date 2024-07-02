@@ -290,19 +290,19 @@ Edite o UMS.conf e configure uma pasta da lista de reprodução gerida pela conf
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-Por habilitar este serviço. Este serviço está desativado por padrão The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+Por habilitar este serviço. Este serviço está desativado por padrão O caminho da pasta da lista de reprodução, deverá estar localizado debaixo de um caminho partilhado `<span class="s1">pastas</span>` configurado para a lista de reprodução, criado por esta API para ficar visível pelo UMS
 
-#### list all playlists
+#### Listar todas as listas de reprodução
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Ler listas de reprodução disponíveis Estes nomes de listas de reprodução devem ser usados para subsequentes acções de remoção ou adição de músicas
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intenção              | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada. Ao lado do nome da lista de reprodução, as listas de reprodução  `playlistId` são |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`                          |
+|                       | GET                                                                                                                                                                                                      |
+|                       | JSON array of playlist names                                                                                                                                                                             |
+| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                           |
+| Available since       | 11.0                                                                                                                                                                                                     |
 
 Exemplo:
 
