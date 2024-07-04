@@ -314,15 +314,15 @@ Este comando listará todas as listas de reprodução disponíveis.
 
 #### Enumera as listas de reprodução acessíveis no servidor
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Estas são todas as listas de reprodução conhecidas pelo UMS (base de dados/cache habilitado). Estes nomes de listas de reprodução devem ser usados para subsequentes acções de remoção ou adição de músicas O ID da playlist pode ser usado para navegar directamente para a lista de reprodução navegando pelo `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Tabelas","playlistId":343}]`                                                                   |
-| Available since       | dev branch                                                                                                                                               |
+| Intenção                   | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada.                                   |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| SOLICITAR TIPO             | GET                                                                                                                                                      |
+| CAIXA DE RESPOSTA          | Variedade JSON de nomes de listas de reprodução                                                                                                          |
+| CAIXA DE RESPOSTA  exemplo | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Tabelas","playlistId":343}]`                                                                   |
+| Disponível desde           | dev branch                                                                                                                                               |
 
 Example:
 
