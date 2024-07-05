@@ -290,51 +290,51 @@ Edite o UMS.conf e configure uma pasta da lista de reprodução gerida pela conf
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-Por habilitar este serviço. Este serviço está desativado por padrão The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+Por habilitar este serviço. Este serviço está desativado por padrão O caminho da pasta da lista de reprodução, deverá estar localizado debaixo de um caminho partilhado `<span class="s1">pastas</span>` configurado para a lista de reprodução, criado por esta API para ficar visível pelo UMS
 
-#### list all playlists
+#### Listar todas as listas de reprodução
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Ler listas de reprodução disponíveis Estes nomes de listas de reprodução devem ser usados para subsequentes acções de remoção ou adição de músicas
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Intenção         | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada. Ao lado do nome da lista de reprodução, as listas de reprodução  `playlistId` são |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI              | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`                          |
+|                  | GET                                                                                                                                                                                                      |
+|                  | Variedade JSON de nomes de listas de reprodução                                                                                                                                                          |
+|                  | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                                           |
+| Disponível desde | 11.0                                                                                                                                                                                                     |
 
 Exemplo:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X GET http://localhost:5001/api/lista de reprodução/aceder a todas as listas de reprodução
 ```
 
 Este comando listará todas as listas de reprodução disponíveis.
 
-#### list server accessible playlists
+#### Enumera as listas de reprodução acessíveis no servidor
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Estas são todas as listas de reprodução conhecidas pelo UMS (base de dados/cache habilitado). Estes nomes de listas de reprodução devem ser usados para subsequentes acções de remoção ou adição de músicas O ID da playlist pode ser usado para navegar directamente para a lista de reprodução navegando pelo `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Tabelas","playlistId":343}]`                                                                   |
-| Available since       | dev branch                                                                                                                                               |
+| Intenção                   | Entrega todos os  (`m3u`, `m3u8` e `pls`) suportados e listas de reprodução disponíveis a partir da pasta configurada.                                   |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                        | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| SOLICITAR TIPO             | GET                                                                                                                                                      |
+| CAIXA DE RESPOSTA          | Variedade JSON de nomes de listas de reprodução                                                                                                          |
+| CAIXA DE RESPOSTA  exemplo | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Tabelas","playlistId":343}]`                                                                   |
+| Disponível desde           | filial de desenvolvimento                                                                                                                                |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X GET http://localhost:5001/api/lista de reprodução/aceder a todas as listas de reprodução
 ```
 
-This call will list list all available playlist accessible by UMS.
+Esta opção listará todas as listas de reprodução disponíveis acessíveis pelo UMS.
 
-#### adding songs to playlists
+#### adicionar músicas às playlists
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+A `faixa de áudio` necessária é entregue durante solicitações de navegação UPnP e pode ser extraída do atributo de resposta DIDL `descMetadata`
 
 ```XML
 <ums-tags>
@@ -344,26 +344,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Intenção                              | Adicionar música à lista de reprodução                                                                                                                                            |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| SOLICITAR TIPO                        | POST                                                                                                                                                                              |
+| CAIXA DE PUBLICAÇÃO                   | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 123/Pop                                                                                                                                                                           |
+| CAIXA DE RESPOSTA                     | NENHUM                                                                                                                                                                            |
+| Disponível desde                      | 11.0                                                                                                                                                                              |
 
-Example:
+Exemplo:
 
 ```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X GET http://localhost:5001/api/lista de reprodução/aceder a todas as listas de reprodução
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Esta opção adiciona a música com o ID `123`à lista de reprodução `Pop`.
 
-#### removing songs from playlists
+#### Remover faixas da lista de reprodução
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+A `faixa de áudio` necessária é entregue durante solicitações de navegação UPnP e pode ser extraída do atributo de resposta DIDL `descMetadata`
 
 ```XML
 <ums-tags>
@@ -375,47 +375,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Intenção                              | Remover faixa da lista de reprodução                                                                                                                                                   |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| SOLICITAR TIPO                        | POST                                                                                                                                                                                   |
+| CAIXA DE PUBLICAÇÃO                   | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | 123/Pop                                                                                                                                                                                |
+| CAIXA DE RESPOSTA                     | NENHUM                                                                                                                                                                                 |
+| Disponível desde                      | 11.0                                                                                                                                                                                   |
 
-Example:
-
-```shell
-curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
-```
-
-This removes the song with the ID `123` from the playlist `Pop`.
-
-#### create new playlists
-
-Playlist name should be provided without any path and without file extensions. 
-
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
-
-Example:
+Exemplo:
 
 ```shell
-curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X PUBLICAÇÃO http://localhost:5001/api/lista de reprodução/remover música da lista de reprodução
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Esta opção remove a música com o ID `123`da lista de reprodução `Pop`.
 
-## Java code example
+#### Criar nova lista de reprodução
 
-This code snippet shows how to use the API with okhttp3 library.
+O nome da lista de reprodução deve ser fornecido sem qualquer caminho e sem extensões de arquivo. 
+
+| Intenção                              | Criar novas listas de reprodução na pasta  gerida de listas de reprodução                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| SOLICITAR TIPO                        | POST                                                                                                                                                                           |
+| CAIXA DE PUBLICAÇÃO                   | `NOME_LISTA DE REPRODUÇÃO`                                                                                                                                                     |
+| CAIXA DE PUBLICAÇÃO exemplo/descrição | Contemporâneo                                                                                                                                                                  |
+| CAIXA DE RESPOSTA                     | NENHUM                                                                                                                                                                         |
+| Disponível desde                      | 11.0                                                                                                                                                                           |
+
+Exemplo:
+
+```shell
+curl -w "%{http_code}\n" -H "api-chave: palavra-passe" -X PUBLICAÇÃO http://localhost:5001/api/lista de reprodução/criarListadereprodução
+```
+
+Esta opção cria um novo arquivo de lista de reprodução  chamado `Contemporâneo.m3u8` na pasta de listas geridas.
+
+## Exemplo de código Java
+
+Este código snippet mostra como usar a API com biblioteca okhttp3.
 
 ```Java
 import nextcp.dto.Config;
