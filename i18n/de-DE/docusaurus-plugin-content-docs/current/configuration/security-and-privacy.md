@@ -15,27 +15,27 @@ Sie können die Standardstrategie für Renderer und Netzwerkgeräte auswählen. 
 
 Dies ist nützlich für gemeinsam genutzte Lebenssituationen oder ausgedehnte/wenig vertrauenswürdige lokale Netzwerke. Es ist auch für diejenigen von Ihnen nützlich, die Powerline-Adapter für Ihr Netzwerk verwenden, da dies zu unerwünschten Zugriff von Nachbarn führen kann.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Beispiel wie man die Netzwerk-Erlaubnis-Einstellung einstellt](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Beispiele wie man die Netzwerk-Erlaubnis-Einstellung einstellt](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
 ## Renderer und Netzwerkgeräte blockieren/zulassen
 
 Wenn Sie ausgewählt haben, dass Sie unbekannte Renderer erlauben oder blockieren möchten, können Sie Ihre Verbots- oder Erlaubnis-Liste vom Startbildschirm aus im Einstellungsbereich erstellen.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Beispiel wie man einen Renderer blockiert](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
 ## Person mit Renderer verknüpfen
 
-Sie können Benutzerkonten mit Renderers/Geräten verknüpfen, so dass Sie unabhängige Wiedergabe-Tracking haben können. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Sie können Benutzerkonten mit Renderers/Geräten verknüpfen, so dass Sie unabhängige Wiedergabe-Tracking haben können. Wenn Sie z.B. einen Fernseher im Wohnzimmer und einen anderen in Ihrem Schlafzimmer haben, möchten Sie vielleicht nicht, dass der Fernseher im Wohnzimmer das abspielt, was Sie gerade in Ihrem Schlafzimmer schauen.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Beispiel wie ein Konto einem Renderer zugewiesen werden soll](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Freigegebene Inhalte auf bestimmte Gruppen beschränken
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Sie können nun wählen, ob Sie Verzeichnisse oder Online-Inhalte mit bestimmten Gruppen teilen möchten. Wenn Sie zum Beispiel eine Person (oder ein Gerät, das einer Person zugewiesen ist) haben, die ein Kind ist, kann man sie der "Kids" Gruppe zuordnen. Dann geben Sie dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht den Inhalt "Horror" oder "Nur Erwachsene". Oder ihnen Zugriff auf den Kurzgesagt Web-Feed geben, aber nicht auf die Historie Podcasts.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Beispiel für gemeinsame Inhaltsgruppen](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Ordner verstecken
 
