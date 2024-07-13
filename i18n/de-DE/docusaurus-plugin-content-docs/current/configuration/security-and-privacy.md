@@ -4,30 +4,30 @@
 
 UMS stellt Medien auf zwei Arten zur Verfügung: über DLNA/UPnP für den Konsum über Media-Player-Anwendungen und über HTTP(S) für den Konsum über Webbrowser.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Web-Browser haben eine einfache Sicherheits- und Datenschutzkontrolle, indem sie Benutzerkonten mit Logins haben.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Media-Player-Apps unterstützen im Allgemeinen nicht das Konzept eines "Benutzers", so dass normalerweise jedes Gerät den gleichen Inhalt erhält. Das ist vielleicht nicht das, was Sie wollen. Wenn Sie zum Beispiel zwei Ordner kids_sicher und kids_unsicher haben, möchten Sie eventuell, dass die Renderer im Kinderzimmer nur Zugriff auf den kids_sicher Ordner haben. Eine andere häufiger vorkommende Situation ist, dass Sie im selben Netzwerk sind wie Leute, die üblicherweise keinen Zugriff auf Ihre Medien haben sollen, wie Mitbewohner. Daher möchten man bestimmte Renderer komplett blockieren.
 
-UMS provides a number of methods to control access in those situations.
+UMS bietet eine Reihe von Methoden zur Kontrolle des Zugriffs.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Renderer oder Netzwerkgeräte standardmäßig erlauben oder blockieren
+Sie können die Standardstrategie für Renderer und Netzwerkgeräte auswählen. Sie können standardmäßig mit Verbots- und Erlaubnis-Listen die vollständige Kontrolle erlauben oder verweigern.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Dies ist nützlich für gemeinsam genutzte Lebenssituationen oder ausgedehnte/wenig vertrauenswürdige lokale Netzwerke. Es ist auch für diejenigen von Ihnen nützlich, die Powerline-Adapter für Ihr Netzwerk verwenden, da dies zu unerwünschten Zugriff von Nachbarn führen kann.
 
 ![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
 ![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Renderer und Netzwerkgeräte blockieren/zulassen
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Wenn Sie ausgewählt haben, dass Sie unbekannte Renderer erlauben oder blockieren möchten, können Sie Ihre Verbots- oder Erlaubnis-Liste vom Startbildschirm aus im Einstellungsbereich erstellen.
 
 ![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Person mit Renderer verknüpfen
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Sie können Benutzerkonten mit Renderers/Geräten verknüpfen, so dass Sie unabhängige Wiedergabe-Tracking haben können. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
