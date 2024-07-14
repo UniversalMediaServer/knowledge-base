@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Bevezető
 
 Ez a weboldal tartalmazza az UMS használatához szükséges hivatalos dokumentációt.
 
