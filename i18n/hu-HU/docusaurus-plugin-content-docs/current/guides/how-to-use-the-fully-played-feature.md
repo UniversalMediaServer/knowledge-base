@@ -8,21 +8,21 @@ Ez a funkció alapértelmezés szerint engedélyezve van, így ha nem változtat
 
 1. A **Navigációs beállítások** lapon válassza ki a **Teljesen lejátszott műveletet**. Különösen győződjön meg arról, hogy nem választotta a **Nem csinál semmit** lehetőséget. Ez alapértelmezés szerint **Mark media**, ami egy ikont helyez el a miniatűr képen, jelezve, hogy azt megnézték.
 2. A **Megosztott tartalom** lapon keresse meg a nyomon követni kívánt mappát, és jelölje be a **Fájlok lejátszott állapotának figyelése** jelölőnégyzetet a sorban.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Ha azt szeretné, hogy a lejátszott állapot külön-külön nyomon követhető legyen a különböző megjelenítőknél, összekapcsolhatja a megjelenítőket különböző felhasználói fiókokkal. Minden fiók a saját lejátszott állapotait tárolja.
 
-## A fájlok automatikus teljes lejátszásként való megjelölése
+## A fájlok automatikusan teljes lejátszottként való megjelölése
 
 A beállítási lépések elvégzése után már csak a fájl legalább 92%-át kell lejátszania.
 
-## Mark TV series, videos, or directories as fully played manually
+## TV-sorozatok, videók vagy könyvtárak manuálisan teljesen lejátszottként történő megjelölése
 
-You can mark TV series and videos as fully played directly via the web player:
+A TV-sorozatokat és videókat teljesen lejátszottként jelölheti meg közvetlenül a webes lejátszón keresztül:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Példa TV-sorozatok és videók teljesen lejátszottként való megjelölésére](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Ha egy megosztott könyvtárban lévő összes fájlt teljesen lejátszottként szeretné megjelölni a _régi_ Beállítások felületen, a **Megosztott tartalom** lapon kattintson a jobb gombbal arra a könyvtárra, amelyet teljesen lejátszottként kíván megjelölni. , majd kattintson a **Tartalom megjelölése teljesen lejátszott** lehetőségre
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Példa arra, hogyan lehet egy könyvtárat teljesen lejátszottként megjelölni](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Teljesen lejátszott állapot eltávolítása / lejátszás megszüntetése
 
