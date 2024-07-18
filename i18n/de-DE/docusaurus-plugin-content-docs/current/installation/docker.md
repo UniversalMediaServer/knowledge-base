@@ -8,56 +8,55 @@ Für Betriebssystem-Support und Service-Pakete.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Docker installieren (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Docker installieren (Engine): https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Zusätzliche Anweisungen
 
 ```
-sudo usermod -a -G docker <username>;
+sudo usermod -a -G docker <username>
 ```
 
 Erneut anmelden oder den Rechner neu starten.
 
 ```
-sudo su -;
-mkdir /srv/UMS;
-chcon -t svirt_sandbox_file_t /srv/UMS;
-chgrp docker /srv/UMS;
-chmod -R g+w /srv/UMS;
+sudo su -
+mkdir /srv/UMS
+chcon -t svirt_sandbox_file_t /srv/UMS
+chgrp docker /srv/UMS
+chmod -R g+w /srv/UMS
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Speicher einbinden, um dieses Verzeichnis zu Host und zu verlinken, wahrscheinlich schreibgeschützt. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Testbeispiel: Einfache Symlinkung zu einem anderen Pfad auf dem Host-System funktioniert möglicherweise nicht da es außerhalb des eingebauten Lautstärkepfades für den Docker-Container keinen Zugriff darauf gibt.  Kopieren Sie stattdessen Dateien in diesem Verzeichnis.
 
 ## Container-Setup
 
-Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+Folgende Volumes mounten:
+- Medienordner `/media`
+- Profilordner mit UMS.conf `/profile`
 
-Diese Ports vom Server freigeben/weiterleiten: 1044, 5001, 9001.
+Diese Ports vom Gastgeber freigeben/weiterleiten: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Die folgenden Skripte vollenden dies (unter Verwendung der fish shell):
 ```
-sudo su -;
-set rootDir "$HOME/.config/UMS";
-mkdir -p "$rootDir/data";
+sudo su -
+set rootDir "$HOME/.config/UMS"
+mkdir -p "$rootDir/data"
 ​
-docker pull universalmediaserver/ums;
+docker pull universalmediaserver/ums
 ​
 docker create --name UMS \
   -p 1044:1044 -p 5001:5001 -p 9001:9001 \
   -v /srv/UMS:/root/media \
   -v "$HOME/.config/UMS":/root/.config/UMS \
   universalmediaserver/ums \
-;
 ​
-docker start UMS;
+docker start UMS
 ```
 
 ## Probleme und Probleme untersuchen
@@ -82,9 +81,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Bei der Verwendung von Fedora CoreOS hatte ich Zugriff/Erlaubnis verweigert bei der Verwendung von Bind Mounts.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Es kann notwendig sein, stattdessen die Docker-gesteuerte, benannte Volumenfunktion zu verwenden, um diese Komplexität zu vermeiden. Ich habe festgestellt, dass das zusätzliche `:Z` als Suffix für die Mount-Deskriptor-Option bind Container-Schreibzugriff auf Host-Dateien erlaubt. `:z` kann auch stattdessen verwendet werden, aber Sicherheitsberatung kann dazu führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert bleiben als freigegeben.
 
-Passende Fehlermeldungen können mit Journalctl gesehen werden, so dass es sich um ein SELinux-Problem handelt. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Passende Fehlermeldungen können mit journalctl eingesehen werden, so dass es sich um ein SELinux-Problem handelt. Die Lösung dafür wäre "chcon -Rt svirt_sandbox_file_t host_dir" auszuführen, aber davon wird auch abgeraten.
 
 Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Anscheinend Container-selinux.
 

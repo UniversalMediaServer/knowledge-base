@@ -2,47 +2,47 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Was ist neu in v14
 
-## Overview
+## Übersicht
 
-V14 contains major new features based on what our users have asked for.
+V14 enthält wichtige neue Features, basierend auf dem, was unsere Benutzer gefordert haben.
 
-The biggest changes involve the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices.
+Die größten Änderungen betreffen die Möglichkeit, den Zugriff auf Ihre Inhalte zu kontrollieren. Dies beinhaltet Verbesserungen an Benutzerkonten wie Avatare und Wiedergabestatus pro Benutzer, sowie die Möglichkeit, verschiedene Inhalte auf verschiedenen Geräten anzuzeigen.
 
-There have also been many updates to the web settings and player interfaces, including adding the ability to mark sets of files (e.g. TV series) as fully played, and automatic detection of your system dark/light mode preference.
+Es gab auch viele Aktualisierungen der Webeinstellungen und der Player-Schnittstellen, einschließlich der Möglichkeit, mehrere Dateien als vollständig abgespielt zu markieren (z.B. TV-Serie) und die automatische Erkennung der Einstellungen für den Dunkel-/Hellmodus.
 
-We also took the opportunity to bump major versions of some of our dependencies, including [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis.sourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), and the generator of this Knowledge Base, [Docusaurus v3](https://docusaurus.io/).
+Wir haben auch die Gelegenheit genutzt, die Hauptversionen einiger unserer Abhängigkeiten zu bumpen(?), einschließlich [Mantine v7](https://mantine.dev/), [NSIS v3](https://nsis. ourceforge.io/Download), [Yarn v4](https://yarnpkg.com/), und der Generator dieser Wissensdatenbank, [Docusaurus v3](https://docusaurus.io/).
 
-Lastly, we have thrown in hundreds of bugfixes and performance improvements, and refactored a lot of code to be easier to work on, as well as improved our testing frameworks to prevent future bugs.
+Schließlich haben wir hunderte von Bugfixes und Performance-Verbesserungen eingeführt und viel Code verändert, damit man mit ihm einfacher arbeiten kann, sowie unsere Test-Frameworks verbessert, um zukünftige Fehler zu verhindern.
 
-## New features
+## Neue Funktionen
 
-### Block/allow renderers and network devices
+### Renderer und Netzwerkgeräte blockieren/zulassen
 
-You can now block and allow access based on the renderer or the network device, from the Home screen on the settings area.
+Sie können nun den Zugriff auf den Renderer oder das Netzwerkgerät vom Startbildschirm aus im Einstellungsbereich blockieren und erlauben.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Beispiel, wie man einen Renderer blockiert](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-### Allow or block renderers or network devices by default:
+### Erlaube oder blockiere Renderer oder Netzwerkgeräte standardmäßig:
 
-You can now choose the default strategy for renderers and network devices. Previously, there was only one strategy possible - either allow everything, or deny everything with an allowlist. Now you can allow or deny by default, with denylists and allowlists, for complete control.
+Sie können nun die Standardstrategie für Renderer und Netzwerkgeräte auswählen. Früher war nur eine Strategie möglich - entweder alles zulassen oder alles mit einer Erlaubnis-Liste abzulehnen. Nun können Sie standardmäßig mit Verbots- und Erlaubnis-Listen die vollständige Kontrolle erlauben oder verweigern.
 
-This makes UMS much more flexible for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Dies ist nützlich für gemeinsam genutzte Lebenssituationen oder ausgedehnte/wenig vertrauenswürdige lokale Netzwerke. Es ist auch für diejenigen von Ihnen nützlich, die Powerline-Adapter für Ihr Netzwerk verwenden, da dies zu unerwünschten Zugriff von Nachbarn führen kann.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Beispiel, wie man Netzwerk-Erlaubnis-Präferenzen festlegen](@site/docs/img/whats-new-in-v14-network-allowblock preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Beispiel, wie man Netzwerk-Erlaubnis-Präferenzen festlegen kann](@site/docs/img/whats-new-in-v14-network-allowblock preference.png)
 
-### Link person to renderer
+### Person zum Renderer verknüpfen
 
-You can now link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Sie können nun Benutzerkonten mit Renderern/Geräten verknüpfen, so dass Sie unabhängiges Wiedergabe-Tracking nutzen können. Wenn Sie z.B. einen Fernseher im Wohnzimmer und einen anderen in Ihrem Schlafzimmer haben, möchten Sie vielleicht nicht, dass der Fernseher im Wohnzimmer das abspielt, was Sie gerade in Ihrem Schlafzimmer schauen.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Beispiel, wie man einem Renderer ein Konto zuweisen kann](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-### Restrict shared content to certain groups
+### Freigegebene Inhalte auf bestimmte Gruppen beschränken
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" ones. Oder ihnen Zugriff auf den Kurzgesagt Web-Feed, aber nicht auf die Historie Podcasts.
+Sie können nun wählen, ob Sie Verzeichnisse oder Online-Inhalte mit bestimmten Gruppen teilen möchten. Wenn Sie zum Beispiel eine Person (oder ein Gerät, das einer Person zugewiesen ist) haben, die ein Kind ist, kann man sie der "Kids" Gruppe zuordnen. Dann geben Sie dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht den Inhalt "Horror" oder "Nur Erwachsene". Oder ihnen Zugriff auf den Kurzgesagt Web-Feed, aber nicht auf die Historie Podcasts.
 
 ![Beispiel für gemeinsame Inhaltsgruppen](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 

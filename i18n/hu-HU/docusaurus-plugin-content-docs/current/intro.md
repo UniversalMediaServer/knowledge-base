@@ -3,11 +3,11 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Bevezető
 
 Ez a weboldal tartalmazza az UMS használatához szükséges hivatalos dokumentációt.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Ha nem vagy jelenlegi felhasználó, és szeretnéd letölteni, vagy eldönteni, hogy használd-e, valószínűleg hasznosabbnak találod a [fő weboldalunkat](https://www.universalmediaserver.com).
 
 3 fő részre oszlik: Konfiguráció, Útmutatók és Telepítés.
 

@@ -8,21 +8,21 @@ Diese Funktion ist standardmäßig aktiviert. Wenn Sie also nichts geändert hab
 
 1. Wählen Sie auf der Registerkarte **Navigationseinstellungen** Ihre ** "Voll abgespielt" Aktion** aus. Vergewissern Sie sich insbesondere, dass Sie nicht**keine Aktion** ausgewählt haben. Dies ist standardmäßig **Medien markieren**, das ein Symbol auf dem Vorschaubild anzeigt, um darzustellen, dass es gesehen wurde.
 2. Auf der Registerkarte **Geteilte Inhalte** suchen Sie den Ordner, den Sie überwachen wollen, und aktivieren Sie das **Wiedergabe-Status der Dateien überwachen** Kontrollkästchen in dieser Zeile.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+3. Wenn Sie möchten, dass der Spielstatus für verschiedene Renderer separat verfolgt wird, können Sie Renderer mit verschiedenen Benutzerkonten verknüpfen. Jeder Account speichert seinen eigenen Spielstatus.
 
 ## Dateien als "Voll abgespielt" markieren
 
 Nachdem Sie die Setup-Schritte abgeschlossen haben, müssen Sie lediglich 92% oder mehr einer Datei abspielen.
 
-## Mark TV series, videos, or directories as fully played manually
+## TV-Serie, Videos oder Verzeichnisse manuell als vollständig wiedergegeben markieren
 
-You can mark TV series and videos as fully played directly via the web player:
+Sie können Fernsehserien und Videos direkt über den Webplayer als vollständig abgespielt markieren:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Beispiel wie Fernsehserien und Videos als vollständig abgespielt markiert werden](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Um alle Dateien in einem freigegebenen Verzeichnis als vollständig abgespielt im _alten_ Einstellungen-Interface zu markieren, im **Shared Content** Tab rechtsklick auf das Verzeichnis, das man als vollständig wiedergegeben markieren möchte und dann auf **Markiere alle abgespielten Inhalte** klicken
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Beispiel wie ein Verzeichnis als vollständig abgespielt markiert wird](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Status "Voll abgespielt" entfernen / als nicht abgespielt markieren
 

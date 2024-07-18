@@ -1,8 +1,8 @@
 # Externt API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Det externa API:et gör det möjligt för program att komma åt eller utlösa UMS funktioner med ett HTTP-anrop.
 
-## How to enable the external API
+## Hur man aktiverar det externa API:et
 
 Edit UMS.conf and configure an api_key like this
 
