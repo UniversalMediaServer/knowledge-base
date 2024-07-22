@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# 简介
 
-This website contains the official support documentation for using Universal Media Server.
+本网站提供 Universal Media Server 的官方支持使用文档。
 
 If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
 
