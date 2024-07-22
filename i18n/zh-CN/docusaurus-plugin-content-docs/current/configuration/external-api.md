@@ -4,11 +4,11 @@ The external API enables programs to access or trigger UMS functionalities with 
 
 ## How to enable the external API
 
-Edit UMS.conf and configure an api_key like this
+编辑 UMS.conf 文件并设置 api_key 的值，格式如下：
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_ ` secret_password` _ 的内容必须不小于 12 个字符
 
 ## API usage
 
