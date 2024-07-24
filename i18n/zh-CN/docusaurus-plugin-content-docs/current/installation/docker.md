@@ -1,6 +1,6 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+其中一些安装步骤可能不适用于您。  理解它们干了什么再略过，或者根据需要调整。
 
 ## Preparation
 
@@ -88,7 +88,7 @@ Matching error messages can be seen using journalctl, so it is an SELinux proble
 
 Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
 
-## References
+## 参考资料：
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view

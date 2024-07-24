@@ -39,7 +39,7 @@ Text
 XPath: /pre[1]/code
 ```
 
-#### rescan file or folder
+#### Torna a analitzar arxiu o carpeta
 
 | Sense clau Capçalera de la taula XPath: /table[2]/thead/tr/th[1] | Sense clau Capçalera de la taula XPath: /table[2]/thead/tr/th[2]                               |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
