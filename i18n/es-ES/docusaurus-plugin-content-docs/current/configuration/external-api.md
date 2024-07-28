@@ -127,12 +127,12 @@ curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: 
 
 Eliminar álbum como estado.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intención                     | No me gusta una canción identificada por musicBrainz releaseID |
+| ----------------------------- | -------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/like/</span>dislikealbum`   |
+| POST BODY                     | `musicBrainz_releaseID`                                        |
+| POST BODY ejemplo/descripcion | 1e0eee38-a9f6-49bf-84d0-45d0647799af                           |
+| Disponible desde              | 10.20                                                          |
 
 Example:
 
@@ -318,7 +318,7 @@ This call will list all available playlists.
 
 These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
-| Encabezado de tabla   | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
+| Encabezado de tabla   | Ofrece todas las listas de reproducción compatibles y disponibles (`m3u`, `m3u8` y `pls`) desde la carpeta configurada.                                  |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
@@ -332,7 +332,7 @@ Ejemplo:
 
 ```
 
-This call will list list all available playlist accessible by UMS.
+Esta llamada listará todas las listas de reproducción disponibles accesibles por UMS.
 
 #### adding songs to playlists
 
