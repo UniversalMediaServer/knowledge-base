@@ -134,17 +134,17 @@ Eliminar álbum como estado.
 | POST BODY ejemplo/descripcion | 1e0eee38-a9f6-49bf-84d0-45d0647799af                           |
 | Disponible desde              | 10.20                                                          |
 
-Example:
+Ejemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Esta llamada eliminó el atributo liked del álbum identificado por musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### es un álbum que gusta
 
-Check album like state.
+Comprobar álbum como estado.
 
 | Intention                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
