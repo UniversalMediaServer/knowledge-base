@@ -146,7 +146,7 @@ Esta llamada eliminó el atributo liked del álbum identificado por musicbrainz 
 
 Comprobar álbum como estado.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| Intención                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
