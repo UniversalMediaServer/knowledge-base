@@ -1,6 +1,6 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
+Alguns destes  passos podem não ser aplicáveis a sua instalação.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
 
 ## Preparação
 
@@ -12,7 +12,7 @@ Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
+Instalar o Docker (Engine): https://docs.docker.com/engine/install/fedora/
 
 #### Instruções adicionais
 
