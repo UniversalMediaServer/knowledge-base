@@ -1,10 +1,10 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
+Alguns destes  passos podem não ser aplicáveis a sua instalação.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
 
 ## Preparação
 
-For operating system support and service packages.
+Por Sistema Operacional e gerenciadores de pacote.
 
 ### Debian Linux
 
@@ -12,7 +12,7 @@ Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
+Instalar o Docker (Engine): https://docs.docker.com/engine/install/fedora/
 
 #### Instruções adicionais
 
@@ -20,7 +20,7 @@ Instalar o Docker (Engine): https://docs.docker.com/engine/install/debian/
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Refaça o Login ou reinicie a máquina.
 
 ```
 sudo su -;
@@ -34,15 +34,15 @@ Monte o armazenamento nativo e ligue-o nesse pasta, provavelmente só de leitura
 
 Exemplo de teste: Simulação simbólica simples, para caminho diferente no sistema nativo pode não funcionar, já que não haverá acesso a ele fora do  caminho do volume montado para a pasta do docker.  Em vez disso, tente copiar para esta pasta.
 
-## Container Setup
+## Configurações do container
 
 Monte os seguintes volumes:
 - Pasta de mídia `/media`
 - Pasta de perfil contendo UMS.conf `/profile`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Exponha ou redirecione estas portas do host(máquina hospedeira do Docker): 1044, 5001, 9001.
 
-Os seguintes scripts realizam isso (processo escama de peixe):
+Os seguintes scripts realizam isso (utilizando a ferramenta de shell:  Fish Shell):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,35 +60,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Investigando problemas ou falhas
 
-### General
+### Gerais
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Continua parando o container quando executamos o comando inspect do docker
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Para Informações mais detalhadas no terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
-docker cp <containerName>:/var/log/UMS/root/debug.log ./;
+docker cp < nome do container >:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problemas no Ponto de Montagem(mount)
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Usando Fedora CoreOS, eu tive esses problemas de acesso/permissao negada usando vinculo de montagem(bind mounts)
 
 Pode ser recomendável usar a capacidade de administração do Docker de nomes por volume, mas para evitar essa complexidade, Descobri que o adicional `:Z` como opção sufixo para descritor de montagem permitir o acesso de escrita ao suporte dos arquivos nativos. `:z` pode ser usado em alternativa, mas aconselha-sepor segurança manter os recursos mais isolados nos ambientes aplicativo/serviço, ao invés de partilhados.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. A solução seria executar `chcon -Rt svirt_sandbox_file_t` host_dir, mas isso também parece desencorajado.
+Mensagem de erros similares podem ser observadas utilizando  journalctl, então é um problema do SELinux. A solução seria executar `chcon -Rt svirt_sandbox_file_t` host_dir, mas isso também parece desencorajado.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Estranhamente isso não é um problema no Fedora Workstation, porém eu acredito que instalar manualmente adicionou um pacote para lidar com isto. Aparenta ser o pacote container-selinux
 
-## References
+## Referências:
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
