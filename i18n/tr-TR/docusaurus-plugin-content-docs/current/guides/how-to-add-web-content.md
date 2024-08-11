@@ -1,26 +1,26 @@
-# How to add web content
+# Web içeriği nasıl eklenir
 
-This article will explain how to add web content.
+Bu makale web içeriğinin nasıl ekleneceğini açıklayacak.
 
-## Video feeds
+## Görüntü beslemeleri
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+RSS bildirim bağlantılarını ekleyerek görüntü beslemelerine/kanallara abone olabilirsiniz veya YouTube söz konusu olduğunda bağlantıyı kanala girmeniz yeterlidir.
 
-### 1: Go to the Shared Content section
+### 1: Paylaşılan İçerik bölümüne gidin
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](./img/how-to-add-web-content-1-shared-content.png)
+Web tarayıcınızdaki UMS ayarlarında menüyü açın ve Paylaşılan İçerik’i seçin\
+![Ayarlar menüsü](./img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: "Yeni paylaşılan içerik ekle" kalıcı penceresini açın
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type\
-![New shared content options modal](./img/how-to-add-web-content-2-add-modal.png)
+"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü beslemesi" türünü seçmektir\
+![Yeni paylaşılan içerik seçenekleri kalıcı penceresi](./img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Beslemenizi ekleyin
 
-Here you can add your feed
+Buraya beslemenizi ekleyebilirsiniz
 
-#### Name
+#### Ad
 
 The "Name" field is disabled for video feeds, because the feeds define their own names.
 
