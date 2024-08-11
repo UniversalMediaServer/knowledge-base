@@ -27,19 +27,21 @@ Wenn Sie ausgewählt haben, dass Sie unbekannte Renderer erlauben oder blockiere
 
 ## Person mit Renderer verknüpfen
 
-Sie können Benutzerkonten mit Renderers/Geräten verknüpfen, so dass Sie unabhängige Wiedergabe-Tracking haben können. Wenn Sie z.B. einen Fernseher im Wohnzimmer und einen anderen in Ihrem Schlafzimmer haben, möchten Sie vielleicht nicht, dass der Fernseher im Wohnzimmer das abspielt, was Sie gerade in Ihrem Schlafzimmer schauen.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![Beispiel wie ein Konto einem Renderer zugewiesen werden soll](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Freigegebene Inhalte auf bestimmte Gruppen beschränken
 
-Sie können nun wählen, ob Sie Verzeichnisse oder Online-Inhalte mit bestimmten Gruppen teilen möchten. Wenn Sie zum Beispiel eine Person (oder ein Gerät, das einer Person zugewiesen ist) haben, die ein Kind ist, kann man sie der "Kids" Gruppe zuordnen. Dann geben Sie dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht den Inhalt "Horror" oder "Nur Erwachsene". Oder ihnen Zugriff auf den Kurzgesagt Web-Feed geben, aber nicht auf die Historie Podcasts.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![Beispiel für gemeinsame Inhaltsgruppen](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Ordner verstecken
 
-Steuern Sie die Sichtbarkeit der virtuellen Ordner. Diese Einstellungen finden Sie in der UMS.conf-Datei. Um einige Ordner während des Surfens auszublenden, setzen Sie einfach ihren Wert auf true oder markieren Sie sie im Reiter Navigation/Freigabe Einstellungen aus dem erweiterten GUI-Modus.
+Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
 ```
 hide_recently_played_folder =true
@@ -51,22 +53,22 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-Um den Webordner auszublenden, müssen Sie das externe Netzwerk in der Registerkarte Allgemein der Konfiguration im erweiterten GUI-Modus deaktivieren oder den Wert „external_network = false“ in Ihrer UMS.conf Datei setzen. Dies hat den Nebeneffekt, dass der automatische Updater nicht funktioniert. Die Änderungen an der GUI werden nach einem Neustart wirksam.
+To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN Code
 
-Alle oben genannten Methoden beschränken den Zugriff durch verschiedene Renderer. Aber wenn Sie Zugang zu einem Renderer erhalten, dem es erlaubt ist, einen Ordner zu sehen, werden Ihnen diese Methoden nicht helfen (wenn die Kinder Zugang zum Wohnzimmer TV haben, der Zugang zu allen Medien hat, dann haben sie Zugang zu diesen Medien). Der PIN-Code löst dieses Problem. Sie können Ordner/Medien hinter einem PIN-Code verstecken, den Sie VOM Renderer aus eingeben müssen. Standardmäßig ist die Eingabe eine Abfolge von Ziffern (0-9) genau wie ein Geldautomaten-Code. Ich empfehle Ihnen dringend, Ziffern-basierte Codes zu verwenden, da es ansonsten schwierig ist, diese im Renderer einzugeben. Aber wenn Sie extra paranoid sind, können Sie Buchstaben hinzufügen. Es funktioniert folgendermassen: Fügen Sie eine Datei UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. Es gibt keine Längenbeschränkung für den Code. Zum Beispiel:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*privat.*,1234
 ```
 
-Es zwingt Sie, einen Code einzugeben, wenn der Ordner/Medien das Wort "privat" enthalten -der korrekte Code ist 1234. Der Code bleibt dann für 4 Stunden gültig (wenn Sie diese Zeit nicht ändern).
+Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
 
 ## Benutzerdefinierte Gerätekonfiguration
 
-Jede Konfigurationseigenschaft kann auch auf einer Geräte-Basis festgelegt werden, indem eine benutzerdefinierte Gerätekonfiguration erstellt wird, um die Standardeinstellungen für UMS zu überschreiben (vollständige Informationen hierzu finden Sie unter Erstellen einer benutzerdefinierten Gerätekonfiguration).
+Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 
-Zum Beispiel, um das Kinder-TV anzupassen:
+For example, to customize the kids' TV:
 - Klicken Sie auf die Schaltfläche 'Dieses Gerät anpassen' oben rechts im GUI-Popup des Renderers und geben Sie einen Namen für die Konfiguration an.
 - In der neuen conf-Datei, die sich öffnet, fügen Sie alle Einstellungen hinzu, die Sie für den TV überschreiben möchten., z.B. um den Servernamen zu ändern und verschiedene Ordner anzugeben:
 ```
