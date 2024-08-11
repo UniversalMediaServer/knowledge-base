@@ -27,21 +27,21 @@ Lorsque vous avez choisi d'autoriser ou de bloquer par défaut les moteurs de re
 
 ## Lier la personne au moteur de rendu
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Vous pouvez lier des comptes utilisateurs à des moteurs de rendu/appareils, ce qui vous permet d'avoir un accès indépendant au contenu et au suivi de la lecture.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Par exemple, si vous avez une télévision dans le salon et une autre dans votre chambre, la télévision du salon n'a pas besoin d'être affectée par ce que vous regardez dans votre chambre.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Exemple d'affectation d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Restreindre le contenu partagé à certains groupes
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Vous pouvez maintenant choisir de partager des répertoires ou du contenu en ligne avec certains groupes. Par exemple, si une personne (ou un appareil attribué à une personne) est un enfant, vous pouvez l'affecter au groupe "Enfants" et lui donner accès au répertoire "Famille", mais pas au contenu "Horreur" ou "Adulte uniquement". Ou leur donner accès au flux web Kurzgesagt, mais pas aux podcasts sur l'histoire.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Exemple de groupes de contenu partagé](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Cacher les dossiers
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Contrôler la visibilité des dossiers virtuels. Ces paramètres se trouvent dans le fichier UMS.conf. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
 ```
 hide_recently_played_folder =true
