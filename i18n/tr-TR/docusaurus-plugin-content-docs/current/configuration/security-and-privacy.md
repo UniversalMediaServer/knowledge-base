@@ -27,19 +27,21 @@ Tanınmayan işleyiciler için varsayılan olarak izin vermeyi veya engellemeyi 
 
 ## Kişiyi işleyiciye bağlantılayın
 
-Bağımsız oynatma takibine sahip olmanızı sağlayarak kullanıcı hesaplarını işleyicilere/cihazlara bağlantılayabilirsiniz. Örneğin, oturma odanızda ve yatak odanızda birer TV varsa, oturma odası TV’sinin yatak odanızda izlediklerinizden etkilenmesine gerek yoktur.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![Bir işleyiciye nasıl hesap atanacağı örneği](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Paylaşılan içeriği belirli gruplarla sınırlandırın
 
-Artık dizinleri veya çevrimiçi içeriği belirli gruplarla paylaşmayı seçebilirsiniz. Örneğin, çocuğunuz (veya çocuğunuza atanmış bir cihazınız) varsa, onu "Çocuklar" grubuna atayabilir ve bu grubun "Aile" dizinine erişmesini sağlayabilirsiniz, ancak "Korku" veya "Sadece Yetişkin" içeriğe değil. Veya onlara Kurzgesagt web bildirimine erişim verin, ancak tarih podcast’lerine erişim vermeyin.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![Paylaşılan içerik grupları örneği](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Klasörleri gizleme
 
-Sanal klasörlerin görünürlüğünü denetleyin. Bu ayarlar, UMS.conf dosyasında bulunabilir. Göz atarken bazı klasörleri gizlemek için değerlerini true olarak ayarlayın veya gelişmiş GKA kipinden Gezinti/Paylaşım Ayarları sekmesinde bunları işaretleyin.
+Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
 ```
 hide_recently_played_folder =true
@@ -51,22 +53,22 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-Web klasörünü gizlemek için gelişmiş GKA kipinde Genel Yapılandırma sekmesinde Harici ağı etkinleştir seçeneğinin işaretini kaldırmanız veya UMS.conf dosyanızda "external_network =" değerini false olarak değiştirmeniz gerekecek. Bunun, otomatik güncelleyicinin çalışmaması gibi bir yan etkisi olacaktır. GKA’den yapılan değişiklik(ler) yeniden başlatmanın ardından etkin olacaktır.
+To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN kodu
 
-Yukarıdaki yöntemlerin tümü, çeşitli işleyicilerden erişimi kısıtlar. Ancak, bir klasörü görmesine izin verilen bir işlemeye erişiminiz varsa, bu yöntemler size yardımcı olmayacaktır (eğer çocukların oturma odasındaki tüm ortama erişimi olan televizyona erişimi varsa, o zaman bu ortama erişimleri vardır). PIN kodu bu sorunu çözer. Klasörleri/ortamı, işlemeden girmek zorunda olduğunuz bir PIN kodunun arkasına gizlemenizi sağlar. Varsayılan olarak giriş, tıpkı bir ATM kodu gibi bir rakam (0-9) dizisidir. İşleyiciden yazmak zorlaştığı için rakam tabanlı kodlar kullanmanızı şiddetle tavsiye ederim. Ama biraz fazla paranoyaksanız, harf ekleyebilirsiniz. Şu şekilde çalışır: UMS.code adlı bir dosyayı UMS.conf dosyanızla aynı dizine ekleyin ve regexp "UMS.deny" dosyasındaki gibi düzenli bir ifade olacağından ve code ise klasöre/ortama erişim vereceği kod olacağından bu dosyaya regexp,code parametrelerini ekleyin. Kodda uzunluk düzenlemesi yoktur. Örneğin:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*private.*,1234
 ```
 
-Klasör/ortam "private" kelimesini içeriyorsa ve doğru kod 1234 ise sizi bir kod girmeye zorlayacak. Kod daha sonra 4 saat boyunca geçerli kalır (eğer bu süreyi değiştirmezseniz).
+Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
 
 ## Özel Cihaz Yapılandırması
 
-Herhangi bir yapılandırma özelliği, varsayılan UMS ayarlarını geçersiz kılmak için özel bir cihaz yapılandırması oluşturularak cihaz bazında da ayarlanabilir (tam ayrıntı için Özel Cihaz Yapılandırması Oluşturma bölümüne bakın).
+Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 
-Örneğin, çocukların TV’sini özelleştirmek için:
+For example, to customize the kids' TV:
 - İşleyicinin GKA açılır panelinin sağ üst kısmındaki 'Bu cihazı özelleştir' düğmesine tıklayın ve yapılandırma için bir ad belirtin.
 - Açılan yeni conf dosyasında, TV için geçersiz kılmak istediğiniz herhangi bir ayarı ekleyin, örn. sunucu adını değiştirmek ve farklı klasörler belirtmek için:
 ```
