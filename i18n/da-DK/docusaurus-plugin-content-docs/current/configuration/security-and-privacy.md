@@ -27,7 +27,9 @@ When you have chosen whether to allow or block unrecognized renderers by default
 
 ## Link person to renderer
 
-You can link user accounts to renderers/devices, allowing you to have independent playback tracking. For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
