@@ -9,12 +9,12 @@ You can subscribe to video feeds/channels by adding the RSS feed links, or in th
 ### 1: Go to the Shared Content section
 
 In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+![Settings menu](./img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Open the "Add new shared content" modal
 
 When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type\
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+![New shared content options modal](./img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Add your feed
 
@@ -41,9 +41,9 @@ When you are happy with the options you entered, select the "Add" button.
 ### Feed order
 
 If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+![Shared content list and ordering ability](./img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Save changes
 
 You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+![Example of a video feed on the web player](./img/how-to-add-web-content-4-feed-player.png)
