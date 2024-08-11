@@ -27,19 +27,21 @@ UMS는 이러한 상황에서 액세스를 제어하는 여러 가지 방법을 
 
 ## 개인 렌더러 링크
 
-사용자 계정을 렌더러/장치에 연결하여 독립적인 재생 추적을 할 수 있습니다. 예를 들어, 거실에 TV가 있고 침실에 다른 TV가 있다면, 거실 TV는 침실에서 보는 것에 영향을 받을 필요가 없습니다.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![렌더러에 계정을 할당하는 방법의 예](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## 공유 컨텐츠를 특정 그룹으로 제한
 
-이제 특정 그룹과 디렉터리 또는 온라인 콘텐츠를 공유하도록 선택할 수 있습니다. 예를 들어, 어린이인 사용자 (또는 사용자에게 할당된 장치)가 있는 경우 해당 사용자를 "어린이" 그룹에 할당하고 해당 그룹에 "가족" 디렉터리에 액세스할 수 있지만 "공포" 또는 "성인 전용" 컨텐츠에는 액세스할 수 없습니다. 또는 역사 팟캐스트가 아닌 Kurzgesagt 웹 피드에 액세스할 수 있습니다.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![공유 컨텐츠 그룹의 예](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## 폴더 숨기기
 
-가상 폴더의 가시성을 제어합니다. 이러한 설정은 UMS.conf 파일에서 확인할 수 있습니다. 탐색하는 동안 일부 폴더를 숨기려면 값을 true로 설정하거나 고급 GUI 모드의 탐색/공유 설정 탭에서 폴더를 선택합니다. 
+Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
 ```
 hide_recently_played_folder =true
@@ -51,22 +53,22 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-웹 폴더를 숨기려면 고급 GUI 모드에서 일반 구성 탭에서 외부 네트워크 사용을 해제하거나 UMS.conf 파일에서 'external_network=' 값을 false로 변경해야 합니다. 이렇게 하면 자동 업데이트기가 작동하지 않는 부작용이 발생합니다. GUI에서 변경한 내용은 재시작 후 유효합니다.
+To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN 코드
 
-위의 모든 방법은 다양한 렌더러의 접근을 제한합니다. 그러나 폴더를 볼 수 있는 렌더에 액세스할 수 있는 경우 이러한 방법은 도움이 되지 않습니다(아이들이 모든 미디어에 액세스할 수 있는 거실 TV에 액세스할 수 있는 경우 해당 미디어에 액세스할 수 있습니다). PIN 코드가 이 문제를 해결합니다. 렌더링에서 입력해야 하는 PIN 코드 뒤에 폴더/미디어를 숨길 수 있습니다. 기본적으로 입력은 ATM 코드와 마찬가지로 숫자 (0-9)의 시퀀스입니다. 렌더러에서 입력하기가 어려워지기 때문에 디지털 기반 코드를 사용하는 것이 좋습니다. 그러나 추가 편집증이 있는 경우 문자를 추가할 수 있습니다. 다음과 같이 작동합니다: UMS.code라는 파일을 UMS.conf와 같은 디렉터리에 추가하고, regexp는 "UMS.deny" 파일과 같이 정규 표현식이고 코드는 폴더/미디어에 대한 액세스 권한을 부여하는 코드입니다. 코드에 길이 규정이 없습니다. 예를 들면:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*private.*,1234
 ```
 
-폴더/미디어에 "개인"이라는 단어가 포함되어 있고 올바른 코드가 1234인 경우 코드를 입력하도록 강제합니다. 그런 다음 코드는 4시간 동안 유효합니다 (그 시간을 변경하지 않는 경우).
+Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
 
 ## 사용자 지정 장치 구성
 
-기본 UMS 설정을 재정의하는 사용자 지정 장치 구성을 생성하여 장치별로 모든 구성 속성을 설정할 수도 있습니다 (자세한 내용은 사용자 지정 장치 구성 생성 참조).
+Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 
-예를 들어, 어린이용 TV를 사용자 지정하려면:
+For example, to customize the kids' TV:
 - 렌더러의 GUI 팝업 패널 우측 상단에 있는 '이 장치 사용자 지정' 버튼을 클릭하고 구성의 이름을 지정합니다.
 - 여는 새 conf 파일에서 서버 이름을 변경하고 다른 폴더를 지정하는 등 TV에 대해 재정의하려는 모든 설정을 추가합니다:
 ```
