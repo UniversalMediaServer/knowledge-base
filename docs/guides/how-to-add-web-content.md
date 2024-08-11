@@ -34,7 +34,7 @@ This is the link to the video feed. It will usually end in `.xml`, but we handle
 
 #### Authorized groups
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md) for more details.
+The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
 
 When you are happy with the options you entered, select the "Add" button.
 
