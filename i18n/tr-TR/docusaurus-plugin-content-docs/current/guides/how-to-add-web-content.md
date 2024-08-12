@@ -2,9 +2,9 @@
 
 Bu makale web içeriğinin nasıl ekleneceğini açıklayacak.
 
-## Görüntü beslemeleri
+## Görüntü yayınları
 
-RSS bildirim bağlantılarını ekleyerek görüntü beslemelerine/kanallara abone olabilirsiniz veya YouTube söz konusu olduğunda bağlantıyı kanala girmeniz yeterlidir.
+RSS bildirim bağlantılarını ekleyerek görüntü yayınlarına/kanallara abone olabilirsiniz veya YouTube söz konusu olduğunda bağlantıyı kanala girmeniz yeterlidir.
 
 ### 1: Paylaşılan İçerik bölümüne gidin
 
@@ -13,20 +13,20 @@ Web tarayıcınızdaki UMS ayarlarında menüyü açın ve Paylaşılan İçerik
 
 ### 2: "Yeni paylaşılan içerik ekle" kalıcı penceresini açın
 
-"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü beslemesi" türünü seçmektir\
+"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü yayını" türünü seçmektir\
 ![Yeni paylaşılan içerik seçenekleri kalıcı penceresi](./img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Beslemenizi ekleyin
+### 3: Yayınınızı ekleyin
 
-Buraya beslemenizi ekleyebilirsiniz
+Buraya yayınınızı ekleyebilirsiniz
 
 #### Ad
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Yayınlar kendi adlarını tanımladığından görüntü yayınları için "Ad" alanı etkisizleştirildi.
 
-#### Path
+#### Yol
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+"Yol" alanı UMS tarafından görüntülenecek dizin yapısını tanımlar. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
 
 #### Source/URL
 
