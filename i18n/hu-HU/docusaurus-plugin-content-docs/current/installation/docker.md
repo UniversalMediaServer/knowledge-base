@@ -32,17 +32,17 @@ chmod -R g+w /srv/UMS;
 
 Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Teszt példa: Előfordulhat, hogy a gazdagép rendszeren egy másik elérési útra való egyszerű szimlinkelés nem működik, mivel a docker-tároló csatlakoztatott kötetútvonalán kívül nem lesz elérhető.  Próbálja meg ehelyett a fájlok másolását ezen a helyen belülre.
 
 ## Konténer beállítása
 
-Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+Csatlakoztassa a következő köteteket:
+- Média mappa `/media`
+- Az UMS.conf-ot tartalmazó profil mappa `/profile`
 
 A következő portok feltárása/továbbítása az állomásról: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+a következő szkriptek valósítják meg ezt (a fish shell használatával):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
