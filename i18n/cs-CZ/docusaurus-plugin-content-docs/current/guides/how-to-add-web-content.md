@@ -1,32 +1,32 @@
-# How to add web content
+# Jak přidat webový obsah
 
-This article will explain how to add web content.
+Tento článek vysvětlí, jak přidat webový obsah.
 
-## Video feeds
+## Video kanály
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Můžete se přihlásit k odběru video kanálů/kanálů přidáním RSS feedových odkazů, nebo v případě YouTube, jen vložte odkaz na kanál.
 
-### 1: Go to the Shared Content section
+### 1: Přejděte do sekce Sdílený obsah
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
+V nastavení UMS ve vašem webovém prohlížeči otevřete menu a zvolte nabídku Sdílený obsah\
 ![Settings menu](./img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: Otevřete "Přidat nový sdílený obsah"
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type\
+Když vyberete tlačítko "Přidat nový sdílený obsah", otevře se modál, který vám umožní přidat libovolný typ média. Prvním krokem je zvolit "Video feed" typ\
 ![New shared content options modal](./img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Přidejte svůj feed
 
-Here you can add your feed
+Zde můžete přidat svůj feed
 
-#### Name
+#### Název
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Pole "Název" je pro video kanály zakázáno, protože kanály definují jejich vlastní jméno.
 
-#### Path
+#### Cesta
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Pole "Cesta" definuje strukturu adresáře, která bude zobrazena UMS. Například, pokud zadáte `Web/YouTube kanály`, váš kanál bude uvnitř adresáře `YouTube kanály`, vnořené do adresáře `Web`. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
 
 #### Source/URL
 
