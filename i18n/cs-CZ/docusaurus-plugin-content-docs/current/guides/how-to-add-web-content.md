@@ -26,24 +26,24 @@ Pole "Název" je pro video kanály zakázáno, protože kanály definují jejich
 
 #### Cesta
 
-Pole "Cesta" definuje strukturu adresáře, která bude zobrazena UMS. Například, pokud zadáte `Web/YouTube kanály`, váš kanál bude uvnitř adresáře `YouTube kanály`, vnořené do adresáře `Web`. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Pole "Cesta" definuje strukturu adresáře, která bude zobrazena UMS. Například, pokud zadáte `Web/YouTube kanály`, váš kanál bude uvnitř adresáře `YouTube kanály`, vnořené do adresáře `Web`. To umožňuje organizovat váš obsah, jakkoli chcete, a je zvláště užitečný v případě, že máte různé poskytovatele obsahu, a používáte UMS, že je máte všechny na jednom místě.
 
-#### Source/URL
+#### Zdroj/URL:
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Toto je odkaz na video kanál. Obvykle skončí na `.xml`, ale pracujeme s YouTube odlišně, abychom přijali URL kanálu přímo, což vám umožní zadat např. `https://www.youtube.com/@kurzgesagt`
 
-#### Authorized groups
+#### Autorizované skupiny
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Pole "Autorizované skupiny" umožňuje zpřístupnit tento kanál pouze určitým skupinám definovaným v UMS, které jsou spojeny s různými uživateli a/nebo zařízeními. Více informací viz [Bezpečnost a soukromí](../configuration/security-and-privacy.md#link-person-to-renderer) .
 
-When you are happy with the options you entered, select the "Add" button.
+Když jste spokojeni s možnostmi, které jste zadali, vyberte tlačítko "Přidat".
 
-### Feed order
+### Pořadí kanálu
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](./img/how-to-add-web-content-3-see-name-and-sort.png)
+Pokud byl odkaz kanálu platný, měli byste nyní vidět vyplněné pole "Název", a nyní můžete přetažením kanálu nahoru nebo dolů ovládat objednávku\
+! Sdílený seznam obsahu a schopnost objednání obsahu](. img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Uložit změny
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](./img/how-to-add-web-content-4-feed-player.png)
+Můžete opakovat předchozí kroky pro přidání/upravení více obsahu, a pokud jste spokojeni s vašimi změnami, vyberte tlačítko "Uložit" v dolní části stránky. Teď můžeš vidět svůj obsah na svých zařízeních:\
+![Příklad video kanálu na webovém přehrávači](./img/how-to-add-web-content-4-feed-player.png)
