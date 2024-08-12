@@ -31,17 +31,17 @@ Uživatelské účty můžete propojit s přehrávačem/zařízeními, což vám
 
 Například pokud máte TV v obývacím pokoji a další ve své ložnici, TV v obývacím pokoji nepotřebuje být ovlivněna tím co sledujete v ložnici.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Příklad jak přiřadit účet k přehrávači](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Omezit sdílený obsah pro určité skupiny
 
 Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Kids", a povolit skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k podcastům historie.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Příklad sdílených skupin obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Skrytí složek
 
-Control the visibility of the virtual folders. Tato nastavení naleznete v souboru UMS.conf. Pro skrytí některých složek při prohlížení stačí nastavit jejich hodnotu na hodnotu true, nebo je zaškrtněte v záložce Navigace/Nastavení sdílení v pokročilém režimu GUI.
+Ovládá viditelnost virtuálních složek. Tato nastavení naleznete v souboru UMS.conf. Pro skrytí některých složek při prohlížení stačí nastavit jejich hodnotu na hodnotu true, nebo je zaškrtněte v záložce Navigace/Nastavení sdílení v pokročilém režimu GUI.
 
 ```
 hide_recently_played_folder =true
