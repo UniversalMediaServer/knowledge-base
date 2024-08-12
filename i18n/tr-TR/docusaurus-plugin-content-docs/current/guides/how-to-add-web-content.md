@@ -26,24 +26,24 @@ Yayınlar kendi adlarını tanımladığından görüntü yayınları için "Ad"
 
 #### Yol
 
-"Yol" alanı UMS tarafından görüntülenecek dizin yapısını tanımlar. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+"Yol" alanı UMS tarafından görüntülenecek dizin yapısını tanımlar. Örneğin, eğer `Web/YouTube Kanalları`nı girerseniz yayınınız `Web` dizini içine yerleştirilmiş `YouTube Kanalları` dizininin içinde olacaktır. Bu, içeriğinizi istediğiniz gibi düzenlemenize olanak tanır ve özellikle farklı yayın sağlayıcılarınız olduğunda ve bunların tümünü aynı yerde bulunduran UMS’yi kullandığınızda kullanışlıdır.
 
-#### Source/URL
+#### Kaynak/URL
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Bu görüntü yayınının bağlantısıdır. Genellikle ".xml" ile biter, ancak YouTube’un doğrudan bir kanal URL’sini kabul etmesini örn. `https://www.youtube.com/@kurzgesagt` şeklinde girmeye izin vererek farklı şekilde ele alıyoruz.
 
-#### Authorized groups
+#### Yetkili gruplar
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+"Yetkili gruplar" alanı, bu yayını yalnızca UMS’de tanımlanmış ve farklı kullanıcılar ve/veya cihazlarla ilişkilendirilmiş belirli gruplar tarafından kullanılabilir olmasını sağlar. Daha fazla ayrıntı için [Güvenlik ve Gizlilik](../configuration/security-and-privacy.md#link-person-to-renderer) konusuna bakın.
 
-When you are happy with the options you entered, select the "Add" button.
+Girdiğiniz seçeneklerden memnun olduğunuzda "Ekle" düğmesine tıklayın.
 
-### Feed order
+### Yayın sırası
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](./img/how-to-add-web-content-3-see-name-and-sort.png)
+Eğer yayın bağlantısı geçerliyse, artık "Ad" alanının doldurulmuş olduğunu görmelisiniz ve artık sırayı denetlemek için yayını yukarı veya aşağı sürükleyebilirsiniz\
+![Paylaşılan içerik listesi ve sıralama yeteneği](./img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Değişiklikleri kaydet
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](./img/how-to-add-web-content-4-feed-player.png)
+Daha fazla içerik eklemek/düzenlemek için önceki adımları tekrarlayabilir ve değişikliklerinizden memnun olduğunuzda sayfanın en altındaki "Kaydet" düğmesine tıklayabilirsiniz. Artık içeriğinizi cihazlarınızda görebilirsiniz:\
+![Web oynatıcısındaki görüntü yayını örneği](./img/how-to-add-web-content-4-feed-player.png)
