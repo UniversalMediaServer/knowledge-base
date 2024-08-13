@@ -8,13 +8,13 @@ Můžete se přihlásit k odběru video kanálů/kanálů přidáním RSS feedov
 
 ### 1: Přejděte do sekce Sdílený obsah
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+V nastavení UMS ve vašem webovém prohlížeči otevřete menu a zvolte nabídku Sdílený obsah\
+![Settings menu](./img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Otevřete "Přidat nový sdílený obsah"
 
-Když vyberete tlačítko "Přidat nový sdílený obsah", otevře se modál, který vám umožní přidat libovolný typ média. The first step is to choose the "Video feed" type\
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+Když vyberete tlačítko "Přidat nový sdílený obsah", otevře se modál, který vám umožní přidat libovolný typ média. Prvním krokem je zvolit "Video feed" typ\
+![New shared content options modal](./img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Přidejte svůj feed
 
@@ -40,10 +40,10 @@ Když jste spokojeni s možnostmi, které jste zadali, vyberte tlačítko "Přid
 
 ### Pořadí kanálu
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Pokud byl odkaz kanálu platný, měli byste nyní vidět vyplněné pole "Název", a nyní můžete přetažením kanálu nahoru nebo dolů ovládat objednávku\
+! Sdílený seznam obsahu a schopnost objednání obsahu](. img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Uložit změny
 
-Můžete opakovat předchozí kroky pro přidání/upravení více obsahu, a pokud jste spokojeni s vašimi změnami, vyberte tlačítko "Uložit" v dolní části stránky. Now you can see your content on your devices:\
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Můžete opakovat předchozí kroky pro přidání/upravení více obsahu, a pokud jste spokojeni s vašimi změnami, vyberte tlačítko "Uložit" v dolní části stránky. Teď můžeš vidět svůj obsah na svých zařízeních:\
+![Příklad video kanálu na webovém přehrávači](./img/how-to-add-web-content-4-feed-player.png)
