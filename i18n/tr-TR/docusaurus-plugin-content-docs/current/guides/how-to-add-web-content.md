@@ -8,13 +8,13 @@ RSS bildirim bağlantılarını ekleyerek görüntü yayınlarına/kanallara abo
 
 ### 1: Paylaşılan İçerik bölümüne gidin
 
-Web tarayıcınızdaki UMS ayarlarında menüyü açın ve Paylaşılan İçerik’i seçin\
-![Ayarlar menüsü](./img/how-to-add-web-content-1-shared-content.png)
+In the UMS settings in your web browser, open the menu and select Shared Content\
+![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: "Yeni paylaşılan içerik ekle" kalıcı penceresini açın
 
-"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü yayını" türünü seçmektir\
-![Yeni paylaşılan içerik seçenekleri kalıcı penceresi](./img/how-to-add-web-content-2-add-modal.png)
+"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. The first step is to choose the "Video feed" type\
+![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Yayınınızı ekleyin
 
@@ -40,10 +40,10 @@ Girdiğiniz seçeneklerden memnun olduğunuzda "Ekle" düğmesine tıklayın.
 
 ### Yayın sırası
 
-Eğer yayın bağlantısı geçerliyse, artık "Ad" alanının doldurulmuş olduğunu görmelisiniz ve artık sırayı denetlemek için yayını yukarı veya aşağı sürükleyebilirsiniz\
-![Paylaşılan içerik listesi ve sıralama yeteneği](./img/how-to-add-web-content-3-see-name-and-sort.png)
+If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
+![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Değişiklikleri kaydet
 
-Daha fazla içerik eklemek/düzenlemek için önceki adımları tekrarlayabilir ve değişikliklerinizden memnun olduğunuzda sayfanın en altındaki "Kaydet" düğmesine tıklayabilirsiniz. Artık içeriğinizi cihazlarınızda görebilirsiniz:\
-![Web oynatıcısındaki görüntü yayını örneği](./img/how-to-add-web-content-4-feed-player.png)
+Daha fazla içerik eklemek/düzenlemek için önceki adımları tekrarlayabilir ve değişikliklerinizden memnun olduğunuzda sayfanın en altındaki "Kaydet" düğmesine tıklayabilirsiniz. Now you can see your content on your devices:\
+![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
