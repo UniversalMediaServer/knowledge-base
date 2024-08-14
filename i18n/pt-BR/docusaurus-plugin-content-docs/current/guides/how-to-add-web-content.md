@@ -8,8 +8,8 @@ You can subscribe to video feeds/channels by adding the RSS feed links, or in th
 
 ### 1: Go to the Shared Content section
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+Nas configurações do UMS no seu navegador da web, abra o menu e selecione Conteúdo Compartilhado\
+![Menu de configurações](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Open the "Add new shared content" modal
 
