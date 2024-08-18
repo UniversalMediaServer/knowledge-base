@@ -27,19 +27,21 @@ UMSは、そのような状況でアクセスを制御するためのさまざ�
 
 ## レンダラーに担当者をリンク
 
-ユーザーアカウントをレンダラー/デバイスにリンクすることで、独立した再生トラッキングが可能になります。 例えば、リビングルームにテレビがあり、寝室に別のテレビがある場合。 リビングルームのテレビは寝室で見るものの影響を受ける必要はありません
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![レンダラーにアカウントを割り当てる方法の例](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## 共有コンテンツを特定のグループに制限する
 
-特定のグループとディレクトリまたはオンラインコンテンツを共有することができます。 たとえば、子供である人(または人に割り当てられたデバイス)がある場合。 「Kids」グループに割り当てることができます そして、そのグループに "Family" ディレクトリへのアクセス権を与えますが、"Horror" や "Adult Only" コンテンツは与えません。 またはKurzgesagt 網の供給にそれらにアクセスを与えなさい、しかし歴史ポッドキャスト。
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![共有コンテンツグループの例](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## フォルダを非表示
 
-仮想フォルダの表示を制御します。 これらの設定は UMS.conf ファイルにあります。 参照中にフォルダを非表示にするには、値を true に設定するか、詳細なGUIモードの「ナビゲーション/共有設定」タブでチェックを入れます。
+Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
 
 ```
 hide_recently_played_folder =true
@@ -51,22 +53,22 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-Webフォルダを非表示にする 詳細なGUIモードで外部ネットワークを有効にするか、UMSで`external_network ='の値をfalseに変更する必要があります。 onfファイル これにより、自動アップデータが機能しないという副作用が生じます。 GUIからの変更は、再起動後に有効になります。
+To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN コード
 
-上記のすべてのメソッドは、様々なレンダラーからのアクセスを制限します。 しかし、フォルダを表示することが許可されているレンダリングにアクセスできる場合、それらの方法はあなたを助けません(子供たちがすべてのメディアにアクセスできるリビングルームのテレビにアクセスできる場合、彼らはそのメディアへのアクセス権を持っています)。 PINコードはこの問題を解決します。 これにより、レンダリングから入力しなければならない PIN コードの後ろにフォルダー/メディアを非表示にできます。 デフォルトでは、入力はATMコードと同様の桁数(0-9)です。 レンダラーから入力するのが難しくなるので、数字ベースのコードを使用することを強くお勧めします。 しかし、余分な妄想であれば、手紙を追加することができます。 UMS.codeというファイルをUMSと同じディレクトリに追加します。 onf とそのファイルに regexp,code を "UMS" と同様に正規表現に追加します。 「eny」ファイルとコードは、フォルダ/メディアへのアクセスを許可するコードです。 コードには長さの規制はありません。 例:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*private.*,1234
 ```
 
-フォルダー/メディアに「private」という単語が含まれていて、正しいコードが1234の場合、強制的にコードを入力します。 コードは4時間有効のままです(時間を変更しない場合)。
+Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
 
 ## カスタムデバイス設定
 
-カスタムデバイス構成を作成してデフォルトの UMS 設定を上書きすることで、任意の構成プロパティをデバイスごとに設定することもできます(詳細については、「カスタムデバイス構成の作成」を参照してください)。
+Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 
-例えば、子供のテレビをカスタマイズするには:
+For example, to customize the kids' TV:
 - レンダラーのGUIポップアップ・パネルの右上にある「このデバイスをカスタマイズ」ボタンをクリックし、構成の名前を指定します。
 - 開いた新しいconfファイルでは、テレビのためにオーバーライドしたいすべての設定を追加します。 をクリックします。
 ```

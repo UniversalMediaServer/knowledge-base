@@ -27,13 +27,15 @@ Lorsque vous avez choisi d'autoriser ou de bloquer par défaut les moteurs de re
 
 ## Lier la personne au moteur de rendu
 
-Vous pouvez lier des comptes d'utilisateurs à des restituteurs/appareils, ce qui vous permet d'avoir un suivi indépendant de la lecture. Par exemple, si vous avez une télévision dans le salon et une autre dans votre chambre, la télévision du salon n'a pas besoin d'être affectée par ce que vous regardez dans votre chambre.
+Vous pouvez lier des comptes utilisateurs à des moteurs de rendu/appareils, ce qui vous permet d'avoir un accès indépendant au contenu et au suivi de la lecture.
+
+Par exemple, si vous avez une télévision dans le salon et une autre dans votre chambre, la télévision du salon n'a pas besoin d'être affectée par ce que vous regardez dans votre chambre.
 
 ![Exemple d'affectation d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Restreindre le contenu partagé à certains groupes
 
-Vous pouvez désormais choisir de partager des répertoires ou du contenu en ligne avec certains groupes. Par exemple, si une personne (ou un appareil attribué à une personne) est un enfant, vous pouvez l'affecter au groupe "Enfants" et lui donner accès au répertoire "Famille", mais pas au contenu "Horreur" ou "Adulte uniquement". Ou leur donner accès au flux web Kurzgesagt, mais pas aux podcasts sur l'histoire.
+Vous pouvez maintenant choisir de partager des répertoires ou du contenu en ligne avec certains groupes. Par exemple, si une personne (ou un appareil attribué à une personne) est un enfant, vous pouvez l'affecter au groupe "Enfants" et lui donner accès au répertoire "Famille", mais pas au contenu "Horreur" ou "Adulte uniquement". Ou leur donner accès au flux web Kurzgesagt, mais pas aux podcasts sur l'histoire.
 
 ![Exemple de groupes de contenu partagé](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
@@ -55,7 +57,7 @@ Pour cacher le dossier Web, vous devrez décocher l'option Activer le réseau ex
 
 ## Code PIN
 
-Toutes les méthodes ci-dessus restreignent l'accès à partir de différents moteurs de rendu. Mais si vous pouvez avoir accès à un rendu qui est autorisé à voir un dossier, ces méthodes ne vous aideront pas (si les enfants ont accès à la télévision du salon qui ont accès à tous les médias, alors ils ont accès à ces médias). Le code PIN résout ce problème. Il vous permet de masquer les dossiers/médias derrière un code PIN que vous devez saisir à partir du rendu. Par défaut, l'entrée est une séquence de chiffres (0-9) comme un code ATM. Je vous conseille vivement d'utiliser des codes à base de chiffres, car il est difficile de les saisir à partir du moteur de rendu. Mais si vous êtes très paranoïaque, vous pouvez ajouter des lettres. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. Il n'y a pas de réglementation sur la longueur du code. Par exemple :
+Toutes les méthodes ci-dessus restreignent l'accès à partir de différents moteurs de rendu. Mais si vous pouvez avoir accès à un rendu qui est autorisé à voir un dossier, ces méthodes ne vous aideront pas (si les enfants ont accès à la télévision du salon qui ont accès à tous les médias, alors ils ont accès à ces médias). Le code PIN résout ce problème. Il vous permet de masquer les dossiers/médias derrière un code PIN que vous devez saisir à partir du rendu. Par défaut, l'entrée est une séquence de chiffres (0-9) comme un code ATM. Je vous conseille vivement d'utiliser des codes à base de chiffres, car il est difficile de les saisir à partir du moteur de rendu. Mais si vous êtes très paranoïaque, vous pouvez ajouter des lettres. Il fonctionne comme suit : Ajouter un fichier appelé UMS.code dans le même répertoire que votre UMS. conf et à ce fichier ajouter regexp,code où regexp est une expression régulière comme dans "UMS. deny" fichier et code est le code qui donne accès au dossier/média. Il n'y a pas de réglementation sur la longueur du code. Par exemple :
 ```
 .*private.*,1234
 ```

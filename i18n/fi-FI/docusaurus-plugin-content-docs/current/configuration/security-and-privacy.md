@@ -27,15 +27,17 @@ Kun olet valinnut, sallitaanko vai estetäänkö tunnistamattomat renderoijat ol
 
 ## Linkitä henkilö renderoijaan
 
-Voit linkittää käyttäjätilejä renderoijille/laitteille, jolloin sinulla on itsenäinen toistonseuranta. Esimerkiksi, jos sinulla on TV olohuoneessa ja toinen makuuhuoneessa, olohuoneen televisioon ei tarvitse vaikuttaa se, mitä katselet makuuhuoneessasi.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![Esimerkki siitä, miten tilin määritetään renderoijalle](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Rajoita jaettua sisältöä tietyille ryhmille
 
-Voit nyt jakaa hakemistoja tai verkkosisältöä tiettyjen ryhmien kanssa. Jos sinulla on esimerkiksi henkilö (tai laite, joka on osoitettu henkilölle), joka on lapsi, voit määrittää ne "Lapset" ryhmälle, ja anna tälle ryhmälle pääsy "Perhe" hakemistoon, mutta ei "Kauhu" tai "Ainoastaan aikuisille" sisältöön. Tai antaa heille pääsy piirettyjen web-syötteeseen, mutta ei historia-podcasteihin.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![Esimerkki jaetuista sisältöryhmistä](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Hiding folders
 

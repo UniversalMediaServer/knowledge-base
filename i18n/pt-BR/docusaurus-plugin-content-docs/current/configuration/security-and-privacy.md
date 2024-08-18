@@ -27,15 +27,17 @@ Se você escolheu permitir ou bloquear renderizadores desconhecidos por padrão 
 
 ## Vincular pessoa ao renderizador
 
-Agora você pode vincular contas de usuário a renderizações / dispositivos, possibilitando que você tenha um rastreamento de reprodução independente. Por exemplo, se você tiver uma TV na sala e outra em seu quarto, a TV da sala não precisa ser afetada por aquilo que você assiste no seu quarto.
+You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
-![Exemplo de como atribuir uma conta a um renderizador](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+
+![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Restringir conteúdo compartilhado a grupos específicos
 
-Agora você pode optar por compartilhar diretórios ou conteúdo on-line com determinados grupos. Por exemplo, se você tem uma pessoa (ou um dispositivo que é atribuído a uma pessoa) que é uma criança, você pode atribuí-la para o grupo "Crianças", e dar acesso desse grupo ao diretório "Família", mas não aos diretórios "Horror" ou "Somente Adulto". Ou dar-lhe acesso ao feed de internet de Kurzgesagt, mas não aos podcasts de história.
+You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![Exemplo de grupos de conteúdo compartilhados](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Hiding folders
 

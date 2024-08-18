@@ -1,14 +1,14 @@
-# How to play media
+# A média lejátszása
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Ez a cikk a videó, hang és kép UMS-en keresztüli lejátszásának 4 fő módját ismerteti.
 
-## 1: Play from a renderer interface
+## 1: Lejátszás egy megjelenítő felületéről
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Ha a megjelenítő DLNA/UPnP-n keresztül csatlakozik az UMS-hez, gyakran megjelenik a "Médiaszerverek" vagy valami hasonló menüben, a renderertől függően. Innen léphet be az UMS-be, és tallózhat az elérni kívánt médiához.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+Ennek megvalósítása renderelőnként nagymértékben változik, de az alapvető funkciók ugyanazok; navigáljon a kiválasztott médiára, és válassza ki a lejátszáshoz.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Az UMS felületéről küldeni egy megjelenítőre
 
 The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
 

@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Csatlakoztassa a tárhelyet a hosztra, és linkelje be a könyvtárba, valószínűleg csak olvashatóan. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Teszt példa: Előfordulhat, hogy a gazdagép rendszeren egy másik elérési útra való egyszerű szimlinkelés nem működik, mivel a docker-tároló csatlakoztatott kötetútvonalán kívül nem lesz elérhető.  Próbálja meg ehelyett a fájlok másolását ezen a helyen belülre.
 
 ## Konténer beállítása
 
-Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+Csatlakoztassa a következő köteteket:
+- Média mappa `/media`
+- Az UMS.conf-ot tartalmazó profil mappa `/profile`
 
 A következő portok feltárása/továbbítása az állomásról: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+a következő szkriptek valósítják meg ezt (a fish shell használatával):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -82,9 +82,9 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 A Fedora CoreOS-t használva hozzáférési/engedélyezési problémáim voltak, amikor megpróbáltam használni a kötési kötéseket.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Lehet, hogy ehelyett a Docker által kezelt, nevesített kötetek képességének használata ajánlott, de ennek a bonyolultságnak az elkerülése érdekében azt tapasztaltam, hogy a bind mount descriptor opció értékéhez hozzáadott `:Z` mint utótag lehetővé teszi a konténer írási hozzáférését az állomásfájlokhoz. :z is használható helyette, de a biztonsági tanácsok azt javasolhatják, hogy az erőforrásokat inkább az alkalmazás/szolgáltatás környezetek között elkülönítve tartsuk, mintsem megosztva.
 
-A megfelelő hibaüzenetek a journalctl segítségével láthatók, tehát SELinux problémáról van szó. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+A megfelelő hibaüzenetek a journalctl segítségével láthatók, tehát SELinux problémáról van szó. A megoldás erre a  `chcon -Rt svirt_sandbox_file_t` host_dir futtatása lenne, de ez is elvetendőnek tűnik.
 
 Furcsa módon ez nem probléma a Fedora Workstation-en, de azt hiszem, a kézi telepítéssel hozzáadtam egy csomagot, ami ezt kezeli. Úgy tűnik, hogy a container-selinux.
 
