@@ -9,7 +9,7 @@ Můžete se přihlásit k odběru video kanálů/kanálů přidáním RSS feedov
 ### 1: Přejděte do sekce Sdílený obsah
 
 V nastavení UMS ve vašem webovém prohlížeči otevřete menu a zvolte nabídku Sdílený obsah\
-![Settings menu](./img/how-to-add-web-content-1-shared-content.png)
+![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Otevřete "Přidat nový sdílený obsah"
 
