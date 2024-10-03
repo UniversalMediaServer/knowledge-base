@@ -1,10 +1,10 @@
 # Külső API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Külső API lehetővé teszi a programok számára, hogy HTTP-hívással elérjék vagy aktiválják az UMS-funkciókat.
 
-## How to enable the external API
+## Hogyan lehet engedélyezni a külső API-t
 
-Edit UMS.conf and configure an api_key like this
+Szerkessze az UMS.conf fájlt, és állítson be egy ilyen api_key-t
 
 `api_key = secret_password`
 
