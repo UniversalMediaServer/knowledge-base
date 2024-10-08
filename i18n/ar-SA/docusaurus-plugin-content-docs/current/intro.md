@@ -5,10 +5,10 @@ slug: /
 
 # Introduction
 
-هذا الموقع يحتوي على كتيبات الدعم الفني الرسمي لاستخدامها في هذا البرنامج
+هذا الموقع يحتوي على كتيبات الدعم الفني الرسمي لاستخدامها في هذا البرنامَج
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+إذا لم تكن مستخدماً حاليًا، وأنت تتطلع إلى تنزيله أو تقرر استخدامه، ربما ستجد [موقعنا الرئيسي](https://www.universalmediaserver.com) أكثر فائدة.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+الموقع منقسم إلى ثلاث أقسام: الإعدادات، الإرشادات و التنصيب.
 
-إذا دخلت إلى هنا بحثاً عن معلومات معينة ولم تجدها، الرجاء إعلامنا بها على مَوقع، GitHub لنضيفها لك.
+إذا جئت إلى هنا للبحث عن معلومات محددة ولم تجدها، يرجى إعلامنا على GitHub حتى نتمكن من إضافتها.
