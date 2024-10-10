@@ -5,10 +5,10 @@ slug: /
 
 # Introduction
 
-This website contains the official support documentation for using Universal Media Server.
+هذا الموقع يحتوي على كتيبات الدعم الفني الرسمي لاستخدامها في هذا البرنامَج
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+إذا لم تكن مستخدماً حاليًا، وأنت تتطلع إلى تنزيله أو تقرر استخدامه، ربما ستجد [موقعنا الرئيسي](https://www.universalmediaserver.com) أكثر فائدة.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+الموقع منقسم إلى ثلاث أقسام: الإعدادات، الإرشادات و التنصيب.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+إذا جئت إلى هنا للبحث عن معلومات محددة ولم تجدها، يرجى إعلامنا على GitHub حتى نتمكن من إضافتها.

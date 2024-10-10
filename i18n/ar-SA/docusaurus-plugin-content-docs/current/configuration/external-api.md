@@ -1,56 +1,56 @@
-# External API
+# API خارجي
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+تتيح واجهة البرمجة الخارجية (API) للبرامج الوصول إلى أو تفعيل وظائف UMS من خلال استدعاء HTTP.
 
-## How to enable the external API
+## كيفية تمكين واجهة برمجة التطبيقات الخارجية
 
-Edit UMS.conf and configure an api_key like this
+قم بتحرير ملف UMS.conf وقم بتكوين api_key كما يلي
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+يجب أن تحتوي _`secret_password`_ على 12 حرفًا كحد أدنى.
 
-## API usage
+## استخدام API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+إذا كانت واجهة برمجة التطبيقات الخارجية مُمكّنة، فإن واجهة برمجة التطبيقات تكون متاحة من خلال استدعاء POST إلى /api/COMMAND.
 
-### Folder Scanning
+### مسج المجلد
 
-#### rescan
+#### إعادة المسح
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Intention                       | يعيد مسح المكتبة بالكامل.        |
+| ------------------------------- | -------------------------------- |
+| URI                             | `/api/folderscanner/rescan`      |
+| POST BODY                       | NONE                             |
+| POST BODY example / description | لا يحتاج هذا الأمر إلى محتوى نصي |
+| متاح منذ                        | 10.4.2                           |
 
 :::info
-This can be slow for large libraries
+قد يكون هذا بطيئًا بالنسبة للمكتبات الكبيرة
 :::
 
-Example:
+مثال:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### إعادة مسح الملف أو المجلد
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intention                       | يعيد مسح جزء فرعي من نظام الملفات.                                                |
+| ------------------------------- | --------------------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescanFileOrFolder`                                           |
+| POST BODY                       | PATH_TO_SCAN                                                                    |
+| POST BODY example / description | مثال: "/music/pop/Madonna". يجب أن يكون المسار هو الجذر أو مجلد فرعي لمسار مشترك. |
+| متاح منذ                        | 10.4.2                                                                            |
 
-Example:
+مثال:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### الإعجاب بالموسيقى (الألبومات والأغاني)
 
 #### like song
 
