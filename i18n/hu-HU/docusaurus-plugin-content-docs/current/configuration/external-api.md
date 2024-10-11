@@ -14,16 +14,16 @@ The _`secret_password`_ must have a minimum of 12 chars.
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-### Folder Scanning
+### Mappa beolvasás
 
-#### rescan
+#### újra beolvasás
 
 | Intention                       | Rescans the complete library       |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
 | POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Elérhető                        | 10.4.2                             |
 
 :::info
 This can be slow for large libraries
@@ -63,7 +63,7 @@ Song will be marked as liked.
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
 | Available since                 | 10.20                                                    |
 
-Example:
+Példa:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
