@@ -146,7 +146,7 @@ Esta llamada eliminó el atributo liked del álbum identificado por musicbrainz 
 
 Comprobar álbum como estado.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| Intención                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
@@ -170,7 +170,7 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 
 #### set rating
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
+| Intención                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
@@ -189,7 +189,7 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 
 Reads song rating from database
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
+| Intención                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
 | POST BODY                       | `musicbrainzTrackId`                                                                                    |
@@ -323,7 +323,7 @@ These are all playlist known to UMS (database/cache enabled). These playlist nam
 | URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
 | REQUEST TYPE          | GET                                                                                                                                                      |
 | RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
+| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Gráficos","playlistId":343}]`                                                                  |
 | Available since       | dev branch                                                                                                                                               |
 
 Ejemplo:
