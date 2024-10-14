@@ -43,7 +43,7 @@ RSS 피드 링크를 추가하여 비디오 피드/채널을 구독하거나 유
 피드 링크가 유효한 경우 이제 "이름" 필드가 채워지고 이제 피드를 위로 또는 아래로 드래그하여 순서를 제어할 수 있습니다\
 ![공유 콘텐츠 목록 및 주문 능력]![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### 변경 사항 저장
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. 이제 장치에서 콘텐츠를 볼 수 있습니다:
+이전 단계를 반복하여 콘텐츠를 더 추가/수정할 수 있으며, 변경 사항이 만족스러우면 페이지 하단의 '저장' 버튼을 선택합니다. 이제 장치에서 콘텐츠를 볼 수 있습니다:
 ![웹 플레이어에 대한 동영상 피드 예시](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
