@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# What's New in v14
+# Co nowego w wersji v14
 
-## Overview
+## Przegląd
 
 V14 contains major new features based on what our users have asked for.
 

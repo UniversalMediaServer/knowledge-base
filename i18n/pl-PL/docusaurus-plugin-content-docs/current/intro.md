@@ -3,12 +3,14 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Wprowadzenie
 
-This website contains the official support documentation for using Universal Media Server.
+Ta strona zawiera oficjalną dokumentację dla korzystania z Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Jeśli nie masz jeszcze zainstalowanego Universal Media Server, a chcesz go pobrać lub dowiedzieć się więcej o jego zastosowaniu to wszelkie informacje znajdziesz na
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+naszej głównej stronie internetowej.</p> 
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Wprowadzenie podzielone jest na 3 główne sekcje: Konfiguracja, Przewodniki i Instalacja.
+
+Jeśli wszedłeś tutaj w celu poszukiwania konkretnych informacji i ich nie znalazłeś, to daj nam znać na GitHubie, abyśmy mogli je dodać.
