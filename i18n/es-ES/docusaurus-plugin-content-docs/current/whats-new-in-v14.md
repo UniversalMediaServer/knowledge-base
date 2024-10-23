@@ -32,7 +32,7 @@ Esto hace que UMS sea mucho más flexible para situaciones de vida compartidas o
 
 ![Ejemplo de cómo configurar las preferencias de permiso por red](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Ejemplo de cómo configurar las preferencias de permiso por renderizador](@site/docs/img/whats-new-in-v14-render-allow-preference.png)
+![Ejemplo de cómo configurar las preferencias de permiso por renderizador](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
 ### Vincular personas al renderizador
 
