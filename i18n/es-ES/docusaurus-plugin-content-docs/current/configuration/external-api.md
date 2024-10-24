@@ -152,9 +152,9 @@ Comprobar álbum como estado.
 | POST BODY                       | `musicBrainz_releaseID`                                      |
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
 | RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Disponible desde                | 10.20                                                        |
 
-Example:
+Ejemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
