@@ -175,7 +175,7 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Disponible desde                | 10.20                                                                                           |
 
 Example:
 
@@ -187,7 +187,7 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 
 #### get rating
 
-Reads song rating from database
+Lee la calificación de canciones de la base de datos
 
 | Intención                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -195,7 +195,7 @@ Reads song rating from database
 | POST BODY                       | `musicbrainzTrackId`                                                                                    |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
 | RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Disponible desde                | 10.20                                                                                                   |
 
 Ejemplo:
 
@@ -212,7 +212,7 @@ This call reads the user rating of a song identified by the musicbrainz track-id
 | URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | POST BODY                       | `trackID` /`stars`                                                                                             |
 | POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Disponible desde                | 11.0                                                                                                           |
 
 Ejemplo:
 
@@ -224,7 +224,7 @@ This call sets songs user rating identified by audiotrack id `32` to `3`.
 
 #### get rating by audiotrack id
 
-Reads song rating from database
+Lee la calificación de canciones de la base de datos
 
 | Encabezado de tabla             | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -232,7 +232,7 @@ Reads song rating from database
 | POST BODY                       | trackId                                                                                                       |
 | POST BODY example / description | 32                                                                                                            |
 | RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Disponible desde                | 11.0                                                                                                          |
 
 Ejemplo:
 
