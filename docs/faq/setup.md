@@ -43,7 +43,7 @@ UMS_PROFILE=/absolute/path/to/myprofile.conf ./UMS.sh
 ```
 3. Property (Advanced):
 The profile file/directory can also be set via the ums.profile.path property e.g.
-```bash
+```shell
 java -Dums.profile.path=/path/to/UMS.conf net.pms.PMS
 ```
 ## The program will not start
