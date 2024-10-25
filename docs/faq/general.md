@@ -3,7 +3,7 @@ Miscellaneous topics or info
 
 1. [Is UMS open source?](#is-ums-open-source)
 2. [Is UMS free?](#is-ums-free)
-3. [What are the reasons for developing UNS instead of PMS?](#what-are-the-reasons-for-developing-ums-instead-of-pms)
+3. [What are the reasons for developing UMS instead of PMS?](#what-are-the-reasons-for-developing-ums-instead-of-pms)
 4. [How can I donate to the project?](#how-can-i-donate-to-the-project)
 
 ## Is UMS open source?
