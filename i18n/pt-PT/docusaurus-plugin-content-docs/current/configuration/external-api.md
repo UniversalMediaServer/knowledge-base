@@ -21,8 +21,8 @@ Se a API externa estiver ativada, a API estará acessível através de um pedido
 | Intenção                      | Verificar toda a biblioteca.                |
 | ----------------------------- | ------------------------------------------- |
 | URI                           | `/api/folderscanner/rescan`                 |
-| CAIXA DE PUBLICAÇÃO           | NADA                                        |
-| POST BODY examplo / descrição | Este comando não precisa de corpo no pedido |
+| CAIXA DE PUBLICAÇÃO           | NENHUM                                      |
+| POST BODY exemplo / descrição | Este comando não precisa de corpo no pedido |
 | Disponível desde              | 10.4.2                                      |
 
 :::info
@@ -442,6 +442,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## Códigos de retorno HTTP
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | sucesso se nenhum conteúdo for retornado | | 401 | chave api inválida | | 404 | objeto pedido não foi encontrado | | 417 | Pedido de API falhou | | 503 | api externa não está habilitado. Defina uma `api_key` no UMS.conf com comprimento de 12 ou mais caracteres |

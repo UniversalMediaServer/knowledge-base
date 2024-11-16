@@ -8,4 +8,4 @@ Configurações mais comuns para consulta são `SeekByTime`, `TranscodeVideo`, `
 
 Também pode consultar outras configurações de renderização na pasta  "renderizadores" no seu directório de instalação, para ver o que estão a fazer Por vezes vai precisar de ajuda, que facultaremos no nosso fórum, e por favor lembre-se de nos comunicar acerca dos melhoramentos quando o conseguir, de modo a que outros utilizadores com um dispositivo idêntico , possam beneficiar da alteração. Aquando da divulgação da versão e do registo das alterações, ser-lhe-ão atribuídos os créditos.
 
-If you have a new renderer config to contribute to the project, please create a **Pull Request** on our GitHub repository https://github.com/UniversalMediaServer/UniversalMediaServer
+Se você tiver uma nova configuração de renderização para contribuir com o projeto, por favor crie um **Pull Request** no nosso repositório do GitHub https://github.com/UniversalMediaServer/UniversalMediaServer
