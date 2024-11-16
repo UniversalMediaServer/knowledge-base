@@ -14,7 +14,7 @@ A _`secret_password`_ deve ter no mínimo 12 caracteres.
 
 Se a API externa estiver ativada, a API estará acessível através de um pedido POST para /api/COMMAND
 
-### Verificação de Pastas
+### Procurar em Pastas
 
 #### Pesquisar novamente
 
