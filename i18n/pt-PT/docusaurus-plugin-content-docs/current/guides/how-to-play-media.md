@@ -1,39 +1,39 @@
-# How to play media
+# Como reproduzir mídia
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Este artigo explicará as 4 principais formas de reproduzir vídeo, áudio e imagens via UMS.
 
-## 1: Play from a renderer interface
+## 1: Reproduzir a partir de uma interface do renderizador
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Quando seu renderizador estiver conectado ao UMS via DLNA/UPnP, muitas vezes ele será exibido em um menu chamado "Servidores de Mídia" ou algo similar, dependendo do renderizador. A partir daí, você pode inserir o UMS e navegar para a mídia que você deseja aceder.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+A implementação desse recurso varia muito por renderizador, mas a funcionalidade do núcleo é a mesma; navegue até a mídia escolhida e selecione-a para reproduzir.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Enviar da interface UMS para um renderizador
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+A interface UMS em si tem a habilidade de "forçar" o mídia aos renderizadores se eles suportarem o recurso UPnP. É um conceito semelhante ao da transmissão.
 
-1. Abra a UI do UMS e identifique a renderização para onde quer enviar a media In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Abra a GUI](@site/docs/guides/img/how-to-play-media-1.png)
+1. Abra a UI do UMS e identifique a renderização para onde quer enviar a media Neste caso, é a Série Panasonic VVIERA VT60.  
+   ![Abrir a interface](@site/docs/guides/img/how-to-play-media-1.png)
 2. Clique na imagem de renderização para abrir o painel de controle.  
-   ![COntrole de renderização](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![Ficheiro seleccionado](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+   ![Controle de renderização](@site/docs/guides/img/how-to-play-media-2.png)
+3. Escolha o arquivo que você quer fazer push clicando no ícone da pasta na parte inferior direita e será preenchida à esquerda inferior. Se você não vê os controles do reprodutor nesta janela, seu renderizador não suporta essa funcionalidade. Não se esqueça de verificar se há atualizações de firmware/software no seu renderizador, pois eles podem ter adicionado suporte para ele  
+   ![Ficheiro selecionado](@site/docs/guides/img/how-to-play-media-3.png)
+4. Agora você pode criar uma playlist clicando no ícone de adição imediatamente à direita da caixa de entrada, ou você pode importar o arquivo para o renderizador clicando no ícone de reprodução logo acima do meio da caixa de entrada, o que vai começar a reprodução no seu renderizador.
 
-## 3: Play on the web interface
+## 3: Reproduzir na interface da web
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+A interface web pode ser acedida em qualquer lugar da sua rede local, incluindo computadores e renderizadores. Em muitos aspetos, ele oferece a nossa interface do utilizador e recursos mais avançados.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Abra a interface web. Se você souber o endereço pode utilizar isso, caso contrário, uma forma fácil é clicar no botão de interface Web na nossa interface de utilizador  
+   ![Abra a interface web.](@site/docs/guides/img/how-to-play-media-4.png)
+2. Clicando que irá abrir a interface web no seu navegador padrão. A partir daí, você pode navegar até o arquivo e clicar para executá-lo  
+   ![Vídeo na interface web](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 4: Enviar da interface da web para um renderizador
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+Semelhante ao acima na opção 2, você pode enviar a sua mídia para um renderizador através da nossa interface web.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Clicando no ícone pequeno transmitido para um arquivo ao navegar em um diretório. Está no lado direito inferior da miniatura.  
+   ![Ícone de transmissão](@site/docs/guides/img/how-to-play-media-6.png)
+2. Isso irá fazer um painel de controle mini flutuante aparecer, que você pode usar para controlar a reprodução do arquivo e gerir as playlists dinâmicas se você escolher.  
+   ![Painel de controle flutuante](@site/docs/guides/img/how-to-play-media-7.png)
