@@ -1,49 +1,48 @@
-# How to add web content
+# Hogyan adjunk hozzá webtartalmat
 
-This article will explain how to add web content.
+Ez a cikk elmagyarázza, hogyan adhatunk hozzá webtartalmat.
 
-## Video feeds
+## Videó feedek
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Feliratkozhatsz videó feedekre/csatornákra az RSS feed linkek hozzáadásával, vagy YouTube esetén egyszerűen beírhatod a csatorna linkjét.
 
-### 1: Go to the Shared Content section
+### 1: Menj a Megosztott Tartalom szekcióba
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+Az UMS beállításaiban, a web böngészőben nyisd meg a menüt, és válaszd a Megosztott Tartalom lehetőséget.
 
-### 2: Open the "Add new shared content" modal
+### 2: Nyisd meg az "Új megosztott tartalom hozzáadása" modális ablakot
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type\
+Amikor kiválasztod az "Új megosztott tartalom hozzáadása" gombot, megnyílik egy modális ablak, amely lehetővé teszi bármilyen típusú média hozzáadását. Az első lépés az, hogy válaszd a "Videó feed" típust\
 ![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Add hozzá a feedet
 
-Here you can add your feed
+Itt hozzáadhatod a feededet
 
-#### Name
+#### Név
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+A "Név" mező videó feedeknél le van tiltva, mivel a feedek maguk határozzák meg a nevüket.
 
-#### Path
+#### Útvonal
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Az "Útvonal" mező határozza meg a könyvtárstruktúrát, amelyet az UMS megjelenít. Például, ha beírod, hogy `Web/YouTube Csatornák`, a feeded a `YouTube Csatornák` könyvtárban lesz, a `Web` könyvtáron belül. Ez lehetővé teszi, hogy tetszőlegesen rendezd a tartalmadat, és különösen hasznos, ha különböző feed szolgáltatóid vannak, és szeretnéd őket egy helyen használni az UMS-ben.
 
-#### Source/URL
+#### Forrás/URL
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Ez a videó feed linkje. Általában `.xml` végződésű, de a YouTube-ot másképp kezeljük, és közvetlenül a csatorna URL-jét fogadjuk el, így például beírhatod a következőt: `https://www.youtube.com/@kurzgesagt`
 
-#### Authorized groups
+#### Engedélyezett csoportok
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Az "Engedélyezett csoportok" mező lehetővé teszi, hogy ezt a feedet csak bizonyos csoportok számára tedd elérhetővé, amelyek az UMS-ben vannak meghatározva, és amelyek különböző felhasználókhoz és/vagy eszközökhöz vannak hozzárendelve. További részletekért lásd a [Biztonság és Adatvédelem](../configuration/security-and-privacy.md#link-person-to-renderer) szakaszt.
 
-When you are happy with the options you entered, select the "Add" button.
+Miután elégedett vagy a megadott beállításokkal, válaszd az "Hozzáadás" gombot.
 
-### Feed order
+### Feed sorrend
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
+Ha a feed link érvényes volt, most már látni fogod, hogy a "Név" mező kitöltődött, és most már húzhatod a feedet fel vagy le, hogy meghatározd a sorrendet\
 ![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Változtatások mentése
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
+Ismételheted az előző lépéseket, hogy további tartalmat adj hozzá vagy szerkessz, és amikor elégedett vagy a módosításokkal, válaszd a "Mentés" gombot az oldal alján. Most már láthatod a tartalmadat az eszközeiden:\
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
