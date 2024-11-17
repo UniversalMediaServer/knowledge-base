@@ -50,13 +50,13 @@ Példa:
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Zene kedvelése (albumok és dalok)
 
-#### like song
+#### dal kedvelése
 
-Song will be marked as liked.
+A dal kedveltnek lesz jelölve.
 
-| Funkció                  | Like a song identified by musicBrainz trackId            |
+| Funkció                  | Dal kedvelése, amelyet a musicBrainz trackId azonosít    |
 | ------------------------ | -------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/like/likesong</span>` |
 | POST BODY                | `musicBrainz_trackID`                                    |
@@ -69,11 +69,11 @@ Példa:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### dal nem kedvelése
 
-Song will not be disliked
+A dal nem lesz nem kedvelt.
 
-| Funkció                  | Dislike a song identified by musicBrainz trackId            |
+| Funkció                  | Dal nem kedvelése, amelyet a musicBrainz trackId azonosít   |
 | ------------------------ | ----------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/like/</span>dislikesong` |
 | POST BODY                | `musicBrainz_trackID`                                       |
@@ -86,11 +86,11 @@ Példa:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### a dal kedvelt?
 
-Check if song is liked.
+Ellenőrizni, hogy a dal kedvelt-e.
 
-| Funkció                  | Check if song is liked identified by musicBrainz trackId                                        |
+| Funkció                  | Ellenőrizni, hogy a dal kedvelt-e, amelyet a musicBrainz trackId azonosít                       |
 | ------------------------ | ----------------------------------------------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                | `musicBrainz_trackID`                                                                           |
@@ -104,13 +104,13 @@ Példa:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Ez a hívás hozzáadja a kedvelt attribútumot az albumhoz, amelyet a musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` azonosít.
 
-#### like album
+#### album kedvelése
 
-Set album like state to true.
+Állítsd be az album kedveltségi állapotát igazra.
 
-| Funkció                  | Likes an album identified by musicBrainz releaseID        |
+| Funkció                  | Album kedvelése, amelyet a musicBrainz releaseID azonosít |
 | ------------------------ | --------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/like/</span>likealbum` |
 | POST BODY                | `musicBrainz_releaseID`                                   |
@@ -123,11 +123,11 @@ Példa:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### album nem kedvelése
 
-Remove album like state.
+Az album kedveltségi állapotának eltávolítása.
 
-| Funkció                  | Dislike a song identified by musicBrainz releaseID           |
+| Funkció                  | Dal nem kedvelése, amelyet a musicBrainz releaseID azonosít  |
 | ------------------------ | ------------------------------------------------------------ |
 | URI                      | `<span class="s1">/api/like/</span>dislikealbum` |
 | POST BODY                | `musicBrainz_releaseID`                                      |
@@ -140,19 +140,19 @@ Példa:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Ez a hívás eltávolítja a kedvelt attribútumot az albumról, amelyet a musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` azonosít.
 
-#### is album liked
+#### az album kedvelt?
 
-Check album like state.
+Ellenőrizni az album kedveltségi állapotát.
 
-| Funkció                  | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------ | ------------------------------------------------------------ |
-| URI                      | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                | `musicBrainz_releaseID`                                      |
-| POST BODY példa / leírás | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY            | "TRUE" or "FALSE"                                            |
-| Elérhető                 | 10.20                                                        |
+| Funkció                  | Ellenőrizni, hogy az album kedvelt-e, amelyet a musicBrainz releaseID azonosít. |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| URI                      | `<span class="s1">/api/like/</span>isalbumliked`                    |
+| POST BODY                | `musicBrainz_releaseID`                                                         |
+| POST BODY példa / leírás | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                            |
+| RESPONSE BODY            | "TRUE" or "FALSE"                                                               |
+| Elérhető                 | 10.20                                                                           |
 
 Példa:
 
@@ -160,17 +160,17 @@ Példa:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Ez a hívás ellenőrzi, hogy az album, amelyet a musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` azonosít, kedvelt-e.
 
-### Rating
+### Értékelés
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+Az értékelési API a dalok értékeléséért felelős. Az értékelési információk a belső adatbázisban (gyorsítótár aktív) kerülnek mentésre, és opcionálisan magában a fájlban is tárolhatók. Ha az `audio_update_rating_tag = true` be van állítva az UMS.conf fájlban, akkor az IDv3 értékelési mező is frissítésre kerül a dal fájlban (ha a fájlformátum támogatott).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+A tartalomkönyvtár szerver böngészése során a MusicBrainzTrackID (ha elérhető) és az audiotrackID a `desc` metadataként kerül átadásra a DIDL elemben.
 
-#### set rating
+#### értékelés beállítása
 
-| Funkció                  | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
+| Funkció                  | Értékelés beállítása csillagokban (0 - 5) egy dalon, amelyet a musicBrainz trackId azonosít     |
 | ------------------------ | ----------------------------------------------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST BODY                | `musicbrainzTrackId` /`stars`                                                                   |
@@ -183,19 +183,19 @@ Példa:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Ez a hívás beállítja az összes, a musicbrainz track-id-val `b8695995-45e9-405d-b4aa-e50e8760fe25` azonosított dal felhasználói értékelését `3`-ra.
 
-#### get rating
+#### értékelés lekérése
 
-Reads song rating from database
+A dal értékelésének lekérése az adatbázisból.
 
-| Funkció                  | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------ | ------------------------------------------------------------------------------------------------------- |
-| URI                      | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                | `musicbrainzTrackId`                                                                                    |
-| POST BODY példa / leírás | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY példa      | 3                                                                                                       |
-| Elérhető                 | 10.20                                                                                                   |
+| Funkció                  | A dal értékelésének lekérése csillagokban (0 - 5) a musicBrainz trackID alapján. A RESPONSE BODY tartalmazza az értékelési információkat. |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                      | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                          |
+| POST BODY                | `musicbrainzTrackId`                                                                                                                      |
+| POST BODY példa / leírás | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                                      |
+| RESPONSE BODY példa      | 3                                                                                                                                         |
+| Elérhető                 | 10.20                                                                                                                                     |
 
 Példa:
 
@@ -203,11 +203,11 @@ Példa:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Ez a hívás lekéri a felhasználói értékelést egy dalról, amelyet a musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` azonosít.
 
-#### set rating by audiotrack id
+#### értékelés beállítása audiotrack ID alapján
 
-| Funkció                  | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
+| Funkció                  | Értékelés beállítása csillagokban (0 - 5) egy dalon, amelyet az UMS belső audiotrackID azonosít                |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | URI                      | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | POST BODY                | `trackID` /`stars`                                                                                             |
@@ -220,19 +220,19 @@ Példa:
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Ez a hívás beállítja a `32` audiotrackID-val azonosított dal felhasználói értékelését `3`-ra.
 
-#### get rating by audiotrack id
+#### értékelés lekérése audiotrack ID alapján
 
-Reads song rating from database
+A dal értékelésének lekérése az adatbázisból.
 
-| Funkció                  | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| URI                      | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                | trackId                                                                                                       |
-| POST BODY példa / leírás | 32                                                                                                            |
-| RESPONSE BODY példa      | 3                                                                                                             |
-| Elérhető                 | 11.0                                                                                                          |
+| Funkció                  | A dal értékelésének lekérése csillagokban (0 - 5) az UMS belső audiotrackID alapján. A RESPONSE BODY tartalmazza az értékelési információkat. |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                      | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                                 |
+| POST BODY                | trackId                                                                                                                                       |
+| POST BODY példa / leírás | 32                                                                                                                                            |
+| RESPONSE BODY példa      | 3                                                                                                                                             |
+| Elérhető                 | 11.0                                                                                                                                          |
 
 Példa:
 
@@ -240,17 +240,17 @@ Példa:
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Ez a hívás lekéri a felhasználói értékelést egy dalról, amelyet az UMS audiotrack-id `32` azonosít.
 
-### Backup / Restore
+### Biztonsági mentés / Visszaállítás
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+A felhasználó által kezelt "kedvelt album" bejegyzések biztonsági mentése elvégezhető egy profil mappáján belüli `database_backup` nevű almappába. A fájlnév `MUSIC_BRAINZ_RELEASE_LIKE`. Ha az UMS adatbázis törlődik, egyszerűen hajtsd végre a visszaállítást.
 
-#### backup liked albums
+#### kedvelt albumok biztonsági mentése
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+A `MUSIC_BRAINZ_RELEASE_LIKE` tábla biztonsági mentése a fájlrendszerre
 
-| Funkció       | backup liked songs to filesystem                                                                      |
+| Funkció       | kedvelt dalok biztonsági mentése a fájlrendszerre                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------------- |
 | URI           | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
 | REQUEST TYPE  | GET                                                                                                   |
@@ -263,13 +263,13 @@ Példa:
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Ez a hívás létrehoz egy biztonsági mentés fájlt, amely a kedvelt albumokat tartalmazza.
 
-#### restore liked albums
+#### kedvelt albumok visszaállítása
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+A `MUSIC_BRAINZ_RELEASE_LIKE` tábla visszaállítása a fájlrendszerről.
 
-| Funkció       | restore liked songs from backup file                                                                                                       |
+| Funkció       | kdvelt dalok visszaállítása a biztonsági mentés fájlból                                                                                    |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | URI           | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
 | REQUEST TYPE  | GET                                                                                                                                        |
@@ -282,19 +282,19 @@ Példa:
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Ez a hívás visszaállítja a biztonsági mentés fájlt.
 
-### Playlist
+### Lejátszási lista
 
-#### enable service
+#### szolgáltatás engedélyezése
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Szerkeszd az UMS.conf fájlt, és konfiguráld a kezelt lejátszási lista mappát az alábbi beállítással 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+a szolgáltatás engedélyezéséhez. Alapértelmezés szerint ez a szolgáltatás le van tiltva. A lejátszási lista mappa elérési útjának a konfigurált megosztott `<span class="s1">folders</span>` mappa alatt kell elhelyezkednie, hogy az API által végrehajtott lejátszási lista módosítások láthatóvá váljanak az UMS számára.
 
-#### list all playlists
+#### összes lejátszási lista felsorolása
 
 Elérhető lejátszási listák olvasása. Ezeket a lejátszási lista neveket kell használni a további hívásokhoz, hogy dalokat adjunk hozzá vagy távolítsunk el.
 
@@ -314,7 +314,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 Ez a hívás felsorolja az összes elérhető lejátszási listát.
 
-#### Felsorolni a szerver által elérhető lejátszási listákat
+#### felsorolni a szerver által elérhető lejátszási listákat
 
 Ezek azok a lejátszási listák, amelyeket az UMS ismer (adatbázis/gyorsítótár engedélyezve). Ezeket a lejátszási lista neveket kell használni a további hívásokhoz a dalok hozzáadásához vagy eltávolításához. A lejátszási lista azonosítója közvetlenül a lejátszási listához navigálhat, ha az `objectId` `$DBID$PLAYLIST$` és a databaseId összefűzésével böngészel.
 
@@ -334,7 +334,7 @@ curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://loc
 
 Ez a hívás felsorolja az összes elérhető lejátszási listát, amelyek az UMS által hozzáférhetők.
 
-#### Dalok hozzáadása a lejátszási listákhoz
+#### dalok hozzáadása a lejátszási listákhoz
 
 A szükséges `audiotrackid` az UPnP böngészési kérelmek során kerül átadásra, és a DIDL válasz `descMetadata` attribútumából nyerhető ki.
 
@@ -363,7 +363,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 
 Ez hozzáadja a `123` azonosítójú dalt a `Pop` lejátszási listához.
 
-#### Dalok eltávolítása a lejátszási listákból
+#### dalok eltávolítása a lejátszási listákból
 
 A szükséges `audiotrackid` az UPnP böngészési kérelmek során kerül átadásra, és a DIDL válasz `descMetadata` attribútumából nyerhető ki.
 
@@ -394,7 +394,7 @@ curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST ht
 
 Ez eltávolítja a `123` azonosítójú dalt a `Pop` lejátszási listáról.
 
-#### Új lejátszási listák létrehozása
+#### új lejátszási listák létrehozása
 
 A lejátszási lista nevét úgy kell megadni, hogy ne tartalmazzon semmilyen elérési utat és fájl kiterjesztést. 
 
