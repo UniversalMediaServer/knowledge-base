@@ -1,47 +1,47 @@
-# Security and Privacy
+# Biztonság és Adatvédelem
 
-## Introduction
+## Bevezetés
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+Az UMS két fő módon szolgáltat médiát: DLNA/UPnP-n keresztül, amelyet média lejátszó alkalmazások fogyaszthatnak, és HTTP(S) segítségével, amelyet web böngészők használnak.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+A web böngészők könnyen kezelhetik a biztonságot és az adatvédelmet felhasználói fiókokkal és bejelentkezéssel.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+A médialejátszó alkalmazások általában nem támogatják a "felhasználó" fogalmát, ezért általában minden eszköz ugyanazt a tartalmat kapja. Ez nem mindig ideális. Például, ha van két mappa: kids_safe és kids_unsafe, lehet, hogy csak a gyerekszobai eszközökre szeretnéd korlátozni a kids_safe mappa elérését. Egy másik gyakori helyzet, hogy ugyanazon a hálózaton vagy emberekkel, akikkel nem szeretnél megosztani médiát, például lakótársakkal, és szeretnéd blokkolni bizonyos eszközöket.
 
-UMS provides a number of methods to control access in those situations.
+Az UMS számos módszert kínál az ilyen helyzetek kezelésére.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Engedélyezés vagy blokkolás alapértelmezés szerint megjelenítők vagy hálózati eszközök számára
+Kiválaszthatod az alapértelmezett stratégiát a megjelenítők és hálózati eszközök számára. Az alapértelmezett engedélyezés vagy blokkolás, valamint a tiltólisták és engedélyezési listák segítségével teljes körű irányítást biztosíthatsz.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Ez hasznos lehet közösségi lakásokban vagy nagyobb/kevésbé megbízható helyi hálózatokon. Hasznos lehet azok számára is, akik powerline adaptereket használnak, mivel azok szomszédok általi nem kívánt hozzáférést eredményezhetnek.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Példa arra, hogyan állítható be a hálózati engedélyezési preferencia](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Példa arra, hogyan állítható be a megjelenítő engedélyezési preferencia](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Megjelenítők és hálózati eszközök blokkolása/engedélyezése
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Miután kiválasztottad, hogy alapértelmezés szerint engedélyezed vagy blokkolod-e az ismeretlen megjelenítőket, a kezdőképernyőről a beállítási területen építheted fel a tiltólistát vagy engedélyezési listát.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Példa arra, hogyan lehet egy megjelenítőt blokkolni](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Felhasználó összekapcsolása megjelenítővel
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Összekapcsolhatod a felhasználói fiókokat a megjelenítőkkel/eszkozökkel, lehetővé téve, hogy független hozzáférést és lejátszáskövetést biztosíts.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Például, ha van egy TV a nappaliban és egy a hálószobádban, a nappali TV-t nem kell, hogy befolyásolja az, amit a hálószobádban nézel.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Példa arra, hogyan rendelhető fiók egy megjelenítőhöz](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Korlátozott megosztott tartalom bizonyos csoportok számára
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Most már lehetőséged van kiválasztani, hogy milyen könyvtárakat vagy online tartalmakat szeretnél megosztani bizonyos csoportokkal. Például, ha van egy személy (vagy egy eszköz, amely egy személyhez van rendelve), aki gyermek, hozzárendelheted őt a "Kids" csoporthoz, és megadhatod ennek a csoportnak a "Family" könyvtár elérését, de nem az "Horror" vagy "Adult Only" tartalmakat. Vagy engedélyezheted számukra a Kurzgesagt web feed elérését, de nem a történelem podcastokat.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Példa a megosztott tartalom csoportokra](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## Mappák elrejtése
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Szabályozhatod a virtuális mappák láthatóságát. Ezeket a beállításokat az UMS.conf fájlban találod. Ha el szeretnéd rejteni egyes mappákat böngészés közben, egyszerűen állítsd az értéküket true-ra, vagy pipáld ki őket a Navigáció/Megosztás Beállítás fülön az Speciális GUI mode-ban.
 
 ```
 hide_recently_played_folder =true
@@ -53,34 +53,36 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+A Web mappa elrejtéséhez ki kell venni a pipát az Külső hálózat engedélyezése opciónál az Általános Beállítások fülön a Speciális GUI mode-ban, vagy módosítani kell az external_network = értékét false-ra az UMS.conf fájlban. Ez azt is eredményezi, hogy az automatikus frissítő nem fog működni. A GUI-ból végrehajtott módosítások újraindítás után lépnek érvénybe.
 
-## PIN code
+## PIN kód
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Az összes fent említett módszer korlátozza a hozzáférést különböző megjelenítőktől. Azonban, ha hozzáférsz egy megjelenítőhöz, amelyen engedélyezett egy mappa megtekintése, akkor ezek a módszerek nem segítenek (ha a gyerekek hozzáférnek a nappali TV-hez, amely hozzáfér az összes médiához, akkor hozzáférnek azokhoz a tartalmakhoz). A PIN kód megoldja ezt a problémát. Lehetővé teszi, hogy mappákat/mediákat rejts el egy PIN kód mögé, amit a megjelenítőről kell megadnod. Alapértelmezés szerint a bemenet egy számjegysorozat (0-9), mint egy ATM kód. Erősen javaslom, hogy számjegyekből álló kódokat használj, mivel a karakterek gépelése nehezebb a megjelenítőből. Azonban, ha extra paranoiás vagy, hozzáadhatsz betűket is. Így működik: Hozz létre egy fájlt UMS.code néven ugyanabba a könyvtárba, ahol az UMS.conf található, és ebbe a fájlba írd be a következőt: regexp,code, ahol a regexp egy reguláris kifejezés, mint a "UMS.deny" fájlban, a code pedig az a kód, amely hozzáférést biztosít a mappához/mediához. A kód hosszára nincs korlátozás. Például:
 ```
-.*private.*,1234
+.*titkos.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Ez arra kényszerít, hogy PIN kódot adj meg, ha a mappa/media tartalmazza a "titkos" szót, és a helyes kód a 1234. A kód 4 órán keresztül érvényes (ha nem változtatod meg ezt az időt).
 
-## Custom Device Configuration
+## Egyedi Eszköz Konfiguráció
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Bármely konfigurációs tulajdonságot eszközönként is beállíthatsz egy egyedi eszközkénti konfiguráció létrehozásával, amely felülírja az alapértelmezett UMS beállításokat (további részletekért lásd: Egyedi Eszköz Konfiguráció Létrehozása).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Például, ha testre szeretnéd szabni a gyerekek TV-jét:
+- Kattints a 'Customize this device' gombra a megjelenítő GUI felugró paneljén, és adj nevet a konfigurációnak.
+- Az új konfigurációs fájlban add hozzá azokat a beállításokat, amelyeket felül szeretnél írni a TV-nél, például a szerver nevének megváltoztatása és más mappák megadása:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Egyedi eszközprofil
+# A lehetséges megjelenítő opciók leírását a DefaultRenderer.conf fájlban találod,
+# és a program opciókat az UMS.conf fájlban.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Az ebben a fájlban szereplő beállítások felülírják az alapértelmezett beállításokat
+# az alább felsorolt specifikus Sony Bravia EX eszközök számára.
+# Az eszközöket uuid (vagy cím, ha nincs uuid) alapján kell megadni,
+# több eszközt pedig vesszővel elválasztva.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
-server_name = Kid Stuff
-folders = c:\kids\stuff, c:\kids\otherstuff
+server_name = Gyerekeknek
+folders = c:\gyerekek\mese, c:\gyerekek\mas_mappa
 ```
