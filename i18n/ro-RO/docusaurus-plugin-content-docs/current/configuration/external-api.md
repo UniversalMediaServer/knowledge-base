@@ -1,12 +1,12 @@
-# External API
+# API Extern
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+API-ul extern, permite programelor să acceseze ori să lanseze funcțiile UMS prin HTTP
 
-## How to enable the external API
+## Cum să activezi API extern
 
-Edit UMS.conf and configure an api_key like this
+Editați "UMS.conf" și configurați o cheie API precum aceasta.
 
-`api_key = secret_password`
+`api_key=secret_password`
 
 The _`secret_password`_ must have a minimum of 12 chars.
 
