@@ -4763,9 +4763,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@easyops-cn/docusaurus-search-local@npm:^0.45.0":
-  version: 0.45.0
-  resolution: "@easyops-cn/docusaurus-search-local@npm:0.45.0"
+"@easyops-cn/docusaurus-search-local@npm:^0.46.0":
+  version: 0.46.1
+  resolution: "@easyops-cn/docusaurus-search-local@npm:0.46.1"
   dependencies:
     "@docusaurus/plugin-content-docs": "npm:^2 || ^3"
     "@docusaurus/theme-translations": "npm:^2 || ^3"
@@ -4776,6 +4776,7 @@ __metadata:
     "@node-rs/jieba": "npm:^1.6.0"
     cheerio: "npm:^1.0.0"
     clsx: "npm:^1.1.1"
+    comlink: "npm:^4.4.2"
     debug: "npm:^4.2.0"
     fs-extra: "npm:^10.0.0"
     klaw-sync: "npm:^6.0.0"
@@ -4787,7 +4788,7 @@ __metadata:
     "@docusaurus/theme-common": ^2 || ^3
     react: ^16.14.0 || ^17 || ^18
     react-dom: ^16.14.0 || 17 || ^18
-  checksum: 10/37668cb6cd4407f01aadda3fef647d6169f7cddd037db6fa07620d5c4a5df27798a8b611444f98d3d68179092db45329951e12b0a1dfecc2daab83f3ffb3d0f4
+  checksum: 10/520e8b9da42a88b6952194da0707d3a9afba1a5e0e4b1f5e9cc748f4c7437c9ee812664fc127ce5aabc58be99eeba97a626322d483c5664d5573b0d8329885de
   languageName: node
   linkType: hard
 
@@ -7333,6 +7334,13 @@ __metadata:
   version: 1.1.0
   resolution: "combine-promises@npm:1.1.0"
   checksum: 10/23b55f66d5cea3ddf39608c07f7a96065c7bb7cc4f54c7f217040771262ad97e808b30f7f267c553a9ca95552fc9813fb465232f5d82e190e118b33238186af8
+  languageName: node
+  linkType: hard
+
+"comlink@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "comlink@npm:4.4.2"
+  checksum: 10/ecee53b5b4536b3aa3f7636c383f831e68fbc013def77665cc7fad873d72cfa23b994e1ec4b49e83e4e909c1089a03acae03a523e33a5e5ed938cdb613456434
   languageName: node
   linkType: hard
 
@@ -10446,7 +10454,7 @@ __metadata:
     "@docusaurus/theme-common": "npm:^3.5.1"
     "@docusaurus/tsconfig": "npm:^3.5.1"
     "@docusaurus/types": "npm:^3.5.1"
-    "@easyops-cn/docusaurus-search-local": "npm:^0.45.0"
+    "@easyops-cn/docusaurus-search-local": "npm:^0.46.0"
     "@mdx-js/react": "npm:3.1.0"
     "@types/react": "npm:^18.3.3"
     prism-react-renderer: "npm:2.4.0"
