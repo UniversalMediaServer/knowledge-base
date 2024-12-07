@@ -34,7 +34,7 @@ RSS 피드 링크를 추가하여 비디오 피드/채널을 구독하거나 유
 
 #### 공인 그룹
 
-"공인 그룹" 필드를 사용하면 이 피드를 다양한 사용자 및/또는 장치와 관련된 UMS에 정의된 특정 그룹에서만 사용할 수 있습니다. 자세한 내용은 [보안 및 개인 정보 보호](.../configuration/security-and-privacy.md#link-person-to-renderer)를 참조하세요.
+"공인 그룹" 필드를 사용하면 이 피드를 다양한 사용자 및/또는 장치와 관련된 UMS에 정의된 특정 그룹에서만 사용할 수 있습니다. 자세한 내용은 [보안 및 개인 정보 보호](../configuration/security-and-privacy.md#link-person-to-renderer)를 참조하세요.
 
 입력한 옵션이 마음에 들면 "추가" 버튼을 선택합니다.
 
