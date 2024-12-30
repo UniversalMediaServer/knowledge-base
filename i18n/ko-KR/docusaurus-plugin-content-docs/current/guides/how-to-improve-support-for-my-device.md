@@ -2,28 +2,27 @@
 
 장치에서 폴더를 검색하거나 파일을 재생하는 등의 작업을 수행하지 못하는 경우 렌더러 구성 파일의 설정을 변경하여 수정할 수 있습니다. 서로 다른 장치/렌더/클라이언트는 UMS와 같은 서버와 서로 다른 방식으로 통신하므로 구성 파일은 UMS에 장치와 동일한 언어를 사용하는 방법을 알려줍니다.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+모든 구성 프로필은 두 가지 용도로 사용됩니다:
+- UMS가 연결을 시도할 때 특정 렌더러를 인식하도록 허용
+- 해당 렌더러의 가능성을 정의
 
 모든 렌더러 설정에 대한 문서가 포함된 기본 렌더러 구성 파일이 있습니다. https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf 에서 최신 버전을 참조하십시오
 
-## Adding support for an unrecognized device
+## 인식되지 않는 장치에 대한 지원 추가
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+UMS가 사용자의 기기를 인식하지 못한다는 것은 렌더러 구성 프로필 중 어느 것도 사용자의 기기와 일치하지 않는다는 것을 의미합니다. 그 결과 UMS는 `알 수 없는 렌더러`을 표시하며, 렌더러의 가능성을 알지 못하기 때문에 기기에 최적화된 출력을 제공할 수 없습니다.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+해결책은 자신만의 렌더러 구성 파일을 만들어 보는 것입니다.
+1. 장치에 가장 가까운 .conf 파일을 복사합니다. 예를 들어, 삼성 TV가 인식되지 않는 경우 삼성 TV 구성 중 하나를 시작하는 것이 좋습니다.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. UMS의 `로그` 탭으로 이동하여 `미디어 렌더러가 인식되지 않았습니다. HTTP 헤더를 식별할 수 있습니다:/<0>. 그 정보는 UMS가 당신의 기기를 인식하도록 하기 위해 필요한 것입니다.</p></li>
+<li><p spaces-before="0">새 .conf 파일에서 <code>UserAgentSearch` 및/또는 `UpnpDetailsSearch`을 정의하는 줄을 찾아 해당 값을 식별 정보로 대체합니다.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. 기기에서 미디어를 탐색하고 재생하세요. 재생에 문제가 있었던 미디어를 주목하세요. 이제 다음 섹션으로 이동하여 기기에 대한 지원을 개선할 수 있습니다.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+## 장치에 대한 지원 향상
 
-## Improving support for a device
-
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. 미디어 재생에 문제가 있는 경우 렌더러 설정이 작동할 때까지 수정해야 합니다. 전체 옵션 목록은 [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf)을 참조하세요. 가장 일반적으로 변경할 수 있는 것은 다음과 같습니다:
     ```
     Video
     Audio
@@ -33,10 +32,10 @@ The solution is to try creating your own renderer configuration file.
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    새 구성에 `MediaInfo = false`이 포함되어 있지 않은지 확인하세요. 그렇게 하면 `Supported` 줄이 작동하지 않게 됩니다.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. 기기에서 트랜스코딩이 작동하는지 확인하려면 `#--TRANSCODE--#` 폴더에서 파일을 재생합니다. 해당 폴더 내에서 `FFmpeg` 항목 중 하나를 재생합니다. 재생되면 트랜스코딩이 작동합니다.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. 기기가 기본적으로 지원하는 파일을 UMS에 알려주기 위해 `Supported` 줄을 채워야 합니다. 온라인에서 기기 매뉴얼을 찾아 해당 라인을 채우는 데 도움이 되는 방법을 사용하는 것이 좋습니다.
 
 1. 뿐만 아니라 설치 디렉토리에 있는 "렌더" 폴더 내의 다른 렌더 구성을 보고 렌더가 수행하는 작업을 확인할 수 있습니다. 때로는 도움이 필요할 수 있으며, 포럼에서 드릴 수 있으며, 장치를 사용하는 다른 사용자가 수정을 통해 혜택을 받을 수 있도록 개선 사항에 대해 말씀해 주시는 것을 기억하시기 바랍니다. 출시 발표 및 변경 로그에 귀하의 공을 돌리겠습니다
