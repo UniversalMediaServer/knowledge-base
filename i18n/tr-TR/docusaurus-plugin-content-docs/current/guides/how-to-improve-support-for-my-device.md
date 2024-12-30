@@ -2,13 +2,13 @@
 
 Eğer cihazınız, klasörlere göz atmak veya bir dosyayı oynatmak gibi herhangi bir şey yapamıyorsa, işleyici yapılandırma dosyasındaki ayarları değiştirerek düzeltmeniz mümkün olabilir. Farklı cihazlar/işleyiciler/istemciler, UMS gibi sunucularla farklı şekillerde iletişim kurar, bu yüzden yapılandırma dosyası, UMS’ye cihazınızla aynı dili nasıl konuşacağını söyler.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Her yapılandırma profili iki amaca hizmet eder:
+- UMS’ye belirli bir işleyiciye bağlanmaya çalıştığında tanımasına izin vermesine
+- Bu işleyicinin olanaklarını tanımlamasına
 
 Tüm işleyici ayarlarımızla ilgili belgeleri içeren varsayılan bir işleyici yapılandırma dosyamız var. En son sürüme https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf adresinden bakın.
 
-## Adding support for an unrecognized device
+## Tanınmayan bir cihaz için destek ekleme
 
 When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
 
