@@ -10,7 +10,7 @@ Tüm işleyici ayarlarımızla ilgili belgeleri içeren varsayılan bir işleyic
 
 ## Tanınmayan bir cihaz için destek ekleme
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden hiçbirinin cihazınızla eşleşmediği anlamına gelir. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
 
 The solution is to try creating your own renderer configuration file.
 1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
