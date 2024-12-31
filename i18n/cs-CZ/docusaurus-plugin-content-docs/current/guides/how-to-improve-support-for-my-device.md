@@ -2,28 +2,28 @@
 
 Pokud vaše zařízení nic neudělá, jako je prohlížení složek nebo přehrávání souboru, může být možné to opravili změnou nastavení v konfiguračním souboru přehrávače. Různá zařízení/přehrávače/klienti různými způsoby komunikují se servery, jako je UMS, takže konfigurační soubor říká UMS jak mluvit stejným jazykem jako vaše zařízení.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Každý konfigurační profil slouží ke dvěma účelům:
+- Povolit UMS rozpoznat konkrétní přehrávače, když se pokouší připojit
+- Definujte možnosti tohoto přehrávače
 
 Máme výchozí soubor s konfigurací přehrávače, který obsahuje dokumentaci všech našich nastavení.  Viz nejnovější verze na https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRender.conf
 
-## Adding support for an unrecognized device
+## Přidávání podpory pro nerozpoznané zařízení
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Pokud UMS nerozpozná vaše zařízení, znamená to, že žádné konfigurační profily neodpovídají vašemu zařízení. Výsledkem je, že UMS zobrazuje `Neznámý přehrávač`, a protože nezná možnosti vašeho přehrávače, nemůže pro něj poskytnout optimalizovaný výstup.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Řešením je zkusit vytvořit vlastní konfigurační soubor pro přehrávač.
+1. Vytvořte kopii .conf souboru, který je nejblíže vašemu přehrávači. Například, pokud vaše Samsung TV není rozpoznána, jedna z konfigurací Samsung TV může být dobrým místem pro začátek.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. Přejděte na záložku `Logs` v UMS a vyhledávejte text `Media renderer was not recognized. Možná identifikace HTTP hlaviček:`. Tyto informace jsou potřebné k tomu, aby UMS rozpoznal váš přehrávač.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. Ve vašem novém .conf souboru hledejte řádek, který definuje `UserAgentSearch` a/nebo `UpnpDetailsSearch` a nahraďte hodnoty těmito identifikačními informacemi.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Procházet a přehrávat některá média na vašem přehrávači. Udělejte si poznámku, která média měla problém při přehrávání. Nyní můžete přejít do další sekce pro zlepšení podpory pro váš přehrávač.
 
-## Improving support for a device
+## Zlepšení podpory pro přehrávač
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Pokud má některé z vašich médií problém s přehráváním, konfigurace přehrávače by měla být upravena, dokud to nefunguje. Úplný seznam možností naleznete v [DefaultRender.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Nejběžnější ke změně jsou:
     ```
     Video
     Audio
@@ -33,10 +33,10 @@ The solution is to try creating your own renderer configuration file.
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Ujistěte se, že v nové konfiguraci nemáte `MediaInfo = false` , protože to zabrání tomu, aby řádky `Supported` fungovaly.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Abyste se ujistili, že transkódování funguje na vašem zařízení, přehrajte si soubor ze složky `#--TRANSCODE--#`. V této složce přehrajte jednu z `FFmpeg` položek. Překódování funguje, pokud hraje.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. `Supported` řádky musí být vyplněny, aby bylo jasné, které soubory váš přehrávač běžně podporuje. Může být dobrý nápad najít příručku pro váš přehrávač online a použít ji k naplnění těchto řádků.
 
 1. Kromě toho se můžete podívat na další konfigurace přehrávačů ve složce "renderers" ve vaší instalační složce, aby jste zjistili co dělají. Někdy budete potřebovat pomoc, kterou Vám můžeme dát na našem fóru, a prosím nezapomeňte nám říci o zlepšení, když jej provedete, aby ostatní uživatelé s vaším zařízením mohli mít z opravy prospěch. Zmíníme Vás v našem oznámení o vydání a v seznamu změn.
