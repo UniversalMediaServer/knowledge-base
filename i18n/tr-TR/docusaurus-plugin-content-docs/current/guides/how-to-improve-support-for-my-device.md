@@ -15,13 +15,13 @@ UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden 
 Çözüm, kendi işleyici yapılandırma dosyanızı oluşturmaya çalışmaktır.
 1. Cihazınıza en yakın olan .conf dosyasının bir kopyasını oluşturun. Örneğin, eğer Samsung TV’niz tanınmıyorsa, Samsung TV yapılandırmalarından biri başlamak için iyi bir yer olabilir.
 
-1. UMS’de `Günlükler` sekmesine gidin ve `Ortam işleyici tanınmadı metnini arayın. Olası HTTP başlıklarını tanımlama:`. That information is what is needed to make UMS recognize your device.
+1. UMS’de `Günlükler` sekmesine gidin ve `Ortam işleyici tanınmadı metnini arayın. Olası HTTP başlıklarını tanımlama:`. Bu bilgiler, UMS’nin cihazınızı tanıması için gerekli olan bilgilerdir.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. Yeni .conf dosyanızda `UserAgentSearch` ve/veya `UpnpDetailsSearch` parametrelerini tanımlayan satırı arayın ve değerleri bu tanımlayıcı bilgilerle değiştirin.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Cihazınızda bazı ortamlara göz atın ve bunları oynatın. Hangi ortamın oynatılmasında sorun yaşandığını not edin. Artık cihazınıza yönelik desteği geliştirmek için bir sonraki bölüme geçebilirsiniz.
 
-## Improving support for a device
+## Bir cihaz için desteğin geliştirilmesi
 
 1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
     ```
