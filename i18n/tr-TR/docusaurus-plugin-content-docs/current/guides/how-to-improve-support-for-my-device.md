@@ -10,12 +10,12 @@ Tüm işleyici ayarlarımızla ilgili belgeleri içeren varsayılan bir işleyic
 
 ## Tanınmayan bir cihaz için destek ekleme
 
-UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden hiçbirinin cihazınızla eşleşmediği anlamına gelir. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden hiçbirinin cihazınızla eşleşmediği anlamına gelir. Sonuç olarak UMS, `Bilinmeyen İşleyici` olarak görüntüler ve işleyicinizin olanaklarını bilmediğinden cihazınız için iyileştirilmiş çıktı sağlayamaz.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Çözüm, kendi işleyici yapılandırma dosyanızı oluşturmaya çalışmaktır.
+1. Cihazınıza en yakın olan .conf dosyasının bir kopyasını oluşturun. Örneğin, eğer Samsung TV’niz tanınmıyorsa, Samsung TV yapılandırmalarından biri başlamak için iyi bir yer olabilir.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. UMS’de `Günlükler` sekmesine gidin ve `Ortam işleyici tanınmadı metnini arayın. Olası HTTP başlıklarını tanımlama:`. That information is what is needed to make UMS recognize your device.
 
 1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
 
