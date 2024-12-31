@@ -2,24 +2,24 @@
 
 Pokud vaše zařízení nic neudělá, jako je prohlížení složek nebo přehrávání souboru, může být možné to opravili změnou nastavení v konfiguračním souboru přehrávače. Různá zařízení/přehrávače/klienti různými způsoby komunikují se servery, jako je UMS, takže konfigurační soubor říká UMS jak mluvit stejným jazykem jako vaše zařízení.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Každý konfigurační profil slouží ke dvěma účelům:
+- Povolit UMS rozpoznat konkrétní přehrávače, když se pokouší připojit
+- Definujte možnosti tohoto přehrávače
 
 Máme výchozí soubor s konfigurací přehrávače, který obsahuje dokumentaci všech našich nastavení.  Viz nejnovější verze na https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRender.conf
 
-## Adding support for an unrecognized device
+## Přidávání podpory pro nerozpoznané zařízení
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Pokud UMS nerozpozná vaše zařízení, znamená to, že žádné konfigurační profily neodpovídají vašemu zařízení. Výsledkem je, že UMS zobrazuje `Neznámý přehrávač`, a protože nezná možnosti vašeho přehrávače, nemůže pro něj poskytnout optimalizovaný výstup.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Řešením je zkusit vytvořit vlastní konfigurační soubor pro přehrávač.
+1. Vytvořte kopii .conf souboru, který je nejblíže vašemu přehrávači. Například, pokud vaše Samsung TV není rozpoznána, jedna z konfigurací Samsung TV může být dobrým místem pro začátek.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. Přejděte na záložku `Logs` v UMS a vyhledávejte text `Media renderer was not recognized. Možná identifikace HTTP hlaviček:`. Tyto informace jsou potřebné k tomu, aby UMS rozpoznal váš přehrávač.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. Ve vašem novém .conf souboru hledejte řádek, který definuje `UserAgentSearch` a/nebo `UpnpDetailsSearch` a nahraďte hodnoty těmito identifikačními informacemi.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Procházet a přehrávat některá média na vašem přehrávači. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
 
 ## Improving support for a device
 
