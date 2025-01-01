@@ -8,11 +8,11 @@ Jokaisella asetusprofiililla on kaksi toimintoa:
 
 We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
-## Adding support for an unrecognized device
+## Tuntemattoman laitteen tuen lisääminen
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Kun UMS ei tunnista laitettasi, se tarkoittaa että mikään renderoijan profiili ei sovi laitteellesi. UMS näyttää `tuntematon renderoija`. Se ei tiedä renderoijan ominaisuuksia, joten se ei kykene lähettämään optimoitua ulostuloa laitteellesi.
 
-The solution is to try creating your own renderer configuration file.
+Tähän ratkaisu on tehdä uusi asetustiedosto renderoijalle.
 1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
 
 1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
