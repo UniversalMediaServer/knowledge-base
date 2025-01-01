@@ -2,9 +2,9 @@
 
 Jos laitteesi ei tee mitään, kuten hakemistojen selaamista tai tiedoston toistamista, on mahdollista, että voit korjata sen muuttamalla asetuksia renderoijan asetustiedostossa. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Jokaisella asetusprofiililla on kaksi toimintoa:
+- UMS tunnistaa tietyn renderoijan kun se ottaa yhteyttä
+- Määritää mihin renderoija kykenee
 
 We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
