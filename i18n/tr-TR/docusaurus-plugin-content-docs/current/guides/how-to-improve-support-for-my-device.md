@@ -35,8 +35,8 @@ UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden 
     ```
     Yeni yapılandırmanızda `MediaInfo = false` ifadesinin bulunmadığından emin olun, çünkü bu, `Supported` satırlarının çalışmasını durduracaktır.
 
-1. Cihazınızda dönüştürmenin çalıştığından emin olmak için `#--DÖNÜŞTÜRME--#` klasöründeki bir dosyayı oynatın. Bu klasörde `FFmpeg` girişlerinden birini oynatın. If it plays, then transcoding is working.
+1. Cihazınızda dönüştürmenin çalıştığından emin olmak için `#--DÖNÜŞTÜRME--#` klasöründeki bir dosyayı oynatın. Bu klasörde `FFmpeg` girişlerinden birini oynatın. Eğer oynatılıyorsa, dönüştürme çalışıyor demektir.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. UMS'ye cihazınızın yerel olarak hangi dosyaları desteklediğini bildirmek için `Supported` satırlarının doldurulması gerekir. Cihazınızın kılavuzunu çevrimiçi olarak bulmak ve bu satırları doldurmak için bunu kullanmak iyi bir fikir olabilir.
 
 1. Bunun yanı sıra, ne yaptıklarını görmek için kurulum dizininizde "renderers" klasörü içindeki diğer işleyici yapılandırmalarına göz atabilirsiniz. Bazen yardıma ihtiyacınız olabilir, bunu size forumumuzda verebiliriz ve lütfen yaptığınız iyileştirmeden bize bahsetmeyi unutmayın, böylece cihazınızdaki diğer kullanıcılar da düzeltmeden faydalanabilir. Yayım duyurumuzda ve değişiklik günlüğümüzde size atıfta bulunacağız.
