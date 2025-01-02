@@ -23,7 +23,7 @@ UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden 
 
 ## Bir cihaz için desteğin geliştirilmesi
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Eğer ortamlarınızdan herhangi birinin oynatılmasında sorun varsa, işleyici yapılandırması çalışana kadar değiştirilmelidir. Seçeneklerin tam listesi için [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf)’a bakın. En yaygın olarak değiştirilenler şunlardır:
     ```
     Video
     Audio
@@ -33,9 +33,9 @@ UMS cihazınızı tanımadığında bu, işleyici yapılandırma profillerinden 
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Yeni yapılandırmanızda `MediaInfo = false` ifadesinin bulunmadığından emin olun, çünkü bu, `Supported` satırlarının çalışmasını durduracaktır.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Cihazınızda dönüştürmenin çalıştığından emin olmak için `#--DÖNÜŞTÜRME--#` klasöründeki bir dosyayı oynatın. Bu klasörde `FFmpeg` girişlerinden birini oynatın. If it plays, then transcoding is working.
 
 1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
 
