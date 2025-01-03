@@ -33,10 +33,10 @@ La solution consiste à essayer de créer votre propre fichier de configuration 
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Assurez-vous de ne pas avoir `MediaInfo = false` dans votre nouvelle configuration, car cela empêchera les lignes `Supported` de fonctionner.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Pour vous assurer que le transcodage fonctionne sur votre appareil, lisez un fichier depuis le dossier `#--TRANSCODE--#`. Dans ce dossier, jouer une des entrées `FFmpeg`. S'il joue, alors le transcodage fonctionne.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Les lignes `Supported` doivent être remplies pour indiquer à UMS les fichiers que votre appareil prend en charge nativement. Il peut être utile de trouver le manuel de votre appareil en ligne et de l'utiliser pour remplir ces lignes.
 
 1. En plus de cela, vous pouvez consulter d'autres configurations de rendu dans le dossier "renderers" de votre dossier d'installation, pour voir ce qu'ils font. Parfois, vous aurez besoin d'aide, que nous pouvons vous donner sur notre forum, et s'il vous plaît n'oubliez pas de nous parler de l'amélioration lorsque vous le faites, afin que les autres utilisateurs de votre appareil puissent bénéficier de la correction. Nous vous créditerons dans l'annonce de la version et dans le journal des modifications.
