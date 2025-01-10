@@ -1,26 +1,26 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+Algunos de estos pasos pueden no aplicarse a su instalación.  Entienda lo que hacen, e ignore o personalice como sea necesario.
 
-## Preparation
+## Preparación
 
-For operating system support and service packages.
+Para soporte del sistema operativo y paquetes de servicio.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Instale Docker (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Instale Docker (Engine): https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Instrucciones adicionales
 
 ```
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Vuelva a iniciar sesión o reinicie el equipo.
 
 ```
 sudo su -;
@@ -34,15 +34,15 @@ Montar el Almacenamiento al Cliente y enlacelo a ese directorio, probablemente s
 
 Texto de ejemplo: Enlace simbólico simple a otra ruta en el sistema anfitrión puede no funcionar, ya que no habrá acceso a él desde afuera de la ruta del volumen montado por el contenedor del docker.  En su lugar, intente copiar los archivos dentro de esta ubicación.
 
-## Container Setup
+## Configurar Contenedor
 
-Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+Montar los siguientes volúmenes:
+- Carpeta multimedia `/media`
+- Carpeta del perfil que contiene UMS.conf `/profile`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Exponga/reenvíe estos puertos desde el host: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+El siguiente script logra eso (usando la shell fish):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,7 +60,7 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Investigando Problemas/Inconvenientes
 
 ### General
 
@@ -86,7 +86,7 @@ It may be recommended to use the Docker-managed, named-volumes capability instea
 
 Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Parece ser un container-selinux.
 
 ## References
 
