@@ -5304,9 +5304,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@easyops-cn/docusaurus-search-local@npm:^0.46.0":
-  version: 0.46.1
-  resolution: "@easyops-cn/docusaurus-search-local@npm:0.46.1"
+"@easyops-cn/docusaurus-search-local@npm:^0.48.0":
+  version: 0.48.0
+  resolution: "@easyops-cn/docusaurus-search-local@npm:0.48.0"
   dependencies:
     "@docusaurus/plugin-content-docs": "npm:^2 || ^3"
     "@docusaurus/theme-translations": "npm:^2 || ^3"
@@ -5316,7 +5316,7 @@ __metadata:
     "@easyops-cn/autocomplete.js": "npm:^0.38.1"
     "@node-rs/jieba": "npm:^1.6.0"
     cheerio: "npm:^1.0.0"
-    clsx: "npm:^1.1.1"
+    clsx: "npm:^2.1.1"
     comlink: "npm:^4.4.2"
     debug: "npm:^4.2.0"
     fs-extra: "npm:^10.0.0"
@@ -5327,9 +5327,9 @@ __metadata:
     tslib: "npm:^2.4.0"
   peerDependencies:
     "@docusaurus/theme-common": ^2 || ^3
-    react: ^16.14.0 || ^17 || ^18
-    react-dom: ^16.14.0 || 17 || ^18
-  checksum: 10/520e8b9da42a88b6952194da0707d3a9afba1a5e0e4b1f5e9cc748f4c7437c9ee812664fc127ce5aabc58be99eeba97a626322d483c5664d5573b0d8329885de
+    react: ^16.14.0 || ^17 || ^18 || ^19
+    react-dom: ^16.14.0 || 17 || ^18 || ^19
+  checksum: 10/851567e56683dd66ac4b4d6bed84bc41d379c82172f988839b40edf9fffae729caeddd50e8e1d3f8e40db468233f32cad271518fed4eba4447bd36d3730289a6
   languageName: node
   linkType: hard
 
@@ -7918,17 +7918,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^1.1.1":
-  version: 1.2.1
-  resolution: "clsx@npm:1.2.1"
-  checksum: 10/5ded6f61f15f1fa0350e691ccec43a28b12fb8e64c8e94715f2a937bc3722d4c3ed41d6e945c971fc4dcc2a7213a43323beaf2e1c28654af63ba70c9968a8643
-  languageName: node
-  linkType: hard
-
 "clsx@npm:^2.0.0":
   version: 2.0.0
   resolution: "clsx@npm:2.0.0"
   checksum: 10/943766d1b02fee3538c871e56638d87f973fbc2d6291ce221215ea436fdecb9be97ad323f411839c2d52c45640c449b1a53fbfe7e8b3d529b4e263308b630c9a
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10/cdfb57fa6c7649bbff98d9028c2f0de2f91c86f551179541cf784b1cfdc1562dcb951955f46d54d930a3879931a980e32a46b598acaea274728dbe068deca919
   languageName: node
   linkType: hard
 
@@ -11042,7 +11042,7 @@ __metadata:
     "@docusaurus/theme-common": "npm:^3.5.1"
     "@docusaurus/tsconfig": "npm:^3.5.1"
     "@docusaurus/types": "npm:^3.5.1"
-    "@easyops-cn/docusaurus-search-local": "npm:^0.46.0"
+    "@easyops-cn/docusaurus-search-local": "npm:^0.48.0"
     "@mdx-js/react": "npm:3.1.0"
     "@types/react": "npm:^18.3.3"
     prism-react-renderer: "npm:2.4.1"
