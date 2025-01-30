@@ -26,7 +26,7 @@ The "Name" field is disabled for video feeds, because the feeds define their own
 
 #### Path
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+The "Path" field defines the directory structure that will be displayed by UMS. Por ejemplo, si ingresas `Web/YouTube Channels`, tu fuente estará dentro del directorio `YouTube Channels`, alojado dentro del directorio `Web`. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
 
 #### Source/URL
 
@@ -45,5 +45,5 @@ If the feed link was valid, you should now see the "Name" field populated, and n
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Ahora puedes ver tu contenido en tus dispositivos:\
+![Ejemplo de una fuente de vídeo en el reproductor web](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
