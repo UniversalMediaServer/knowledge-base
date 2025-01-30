@@ -26,7 +26,7 @@ The "Name" field is disabled for video feeds, because the feeds define their own
 
 #### Path
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+The "Path" field defines the directory structure that will be displayed by UMS. Por ejemplo, si ingresas `Web/YouTube Channels`, tu fuente estará dentro del directorio `YouTube Channels`, alojado dentro del directorio `Web`. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
 
 #### Source/URL
 
