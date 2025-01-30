@@ -45,5 +45,5 @@ If the feed link was valid, you should now see the "Name" field populated, and n
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Ahora puedes ver tu contenido en tus dispositivos:\
+![Ejemplo de una fuente de vídeo en el reproductor web](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
