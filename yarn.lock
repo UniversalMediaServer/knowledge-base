@@ -5305,8 +5305,8 @@ __metadata:
   linkType: hard
 
 "@easyops-cn/docusaurus-search-local@npm:^0.48.0":
-  version: 0.48.4
-  resolution: "@easyops-cn/docusaurus-search-local@npm:0.48.4"
+  version: 0.48.5
+  resolution: "@easyops-cn/docusaurus-search-local@npm:0.48.5"
   dependencies:
     "@docusaurus/plugin-content-docs": "npm:^2 || ^3"
     "@docusaurus/theme-translations": "npm:^2 || ^3"
@@ -5329,7 +5329,7 @@ __metadata:
     "@docusaurus/theme-common": ^2 || ^3
     react: ^16.14.0 || ^17 || ^18 || ^19
     react-dom: ^16.14.0 || 17 || ^18 || ^19
-  checksum: 10/8dd849f06212e67ef18af1b9441cbd70c30dcc3157548823d70f2b024708ee1285a871ec5b5eb1ff458a787b6591410715fe661ef6a6ce5f3b213c97c7ec1557
+  checksum: 10/39028f2111be9898769302597495dbdcb9ad32c047a77909a4258cd8ee1884b2e186c41ba9adb65ddfe1893a0de89fc3849268699071de82f7f4550e41790b8b
   languageName: node
   linkType: hard
 
