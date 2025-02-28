@@ -37,8 +37,8 @@ Testiesimerkki: Yksinkertainen symlinkki toiseen isäntäjärjestelmän polkuun 
 ## Kontin asetukset
 
 Yhdistä seuraavat kansiot:
-- Mediakansio `/media`
-- Profiili kansio, joka sisältää UMS.confin `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Avaa/uudelleenohjaa nämä portit isännältä: 1044, 5001, 9001.
 
