@@ -37,8 +37,8 @@ Testbeispiel: Einfache Symlinkung zu einem anderen Pfad auf dem Host-System funk
 ## Container-Setup
 
 Folgende Volumes mounten:
-- Medienordner `/media`
-- Profilordner mit UMS.conf `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Diese Ports vom Gastgeber freigeben/weiterleiten: 1044, 5001, 9001.
 
