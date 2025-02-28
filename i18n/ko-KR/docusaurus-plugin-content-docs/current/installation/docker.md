@@ -37,8 +37,8 @@ chmod -R g+w /srv/UMS;
 ## 컨테이너 설정
 
 다음 볼륨을 마운트합니다:
-- 미디어 폴더 `/media`
-- UMS.conf가 있는 프로필 폴더 `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 호스트에서 이러한 포트를 노출/포워딩: 1044, 5001, 9001.
 
