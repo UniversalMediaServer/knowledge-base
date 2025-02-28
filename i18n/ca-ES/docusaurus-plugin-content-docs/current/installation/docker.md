@@ -37,8 +37,8 @@ Exemple de prova: És possible que l'enllaç simbòlic senzill a una altra ruta 
 ## Container Setup
 
 Munta els volums següents:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
