@@ -37,8 +37,8 @@ Texto de ejemplo: Enlace simbólico simple a otra ruta en el sistema anfitrión 
 ## Configurar Contenedor
 
 Montar los siguientes volúmenes:
-- Carpeta multimedia `/media`
-- Carpeta del perfil que contiene UMS.conf `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Exponga/reenvíe estos puertos desde el host: 1044, 5001, 9001.
 
