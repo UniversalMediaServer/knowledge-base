@@ -37,8 +37,8 @@ chmod -R g+w /srv/UMS;
 ## Установка контейнера
 
 Монтировать следующие тома:
-- Папка мультимедиа `/media`
-- Папка профиля, содержащая UMS.conf `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Откройте/перенаправьте эти порты с хоста: 1044, 5001, 9001.
 
