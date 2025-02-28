@@ -37,8 +37,8 @@ Deneme örneği: Docker kapsayıcı için bağlanan birim yolunun dışında bu 
 ## Kapsayıcı Ayarlama
 
 Aşağıdaki birimleri bağlayın:
-- Ortam klasörü `/media`
-- UMS.conf `/profile` içeren profil klasörü
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Anamakineden şu bağlantı noktalarını ortaya çıkarın/yönlendirin: 1044, 5001, 9001.
 
