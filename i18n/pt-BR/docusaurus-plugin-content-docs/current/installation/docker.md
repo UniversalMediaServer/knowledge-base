@@ -37,8 +37,8 @@ Exemplo de teste: Só fazer link simbólico(symlink) para outro caminho no siste
 ## Configurações do container
 
 Montar os seguintes volumes:
-- Pasta de mídia `/media`
-- Pasta de perfil contendo UMS.conf `/profile`
+- Media folder `/root/media`
+- Profile folder containing UMS.conf `/root/.config/UMS`
 
 Exponha ou redirecione estas portas do host(máquina hospedeira do Docker): 1044, 5001, 9001.
 

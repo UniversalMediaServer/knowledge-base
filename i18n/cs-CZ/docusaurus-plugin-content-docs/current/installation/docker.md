@@ -37,8 +37,8 @@ Zkušební příklad: Jednoduché symbolické propojení s jinou cestou v systé
 ## Nastavení kontejneru
 
 Připojte následující svazky:
-- Složka médií `/media`
-- Složka profilu obsahující UMS.conf `/profile`
+- Složka médií `/root/media`
+- Složka profilu obsahující UMS.conf `/root/.config/UMS`
 
 Zobrazit/povolit tyto porty hostitele: 1044, 5001, 9001
 

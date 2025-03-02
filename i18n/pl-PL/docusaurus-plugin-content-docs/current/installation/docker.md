@@ -37,8 +37,8 @@ Test example: Simple symlinking to another path on the host system may not work,
 ## Container Setup
 
 Mount the following volumes:
-- Media folder `/media`
-- Profile folder containing UMS.conf `/profile`
+- Folder multimediów `/root/media`
+- Folder zawierający profil UMS.conf `/root/.config/UMS`
 
 Expose/forward these ports from the host: 1044, 5001, 9001.
 
