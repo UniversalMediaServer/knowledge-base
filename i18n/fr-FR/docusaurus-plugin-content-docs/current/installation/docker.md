@@ -37,8 +37,8 @@ Exemple de test : Un simple lien symbolique vers un autre chemin sur le système
 ## Configuration du conteneur
 
 Monter les volumes suivants :
-- Media folder `/root/media`
-- Profile folder containing UMS.conf `/root/.config/UMS`
+- Dossier média `/root/media`
+- Dossier de profil contenant UMS.conf `/root/.config/UMS`
 
 Exposer/transférer ces ports depuis l'hôte : 1044, 5001, 9001.
 
