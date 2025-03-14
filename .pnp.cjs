@@ -34,7 +34,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
           ["@docusaurus/tsconfig", "npm:3.7.0"],\
           ["@docusaurus/types", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.48.5"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.49.1"],\
           ["@mdx-js/react", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.1.0"],\
           ["@types/react", "npm:18.3.18"],\
           ["prism-react-renderer", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:2.4.1"],\
@@ -9244,10 +9244,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:c573c7cce71ea4f4bca24a9a455403ca7de649ed7e6ad82166c834e58c3f6612daf2f249201bac4e04a389cbf0ff89c02b402ec1739951c2997e466f8dd52fd0#npm:3.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@docusaurus-utils-common-virtual-167a3210a6/0/cache/@docusaurus-utils-common-npm-3.0.1-bcc398803d-b1bf99d0be.zip/node_modules/@docusaurus/utils-common/",\
+      ["virtual:4d14deecd50ec2dc307529def40fa193a0f0b1fe41be6c0b5ccd7ed0d432dd2fcafce9b08d088156e5d4592e86f53127a90919bec24382ac7226e7e3e457ca3e#npm:3.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@docusaurus-utils-common-virtual-94d379c728/0/cache/@docusaurus-utils-common-npm-3.0.1-bcc398803d-b1bf99d0be.zip/node_modules/@docusaurus/utils-common/",\
         "packageDependencies": [\
-          ["@docusaurus/utils-common", "virtual:c573c7cce71ea4f4bca24a9a455403ca7de649ed7e6ad82166c834e58c3f6612daf2f249201bac4e04a389cbf0ff89c02b402ec1739951c2997e466f8dd52fd0#npm:3.0.1"],\
+          ["@docusaurus/utils-common", "virtual:4d14deecd50ec2dc307529def40fa193a0f0b1fe41be6c0b5ccd7ed0d432dd2fcafce9b08d088156e5d4592e86f53127a90919bec24382ac7226e7e3e457ca3e#npm:3.0.1"],\
           ["@docusaurus/types", null],\
           ["@types/docusaurus__types", null],\
           ["tslib", "npm:2.6.2"]\
@@ -9300,22 +9300,22 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@easyops-cn/docusaurus-search-local", [\
-      ["npm:0.48.5", {\
-        "packageLocation": "./.yarn/cache/@easyops-cn-docusaurus-search-local-npm-0.48.5-851493d41e-39028f2111.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+      ["npm:0.49.1", {\
+        "packageLocation": "./.yarn/cache/@easyops-cn-docusaurus-search-local-npm-0.49.1-c094a4bdc2-96d16ef164.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
         "packageDependencies": [\
-          ["@easyops-cn/docusaurus-search-local", "npm:0.48.5"]\
+          ["@easyops-cn/docusaurus-search-local", "npm:0.49.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.48.5", {\
-        "packageLocation": "./.yarn/__virtual__/@easyops-cn-docusaurus-search-local-virtual-c573c7cce7/0/cache/@easyops-cn-docusaurus-search-local-npm-0.48.5-851493d41e-39028f2111.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+      ["virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.49.1", {\
+        "packageLocation": "./.yarn/__virtual__/@easyops-cn-docusaurus-search-local-virtual-4d14deecd5/0/cache/@easyops-cn-docusaurus-search-local-npm-0.49.1-c094a4bdc2-96d16ef164.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
         "packageDependencies": [\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.48.5"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.49.1"],\
           ["@docusaurus/plugin-content-docs", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
           ["@docusaurus/theme-translations", "npm:3.0.1"],\
           ["@docusaurus/utils", "virtual:9bcb161bc46c4f13f33a7b3150c4cabc3edcfae34c00390acb717a45b075c4566338796d7c9f8ee43bee40d8b03c482ba1d03faf78480a9f72228b18c85a2cb4#npm:3.0.1"],\
-          ["@docusaurus/utils-common", "virtual:c573c7cce71ea4f4bca24a9a455403ca7de649ed7e6ad82166c834e58c3f6612daf2f249201bac4e04a389cbf0ff89c02b402ec1739951c2997e466f8dd52fd0#npm:3.0.1"],\
+          ["@docusaurus/utils-common", "virtual:4d14deecd50ec2dc307529def40fa193a0f0b1fe41be6c0b5ccd7ed0d432dd2fcafce9b08d088156e5d4592e86f53127a90919bec24382ac7226e7e3e457ca3e#npm:3.0.1"],\
           ["@docusaurus/utils-validation", "npm:3.0.1"],\
           ["@easyops-cn/autocomplete.js", "npm:0.38.1"],\
           ["@node-rs/jieba", "npm:1.7.2"],\
@@ -16447,7 +16447,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
           ["@docusaurus/tsconfig", "npm:3.7.0"],\
           ["@docusaurus/types", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.7.0"],\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.48.5"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.49.1"],\
           ["@mdx-js/react", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.1.0"],\
           ["@types/react", "npm:18.3.18"],\
           ["prism-react-renderer", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:2.4.1"],\
@@ -24183,7 +24183,7 @@ async function copyImpl(prelayout, postlayout, destinationFs, destination, sourc
 async function maybeLStat(baseFs, p) {
   try {
     return await baseFs.lstatPromise(p);
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -24442,7 +24442,7 @@ class CustomStatWatcher extends events.EventEmitter {
   stat() {
     try {
       return this.fakeFs.statSync(this.path, { bigint: this.bigint });
-    } catch (error) {
+    } catch {
       const statInstance = this.bigint ? new BigIntStatsEntry() : new StatEntry();
       return clearStats(statInstance);
     }
@@ -24768,7 +24768,7 @@ class FakeFS {
     let current = Buffer.alloc(0);
     try {
       current = await this.readFilePromise(p);
-    } catch (error) {
+    } catch {
     }
     if (Buffer.compare(current, content) === 0)
       return;
@@ -24778,7 +24778,7 @@ class FakeFS {
     let current = ``;
     try {
       current = await this.readFilePromise(p, `utf8`);
-    } catch (error) {
+    } catch {
     }
     const normalizedContent = automaticNewlines ? normalizeLineEndings(current, content) : content;
     if (current === normalizedContent)
@@ -24796,7 +24796,7 @@ class FakeFS {
     let current = Buffer.alloc(0);
     try {
       current = this.readFileSync(p);
-    } catch (error) {
+    } catch {
     }
     if (Buffer.compare(current, content) === 0)
       return;
@@ -24806,7 +24806,7 @@ class FakeFS {
     let current = ``;
     try {
       current = this.readFileSync(p, `utf8`);
-    } catch (error) {
+    } catch {
     }
     const normalizedContent = automaticNewlines ? normalizeLineEndings(current, content) : content;
     if (current === normalizedContent)
@@ -24846,13 +24846,13 @@ class FakeFS {
       let pid;
       try {
         [pid] = await this.readJsonPromise(lockPath);
-      } catch (error) {
+      } catch {
         return Date.now() - startTime < 500;
       }
       try {
         process.kill(pid, 0);
         return true;
-      } catch (error) {
+      } catch {
         return false;
       }
     };
@@ -24865,7 +24865,7 @@ class FakeFS {
             try {
               await this.unlinkPromise(lockPath);
               continue;
-            } catch (error2) {
+            } catch {
             }
           }
           if (Date.now() - startTime < 60 * 1e3) {
@@ -24885,7 +24885,7 @@ class FakeFS {
       try {
         await this.closePromise(fd);
         await this.unlinkPromise(lockPath);
-      } catch (error) {
+      } catch {
       }
     }
   }
@@ -26035,7 +26035,7 @@ class MountFS extends BasePortableFakeFS {
       let content;
       try {
         content = await sourceFs.readFilePromise(sourceP2);
-      } catch (error) {
+      } catch {
         throw Object.assign(new Error(`EINVAL: invalid argument, copyfile '${sourceP2}' -> '${destP2}'`), { code: `EINVAL` });
       }
       await destFs.writeFilePromise(destP2, content);
@@ -26067,7 +26067,7 @@ class MountFS extends BasePortableFakeFS {
       let content;
       try {
         content = sourceFs.readFileSync(sourceP2);
-      } catch (error) {
+      } catch {
         throw Object.assign(new Error(`EINVAL: invalid argument, copyfile '${sourceP2}' -> '${destP2}'`), { code: `EINVAL` });
       }
       destFs.writeFileSync(destP2, content);
@@ -26982,7 +26982,7 @@ function patchFs(patchedFs, fakeFs) {
     setupFn(patchedFs, `existsSync`, (p) => {
       try {
         return fakeFs.existsSync(p);
-      } catch (error) {
+      } catch {
         return false;
       }
     });
@@ -28343,7 +28343,7 @@ class ZipFS extends BasePortableFakeFS {
     let resolvedP;
     try {
       resolvedP = this.resolveFilename(`stat '${p}'`, p, void 0, false);
-    } catch (error) {
+    } catch {
       return false;
     }
     if (resolvedP === void 0)
@@ -29384,7 +29384,7 @@ Require stack:
         } else {
           resolution = originalFindPath.call(require$$0.Module, request, [path], isMain);
         }
-      } catch (error) {
+      } catch {
         continue;
       }
       if (resolution) {
@@ -30467,7 +30467,7 @@ function makeApi(runtimeState, opts) {
     try {
       candidates.push(unqualifiedPath);
       stat = opts.fakeFs.statSync(unqualifiedPath);
-    } catch (error) {
+    } catch {
     }
     if (stat && !stat.isDirectory())
       return opts.fakeFs.realpathSync(unqualifiedPath);
@@ -30475,7 +30475,7 @@ function makeApi(runtimeState, opts) {
       let pkgJson;
       try {
         pkgJson = JSON.parse(opts.fakeFs.readFileSync(ppath.join(unqualifiedPath, Filename.manifest), `utf8`));
-      } catch (error) {
+      } catch {
       }
       let nextUnqualifiedPath;
       if (pkgJson && pkgJson.main)
