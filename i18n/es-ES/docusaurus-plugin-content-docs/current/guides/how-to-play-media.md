@@ -1,39 +1,39 @@
-# How to play media
+# Cómo reproducir contenido multimedia
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Este artículo explica las cuatro formas principales de reproducir vídeo, audio e imágenes mediante UMS.
 
-## 1: Play from a renderer interface
+## Reproducir desde una interfaz de renderizado
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Cuando su renderizador está conectado a UMS a través de DLNA/UPnP, a menudo se mostrará un menú llamado "Servidores multimedia" o algo similar, dependiendo del renderizador. Desde allí, puedes acceder a UMS y buscar el medio al que deseas acceder.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+La implementación de esto varía mucho según el renderizador, pero la funcionalidad principal es la misma: navegue hasta el medio elegido y selecciónelo para reproducirlo.
 
-## 2: Push from the UMS interface to a renderer
+## Enviar desde la interfaz UMS a un renderizador
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+La propia interfaz UMS tiene la capacidad de "enviar" medios a los renderizadores si admiten la función UPnP. Es un concepto similar al casting.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. Abra la interfaz de usuario de UMS e identifique el renderizador al que desea enviar los archivos multimedia. En este caso se trata del televisor Panasonic Serie VIERA VT60.  
+   ![Abrir la GUI](@site/docs/guides/img/how-to-play-media-1.png)
+2. Haga clic en la imagen del renderizador para abrir el panel de control  
+   ![Control de renderizador](@site/docs/guides/img/how-to-play-media-2.png)
+3. Seleccione el archivo que desea enviar haciendo clic en el ícono de la carpeta en la parte inferior derecha y se completará en la parte inferior izquierda. Si no ve los controles del reproductor en esta ventana, su renderizador no admite esta funcionalidad. Asegúrese de verificar si hay actualizaciones de firmware/software para su renderizador, ya que es posible que hayan agregado soporte para él.  
+   ![Archivo seleccionado](@site/docs/guides/img/how-to-play-media-3.png)
+4. Ahora puede crear una lista de reproducción haciendo clic en el ícono más a la derecha del cuadro de entrada, o puede enviar el archivo a su renderizador haciendo clic en el ícono de reproducción justo arriba del medio del cuadro de entrada, lo que iniciará la reproducción en su renderizador.
 
-## 3: Play on the web interface
+## Reproducir en la interfaz web
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+Se puede acceder a la interfaz web desde cualquier lugar dentro de su red local, incluso en computadoras y renderizadores. En muchos sentidos, nuestra interfaz de usuario ofrece funciones más avanzadas.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Abra la interfaz web. Si conoce la dirección, puede ir allí; de lo contrario, una forma fácil es hacer clic en el botón de interfaz web en nuestra UI.  
+   ![Abra la interfaz web.](@site/docs/guides/img/how-to-play-media-4.png)
+2. Al hacer clic aquí, se abrirá la interfaz web en su navegador predeterminado. Desde allí puedes navegar hasta tu archivo y hacer clic para reproducirlo.  
+   ![Video en la interfaz web](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## Enviar desde la interfaz web a un renderizador
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+De manera similar a lo anterior en la opción 2, puede enviar sus archivos multimedia a un renderizador a través de nuestra interfaz web.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Hacer clic en el pequeño ícono de un archivo al explorar un directorio. Está en la parte inferior derecha de la miniatura.  
+   ![Emitir icono](@site/docs/guides/img/how-to-play-media-6.png)
+2. Esto hará que aparezca un mini panel de control flotante, que puedes usar para controlar la reproducción del archivo y administrar listas de reproducción dinámicas si lo deseas.  
+   ![Panel de control flotante](@site/docs/guides/img/how-to-play-media-7.png)
