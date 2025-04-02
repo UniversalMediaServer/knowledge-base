@@ -25,8 +25,8 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 | POST 表单示例或说明 | 此命令无需提供参数                    |
 | 可用版本自        | 10.4.2                       |
 
-:::info
-This can be slow for large libraries
+:::信息
+对于大型库来说，这可能会很慢
 :::
 
 示例：
@@ -35,14 +35,14 @@ This can be slow for large libraries
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### 重新扫描文件或文件夹
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| 可用版本自                           | 10.4.2                                                                                |
+| Intention       | 重新扫描文件系统的部分子树。                              |
+| --------------- | ------------------------------------------- |
+| URI             | `/api/folderscanner/rescanFileOrFolder`     |
+| POST BODY       | 扫描路径                                        |
+| POST BODY 示例/说明 | 例如: "/music/pop/Madonna". 路径必须是共享路径的根或子文件夹。 |
+| 可用版本自           | 10.4.2                                      |
 
 示例：
 
@@ -52,11 +52,11 @@ curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST
 
 ### 收藏音乐（专辑及歌曲）
 
-#### like song
+#### 喜欢歌曲
 
-Song will be marked as liked.
+歌曲将被标记为喜欢。
 
-| Intention    | Like a song identified by musicBrainz trackId            |
+| Intention    | 像音乐Brainz trackId 识别的歌曲                                  |
 | ------------ | -------------------------------------------------------- |
 | URI          | `<span class="s1">/api/like/likesong</span>` |
 | POST 表单      | `musicBrainz_trackID`                                    |
@@ -69,11 +69,11 @@ Song will be marked as liked.
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### 不喜欢歌曲
 
-Song will not be disliked
+歌曲不会被忽略
 
-| 功能           | Dislike a song identified by musicBrainz trackId            |
+| 功能           | 不喜欢由 musicBrainz trackId 识别的歌曲                              |
 | ------------ | ----------------------------------------------------------- |
 | URI          | `<span class="s1">/api/like/</span>dislikesong` |
 | POST 表单      | `musicBrainz_trackID`                                       |
@@ -86,17 +86,17 @@ Song will not be disliked
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### 这首歌是否受欢迎
 
-Check if song is liked.
+检查是否喜欢歌曲。
 
-| 功能            | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------- | ----------------------------------------------------------------------------------------------- |
-| URI           | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST 表单       | `musicBrainz_trackID`                                                                           |
-| POST 表单示例或说明  | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY | `TRUE` or `FALSE`                                                                               |
-| 可用版本自         | 10.20                                                                                           |
+| 功能           | 检查音乐Brainz trackId 是否喜欢歌曲                                                                       |
+| ------------ | ----------------------------------------------------------------------------------------------- |
+| URI          | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST 表单      | `musicBrainz_trackID`                                                                           |
+| POST 表单示例或说明 | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| 恢复购买         | `TRUE` or `FALSE`                                                                               |
+| 可用版本自        | 10.20                                                                                           |
 
 示例：
 
@@ -104,13 +104,13 @@ Check if song is liked.
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+这个调用添加了音乐brainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` 所指定的相册的喜欢属性。
 
 #### 收藏专辑
 
 设置专辑状态为已收藏
 
-| 功能    | Likes an album identified by musicBrainz releaseID        |
+| 功能    | 喜欢一个由 musicBrainz releaseID 标识的相册                         |
 | ----- | --------------------------------------------------------- |
 |       | `<span class="s1">/api/like/</span>likealbum` |
 |       | `musicBrainz_releaseID`                                   |
@@ -123,11 +123,11 @@ This call adds the liked attribute of the album identified by musicbrainz releas
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### 不喜欢专辑
 
-Remove album like state.
+删除专辑喜欢状态。
 
-| 功能      | Dislike a song identified by musicBrainz releaseID           |
+| 功能      | 不喜欢由 musicBrainz releaseID 识别的歌曲                             |
 | ------- | ------------------------------------------------------------ |
 | URI     | `<span class="s1">/api/like/</span>dislikealbum` |
 | POST 表单 | `musicBrainz_releaseID`                                      |
@@ -140,37 +140,37 @@ Remove album like state.
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+这次调用删除了musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` 指定的专辑喜欢属性。
 
-#### is album liked
+#### 专辑是否被喜欢
 
-Check album like state.
+检查专辑类似状态。
 
-| 功能                              | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| 功能                | 检查专辑是否被MusicBrainz releaseID 识别。                             |
+| ----------------- | ------------------------------------------------------------ |
+| 网址                | `<span class="s1">/api/like/</span>isalbumliked` |
+| POST BODY         | `musicBrainz_releaseID`                                      |
+| POST BODY 示例 / 描述 | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| RESPONSE BODY     | "TRUE" or "FALSE"                                            |
+| 适用日期              | 10.20                                                        |
 
-Example:
+示例：
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+此通话检查是否喜欢由 musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` 确定的专辑。
 
 ### 评分
 
 评分 API 负责给歌曲评分。 评分信息保存在内部数据库（启用缓存），也可以选择把评分保存到歌曲文件中。 假如在 UMS.conf 文件中设置了  `audio_update_rating_tag = true `选项，IDv3 评分信息也会被更新到歌曲文件中（歌曲文件格式支持的话）。
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+当浏览内容目录服务器时，MusicBrainzTrackID (如果有的话)和audiotrackID 在 DIDL 元素中以 `描述` 元数据。
 
-#### set rating
+#### 设置评分
 
-| 功能           | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
+| 功能           | 在音乐Brainz trackId 识别的歌曲上设置星级 (0-5)                                                              |
 | ------------ | ----------------------------------------------------------------------------------------------- |
 | URI          | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
 | POST 表单      | `musicbrainzTrackId` /`stars`                                                                   |
@@ -183,29 +183,29 @@ While browsing the content directory server, MusicBrainzTrackID (if available) a
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+本次通话设置音乐brainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` 至 `3`. 的用户评分。
 
 #### 获取评分
 
 从数据库读取歌曲的评分信息
 
-| 功能                              | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| 功能                | 通过音乐Brainz trackID获得星星级的歌曲评分(0-5)。 响应机构包含评分信息。                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------ |
+| 网址                | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>` |
+| POST BODY         | `musicbrainzTrackId`                                                                             |
+| POST BODY 示例 / 描述 | b8695995-45e9-405d-b4aa-e50e8760fe25                                                             |
+| 重置BODY 示例         | 3                                                                                                |
+| 适用日期              | 10.20                                                                                            |
 
-Example:
+示例：
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+此通话读取了音乐brainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` 所识别的歌曲的用户评分。
 
-#### set rating by audiotrack id
+#### 根据音轨 ID 设置评分
 
 | Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -269,34 +269,34 @@ This call will create a backup file containing liked albums.
 
 Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Intention     | restore liked songs from backup file                                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI           | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE  | GET                                                                                                                                        |
+| RESPONSE BODY | `OK` or error message                                                                                                                      |
+| 适用日期          | 10.20                                                                                                                                      |
 
-Example:
+示例：
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+此通话将恢复备份文件。
 
 ### 播放列表
 
-#### enable service
+#### 启用服务
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+编辑 UMS.conf 并通过设置配置管理的播放列表文件夹 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+启用此服务。 默认情况下，此服务将被禁用。 播放列表文件夹路径应位于已配置的共享`<span class="s1">文件夹</span>`路径下方，以便通过此 API 更改的播放列表可供 UMS 看到。
 
 #### 列出所有播放列表
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+读取可用的播放列表。 这些播放列表名称必须用于随后的通话以添加或删除歌曲。
 
 | Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
