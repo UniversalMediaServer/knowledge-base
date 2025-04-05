@@ -37,8 +37,8 @@ Teszt példa: Előfordulhat, hogy a gazdagép rendszeren egy másik elérési ú
 ## Konténer beállítása
 
 Csatlakoztassa a következő köteteket:
-- Media folder `/root/media`
-- Profile folder containing UMS.conf `/root/.config/UMS`
+- Média mappa `/root/media`
+- Az UMS.conf-ot tartalmazó profil mappa `/root/.config/UMS`
 
 A következő portok feltárása/továbbítása az állomásról: 1044, 5001, 9001.
 
