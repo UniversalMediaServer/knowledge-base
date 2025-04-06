@@ -298,13 +298,13 @@ a szolgáltatás engedélyezéséhez. Alapértelmezés szerint ez a szolgáltat�
 
 Elérhető lejátszási listák olvasása. Ezeket a lejátszási lista neveket kell használni a további hívásokhoz, hogy dalokat adjunk hozzá vagy távolítsunk el.
 
-| Funkció             | Szállítja az összes támogatott (`m3u`, `m3u8` és `pls`) és elérhető lejátszási listát a konfigurált mappából. Besides playlist name, the playlists `playlistId` is              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                 | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE        | GET                                                                                                                                                                             |
-| RESPONSE BODY       | lejátszási lista nevek JSON tömbje                                                                                                                                              |
-| RESPONSE BODY példa | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Elérhető            | 11.0                                                                                                                                                                            |
+| Funkció             | Szállítja az összes támogatott (`m3u`, `m3u8` és `pls`) és elérhető lejátszási listát a konfigurált mappából. A lejátszási lista neve mellett a lejátszási lista `playlistId` is |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`  |
+| REQUEST TYPE        | GET                                                                                                                                                                              |
+| RESPONSE BODY       | lejátszási lista nevek JSON tömbje                                                                                                                                               |
+| RESPONSE BODY példa | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                   |
+| Elérhető            | 11.0                                                                                                                                                                             |
 
 Példa:
 
@@ -403,14 +403,14 @@ A lejátszási lista nevét úgy kell megadni, hogy ne tartalmazzon semmilyen el
 | URI                      | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
 | REQUEST TYPE             | POST                                                                                                                                                                           |
 | POST BODY                | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY példa / leírás | Contemporary                                                                                                                                                                   |
+| POST BODY példa / leírás | Kortárs                                                                                                                                                                        |
 | RESPONSE BODY            | NINCS                                                                                                                                                                          |
 | Elérhető                 | 11.0                                                                                                                                                                           |
 
 Példa:
 
 ```shell
-curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
+curl -d "Kortárs" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
 Ez a hívás egy új lejátszási lista fájlt hoz létre `Contemporary.m3u8` néven a kezelt lejátszási lista mappában.
