@@ -189,13 +189,13 @@ This call sets the user rating of all songs identified by the musicbrainz track-
 
 Lee la calificación de canciones de la base de datos
 
-| Intención                       | Response body contains the rating information.                                                   |
-| ------------------------------- | ------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>` |
-| POST BODY                       | `musicbrainzTrackId`                                                                             |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                             |
-| RESPONSE BODY example           | 3                                                                                                |
-| Disponible desde                | 10.20                                                                                            |
+| Intención                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
+| POST BODY                       | `musicbrainzTrackId`                                                                                    |
+| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
+| RESPONSE BODY example           | 3                                                                                                       |
+| Disponible desde                | 10.20                                                                                                   |
 
 Ejemplo:
 
