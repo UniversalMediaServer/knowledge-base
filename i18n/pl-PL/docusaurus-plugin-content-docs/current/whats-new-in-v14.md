@@ -54,7 +54,7 @@ People can have avatars to make them easier to see at a glance. You can set them
 
 ### Direct TMDB integration
 
-
+You can now link your TMDB account with UMS in the General Settings area.
 
 Doing this allows you to edit metadata based on search results from TMDB:
 
