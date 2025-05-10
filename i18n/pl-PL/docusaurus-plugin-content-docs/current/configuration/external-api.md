@@ -56,7 +56,7 @@ curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST
 
 Song will be marked as liked.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
+| Intention                       | Polub piosenkę poprzed trackId musicBrainz               |
 | ------------------------------- | -------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/likesong</span>` |
 | POST BODY                       | `musicBrainz_trackID`                                    |

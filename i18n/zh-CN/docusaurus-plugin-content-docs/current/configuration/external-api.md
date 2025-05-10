@@ -18,12 +18,12 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 
 #### rescan
 
-| 功能           | Rescans the complete library |
-| ------------ | ---------------------------- |
-| URI          | `/api/folderscanner/rescan`  |
-| POST 表单      | 无                            |
-| POST 表单示例或说明 | 此命令无需提供参数                    |
-| 可用版本自        | 10.4.2                       |
+| 功能           | 重新掃描完整的库                    |
+| ------------ | --------------------------- |
+| URI          | `/api/folderscanner/rescan` |
+| POST 表单      | 无                           |
+| POST 表单示例或说明 | 此命令无需提供参数                   |
+| 可用版本自        | 10.4.2                      |
 
 :::信息
 对于大型库来说，这可能会很慢
