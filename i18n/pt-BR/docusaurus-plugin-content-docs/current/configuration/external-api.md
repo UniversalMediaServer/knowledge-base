@@ -146,13 +146,13 @@ Esta chamada removeu o atributo curtido do álbum identificado pelo release-id d
 
 Verifique o estado do álbum.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intention                       | Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação. |
+| ------------------------------- | ------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`                                |
+| POST BODY                       | `musicBrainz_releaseID`                                                                     |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                        |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                                                           |
+| Available since                 | 10.20                                                                                       |
 
 Example:
 
