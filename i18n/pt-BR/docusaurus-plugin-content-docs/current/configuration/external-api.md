@@ -18,12 +18,12 @@ Se a API Externa estiver habilitada, a API estará acessível com uma chamada PO
 
 #### rescan
 
-| Intenção                        | Escanear novamente a biblioteca de mídia completa |
-| ------------------------------- | ------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescan`                       |
-| POST BODY                       | NONE                                              |
-| POST BODY example / description | Este comando não necessita de conteúdo no BODY    |
-| Disponível desde                | 10.4.2                                            |
+| Intenção                      | Escanear novamente a biblioteca de mídia completa |
+| ----------------------------- | ------------------------------------------------- |
+| URI                           | `/api/folderscanner/rescan`                       |
+| POST BODY                     | NONE                                              |
+| POST BODY exemplo / descrição | Este comando não necessita de conteúdo no BODY    |
+| Disponível desde              | 10.4.2                                            |
 
 :::Informação
 Este comando pode ser bem lento para bibliotecas de mídia grandes
@@ -146,7 +146,7 @@ Esta chamada removeu o atributo curtido do álbum identificado pelo release-id d
 
 Verifique o estado do álbum.
 
-| Intention                                                                                  | Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação. |
+| Intenção                                                                                   | Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação. |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
 | Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação | `<span class="s1">/api/like/</span>isalbumliked`                                |
 | POST BODY                                                                                  | `musicBrainz_releaseID`                                                                     |
@@ -160,11 +160,11 @@ Exemplo:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Essa chamada verifica se o álbum identificado pelo musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` é gostado.
 
-### Rating
+### Avaliação
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+A API de avaliação é responsável pela avaliação de músicas. Informações de avaliação são salvas no banco de dados interno (cache habilitado) e, opcionalmente, no próprio arquivo. Se `audio_update_rating_tag = true` estiver definido em UMS.conf, o campo de classificação IDv3 também será atualizado no arquivo de música (se o formato do arquivo de música for suportado).
 
 While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
 
