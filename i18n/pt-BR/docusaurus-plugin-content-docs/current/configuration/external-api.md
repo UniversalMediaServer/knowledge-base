@@ -166,38 +166,38 @@ Essa chamada verifica se o álbum identificado pelo musicbrainz release-id `1e0e
 
 A API de avaliação é responsável pela avaliação de músicas. Informações de avaliação são salvas no banco de dados interno (cache habilitado) e, opcionalmente, no próprio arquivo. Se `audio_update_rating_tag = true` estiver definido em UMS.conf, o campo de classificação IDv3 também será atualizado no arquivo de música (se o formato do arquivo de música for suportado).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Ao navegar pelo servidor de diretórios de conteúdo, MusicBrainzTrackID (se disponível) e audiotrackID são entregues no metadado `desc` dentro do elemento DIDL.
 
-#### set rating
+#### Defina a classificação
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Intenção                      | Define a classificação em estrelas (0 - 5) em uma música identificada pelo trackId do musicBrainz |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`   |
+| POST BODY                     | `musicbrainzTrackId` /`stars`                                                                     |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                            |
+| Disponível desde              | 10.20                                                                                             |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Esta chamada define a classificação do usuário de todas as músicas identificadas pelo track-id do musicbrainz `b8695995-45e9-405d-b4aa-e50e8760fe25` para `3`.
 
-#### get rating
+#### Obter classificação
 
-Reads song rating from database
+Lê a avaliação de músicas do banco de dados
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Intenção                      | Obtém a avaliação de uma música em estrelas (0 - 5) através do musicBrainz trackID. O Response body possui as informações de classificação. |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                            |
+| POST BODY                     | `musicbrainzTrackId`                                                                                                                        |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                                        |
+| RESPONSE BODY exemplo         | 3                                                                                                                                           |
+| Disponível desde              | 10.20                                                                                                                                       |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
