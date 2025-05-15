@@ -18,12 +18,12 @@ Se a API Externa estiver habilitada, a API estará acessível com uma chamada PO
 
 #### rescan
 
-| Intenção                        | Escanear novamente a biblioteca de mídia completa |
-| ------------------------------- | ------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescan`                       |
-| POST BODY                       | NONE                                              |
-| POST BODY example / description | Este comando não necessita de conteúdo no BODY    |
-| Disponível desde                | 10.4.2                                            |
+| Intenção                      | Escanear novamente a biblioteca de mídia completa |
+| ----------------------------- | ------------------------------------------------- |
+| URI                           | `/api/folderscanner/rescan`                       |
+| POST BODY                     | NONE                                              |
+| POST BODY exemplo / descrição | Este comando não necessita de conteúdo no BODY    |
+| Disponível desde              | 10.4.2                                            |
 
 :::Informação
 Este comando pode ser bem lento para bibliotecas de mídia grandes
@@ -146,58 +146,58 @@ Esta chamada removeu o atributo curtido do álbum identificado pelo release-id d
 
 Verifique o estado do álbum.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Intenção                                                                                   | Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação. |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| Verificar se o álbum foi curtido, utilizando o releaseID do MusicBrainz para identificação | `<span class="s1">/api/like/</span>isalbumliked`                                |
+| POST BODY                                                                                  | `musicBrainz_releaseID`                                                                     |
+| POST BODY exemplo / descrição                                                              | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                        |
+| RESPONSE BODY                                                                              | "TRUE" or "FALSE"                                                                           |
+| Disponível desde                                                                           | 10.20                                                                                       |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Essa chamada verifica se o álbum identificado pelo musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` é gostado.
 
-### Rating
+### Avaliação
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+A API de avaliação é responsável pela avaliação de músicas. Informações de avaliação são salvas no banco de dados interno (cache habilitado) e, opcionalmente, no próprio arquivo. Se `audio_update_rating_tag = true` estiver definido em UMS.conf, o campo de classificação IDv3 também será atualizado no arquivo de música (se o formato do arquivo de música for suportado).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Ao navegar pelo servidor de diretórios de conteúdo, MusicBrainzTrackID (se disponível) e audiotrackID são entregues no metadado `desc` dentro do elemento DIDL.
 
-#### set rating
+#### Defina a classificação
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Intenção                      | Define a classificação em estrelas (0 - 5) em uma música identificada pelo trackId do musicBrainz |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`   |
+| POST BODY                     | `musicbrainzTrackId` /`stars`                                                                     |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                            |
+| Disponível desde              | 10.20                                                                                             |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Esta chamada define a classificação do usuário de todas as músicas identificadas pelo track-id do musicbrainz `b8695995-45e9-405d-b4aa-e50e8760fe25` para `3`.
 
-#### get rating
+#### Obter classificação
 
-Reads song rating from database
+Lê a avaliação de músicas do banco de dados
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Intenção                      | Obtém a avaliação de uma música em estrelas (0 - 5) através do musicBrainz trackID. O Response body possui as informações de classificação. |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                           | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                            |
+| POST BODY                     | `musicbrainzTrackId`                                                                                                                        |
+| POST BODY exemplo / descrição | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                                        |
+| RESPONSE BODY exemplo         | 3                                                                                                                                           |
+| Disponível desde              | 10.20                                                                                                                                       |
 
-Example:
+Exemplo:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
