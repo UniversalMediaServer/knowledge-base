@@ -27,21 +27,21 @@ Wenn Sie ausgewählt haben, dass Sie unbekannte Renderer erlauben oder blockiere
 
 ## Person mit Renderer verknüpfen
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Sie können die Benutzerkonten mit Renderern/Wiedergabegeräten verknüpfen, damit diese einen geräteunabhängigen Zugriff und Abspielmöglichkeiten auf die Inhalte haben.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Ein einfaches Beispiel: Wenn sie einen Fernseher im Wohnzimmer haben und einen in ihrem Schlafzimmer, dann können diese unabhängig voneinander unterschiedliche Inhalte wiedergeben.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Beispiel für die Konfiguration eines Benutzerkontos zu einem Wiedergabegerät (Renderer)](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Freigegebene Inhalte auf bestimmte Gruppen beschränken
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Sie können wählen, welche Gruppe welche Inhalte sehen kann (Einschränkung auf Verzeichnisse oder Online Inhalte). Wenn Sie z. B. eine Person haben (oder ein Gerät, das einer Person zugeordnet ist), die ein Kind ist, können Sie das Kind der Gruppe "Kinder" zuordnen und dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht auf die Inhalte "Horror" oder "Nur für Erwachsene" geben. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Beispiel von Gruppen mit geteilten Inhalten.](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Ordner verstecken
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Steuert die Sichtbarkeit von virtuellen Verzeichnissen Diese Konfiguration findet sich in dem UMS.conf File. Wenn sie bestimmte Verzeichnisse ausblenden wollen, damit sie nicht durchsucht werden können,  setzen Sie den Wert an dieser Stelle auf "true" oder markieren Sie diese auf der Registerkarte Navigation/Freigabeeinstellungen im erweiterten GUI-Modus.
 
 ```
 hide_recently_played_folder =true
@@ -53,22 +53,22 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Um den Web-Ordner auszublenden, müssen Sie auf der Registerkarte "Allgemeine Konfiguration" im erweiterten GUI-Modus die Option "Externes Netzwerk aktivieren" deaktivieren oder den Wert von "external_netweork =" in der Datei UMS.conf auf "false" ändern. Dies hat den Nebeneffekt, dass der automatische Updater nicht mehr funktioniert. Die über die grafische Benutzeroberfläche vorgenommene(n) Änderung(en) werden erst nach einem Neustart wirksam.
 
 ## PIN Code
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Alle oben genannten Methoden schränken den Zugriff von verschiedenen Wiedergabegeräten/Renderern ein. Wenn Sie jedoch Zugriff auf ein Wiedergabegerät/Renderer haben, der einen Ordner sehen darf, helfen Ihnen diese Methoden nicht weiter (wenn die Kinder Zugriff auf den Fernseher im Wohnzimmer haben, der Zugriff auf alle Medien hat, haben sie auch Zugriff auf diese Medien). Der PIN-Code löst dieses Problem. Er ermöglicht es Ihnen, Ordner/Medien hinter einem PIN-Code zu verstecken, den Sie VOR der Wiedergabe eingeben müssen. Als Standard handelt es sich bei der Eingabe um eine Ziffernfolge (0-9), genau wie bei einem Bankomaten.  Ich empfehle Ihnen dringend, auf Ziffern basierende Codes zu verwenden, da es sonst schwierig wird, sie vom Renderer aus einzugeben. Sollten Sie besonders sicherheitsaffin sein, können Sie auch Buchstaben eingeben. Das funktioniert wie folgt: Fügen Sie eine Datei namens UMS.code in dasselbe Verzeichnis wie Ihre UMS.conf ein und fügen Sie in diese Datei "regexp,code" ein, wobei "regexp" ein regulärer Ausdruck wie in der Datei "UMS.deny" ist und "code" der Code ist, welcehr den Zugriff auf den Ordner/das Medium gewährt. Für den Code gibt es keine Längenvorschrift. Ein Beispiel:
 ```
 .*privat.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Diese Konfiguration zwingt Sie zur Eingabe eines Codes, wenn der Ordner/das Medium das Wort "privat" enthält. Der richtige Code ist 1234. Der Code bleibt dann 4 Stunden lang gültig (wenn Sie ihn in dieser Zeit nicht ändern).
 
 ## Benutzerdefinierte Gerätekonfiguration
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Jede Konfiguration kann auch auf Gerätebasis festgelegt werden, indem eine benutzerdefinierte Gerätekonfiguration erstellt wird, die die Standard-UMS-Einstellungen außer Kraft setzt (weitere Informationen finden Sie unter "Erstellen einer benutzerdefinierten Gerätekonfiguration").
 
-For example, to customize the kids' TV:
+Als Beispiel: eine spezifische Konfiguration für den Fernseher der Kinder:
 - Klicken Sie auf die Schaltfläche 'Dieses Gerät anpassen' oben rechts im GUI-Popup des Renderers und geben Sie einen Namen für die Konfiguration an.
 - In der neuen conf-Datei, die sich öffnet, fügen Sie alle Einstellungen hinzu, die Sie für den TV überschreiben möchten., z.B. um den Servernamen zu ändern und verschiedene Ordner anzugeben:
 ```
