@@ -10,10 +10,10 @@ Media player apps do not generally support the concept of a "user", so usually e
 
 UMS provides a number of methods to control access in those situations.
 
-## Allow or block renderers or network devices by default
+## Renderers of netwerkapparaten standaard toestaan ​​of blokkeren
 You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Dit is handig voor situaties waarin mensen samenwonen of bij grote lokale netwerken waar weinig vertrouwen heerst. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
 
 ![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
