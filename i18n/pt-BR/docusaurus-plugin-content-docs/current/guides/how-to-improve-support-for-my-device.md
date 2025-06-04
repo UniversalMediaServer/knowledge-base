@@ -1,10 +1,10 @@
 # Como melhorar o suporte para o meu dispositivo
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Se o seu dispositivo está falhando em fazer algo, como navegar pastas ou reproduzir um arquivo, pode ser possível para você corrigi-lo alterando as configurações no arquivo de configuração do renderizador. Diferentes dispositivos/renderizadores/clientes se comunicam com servidores como o UMS de diferentes formas, para que o arquivo de configuração diga ao UMS como falar o mesmo idioma do seu dispositivo.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Cada perfil de configuração serve a dois propósitos:
+- Permitir que o UMS reconheça um renderizador específico quando tentar se conectar
+- Definir as possibilidades deste renderizador
 
 We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
