@@ -14,7 +14,7 @@ _ ` secret_password` _ 的内容必须不小于 12 个字符
 
 If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
 
-###
+### Folder Scanning
 
 #### rescan
 
