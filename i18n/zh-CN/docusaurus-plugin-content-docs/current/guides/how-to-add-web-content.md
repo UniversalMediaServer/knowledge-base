@@ -1,48 +1,45 @@
-# How to add web content
+# 如何添加网络内容
 
-This article will explain how to add web content.
+本文将介绍如何添加网络内容。
 
-## Video feeds
+## 视频订阅源
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+你可以通过添加 RSS 源的链接来订阅视频订阅源或频道，如果是 YouTube 频道，就直接输入频道链接。
 
-### 1: Go to the Shared Content section
+### 1: 进入已共享内容部分
 
-In the UMS settings in your web browser, open the menu and select Shared Content\
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+在浏览器中的 UMS 设置中，打开菜单，选择已共享的内容  ![设置菜单](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: 打开 “添加新的共享内容” 对话框
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type\
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+当你点击 “添加新的共享内容” 按钮时，会弹出一个对话框，让你添加各种类型的媒体。 你要做的第一步是在类型菜单中选择 “视频订阅源”  ![新的共享内容对话框](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: 添加你的订阅源
 
-Here you can add your feed
+现在你可以添加你的订阅源
 
-#### Name
+#### 名称
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+视频订阅源的 “名称” 一栏被禁用，因为订阅源会自己确定名称
 
-#### Path
+#### 路径
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+“路径” 一栏决定 UMS 展示的目录结构。 举个例子，如果你输入 “Web/YouTube Channels”，你的订阅就会在 “Web” 目录的 “YouTube Channels” 目录内。 这个功能可以让你按照你的需求更灵活地组织你的内容，在你用 UMS 将多个订阅源放在同一目录时十分有用。
 
-#### Source/URL
+#### 来源/URL:
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+此处填写视频订阅源的链接。 其通常以 “.xml” 结尾，但我们对YouTube进行特殊处理，使其能够直接使用频道的URL，比如 “https://www.youtube.com/@kurzgesagt”
 
-#### Authorized groups
+#### 已授权组
 
 “已授权组” 一栏让你能够使该订阅源只对特定的群组访问。群组在 UMS 中创建，其可与不同的用户和/或设备关联。 见 [安全与隐私](../configuration/security-and-privacy.md#link-person-to-renderer) 了解更多细节。
 
-When you are happy with the options you entered, select the "Add" button.
+当你对当前设置满意时，点击 “添加” 按钮添加该视频订阅源。
 
-### Feed order
+### 订阅源排序
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+如果订阅源链接有效，你应该能看见 “名称” 一栏出现内容，现在你可以上下拖拽订阅源来对其进行排序  ![已共享的内容列表和排序功能](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### 保存修改
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. 现在你可以在你的设备上看到你的内容了:  [在网页播放器中的视频订阅源的例子](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+你可以重复上述操作来添加和编辑更多内容，当你对结果满意时，点击页面底部的 “保存” 按钮保存修改。 现在你可以在你的设备上看到你的内容了:  [在网页播放器中的视频订阅源的例子](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
