@@ -34,7 +34,7 @@ This is the link to the video feed. It will usually end in `.xml`, but we handle
 
 #### Authorized groups
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+“已授权组” 一栏让你能够使该订阅源只对特定的群组访问。群组在 UMS 中创建，其可与不同的用户和/或设备关联。 见 [安全与隐私](../configuration/security-and-privacy.md#link-person-to-renderer) 了解更多细节。
 
 When you are happy with the options you entered, select the "Add" button.
 
@@ -45,5 +45,4 @@ If the feed link was valid, you should now see the "Name" field populated, and n
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. 现在你可以在你的设备上看到你的内容了:  [在网页播放器中的视频订阅源的例子](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
