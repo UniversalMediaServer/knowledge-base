@@ -8,17 +8,17 @@ Editați "UMS.conf" și configurați o cheie API precum aceasta.
 
 `api_key=secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`Parola secretă`_ trebuie să conțină cel puțin 12 caractere.
 
-## API usage
+## Utilizare API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Dacă API-ul extern este activat, API-ul este accesibil printr-un POST call la /api/COMMAND
 
-### Folder Scanning
+### Scanare folder
 
-#### rescan
+#### rescanează
 
-| Intention                       | Rescans the complete library       |
+| Intenție                        | Rescanează întreaga bibliotecă     |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
