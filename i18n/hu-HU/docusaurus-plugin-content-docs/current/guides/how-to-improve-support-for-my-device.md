@@ -37,6 +37,6 @@ The solution is to try creating your own renderer configuration file.
 
 1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. Jó megoldás lehet, ha az interneten megkeresi a készülék kézikönyvét, és azt használja fel a sorok kitöltéséhez.
 
 1. Ezen kívül megnézheted a többi megjelenítő konfigurációját is a telepítési könyvtárad "renderers" mappájában, hogy lásd, mit csinálnak. Néha segítségre lesz szüksége, amit a fórumunkon tudunk megadni, és kérjük, ne felejtsen el szólni nekünk a javításról, ha elvégezte, hogy más felhasználók is részesülhessenek a javításból. A kiadási közleményünkben és a changelogban meg fogjuk említeni.
