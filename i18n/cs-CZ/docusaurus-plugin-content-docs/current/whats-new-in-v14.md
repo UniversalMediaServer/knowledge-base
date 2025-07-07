@@ -26,9 +26,9 @@ Nyní můžete blokovat a povolit přístup na základě přehrávače nebo sí�
 
 ### Ve výchozím nastavení povolit nebo blokovat přehrávače nebo síťová zařízení:
 
-Nyní si můžete vybrat výchozí strategii pro přehrávače a síťová zařízení. Dříve byla možná pouze jedna strategie - buď všechno dovolit, nebo vše popírat podle seznamu povolených. Nyní můžete ve výchozím nastavení povolit nebo odepřít, s denylisty a povolenými seznamy pro úplné ovládání.
+Nyní si můžete vybrat výchozí strategii pro přehrávače a síťová zařízení. Dříve byla možná pouze jedna strategie - buď všechno povolit, nebo vše odepřít podle seznamu povolených. Nyní můžete ve výchozím nastavení jednotlivá zařízení povolit nebo odepřít v seznamu zakázaných a v seznamu  povolených.
 
-Díky tomu je UMS mnohem pružnější pro sdílené životní situace nebo široké/malé místní sítě. Je také užitečný pro ty z vás, které používáte adaptéry powerline pro vaši síť, protože to může mít za následek nežádoucí přístup od sousedů.
+To je užitečné pro sdílené životní situace nebo místní sítě s nízkou důvěrou. Je také užitečný pro ty z vás, které používáte adaptéry powerline pro vaši síť, protože to může mít za následek nežádoucí přístup od sousedů.
 
 ![Příklad nastavení sítě povolit preferenci](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
@@ -42,7 +42,7 @@ Nyní můžete propojit uživatelské účty s přehrávačem/zařízeními, co�
 
 ### Omezit sdílený obsah pro určité skupiny
 
-Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Kids", a povolte skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k podcastům historie.
+Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Děti", a povolte skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k historii podcastů.
 
 ![Příklad sdílených skupin obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
