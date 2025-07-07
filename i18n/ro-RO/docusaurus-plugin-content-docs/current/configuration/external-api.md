@@ -20,7 +20,7 @@ Dacă API-ul extern este activat, API-ul este accesibil printr-un POST call la /
 
 | Intenție                        | Rescanează întreaga bibliotecă     |
 | ------------------------------- | ---------------------------------- |
-|                                 | `/api/folderscanner/rescan`        |
+| URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
 | POST BODY example / description | This command needs no body content |
 | Available since                 | 10.4.2                             |
