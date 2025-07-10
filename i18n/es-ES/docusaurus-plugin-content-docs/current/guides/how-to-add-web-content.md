@@ -38,8 +38,7 @@ Cuando estés satisfecho con las opciones que has introducido, selecciona el bot
 
 ### Orden de la transmisión
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Si el enlace de la transmisión era válido, ahora deberías ver el campo "Nombre"  relleno, y ahora puedes arrastrar la transmisión hacia arriba o hacia abajo para controlar el orden ![Lista de contenido compartido y capacidad de ordenación](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Guardar cambios
 
