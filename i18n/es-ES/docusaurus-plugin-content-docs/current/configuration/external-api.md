@@ -160,7 +160,7 @@ Ejemplo:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Esta llamada comprueba si el álbum identificado por musicaran release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` le gusta.
 
 ### Rating
 
