@@ -148,7 +148,7 @@ Comprobar álbum como estado.
 
 | Intención                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
+| URi                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
 | RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
