@@ -2,57 +2,57 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# v15의 새로운 기능
 
-## Overview
+## 개요
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+V15의 두 가지 주요 목표는 사용자 피드백과 리뷰를 기반으로 인터페이스를 간소화하고 사용자 계정을 더 쉽게 사용할 수 있도록 하는 것이었습니다.
 
-A quick overview of the changes in this version is:
+이 버전의 변경 사항에 대한 간략한 개요는 다음과 같습니다:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **여러 로그인 사용자를 지원하는 **사용자 전환기****
+- 두 주요 영역을 변경하는 **모드 전환기**: **플레이어**와 **설정**
+- **핀 코드** 로그인
+- 동적 **TV 시즌 메타데이터**
+- 파일 **미디어 정보** 버튼
+- 또한 알림 및 실시간 코드의 재작성, 메모리 관리 개선, 그리고 사용성을 개선하고 원하는 작업을 수행하는 데 필요한 작업 수를 줄이기 위한 많은 다른 변경 사항들도 포함됩니다.
 
-## New features
+## 새로운 기능
 
-### User switcher
+### 사용자 전환기
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+이제 브라우저에서 여러 사용자와 동시에 로그인하여 두 사용자 간에 전환할 수 있습니다.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+로그인 화면에 사용 가능한 사용자를 표시하는 설정을 활성화할 수도 있습니다. 이 설정은 보안상의 이유로 선택할 수 있습니다. 모든 사용자가 모든 사용자 계정을 보지 않기를 원할 수도 있기 때문입니다. 사용자 계정이 로그인한 후 계정 단위로 브라우저에 저장되는 중간 설정도 있습니다.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![사용자 전환기 예시](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### 모드 전환기
 
-The web interface has been split into two areas: Player and Settings.
+웹 인터페이스는 플레이어와 설정이라는 두 가지 영역으로 나뉩니다.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+이렇게 하면 클릭 수를 줄여 웹 인터페이스를 더 직관적이고 쉽게 탐색할 수 있습니다.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![모드 전환기 예시](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### 핀 코드 로그인
 
-You can now enable pin code logins in the server settings.
+이제 서버 설정에서 핀 코드 로그인을 활성화할 수 있습니다.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![핀 코드 보기 예시](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### 동적 시즌 메타데이터
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+TV 프로그램의 시즌에는 제목이나 표지 이미지와 같은 자체 데이터가 있는 경우가 있으므로 이제 시즌 페이지에 이를 표시합니다.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![시즌 보기 예시](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### 더 보기
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+v15의 모든 변경 사항에 대한 전체 목록은 [전체 변경 로그]를 참조하세요(https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## 마이그레이션
 
-There are no specific migration steps to be aware of.
+특별히 주의해야 할 마이그레이션 단계는 없습니다.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+다른 주요 업데이트와 마찬가지로, 업데이트 전에 현재 버전으로 돌아갈 수 있는 기능을 원한다면, 구성과 로컬 데이터베이스가 포함된 프로필 디렉토리를 백업할 수 있습니다. 프로그램 로그 상단 근처에서 해당 디렉터리의 위치를 찾을 수 있습니다 '프로필 디렉터리: [some page]/UMS'를 찾습니다.
