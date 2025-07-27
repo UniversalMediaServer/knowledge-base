@@ -12,8 +12,8 @@ Bu sürümdeki değişikliklere hızlı bir bakış:
 
 - **Çoklu oturum açmış kullanıcılar** için desteğe sahip bir **kullanıcı değiştirici**
 - İki ana alan arasında değiştirmek için **kip değiştirici**: **Oynatıcı** ve **Ayarlar**
-- **Pin code** logins
-- Dynamic **TV season metadata**
+- **Pin kodu** oturum açmaları
+- Değişken **TV sezonu üstverileri**
 - A file **media info** button
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
