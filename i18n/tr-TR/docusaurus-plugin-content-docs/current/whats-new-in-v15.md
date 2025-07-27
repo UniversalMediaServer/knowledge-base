@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# S15’te Neler Yeni
 
-## Overview
+## Genel bakış
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+V15 için 2 ana hedef, kullanıcı geri bildirimlerine ve incelemelerine dayanarak arayüzümüzü basitleştirmek ve kullanıcı hesaplarımızı kullanmayı kolaylaştırmaktı.
 
-A quick overview of the changes in this version is:
+Bu sürümdeki değişikliklere hızlı bir bakış:
 
-- A **user switcher** with support for **multiple logged-in users**
+- **Çoklu oturum açmış kullanıcılar** için desteğe sahip bir **kullanıcı değiştiricisi**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
 - **Pin code** logins
 - Dynamic **TV season metadata**
