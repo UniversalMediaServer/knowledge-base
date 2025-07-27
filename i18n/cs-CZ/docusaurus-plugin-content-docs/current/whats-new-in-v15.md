@@ -53,6 +53,6 @@ Sezóny televizních pořadů někdy mají vlastní data jako titulky a titulky 
 
 ## Migrace
 
-There are no specific migration steps to be aware of.
+Nejsou žádné konkrétní migrační kroky, kterých bychom si byli vědomi.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.
