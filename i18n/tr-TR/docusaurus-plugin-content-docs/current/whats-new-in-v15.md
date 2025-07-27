@@ -10,8 +10,8 @@ V15 için 2 ana hedef, kullanıcı geri bildirimlerine ve incelemelerine dayanar
 
 Bu sürümdeki değişikliklere hızlı bir bakış:
 
-- **Çoklu oturum açmış kullanıcılar** için desteğe sahip bir **kullanıcı değiştiricisi**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
+- **Çoklu oturum açmış kullanıcılar** için desteğe sahip bir **kullanıcı değiştirici**
+- İki ana alan arasında değiştirmek için **kip değiştirici**: **Oynatıcı** ve **Ayarlar**
 - **Pin code** logins
 - Dynamic **TV season metadata**
 - A file **media info** button
