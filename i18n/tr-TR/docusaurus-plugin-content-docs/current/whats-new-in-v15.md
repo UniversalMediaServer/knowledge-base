@@ -15,11 +15,11 @@ Bu sürümdeki değişikliklere hızlı bir bakış:
 - **Pin kodu** oturum açmaları
 - Değişken **TV sezonu üstverileri**
 - Bir dosya **ortam bilgisi** düğmesi
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- Ayrıca bildirim ve gerçek zamanlı kodumuzun yeniden yazılması, gelişmiş bellek yönetimi ve kullanılabilirliği artırmak ve istediğinizi yapmak için gereken eylem sayısını azaltmak için diğer birçok değişiklik.
 
-## New features
+## Yeni özellikler
 
-### User switcher
+### Kullanıcı değiştirici
 
 You can now be logged in with multiple users in a browser at the same time, and switch between them.
 
