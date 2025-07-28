@@ -14,7 +14,7 @@ Bu sürümdeki değişikliklere hızlı bir bakış:
 - İki ana alan arasında değiştirmek için **kip değiştirici**: **Oynatıcı** ve **Ayarlar**
 - **Pin kodu** oturum açmaları
 - Değişken **TV sezonu üstverileri**
-- A file **media info** button
+- Bir dosya **ortam bilgisi** düğmesi
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
 ## New features
