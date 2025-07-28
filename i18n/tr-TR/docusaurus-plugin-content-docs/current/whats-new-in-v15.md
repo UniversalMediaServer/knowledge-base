@@ -21,13 +21,13 @@ Bu sürümdeki değişikliklere hızlı bir bakış:
 
 ### Kullanıcı değiştirici
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+Artık aynı anda bir tarayıcıda birden çok kullanıcıyla birlikte oturum açabilir ve aralarında geçiş yapabilirsiniz.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Ayrıca, mevcut kullanıcıları oturum açma ekranında görüntülemek için bir ayarı da etkinleştirebilirsiniz. Bu ayar güvenlik nedenlerinden dolayı isteğe bağlıdır, çünkü herkesin tüm kullanıcı hesaplarını görmesini istemeyebilirsiniz. Ayrıca, bu tarayıcıda oturum açtıktan sonra her hesap başına, kullanıcı hesaplarının tarayıcıya kaydedildiği bir ayar da vardır.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Kullanıcı değiştirici örneği](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### Kip değiştirici
 
 The web interface has been split into two areas: Player and Settings.
 
