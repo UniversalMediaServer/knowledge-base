@@ -29,13 +29,13 @@ Ayrıca, mevcut kullanıcıları oturum açma ekranında görüntülemek için b
 
 ### Kip değiştirici
 
-The web interface has been split into two areas: Player and Settings.
+Web arayüzü iki alana bölünmüştür: Oynatıcı ve Ayarlar.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+Bu, gerekli tıklama sayısını azaltarak web arayüzünü daha sezgisel ve daha kolay gezinir hale getirmelidir.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Kip değiştirici örneği](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### Pin kodu oturum açmaları
 
 You can now enable pin code logins in the server settings.
 
