@@ -37,22 +37,22 @@ Bu, gerekli tıklama sayısını azaltarak web arayüzünü daha sezgisel ve dah
 
 ### Pin kodu oturum açmaları
 
-You can now enable pin code logins in the server settings.
+Artık sunucu ayarlarında pin kodu oturum açmalarını etkinleştirebilirsiniz.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Pin kodu görünümü örneği](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### Değişken sezon üstverileri
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Dizi sezonlarının bazen başlıklar ve kapak resimleri gibi kendi verileri vardır, bu yüzden şimdi bunu sezon sayfalarında görüntülüyoruz.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Sezon görünümü örneği](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### Daha fazla
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+S15’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğü](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)’ne bakın.
 
-## Migration
+## Geçiş
 
-There are no specific migration steps to be aware of.
+Dikkat edilmesi gereken belirli bir geçiş adımı yoktur.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Tüm büyük güncellemelerde olduğu gibi, güncellemeden önce şu anki sürümünüze geri dönme olanağına sahip olmak istiyorsanız, yapılandırmanızı ve yerel veritabanınızı içeren profil dizininizin yedeğini alabilirsiniz. Bu dizinin konumunu program günlüklerinizin üst kısmına yakın bir yerde bulabilirsiniz. `Profil dizini: [bazı sayfalar]/UMS`yi arayın.
