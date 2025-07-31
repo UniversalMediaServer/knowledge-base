@@ -25,7 +25,7 @@ Nyní můžete být přihlášen společně s více uživateli v prohlížeči a
 
 Toto nastavení se z bezpečnostních důvodů přihlásí, protože možná nechcete, aby všichni viděli všechny uživatelské účty. Také existuje mezi nastavení, kde jsou uživatelské účty uloženy v prohlížeči po přihlášení prohlížeče na základě účtu.
 
-![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v14-user-avatar.png)
+![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
 ### Přepínač režimu
 
