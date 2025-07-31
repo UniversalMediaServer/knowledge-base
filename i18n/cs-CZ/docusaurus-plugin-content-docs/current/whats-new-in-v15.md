@@ -2,57 +2,57 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# Co je nového v v15
 
-## Overview
+## Přehled
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+2 hlavními cíli pro V15 bylo zjednodušení našeho rozhraní, na základě zpětné vazby a recenzí uživatelů a usnadnění používání našich uživatelských účtů.
 
-A quick overview of the changes in this version is:
+Rychlý přehled změn v této verzi:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **Uživatelský přepínač** s podporou **více přihlášených uživatelů**
+- **Přepínač režimu** pro změnu mezi dvěma hlavními oblastmi: **Přehrávač** a **Nastavení**
+- Přhlášení **PIN kódem**
+- Dynamická **metadata TV sezóna**
+- Tlačítko **informace o médiu**
+- Také přepisuje naše oznámení a kód v reálném čase, lepší správa paměti, a mnoho dalších změn ke zlepšení využitelnosti a snížení počtu opatření potřebných k provedení toho, co chcete.
 
-## New features
+## Nové funkce
 
-### User switcher
+### Přepnutí uživatele
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+Nyní můžete být přihlášen společně s více uživateli v prohlížeči a přepínat mezi nimi.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Toto nastavení se z bezpečnostních důvodů přihlásí, protože možná nechcete, aby všichni viděli všechny uživatelské účty. Také existuje mezi nastavení, kde jsou uživatelské účty uloženy v prohlížeči po přihlášení prohlížeče na základě účtu.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### Přepínač režimu
 
-The web interface has been split into two areas: Player and Settings.
+Webové rozhraní bylo rozděleno do dvou oblastí: Přehrávač a nastavení.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+To by mělo zvýšit intuitivitu a snazší navigaci snížením počtu kliknutí.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Příklad změny nastavení modu](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### Přhlášení **PIN kódem**
 
-You can now enable pin code logins in the server settings.
+Nyní můžete povolit přihlášení PIN kódu v nastavení serveru.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Příklad zobrazení PIN kódu](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### Dynamická **metadata sezóna**
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Sezóny televizních pořadů někdy mají vlastní data jako titulky a titulky obrázků, takže je nyní vidíme na sezonních stránkách.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Příklad zobrazení sezóny](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### Více
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Úplný seznam všech změn ve v15 naleznete v [kompletním seznamu změn](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
-## Migration
+## Migrace
 
-There are no specific migration steps to be aware of.
+Nejsou žádné konkrétní migrační kroky, kterých bychom si byli vědomi.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.

@@ -2,57 +2,57 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# S15’te Neler Yeni
 
-## Overview
+## Genel bakış
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+V15 için 2 ana hedef, kullanıcı geri bildirimlerine ve incelemelerine dayanarak arayüzümüzü basitleştirmek ve kullanıcı hesaplarımızı kullanmayı kolaylaştırmaktı.
 
-A quick overview of the changes in this version is:
+Bu sürümdeki değişikliklere hızlı bir bakış:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **Çoklu oturum açmış kullanıcılar** için desteğe sahip bir **kullanıcı değiştirici**
+- İki ana alan arasında değiştirmek için **kip değiştirici**: **Oynatıcı** ve **Ayarlar**
+- **Pin kodu** oturum açmaları
+- Değişken **TV sezonu üstverileri**
+- Bir dosya **ortam bilgisi** düğmesi
+- Ayrıca bildirim ve gerçek zamanlı kodumuzun yeniden yazılması, gelişmiş bellek yönetimi ve kullanılabilirliği artırmak ve istediğinizi yapmak için gereken eylem sayısını azaltmak için diğer birçok değişiklik.
 
-## New features
+## Yeni özellikler
 
-### User switcher
+### Kullanıcı değiştirici
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+Artık aynı anda bir tarayıcıda birden çok kullanıcıyla birlikte oturum açabilir ve aralarında geçiş yapabilirsiniz.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Ayrıca, mevcut kullanıcıları oturum açma ekranında görüntülemek için bir ayarı da etkinleştirebilirsiniz. Bu ayar güvenlik nedenlerinden dolayı isteğe bağlıdır, çünkü herkesin tüm kullanıcı hesaplarını görmesini istemeyebilirsiniz. Ayrıca, bu tarayıcıda oturum açtıktan sonra her hesap başına, kullanıcı hesaplarının tarayıcıya kaydedildiği bir ayar da vardır.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Kullanıcı değiştirici örneği](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### Kip değiştirici
 
-The web interface has been split into two areas: Player and Settings.
+Web arayüzü iki alana bölünmüştür: Oynatıcı ve Ayarlar.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+Bu, gerekli tıklama sayısını azaltarak web arayüzünü daha sezgisel ve daha kolay gezinir hale getirmelidir.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Kip değiştirici örneği](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### Pin kodu oturum açmaları
 
-You can now enable pin code logins in the server settings.
+Artık sunucu ayarlarında pin kodu oturum açmalarını etkinleştirebilirsiniz.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Pin kodu görünümü örneği](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### Değişken sezon üstverileri
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Dizi sezonlarının bazen başlıklar ve kapak resimleri gibi kendi verileri vardır, bu yüzden şimdi bunu sezon sayfalarında görüntülüyoruz.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Sezon görünümü örneği](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### Daha fazla
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+S15’teki tüm değişikliklerin tam listesi için [tam değişiklik günlüğü](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)’ne bakın.
 
-## Migration
+## Geçiş
 
-There are no specific migration steps to be aware of.
+Dikkat edilmesi gereken belirli bir geçiş adımı yoktur.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Tüm büyük güncellemelerde olduğu gibi, güncellemeden önce şu anki sürümünüze geri dönme olanağına sahip olmak istiyorsanız, yapılandırmanızı ve yerel veritabanınızı içeren profil dizininizin yedeğini alabilirsiniz. Bu dizinin konumunu program günlüklerinizin üst kısmına yakın bir yerde bulabilirsiniz. `Profil dizini: [bazı sayfalar]/UMS`yi arayın.
