@@ -1,38 +1,38 @@
-#
+# Спољни АПИ
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Спољни АПИ омогућава програмима да приступе или покрећу UMS функционалности помоћу HTTP позива.
 
-## How to enable the external API
+## Како омогућити спољни АПИ
 
-Edit UMS.conf and configure an api_key like this
+Измените UMS.conf и конфигуришите api_key овако
 
-`api_key = secret_password`
+`api_key = tajna_lozinka`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`тајна_лозинка`_ мора имати најмање 12 карактера.
 
-## API usage
+## Коришћење АПИ
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Ако је спољни АПИ омогућен, АПИ-ју је могуће приступити POST позивом на /api/COMMAND
 
-### Folder Scanning
+### Скенирање фасцикли
 
-#### rescan
+#### поновно скенирање
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Намера                  | Поново скенира целу библиотеку      |
+| ----------------------- | ----------------------------------- |
+| Идентификатор           | `/api/folderscanner/rescan`         |
+| ТЕЛО ПОРУКЕ             | НЕМА                                |
+| Пример/опис тела поруке | Ова команда не захтева садржај тела |
+| Доступно од             | 10.4.2                              |
 
-:::info
-This can be slow for large libraries
+:::инфо
+Ово може бити споро за велике библиотеке
 :::
 
-Example:
+Пример:
 
 ```shell
-curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
+curl -w "%{хттп_код}\n" -H "api-key: tajna_lozinka" http://localhost:5001/api/folderscanner/rescan
 ```
 
 #### rescan file or folder
