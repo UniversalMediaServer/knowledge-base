@@ -49,7 +49,7 @@ As temporadas das séries de TV às vezes têm os seus próprios dados, como tí
 
 ### Mais
 
-Para obter uma lista completa de todas as alterações na versão 15, consulte [o evangelho
+For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migração
 
