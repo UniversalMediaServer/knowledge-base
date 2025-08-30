@@ -11,4 +11,4 @@ Se você não é um utilizador atual e deseja baixá-lo ou decidir se deseja uti
 
 Está dividido em 3 seções principais: Configuração, Guias e Instalação.
 
-Se está à procura de informações específicas e não as encontrou, por favor, avise no GitHub para que possamos adicioná-las.
+Se está à procura de informações específicas e ainda não as encontrou, por favor, avise no GitHub para que possamos adicioná-las.

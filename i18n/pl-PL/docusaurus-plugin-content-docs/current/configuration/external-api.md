@@ -1,20 +1,20 @@
-# External API
+# Zewnętrzne API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Zewnętrzne API umożliwia programom dostęp do lub wywoływanie funkcji UMS za pomocą połączenia HTTP.
 
-## How to enable the external API
+## Jak włączyć zewnętrzne API
 
-Edit UMS.conf and configure an api_key like this
+Edytuj UMS.conf i skonfiguruj klucz api_key jak poniżej
 
 `api_key = secret_password`
 
 The _`secret_password`_ must have a minimum of 12 chars.
 
-## API usage
+## Wykorzystanie API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Jeśli zewnętrzne API jest włączone, dostęp do API uzyskamy wywołaniem POST do /api/COMMAND
 
-### Folder Scanning
+### Skanowanie folderów
 
 #### rescan
 

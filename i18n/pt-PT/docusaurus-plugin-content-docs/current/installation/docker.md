@@ -2,9 +2,9 @@
 
 Alguns destes  passos podem não ser aplicáveis a sua instalação.  Entenda o que eles fazem, e ignore, ou personalize conforme necessário.
 
-## Preparação
+## preparação
 
-Por Sistema Operacional e gerenciadores de pacote.
+Por Sistema Operativo e gestores de pacote.
 
 ### Debian Linux
 
