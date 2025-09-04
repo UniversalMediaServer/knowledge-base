@@ -146,13 +146,13 @@ Esta llamada eliminó el atributo liked del álbum identificado por musicbrainz 
 
 Comprobar álbum como estado.
 
-| Intención                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Disponible desde                | 10.20                                                        |
+| Intención                       | Comprueba si el álbum es similar identificado por releaseID de musicBrainz |
+| ------------------------------- | -------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`               |
+| POST BODY                       | `musicBrainz_releaseID`                                                    |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                       |
+| RESPONSE BODY                   | "TRUE" or "FALSE"                                                          |
+| Disponible desde                | 10.20                                                                      |
 
 Ejemplo:
 
