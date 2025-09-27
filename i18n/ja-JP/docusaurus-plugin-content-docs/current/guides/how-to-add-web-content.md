@@ -4,7 +4,7 @@ This article will explain how to add web content.
 
 ## Video feeds
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+
 
 ### 1: Go to the Shared Content section
 
@@ -32,7 +32,7 @@ The "Path" field defines the directory structure that will be displayed by UMS. 
 
 This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
 
-#### Authorized groups
+#### 承認済みグループ
 
 The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
 
@@ -45,5 +45,5 @@ If the feed link was valid, you should now see the "Name" field populated, and n
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
+前の手順を繰り返してコンテンツを追加・編集できます。変更が完了したらページの下部にある「保存」ボタンを選択します。 Now you can see your content on your devices:\
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)

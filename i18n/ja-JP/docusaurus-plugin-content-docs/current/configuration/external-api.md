@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### ファイルまたはフォルダを再スキャン
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| 以下から利用可能：                       | 10.4.2                                                                                |
+| Intention | Rescans a partial subtree of the file system.                                         |
+| --------- | ------------------------------------------------------------------------------------- |
+| URI       | `/api/folderscanner/rescanFileOrFolder`                                               |
+| POST BODY | PATH_TO_SCAN                                                                        |
+|           | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
+| 以下から利用可能： | 10.4.2                                                                                |
 
 例
 
