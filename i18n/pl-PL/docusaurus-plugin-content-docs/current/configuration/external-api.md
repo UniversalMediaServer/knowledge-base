@@ -6,9 +6,9 @@ Zewnętrzne API umożliwia programom dostęp do lub wywoływanie funkcji UMS za 
 
 Edytuj UMS.conf i skonfiguruj klucz api_key jak poniżej
 
-`api_key = secret_password`
+`api_key = tajne_haslo`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+_`tajne_haslo`_ musi mieć co najmniej 12 znaków.
 
 ## Wykorzystanie API
 
@@ -16,9 +16,9 @@ Jeśli zewnętrzne API jest włączone, dostęp do API uzyskamy wywołaniem POST
 
 ### Skanowanie folderów
 
-#### rescan
+#### Skanowanie ponowne
 
-| Intention                       | Rescans the complete library       |
+| Intention                       | Skanuje ponownie całą bibliotekę   |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
 | POST BODY                       | NONE                               |
@@ -26,16 +26,16 @@ Jeśli zewnętrzne API jest włączone, dostęp do API uzyskamy wywołaniem POST
 | Available since                 | 10.4.2                             |
 
 :::info
-This can be slow for large libraries
+Może być powolne dla dużych bibliotek
 :::
 
-Example:
+Przykład:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### ponowne skanowanie plików lub folderów
 
 | Intention                       | Rescans a partial subtree of the file system.                                         |
 | ------------------------------- | ------------------------------------------------------------------------------------- |
