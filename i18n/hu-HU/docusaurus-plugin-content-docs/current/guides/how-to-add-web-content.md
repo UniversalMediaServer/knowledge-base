@@ -12,7 +12,7 @@ Az UMS beállításaiban, a web böngészőben nyisd meg a menüt, és válaszd 
 
 ### 2: Nyisd meg az "Új megosztott tartalom hozzáadása" modális ablakot
 
-Amikor kiválasztod az "Új megosztott tartalom hozzáadása" gombot, megnyílik egy modális ablak, amely lehetővé teszi bármilyen típusú média hozzáadását. Az első lépés az, hogy válaszd a "Videó feed" típust\
+Amikor kiválasztod az "Új megosztott tartalom hozzáadása" gombot, megnyílik egy modális ablak, amely lehetővé teszi bármilyen típusú média hozzáadását. Az első lépés az, hogy válaszd a "Videó feed" típust  
 ![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Add hozzá a feedet
@@ -39,10 +39,10 @@ Miután elégedett vagy a megadott beállításokkal, válaszd az "Hozzáadás" 
 
 ### Feed sorrend
 
-Ha a feed link érvényes volt, most már látni fogod, hogy a "Név" mező kitöltődött, és most már húzhatod a feedet fel vagy le, hogy meghatározd a sorrendet\
+Ha a feed link érvényes volt, most már látni fogod, hogy a "Név" mező kitöltődött, és most már húzhatod a feedet fel vagy le, hogy meghatározd a sorrendet  
 ![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Változtatások mentése
 
-Ismételheted az előző lépéseket, hogy további tartalmat adj hozzá vagy szerkessz, és amikor elégedett vagy a módosításokkal, válaszd a "Mentés" gombot az oldal alján. Most már láthatod a tartalmadat az eszközeiden:\
+Ismételheted az előző lépéseket, hogy további tartalmat adj hozzá vagy szerkessz, és amikor elégedett vagy a módosításokkal, válaszd a "Mentés" gombot az oldal alján. Most már láthatod a tartalmadat az eszközeiden:  
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
