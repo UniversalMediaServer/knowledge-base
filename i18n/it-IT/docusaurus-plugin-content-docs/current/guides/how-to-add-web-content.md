@@ -8,12 +8,12 @@ Questo articolo spiegherà come aggiungere contenuti web.
 
 ### 1: Vai alla sezione Contenuti condivisi
 
-Nelle impostazioni UMS nel tuo browser web, apri il menu e seleziona Contenuti condivisi\
+Nelle impostazioni UMS nel tuo browser web, apri il menu e seleziona Contenuti condivisi  
 ![Menu impostazioni](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Aprire il modal "Aggiungi nuovo contenuto condiviso"
 
-Quando si seleziona il pulsante "Aggiungi nuovo contenuto condiviso", si aprirà un modal che consente di aggiungere qualsiasi tipo di supporto. Il primo passo è scegliere il tipo "feed video"\
+Quando si seleziona il pulsante "Aggiungi nuovo contenuto condiviso", si aprirà un modal che consente di aggiungere qualsiasi tipo di supporto. Il primo passo è scegliere il tipo "feed video"  
 ![Nuova modalità opzioni contenuti condivisi](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Aggiungi il tuo feed
@@ -40,10 +40,10 @@ When you are happy with the options you entered, select the "Add" button.
 
 ### Feed order
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order\
+If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
 ![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:\
+You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
