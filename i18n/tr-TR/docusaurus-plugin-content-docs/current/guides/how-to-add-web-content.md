@@ -8,12 +8,12 @@ RSS bildirim bağlantılarını ekleyerek görüntü yayınlarına/kanallara abo
 
 ### 1: Paylaşılan İçerik bölümüne gidin
 
-Web tarayıcınızdaki UMS ayarlarında menüyü açın ve Paylaşılan İçerik’i seçin\
+Web tarayıcınızdaki UMS ayarlarında menüyü açın ve Paylaşılan İçerik’i seçin  
 ![Ayarlar menüsü](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: "Yeni paylaşılan içerik ekle" kalıcı penceresini açın
 
-"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü yayını" türünü seçmektir\
+"Yeni paylaşılan içerik ekle" düğmesine tıkladığınızda, bu her türlü ortamı eklemenizi sağlayan bir kalıcı pencere açacaktır. İlk adım "Görüntü yayını" türünü seçmektir  
 ![Yeni paylaşılan içerik seçenekleri kalıcı penceresi](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Yayınınızı ekleyin
@@ -40,10 +40,10 @@ Girdiğiniz seçeneklerden memnun olduğunuzda "Ekle" düğmesine tıklayın.
 
 ### Yayın sırası
 
-Eğer yayın bağlantısı geçerliyse, artık "Ad" alanının doldurulmuş olduğunu görmelisiniz ve artık sırayı denetlemek için yayını yukarı veya aşağı sürükleyebilirsiniz\
+Eğer yayın bağlantısı geçerliyse, artık "Ad" alanının doldurulmuş olduğunu görmelisiniz ve artık sırayı denetlemek için yayını yukarı veya aşağı sürükleyebilirsiniz  
 ![Paylaşılan içerik listesi ve sıralama yeteneği](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Değişiklikleri kaydet
 
-Daha fazla içerik eklemek/düzenlemek için önceki adımları tekrarlayabilir ve değişikliklerinizden memnun olduğunuzda sayfanın en altındaki "Kaydet" düğmesine tıklayabilirsiniz. Artık içeriğinizi cihazlarınızda görebilirsiniz:\
+Daha fazla içerik eklemek/düzenlemek için önceki adımları tekrarlayabilir ve değişikliklerinizden memnun olduğunuzda sayfanın en altındaki "Kaydet" düğmesine tıklayabilirsiniz. Artık içeriğinizi cihazlarınızda görebilirsiniz:  
 ![Web oynatıcısındaki görüntü yayını örneği](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
