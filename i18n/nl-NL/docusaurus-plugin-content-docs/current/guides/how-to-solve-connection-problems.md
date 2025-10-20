@@ -8,5 +8,5 @@ This usually happens when your computer has more than one active network connect
 
 1. Open UMS
 2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. Degene die u wilt, heeft meestal een IP-adres tussen haakjes achter de naam, bijvoorbeeld:  
+3. Vouw de `Forceer netwerk uit op de interface:` dropdown uit en selecteer de gewenste interface. There might be a lot of options in the dropdown. Degene die u wilt, heeft meestal een IP-adres tussen haakjes achter de naam, bijvoorbeeld:  
    ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
