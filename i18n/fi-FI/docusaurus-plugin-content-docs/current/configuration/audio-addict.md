@@ -1,28 +1,28 @@
-# Audio Addict Network Radio
+# Audio Addict-nettiradiot
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+**Audio Addict** on kokoelma maksullisia nettiradiokanavia, joihin kuuluu:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Classical Radio.com, RadioTunes, RockRadio.com, JazzRadio.com, Zen Radio, ja DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+**Maksullinen tili** vaaditaan näitä radiokanavia varten Sinun tarvitsee vain rekisteröityä johonkin sivustoista, koska sama käyttäjätunnus ja salasana antavat pääsyn kaikkiin niihin.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS lukee automaattisesti kaikki saatavilla olevat Audio Addict radiosivustot, niiden kanavat, ja suodattimet. **Suosikkikanavat** ovat myös tuettu.
 
-## Configuration
+## Asetukset
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Ota käyttöön AudioAddict-tuki, lisäämällä seuraavat rivit `UMS.conf`-tiedostoon:
 
 ```
-# TRUE = prefer European streaming server
+# TRUE = käytä ensisijaisesti eurooppalaisia palvelimia
 audio_addict_europe = TRUE or FALSE
 
-# Your username
+# Käyttäjänimi
 audio_addict_user = USERNAME
 
-# Your password
+# Salasana
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## Sijainti
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+Kansio **Audio Addict Radio Network** sijaitsee mediakirjastossa. Sieltä voit selata ja käyttää kaikkia käytettävissä olevia asemia suoraan.
