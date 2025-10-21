@@ -18,12 +18,12 @@ If the external API is enabled, the API is accessible with a POST call to /api/C
 
 #### rescan
 
-| Intention                       | Rescans the complete library |
-| ------------------------------- | ---------------------------- |
-| URI                             | `/api/folderscanner/rescan`  |
-| POST BODY                       | NONE                         |
-| POST BODY example / description |                              |
-| Available since                 | 10.4.2                       |
+| Intention                       | Rescans the complete library       |
+| ------------------------------- | ---------------------------------- |
+| URI                             | `/api/folderscanner/rescan`        |
+| POST BODY                       | NONE                               |
+| POST BODY example / description | This command needs no body content |
+| Available since                 | 10.4.2                             |
 
 :::info
 This can be slow for large libraries
