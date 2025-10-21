@@ -1,28 +1,28 @@
-# Ses Bağımlı Ağ Radyosu
+# Audio Addict Network Radio
 
-**Ses Bağımlı Ağ**, premium internet radyo istasyonlarından oluşan bir koleksiyondur, aşağıdakiler dahil:
+**Audio Addict Network**, premium internet radyo istasyonlarından oluşan bir koleksiyondur, aşağıdakiler dahil:
 
 Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio ve DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+Bu radyo istasyonlarına erişmek için ücretli bir **premium hesap** gereklidir. Aynı kullanıcı adı ve parola hepsine erişim sağlayacağından yalnızca sitelerden birine kaydolmanız gerekir.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS, mevcut tüm AudioAddict radyo sitelerini, kanallarını ve süzgeçlerini otomatik olarak okur. **Favorites** kanalı da desteklenmektedir.
 
-## Configuration
+## Yapılandırma
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+AudioAddict desteğini etkinleştirmek için `UMS.conf` dosyanıza aşağıdaki satırları ekleyin:
 
 ```
-# TRUE = prefer European streaming server
-audio_addict_europe = TRUE or FALSE
+# TRUE = Avrupa akış sunucusunu tercih eder
+audio_addict_europe = TRUE veya FALSE
 
-# Your username
-audio_addict_user = USERNAME
+# Kullanıcı adınız
+audio_addict_user = KULLANICI ADI
 
-# Your password
-audio_addict_pass = PASSWORD
+# Parolanız
+audio_addict_pass = PAROLA
 ```
 
-## Location
+## Konum
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+**Audio Addict Radio Network** klasörü ortam kitaplığınızda bulunur. Buradan mevcut tüm istasyonlara doğrudan göz atabilir ve bunlara doğrudan erişebilirsiniz.
