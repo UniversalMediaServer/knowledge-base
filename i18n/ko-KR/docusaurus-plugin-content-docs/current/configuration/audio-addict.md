@@ -1,28 +1,28 @@
-# Audio Addict Network Radio
+# 오디오 애청자 네트워크 라디오
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+**오디오 애청자 네트워크**는 다음을 포함한 프리미엄 인터넷 라디오 방송국 모음입니다:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+클래식 라디오, 라디오 튠즈, 록 라디오, 재즈 라디오, 젠 라디오, 그리고 DI.fm .
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+이 라디오 방송국에 접속하려면 유료 **프리미엄 계정**이 필요합니다. 동일한 사용자 이름과 비밀번호로 모든 사이트에 액세스할 수 있으므로 사이트 중 하나에만 등록하면 됩니다.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS는 사용 가능한 모든 오디오애딕트 라디오 사이트, 채널 및 필터를 자동으로 읽어줍니다. **즐겨찾기** 채널도 지원됩니다.
 
-## Configuration
+## 구성
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+오디오애청자 지원을 활성화하려면 'UMS.conf' 파일에 다음 줄을 추가하세요:
 
 ```
 # TRUE = prefer European streaming server
 audio_addict_europe = TRUE or FALSE
 
 # Your username
-audio_addict_user = USERNAME
+audio_addict_user = 사용자 이름
 
 # Your password
-audio_addict_pass = PASSWORD
+audio_addict_pass = 비밀번호
 ```
 
-## Location
+## 위치
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+**오디오 애청자 라디오 네트워크** 폴더는 미디어 라이브러리 내에 있습니다. 거기에서 모든 이용 가능한 방송국을 직접 둘러보고 접근할 수 있습니다.
