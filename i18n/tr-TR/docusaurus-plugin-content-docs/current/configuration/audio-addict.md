@@ -1,8 +1,8 @@
-# Audio Addict Network Radio
+# Ses Bağımlı Ağ Radyosu
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+**Ses Bağımlı Ağ**, premium internet radyo istasyonlarından oluşan bir koleksiyondur, aşağıdakiler dahil:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio ve DI.fm.
 
 A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
 
