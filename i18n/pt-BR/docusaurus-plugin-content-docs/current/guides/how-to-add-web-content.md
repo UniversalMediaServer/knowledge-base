@@ -8,12 +8,12 @@ You can subscribe to video feeds/channels by adding the RSS feed links, or in th
 
 ### 1: Go to the Shared Content section
 
-Nas configurações do UMS no seu navegador da web, abra o menu e selecione Conteúdo Compartilhado\
+Nas configurações do UMS no seu navegador da web, abra o menu e selecione Conteúdo Compartilhado  
 ![Menu de configurações](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
 ### 2: Open the "Add new shared content" modal
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. O primeiro passo é escolher o tipo "Feed de vídeo"\
+When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. O primeiro passo é escolher o tipo "Feed de vídeo"  
 ![Novo módulo de opções de conteúdo compartilhado](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Add your feed
@@ -40,10 +40,10 @@ When you are happy with the options you entered, select the "Add" button.
 
 ### Feed order
 
-Se o link do feed era válido, você deve ver o campo "Nome" preenchido, e agora você pode arrastar o feed para cima ou para baixo para controlar a ordem\
+Se o link do feed era válido, você deve ver o campo "Nome" preenchido, e agora você pode arrastar o feed para cima ou para baixo para controlar a ordem  
 ! Lista de conteúdo compartilhada e capacidade de pedido](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort. ng)
 
 ### Save changes
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Agora você pode ver seu conteúdo em seus dispositivos:\
+You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Agora você pode ver seu conteúdo em seus dispositivos:  
 ![Exemplo de feed de vídeo no tocador web](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)

@@ -47,7 +47,7 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 Example:
 
 ```shell
-curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
+curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheim_wachtwoord" -X POST http://localhost:5001/api/mapscanner/herscanbestandof map
 ```
 
 ### Liking Music (albums and songs)

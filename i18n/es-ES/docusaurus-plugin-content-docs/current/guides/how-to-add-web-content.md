@@ -42,5 +42,5 @@ Si el enlace de la transmisión era válido, ahora deberías ver el campo "Nombr
 
 ### Guardar cambios
 
-Puedes repetir los pasos previos para añadir/editar más contenidos, y cuando estés satisfecho con los cambios, selecciona el botón "Guardar" en la parte inferior de la página. Ahora puedes ver tu contenido en tus dispositivos:\
+Puedes repetir los pasos previos para añadir/editar más contenidos, y cuando estés satisfecho con los cambios, selecciona el botón "Guardar" en la parte inferior de la página. Ahora puedes ver tu contenido en tus dispositivos:  
 ![Ejemplo de una fuente de vídeo en el reproductor web](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)

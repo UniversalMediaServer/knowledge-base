@@ -73,12 +73,12 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Song will not be disliked
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Intention                        | Dislike a song identified by musicBrainz trackId            |
+| -------------------------------- | ----------------------------------------------------------- |
+| URI                              | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY                        | `musicBrainz_trackID`                                       |
+| POST BODY eksempel / beskrivelse | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Available since                  | 10.20                                                       |
 
 Example:
 
