@@ -1,14 +1,14 @@
 #
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+A Audio Addict Network é uma coleção de estações de rádio premium na Internet, incluindo:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Rádio Clássica, Rádio Tunes, Rádio Rock, Rádio Jazz, Rádio Zen e DI.fm.
 
-É necessário uma **conta premium**  para acessar essas estações de rádio. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+É necessário uma **conta premium**  para acessar essas estações de rádio. Você só precisa se registrar em um dos sites, pois o mesmo nome de usuário e senha concederão acesso a todos eles.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+O MS lê automaticamente todos os sites de rádio AudioAddict disponíveis, seus canais e filtros O canal **Favoritos** também é suportado.
 
-## Configuration
+## Configuração
 
 Para habilitar o suporte ao AudioAddict, adicione as seguintes linhas ao seu arquivo "UMS.conf":
 
@@ -23,6 +23,6 @@ audio_addict_user = USERNAME
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## Localização
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+A pasta **Audio Addict Radio Network** está localizada em sua biblioteca de mídia. A partir daí, você pode procurar e acessar diretamente todas as estações disponíveis.
