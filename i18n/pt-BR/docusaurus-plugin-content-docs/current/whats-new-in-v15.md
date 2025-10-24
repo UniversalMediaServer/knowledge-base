@@ -23,7 +23,7 @@ A quick overview of the changes in this version is:
 
 You can now be logged in with multiple users in a browser at the same time, and switch between them.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Você também pode habilitar uma configuração para exibir os usuários disponíveis na tela de login. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
