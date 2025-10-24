@@ -8,5 +8,5 @@ This usually happens when your computer has more than one active network connect
 
 1. Open UMS
 2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
+3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. O que você deseja normalmente terá um endereço IP nos colchetes após o nome, por exemplo:  
    ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
