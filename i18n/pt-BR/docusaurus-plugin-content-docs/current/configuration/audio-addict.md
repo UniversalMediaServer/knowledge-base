@@ -1,4 +1,4 @@
-# Audio Addict Network Radio
+#
 
 The **Audio Addict Network** is a collection of premium internet radio stations, including:
 
@@ -10,16 +10,16 @@ UMS automatically reads all available AudioAddict radio sites, their channels, a
 
 ## Configuration
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Para habilitar o suporte ao AudioAddict, adicione as seguintes linhas ao seu arquivo "UMS.conf":
 
 ```
-# TRUE = prefer European streaming server
-audio_addict_europe = TRUE or FALSE
+# TRUE = preferir servidor de streaming
+audio_addict_europe = TRUE ou FALSE
 
-# Your username
+# Seu nome de usuário
 audio_addict_user = USERNAME
 
-# Your password
+# Sua senha
 audio_addict_pass = PASSWORD
 ```
 
