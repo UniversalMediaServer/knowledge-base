@@ -1,4 +1,4 @@
-# Audio Addict Network Radio
+# Radio de la red Audio Adición
 
 The **Audio Addict Network** is a collection of premium internet radio stations, including:
 
@@ -10,7 +10,7 @@ UMS automatically reads all available AudioAddict radio sites, their channels, a
 
 ## Configuration
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Para habilitar la compatibilidad con Audio Adición, agregue las siguientes líneas a su archivo `UMS.conf`:
 
 ```
 # TRUE = prefer European streaming server
@@ -25,4 +25,4 @@ audio_addict_pass = PASSWORD
 
 ## Location
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+The **Audio Addict Radio Network** folder is located within your media library. Desde allí, puedes navegar y acceder directamente a todas las estaciones disponibles.
