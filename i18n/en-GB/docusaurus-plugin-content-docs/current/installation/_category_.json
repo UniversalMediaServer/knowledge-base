@@ -1,8 +1,8 @@
 {
-  "label": "",
+  "label": "Installation",
   "position": "",
   "link": {
     "type": "",
-    "description": ""
+    "description": "Most operating systems/environments do not need documentation for installation. This section is for those that do."
   }
 }
