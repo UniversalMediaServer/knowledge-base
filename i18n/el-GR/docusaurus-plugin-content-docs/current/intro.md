@@ -7,8 +7,8 @@ slug: /
 
 This website contains the official support documentation for using Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Αν δεν είστε ενεργός χρήστης, και ψάχνετε να το κατεβάσετε ή να αποφασίσετε αν θα το χρησιμοποιήσετε, πιθανότατα θα βρείτε [την κύρια ιστοσελίδα μας](https://www.universalmediaserver.com) πιο χρήσιμη.
 
 It is split into 3 main sections: Configuration, Guides, and Installation.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Αν ήρθατε εδώ ψάχνοντας για συγκεκριμένες πληροφορίες και δεν τις βρήκατε, παρακαλούμε ενημερώστε μας στο GitHub ώστε να τις προσθέσουμε.
