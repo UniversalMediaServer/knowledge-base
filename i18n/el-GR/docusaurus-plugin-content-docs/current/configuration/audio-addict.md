@@ -2,7 +2,7 @@
 
 The **Audio Addict Network** is a collection of premium internet radio stations, including:
 
-
+Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
 
 A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
 
