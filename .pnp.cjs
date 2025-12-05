@@ -35,7 +35,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
           ["@docusaurus/tsconfig", "npm:3.9.2"],\
           ["@docusaurus/types", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.1"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.2"],\
           ["@mdx-js/react", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.1.1"],\
           ["@types/react", "npm:18.3.27"],\
           ["knowledge-base", "workspace:."],\
@@ -9510,11 +9510,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:96b5ff7c12ad16759fc327402b4862ec03abb813fa4b3dbce777ef44b9cc9b7900109decd50f366f7c13cdd6cba49f19c4d080428a609409405fcd4ff25eb089#npm:3.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@docusaurus-utils-common-virtual-04332ea5d6/0/cache/@docusaurus-utils-common-npm-3.0.1-bcc398803d-b1bf99d0be.zip/node_modules/@docusaurus/utils-common/",\
+      ["virtual:00c88b55c2adc3c410b8f78e198258c4a8febf6db6505b96b76cec6a4984c1da5a03870212de09d2f528cd03872bbef2057179c9984b495854786d0b1a9a391c#npm:3.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@docusaurus-utils-common-virtual-473877c54a/0/cache/@docusaurus-utils-common-npm-3.0.1-bcc398803d-b1bf99d0be.zip/node_modules/@docusaurus/utils-common/",\
         "packageDependencies": [\
           ["@docusaurus/types", null],\
-          ["@docusaurus/utils-common", "virtual:96b5ff7c12ad16759fc327402b4862ec03abb813fa4b3dbce777ef44b9cc9b7900109decd50f366f7c13cdd6cba49f19c4d080428a609409405fcd4ff25eb089#npm:3.0.1"],\
+          ["@docusaurus/utils-common", "virtual:00c88b55c2adc3c410b8f78e198258c4a8febf6db6505b96b76cec6a4984c1da5a03870212de09d2f528cd03872bbef2057179c9984b495854786d0b1a9a391c#npm:3.0.1"],\
           ["@types/docusaurus__types", null],\
           ["tslib", "npm:2.6.2"]\
         ],\
@@ -9566,24 +9566,24 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@easyops-cn/docusaurus-search-local", [\
-      ["npm:0.52.1", {\
-        "packageLocation": "./.yarn/cache/@easyops-cn-docusaurus-search-local-npm-0.52.1-794da69135-ab86b1def6.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+      ["npm:0.52.2", {\
+        "packageLocation": "./.yarn/cache/@easyops-cn-docusaurus-search-local-npm-0.52.2-e846a87085-5e1bb6ecd8.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
         "packageDependencies": [\
-          ["@easyops-cn/docusaurus-search-local", "npm:0.52.1"]\
+          ["@easyops-cn/docusaurus-search-local", "npm:0.52.2"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.1", {\
-        "packageLocation": "./.yarn/__virtual__/@easyops-cn-docusaurus-search-local-virtual-96b5ff7c12/0/cache/@easyops-cn-docusaurus-search-local-npm-0.52.1-794da69135-ab86b1def6.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+      ["virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.2", {\
+        "packageLocation": "./.yarn/__virtual__/@easyops-cn-docusaurus-search-local-virtual-00c88b55c2/0/cache/@easyops-cn-docusaurus-search-local-npm-0.52.2-e846a87085-5e1bb6ecd8.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
         "packageDependencies": [\
           ["@docusaurus/plugin-content-docs", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
           ["@docusaurus/theme-translations", "npm:3.0.1"],\
           ["@docusaurus/utils", "virtual:9bcb161bc46c4f13f33a7b3150c4cabc3edcfae34c00390acb717a45b075c4566338796d7c9f8ee43bee40d8b03c482ba1d03faf78480a9f72228b18c85a2cb4#npm:3.0.1"],\
-          ["@docusaurus/utils-common", "virtual:96b5ff7c12ad16759fc327402b4862ec03abb813fa4b3dbce777ef44b9cc9b7900109decd50f366f7c13cdd6cba49f19c4d080428a609409405fcd4ff25eb089#npm:3.0.1"],\
+          ["@docusaurus/utils-common", "virtual:00c88b55c2adc3c410b8f78e198258c4a8febf6db6505b96b76cec6a4984c1da5a03870212de09d2f528cd03872bbef2057179c9984b495854786d0b1a9a391c#npm:3.0.1"],\
           ["@docusaurus/utils-validation", "npm:3.0.1"],\
           ["@easyops-cn/autocomplete.js", "npm:0.38.1"],\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.1"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.2"],\
           ["@node-rs/jieba", "npm:1.7.2"],\
           ["@types/docusaurus__theme-common", null],\
           ["@types/react", "npm:18.3.27"],\
@@ -17037,7 +17037,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/theme-common", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
           ["@docusaurus/tsconfig", "npm:3.9.2"],\
           ["@docusaurus/types", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.9.2"],\
-          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.1"],\
+          ["@easyops-cn/docusaurus-search-local", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:0.52.2"],\
           ["@mdx-js/react", "virtual:b39e3a7e2ec66f40b8a99cafe747344af27c3270071689aa7e004d4eb2f26f735a61860e8d886e7308fdd44a094357b730d76c254db8943fba77d40b0c008363#npm:3.1.1"],\
           ["@types/react", "npm:18.3.27"],\
           ["knowledge-base", "workspace:."],\
