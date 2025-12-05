@@ -43,7 +43,7 @@ When you are happy with the options you entered, select the "Add" button.
 If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
 ![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Αποθήκευση αλλαγών
 
 You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)

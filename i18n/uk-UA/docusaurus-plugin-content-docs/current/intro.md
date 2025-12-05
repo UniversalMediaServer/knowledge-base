@@ -5,10 +5,10 @@ slug: /
 
 # Introduction
 
-This website contains the official support documentation for using Universal Media Server.
+Цей сайт містить офіційну документацію з використання Universal Media Server "UMS".
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Якщо Ви не є поточним користувачем і бажаєте його завантажити або вирішити, чи варто його використовувати, Ви, ймовірно, знайдете наш основний вебсайт більш корисним.
 
 Він розділений на 3 основні розділи: Налаштування, Посібники та Встановлення.
 
-Якщо ви прийшли сюди, шукаючи конкретну інформацію і не знайшли її, будь ласка, повідомте нам про це на GitHub, щоб ми могли її додати.
+Якщо ви прийшли сюди, шукаючи конкретну інформацію і не знайшли її, будь ласка, повідомте нам про це на GitHub, щоб ми могли її  додати.
