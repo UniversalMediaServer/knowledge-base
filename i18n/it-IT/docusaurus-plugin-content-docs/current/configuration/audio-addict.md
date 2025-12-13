@@ -4,7 +4,7 @@ The **Audio Addict Network** is a collection of premium internet radio stations,
 
 Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+A paid **premium account** is required to access these radio stations. Devi solo registrarti in uno dei siti, la stessa username e password ti darà accesso anche a tutte le altre.
 
 UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
 
