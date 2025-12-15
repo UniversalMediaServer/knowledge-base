@@ -12,7 +12,7 @@ Van egy alapértelmezett renderelő konfigurációs fájlunk, amely tartalmazza 
 
 When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
 
-The solution is to try creating your own renderer configuration file.
+A megoldás az, hogy megpróbál létrehozni egy saját renderelő konfigurációs fájlt.
 1. Make a copy of the .conf file that is closest to your device. Például, ha a Samsung TV-jét nem ismeri fel a rendszer, akkor a Samsung TV egyik konfigurációja jó kiindulópont lehet.
 
 1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
