@@ -11,13 +11,13 @@ The 2 main goals for V15 have been to simplify our interface, based on user feed
 A quick overview of the changes in this version is:
 
 - A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
+- Egy **módváltó** a két fő terület közötti váltáshoz: **Lejátszó** és **Beállítások**
+- **PIN-kódos** bejelentkezések
 - Dynamic **TV season metadata**
 - A file **media info** button
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
-## New features
+## Új funkciók
 
 ### User switcher
 
@@ -27,15 +27,15 @@ You can also enable a setting to display the available users on the login screen
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### Módváltó
 
-The web interface has been split into two areas: Player and Settings.
+A webes felület két részre osztott: Lejátszó és Beállítások.
 
 This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
 
 ![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### PIN-kódos bejelentkezések
 
 You can now enable pin code logins in the server settings.
 
