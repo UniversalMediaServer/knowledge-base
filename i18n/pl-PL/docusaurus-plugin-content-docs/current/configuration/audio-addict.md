@@ -1,12 +1,12 @@
 # Audio Addict Network Radio
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+Audio Addict Network Radio jest zbiorem internetowych stacji radiowych premium, m. in:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, oraz DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+Płatne konto "premium" jest wymagane by uzyskać dostęp do tych stacji. Wymagana jest rejestracja na tylko na jednej z tych witryn, ponieważ ta sama nazwa użytkownika i hasło zapewnią dostęp do wszystkich witryn.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS automatycznie odczytuje wszystkie dostępne strony radiowe AudioAddict, ich kanały i filtry. Kanał **Ulubione** jest również obsługiwany.
 
 ## Configuration
 
