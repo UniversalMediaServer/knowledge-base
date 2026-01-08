@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # What's New in v15
 
-##
+## Overview
 
 The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
 
