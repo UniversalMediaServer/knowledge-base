@@ -18,12 +18,12 @@ Jeśli zewnętrzne API jest włączone, dostęp do API uzyskamy wywołaniem POST
 
 #### Skanowanie ponowne
 
-| Intention                       | Skanuje ponownie całą bibliotekę   |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Parametry                 | Skanuje ponownie całą bibliotekę        |
+| ------------------------- | --------------------------------------- |
+| URI                       | `/api/folderscanner/rescan`             |
+| POST BODY                 | NONE                                    |
+| POST BODY przykład / opis | Ta komenda nie potrzebuje ciała żądania |
+| Dostępne od               | 10.4.2                                  |
 
 :::info
 Może być powolne dla dużych bibliotek
@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### ponowne skanowanie plików lub folderów
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Parametry                 | Skanuje ponownie całą bibliotekę                                                                              |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| URI                       | `/api/folderscanner/rescanFileOrFolder`                                                                       |
+| POST BODY                 | SCIEZKA_DO_SKANOWANIA                                                                                       |
+| POST BODY przykład / opis | przykład: "/muzyka/pop/Madonna Ścieżka musi być głównym folderem lub folderem zagnieżdżonym ścieżki aplikacji |
+| Dostępne od               | 10.4.2                                                                                                        |
 
 Example:
 

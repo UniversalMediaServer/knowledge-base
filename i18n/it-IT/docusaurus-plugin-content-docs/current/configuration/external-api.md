@@ -1,4 +1,4 @@
-# External API
+# API esterne
 
 Le API esterne consentono ai programmi di accedere o attivare funzionalità di UMS con chiamate HTTP.
 

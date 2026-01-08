@@ -2,9 +2,9 @@
 
 Ha a készülék nem tud semmit sem csinálni, például nem tud mappákat böngészni vagy nem tud lejátszani egy fájlt, akkor a renderelő konfigurációs fájl beállításainak módosításával lehet, hogy orvosolni tudja a problémát. A különböző eszközök/megjelenítők/kliensek különböző módon kommunikálnak az UMS-hez hasonló szerverekkel, ezért a konfigurációs fájl megmondja az UMS-nek, hogyan beszéljen ugyanazon a nyelven, mint az Ön eszköze.
 
-Every configuration profile serves two purposes:
+Minden konfigurációs profil két célt szolgál:
 - Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+- Határozza meg a renderelő lehetőségeit
 
 Van egy alapértelmezett renderelő konfigurációs fájlunk, amely tartalmazza az összes renderelő beállítás dokumentációját. A legfrissebb verzió a https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf oldalon található.
 
@@ -12,8 +12,8 @@ Van egy alapértelmezett renderelő konfigurációs fájlunk, amely tartalmazza 
 
 When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+A megoldás az, hogy megpróbál létrehozni egy saját renderelő konfigurációs fájlt.
+1. Make a copy of the .conf file that is closest to your device. Például, ha a Samsung TV-jét nem ismeri fel a rendszer, akkor a Samsung TV egyik konfigurációja jó kiindulópont lehet.
 
 1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
 
