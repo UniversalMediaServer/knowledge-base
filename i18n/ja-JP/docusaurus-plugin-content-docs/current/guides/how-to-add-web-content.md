@@ -1,4 +1,4 @@
-# How to add web content
+#
 
 This article will explain how to add web content.
 
