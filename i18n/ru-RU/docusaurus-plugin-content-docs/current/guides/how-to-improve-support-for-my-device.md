@@ -12,31 +12,31 @@
 
 Если UMS не распознает ваше устройство, это значит, что ни один из конфигурационных профилей рендерера не соответствует вашему устройству. Результатом является то, что UMS отображает `Неизвестный рендерер`, и так как он не знает возможности вашего рендерера, он не может обеспечить оптимизированный вывод для вашего устройства.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Решением является попытка создать собственный файл конфигурации рендерера.
+1. Сделайте копию файла .conf, который наиболее соответствует вашему уст-ву. Например, если телевизор Samsung не распознан, то один из конфигураций телевизора Samsung может быть хорошим местом для начала.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. Перейдите на вкладку `Logs` в UMS и ищите текст `Media renderer was not recognized. Возможное определение HTTP-заголовков:`. Эта информация необходима для того, чтобы UMS распознала ваше уст-во.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. В новом файле .conf найдите строку, в которой определены `UserAgentSearch` и/или `UpnpDetailsSearch`, и замените значения на идентифицирующую информацию.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Просмотрите и воспроизведите некоторые медиафайлы на своем уст-ве. Обратите внимание, на каких носителях возникли проблемы с воспроизведением. Теперь вы можете перейти к следующему разделу, чтобы улучшить поддержку вашего уст-ва.
 
 ## Улучшение поддержки устройства
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Если у вас возникли проблемы с воспроизведением какого-либо медиафайла, необходимо изменить настройки рендерера, пока он не заработает. Полный список опций см. в файле [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Наиболее распространенными для изменения являются:
     ```
-    Video
-    Audio
-    Image
-    TranscodeVideo
-    TranscodeAudio
-    SeekByTime
-    Supported
+    Видео
+    Аудио
+    Фото
+    Конвертировать видео
+    Конвертировать аудио
+    Поиск по времени
+    Поддерживается
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Убедитесь, что в новой конфигурации нет `MediaInfo = false`, т.к. это приведет к неработоспособности строк `Supported`.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Чтобы убедиться, что транскодирование работает на вашем уст-ве, воспроизведите файл из папки `#--TRANSCODE--#`. В этой папке воспроизведите один из файлов с расширением `FFmpeg`. Если воспроизведение происходит, значит транскодирование работает.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Строки `Supported` необходимо заполнить, чтобы сообщить UMS, какие файлы поддерживает ваше уст-во изначально. Может быть хорошей идеей найти руководство для вашего уст-ва онлайн и использовать его, чтобы помочь заполнить эти строки.
 
 1. Кроме того, вы можете ознакомиться с другими настройками рендерера в папке "renderers" в каталоге установки. Иногда вам нужна помощь, которую мы можем оказать на нашем форуме, только не забудьте сообщать нам об улучшениях, чтобы исправление было полезно другим пользователи с таким же устройством, как у вас. Мы упомянем вас в объявлении о выходе новой версии и списке изменений.
