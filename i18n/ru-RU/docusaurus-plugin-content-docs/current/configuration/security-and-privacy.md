@@ -27,21 +27,21 @@ UMS предоставляет ряд методов для контроля д�
 
 ## Привязать пользователя к устройству визуализации
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Вы можете связать учетные записи пользователей с рендерами/уст-вами, что позволит вам иметь независимый доступ к контенту и отслеживать воспроизведение.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Например, если у вас есть телевизор в гостиной и еще один в спальне, то на телевизор в гостиной не должно влиять то, что вы смотрите в спальне.
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Ограничить доступ к общему контенту для определенных групп
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Теперь вы можете выбрать, с какими группами вы хотите делиться каталогами или онлайн-контентом. Например, если у вас есть человек (или уст-во, назначенное человеку), который является ребенком, вы можете назначить его в группу «Дети» и предоставить этой группе доступ к каталогу «Семья», но не к контенту «Ужасы» или «Только для взрослых». Или предоставьте им доступ к веб-каналу Kurzgesagt, но не к подкастам с историей.
 
 ![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Скрытые папки
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Управляйте видимостью виртуальных папок. Эти настройки можно найти в файле UMS.conf. Чтобы скрыть некоторые папки при просмотре, просто установите их значение на true или отметьте их на вкладке «Настройки навигации/обмена» в расширенном режиме графического интерфейса.
 
 ```
 hide_recently_played_folder =true
@@ -53,11 +53,11 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Чтобы скрыть веб-папку, необходимо снять флажок «Включить внешнюю сеть» на вкладке «Общие настройки» в расширенном режиме графического интерфейса или изменить значение `external_network =' на false в файле UMS.conf. Это приведет к побочному эффекту: автоматическое обновление не будет работать. Изменения, внесенные через графический интерфейс, вступят в силу после перезапуска.
 
 ## PIN-код
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Все вышеперечисленные методы ограничивают доступ с различных рендеров. Но если у вас есть доступ к рендеру, который может просматривать папку, эти методы вам не помогут (если дети имеют доступ к телевизору в гостиной, который имеет доступ ко всем медиафайлам, то они имеют доступ к этим медиафайлам). PIN-код решает эту проблему. Он позволяет скрыть папки/медиа за PIN-кодом, который необходимо ввести с помощью рендера. По умолчанию ввод представляет собой последовательность цифр (0-9) точно так же, как код банкомата. Я настоятельно рекомендую использовать цифровые коды, т.к. их сложно вводить из рендерера. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
 .*частный.*,1234
 ```
