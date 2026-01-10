@@ -1,49 +1,48 @@
-# How to add web content
+# Как добавить веб-контент
 
-This article will explain how to add web content.
+В этой статье объясняется, как добавлять веб-контент.
 
-## Video feeds
+## Видеопотоки
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Вы можете подписаться на видеоканалы, добавив ссылки RSS-каналов, или, в случае YouTube, просто введя ссылку на канал.
 
-### 1: Go to the Shared Content section
+### 1: Перейдите в раздел «Общий контент».
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+В настройках UMS в веб-браузере откройте меню и выберите «Общий контент»  
+![Меню настроек](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: Откройте всплывающие окно «Добавить новый общий контент».
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+При нажатии кнопки «Добавить новый общий контент» откроется всплывающее окно, в котором можно добавить любой тип медиафайла. Первый шаг — выбрать тип «Видеопоток»  
+![всплывающее окно новых параметров общего доступа к контенту](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Добавьте свой канал
 
-Here you can add your feed
+Здесь вы можете добавить свой канал
 
-#### Name
+#### Название
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Поле "Имя" отключено для видеолент, потому что каналы определяют свои собственные имена.
 
-#### Path
+#### Путь
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Поле "Путь" определяет структуру директорий, которая будет отображаться UMS. Например, если вы введете «Веб-сайты/каналы YouTube», ваш канал будет находиться в каталоге «YouTube Channels», вложенном в каталог «Web». Это позволяет вам организовывать контент по своему усмотрению и особенно полезно, когда у вас есть несколько поставщиков фидов, а вы используете UMS, чтобы хранить их все в одном месте.
 
-#### Source/URL
+#### Источник/URL:
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Это ссылка на видеоканал. Обычно он заканчивается на `.xml`, но мы обрабатываем YouTube по-другому, чтобы принимать URL-адрес канала напрямую, что позволяет вам вводить, например, `https://www.youtube.com/@kurzgesagt`.
 
-#### Authorized groups
+#### Авторизованные группы
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Поле "Authorized groups" позволяет сделать эту ленту доступной только определенным в UMS группам, которые связаны с разными пользователями и/или уст-вами. Более подробную информацию см. в разделе [Безопасность и конфиденциальность](../configuration/security-and-privacy.md#link-person-to-renderer).
 
-When you are happy with the options you entered, select the "Add" button.
+Когда вы будете удовлетворены введенными параметрами, нажмите кнопку «Добавить».
 
-### Feed order
+### Заказ ленты новостей
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Если ссылка на канал была действительной, теперь вы должны увидеть заполненное поле «Имя», и теперь вы можете перетаскивать канал вверх или вниз, чтобы управлять порядком  ![Список общего контента и возможность сортировки](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Сохранить изменения
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Вы можете повторить предыдущие шаги для добавления/редактирования большего содержания, и когда вы будете довольны изменениями, нажмите кнопку "Сохранить" в нижней части страницы. Теперь вы можете просматривать свой контент на своих уст-вах:  
+![Пример видеопотока в веб-плеере](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
