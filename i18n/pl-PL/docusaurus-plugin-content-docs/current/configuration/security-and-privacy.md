@@ -37,7 +37,7 @@ Na przykład, jeśli masz telewizor w pokoju i inny w sypialni, telewizor w poko
 
 Możesz teraz wybrać którym grupom będą udostępniane katalogi lub treści online. Na przykład, jeśli masz osobę (lub urządzenie, które jest przypisane do osoby), która jest dzieckiem, możesz przypisać je do grupy "Dzieci", i dać tej grupie dostęp do katalogu "Rodzina", ale nie do treści "Horror" lub "Tylko dla dorosłych". Możesz także dać im dostęp do kanału Kurzgesagt, ale nie do podcastów historii.
 
-![](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Ukrywanie folderów
 
