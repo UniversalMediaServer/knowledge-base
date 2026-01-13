@@ -1,6 +1,6 @@
-# How to solve connection problems
+# Kuinka ratkaista yhteys ongelmia
 
-This page provides solutions for the most common connection problems our users encounter.
+Tämä sivu tarjoaa ratkaisuja yleisimpiin yhteys ongelmiin joihin käyttäjämme ovat törmänneet.
 
 ## UMS detects renderer, but renderer does not detect UMS
 

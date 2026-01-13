@@ -1,6 +1,6 @@
-# How to play media
+# Kuinka toistaa media-sisältöä
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Tämä artikkeli selittää 4 päätapaa toistaa videota, ääntä ja kuvia UMS välityksellä.
 
 ## 1: Play from a renderer interface
 

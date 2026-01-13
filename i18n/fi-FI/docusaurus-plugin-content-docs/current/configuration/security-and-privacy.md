@@ -1,4 +1,4 @@
-# Security and Privacy
+# Tietoturva ja Yksityisyys
 
 ## Johdanto
 
@@ -27,9 +27,9 @@ Kun olet valinnut, sallitaanko vai estetäänkö tunnistamattomat renderoijat ol
 
 ## Linkitä henkilö renderoijaan
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Voit yhdistää käyttäjiä renderöijiin/laitteisiin, mahdollistaen näin yksilöllisen pääsyn sisältöön ja yksilöllisen toisto historian.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Esimerkiksi, jos sinulla on televisio olohuonessa ja toinen makuuhuoneessa, olohuoneen televisioon ei vaikuta se mitä katsot makuuhuoneessa.
 
 ![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
