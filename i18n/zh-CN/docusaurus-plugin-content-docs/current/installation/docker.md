@@ -17,7 +17,7 @@ Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
 #### Extra instructions
 
 ```
-sudo usermod -a -G docker <username>;
+sudo usermod -a -G docker <username>
 ```
 
 Re-login or restart the machine.

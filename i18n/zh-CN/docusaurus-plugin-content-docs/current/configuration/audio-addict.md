@@ -1,6 +1,6 @@
 # Audio Addict Network Radio
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+Audio Addict Network汇聚了一系列优质的互联网广播电台，包括：
 
 Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
 
