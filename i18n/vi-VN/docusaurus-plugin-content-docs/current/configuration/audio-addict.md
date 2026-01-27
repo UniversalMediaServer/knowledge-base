@@ -1,28 +1,28 @@
-# Audio Addict Network Radio
+# Radio mạng Audio Addict
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+Audio Addict Network là một hệ thống các kênh radio internet cao cấp, bao gồm:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Classical Radio, RadioTunes, Rock Radio, Jazz Radio, Zen Radio và DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+Cần có tài khoản premium trả phí để truy cập các kênh radio này. Bạn chỉ cần đăng ký ở một trang bất kỳ, cùng tên đăng nhập và mật khẩu đó sẽ dùng được cho tất cả các trang.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS sẽ tự động đọc tất cả các trang radio AudioAddict khả dụng, cùng các kênh và bộ lọc của chúng. Kênh Yêu thích (Favorites) cũng được hỗ trợ.
 
-## Configuration
+## Cấu hình
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Để bật hỗ trợ AudioAddict, hãy thêm các dòng sau vào file UMS.conf của bạn:
 
 ```
-# TRUE = prefer European streaming server
-audio_addict_europe = TRUE or FALSE
+# TRUE = ưu tiên máy chủ stream tại châu Âu
+audio_addict_europe = TRUE hoặc FALSE
 
-# Your username
+# Tên đăng nhập của bạn
 audio_addict_user = USERNAME
 
-# Your password
+# Mật khẩu của bạn
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## Vị trí
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+Thư mục Audio Addict Radio Network nằm trong thư viện media của bạn. Từ đó, bạn có thể duyệt và truy cập trực tiếp tất cả các kênh radio có sẵn.
