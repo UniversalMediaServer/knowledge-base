@@ -1,121 +1,121 @@
-# External API
+# API bên ngoài
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+API bên ngoài cho phép các chương trình truy cập hoặc kích hoạt các chức năng của UMS thông qua các lệnh gọi HTTP.
 
-## How to enable the external API
+## Cách bật API bên ngoài
 
-Edit UMS.conf and configure an api_key like this
+Chỉnh sửa file UMS.conf và cấu hình api_key như sau:
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+Mật khẩu bí mật phải có tối thiểu 12 ký tự.
 
-## API usage
+## Cách sử dụng API
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Khi API bên ngoài được bật, bạn có thể truy cập API bằng lệnh POST tới đường dẫn /api/COMMAND
 
-### Folder Scanning
+### Quét thư mục
 
 #### rescan
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Mục đích                    | Quét lại toàn bộ thư viện.        |
+| --------------------------- | --------------------------------- |
+| URI                         | `/api/folderscanner/rescan`       |
+| Nội dung POST               | KHÔNG CÓ                          |
+| Ví dụ / mô tả nội dung POST | Lệnh này không cần nội dung POST. |
+| Có từ phiên bản             | 10.4.2                            |
 
-:::info
-This can be slow for large libraries
+::info  
+Thao tác này có thể chậm đối với các thư viện lớn.
 :::
 
-Example:
+Ví dụ:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### Quét lại một phần cây thư mục của hệ thống tập tin.
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Mục đích                    | Quét lại một phần cây thư mục của hệ thống tập tin.                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                         | `/api/folderscanner/rescanFileOrFolder`                                                                        |
+| Nội dung POST               | PATH_TO_SCAN                                                                                                 |
+| Ví dụ / mô tả nội dung POST | ví dụ: "/music/pop/Madonna". Đường dẫn phải là thư mục gốc hoặc thư mục con của một đường dẫn đã được chia sẻ. |
+| Có từ phiên bản             | 10.4.2                                                                                                         |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Liking Music (albums and songs)
+### Thích nhạc (album và bài hát)
 
-#### like song
+#### Thích bài hát
 
-Song will be marked as liked.
+Bài hát sẽ được đánh dấu là đã thích.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Mục đích                    | Thích một bài hát được xác định bằng trackId của MusicBrainz |
+| --------------------------- | ------------------------------------------------------------ |
+| URI                         | `<span class="s1">/api/like/likesong</span>`     |
+| Nội dung POST               | `musicBrainz_trackID`                                        |
+| Ví dụ / mô tả nội dung POST | b8695995-45e9-405d-b4aa-e50e8760fe25                         |
+| Có từ phiên bản             | 10.20                                                        |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Bỏ thích bài hát
 
-Song will not be disliked
+Bài hát sẽ không bị bỏ thích.
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Mục đích                    | Bỏ thích một bài hát được xác định bằng trackId của MusicBrainz |
+| --------------------------- | --------------------------------------------------------------- |
+| URI                         | `<span class="s1">/api/like/</span>dislikesong`     |
+| Nội dung POST               | `musicBrainz_trackID`                                           |
+| Ví dụ / mô tả nội dung POST | b8695995-45e9-405d-b4aa-e50e8760fe25                            |
+| Có từ phiên bản             | 10.20                                                           |
 
-Example:
+Ví dụ
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### Bài hát có đang được thích không
 
-Check if song is liked.
+Kiểm tra xem bài hát có được thích hay không.
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Mục đích                    | Kiểm tra trạng thái thích của bài hát được xác định bằng trackId của MusicBrainz                |
+| --------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                         | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| Nội dung POST               | `musicBrainz_trackID`                                                                           |
+| Ví dụ / mô tả nội dung POST | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| Nội dung phản hồi           | `TRUE` or `FALSE`                                                                               |
+| Có từ phiên bản             | 10.20                                                                                           |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Lệnh gọi này thêm trạng thái “đã thích” cho album được xác định bởi musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`
 
-#### like album
+#### Thích album
 
-Set album like state to true.
+Đặt trạng thái thích của album thành true.
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Mục đích                        | Thích một album được xác định bởi releaseID của MusicBrainz. |
+| ------------------------------- | ------------------------------------------------------------ |
+| URI                             | `<span class="s1">/api/like/</span>likealbum`    |
+| Nội dung POST                   | `musicBrainz_releaseID`                                      |
+| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Available since                 | 10.20                                                        |
 
 Example:
 
