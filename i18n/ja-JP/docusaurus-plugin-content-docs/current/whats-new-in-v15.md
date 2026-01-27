@@ -2,57 +2,58 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# V15の新機能
 
-## Overview
+## 概要
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+V15の主な目標は、ユーザーのフィードバックやレビューを基にインターフェースを簡素化し、ユーザーアカウントの使いやすくすることです。
 
-A quick overview of the changes in this version is:
+このバージョンの簡単な変更は以下のとおりです:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **複数のログインユーザー** をサポートした **ユーザー切り替え**
+- **プレイヤー** と **設定**の2つの主要エリアを変更する**モード切り替え**
+- **PINコード** ログイン
+- 動的な**テレビシーズンメタデータ**
+- **メディア情報** ボタン
+- 通知やリアルタイムコードの書き直し、メモリ管理の改善、その他多くの変更により、使いやすさが向上し、必要な操作の数が減少しました。
 
-## New features
+## 新機能
 
-### User switcher
+### ユーザー切り替え
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+複数のユーザーで同時にログインし、切り替えられるようになりました。
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+また、設定を有効にして、ログイン画面に利用可能なユーザーを表示することもできます。 この設定はセキュリティ上の理由でオプトインになっており、すべてのユーザーアカウントを表示しないようにしてます。 また、ユーザーのアカウントがブラウザにログインした後、アカウントごとに保存される中間設定もあります。
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![ユーザー切り替えの例](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### モード切り替え
 
-The web interface has been split into two areas: Player and Settings.
+Webインターフェイスは、プレーヤーと設定の2つの領域に分割されています。
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+これにより、必要なクリック数を減らすことで、ウェブインターフェースがより直感的になり、操作しやすくなります。
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![モード切り替えの例](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Pin code logins
+### **PINコード** ログイン
 
-You can now enable pin code logins in the server settings.
+サーバー設定でPINコードログインを有効にできるようになりました。
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![PINコード入力の例](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### 動的なシーズンメタデータ
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+テレビ番組のシーズンごとにタイトルや表紙画像などの独自のデータがあることがあり、それをシーズンページに表示するようになりました。
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![シーズンビューの例](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### もっと見る
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+v15のすべての変更点の完全なリストについては、[詳細な変更履歴](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md)をご覧ください。
 
-## Migration
+## 移行
 
-There are no specific migration steps to be aware of.
+注意すべき具体的な移行手順はありません。
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+メジャーアップデートと同様に、アップデート前に現在のバージョンに戻る機能を持っている場合は、 自分の構成とローカルデータベースを含む、自分のプロファイルディレクトリのバックアップを作成できます。
+そのディレクトリの場所はプログラムログの上位フォルダにあります。 `Profile directory: [some page]/UMS` を探します。
