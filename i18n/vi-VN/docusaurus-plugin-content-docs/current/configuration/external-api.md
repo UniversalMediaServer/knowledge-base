@@ -35,7 +35,7 @@ Ví dụ:
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### Quét lại một phần cây thư mục của hệ thống tập tin.
+#### Quét lại tệp hoặc thư mục
 
 | Mục đích                    | Quét lại một phần cây thư mục của hệ thống tập tin.                                                            |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -110,233 +110,233 @@ Lệnh gọi này thêm trạng thái “đã thích” cho album được xác 
 
 Đặt trạng thái thích của album thành true.
 
-| Mục đích                        | Thích một album được xác định bởi releaseID của MusicBrainz. |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>likealbum`    |
-| Nội dung POST                   | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Mục đích                    | Thích một album được xác định bởi releaseID của MusicBrainz. |
+| --------------------------- | ------------------------------------------------------------ |
+| URI                         | `<span class="s1">/api/like/</span>likealbum`    |
+| Nội dung POST               | `musicBrainz_releaseID`                                      |
+| Ví dụ / mô tả nội dung POST | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
+| Có từ phiên bản             | 10.20                                                        |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Bỏ thích album
 
-Remove album like state.
+Xoá trạng thái thích của album.
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Mục đích                    | Bỏ thích một album được xác định bởi releaseID của MusicBrainz. |
+| --------------------------- | --------------------------------------------------------------- |
+| URI                         | `<span class="s1">/api/like/</span>dislikealbum`    |
+| Nội dung POST               | `musicBrainz_releaseID`                                         |
+| Ví dụ / mô tả nội dung POST | 1e0eee38-a9f6-49bf-84d0-45d0647799af                            |
+| Có từ phiên bản             | 10.20                                                           |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Lệnh gọi này xoá trạng thái “đã thích” của album được xác định bởi musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`
 
-#### is album liked
+#### Album có được thích không
 
-Check album like state.
+Kiểm tra trạng thái thích của album.
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Mục đích                    | Kiểm tra xem album được xác định bởi releaseID của MusicBrainz có được thích hay không. |
+| --------------------------- | --------------------------------------------------------------------------------------- |
+| URI                         | `<span class="s1">/api/like/</span>isalbumliked`                            |
+| Nội dung POST               | `musicBrainz_releaseID`                                                                 |
+| Ví dụ / mô tả nội dung POST | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                    |
+| Nội dung phản hồi           | "TRUE" or "FALSE"                                                                       |
+| Có từ phiên bản             | 10.20                                                                                   |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Lệnh gọi này kiểm tra xem album được xác định bởi musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` có được thích hay không.
 
-### Rating
+### Đánh giá
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+API đánh giá chịu trách nhiệm đánh giá các bài hát. Thông tin đánh giá được lưu trong cơ sở dữ liệu nội bộ (có bật bộ nhớ đệm) và tuỳ chọn lưu trực tiếp trong chính tệp tin. Nếu `audio_update_rating_tag = true` được thiết lập trong UMS.conf thì trường đánh giá IDv3 cũng sẽ được cập nhật trong tệp bài hát (nếu định dạng tệp được hỗ trợ).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Khi duyệt thư mục nội dung trên máy chủ, MusicBrainzTrackID (nếu có) và audiotrackID sẽ được cung cấp dưới dạng `desc` metadata mô tả trong phần tử DIDL.
 
-#### set rating
+#### Thiết lập đánh giá
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Mục đích            | Đặt đánh giá theo sao (0–5) cho bài hát được xác định bằng musicBrainz trackId                  |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| Nội dung POST       | `musicbrainzTrackId` /`stars`                                                                   |
+| Ví dụ / mô tả POST  | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| Có sẵn từ phiên bản | 10.20                                                                                           |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Lệnh gọi này thiết lập đánh giá người dùng cho tất cả bài hát được xác định bởi musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` là `3`.
 
-#### get rating
+#### Lấy đánh giá
 
-Reads song rating from database
+Đọc đánh giá bài hát từ cơ sở dữ liệu
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Mục đích            | Lấy đánh giá bài hát theo sao (0–5) dựa trên musicBrainz trackID. Nội dung phản hồi chứa thông tin đánh giá. Đọc đánh giá bài hát từ cơ sở dữ liệu |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                                   |
+| Nội dung POST       | `musicbrainzTrackId`                                                                                                                               |
+| Ví dụ / mô tả POST  | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                                               |
+| Ví dụ RESPONSE BODY | 3                                                                                                                                                  |
+| Có sẵn từ phiên bản | 10.20                                                                                                                                              |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Lệnh gọi này đọc đánh giá người dùng của bài hát được xác định bởi musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
-#### set rating by audiotrack id
+#### Đặt đánh giá theo audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Mục đích            | Đặt đánh giá theo sao (0–5) cho bài hát được xác định bằng audiotrackID nội bộ của UMS                         |
+| ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| Nội dung POST       | `trackID` /`stars`                                                                                             |
+| Ví dụ / mô tả POST  | 32                                                                                                             |
+| Có sẵn từ phiên bản | 11.0                                                                                                           |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Lệnh gọi này thiết lập đánh giá người dùng của bài hát được xác định bởi audiotrack`id 32` là `3`.
 
-#### get rating by audiotrack id
+#### Lấy đánh giá theo audiotrack id
 
-Reads song rating from database
+Đọc đánh giá bài hát từ cơ sở dữ liệu
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Mục đích            | Lấy đánh giá bài hát theo sao (0–5) dựa trên audiotrackID nội bộ của UMS. Nội dung phản hồi chứa thông tin đánh giá. Đọc đánh giá bài hát từ cơ sở dữ liệu |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                 | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                                              |
+| Nội dung POST       | trackId                                                                                                                                                    |
+| Ví dụ / mô tả POST  | 32                                                                                                                                                         |
+| Ví dụ RESPONSE BODY | 3                                                                                                                                                          |
+| Có sẵn từ phiên bản | 11.0                                                                                                                                                       |
 
-Example:
+Ví dụ
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Lệnh gọi này đọc đánh giá người dùng của bài hát được xác định bởi UMS audiotrack-id `32`.
 
-### Backup / Restore
+### Sao lưu / Khôi phục
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Các mục “album đã thích” do người dùng quản lý có thể được sao lưu vào thư mục con `database_backup` trong thư mục hồ sơ. Tên tệp là `MUSIC_BRAINZ_RELEASE_LIKE`. Trong trường hợp cơ sở dữ liệu UMS bị xóa, chỉ cần gọi thao tác khôi phục. Trong trường hợp cơ sở dữ liệu UMS bị xóa, chỉ cần gọi thao tác khôi phục.
 
-#### backup liked albums
+#### Sao lưu album đã thích
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Sao lưu bảng `MUSIC_BRAINZ_RELEASE_LIKE` ra hệ thống tệp
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Mục đích          | Sao lưu các bài hát đã thích ra hệ thống tệp                                                          |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| Loại yêu cầu      | GET                                                                                                   |
+| Nội dung phản hồi | `OK` hoặc thông báo lỗi                                                                               |
+| Có từ phiên bản   | 10.20                                                                                                 |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Lệnh gọi này sẽ tạo một tệp sao lưu chứa các album đã được thích.
 
-#### restore liked albums
+#### Khôi phục album đã thích
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Khôi phục bảng `MUSIC_BRAINZ_RELEASE_LIKE` từ hệ thống tệp.
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Mục đích          | Khôi phục các bài hát đã thích từ tệp sao lưu.                                                                                             |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| REQUEST TYPE      | GET                                                                                                                                        |
+| Nội dung phản hồi | `OK` hoặc thông báo lỗi                                                                                                                    |
+| Có từ phiên bản   | 10.20                                                                                                                                      |
 
-Example:
+Ví dụ:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Lệnh gọi này khôi phục tệp sao lưu.
 
-### Playlist
+### Danh sách phát
 
-#### enable service
+#### Bật dịch vụ
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Chỉnh sửa UMS.conf và cấu hình thư mục danh sách phát được quản lý bằng cách thiết lập 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+để bật dịch vụ này. Theo mặc định, dịch vụ này bị tắt. Đường dẫn thư mục danh sách phát phải nằm bên dưới một đường dẫn `<span class="s1">thư mục</span>` chia sẻ đã được cấu hình để các thay đổi danh sách phát do API này thực hiện có thể được UMS nhận diện.
 
-#### list all playlists
+#### Liệt kê tất cả danh sách phát
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Đọc các danh sách phát hiện có. Các tên danh sách phát này sẽ được dùng cho các lệnh tiếp theo để thêm hoặc xoá bài hát.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Mục đích                | Cung cấp tất cả các danh sách phát được hỗ trợ (`m3u`, `m3u8` và `pls`) và hiện có từ thư mục đã cấu hình. Ngoài tên danh sách phát, `playlistId` của danh sách phát cũng được cung cấp. |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>`          |
+| Loại yêu cầu            | GET                                                                                                                                                                                      |
+| Nội dung phản hồi       | Mảng JSON chứa tên các danh sách phát                                                                                                                                                    |
+| Ví dụ nội dung phản hồi | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                           |
+| Có từ phiên bản         | 11.0                                                                                                                                                                                     |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Lệnh gọi này sẽ liệt kê tất cả các danh sách phát hiện có.
 
-#### list server accessible playlists
+#### Liệt kê các danh sách phát mà máy chủ có thể truy cập
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Đây là tất cả các danh sách phát mà UMS biết đến (có bật cơ sở dữ liệu/bộ nhớ đệm). Các tên danh sách phát này sẽ được dùng cho các lệnh tiếp theo để thêm hoặc xoá bài hát. Playlist ID có thể được dùng để truy cập trực tiếp vào danh sách phát bằng cách duyệt `objectId` `$DBID$PLAYLIST$` nối với databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
-| Available since       | dev branch                                                                                                                                               |
+| Mục đích            | Cung cấp tất cả các danh sách phát được hỗ trợ (`m3u`, `m3u8` và `pls`) và hiện có từ thư mục đã cấu hình.                                               |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                 | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| Loại yêu cầu        | GET                                                                                                                                                      |
+| Nội dung phản hồi   | Mảng JSON chứa tên playlist                                                                                                                              |
+| Ví dụ RESPONSE BODY | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
+| Có sẵn từ phiên bản | dev branch                                                                                                                                               |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Lệnh gọi này sẽ liệt kê tất cả playlist hiện có mà UMS có thể truy cập.
 
-#### adding songs to playlists
+#### Thêm bài hát vào playlist
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+`audiotrackid` cần thiết được cung cấp trong quá trình duyệt UPnP và có thể trích xuất từ thuộc tính `descMetadata` trong phản hồi DIDL
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Mục đích               | Thêm bài hát vào playlist                                                                                                                                                         |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                    | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| Loại yêu cầu           | POST                                                                                                                                                                              |
+| Nội dung POST          | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| Ví dụ / mô tả POST     | 123/Pop                                                                                                                                                                           |
+| Nội dung RESPONSE BODY | NONE                                                                                                                                                                              |
+| Có sẵn từ phiên bản    | 11.0                                                                                                                                                                              |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Thao tác này thêm bài hát có ID `123` vào playlist `Pop`.
 
-#### removing songs from playlists
+#### Xóa bài hát khỏi playlist
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+`audiotrackid` cần thiết được cung cấp trong quá trình duyệt UPnP và có thể trích xuất từ thuộc tính `descMetadata` trong phản hồi DIDL
 
 ```XML
 <ums-tags>
@@ -377,47 +377,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Mục đích                | Xóa bài hát khỏi playlist                                                                                                                                                              |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| Loại yêu cầu            | POST                                                                                                                                                                                   |
+| Nội dụng BODY           | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| Ví dụ / mô tả POST BODY | 123/Pop                                                                                                                                                                                |
+| Nội dung RESPONSE BODY  | NONE                                                                                                                                                                                   |
+| Có sẵn từ phiên bản     | 11.0                                                                                                                                                                                   |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Thao tác này xóa bài hát có ID `123` khỏi playlist `Pop`.
 
-#### create new playlists
+#### Tạo playlist mới
 
-Playlist name should be provided without any path and without file extensions. 
+Tên playlist phải được cung cấp không kèm đường dẫn và không có phần mở rộng tệp. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Mục đích               | Tạo playlist mới trong thư mục playlist được quản lý                                                                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                    | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| Loại yêu cầu           | POST                                                                                                                                                                           |
+| Nội dung POST          | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
+| Ví dụ / mô tả POST     | Contemporary                                                                                                                                                                   |
+| Nội dung RESPONSE BODY | NONE                                                                                                                                                                           |
+| Có từ phiên bản        | 11.0                                                                                                                                                                           |
 
-Example:
+Ví dụ:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Lệnh gọi này tạo một tệp danh sách phát mới có tên `Contemporary.m3u8` trong thư mục danh sách phát được quản lý.
 
-## Java code example
+## Ví dụ mã Java
 
-This code snippet shows how to use the API with okhttp3 library.
+Đoạn mã này minh họa cách sử dụng API với thư viện okhttp3.
 
 ```Java
 import nextcp.dto.Config;
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## Mã phản hồi HTTP
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Thiết lập `api_key` trong UMS.conf với độ dài từ 12 ký tự trở lên |
