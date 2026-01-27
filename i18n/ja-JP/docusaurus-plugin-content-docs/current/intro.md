@@ -3,12 +3,12 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# はじめに
 
-This website contains the official support documentation for using Universal Media Server.
+この Web サイトには、Universal Media Serverの使用に関する公式ドキュメントが含まれています。
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+あなたが使用中ではなく、ダウンロードを検討中するか、又は使用するかどうかを決定する場合、 [公式サイト](https://www.universalmediaserver.com) がより役立つでしょう。
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+これは、構成、ガイド、およびインストールの3つの主なセクションに分かれています。
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+特定の情報を求めてここに来ても見つからない場合は、GitHubでお知らせください。
