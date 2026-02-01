@@ -6,7 +6,7 @@ Le API esterne consentono ai programmi di accedere o attivare funzionalità di U
 
 Modificare UMS.conf e configurare un api_key come:
 
-`api_key = secret_password`
+`api_key = password_segreta`
 
 La _`secret_password`_ deve avere un minimo di 12 caratteri.
 
@@ -21,12 +21,12 @@ Se l'API esterna è abilitata, l'API è accessibile con una chiamata POST a /api
 | Scopo                           | Riscansiona la libreria completa                        |
 | ------------------------------- | ------------------------------------------------------- |
 | URI                             | `/api/folderscanner/rescan`                             |
-| POST BODY                       | NONE                                                    |
-| POST BODY example / description | Questo comando non ha bisogno di contenuti per il corpo |
+| POST BODY                       | Niente                                                  |
+| POST BODY esempio / descrizione | Questo comando non ha bisogno di contenuti per il corpo |
 | Disponibile da                  | 10.4.2                                                  |
 
 :::info
-This can be slow for large libraries
+Questo può essere lento per le grandi librerie
 :::
 
 Esempio:
@@ -73,12 +73,12 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Song will not be disliked
 
-| Intention                       | Mettere non mi piace a una canzone identificata da musicBrainz trackId |
+| Scopo                           | Mettere non mi piace a una canzone identificata da musicBrainz trackId |
 | ------------------------------- | ---------------------------------------------------------------------- |
 | URI                             | `<span class="s1">/api/like/</span>dislikesong`            |
 | POST BODY                       | `musicBrainz_trackID`                                                  |
 | POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                   |
-| Available since                 | 10.20                                                                  |
+| Disponibile da                  | 10.20                                                                  |
 
 Esempio:
 
@@ -106,13 +106,13 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 
 Questa chiamata aggiunge l'attributo liked all'album identificato da musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### like album
+#### album simile
 
 Imposta a VERO lo stato mi piace all'album.
 
 | Scopo                           | Mette mi piace un album identificato da musicBrainz releaseID |
 | ------------------------------- | ------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum`     |
+|                                 | `<span class="s1">/api/like/</span>likealbum`     |
 | POST BODY                       | `musicBrainz_releaseID`                                       |
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                          |
 | Disponibile da                  | 10.20                                                         |
