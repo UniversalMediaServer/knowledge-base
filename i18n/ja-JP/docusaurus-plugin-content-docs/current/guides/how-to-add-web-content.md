@@ -1,4 +1,4 @@
-# How to add web content
+# Web上のコンテンツを追加する方法
 
 この記事ではWeb上のコンテンツをUMSに追加する方法を説明します。
 
