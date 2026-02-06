@@ -8,7 +8,7 @@ Jedes Konfigurations-Profil verfolgt zwei Zwecke:
 
 Wir haben eine Standard-Renderer-Konfigurationsdatei, die Dokumentation über alle Renderer-Einstellungen enthält. Sieh Dir die neueste Version unter https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf an
 
-## Adding support for an unrecognized device
+## Unterstützung für ein nicht erkanntes Gerät hinzufügen
 
 When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
 
@@ -37,6 +37,6 @@ Die Lösung ist es zu versuchen eine eigene Renderer-Konfiguarationsdatei zu ers
 
 1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. Wenn es abgespielt wird, funktioniert die Transkodierung / Umwandlung.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. Es kann eine gute Idee sein, das Handbuch für Ihr Gerät online zu finden und es für Einträge in diesen Zeilen zu verwenden.
 
 1. Zusätzlich kannst Du Dir andere Renderer Konfigurationen anschauen, die sich im "renderers" Ordner des Installationsverzeichnisses befinden, um zu sehen, was sie bewirken. Manchmal brauchst Du Hilfe, die wir Dir in unserem Forum geben können und denk bitte daran, uns die erreichten Verbesserungen mitteilen, damit andere Benutzer von der Lösung profitieren könnnen.  Wir werden Dich in unserer Release Ankündigung und der Änderungshistorie lobend erwähnen.
