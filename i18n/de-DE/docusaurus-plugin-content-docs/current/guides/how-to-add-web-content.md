@@ -1,49 +1,49 @@
-# How to add web content
+# Wie man Internet - Inhalte hinzufügt
 
-This article will explain how to add web content.
+Dieser Artikel erklärt, wie man Internet - Inhalte hinzufügt.
 
-## Video feeds
+## Video - Feeds
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Sie können Video - Feeds/Kanäle abonnieren, indem Sie die RSS - Feed - Links hinzufügen oder im Fall von YouTube nur den Link zum Kanal
 
-### 1: Go to the Shared Content section
+### 1: Gehen Sie zum Abschnitt "Geteilte Inhalte"
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+
 
 ### 2: Öffnen Sie den Modal "Neuen freigegebenen Inhalt hinzufügen"
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+Wenn Sie den Button "Neuen geteilten Inhalt hinzufügen" auswählen, erscheint ein modaler Dialog, in dem Sie jeden Medientyp hinzufügen können. Der erste Schritt ist, den Video - Feed - Typ  
+auszuwählen! [Neue Optionen für freigegebene Inhalte](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Ihren Feed hinzufügen
 
-Here you can add your feed
+Sie können Ihren Feed hier hinzufügen
 
 #### Name
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Das Feld "Name" ist für Video - Feeds deaktiviert, weil die Feeds ihre Namen selbst festlegen.
 
-#### Path
+#### Pfad
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Das Feld "Pfad" definiert die Verzeichnisstruktur, die in UMS angezeigt wird. Wenn Sie z.B. "Web-/YouTube-Kanäle" angeben, wird Ihr Feed sich im Verzeichnis "YouTube-Kanäle" befinden, einem Unterverzeichnis vom "Web"-Verzeichnis. Sie können so Ihre Inhalte nach Ihren Vorlieben organisieren. Dies ist besonders nützlich, wenn Sie unterschiedliche Feed-Provider haben und Sie UMS benutzen, um sie alle an einem Ort zu haben.
 
-#### Source/URL
+#### Quelle/URL
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Dies ist der Link zum Video-Feed. Normalerweise ist die Dateiendung ".xml", aber wir lassen YouTube eine Kanal-URL direkt akzeptieren. So können Sie z.B. eingeben "https://www.youtube.com/@kurzgesagt"
 
-#### Authorized groups
+#### Erlaubte Gruppen
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Das Feld "Erlaubte Gruppen" gestattet Ihnen, diesen Feed nur bestimmten in UMS definierten Gruppen zugänglich zu machen, welche unterschiedlichen Benutzern und/oder Geräten zugeordnet sind. Siehe [Sicherheit und Privatsphäre](../configuration/security-and-privacy.md#link-person-to-renderer) für weitere Details.
 
-When you are happy with the options you entered, select the "Add" button.
+Wenn Sie mit den eingegebenen Optionen zufrieden sind, wählen Sie den Button "Hinzufügen"
 
-### Feed order
+### Feed - Reihenfolge
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Wenn der Link zum Feed gültig war, sollten Sie jetzt das Feld "Name" ausgefüllt sehen. Sie können jetzt den Feed nach oben oder unten ziehen und so die Reihenfolge selber festlegen
+![Liste geteilter Inhalte und Sortierbefähigung]
+(@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Änderungen speichern
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Sie können die vorigen Schritte wiederholen, um weitere Inhalte hinzuzufügen oder zu bearbeiten. Wenn Sie mit Ihren Änderungen zufrieden sind, wählen Sie den Button "Speichern" unten auf der Seite. Sie können nun die Inhalte auf Ihren Geräten sehen:
+![Beispiel - Video - Feed im Webplayer](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
