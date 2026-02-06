@@ -6,7 +6,7 @@ Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
 
 Ein bezahltes **Premium-Konto** ist erforderlich, um auf diese Radiosender zuzugreifen. You only need to register on one of the sites, as the same username and password will grant access to all of them.
 
-UMS liest automatisch alle verfügbaren AudioAddict -Radioseiten, deren Kanäle und Filter aus. The **Favorites** channel is also supported.
+UMS liest automatisch alle verfügbaren AudioAddict -Radioseiten, deren Kanäle und Filter aus. Der **Favoriten** - Kanal wird ebenfalls unterstützt.
 
 ## Configuration
 
