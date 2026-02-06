@@ -35,7 +35,7 @@ Ein einfaches Beispiel: Wenn sie einen Fernseher im Wohnzimmer haben und einen i
 
 ## Freigegebene Inhalte auf bestimmte Gruppen beschränken
 
-Sie können wählen, welche Gruppe welche Inhalte sehen kann (Einschränkung auf Verzeichnisse oder Online Inhalte). Wenn Sie z. B. eine Person haben (oder ein Gerät, das einer Person zugeordnet ist), die ein Kind ist, können Sie das Kind der Gruppe "Kinder" zuordnen und dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht auf die Inhalte "Horror" oder "Nur für Erwachsene" geben. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Sie können wählen, welche Gruppe welche Inhalte sehen kann (Einschränkung auf Verzeichnisse oder Online Inhalte). Wenn Sie z. B. eine Person haben (oder ein Gerät, das einer Person zugeordnet ist), die ein Kind ist, können Sie das Kind der Gruppe "Kinder" zuordnen und dieser Gruppe Zugriff auf das Verzeichnis "Familie", aber nicht auf die Inhalte "Horror" oder "Nur für Erwachsene" geben. Oder geben Sie ihnen Zugriff auf den Kurz gesagt - Web Feed, aber nicht auf die Geschichts-Podcasts.
 
 ![Beispiel von Gruppen mit geteilten Inhalten.](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
