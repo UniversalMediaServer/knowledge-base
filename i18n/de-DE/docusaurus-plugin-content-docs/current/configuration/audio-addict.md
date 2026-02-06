@@ -25,4 +25,4 @@ audio_addict_pass = PASSWORD
 
 ## Location
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+The **Audio Addict Radio Network** folder is located within your media library. Von dort aus können Sie direkt alle verfügbaren Stationen durchsuchen und darauf zugreifen.
