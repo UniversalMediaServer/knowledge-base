@@ -2,57 +2,57 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# Was ist neu in v15
 
-## Overview
+## Übersicht
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+Die 2 Hauptziele für V15 waren die Vereinfachung unserer Bedienungsoberfläche, basierend auf Rückmeldungen von Benutzern und Veröffentlichungen. Außerdem sollen unsere Nutzer-Konten einfacher zu benutzen sein.
 
 Hier eine kurze Übersicht der Änderungen in dieser Version:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- Ein **Benutzer-Umschalter** mit Unterstützung für **mehrere angemeldete Benutzer**
+- Ein **Modus-Wechsler** um zwischen den beiden Hauptbereichen zu wechseln: **Abspielgerät** und **Einstellungen**
+- Einloggen mit  **Pin-Code**
+- Dynamische **TV-Serien Metadaten**
+- Ein Datei-Button **Media-Info**
+- Der Benachrichtigungs- und Echtzeit-Code wurden neu geschrieben, eine verbesserte Speicherverwaltung und eine Menge anderer Änderungen, um die Benutzerfreundlichkeit zu verbessern sowie die Anzahl der Aktionen zu reduzieren, die erforderlich sind zu tun, was Sie wollen.
 
-## New features
+## Neue Funktionen
 
-### User switcher
+### Benutzer-Wechsler
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+Sie können jetzt gleichzeitig mit mehreren Nutzern in einem Browser eingeloggt sein und zwischen ihnen umschalten.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Sie können auch eine Einstellung aktivieren, um die diversen Benutzer auf dem Anmeldebildschirm anzuzeigen. Diese Einstellung muss aus Sicherheitsgründen extra eingeschaltet werden, da Sie vielleicht nicht wollen, dass jeder alle Nutzer-Konten sehen kann. Es gibt auch eine Zwischeneinstellung, bei der Benutzerkonten im Browser gespeichert werden, nachdem sich der Browser in der aktuellen Sitzung eingeloggt hat.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Beispiel für den Benutzer-Wechsler](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
 ### Modus-Wechsler
 
-The web interface has been split into two areas: Player and Settings.
+Die Web-Oberfläche ist in zwei Flächen geteilt: Abspielgerät und Einstellungen
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+Das soll bewirken, dass man sich auf der Web-Oberfläche leichter und intuitiver zurechtfindet, indem die Zahl der Klicks reduziert wird.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Beispiel für den Modus Wechsler](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Pin code logins
+### Login mit PIN-Code
 
-You can now enable pin code logins in the server settings.
+Sie können jetzt in den Server-Einstellungen Logins mit PIN-Code aktivieren
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Beispiel für die Pin-Code-Ansicht](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamic season metadata
+### Dynamische Serien-Metadaten
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Fernsehshow-Serien haben manchmal ihre eigenen Daten wie Titel und Coverbilder. Darum zeigen wir dies jetzt auf den Seiten der Serie an.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Beispiel für eine Serienansicht](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### Mehr
 
 Für eine vollständige Liste aller Änderungen in v15, siehe [vollständiger Changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migration
 
-There are no specific migration steps to be aware of.
+Es gibt keine konkreten Migrationsschritte, die zu beachten sind.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Wenn Sie wie bei jedem wichtigen Update später auf Ihre aktuelle Version zurückgehen wollen,  können Sie ein Backup Ihres Profil-Verzeichnisses erstellen, das Ihre Konfiguration und lokale Datenbank enthält. Sie finden den Pfad des Verzeichnisses oben in den Programm-Protokollen. Suchen Sie nach `Profil-Verzeichnis: [beliebige Seite]/UMS`.
