@@ -8,7 +8,7 @@ sidebar_position: 2
 
 The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
 
-A quick overview of the changes in this version is:
+Hier eine kurze Übersicht der Änderungen in dieser Version:
 
 - A **user switcher** with support for **multiple logged-in users**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
@@ -27,7 +27,7 @@ You can also enable a setting to display the available users on the login screen
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### Modus-Wechsler
 
 The web interface has been split into two areas: Player and Settings.
 
@@ -49,7 +49,7 @@ Seasons of TV shows sometimes have their own data like titles and cover images, 
 
 ### More
 
-For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
+Für eine vollständige Liste aller Änderungen in v15, siehe [vollständiger Changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
 ## Migration
 
