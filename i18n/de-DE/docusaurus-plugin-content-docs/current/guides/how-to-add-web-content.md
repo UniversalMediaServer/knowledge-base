@@ -6,14 +6,13 @@ This article will explain how to add web content.
 
 You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
 
-### 1: Go to the Shared Content section
+### 1: Gehen Sie zum Abschnitt "Geteilte Inhalte"
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+
 
 ### 2: Öffnen Sie den Modal "Neuen freigegebenen Inhalt hinzufügen"
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
+Wenn Sie den Button "Neuen geteilten Inhalt hinzufügen" auswählen, erscheint ein modaler Dialog, in dem Sie jeden Medientyp hinzufügen können. The first step is to choose the "Video feed" type  
 ![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
 ### 3: Add your feed
