@@ -33,16 +33,17 @@ This is the link to the video feed. It will usually end in `.xml`, but we handle
 
 #### Authorized groups
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices.
 
 When you are happy with the options you entered, select the "Add" button.
 
 ### Feed order
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Wenn der Link zum Feed gültig war, sollten Sie jetzt das Feld "Name" ausgefüllt sehen. Sie können jetzt den Feed nach oben oder unten ziehen und so die Reihenfolge selber festlegen
+![Liste geteilter Inhalte und Sortierbefähigung]
+(@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Änderungen speichern
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
+Sie können die vorigen Schritte wiederholen, um weitere Inhalte hinzuzufügen oder zu bearbeiten. Wenn Sie mit Ihren Änderungen zufrieden sind, wählen Sie den Button "Speichern" unten auf der Seite. Now you can see your content on your devices:  
 ![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
