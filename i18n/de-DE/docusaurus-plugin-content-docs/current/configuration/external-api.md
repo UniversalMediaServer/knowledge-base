@@ -1,6 +1,6 @@
 # Externe API
 
-Die externe API macht es möglich, auf UMS Funktionen mit einem HTTP-Aufruf zu Zugreifen.
+Die externe API ermöglicht es Programmen, mit einem HTTP-Aufruf auf UMS-Funktionen zuzugreifen oder sie zu starten.
 
 ## Wie die externe API aktiviert wird
 
@@ -12,7 +12,7 @@ Das _`Geheime_Passwort`_ muss mindestens 12 Zeichen haben.
 
 ## API-Nutzung
 
-Wenn die externe API aktiviert ist, ist sie mit einem POST-Aufruf von /api/BEFEHL erreichbar
+Wenn die externe API aktiviert ist, ist sie mit einem POST-Aufruf an /api/BEFEHL erreichbar
 
 ### Das Scannen von Ordnern
 
@@ -20,7 +20,7 @@ Wenn die externe API aktiviert ist, ist sie mit einem POST-Aufruf von /api/BEFEH
 
 | Absicht                         | Liest die komplette Bibliothek neu ein.      |
 | ------------------------------- | -------------------------------------------- |
-| URI/URL                         | `/api/folderscanner/rescan`                  |
+| URI                             | `/api/folderscanner/rescan`                  |
 | POST BODY                       | KEINE                                        |
 | POST BODY Beispiel/Beschreibung | Dieses Kommando erfordert keinen body Inhalt |
 | Verfügbar seit                  | 10.4.2                                       |
