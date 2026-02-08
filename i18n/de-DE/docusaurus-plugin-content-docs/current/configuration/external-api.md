@@ -21,8 +21,8 @@ Wenn die externe API aktiviert ist, ist sie mit einem POST-Aufruf an /api/BEFEHL
 | Absicht                         | Liest die komplette Bibliothek neu ein.      |
 | ------------------------------- | -------------------------------------------- |
 | URI                             | `/api/folderscanner/rescan`                  |
-| POST BODY                       | KEINE                                        |
-| POST BODY Beispiel/Beschreibung | Dieses Kommando erfordert keinen body Inhalt |
+| POST BODY                       | KEINER/KEINE/KEINS/NICHTS                    |
+| POST BODY Beispiel/Beschreibung | Dieses Kommando erfordert keinen body-Inhalt |
 | Verfügbar seit                  | 10.4.2                                       |
 
 :::info
@@ -35,33 +35,33 @@ Beispiel:
 curl -w "%{http_code}\n" -H "api-key: geheimes_Passwort" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### Datei oder Ordner neu scannen
+#### Datei oder Ordner neu einlesen
 
-| Ziel                            | Liest einen Teilpfad des Dateisystems neu ein                                                                                                  |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI/URL                         | ` 	/api/folderscanner/rescanFileOrFolder`                                                                                                      |
-| POST BODY                       | PATH_TO_SCAN                                                                                                                                 |
-| POST BODY Beispiel/Beschreibung | Beispiel/Beschreibung Beispiel: "/music/pop/Madonna" Der Pfad muss das Wurzelverzeichnis oder ein Unterordner eines freigegebenen Pfades sein. |
-| Verfügbar seit Version:         | 10.4.2                                                                                                                                         |
+| Zweck/Absicht                   | Liest einen Teilpfad des Dateisystems neu ein                                                                            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| URI                             | ` 	/api/folderscanner/rescanFileOrFolder`                                                                                |
+| POST BODY                       | PATH_TO_SCAN                                                                                                           |
+| POST BODY Beispiel/Beschreibung | Beispiel: "/music/pop/Madonna" Der Pfad muss das Wurzelverzeichnis oder ein Unterordner eines freigegebenen Pfades sein. |
+| Verfügbar seit                  | 10.4.2                                                                                                                   |
 
-Beispiel
+Beispiel:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheimes_Passwort" -X POST http://localhost:5001/api/folderscanner/rescanFileOrFolder
 ```
 
-### Musik gut finden
+### Musik positiv bewerten (Albums und Lieder/Stücke)
 
-#### ein Lied gut finden
+#### Ein Lied gut finden
 
-Das Lied wird als gemocht markiert
+Das Lied wird als positiv bewertet markiert
 
-| Absicht                         | Kennzeichne ein Lied, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
-| ------------------------------- | --------------------------------------------------------------------------------------------- |
-| URI/URL                         | `<span class="s1">/api/like/likesong</span>`                                      |
-| POST BODY                       | `musicBrainz_trackID`                                                                         |
-| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                          |
-| Verfügbar seit Version:         | 10.20                                                                                         |
+| Absicht/Zweck                   | Ein Lied mit einer musicBrainz Track-ID gekennzeichnet ist, positiv bewerten |
+| ------------------------------- | ---------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/likesong</span>`                     |
+| POST BODY                       | `musicBrainz_trackID`                                                        |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                         |
+| Verfügbar seit                  | 10.20                                                                        |
 
 Beispiel:
 
@@ -69,16 +69,16 @@ Beispiel:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### Lied nicht mögen
+#### Lied negativ bewerten
 
-Das Lied wird nicht als unerwünscht gekennzeichnet
+Das Lied wird nicht negativ bewertet
 
-| Absicht                         | Kennzeichne ein Lied, dass Du NICHT magst, das durch eine musicBrainz Kennnummer identifiziert wird |
-| ------------------------------- | --------------------------------------------------------------------------------------------------- |
-| URI/URL                         | `<span class="s1">/api/like/</span>dislikesong`                                         |
-| POST BODY                       | `musicBrainz_trackID`                                                                               |
-| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                |
-| Verfügbar seit Version:         | 10.20                                                                                               |
+| Absicht/Zweck                   | Ein Lied, das mit einer musicBrainz Track-ID gekennzeichnet ist, negativ bewerten |
+| ------------------------------- | --------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>dislikesong`                       |
+| POST BODY                       | `musicBrainz_trackID`                                                             |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                              |
+| Verfügbar seit                  | 10.20                                                                             |
 
 Beispiel:
 
@@ -86,53 +86,53 @@ Beispiel:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### Magst Du das Lied
+#### Ist das Lied positiv bewertet
 
-Prüfe, ob Du das Lied magst
+Prüfe, ob das Lied positiv bewertet ist
 
-| Absicht                         | Prüfe, ob das Lied  als ein Lied gekennzeichnet ist, dass Du magst, das durch eine musicBrainz Kennnummer identifiziert wird |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| URI/URL                         | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>`                              |
-| POST BODY                       | `musicBrainz_trackID`                                                                                                        |
-| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                         |
-| RESPONSE BODY                   | TRUE oder FALSE                                                                                                              |
-| Verfügbar seit Version:         | 10.20                                                                                                                        |
+| Absicht/Zweck                   | Prüfe, ob das Lied mit der musicBrainz Track-ID positiv bewertet ist                            |
+| ------------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                       | `musicBrainz_trackID`                                                                           |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY                   | TRUE oder FALSE                                                                                 |
+| Verfügbar seit                  | 10.20                                                                                           |
 
-Besipiel
+Besipiel:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-Dieser Aufruf fügt das liked Attribut des Albums, welches durch eine musicbrainz release-id 1e0eee38-a9f6-49bf-84d0-45d0647799af identifiziert wird.
+Dieser Aufruf fügt das "Liked"-Attribut des Albums mit der musicbrainz release-id 1e0eee38-a9f6-49bf-84d0-45d0647799af hinzu.
 
-#### Album "Gefällt mir"
+#### Album positiv bewerten
 
-Setze Album auf "gefällt mir"
+Setze Album-Bewertungsstatus auf "gefällt mir".
 
-| Absicht                         | Kennzeichnet ein Album, das durch eine musicBrainz Kennnummer identifiziert wird, als ein Albu, das Du magst |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| URI/URL                         | `<span class="s1">/api/like/</span>likealbum`                                                    |
-| POST BODY                       | `musicBrainz_releaseID`                                                                                      |
-| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                         |
-| Verfügbar seit Version:         | 10.20                                                                                                        |
+| Absicht/Zweck                   | Bewertet ein Album mit einer musicBrainz-releaseID positiv. |
+| ------------------------------- | ----------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>likealbum`   |
+| POST BODY                       | `musicBrainz_releaseID`                                     |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                        |
+| Verfügbar seit                  | 10.20                                                       |
 
-Beispiel
+Beispiel:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### Album gefällt mir nicht
+#### Album negativ bewerten
 
-Den "mögen" Status des Albums löschen
+Den "Gefällt mir"-Status des Albums löschen.
 
-| Absicht                         | Kennzeichne ein Lied, dass Du NICHT magst, das durch eine musicBrainz Kennnummer identifiziert wird |
-| ------------------------------- | --------------------------------------------------------------------------------------------------- |
-| URI/URL                         | `<span class="s1">/api/like/</span>dislikealbum`                                        |
-| POST BODY                       | `musicBrainz_releaseID`                                                                             |
-| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                |
-| Verfügbar seit Version:         | 10.20                                                                                               |
+| Absicht/Zweck                   | Ein Lied mit einer bestimmten musicBrainz releaseID negativ bewerten |
+| ------------------------------- | -------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>dislikealbum`         |
+| POST BODY                       | `musicBrainz_releaseID`                                              |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                 |
+| Verfügbar seit                  | 10.20                                                                |
 
 Beispiel:
 
@@ -140,19 +140,19 @@ Beispiel:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-Dieser Aufruf hat das liked Attribut des Albums entfernt, welches durch eine musicbrainz release-id 1e0eee38-a9f6-49bf-84d0-45d0647799af identifiziert wird.
+Dieser Aufruf hat das liked-Attribut des Albums mit der musicBrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af ` entfernt.
 
-#### gefällt Dir das Album
+#### Ist das Album positiv bewertet
 
-Prüfe den like Status des Albums
+Prüfe den like-Status des Albums
 
-| Absicht                         | Prüfe, ob das Album, das durch eine musicBrainz Kennnummer identifiziert wird  als ein Album gekennzeichnet ist, dass Du magst |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| URI/URL                         | `<span class="s1">/api/like/</span>isalbumliked`                                                                   |
-| POST BODY                       | `musicBrainz_releaseID`                                                                                                        |
-| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                                                           |
-| RESPONSE BODY                   | TRUE" oder "FALSE"                                                                                                             |
-| Verfügbar seit Version:         | 10.20                                                                                                                          |
+| Absicht/Zweck                   | Prüfe, ob das Album mit einer bestimmten musicBrainz releaseID positiv bewertet ist |
+| ------------------------------- | ----------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/like/</span>isalbumliked`                        |
+| POST BODY                       | `musicBrainz_releaseID`                                                             |
+| POST BODY Beispiel/Beschreibung | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                                |
+| RESPONSE BODY                   | TRUE" oder "FALSE"                                                                  |
+| Verfügbar seit Version:         | 10.20                                                                               |
 
 Beispiel:
 
@@ -160,22 +160,22 @@ Beispiel:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-Dieser Aufruf prüft, ob für das Album, das mit der musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` identifiziert ist, das like Attribut gesetzt ist.
+Dieser Aufruf prüft, ob für das Album mit der musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` das "like"-Attribut gesetzt ist.
 
 ### Bewertung
 
-Das Bewertungs-API sorgt für die Bewertung von Liedern. Bewertungsinformation wird in der internen Datenbank gespeichert (Zwischenspeicher aktiviert) und optional in der Datei selbst. Wenn `audio_update_rating_tag = true` in UMS.conf gesetzt ist, wird das IDv3-Bewertungsfeld auch in der Song-Datei aktualisiert (wenn das Song-Dateiformat unterstützt wird).
+Das Bewertungs-API ist für die Bewertung von Liedern verantwortlich. Die Bewertungsinformation wird in der internen Datenbank gespeichert (Zwischenspeicher aktiviert) und wahlweise in der Datei selbst. Wenn `audio_update_rating_tag = true` in UMS.conf gesetzt ist, wird das IDv3-Bewertungsfeld auch in der Lied-Datei aktualisiert (wenn das Dateiformat des Liedes unterstützt wird).
 
-Beim Durchsuchen des Content-Verzeichnis-Servers werden MusicBrainzTrackID (falls verfügbar) und audiotrackID als `desc` Metadaten innerhalb des DIDL-Elements ausgegeben.
+Beim Durchsuchen des Content-Verzeichnis-Servers werden MusicBrainzTrackID (falls verfügbar) und audiotrackID als `desc`-Metadaten innerhalb des DIDL-Elements ausgegeben.
 
-#### setze Bewertung
+#### Setze Bewertung
 
-| Absicht                         | Setze Bewertung in Sternen (0 - 5) für ein Lied, das von musicBrainz trackId identifiziert wurde |
-| ------------------------------- | ------------------------------------------------------------------------------------------------ |
-| URI/URL                         | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`  |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                    |
-| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                           |
-| Verfügbar seit Version:         | 10.20                                                                                            |
+| Absicht/Zweck                   | Setze Bewertung in Sternen (0 - 5) für ein Lied mit einer bestimmten musicBrainz trackId        |
+| ------------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
+| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
+| POST BODY Beispiel/Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
+| Verfügbar seit                  | 10.20                                                                                           |
 
 Beispiel:
 
@@ -183,19 +183,19 @@ Beispiel:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-Dieser Aufruf legt die Benutzerbewertung aller Lieder fest, die mit der Musikbrainz-Track-ID ` b8695995-45e9-405d-b4aa-e50e8760fe25`identifiziert wurden, auf `3`.
+Dieser Aufruf setzt die Nutzerbewertung aller Lieder mit der Musikbrainz-Track-ID ` b8695995-45e9-405d-b4aa-e50e8760fe25` auf `3`.
 
-#### lies die Bewertung
+#### Hole die Bewertung
 
-Liedbewertung aus Datenbank lesen
+Liest die Liedbewertung aus der Datenbank
 
-| Absicht                           | Die Liedbewertung in Sternen (0-5) nach musicBrainz trackID auslesen. Der Inhalt der Antwort enthält die Bewertungsinformationen. |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| URI/URL                           | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                                  |
-| POST BODY                         | `musicbrainzTrackId`                                                                                                              |
-| POST BODY Beispiel / Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                              |
-| RESPONSE BODY [ Inhalt] Beispiel  | 3                                                                                                                                 |
-| Verfügbar seit Version:           | 10.20                                                                                                                             |
+| Absicht/Zweck                     | Die Liedbewertung in Sternen (0-5) nach musicBrainz trackID auslesen. Der Antworttext enthält die Bewertungsinformationen. |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| URI                               | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                           |
+| POST BODY                         | `musicbrainzTrackId`                                                                                                       |
+| POST BODY Beispiel / Beschreibung | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                                       |
+| RESPONSE BODY Beispiel            | 3                                                                                                                          |
+| Verfügbar seit                    | 10.20                                                                                                                      |
 
 Beispiel:
 
@@ -203,16 +203,16 @@ Beispiel:
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-Dieser Aufruf liest die Benutzer-Bewertung eines Liedes, das von der musicbrainz Track-ID `b8695995-45e9-405d-b4aa-e50e8760fe25` identifiziert wurde.
+Dieser Aufruf liest die Nutzer-Bewertung eines Liedes mit der musicbrainz Track-ID `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
 #### Setze Bewertung nach audiotrack id
 
-| Absicht                           | Setze Bewertung in Sternen (0 - 5) für ein Lied, das durch eine UMS interne AudiotrackID identifiziert wurde   |
+| Absicht/Zweck                     | Setze Bewertung in Sternen (0 - 5) für ein Lied mit einer UMS-internen AudiotrackID                            |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI/URL                           | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| URI                               | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
 | POST BODY                         | `trackID` /`stars`                                                                                             |
 | POST BODY Beispiel / Beschreibung | 32                                                                                                             |
-| Verfügbar seit Version:           | 11.0                                                                                                           |
+| Verfügbar seit                    | 11.0                                                                                                           |
 
 Beispiel:
 
@@ -220,19 +220,19 @@ Beispiel:
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-Dieser Aufruf legt die Benutzerbewertung eines Liedes fest, das mit der Audiospur-ID`32` bis `3` identifiziert wurde.
+Dieser Aufruf legt die Nutzerbewertung eines Liedes mit der Audiospur-ID`32` bis `3` fest.
 
-#### erhalte Bewertung nach Audiospur id
+#### Hole Bewertung nach Audiospur id
 
-Liedbewertung aus Datenbank lesen
+Lies die Liedbewertung aus der Datenbank
 
-| Absicht                                  | Lies die Bewertung des Lieds in Sternen (0 - 5) gemäß UMS interner AudiotrackID. Der Inhalt der Antwort enthält die Bewertungsinformation. |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI/URL                                  | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                              |
-| POST BODY [Sende den Inhalt der Anfrage] | trackId                                                                                                                                    |
-| POST BODY Beispiel / Beschreibung        | 32                                                                                                                                         |
-| RESPONSE BODY Beispiel                   | 3                                                                                                                                          |
-| Verfügbar seit Version:                  | 11.0                                                                                                                                       |
+| Absicht/Zweck                     | Hole die Liedbewertung in Sternen (0 - 5) nach UMS-interner AudiotrackID. Der Text der Antwort enthält die Bewertungsinformation. |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| URI                               | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`                     |
+| POST BODY                         | trackId                                                                                                                           |
+| POST BODY Beispiel / Beschreibung | 32                                                                                                                                |
+| RESPONSE BODY Beispiel            | 3                                                                                                                                 |
+| Verfügbar seit                    | 11.0                                                                                                                              |
 
 Beispiel:
 
