@@ -11,11 +11,11 @@ Die 2 Hauptziele für V15 waren die Vereinfachung unserer Bedienungsoberfläche,
 Hier eine kurze Übersicht der Änderungen in dieser Version:
 
 - Ein **Benutzer-Umschalter** mit Unterstützung für **mehrere angemeldete Benutzer**
-- Ein **Modus-Wechsler** um zwischen den beiden Hauptbereichen zu wechseln: **Abspielgerät** und **Einstellungen**
+- Ein **Modus-Wechsler**, um zwischen den beiden Hauptbereichen zu wechseln: **Player** und **Einstellungen**
 - Einloggen mit  **Pin-Code**
-- Dynamische **TV-Serien Metadaten**
+- Dynamische **TV-Serien-Metadaten**
 - Ein Datei-Button **Media-Info**
-- Der Benachrichtigungs- und Echtzeit-Code wurden neu geschrieben, eine verbesserte Speicherverwaltung und eine Menge anderer Änderungen, um die Benutzerfreundlichkeit zu verbessern sowie die Anzahl der Aktionen zu reduzieren, die erforderlich sind zu tun, was Sie wollen.
+- Der Benachrichtigungs- und Echtzeit-Codes wurden neu geschrieben, eine verbesserte Speicherverwaltung und eine Menge anderer Änderungen vorgenommen, um die Benutzerfreundlichkeit zu verbessern sowie die Anzahl der Aktionen zu reduzieren, die erforderlich sind, das zu tun, was Sie wollen.
 
 ## Neue Funktionen
 
@@ -23,21 +23,21 @@ Hier eine kurze Übersicht der Änderungen in dieser Version:
 
 Sie können jetzt gleichzeitig mit mehreren Nutzern in einem Browser eingeloggt sein und zwischen ihnen umschalten.
 
-Sie können auch eine Einstellung aktivieren, um die diversen Benutzer auf dem Anmeldebildschirm anzuzeigen. Diese Einstellung muss aus Sicherheitsgründen extra eingeschaltet werden, da Sie vielleicht nicht wollen, dass jeder alle Nutzer-Konten sehen kann. Es gibt auch eine Zwischeneinstellung, bei der Benutzerkonten im Browser gespeichert werden, nachdem sich der Browser in der aktuellen Sitzung eingeloggt hat.
+Sie können auch eine Einstellung aktivieren, um die diversen Benutzer auf dem Anmeldebildschirm anzuzeigen. Diese Einstellung muss aus Sicherheitsgründen extra eingeschaltet werden, da Sie vielleicht nicht wollen, dass jeder alle Nutzer-Konten sehen kann. Es gibt auch eine Zwischeneinstellung, bei der Benutzerkonten im Browser einzeln gespeichert werden, nachdem sich der Browser in der aktuellen Sitzung eingeloggt hat.
 
 ![Beispiel für den Benutzer-Wechsler](@site/docs/img/whats-new-in-v14-user-avatar.png)
 
 ### Modus-Wechsler
 
-Die Web-Oberfläche ist in zwei Flächen geteilt: Abspielgerät und Einstellungen
+Die Web-Oberfläche ist in zwei Flächen geteilt: Player und Einstellungen
 
-Das soll bewirken, dass man sich auf der Web-Oberfläche leichter und intuitiver zurechtfindet, indem die Zahl der Klicks reduziert wird.
+Das soll die Web-Oberfläche intuitiver machen und die Navigation auf ihr leichter, indem die Zahl der Klicks reduziert wird.
 
 ![Beispiel für den Modus Wechsler](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Login mit PIN-Code
+### Logins mit PIN-Code
 
-Sie können jetzt in den Server-Einstellungen Logins mit PIN-Code aktivieren
+Sie können jetzt in den Server-Einstellungen Logins mit PIN-Code aktivieren.
 
 ![Beispiel für die Pin-Code-Ansicht](@site/docs/img/whats-new-in-v15-pin-code.png)
 
