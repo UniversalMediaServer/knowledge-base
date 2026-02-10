@@ -1,28 +1,28 @@
-# Wie man die "Voll abgespielt" Funktion nutzt
+# Wie man die Funktion "Vollständig abgespielt" nutzt
 
-Mit der Funktion "Voll abgespielt" behalten Sie den Überblick über die Dateien, die Sie vollständig abgespielt haben; für ein Video bedeutet es, dass Sie mindestens 92 % gesehen haben, und für Audio haben Sie mindestens 92 % gehört.
+Mit der Funktion "Vollständig abgespielt" behalten Sie den Überblick über die Dateien, die Sie zur Gänze abgespielt haben; für ein Video bedeutet es, dass Sie mindestens 92 % gesehen haben, und bei Audio haben Sie mindestens 92 % gehört.
 
-## Setup
+## Einrichtung
 
-Diese Funktion ist standardmäßig aktiviert. Wenn Sie also nichts geändert haben, können Sie sie verwenden. Wenn die Funktion nicht funktioniert, überprüfen Sie bitte, dass diese Schritte nicht rückgängig gemacht wurden:
+Diese Funktion ist standardmäßig aktiviert. Wenn Sie also nichts geändert haben, können Sie sie verwenden. Wenn die Funktion nicht geht, überprüfen Sie bitte, dass diese Schritte nicht rückgängig gemacht wurden:
 
-1. Wählen Sie auf der Registerkarte **Navigationseinstellungen** Ihre ** "Voll abgespielt" Aktion** aus. Vergewissern Sie sich insbesondere, dass Sie nicht**keine Aktion** ausgewählt haben. Dies ist standardmäßig **Medien markieren**, das ein Symbol auf dem Vorschaubild anzeigt, um darzustellen, dass es gesehen wurde.
-2. Auf der Registerkarte **Geteilte Inhalte** suchen Sie den Ordner, den Sie überwachen wollen, und aktivieren Sie das **Wiedergabe-Status der Dateien überwachen** Kontrollkästchen in dieser Zeile.
-3. Wenn Sie möchten, dass der Spielstatus für verschiedene Renderer separat verfolgt wird, können Sie Renderer mit verschiedenen Benutzerkonten verknüpfen. Jeder Account speichert seinen eigenen Spielstatus.
+1. Wählen Sie auf der Registerkarte **Navigationseinstellungen** Ihre ** "Vollständig abgespielt" Aktion** aus. Vergewissern Sie sich insbesondere, dass Sie nicht**keine Aktion** ausgewählt haben. Es ist standardmäßig **Medien markieren**, das ein Symbol über das Vorschaubild legt, um darzustellen, dass es angesehen wurde.
+2. Auf der Registerkarte **Freigegebene Inhalte** suchen Sie den Ordner, den Sie überwachen wollen, und aktivieren Sie das Kontrollkästchen **Wiedergabe-Status der Dateien überwachen** in dieser Zeile.
+3. Wenn Sie möchten, dass der Abpielstatus für verschiedene Renderer separat verfolgt wird, können Sie Renderer mit verschiedenen Benutzerkonten verknüpfen. Jeder Account speichert seinen eigenen Abspielstatus.
 
-## Dateien als "Voll abgespielt" markieren
+## Dateien automatisch als "Vollständig abgespielt" markieren
 
-Nachdem Sie die Setup-Schritte abgeschlossen haben, müssen Sie lediglich 92% oder mehr einer Datei abspielen.
+Nachdem Sie die Einrichtungsschritte abgeschlossen haben, müssen Sie lediglich 92% oder mehr einer Datei abspielen.
 
-## TV-Serie, Videos oder Verzeichnisse manuell als vollständig wiedergegeben markieren
+## TV-Serien, Videos oder Verzeichnisse manuell als vollständig wiedergegeben markieren
 
 Sie können Fernsehserien und Videos direkt über den Webplayer als vollständig abgespielt markieren:
 
-![Beispiel wie Fernsehserien und Videos als vollständig abgespielt markiert werden](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Beispiel dafür, wie Fernsehserien und Videos als vollständig abgespielt markiert werden](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-Um alle Dateien in einem freigegebenen Verzeichnis als vollständig abgespielt im _alten_ Einstellungen-Interface zu markieren, im **Shared Content** Tab rechtsklick auf das Verzeichnis, das man als vollständig wiedergegeben markieren möchte und dann auf **Markiere alle abgespielten Inhalte** klicken
+Um alle Dateien in einem freigegebenen Verzeichnis als vollständig abgespielt im _alten_ Einstellungen-Interface zu markieren, müssen Sie im Reiter **Freigegebene Inhalte** auf das Verzeichnis rechts-klicken, das man als vollständig wiedergegeben markieren möchte und dann auf **Markiere alle vollständig abgespielten Inhalte**
 
-![Beispiel wie ein Verzeichnis als vollständig abgespielt markiert wird](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Beispiel dafür, wie ein Verzeichnis als vollständig abgespielt markiert wird](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Status "Voll abgespielt" entfernen / als nicht abgespielt markieren
 
