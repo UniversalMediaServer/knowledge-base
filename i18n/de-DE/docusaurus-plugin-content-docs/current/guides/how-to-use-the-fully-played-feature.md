@@ -28,6 +28,6 @@ Um alle Dateien in einem freigegebenen Verzeichnis als vollständig abgespielt i
 
 Um eine Datei als nicht abgespielt zu markieren, können Sie eine der folgenden Optionen wählen:
 
-- Benennen Sie die Datei in irgendeiner Weise um. Danach können Sie ihn wieder auf seinen ursprünglichen Namen setzen weil UMS den Eintrag aus dem Cache gelöscht hat, wenn Sie den Namen geändert haben.
-- Verschieben Sie die Datei in ein anderes Verzeichnis. Danach können Sie ihn wieder in sein ursprüngliches Verzeichnis setzen weil UMS den Eintrag aus dem Cache gelöscht hat, wenn Sie die Datei verschoben haben.
-- Um ein ganzes freigegebenes Verzeichnis als ungespielt ui markieren klicken Sie mit der rechten Maustaste im Register **Geteilte Inhalte** auf das Verzeichnis, das Sie als ungespielt markieren wollen, und klicken Sie dann auf **Inhalte auf ungespiel setzen**.
+- Benennen Sie die Datei in irgendeiner Weise um. Danach können Sie ihm wieder seinen ursprünglichen Namen geben, weil UMS den Eintrag aus dem Cache gelöscht hat, als  Sie den Namen geändert haben.
+- Verschieben Sie die Datei in ein anderes Verzeichnis. Danach können Sie ihn wieder in sein ursprüngliches Verzeichnis verschieben, weil UMS den Eintrag aus dem Cache gelöscht hat, als Sie die Datei verschoben haben.
+- Um ein ganzes freigegebenes Verzeichnis als ungespielt zu markieren, klicken Sie mit der rechten Maustaste im Register **Freigegebene Inhalte** auf das Verzeichnis, das Sie als ungespielt markieren wollen, und klicken Sie dann auf **Inhalte als ungespielt markieren**.
