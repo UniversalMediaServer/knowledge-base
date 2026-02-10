@@ -4,14 +4,14 @@
 
 UMS stellt Medien auf zwei Arten zur Verfügung: über DLNA/UPnP für den Konsum über Media-Player-Anwendungen und über HTTP(S) für den Konsum über Webbrowser.
 
-Web-Browser haben eine einfache Sicherheits- und Datenschutzkontrolle, indem sie Benutzerkonten mit Logins haben.
+Web-Browser haben eine einfache Sicherheits- und Datenschutzkontrolle, dadurch dass sie Benutzerkonten mit Logins besitzen.
 
-Media-Player-Apps unterstützen im Allgemeinen nicht das Konzept eines "Benutzers", so dass normalerweise jedes Gerät den gleichen Inhalt erhält. Das ist vielleicht nicht das, was Sie wollen. Wenn Sie zum Beispiel zwei Ordner kids_sicher und kids_unsicher haben, möchten Sie eventuell, dass die Renderer im Kinderzimmer nur Zugriff auf den kids_sicher Ordner haben. Eine andere häufiger vorkommende Situation ist, dass Sie im selben Netzwerk sind wie Leute, die üblicherweise keinen Zugriff auf Ihre Medien haben sollen, wie Mitbewohner. Daher möchten man bestimmte Renderer komplett blockieren.
+Media-Player-Apps unterstützen im Allgemeinen nicht das Konzept eines "Benutzers", so dass normalerweise jedes Gerät den gleichen Inhalt erhält. Das ist vielleicht nicht das, was Sie wollen. Wenn Sie zum Beispiel zwei Ordner kinder_sicher und kinder_unsicher haben, möchten Sie vermutlich, dass die Renderer im Kinderzimmer nur Zugriff auf den kinder_sicher Ordner haben. Eine andere häufiger vorkommende Situation ist, dass Sie im selben Netzwerk sind wie Leute, von denen Sie nicht wollen, dass sie Zugriff auf Ihre Medien haben, wie etwa Mitbewohner. Daher möchten Sie bestimmte Renderer komplett blockieren.
 
-UMS bietet eine Reihe von Methoden zur Kontrolle des Zugriffs.
+UMS bietet eine Reihe von Methoden für die Zugriffskontrolle in solchen Situationen.
 
 ## Renderer oder Netzwerkgeräte standardmäßig erlauben oder blockieren
-Sie können die Standardstrategie für Renderer und Netzwerkgeräte auswählen. Sie können standardmäßig mit Verbots- und Erlaubnis-Listen die vollständige Kontrolle erlauben oder verweigern.
+Sie können die Standardstrategie für Renderer und Netzwerkgeräte auswählen. Sie können standardmäßig über Verbots- und Erlaubnis-Listen gestatten oder verbieten. So haben Sie die vollständige Kontrolle.
 
 Dies ist nützlich für gemeinsam genutzte Lebenssituationen oder ausgedehnte/wenig vertrauenswürdige lokale Netzwerke. Es ist auch für diejenigen von Ihnen nützlich, die Powerline-Adapter für Ihr Netzwerk verwenden, da dies zu unerwünschten Zugriff von Nachbarn führen kann.
 
