@@ -486,6 +486,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP Statuscodes
+## HTTP Antwortcodes
 
-| 200 | OK | | 204 | Erfolg, wenn kein Inhalt zurückgegeben werden soll | | 401 | ungültiger api key | | 404 | angefordertes Objekt kann nicht gefunden werden | | 417 | API Anfrage fehlgeschlagen | | 503 | Externe api ist nicht aktiviert. Lege einen `api_key` in UMS.conf mit einer Länge von 12 oder mehr Zeichen fest |
+| 200 | OK | | 204 | Erfolg, wenn kein Inhalt zurückgegeben werden soll | | 401 | ungültiger api key | | 404 | angefordertes Objekt kann nicht gefunden werden | | 417 | API-Anfrage fehlgeschlagen | | 503 | Externe api ist nicht aktiviert. Lege einen `api_key` in UMS.conf mit einer Länge von 12 oder mehr Zeichen fest |
