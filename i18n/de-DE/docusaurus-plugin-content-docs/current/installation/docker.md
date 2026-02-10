@@ -81,11 +81,11 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 Unter Fedora CoreOS hatte ich Probleme mit "Zugriff/die Erlaubnis verweigert", als ich versuchte, "bind mounts" zu verwenden.
 
-Es kann notwendig sein, stattdessen die Docker-gesteuerte, benannte Volumenfunktion zu verwenden, um diese Komplexität zu vermeiden. Ich habe festgestellt, dass das zusätzliche `:Z` als Suffix für die Mount-Deskriptor-Option bind Container-Schreibzugriff auf Host-Dateien erlaubt. `:z` kann auch stattdessen verwendet werden, aber Sicherheitsberatung kann dazu führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert bleiben als freigegeben.
+Es kann empfehlenswert sein, die Docker-gesteuerte "Benannte-Volumes"-Fähigkeit zu verwenden. Um diese Komplexität jedoch zu vermeiden, habe ich herausgefunden, dass das zusätzliche Suffix `:Z` zum Wert der Descriptor-Option des bind mount-Befehls dem Container Schreibzugriff auf Dateien des Gastrechners gegeben hat. `:z` kann auch stattdessen verwendet werden, aber Sicherheitsüberlegungen könnten zu dem Ergebnis führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert bleiben sollten und nicht freigegeben.
 
-Passende Fehlermeldungen können mit journalctl eingesehen werden, so dass es sich um ein SELinux-Problem handelt. Die Lösung dafür wäre "chcon -Rt svirt_sandbox_file_t host_dir" auszuführen, aber davon wird auch abgeraten.
+Passende Fehlermeldungen können mit journalctl eingesehen werden, also ist es ein SELinux-Problem. Die Lösung dafür wäre, `"chcon -Rt svirt_sandbox_file_t` host_dir" auszuführen, aber davon wird scheinbar auch abgeraten.
 
-Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Anscheinend Container-selinux.
+Seltsamerweise ist dies kein Problem auf Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Scheint container-selinux zu sein.
 
 ## Verweise
 
