@@ -8,16 +8,17 @@ Sie können Video - Feeds/Kanäle abonnieren, indem Sie die RSS - Feed - Links h
 
 ### 1: Gehen Sie zum Abschnitt "Geteilte Inhalte"
 
+Öffnen Sie das Menü in den UMS-Einstellungen in Ihrem Web-Browser und wählen "Freigegebene Inhalte" ![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-
-### 2: Öffnen Sie den Modal "Neuen freigegebenen Inhalt hinzufügen"
+### 2: Öffnen Sie den modalen Dialog "Neuen freigegebenen Inhalt hinzufügen"
 
 Wenn Sie den Button "Neuen geteilten Inhalt hinzufügen" auswählen, erscheint ein modaler Dialog, in dem Sie jeden Medientyp hinzufügen können. Der erste Schritt ist, den Video - Feed - Typ  
-auszuwählen! [Neue Optionen für freigegebene Inhalte](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+auszuwählen
+![Neue Optionen für freigegebene Inhalte](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Ihren Feed hinzufügen
+### 3: Fügen Sie Ihren Feed hinzu
 
-Sie können Ihren Feed hier hinzufügen
+Hier können Sie Ihren Feed hinzufügen
 
 #### Name
 
@@ -25,7 +26,7 @@ Das Feld "Name" ist für Video - Feeds deaktiviert, weil die Feeds ihre Namen se
 
 #### Pfad
 
-Das Feld "Pfad" definiert die Verzeichnisstruktur, die in UMS angezeigt wird. Wenn Sie z.B. "Web-/YouTube-Kanäle" angeben, wird Ihr Feed sich im Verzeichnis "YouTube-Kanäle" befinden, einem Unterverzeichnis vom "Web"-Verzeichnis. Sie können so Ihre Inhalte nach Ihren Vorlieben organisieren. Dies ist besonders nützlich, wenn Sie unterschiedliche Feed-Provider haben und Sie UMS benutzen, um sie alle an einem Ort zu haben.
+Das Feld "Pfad" definiert die Verzeichnisstruktur, die in UMS angezeigt wird. Wenn Sie z.B. "Web-/YouTube-Kanäle" angeben, wird Ihr Feed sich danach im Verzeichnis "YouTube-Kanäle" befinden, einem Unterverzeichnis vom "Web"-Verzeichnis. Sie können so Ihre Inhalte nach Ihren Vorlieben organisieren. Das ist besonders nützlich, wenn Sie unterschiedliche Feed-Provider haben und Sie UMS benutzen, um sie alle an einem Ort zu haben.
 
 #### Quelle/URL
 
@@ -40,7 +41,7 @@ Wenn Sie mit den eingegebenen Optionen zufrieden sind, wählen Sie den Button "H
 ### Feed - Reihenfolge
 
 Wenn der Link zum Feed gültig war, sollten Sie jetzt das Feld "Name" ausgefüllt sehen. Sie können jetzt den Feed nach oben oder unten ziehen und so die Reihenfolge selber festlegen
-![Liste geteilter Inhalte und Sortierbefähigung]
+![Liste geteilter Inhalte und Sortierfähigkeit]
 (@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
 ### Änderungen speichern
