@@ -302,7 +302,7 @@ Verfügbare Wiedergabelisten auslesen. Diese Playlist-Namen müssen für nachfol
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | URI                    | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
 | REQUEST TYPE           | GET                                                                                                                                                                             |
-| RESPONSE BODY          | JSON-Array der Playlist-Namen                                                                                                                                                   |
+| RESPONSE BODY          | JSON-Array der Wiedergabelisten-Namen                                                                                                                                           |
 | RESPONSE BODY Beispiel | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
 | Verfügbar seit         | 11.0                                                                                                                                                                            |
 
@@ -318,13 +318,13 @@ Dieser Anruf listet alle verfügbaren Wiedergabelisten auf.
 
 Dies sind alle UMS bekannten Wiedergabelisten (Datenbank/Cache aktiviert). Diese Wiedergabelisten-Namen müssen für nachfolgende Anrufe verwendet werden, um Lieder hinzuzufügen oder zu entfernen. Die Playlist-ID kann benutzt werden, um direkt zur Wiedergabeliste zu navigieren, indem Sie die `objectId` `$DBID$PLAYLIST$` in Verbindung mit der databaseId durchsuchen.
 
-| Absicht/Zweck                  | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem konfigurierten Ordner                                      |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                            | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE [Typ der Anfrage] | GET                                                                                                                                                      |
-| RESPONSE BODY                  | JSON-Array der Wiedergabelisten-Namen                                                                                                                    |
-| RESPONSE BODY [Beispiel        | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
-| Verfügbar seit Version:        | Entwicklungszweig                                                                                                                                        |
+| Absicht/Zweck          | Liefert alle unterstützten (`m3u`, `m3u8` und `pls`) und verfügbaren Wiedergabelisten aus dem festgelegten Ordner                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                    | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| REQUEST TYPE           | GET                                                                                                                                                      |
+| RESPONSE BODY          | JSON-Array der Wiedergabelisten-Namen                                                                                                                    |
+| RESPONSE BODY Beispiel | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
+| Verfügbar seit         | Entwicklungszweig                                                                                                                                        |
 
 Beispiel:
 
