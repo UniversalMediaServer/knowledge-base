@@ -1,6 +1,6 @@
 # Wie man den Support für mein Gerät verbessert
 
-Wenn Ihr Gerät überhaupt nichts tut, wie zum Beispiel Ordner durchsuchen oder eine Datei abspielen, kann es sein, dass Sie es durch Ändern der Einstellungen in der Renderer-Konfigurationsdatei beheben. Verschiedene Geräte/Renderers/Clients kommunizieren mit Servern wie UMS auf unterschiedliche Weise. Die Konfigurationsdatei teilt UMS mit, wie man die gleiche Sprache spricht wie Ihr Gerät.
+Wenn Ihr Gerät überhaupt nichts tut, wie zum Beispiel Ordner durchsuchen oder eine Datei abspielen, kann es sein, dass Sie es durch Ändern der Einstellungen in der Renderer-Konfigurationsdatei beheben. Verschiedene Geräte/Renderer/Clients kommunizieren mit Servern wie UMS auf unterschiedliche Weise. Die Konfigurationsdatei teilt UMS mit, wie man die gleiche Sprache spricht wie Ihr Gerät.
 
 Jedes Konfigurations-Profil dient zwei Zwecken:
 - UMS erlauben, beim Verbindungsversuch einen speziellen Renderer zu erkennen
