@@ -68,17 +68,17 @@ Zwingt Sie zur Eingabe eines Codes, wenn der Ordner/das Medium das Wort "privat"
 
 Jede Konfiguration kann auch auf Gerätebasis festgelegt werden, indem eine benutzerdefinierte Gerätekonfiguration erstellt wird, die die Standard-UMS-Einstellungen außer Kraft setzt (weitere Informationen finden Sie unter "Erstellen einer benutzerdefinierten Gerätekonfiguration").
 
-Als Beispiel: eine spezifische Konfiguration für den Fernseher der Kinder:
+Zum Beispiel eine benutzerdefinierte Einstellung für den Fernseher der Kinder:
 - Klicken Sie auf die Schaltfläche 'Dieses Gerät anpassen' oben rechts im GUI-Popup des Renderers und geben Sie einen Namen für die Konfiguration an.
-- In der neuen conf-Datei, die sich öffnet, fügen Sie alle Einstellungen hinzu, die Sie für den TV überschreiben möchten., z.B. um den Servernamen zu ändern und verschiedene Ordner anzugeben:
+- In der neuen conf-Datei, die sich öffnet, fügen Sie alle Einstellungen hinzu, die Sie für den Fernseher überschreiben möchten., z.B. den Servernamen zu ändern und verschiedene Ordner anzugeben:
 ```
 #--------------------------------------------------------------------------------------------
 # Benutzerdefiniertes Geräteprofil
 # Siehe DefaultRenderer.conf für Beschreibungen aller möglichen Renderer-Optionen
 # und UMS.conf für Programmoptionen.
 
-# Die Einstellungen in dieser Datei überschreiben die Standardeinstellungen für das/die unten aufgeführte(n) spezielle(n) Sony Bravia EX-Gerät(e) .
-# Geben Sie Geräte durch uuid an  (oder Adresse, wenn keine uuid), durch Kommas getrennt, wenn es mehrere Geräte sind.
+# Einstellungen in dieser Datei überschreiben die Standardeinstellungen für das/die unten aufgeführte(n) standardmässige(n) Sony Bravia EX-Gerät(e) .
+# Geben Sie Geräte nach uuid an  (oder Adresse, wenn keine uuid gibt), durch Kommata getrennt, wenn es mehrere Geräte sind.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
