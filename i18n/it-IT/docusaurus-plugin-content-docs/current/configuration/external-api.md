@@ -112,7 +112,7 @@ Imposta a VERO lo stato mi piace all'album.
 
 | Scopo                           | Mette mi piace un album identificato da musicBrainz releaseID |
 | ------------------------------- | ------------------------------------------------------------- |
-|                                 | `<span class="s1">/api/like/</span>likealbum`     |
+| URI                             | `<span class="s1">/api/like/</span>likealbum`     |
 | POST BODY                       | `musicBrainz_releaseID`                                       |
 | POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                          |
 | Disponibile da                  | 10.20                                                         |
