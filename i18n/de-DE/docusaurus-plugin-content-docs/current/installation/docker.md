@@ -1,6 +1,6 @@
 # Docker
 
-Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Verstehen, was sie tun, ignorieren oder anpassen, wenn nötig.
+Einige dieser Schritte gelten möglicherweise nicht für Ihre Installation.  Verstehen Sie, was sie bewirken, ignorieren oder passen Sie sie, wenn nötig, an.
 
 ## Vorbereitung
 
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS
 chmod -R g+w /srv/UMS
 ```
 
-Speicher einbinden, um dieses Verzeichnis zu Host und zu verlinken, wahrscheinlich schreibgeschützt. `mount <Videos-Share> '/srv/UMS/Videos'`
+Speicher einbinden und mit diesem Verzeichnis verlinken, wahrscheinlich schreibgeschützt. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Testbeispiel: Einfache Symlinkung zu einem anderen Pfad auf dem Host-System funktioniert möglicherweise nicht da es außerhalb des eingebauten Lautstärkepfades für den Docker-Container keinen Zugriff darauf gibt.  Kopieren Sie stattdessen Dateien in diesem Verzeichnis.
+Testbeispiel: Ein einfacher Symlink auf einen anderen Pfad auf dem Host-System funktioniert möglicherweise nicht, da es außerhalb des eingehängten Volume-Pfades für den Docker-Container keinen Zugriff gibt.  Kopieren Sie stattdessen Dateien in diesem Verzeichnis.
 
-## Container-Setup
+## Container-Einrichtung
 
-Folgende Volumes mounten:
-- Medien Ordner `/root/media`
-- Profile Ordner enthält UMS.conf `/root/.config/UMS`
+Folgende Volumes einhängen:
+- Medien-Ordner `/root/media`
+- Profilordner enthält UMS.conf `/root/.config/UMS`
 
-Diese Ports vom Gastgeber freigeben/weiterleiten: 1044, 5001, 9001.
+Diese Ports vom Gastrechner freigeben/weiterleiten: 1044, 5001, 9001.
 
-Die folgenden Skripte vollenden dies (unter Verwendung der fish shell):
+Die folgenden Skripte bewirken dies (unter Verwendung der fish shell):
 ```
 sudo su -
 set rootDir "$HOME/.config/UMS"
@@ -59,13 +59,13 @@ docker create --name UMS \
 docker start UMS
 ```
 
-## Probleme und Probleme untersuchen
+## Probleme untersuchen
 
 ### Allgemein
 
 ```
 docker ps -a;
-#docker Anhang [--no-stdin] UMS; # Ungewollt den Container stoppen, wenn die Prüfung abgeschlossen wird..
+#docker Anhang [--no-stdin] UMS; # Hält ungewollt den Container an, wenn die Überprüfung abgeschlossen ist..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
@@ -79,13 +79,13 @@ docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 
 ### Einbindungsprobleme
 
-Bei der Verwendung von Fedora CoreOS hatte ich Zugriff/Erlaubnis verweigert bei der Verwendung von Bind Mounts.
+Unter Fedora CoreOS hatte ich Probleme mit "Zugriff/die Erlaubnis verweigert", als ich versuchte, "bind mounts" zu verwenden.
 
-Es kann notwendig sein, stattdessen die Docker-gesteuerte, benannte Volumenfunktion zu verwenden, um diese Komplexität zu vermeiden. Ich habe festgestellt, dass das zusätzliche `:Z` als Suffix für die Mount-Deskriptor-Option bind Container-Schreibzugriff auf Host-Dateien erlaubt. `:z` kann auch stattdessen verwendet werden, aber Sicherheitsberatung kann dazu führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert bleiben als freigegeben.
+Es kann empfehlenswert sein, die Docker-gesteuerte "Benannte-Volumes"-Fähigkeit zu verwenden. Um diese Komplexität jedoch zu vermeiden, habe ich herausgefunden, dass das zusätzliche Suffix `:Z` zum Wert der Descriptor-Option des bind mount-Befehls dem Container Schreibzugriff auf Dateien des Gastrechners gegeben hat. `:z` kann auch stattdessen verwendet werden, aber Sicherheitsüberlegungen könnten zu dem Ergebnis führen, dass Ressourcen zwischen Anwendungen/Service-Umgebungen stärker isoliert bleiben sollten und nicht freigegeben.
 
-Passende Fehlermeldungen können mit journalctl eingesehen werden, so dass es sich um ein SELinux-Problem handelt. Die Lösung dafür wäre "chcon -Rt svirt_sandbox_file_t host_dir" auszuführen, aber davon wird auch abgeraten.
+Passende Fehlermeldungen können mit journalctl eingesehen werden, also ist es ein SELinux-Problem. Die Lösung dafür wäre, `"chcon -Rt svirt_sandbox_file_t` host_dir" auszuführen, aber davon wird scheinbar auch abgeraten.
 
-Seltsamerweise ist dies kein Problem auf der Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Anscheinend Container-selinux.
+Seltsamerweise ist dies kein Problem auf Fedora-Workstation, aber ich vermute, dass die manuelle Installation ein Paket hinzugefügt hat, um damit umzugehen. Scheint container-selinux zu sein.
 
 ## Verweise
 

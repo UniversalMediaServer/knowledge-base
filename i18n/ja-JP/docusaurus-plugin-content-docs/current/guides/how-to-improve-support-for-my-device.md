@@ -1,19 +1,19 @@
 # デバイスのサポートを改善する方法
 
-デバイスがフォルダの閲覧やファイルの再生などを実行できない場合、レンダラーの設定ファイルの設定を変更することで修正できるかもしれません Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+デバイスがフォルダの閲覧やファイルの再生などを実行できない場合、レンダラーの設定ファイルの設定を変更することで修正できるかもしれません。 デバイス/レンダラー/クライアントによってUMSのようなサーバーとのやり取りの方法はさまざまです。そのため、設定ファイルは、UMSがあなたのデバイスと同じ「言語」でやり取りできるように指示します。
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+すべての構成ファイルには以下の二つの目的があります。
+- 接続を試行するレンダラーをUMSが特定できるようにする
+- そのレンダラーの機能を定義する
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+すべてのレンダラー設定項目について解説を含む、デフォルトのレンダラー設定ファイルがあります。 最新バージョンはhttps://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.confをご覧ください。
 
-## Adding support for an unrecognized device
+## 認識されないデバイスへの対応
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+UMSがデバイスを認識しない場合、いずれのレンダラー構成プロファイルもそのデバイスに一致していません。 その結果、UMSは`不明なレンダラー（=Unknown Renderer）`として表示し、レンダラーの機能が分からないため、そのデバイス向けに最適化した出力を提供できません。
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+解決策は、独自のレンダラー構成ファイルを作成してみることです。
+1. お使いのデバイスに最も近い.confファイルをコピーします。 たとえば、Samsungのテレビが認識されない場合は、Samsung TVの構成のいずれかを出発点として選ぶとよいでしょう。
 
 1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
 

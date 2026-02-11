@@ -1,6 +1,6 @@
-# How to add web content
+# Web上のコンテンツを追加する方法
 
-This article will explain how to add web content.
+この記事ではWeb上のコンテンツをUMSに追加する方法を説明します。
 
 ## Video feeds
 
