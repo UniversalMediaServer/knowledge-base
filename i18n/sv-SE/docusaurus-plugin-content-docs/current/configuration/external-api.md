@@ -146,7 +146,7 @@ This call removed the liked attribute of the album identified by musicbrainz rel
 
 Check album like state.
 
-| Avsikt                          | Check if album is liked identified by musicBrainz releaseID  |
+| Avsikt                          |                                                              |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
