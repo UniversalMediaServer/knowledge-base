@@ -1,50 +1,50 @@
-# External API
+# Externe API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Met de externe API kunnen programma's toegang krijgen tot UMS-functies met een HTTP-oproep.
 
-## How to enable the external API
+## Hoe de externe API in te schakelen
 
-Edit UMS.conf and configure an api_key like this
+Bewerk UMS.conf en configureer een api_key zoals deze
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+De _`secret_password`_ moet ten minste 12 tekens hebben.
 
-## API usage
+## API gebruik
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Als de externe API is ingeschakeld, is de API toegankelijk met een POST oproep naar /api/COMMAND
 
-### Folder Scanning
+### Map scannen
 
-#### rescan
+#### herscannen
 
-| Intention                       | Rescans the complete library       |
+| Intention                       | Herscan de volledige bibliotheek   |
 | ------------------------------- | ---------------------------------- |
 | URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
+| POST BODY                       | GEEN                               |
 | POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Beschikbaar sinds               | 10.4.2                             |
 
 :::info
-This can be slow for large libraries
+Dit kan traag zijn voor grote bibliotheken
 :::
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### bestand of map opnieuw scannen
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Intention                       | Herscant een gedeeltelijke subgedeelte van het bestandssysteem.                           |
+| ------------------------------- | ----------------------------------------------------------------------------------------- |
+| URI                             | `/api/folderscanner/rescanFileOrFolder`                                                   |
+| POST BODY                       | PATH_TO_SCAN                                                                            |
+| POST BODY example / description | example: "/music/pop/Madonna". Pad moet een hoofdmap of submap van een gedeelde pad zijn. |
+| Beschikbaar sinds               | 10.4.2                                                                                    |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheim_wachtwoord" -X POST http://localhost:5001/api/mapscanner/herscanbestandof map
