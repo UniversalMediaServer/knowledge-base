@@ -1,47 +1,47 @@
 # Veiligheid en Privacy
 
-## Introduction
+## Introductie
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS behandelt media op twee manieren - via DLNA/UPnP dat moet worden benaderd via mediaspeler apps, en via HTTP(S) om te worden benaderd via internetbrowsers.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Internetbrowsers hebben eenvoudige beveiliging en privacy controle door ingelogde gebruikersaccounts.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Mediaspeler apps ondersteunen over het algemeen het concept van een "gebruiker" niet, dus meestal krijgt elk apparaat dezelfde inhoud. Dit is misschien niet wat je wilt. Als je bijvoorbeeld twee mappen hebt, 'kindveilig' en 'kindonveilig', dan wil je waarschijnlijk dat afspeelapparaten in de kinderkamer alleen toegang hebben tot de map 'kindveilig'. Een andere algemene situatie is dat je op hetzelfde netwerk zit als mensen die je geen toegang wilt geven tot je media, bijvoorbeeld huisgenoten, dan kan je bepaalde spelers volledig blokkeren.
 
-UMS provides a number of methods to control access in those situations.
+UMS biedt een aantal methoden om de toegang in die situaties te beheren.
 
 ## Renderers of netwerkapparaten standaard toestaan ​​of blokkeren
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+U kunt de standaardstrategie kiezen voor spelers en netwerkapparaten. Standaard kan je toestaan of weigeren met weigerings- en toelatingslijsten voor volledige controle
 
-Dit is handig voor situaties waarin mensen samenwonen of bij grote lokale netwerken waar weinig vertrouwen heerst. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Dit is handig voor situaties waarin mensen samenwonen of bij grote lokale netwerken waar weinig vertrouwen heerst. Het is ook handig voor diegenen die powerline-adapters voor uw netwerk gebruiken, omdat dat kan leiden tot ongewenste toegang van buren.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Voorbeeld van netwerk toestaan permissie toestaan instellen](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Voorbeeld van hoe je de renderer toestaan permissie kunt instellen](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Renderers en netwerkapparaten blokkeren/toestaan
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Wanneer je hebt gekozen om niet-herkende spelers standaard toe te staan of te blokkeren, dan kan je de weigerings- of toelatingslijst maken vanaf het startscherm in de instellingen gedeelte.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Voorbeeld van hoe je een speler moet blokkeren](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Link naar renderer
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Je kunt gebruikersaccounts koppelen aan renderers/apparaten, zodat je onafhankelijke inhoudstoegang en afspeeltracking hebt.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Als je bijvoorbeeld een tv in de woonkamer hebt en een andere in je slaapkamer, de woonkamer TV hoeft niet beïnvloed te worden door wat je in je slaapkamer bekijkt.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Voorbeeld van hoe een account aan een speler toegewezen moet worden](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Gedeelde inhoud beperken tot bepaalde groepen
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Je kunt nu kiezen om mappen of online-inhoud te delen met bepaalde groepen. Bijvoorbeeld, als u een persoon (of een apparaat dat is toegewezen aan een persoon) hebt die een kind is, dan kan je deze toewijzen aan de "Kinderen" groep, en geef die groep toegang tot de map "Familie", maar niet tot de inhoud "Horror" of "Alleen voor volwassenen". Of geef hun toegang tot de Kurzgesagt webfeed, maar niet tot de podcasts.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Voorbeeld van gedeelde inhoud groepen](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## Mappen verbergen
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Beheer de zichtbaarheid van de virtuele mappen. Deze instellingen zijn te vinden in UMS.conf bestand. Om sommige mappen tijdens het browsen te verbergen, stel je de waarde in op true of vink je deze aan in het Navigatie/Deel-tabblad vanuit de geavanceerde GUI-modus.
 
 ```
 hide_recently_played_folder =true
@@ -53,23 +53,23 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Om de webmap te verbergen moet je het externe netwerk in het tabblad Algemene Configuratie uitvinken uit de geavanceerde GUI-modus of de waarde 'external_network =' veranderen naar false in je UMS.conf bestand. Dit zal het zijeffect hebben dat de automatische update niet zal werken. De wijzigingen die gemaakt zijn van de GUI zijn van toepassing na een herstart.
 
-## PIN code
+## Pincode
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Alle bovenstaande methoden beperken de toegang van verschillende spelers. Maar als je toegang hebt tot een render die toestemming heeft om een map te zien, helpen die methodes je niet (als de kinderen toegang hebben tot de tv van de woonkamer die toegang hebben tot alle media dan hebben ze toegang tot die media). De pincode lost dit probleem op. Het stelt je in staat mappen/media achter een pincode te verbergen die je moet invoeren vanaf de speler. Standaard is de invoer een reeks cijfers (0-9) net als een pincode van een bankpas. Ik stel sterk voor dat u cijfers gebaseerde codes gebruikt, omdat het moeilijk wordt om in te typen vanaf speler. Maar als je extra paranoïde bent, kun je letters gebruiken. Het werkt als volgt: Voeg een bestand met de naam UMS.code toe aan dezelfde map als uw UMS.conf, en aan dat bestand voeg regexp,code toe, waarbij regexp een gebruikelijke expressie is, net als in "UMS. deny" bestand en code is de code die toegang geeft tot de map/media. Er is geen lengte beperking op de code. Bijvoorbeeld:
 ```
-.*private.*,1234
+.*privé*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Zul je dwingen om een code in te voeren als de map/media het woord "privé" bevat en de juiste code is 1234. De code blijft dan 4 uur geldig (als je die tijd niet verandert).
 
-## Custom Device Configuration
+## Aangepaste apparaatconfiguratie
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Elke configuratie eigenschap kan ook per apparaat worden ingesteld door het maken van een aangepaste apparaat configuratie om de standaard UMS instellingen te overschrijven (voor alle details zie het maken van een aangepast apparaat configuratie).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
+Bijvoorbeeld, om de kinderen tv aan te passen:
+- Klik op de knop 'Dit apparaat aanpassen' in de rechterbovenkant van het speler's GUI pop-up paneel en geef een naam op voor de configuratie.
 - In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
 ```
 #----------------------------------------------------------------------------
