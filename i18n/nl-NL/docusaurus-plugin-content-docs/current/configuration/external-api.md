@@ -18,12 +18,12 @@ Als de externe API is ingeschakeld, is de API toegankelijk met een POST oproep n
 
 #### herscannen
 
-| Intention                       | Herscan de volledige bibliotheek   |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | GEEN                               |
-| POST BODY example / description | This command needs no body content |
-| Beschikbaar sinds               | 10.4.2                             |
+| Bedoeling                       | Herscan de volledige bibliotheek      |
+| ------------------------------- | ------------------------------------- |
+| URI                             | `/api/folderscanner/rescan`           |
+| POST BODY                       | GEEN                                  |
+| POST BODY example / description | Deze opdracht heeft geen inhoud nodig |
+| Beschikbaar sinds               | 10.4.2                                |
 
 :::info
 Dit kan traag zijn voor grote bibliotheken
@@ -37,12 +37,12 @@ curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api
 
 #### bestand of map opnieuw scannen
 
-| Intention                       | Herscant een gedeeltelijke subgedeelte van het bestandssysteem.                           |
-| ------------------------------- | ----------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                                   |
-| POST BODY                       | PATH_TO_SCAN                                                                            |
-| POST BODY example / description | example: "/music/pop/Madonna". Pad moet een hoofdmap of submap van een gedeelde pad zijn. |
-| Beschikbaar sinds               | 10.4.2                                                                                    |
+| Bedoeling                          | Herscant een gedeeltelijke subgedeelte van het bestandssysteem.                           |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
+| URI                                | `/api/folderscanner/rescanFileOrFolder`                                                   |
+| POST BODY                          | PATH_TO_SCAN                                                                            |
+| POST BODY voorbeeld / beschrijving | example: "/music/pop/Madonna". Pad moet een hoofdmap of submap van een gedeelde pad zijn. |
+| Beschikbaar sinds                  | 10.4.2                                                                                    |
 
 Voorbeeld:
 
@@ -50,80 +50,80 @@ Voorbeeld:
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheim_wachtwoord" -X POST http://localhost:5001/api/mapscanner/herscanbestandof map
 ```
 
-### Liking Music (albums and songs)
+### Muziek liken (albums en liedjes)
 
-#### like song
+#### Lied liken
 
-Song will be marked as liked.
+Lied wordt gemarkeerd als geliket.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Bedoeling                          | Lied liken geïdentificeerd door musicBrainz trackId      |
+| ---------------------------------- | -------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/likesong</span>` |
+| POST BODY                          | `musicBrainz_trackID`                                    |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
+| Beschikbaar sinds                  | 10.20                                                    |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Lied disliken
 
-Song will not be disliked
+Lied wordt niet gedisliket
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Bedoeling                          | Lied disliken geïdentificeerd door musicBrainz trackId      |
+| ---------------------------------- | ----------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>dislikesong` |
+| POST BODY                          | `musicBrainz_trackID`                                       |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
+| Beschikbaar sinds                  | 10.20                                                       |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### Is lied geliket
 
-Check if song is liked.
+Controleer of lied geliket is
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Bedoeling                          | Controleer of lied geliket is geïdentificeerd door musicBrainz trackId                          |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                          | `musicBrainz_trackID`                                                                           |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY                      | `TRUE` or `FALSE`                                                                               |
+| Beschikbaar sinds                  | 10.20                                                                                           |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Deze oproep voegt het favoriete attribuut van het album dat door musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` toe.
 
-#### like album
+#### Album liken
 
-Set album like state to true.
+Zet album like status op waar
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Bedoeling                          | Liket een album dat wordt geïdentificeerd door musicBrainz releaseID |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>likealbum`            |
+| POST BODY                          | `musicBrainz_releaseID`                                              |
+| POST BODY voorbeeld / beschrijving | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                 |
+| Beschikbaar sinds                  | 10.20                                                                |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Album disliken
 
 Remove album like state.
 
