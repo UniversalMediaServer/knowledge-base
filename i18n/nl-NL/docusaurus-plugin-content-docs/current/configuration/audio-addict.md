@@ -1,28 +1,28 @@
-# Audio Addict Network Radio
+# Audio Addict Netwerk Radio
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+Het **Audio-Addict Netwerk** is een verzameling van premium internetradiostations, waaronder:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Klassieke Radio, Radio Tunes, Rots Radio, Jazz Radio, Zen Radio, en DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+Voor toegang tot deze radiostations is een betaald **premium account** vereist. U hoeft zich slechts te registreren op een van de websites, omdat dezelfde gebruikersnaam en wachtwoord toegang tot alle sites zullen verlenen.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS leest automatisch alle beschikbare AudioAddict radiowebsites, hun kanalen en filters. Het **Favorieten** kanaal wordt ook ondersteund.
 
-## Configuration
+## Configuratie
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Om AudioAddict ondersteuning in te schakelen, voeg je de volgende regels toe aan je `UMS.conf` bestand:
 
 ```
-# TRUE = prefer European streaming server
+# TRUE = verkies Europese streaming server
 audio_addict_europe = TRUE or FALSE
 
-# Your username
+# Uw gebruikersnaam
 audio_addict_user = USERNAME
 
-# Your password
+# Uw wachtwoord
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## Locatie
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+De map **Audio-Addict Radio Netwerk** bevindt zich in uw mediabibliotheek. Vanaf daar kunt u direct bladeren en heeft u toegang tot alle beschikbare stations.
