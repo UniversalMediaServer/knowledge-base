@@ -70,17 +70,17 @@ Elke configuratie eigenschap kan ook per apparaat worden ingesteld door het make
 
 Bijvoorbeeld, om de kinderen tv aan te passen:
 - Klik op de knop 'Dit apparaat aanpassen' in de rechterbovenkant van het speler's GUI pop-up paneel en geef een naam op voor de configuratie.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+- In het nieuwe conf bestand dat opent voeg je alle instellingen toe die je wilt overschrijven voor de TV, om de servernaam te wijzigen en verschillende mappen op te geven:
 ```
-#----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+#--------------------------------------------------------------------------
+# Aangepast apparaat profiel
+# Zie DefaultRenderer.conf voor beschrijvingen van alle mogelijke renderer opties
+# en UMS.conf voor programma opties.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Opties in dit bestand overschrijven de standaardinstellingen voor specifieke Sony Bravia EX apparaten hieronder vermeld.
+# Apparaten opgeven door uid (of adres als niet uuid), gescheiden door komma's als meer dan één.
 
-device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
+apparaat = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
-folders = c:\kids\stuff, c:\kids\otherstuff
+mappen = c:\kids\stuff, c:\kids\otherff spullen
 ```
