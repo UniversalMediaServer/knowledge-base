@@ -1,33 +1,33 @@
-# How to use the "Fully played" feature
+# Hoe gebruik je de "Volledig gespeeld" functie
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+De functie "Volledig gespeeld" laat u bijhouden van bestanden die u volledig hebt afgespeeld. Voor een video betekent het dat je tenminste 92 procent hebt bekeken, en voor audio heb je minstens 92 procent beluisterd.
 
-## Setup
+## Installatie
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Deze functie is standaard ingeschakeld, dus als je niets hebt veranderd, kun je het gebruiken. Als de functie niet werkt, controleer dan of deze stappen niet ongedaan zijn gemaakt:
 
-1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+1. Op het tabblad **Navigatie-instellingen** kiest u uw **Volledig afgespeelde actie**. Zorg er in het bijzonder voor dat je niet hebt geselecteerd **Doe niets**. Dit is **Markeer media** als standaard, dit zal een pictogram op de miniatuur weergeven om aan te geven dat het bekeken is.
+2. Op het tabblad **Gedeelde inhoud** vind je de map die je wilt volgen, en selecteer de **Afspeelstatus van bestanden** checkbox op die rij.
+3. Als u wilt dat de status afgespeeld wordt bijgehouden voor verschillende spelers, kunt u spelers koppelen aan verschillende gebruikersaccounts. Elk account zal zijn eigen afgespeelde statussen opslaan.
 
-## Marking files as fully played automatically
+## Bestanden automatisch als volledig afgespeeld markeren
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Nadat je de setup-stappen hebt voltooid, hoef je alleen maar 92% of meer van een bestand af te spelen.
 
-## Mark TV series, videos, or directories as fully played manually
+## Markeer handmatig TV-series, video's of mappen als volledig afgespeeld
 
-You can mark TV series and videos as fully played directly via the web player:
+Je kunt TV-series en video's direct via de webspeler als volledig afgespeeld markeren:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Voorbeeld van hoe series en video's als volledig afgespeeld te markeren](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Om alle bestanden in een gedeelde map als volledig afgespeeld te markeren in de _oude_ instellingeninterface, klikt u op het tabblad **Gedeelde inhoud** met de rechtermuisknop op de map die u als volledig afgespeeld wilt markeren en vervolgens op **Inhoud als volledig afgespeeld markeren**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Voorbeeld van hoe een map als volledig afgespeeld te markeren](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Volledig afgespeelde status verwijderen / afspelen
 
-To "unplay" a file, you can do one of the following options:
+Om een bestand te  markeren als "niet-afgespeeld" kan je een van de volgende opties doen:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Hernoem het bestand op welke manier dan ook. Daarna kunt u het naar de oorspronkelijke naam terugzetten, omdat UMS de vermelding uit de cache zal hebben gewist wanneer de naam is gewijzigd.
+- Verplaats het bestand naar een andere map. Daarna kunt u het terugzetten naar de oorspronkelijke map, omdat UMS de vermelding uit de cache zal hebben gewist wanneer het bestand is verplaatst.
+- Om een ​​volledige gedeelde map als niet-afgespeeld te markeren, klikt u op het tabblad **Gedeelde inhoud** met de rechtermuisknop op de map die u als niet-afgespeeld wilt markeren en vervolgens op **Inhoud als niet-afgespeeld markeren**.
