@@ -7,7 +7,7 @@ slug: /
 
 Deze website bevat de officiële documentatie voor het gebruik van Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Als je geen huidige gebruiker bent en je zoekt om hem te downloaden of te beslissen of het te gebruiken je vindt [onze belangrijkste website](https://www.universalmediaserver.com) waarschijnlijk nuttig.
 
 Het is opgesplitst in 3 hoofdsecties: Configuratie, handleidingen en installatie.
 
