@@ -1,39 +1,39 @@
-# How to play media
+# Hoe media afspelen
 
-This article will explain the 4 main ways to play video, audio and images via UMS.
+Dit artikel legt de 4 belangrijkste manieren uit om video, audio en afbeeldingen af te spelen via UMS.
 
-## 1: Play from a renderer interface
+## 1: Afspelen vanuit een spelers interface
 
-When your renderer is connected to UMS via DLNA/UPnP, often it will display in a menu called "Media Servers" or something similar, depending on the renderer. From there, you can enter UMS and browse to the media you want to access.
+Wanneer je speler verbonden is met UMS via DLNA/UPnP, wordt het vaak weergegeven in een menu genaamd "Media Servers" of iets vergelijkbaars, afhankelijk van de speler. Vanaf daar kunt u UMS benaderen en naar de media bladeren die u wilt openen.
 
-The implementation of this varies greatly per renderer, but the core functionality is the same; navigate to your chosen media and select it to play.
+De implementatie van dit type varieert sterk per speler, maar de kern functionaliteit is hetzelfde; navigeer naar de gekozen media en selecteer het om te spelen.
 
-## 2: Push from the UMS interface to a renderer
+## 2: Push van de UMS-interface naar een speler
 
-The UMS interface itself has the ability to "push" media to renderers if they support the UPnP feature. It is a similar concept to casting.
+De UMS interface heeft de mogelijkheid om media te "pushen" als ze de UPnP functie ondersteunen. Het is een gelijkwaardig concept als casten.
 
-1. Open the UMS UI and identify the renderer you want to push media to. In this case it is the Panasonic VIERA VT60 Series TV.  
-   ![Open the GUI](@site/docs/guides/img/how-to-play-media-1.png)
-2. Click on the renderer image to open the control panel  
-   ![Renderer control](@site/docs/guides/img/how-to-play-media-2.png)
-3. Choose the file you want to push by clicking the folder icon on the lower right, and it will be filled in on the lower left. If you do not see the player controls in this window, your renderer does not support this functionality. Be sure to check for firmware/software updates to your renderer as they may have added support for it  
-   ![File selected](@site/docs/guides/img/how-to-play-media-3.png)
-4. Now you can either create a playlist by clicking the plus icon to the immediate right of the input box, or you can push the file to your renderer by clicking the play icon just above the middle of the input box, which will start it playing on your renderer.
+1. Open de UMS UI en identificeer de speler waarop u media wilt pushen. In dit geval is het de Panasonic VIERA VT60 Series TV.  
+   ![Open de GUI](@site/docs/guides/img/how-to-play-media-1.png)
+2. Klik op de afbeelding van de speler om het controlepaneel te openen  
+   ![Speler beheer](@site/docs/guides/img/how-to-play-media-2.png)
+3. Kies het bestand dat u wilt pushen door op het mappictogram rechts onderaan te klikken en het zal aan de linker onderkant worden ingevuld. Als u de spelerbesturingselementen niet in dit venster ziet, ondersteunt uw speler deze functionaliteit niet. Controleer op firmware/software-updates voor uw speler, omdat deze hiervoor ondersteuning kunnen hebben toegevoegd.  
+   ![Bestand geselecteerd](@site/docs/guides/img/how-to-play-media-3.png)
+4. Nu kun je ofwel een afspeellijst maken door op het pluspictogram te klikken rechts van het invoerveld, of je kunt het bestand naar je speler pushen door te klikken op het afspeelknop, net boven het midden van het invoervenster, waarmee je begint te spelen op je speler.
 
-## 3: Play on the web interface
+## 3: Speel op de webinterface
 
-The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
+De webinterface kan overal binnen uw lokale netwerk worden benaderd, ook op computers en spelers. In veel opzichten biedt het onze meest geavanceerde UI en functies.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
-   ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
-2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
-   ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
+1. Open de webinterface Als je het adres weet kan je daar naartoe gaan, anders is het een eenvoudige manier om op de webinterface knop te klikken op onze UI  
+   ![Open de webinterface](@site/docs/guides/img/how-to-play-media-4.png)
+2. Als u daarop klikt, wordt de webinterface in uw standaardbrowser geopend. Vanaf daar kun je naar je bestand navigeren en klikken om het af te spelen  
+   ![Video op de webinterface](@site/docs/guides/img/how-to-play-media-5.png)
 
-## 4: Push from the web interface to a renderer
+## 4: Push van de webinterface naar een speler
 
-Similar to above in option 2, you can push your media to a renderer via our web interface.
+Vergelijkbaar met bovenstaande optie 2 kun je je media via onze web-interface naar een speler pushen.
 
-1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
-2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
-   ![Floating control panel](@site/docs/guides/img/how-to-play-media-7.png)
+1. Klikken op het pictogram casten van een bestand tijdens het browsen in een map. Het staat aan de onderkant rechts van de thumbnail.  
+   ![Cast pictogram](@site/docs/guides/img/how-to-play-media-6.png)
+2. Zo verschijnt er een mini zwevend controlepaneel, die u kunt gebruiken om het afspelen van het bestand te controleren en dynamische afspeellijsten te beheren als u kiest.  
+   ![Zwevend controlepaneel](@site/docs/guides/img/how-to-play-media-7.png)

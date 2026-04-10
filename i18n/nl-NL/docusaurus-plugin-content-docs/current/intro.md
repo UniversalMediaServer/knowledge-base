@@ -3,12 +3,12 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Introductie
 
-This website contains the official support documentation for using Universal Media Server.
+Deze website bevat de officiële documentatie voor het gebruik van Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Als je geen huidige gebruiker bent en je zoekt om hem te downloaden of te beslissen of het te gebruiken je vindt [onze belangrijkste website](https://www.universalmediaserver.com) waarschijnlijk nuttig.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Het is opgesplitst in 3 hoofdsecties: Configuratie, handleidingen en installatie.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Als je hier op zoek bent naar specifieke informatie en het niet hebt gevonden, laat het ons dan weten op GitHub zodat we het kunnen toevoegen.

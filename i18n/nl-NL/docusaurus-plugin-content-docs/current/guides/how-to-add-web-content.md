@@ -1,49 +1,49 @@
-# How to add web content
+# Hoe voeg je webinhoud toe
 
-This article will explain how to add web content.
+Dit artikel legt uit hoe u webinhoud kunt toevoegen.
 
 ## Video feeds
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+U kunt zich abonneren op videofeeds/kanalen door de RSS-feeds-links toe te voegen, of in het geval van YouTube, gewoon de link naar het kanaal invoeren.
 
-### 1: Go to the Shared Content section
+### 1: Ga naar de sectie gedeelde inhoud
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
+Open in de UMS instellingen in je webbrowser het menu en selecteer Gedeelde Inhoud  
 ![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: Open het "Nieuwe gedeelde inhoud toevoegen" venster
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+Als je de knop "Nieuwe gedeelde inhoud toevoegen" selecteert, wordt er een venster geopend die je in staat stelt om een type media toe te voegen. De eerste stap is het kiezen van het type "Video feed"  
+![Nieuwe gedeelde inhoud opties modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Voeg je feed toe
 
-Here you can add your feed
+Hier kunt u uw feed toevoegen
 
-#### Name
+#### Naam
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Het veld "Naam" is uitgeschakeld voor video-feeds, omdat de feeds hun eigen namen definiëren.
 
-#### Path
+#### Pad
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Het veld "Pad" definieert de structuur van de map die door de UMS wordt weergegeven. Als je bijvoorbeeld `Web/YouTube Channels` invoert, zal je feed zich binnen de `YouTube Channels` map bevinden, genesteld binnen de `Web` map. Hiermee kunt u uw inhoud organiseren als u wilt, en is het vooral handig als u verschillende feed aanbieders heeft, en je gebruikt UMS ze allemaal op dezelfde plaats.
 
-#### Source/URL
+#### Bron/URL:
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Dit is de link naar de video-feed. Het eindigt meestal in `.xml`, maar we behandelen YouTube anders om een kanaal URL direct te accepteren, waardoor je bijvoorbeeld `https://www.youtube.com/@kurzgesagt` kunt invoeren
 
-#### Authorized groups
+#### Geautoriseerde groepen
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Met het "Geautoriseerde groepen" veld kunt u deze feed alleen beschikbaar maken voor bepaalde groepen die in UMS zijn gedefinieerd en geassocieerd worden met verschillende gebruikers en/of apparaten. Zie [Veiligheid en Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) voor meer details.
 
-When you are happy with the options you entered, select the "Add" button.
+Als je tevreden bent met de opties die je hebt ingevoerd, selecteer dan de knop "Toevoegen".
 
-### Feed order
+### Feed volgorde
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Als de feed link geldig was, zou je nu het "Naam" veld moeten zien ingevuld en nu kun je de feed omhoog of omlaag slepen om de volgorde  
+te bedienen! Lijst van gedeelde inhoud en bestelbaarheid](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Wijzigingen opslaan
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Je kunt de vorige stappen herhalen om meer inhoud toe te voegen/te bewerken en wanneer u tevreden bent met uw wijzigingen, selecteer dan de knop "Opslaan" onderaan de pagina. Nu kun je de inhoud op je apparaten zien:  
+![Voorbeeld van een videofeed op de webplayer](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)

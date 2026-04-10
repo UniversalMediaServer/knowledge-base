@@ -1,342 +1,342 @@
-# External API
+# Externe API
 
-The external API enables programs to access or trigger UMS functionalities with a HTTP call.
+Met de externe API kunnen programma's toegang krijgen tot UMS-functies met een HTTP-oproep.
 
-## How to enable the external API
+## Hoe de externe API in te schakelen
 
-Edit UMS.conf and configure an api_key like this
+Bewerk UMS.conf en configureer een api_key zoals deze
 
 `api_key = secret_password`
 
-The _`secret_password`_ must have a minimum of 12 chars.
+De _`secret_password`_ moet tenminste 12 tekens hebben.
 
-## API usage
+## API gebruik
 
-If the external API is enabled, the API is accessible with a POST call to /api/COMMAND
+Als de externe API is ingeschakeld, is de API toegankelijk met een POST oproep naar /api/COMMAND
 
-### Folder Scanning
+### Map scannen
 
-#### rescan
+#### herscannen
 
-| Intention                       | Rescans the complete library       |
-| ------------------------------- | ---------------------------------- |
-| URI                             | `/api/folderscanner/rescan`        |
-| POST BODY                       | NONE                               |
-| POST BODY example / description | This command needs no body content |
-| Available since                 | 10.4.2                             |
+| Bedoeling                          | Herscan de volledige bibliotheek      |
+| ---------------------------------- | ------------------------------------- |
+| URI                                | `/api/folderscanner/rescan`           |
+| POST BODY                          | GEEN                                  |
+| POST BODY voorbeeld / beschrijving | Deze opdracht heeft geen inhoud nodig |
+| Beschikbaar sinds                  | 10.4.2                                |
 
 :::info
-This can be slow for large libraries
+Dit kan traag zijn voor grote bibliotheken
 :::
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" http://localhost:5001/api/folderscanner/rescan
 ```
 
-#### rescan file or folder
+#### Bestand of map opnieuw scannen
 
-| Intention                       | Rescans a partial subtree of the file system.                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| URI                             | `/api/folderscanner/rescanFileOrFolder`                                               |
-| POST BODY                       | PATH_TO_SCAN                                                                        |
-| POST BODY example / description | example: "/music/pop/Madonna". Path must be the root or a subfolder of a shared path. |
-| Available since                 | 10.4.2                                                                                |
+| Bedoeling                          | Herscant een gedeeltelijke subgedeelte van het bestandssysteem.                             |
+| ---------------------------------- | ------------------------------------------------------------------------------------------- |
+| URI                                | `/api/folderscanner/rescanFileOrFolder`                                                     |
+| POST BODY                          | PAD-OMTE-SCANNEN                                                                            |
+| POST BODY voorbeeld / beschrijving | Voorbeeld: "/music/pop/Madonna". Pad moet een hoofdmap of submap van een gedeelde pad zijn. |
+| Beschikbaar sinds                  | 10.4.2                                                                                      |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "PATH_TO_SCAN" -w "%{http_code}\n" -H "api-key: geheim_wachtwoord" -X POST http://localhost:5001/api/mapscanner/herscanbestandof map
 ```
 
-### Liking Music (albums and songs)
+### Muziek leuk vinden (albums en liedjes)
 
-#### like song
+#### Nummer leuk vinden
 
-Song will be marked as liked.
+Nummer wordt gemarkeerd als vind-ik-leuk.
 
-| Intention                       | Like a song identified by musicBrainz trackId            |
-| ------------------------------- | -------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/likesong</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                     |
-| Available since                 | 10.20                                                    |
+| Bedoeling                          | Lied leuk vinden geïdentificeerd door musicBrainz trackId |
+| ---------------------------------- | --------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/likesong</span>`  |
+| POST BODY                          | `musicBrainz_trackID`                                     |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                      |
+| Beschikbaar sinds                  | 10.20                                                     |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likesong
 ```
 
-#### dislike song
+#### Nummer niet-leuk-vinden
 
-Song will not be disliked
+Nummer wordt niet, niet-leuk bevonden
 
-| Intention                       | Dislike a song identified by musicBrainz trackId            |
-| ------------------------------- | ----------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>dislikesong` |
-| POST BODY                       | `musicBrainz_trackID`                                       |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                        |
-| Available since                 | 10.20                                                       |
+| Bedoeling                          | Nummer niet-leuk-vinden geïdentificeerd door musicBrainz trackId |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>dislikesong`      |
+| POST BODY                          | `musicBrainz_trackID`                                            |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                             |
+| Beschikbaar sinds                  | 10.20                                                            |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikesong
 ```
 
-#### is song liked
+#### Is nummer leuk bevonden
 
-Check if song is liked.
+Controleer of nummer leuk bevonden is
 
-| Intention                       | Check if song is liked identified by musicBrainz trackId                                        |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
-| POST BODY                       | `musicBrainz_trackID`                                                                           |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY                   | `TRUE` or `FALSE`                                                                               |
-| Available since                 | 10.20                                                                                           |
+| Bedoeling                          | Controleer of nummer leuk bevonden is geïdentificeerd door musicBrainz trackId                  |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
+| POST BODY                          | `musicBrainz_trackID`                                                                           |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
+| RESPONSE BODY                      | `TRUE` or `FALSE`                                                                               |
+| Beschikbaar sinds                  | 10.20                                                                                           |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/issongliked
 ```
 
-This call adds the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Deze oproep voegt het vind-ik-leuk attribuut toe van het album dat geïdentificeerd is door musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`
 
-#### like album
+#### Album leuk vinden
 
-Set album like state to true.
+Zet album vind-ik-leuk status op waar
 
-| Intention                       | Likes an album identified by musicBrainz releaseID        |
-| ------------------------------- | --------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/like/</span>likealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                   |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                      |
-| Available since                 | 10.20                                                     |
+| Bedoeling                          | Album leuk vinden dat wordt geïdentificeerd door musicBrainz releaseID |
+| ---------------------------------- | ---------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>likealbum`              |
+| POST BODY                          | `musicBrainz_releaseID`                                                |
+| POST BODY voorbeeld / beschrijving | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                   |
+| Beschikbaar sinds                  | 10.20                                                                  |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Album niet-leuk-vinden
 
-Remove album like state.
+Album vind-ik-leuk status verwijderen
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Bedoeling                          | Nummer niet-leuk-vinden geïdentificeerd door musicBrainz trackId |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>dislikealbum`     |
+| POST BODY                          | `musicBrainz_releaseID`                                          |
+| POST BODY voorbeeld / beschrijving | 1e0eee38-a9f6-49bf-84d0-45d0647799af                             |
+| Beschikbaar sinds                  | 10.20                                                            |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Deze oproep heeft het vind-ik-leuk attribuut van het album verwijderd geïdentificeerd door musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### Is album leuk bevonden
 
-Check album like state.
+Controleer album vind-ik-leuk status
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| RESPONSE BODY                   | "TRUE" or "FALSE"                                            |
-| Available since                 | 10.20                                                        |
+| Bedoeling                          | Controleer of album is leuk bevonden is geïdentificeerd door musicBrainz releaseID |
+| ---------------------------------- | ---------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/like/</span>isalbumliked`                       |
+| POST BODY                          | `musicBrainz_releaseID`                                                            |
+| POST BODY voorbeeld / beschrijving | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                               |
+| RESPONSE BODY                      | "TRUE" or "FALSE"                                                                  |
+| Beschikbaar sinds                  | 10.20                                                                              |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/isalbumliked
 ```
 
-This call checks if the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` is liked.
+Deze oproep controleert of het door musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af` leuk bevonden is.
 
-### Rating
+### Waardering
 
-The rating API is responsible for rating songs. Rating information is saved in the internal database (cache enabled) and optionally in the file itself. If `audio_update_rating_tag = true` is set in UMS.conf the IDv3 rating field also being updated in the song file (if the songs file format is supported).
+De API voor waardering is verantwoordelijk voor het beoordelen van nummers. Waarderingsinformatie wordt opgeslagen in de interne database (cache ingeschakeld) en optioneel in het bestand zelf. Als`audio_update_rating_tag = true` is ingesteld in UMS. onf het IDv3 beoordelingsveld wordt ook bijgewerkt in het nummer bestand (als de bestandsindeling van het nummer wordt ondersteund).
 
-While browsing the content directory server, MusicBrainzTrackID (if available) and audiotrackID are delivered as `desc` metadata within the DIDL element.
+Tijdens het browsen op de contentmap server, MusicBrainzTrackID (indien beschikbaar) en audiotrackID worden geleverd als `desc` metadata binnen het DIDL-element.
 
-#### set rating
+#### Kies waardering
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by musicBrainz trackId                         |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>` |
-| POST BODY                       | `musicbrainzTrackId` /`stars`                                                                   |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                          |
-| Available since                 | 10.20                                                                                           |
+| Bedoeling                          | Stel de waardering in met sterren (0 - 5) op een nummer geïdentificeerd door musicBrainz trackId |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ |
+| URI                                | `<span class="s1">/api/</span><span class="s1">rating/setrating</span>`  |
+| POST BODY                          | `musicbrainzTrackId` /`stars`                                                                    |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25/3                                                           |
+| Beschikbaar sinds                  | 10.20                                                                                            |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets the user rating of all songs identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` to `3`.
+Deze oproep bepaalt de gebruikersbeoordeling van alle nummers geïdentificeerd door de musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25` naar `3`.
 
-#### get rating
+#### Krijg waardering
 
-Reads song rating from database
+Leest nummerwaardering uit de database
 
-| Intention                       | Get song rating in stars (0 - 5) by musicBrainz trackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`        |
-| POST BODY                       | `musicbrainzTrackId`                                                                                    |
-| POST BODY example / description | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                    |
-| RESPONSE BODY example           | 3                                                                                                       |
-| Available since                 | 10.20                                                                                                   |
+| Bedoeling                          | Krijg nummerwaardering in sterren (0 - 5) door musicBrainz trackID. Response body bevat het waarderingsinformatie |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">rating/getrating </span>`                  |
+| POST BODY                          | `musicbrainzTrackId`                                                                                              |
+| POST BODY voorbeeld / beschrijving | b8695995-45e9-405d-b4aa-e50e8760fe25                                                                              |
+| RESPONSE BODY voorbeeld            | 3                                                                                                                 |
+| Beschikbaar sinds                  | 10.20                                                                                                             |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getrating
 ```
 
-This call reads the user rating of a song identified by the musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
+Deze oproep leest de gebruikerswaardering van een nummer geïdentificeerd door de musicbrainz track-id `b8695995-45e9-405d-b4aa-e50e8760fe25`.
 
-#### set rating by audiotrack id
+#### Kies waardering door audiotrack id
 
-| Intention                       | Set rating in stars (0 - 5) on a song identified by UMS internal audiotrackID                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
-| POST BODY                       | `trackID` /`stars`                                                                                             |
-| POST BODY example / description | 32                                                                                                             |
-| Available since                 | 11.0                                                                                                           |
+| Bedoeling                          | Stel de waardering in met sterren (0 - 5) op een nummer geïdentificeerd door UMS interne audiotrackID          |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">rating/setRatingByAudiotrackId </span>` |
+| POST BODY                          | `trackID` /`stars`                                                                                             |
+| POST BODY voorbeeld / beschrijving | 32                                                                                                             |
+| Beschikbaar sinds                  | 11.0                                                                                                           |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "32/3" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/setrating
 ```
 
-This call sets songs user rating identified by audiotrack id `32` to `3`.
+Deze oproep waardeert de nummergebruikerswaardering geïdentificeerd door audiotrack id `32` to `3`.
 
-#### get rating by audiotrack id
+#### Kies waardering door audiotrack id
 
-Reads song rating from database
+Leest nummerwaardering uit de database
 
-| Intention                       | Get song rating in stars (0 - 5) by UMS internal audiotrackID. Response body contains the rating information. |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>` |
-| POST BODY                       | trackId                                                                                                       |
-| POST BODY example / description | 32                                                                                                            |
-| RESPONSE BODY example           | 3                                                                                                             |
-| Available since                 | 11.0                                                                                                          |
+| Bedoeling                          | Krijg het nummerwaardering in sterren (0 - 5) door UMS internal audiotrackID. Response body bevat het waarderingsinformatie |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">rating/getRatingByAudiotrackId</span>`               |
+| POST BODY                          | track-ID                                                                                                                    |
+| POST BODY voorbeeld / beschrijving | 32                                                                                                                          |
+| RESPONSE BODY voorbeeld            | 3                                                                                                                           |
+| Beschikbaar sinds                  | 11.0                                                                                                                        |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "32" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/rating/getRatingByAudiotrackId
 ```
 
-This call reads the user rating of a song identified by UMS audiotrack-id `32`.
+Deze oproep leest de gebruikerswaardering van een liedje dat geïdentificeerd is door UMS audiotrack-id `32`.
 
-### Backup / Restore
+### Back-up / Herstel
 
-User managed "liked album" entries can be backed up into a profile-directory subfolder named `database_backup`. The filename is `MUSIC_BRAINZ_RELEASE_LIKE`. In case UMS database gets deleted, just call restore.
+Gebruiker beheerde "vind-ik-leuk album" items kunnen worden gebackupt in een profiel-map submap genaamd `database_backup`. De bestandsnaam is `MUSIC_BRAINZ_RELEASE_LIKE`. In het geval dat de UMS-database wordt verwijderd, herstel de oproep.
 
-#### backup liked albums
+#### Back-up vind-ik-leuk albums
 
-Backup table `MUSIC_BRAINZ_RELEASE_LIKE` to filesystem
+Back-up tabel `MUSIC_BRAINZ_RELEASE_LIKE` naar bestandssysteem
 
-| Intention       | backup liked songs to filesystem                                                                      |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| URI             | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                   |
-| RESPONSE BODY   | `OK` or error message                                                                                 |
-| Available since | 10.20                                                                                                 |
+| Bedoeling         | Back-up leuk gevonden liedjes naar het bestandssysteem                                                |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| URI               | `<span class="s1"><span class="s1">/api/like/</span></span>backupLikedAlbums` |
+| Verzoek type      | GET                                                                                                   |
+| RESPONSE BODY     | `OK` of foutbericht                                                                                   |
+| Beschikbaar sinds | 10.20                                                                                                 |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/backupLikedAlbums
 ```
 
-This call will create a backup file containing liked albums.
+Deze oproep maakt een reservekopiebestand met vind-ik-leuk albums.
 
-#### restore liked albums
+#### Herstellen vind-ik-leuk albums
 
-Restores table `MUSIC_BRAINZ_RELEASE_LIKE` from filesystem
+Herstelt tabel `MUSIC_BRAINZ_RELEASE_LIKE` van het bestandssysteem
 
-| Intention       | restore liked songs from backup file                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI             | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
-| REQUEST TYPE    | GET                                                                                                                                        |
-| RESPONSE BODY   | `OK` or error message                                                                                                                      |
-| Available since | 10.20                                                                                                                                      |
+| Bedoeling         | Herstellen vind-ik-leuk nummers uit back-upbestand                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI               | `<span class="s1"><span class="s1"><span class="s1">/api/like/</span></span></span>restoreLikedAlbums` |
+| Verzoek type      | GET                                                                                                                                        |
+| RESPONSE BODY     | `OK` of foutbericht                                                                                                                        |
+| Beschikbaar sinds | 10.20                                                                                                                                      |
 
-Example:
+Voorbeeld:
 
 ```
 curl -w "%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/like/restoreLikedAlbums
 ```
 
-This call restores the backup file.
+Deze oproep herstelt het back-upbestand.
 
-### Playlist
+### Afspeellijst
 
-#### enable service
+#### Service inschakelen
 
-Edit UMS.conf and configure a managed playlist folder by setting 
+Bewerk UMS.conf en configureer een beheerde afspeellijstmap door de instelling 
 
 `<span class="s1">managed_playlist_folder</span> = PATH_TO_PLAYLIST_FOLDER`
 
-for enabling this service. By default this service is disabled. The playlist folder path should be located beneath a configured shared `<span class="s1">folders</span>` path for playlist changed made by this API to be visible by UMS.
+Voor het inschakelen van deze service. Deze service is standaard uitgeschakeld. Het mappad van de afspeellijst moet zich bevinden onder een geconfigureerde gedeelde `<span class="s1">mappen</span>` pad voor de afspeellijst veranderd door deze API om zichtbaar te zijn voor UMS.
 
-#### list all playlists
+#### Lijst van alle afspeellijsten
 
-Read available playlists. These playlist names have to be used for subsequent calls to add or remove songs.
+Beschikbare afspeellijsten lezen. Deze namen van de afspeellijst moeten worden gebruikt voor latere oproepen om nummers toe te voegen of te verwijderen.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder. Besides playlist name, the playlists `playlistId` is                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
-| REQUEST TYPE          | GET                                                                                                                                                                             |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                                                    |
-| RESPONSE BODY example | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
-| Available since       | 11.0                                                                                                                                                                            |
+| Bedoeling               | Bezorg alle ondersteunde (`m3u`, `m3u8` en `pls`) en beschikbare afspeellijsten uit de geconfigureerde map. Naast de playlist naam, de afspeellijsten `playlistId` is           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">getAllPlaylists</span>` |
+| Verzoek type            | GET                                                                                                                                                                             |
+| RESPONSE BODY           | JSON reeks van playlist namen                                                                                                                                                   |
+| RESPONSE BODY voorbeeld | `<span class="s1">["Pop","Jazz","Classic"]</span>`                                                                                                                  |
+| Beschikbaar sinds       | 11.0                                                                                                                                                                            |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getAllPlaylists
 ```
 
-This call will list all available playlists.
+Deze oproep bevat alle beschikbare afspeellijsten.
 
-#### list server accessible playlists
+#### Lijst server toegankelijke afspeellijsten
 
-These are all playlist known to UMS (database/cache enabled). These playlist names have to be used for subsequent calls to add or remove songs. The playlist ID can be used to navigate directly to the playlist by browsing the `objectId` `$DBID$PLAYLIST$` concat databaseId.
+Dit zijn alle afspeellijsten die bekend zijn bij UMS (database/cache ingeschakeld). Deze namen van de afspeellijst moeten worden gebruikt voor latere oproepen om nummers toe te voegen of te verwijderen. Het afspeellijst id kan gebruikt worden om direct naar het afspeellijst te navigeren door te bladeren door de `objectId` `$DBID$PLAYLIST$` concat databaseId.
 
-| Intention             | Delivers all supported (`m3u`, `m3u8` and `pls`) and available playlists from configured folder                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                   | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
-| REQUEST TYPE          | GET                                                                                                                                                      |
-| RESPONSE BODY         | JSON array of playlist names                                                                                                                             |
-| RESPONSE BODY example | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
-| Available since       | dev branch                                                                                                                                               |
+| Bedoeling               | Bezorgd alle ondersteunde (`m3u`, `m3u8` en `pls`) en beschikbare afspeellijsten uit geconfigureerde map                                                 |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                     | ``<span class="s1">`/api/</span><span class="s1">playlist</span><span class="s1">/</span>``getserverplaylists` `` |
+| Verzoek type            | GET                                                                                                                                                      |
+| RESPONSE BODY           | JSON reeks van playlist namen                                                                                                                            |
+| RESPONSE BODY voorbeeld | `[{"playlistName":"Jazz","playlistId":5},{"playlistName":"Charts","playlistId":343}]`                                                                    |
+| Beschikbaar sinds       | dev branch                                                                                                                                               |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "" -w "\n%{http_code}\n" -H "api-key: secret_password" -X GET http://localhost:5001/api/playlist/getserverplaylists
 ```
 
-This call will list list all available playlist accessible by UMS.
+Deze oproep zal een overzicht geven van alle beschikbare afspeellijst die toegankelijk is voor UMS.
 
-#### adding songs to playlists
+#### nummers toevoegen aan afspeellijsten
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+De vereiste `audiotrackid` wordt geleverd tijdens zoekverzoeken van UPnP en kan worden geëxtraheerd uit de DIDL response attribute `descMetadata`
 
 ```XML
 <ums-tags>
@@ -346,26 +346,26 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 </ums-tags>
 ```
 
-| Intention                       | Add song to playlist                                                                                                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                              |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
-| POST BODY example / description | 123/Pop                                                                                                                                                                           |
-| RESPONSE BODY                   | NONE                                                                                                                                                                              |
-| Available since                 | 11.0                                                                                                                                                                              |
+| Bedoeling                          | Voeg nummer toe aan afspeellijst                                                                                                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">addSongToPlaylist</span>` |
+| Verzoek type                       | POST                                                                                                                                                                              |
+| POST BODY                          | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                    |
+| POST BODY voorbeeld / beschrijving | 123/Pop                                                                                                                                                                           |
+| RESPONSE BODY                      | GEEN                                                                                                                                                                              |
+| Beschikbaar sinds                  | 11.0                                                                                                                                                                              |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/addSongToPlaylist
 ```
 
-This adds the song with the ID `123` to the playlist `Pop`.
+Dit voegt het nummer met het ID `123` toe aan de afspeellijst `Pop`.
 
-#### removing songs from playlists
+#### nummers uit afspeellijsten verwijderen
 
-The required `audiotrackid` is delivered during UPnP browse requests and can be extracted from the DIDL response attribute `descMetadata`
+De vereiste `audiotrackid` wordt geleverd tijdens zoekverzoeken van UPnP en kan worden geëxtraheerd uit de DIDL response attribute `descMetadata`
 
 ```XML
 <ums-tags>
@@ -377,47 +377,47 @@ The required `audiotrackid` is delivered during UPnP browse requests and can be 
 
 ``
 
-| Intention                       | Remove song from playlist                                                                                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                                   |
-| POST BODY                       | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
-| POST BODY example / description | 123/Pop                                                                                                                                                                                |
-| RESPONSE BODY                   | NONE                                                                                                                                                                                   |
-| Available since                 | 11.0                                                                                                                                                                                   |
+| Bedoeling                          | Verwijder nummer uit afspeellijst                                                                                                                                                      |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">removeSongFromPlaylist</span>` |
+| Verzoek type                       | POST                                                                                                                                                                                   |
+| POST BODY                          | `audiotrackid<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">/PLAYLIST</span>`                                                         |
+| POST BODY voorbeeld / beschrijving | 123/Pop                                                                                                                                                                                |
+| RESPONSE BODY                      | GEEN                                                                                                                                                                                   |
+| Beschikbaar sinds                  | 11.0                                                                                                                                                                                   |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "123/Pop" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/removeSongFromPlaylist
 ```
 
-This removes the song with the ID `123` from the playlist `Pop`.
+Dit verwijdert het nummer met het ID `123` uit de afspeellijst `Pop`.
 
-#### create new playlists
+#### Nieuwe afspeellijsten maken
 
-Playlist name should be provided without any path and without file extensions. 
+Afspeellijstnaam moet worden opgegeven zonder pad en zonder bestandsextensies. 
 
-| Intention                       | Creating new playlists in managed playlist folder                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
-| REQUEST TYPE                    | POST                                                                                                                                                                           |
-| POST BODY                       | `<span style="background-color: #bfe6ff; font-size: 11.76px; white-space: pre-wrap;">PLAYLIST_NAME</span>`                                                         |
-| POST BODY example / description | Contemporary                                                                                                                                                                   |
-| RESPONSE BODY                   | NONE                                                                                                                                                                           |
-| Available since                 | 11.0                                                                                                                                                                           |
+| Bedoeling                          | Het maken van nieuwe afspeellijsten in beheerde afspeellijst map                                                                                                               |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI                                | `<span class="s1">/api/</span><span class="s1">playlist</span><span class="s1">/</span><span class="s1">createPlaylist</span>` |
+| Verzoek type                       | POST                                                                                                                                                                           |
+| POST BODY                          | `</span>PLAYLIST_NAME</0>`                                                                                                                                            |
+| POST BODY voorbeeld / beschrijving | Gelijktijdig                                                                                                                                                                   |
+| RESPONSE BODY                      | GEEN                                                                                                                                                                           |
+| Beschikbaar sinds                  | 11.0                                                                                                                                                                           |
 
-Example:
+Voorbeeld:
 
 ```shell
 curl -d "Contemporary" -w "\n%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/playlist/createPlaylist
 ```
 
-This call creates a new playlist file named `Contemporary.m3u8` in the managed playlist folder.
+Deze oproep maakt een nieuw playlist bestand genaamd `Contemporary.m3u8` in de beheerde playlist map.
 
-## Java code example
+## Voorbeeld van Java-code
 
-This code snippet shows how to use the API with okhttp3 library.
+Deze code snippet toont hoe de API met de bibliotheek okhttp3 moet worden gebruikt.
 
 ```Java
 import nextcp.dto.Config;
@@ -444,6 +444,6 @@ import okhttp3.Response;
     }
 ```
 
-## HTTP return codes
+## HTTP retourcodes
 
-| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Set a `api_key` in UMS.conf with a length of 12 or more character |
+| 200 | OK | | 204 | success if no content is supposed to be returned | | 401 | invalid api key | | 404 | requested object cannot be found | | 417 | API request failed | | 503 | external api is not enabled. Stel een `api_key` in in UMS.conf met een lengte van 12 of meer tekens
