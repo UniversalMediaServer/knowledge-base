@@ -95,7 +95,7 @@ curl -d "b8695995-45e9-405d-b4aa-e50e8760fe25" -w "%{http_code}\n" -H "api-key: 
 | URI                        | `<span class="s1">/api/like/</span><span class="s1">issongliked</span>` |
 | POST BODY                  | `musicBrainz_trackID`                                                                           |
 | POST BODY örnek / açıklama | b8695995-45e9-405d-b4aa-e50e8760fe25                                                            |
-| RESPONSE BODY              | `TRUE` veya `FALSE`                                                                             |
+| RESPONSE BODY              | `TRUE` or `FALSE`                                                                               |
 | Şu sürümden beri mevcut    | 10.20                                                                                           |
 
 Örnek:
@@ -151,7 +151,7 @@ Albüm beğenme durumunu denetleyin.
 | URI                        | `<span class="s1">/api/like/</span>isalbumliked`                    |
 | POST BODY                  | `musicBrainz_releaseID`                                                         |
 | POST BODY örnek / açıklama | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                            |
-| RESPONSE BODY              | "TRUE" veya "FALSE"                                                             |
+| RESPONSE BODY              | "TRUE" or "FALSE"                                                               |
 | Şu sürümden beri mevcut    | 10.20                                                                           |
 
 Örnek:
