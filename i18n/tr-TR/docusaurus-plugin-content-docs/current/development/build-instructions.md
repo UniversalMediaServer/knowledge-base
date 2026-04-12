@@ -1,4 +1,4 @@
-# Build instructions
+# Oluşturma talimatları
 
 This document describes how to build Universal Media Server from the source files.
 
