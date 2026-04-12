@@ -1,13 +1,13 @@
-# Build instructions
+# Pokyny pro sestavení
 
-This document describes how to build Universal Media Server from the source files.
+Tento dokument popisuje, jak vytvořit Universal Media Server ze zdrojových souborů.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Důležitá poznámka:_
+Předsestavené verze Universal Media Server mohou být staženy z: http://www. universalmediaserver.com/ takže nemusíte tyto kroky spustit jako obecný uživatel.
 
-The following software packages are required:
+Jsou vyžadovány následující balíčky programů:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (JRE nestačí)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
