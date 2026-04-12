@@ -76,35 +76,35 @@ git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Mettre à jour vers la dernière source (optionnel)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Compiler la dernière version de UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Où `PACKAGENAME` est le nom du système d'exploitation cible: `windows`, `macos`, `macos-arm`, `macos-pre1015` ou `linux-*`, où `*` est l'architecture ; un des : `x86`, `x86_64`, `arm64`, `armel`, ou `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+Vous pouvez également spécifier un indicateur facultatif si vous voulez ignorer le téléchargement de binaires, qui peut être utile pour accélérer le temps de compilation, en particulier sous Windows et Linux:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Les binaires qui en résulteront seront compilés dans le répertoire « target » :
 
 - Windows: `UMS-setup.exe`
-- Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
-- macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
+- Linux: `UMS-linux-generic-x.xx.x.tar.gz`
+- macOS : `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Compilations automatiques
 
-These last two commands can easily be automated using a script e.g.:
+Ces deux dernières commandes peuvent facilement être automatisées en utilisant un script, par exemple:
 
 ### Windows
 
@@ -121,88 +121,88 @@ start /D universalmediaserver /wait /b mvn package
 # build-UMS.sh
 cd universalmediaserver
 git pull
-mvn package
+paquet mvn
 ```
 
-# Packaging and cross-compilation
+# Emballage et compilation croisée
 
-This section explains how it is possible to compile and package for one system while on another.
+Cette section explique comment il est possible de compiler et d'empaqueter un système sur un autre.
 
-## Building the Windows binaries
+## Construction des binaires Windows
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Les installateurs Windows (`UMS-setup.exe`) et l'exécutable Windows (`UMS.exe`) peuvent être construits sur des plates-formes non-Windows.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Tout d'abord, vous aurez besoin d'avoir le binaire `makensis` installé. Sur Debian/Ubuntu,
+cela peut être fait avec:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Puis l'environnement `NSISDIR` doit être défini sur le **chemin absolu** du répertoire
+`nsis`. Cela peut soit être défini par commande :
 
 ```bash
-NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
+NSISDIR=$PWD/src/main/external-resources/third party/nsis mvn ...
 ```
 
-Either:
+Soit :
 
-- Temporarily in the current shell:
+- Temporairement dans le shell actuel :
     ```bash
-    export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
+    export NSISDIR=$PWD/src/main/external-resources/third party/nsis
     mvn ...
     ```
-- Or permanently:
+- Ou définitivement:
     ```bash
-    # these two commands only need to be run once
-    echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
+    # Ces deux commandes n'ont besoin d'être exécutées qu'une fois
+    echo "export NSISDIR=$PWD/src/main/external-resources/third party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Pour des raisons de concision, les exemples suivants supposent qu'il a déjà été défini.
 
-The Windows installer can now be built with one of the following commands:
+L'installateur Windows peut maintenant être compilé avec l'une des commandes suivantes :
 
-### On Linux and macOS
-
-```bash
-mvn package -P system-makensis,windows
-```
-
-## Building a Linux tarball
-
-### On Windows and macOS
+### Sous Linux et macOS
 
 ```bash
-mvn package -P linux-*
+mvn paquet -P system-makensis,windows
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+## Construire une archive Linux
 
-## Building the macOS disk image
+### Sous Windows et macOS
 
-### On Windows and Linux
+```bash
+paquet mvn -P linux-*
+```
+
+où `*` fait partie de : x86, x86_64, arm64, armel, ou armhf
+
+## Construction de l'image disque macOS
+
+### Sous Windows et Linux
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Construction de l'assistant d'installation macOS
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Construire UMS
+2. Installez http://s.sudre.free.fr/Software/Packages/about.html
+3. Définit une variable de stockage du répertoire du fichier de distribution de compilation, par ex.
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
-export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
+export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Remplacer le chemin souhaité dans le fichier .pkgproj
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
@@ -224,7 +224,7 @@ par défaut, et exécutez le programme, qui fermera toute instance existante de 
 Il devrait fonctionner pour Windows et macOS 64 bits. Peut être étendu à d'autres facilement si désiré.
 
 ```bash
-mvn verify -P quickrun-* -DskipTests
+mvn Vérifier -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Où `*` est `macos` ou `windows`
