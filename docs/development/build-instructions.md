@@ -20,9 +20,11 @@ install all required software and how to build UMS for each operating system.
 If all required software packages are installed, the following commands will
 download the latest sources and build UMS:
 
-    git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
-    cd universalmediaserver
-    mvn package -P PACKAGENAME
+```bash
+git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
+cd universalmediaserver
+mvn package -P PACKAGENAME
+```
 
 Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
 
@@ -69,22 +71,30 @@ Nothing to do.
 
 ## 5. Download the UMS source code
 
-    git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
-    cd universalmediaserver
+```bash
+git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
+cd universalmediaserver
+```
 
 ## 6. Update to the latest source (optional)
 
-    git pull
+```bash
+git pull
+```
 
 ## 7. Compile the latest version of UMS
 
-    mvn package -P PACKAGENAME
+```bash
+mvn package -P PACKAGENAME
+```
 
 Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
 
 You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
 
-    mvn package -P PACKAGENAME -Doffline=true
+```bash
+mvn package -P PACKAGENAME -Doffline=true
+```
 
 The resulting binaries will be built in the "target" directory:
 
@@ -98,17 +108,21 @@ These last two commands can easily be automated using a script e.g.:
 
 ### Windows
 
-    rem build-UMS.bat
-    start /D universalmediaserver /wait /b git pull
-    start /D universalmediaserver /wait /b mvn package
+```bash
+rem build-UMS.bat
+start /D universalmediaserver /wait /b git pull
+start /D universalmediaserver /wait /b mvn package
+```
 
 ### Linux, macOS &c.
 
-    #!/bin/sh
-    # build-UMS.sh
-    cd universalmediaserver
-    git pull
-    mvn package
+```bash
+#!/bin/sh
+# build-UMS.sh
+cd universalmediaserver
+git pull
+mvn package
+```
 
 # Packaging and cross-compilation
 
@@ -121,25 +135,31 @@ The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can 
 First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
 this can be done with:
 
-    sudo apt-get install nsis
+```bash
+sudo apt-get install nsis
+```
 
 Then the `NSISDIR` environment needs to be set to the **absolute path** to the
 `nsis` directory. This can either be set per-command:
 
-    NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
+```bash
+NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
+```
 
-\- temporarily in the current shell:
-
+Either:
+- Temporarily in the current shell:
+    ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
-
-\- or permanently:
-
+    ```
+- Or permanently:
+    ```bash
     # these two commands only need to be run once
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
 
     mvn...
+    ```
 
 For the sake of brevity, the following examples assume it has already been set.
 
@@ -147,13 +167,17 @@ The Windows installer can now be built with one of the following commands:
 
 ### On Linux and macOS
 
-    mvn package -P system-makensis,windows
+```bash
+mvn package -P system-makensis,windows
+```
 
 ## Building a Linux tarball
 
 ### On Windows and macOS
 
-    mvn package -P linux-*
+```bash
+mvn package -P linux-*
+```
 
 where `*` is one of: x86, x86_64, arm64, armel, or armhf
 
@@ -161,25 +185,27 @@ where `*` is one of: x86, x86_64, arm64, armel, or armhf
 
 ### On Windows and Linux
 
-    mvn package -P macos
-    hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
+```bash
+mvn package -P macos
+hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
+```
 
 ## Building the macOS wizard installer
 
 1) Build UMS
 2) Install http://s.sudre.free.fr/Software/Packages/about.html
 3) Set a variable storing the directory path of the build distribution file, e.g.
-```
+```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 4) Replace desired path inside the .pkgproj file
-```
+```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 5) Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
-```
+```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
@@ -191,6 +217,8 @@ directory, and run the program, which will close any existing instance of UMS.
 
 It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
 
-    mvn verify -P quickrun-* -DskipTests
+```bash
+mvn verify -P quickrun-* -DskipTests
+```
 
 Where `*` is `macos` or `windows`
