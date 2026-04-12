@@ -1,13 +1,13 @@
 # Oluşturma talimatları
 
-This document describes how to build Universal Media Server from the source files.
+Bu belge Universal Media Server’ın kaynak dosyalardan nasıl oluşturulacağını açıklar.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Önemli not:_
+Önceden oluşturulmuş Universal Media Server yayımları şu adresten indirilebilir: http://www.universalmediaserver.com/ dolayısıyla bu adımları genel bir kullanıcı olarak uygulamanıza gerek YOKTUR.
 
-The following software packages are required:
+Aşağıdaki yazılım paketleri gerekir:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (JRE yeterli değildir)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
