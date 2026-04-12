@@ -35,82 +35,82 @@ Výsledek bude uložen v adresáři "cíl":
 
 # Úplné pokyny
 
-First all required software has to be installed:
+Nejprve musí být nainstalován požadovaný software:
 
-## 1. Download and install the Java JDK 17
+## 1. Stáhnout a nainstalovat Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Viz https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Stáhnout a nainstalovat Git
 
-See https://git-scm.com/
+Viz https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Stáhnout a extrahovat Maven
 
-See http://maven.apache.org/
+Viz http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Nastavit proměnné prostředí
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Vytvořit nové proměnné nebo přidat hodnotu, pokud proměnná již existuje:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Úroveň: System, proměnná: `JAVA_HOME`, hodnota: JDK instalační umístění
+- Úroveň: Uživatel, proměnná `M2_HOME`, hodnota: umístění extraktu Maven
+- Úroveň: Uživatel, proměnná `M2`, hodnota: `%M2_HOME%\bin`
+- Úroveň: Uživatel, proměnná `PATH`, hodnota `%M2%`
 
 ### Linux
 
-Nothing to do.
+Žádná akce.
 
 ### macOS
 
-Nothing to do.
+Žádná akce.
 
-## 5. Download the UMS source code
+## 5. Stáhnout zdrojový kód UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Aktualizovat na nejnovější zdroj (volitelné)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Kompilovat nejnovější verzi UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Kde `PACKAGENAME` je název cílového operačního systému: `windows`, `macos-arm`, `macos-pre1015` nebo `linux-*`, kde `*` je architektura; jeden z: `x86`, `x86_64`, `arm64`, `armel`, nebo `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+Pokud chcete přeskočit stahování binárních souborů, můžete také zadat volitelný příznak. což může být užitečné pro urychlení přípravy, zejména na Windows a Linuxu:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Výsledek bude uložen v adresáři "target":
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Automatické sestavení
 
-These last two commands can easily be automated using a script e.g.:
+Tyto poslední dva příkazy mohou být snadno automatizovány pomocí skriptu, např.:
 
 ### Windows
 
 ```bash
 rem build-UMS.bat
 start /D universalmediaserver /wait /b git pull
-start /D universalmediaserver /wait /b mvn package
+start /D universalmediaserver /wait /b mvn balíček
 ```
 
 ### Linux, macOS &c.
@@ -120,18 +120,18 @@ start /D universalmediaserver /wait /b mvn package
 # build-UMS.sh
 cd universalmediaserver
 git pull
-mvn package
+mvn balík
 ```
 
-# Packaging and cross-compilation
+# Balení a křížové kompilace
 
-This section explains how it is possible to compile and package for one system while on another.
+Tato část vysvětluje, jak je možné zkompilovat a balit pro jeden systém zatímco pro jiný.
 
-## Building the Windows binaries
+## Vytváření binárních souborů Windows
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Instalační systémy Windows (`UMS-setup.exe`) a spustitelné Windows (`UMS.exe`) mohou být postaveny na jiných platformách než Windows.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
+Nejprve budete muset mít nainstalovaný binární soubor `makensis`. On Debian/Ubuntu,
 this can be done with:
 
 ```bash
