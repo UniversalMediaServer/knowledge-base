@@ -1,75 +1,75 @@
-# Build instructions
+# Instructions de construction
 
-This document describes how to build Universal Media Server from the source files.
+Ce document décrit comment construire Universal Media Server à partir des fichiers source.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Note importante :_
+Les versions précompilées de Universal Media Server peuvent être téléchargées depuis : http://www. niversalmediaserver.com/ donc vous NE devez PAS exécuter ces étapes en tant qu'utilisateur général.
 
-The following software packages are required:
+Les progiciels suivants sont requis :
 
-- The Java JDK 17 (the JRE is not enough)
+- Le JDK Java 17 (le JRE ne suffit pas)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+Lisez la section [Instructions complètes] (#full-instructions) pour une explication complète de la façon dont
+installer tous les logiciels nécessaires et comment construire UMS pour chaque système d'exploitation.
 
-# Short instructions
+# Instructions de construction
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Si tous les paquets logiciels nécessaires sont installés, les commandes suivantes
+téléchargeront les dernières sources et compileront les UMS :
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
-mvn package -P PACKAGENAME
+paquet mvn -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Où `PACKAGENAME` est le nom du système d'exploitation cible: `windows`, `macos`, `macos-arm`, `macos-pre1015` ou `linux-*`, où `*` est l'architecture ; un des : `x86`, `x86_64`, `arm64`, `armel`, ou `armhf`
 
-The result will be built in the "target" directory:
+Le résultat sera compilé dans le répertoire « target » :
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Instructions complètes
 
-First all required software has to be installed:
+Tout d'abord, le logiciel requis doit être installé :
 
-## 1. Download and install the Java JDK 17
+## 1. Télécharger et installer Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Voir https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Télécharger et installer Git
 
-See https://git-scm.com/
+Voir https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Télécharger et extraire Maven
 
-See http://maven.apache.org/
+Voir http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Définir les variables d'environnement
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Créer de nouvelles variables ou ajouter la valeur si la variable existe déjà:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Niveau : Système, variable: `JAVA_HOME`, valeur: emplacement d'installation JDK
+- Niveau : Utilisateur, variable `M2_HOME`, valeur: emplacement d'extraction Maven
+- Niveau : Utilisateur, variable `M2`, valeur: `%M2_HOME%\bin`
+- Niveau : Utilisateur, variable `PATH`, valeur `%M2%`
 
 ### Linux
 
-Nothing to do.
+Rien à faire.
 
 ### macOS
 
-Nothing to do.
+Rien à faire.
 
-## 5. Download the UMS source code
+## 5. Télécharger le code source UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -209,19 +209,19 @@ sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Construire l'installateur .pkg. Cela affichera dans `/target/Universal Media Server.pkg`
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Compilations rapides
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Nous disposons de scripts de compilation rapide, recommandés pendant la phase de développement pour permettre des
+itérations rapides. Les scripts compileront le code Java, mettez-le dans le répertoire d'installation
+par défaut, et exécutez le programme, qui fermera toute instance existante de UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Il devrait fonctionner pour Windows et macOS 64 bits. Peut être étendu à d'autres facilement si désiré.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
