@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Rozvoj",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generovaný index",
+    "description": "Jak budovat a vyvíjet UMS"
   }
 }
