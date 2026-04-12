@@ -12,29 +12,28 @@ Jsou vyžadovány následující balíčky programů:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+V sekci [plné instrukce] (#full-instructions) najdete kompletní vysvětlení jak instalovat všechen potřebný software a jak vytvořit UMS pro každý operační systém.
 
-# Short instructions
+# Krátké pokyny
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Pokud jsou nainstalovány všechny požadované balíky, následující příkazy
+stáhnou nejnovější zdroje a sestaví UMS:
 
 ```bash
-git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
+git klonone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Kde `PACKAGENAME` je název cílového operačního systému: `windows`, `macos-arm`, `macos-pre1015` nebo `linux-*`, kde `*` je architektura; jeden z: `x86`, `x86_64`, `arm64`, `armel`, nebo `armhf`
 
-The result will be built in the "target" directory:
+Výsledek bude uložen v adresáři "cíl":
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Úplné pokyny
 
 First all required software has to be installed:
 
