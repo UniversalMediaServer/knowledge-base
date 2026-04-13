@@ -23,7 +23,7 @@ téléchargeront les dernières sources et compileront les UMS :
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
-paquet mvn -P PACKAGENAME
+mvn package -P PACKAGENAME
 ```
 
 Où `PACKAGENAME` est le nom du système d'exploitation cible: `windows`, `macos`, `macos-arm`, `macos-pre1015` ou `linux-*`, où `*` est l'architecture ; un des : `x86`, `x86_64`, `arm64`, `armel`, ou `armhf`
@@ -121,7 +121,7 @@ start /D universalmediaserver /wait /b mvn package
 # build-UMS.sh
 cd universalmediaserver
 git pull
-paquet mvn
+mvn package
 ```
 
 # Emballage et compilation croisée
@@ -177,7 +177,7 @@ mvn paquet -P system-makensis,windows
 ### Sous Windows et macOS
 
 ```bash
-paquet mvn -P linux-*
+mvn package -P linux-*
 ```
 
 où `*` fait partie de : x86, x86_64, arm64, armel, ou armhf
@@ -224,7 +224,7 @@ par défaut, et exécutez le programme, qui fermera toute instance existante de 
 Il devrait fonctionner pour Windows et macOS 64 bits. Peut être étendu à d'autres facilement si désiré.
 
 ```bash
-mvn Vérifier -P quickrun-* -DskipTests
+mvn verify -P quickrun-* -DskipTests
 ```
 
 Où `*` est `macos` ou `windows`
