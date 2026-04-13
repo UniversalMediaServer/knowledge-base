@@ -110,7 +110,7 @@ Tyto poslední dva příkazy mohou být snadno automatizovány pomocí skriptu, 
 ```bash
 rem build-UMS.bat
 start /D universalmediaserver /wait /b git pull
-start /D universalmediaserver /wait /b mvn balíček
+start /D universalmediaserver /wait /b mvn package
 ```
 
 ### Linux, macOS &c.
@@ -120,7 +120,7 @@ start /D universalmediaserver /wait /b mvn balíček
 # build-UMS.sh
 cd universalmediaserver
 git pull
-mvn balík
+mvn package
 ```
 
 # Balení a křížové kompilace
