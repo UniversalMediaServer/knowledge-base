@@ -20,7 +20,7 @@ Pokud jsou nainstalovány všechny požadované balíky, následující příkaz
 stáhnou nejnovější zdroje a sestaví UMS:
 
 ```bash
-git klonone https://github.com/UniversalMediaServer/UniversalMediaServer.git
+git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
