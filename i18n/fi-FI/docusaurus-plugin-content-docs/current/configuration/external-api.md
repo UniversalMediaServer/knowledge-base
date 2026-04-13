@@ -144,9 +144,9 @@ Tämä kutsu poistaa tykkään attribuutin albumiin, joka on yksilöity musicBra
 
 #### Onko albumi tykätty
 
-Check album like state.
+Poista albumin tykkäystila
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| Tarkoitus                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
