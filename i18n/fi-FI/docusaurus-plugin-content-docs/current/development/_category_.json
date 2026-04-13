@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Kehitys",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "luotu-indeksi",
+    "description": "UMS:n rakentaminen ja kehittäminen"
   }
 }
