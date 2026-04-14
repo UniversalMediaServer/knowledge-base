@@ -123,30 +123,30 @@ Esimerkki:
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/likealbum
 ```
 
-#### dislike album
+#### Olla tykäämättä albumista
 
-Remove album like state.
+Albumin tykkäystilan poistaminen
 
-| Intention                       | Dislike a song identified by musicBrainz releaseID           |
-| ------------------------------- | ------------------------------------------------------------ |
-| URI                             | `<span class="s1">/api/like/</span>dislikealbum` |
-| POST BODY                       | `musicBrainz_releaseID`                                      |
-| POST BODY example / description | 1e0eee38-a9f6-49bf-84d0-45d0647799af                         |
-| Available since                 | 10.20                                                        |
+| Intention                     | Olla tykkäämättä kappaleesta, jonka musicBrainz releaseID on tunnistanut |
+| ----------------------------- | ------------------------------------------------------------------------ |
+| URI                           | `<span class="s1">/api/like/</span>dislikealbum`             |
+| POST BODY                     | `musicBrainz_releaseID`                                                  |
+| POST BODY esimerkki / selitys | 1e0eee38-a9f6-49bf-84d0-45d0647799af                                     |
+| Saatavilla alkaen             | 10.20                                                                    |
 
-Example:
+Esimerkki:
 
 ```shell
 curl -d "1e0eee38-a9f6-49bf-84d0-45d0647799af" -w "%{http_code}\n" -H "api-key: secret_password" -X POST http://localhost:5001/api/like/dislikealbum
 ```
 
-This call removed the liked attribute of the album identified by musicbrainz release-id `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
+Tämä kutsu poistaa tykkään attribuutin albumiin, joka on yksilöity musicBrainzin release-id:llä `1e0eee38-a9f6-49bf-84d0-45d0647799af`.
 
-#### is album liked
+#### Onko albumi tykätty
 
-Check album like state.
+Poista albumin tykkäystila
 
-| Intention                       | Check if album is liked identified by musicBrainz releaseID  |
+| Tarkoitus                       | Check if album is liked identified by musicBrainz releaseID  |
 | ------------------------------- | ------------------------------------------------------------ |
 | URI                             | `<span class="s1">/api/like/</span>isalbumliked` |
 | POST BODY                       | `musicBrainz_releaseID`                                      |
