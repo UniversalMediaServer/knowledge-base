@@ -1,24 +1,22 @@
-# Build instructions
+# 빌드 지침
 
-This document describes how to build Universal Media Server from the source files.
+이 문서는 소스 파일에서 Universal Media Server를 구축하는 방법을 설명합니다.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_중요한 참고 사항:_:
+사전 구축된 Universal Media Server 릴리스는 다음에서 다운로드할 수 있습니다: http://www.universalmediaserver.com/ . 따라서 일반 사용자로서 이러한 단계를 실행할 필요가 없습니다.
 
-The following software packages are required:
+다음 소프트웨어 패키지가 필요합니다:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (JRE로는 충분하지 않습니다)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+필요한 모든 소프트웨어를 설치하는 방법과 각 운영 체제에 맞는 UMS를 구축하는 방법에 대한 자세한 설명은 [전체 지침](#전체 지침) 섹션을 읽어보세요.
 
-# Short instructions
+# 짧은 지침
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+모든 필수 소프트웨어 패키지가 설치되면 다음 명령어가 최신 소스를 다운로드하고 UMS를 구축합니다:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -26,15 +24,15 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+여기서 'PACKAGENAME'는 대상 운영 체제의 이름입니다: 'window', 'macos', 'macos-arm', 'macos-pre1015' 또는 'linux-_', 여기서 '_'는 아키텍처입니다. 'x86', 'x86_64', 'arm64', 'armel' 또는 'armhf' 중 하나입니다
 
-The result will be built in the "target" directory:
+결과는 "대상" 디렉터리에 구축됩니다:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# 전체 지침
 
 First all required software has to be installed:
 
