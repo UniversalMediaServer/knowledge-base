@@ -1,24 +1,24 @@
-# Build instructions
+# Instructies voor bouwen
 
-This document describes how to build Universal Media Server from the source files.
+Dit document beschrijft hoe je Universal Media Server bouwt van de bronbestanden.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Belangrijke opmerking:_
+Vooraf gebouwde Universal Media Server releases kunnen worden gedownload van: http://www. niversalmediaserver.com/ zodat je deze stappen NIET hoeft uit te voeren als een algemene gebruiker.
 
-The following software packages are required:
+De volgende softwarepakketten zijn vereist:
 
-- The Java JDK 17 (the JRE is not enough)
+- De Java JDK 17 (de JRE is niet genoeg)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+Lees de [Volledige instructies] (#full-instructions) sectie voor een volledige uitleg over hoe je
+alle benodigde software installeert en hoe je UMS voor elk besturingssysteem kunt bouwen.
 
-# Short instructions
+# Korte instructies
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Als alle benodigde softwarepakketten zijn geïnstalleerd, zullen de volgende commando's
+de nieuwste broncode downloaden en UMS compileren:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -26,15 +26,15 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Waar `PACKAGENAME` de naam is van het doel besturingssysteem: `windows`, `macos-arm`, `macos-pre1015` of `linux-*`, waar `*` de architectuur is; één van: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
 
-The result will be built in the "target" directory:
+Het resultaat zal worden opgebouwd in de "target"-map:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Volledige instructies
 
 First all required software has to be installed:
 
