@@ -105,6 +105,7 @@ const config: Config = {
     prism: {
       theme: lightTheme,
       darkTheme: darkTheme,
+      additionalLanguages: ['java'],
     },
   } satisfies Preset.ThemeConfig,
   themes: [
