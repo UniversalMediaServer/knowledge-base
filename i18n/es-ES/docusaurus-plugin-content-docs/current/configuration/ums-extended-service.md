@@ -17,7 +17,7 @@ The following actions are available through this service interface.
 
 ## MyMusic interactions
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Los álbumes que te gusten se pueden explorar utilizando el ID de objeto `MYMUSIC$` como enlace directo o navegando a `Mis álbumes` en la carpeta raíz.
 
 Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
 
@@ -64,7 +64,7 @@ A backup must be created before a restore can be performed.
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+
 
 ### RestoreAudioLikes
 
@@ -78,7 +78,7 @@ Writes audio rating data to a backup file containing the file hash and rating va
 
 Restores rating information from a backup created with `BackupRatings`.
 
-## Library Interactions
+## Interacciones de la biblioteca
 
 ### RescanMediaStore
 
