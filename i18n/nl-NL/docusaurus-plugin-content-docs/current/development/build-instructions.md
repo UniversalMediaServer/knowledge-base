@@ -1,24 +1,24 @@
-# Build instructions
+# Instructies voor bouwen
 
-This document describes how to build Universal Media Server from the source files.
+Dit document beschrijft hoe je Universal Media Server bouwt van de bronbestanden.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Belangrijke opmerking:_
+Vooraf gebouwde Universal Media Server releases kunnen worden gedownload van: http://www. niversalmediaserver.com/ zodat je deze stappen NIET hoeft uit te voeren als een algemene gebruiker.
 
-The following software packages are required:
+De volgende softwarepakketten zijn vereist:
 
-- The Java JDK 17 (the JRE is not enough)
+- De Java JDK 17 (de JRE is niet genoeg)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+Lees de [Volledige instructies] (#full-instructions) sectie voor een volledige uitleg over hoe je
+alle benodigde software installeert en hoe je UMS voor elk besturingssysteem kunt bouwen.
 
-# Short instructions
+# Korte instructies
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Als alle benodigde softwarepakketten zijn geïnstalleerd, zullen de volgende commando's
+de nieuwste broncode downloaden en UMS compileren:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -26,35 +26,35 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Waar `PACKAGENAME` de naam is van het doel besturingssysteem: `windows`, `macos-arm`, `macos-pre1015` of `linux-*`, waar `*` de architectuur is; één van: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
 
-The result will be built in the "target" directory:
+Het resultaat zal worden opgebouwd in de "target"-map:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Volledige instructies
 
-First all required software has to be installed:
+Eerst moet alle vereiste software worden geïnstalleerd:
 
-## 1. Download and install the Java JDK 17
+## 1. Download en installeer de Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Zie https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Download en installeer Git
 
-See https://git-scm.com/
+Zie https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Maven downloaden en uitpakken
 
-See http://maven.apache.org/
+Zie http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Instellen omgevingsvariabelen
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Maak nieuwe variabelen of voeg de waarde toe als de variabele al bestaat:
 
 - Level: System, variable: `JAVA_HOME`, value: JDK install location
 - Level: User, variable `M2_HOME`, value: Maven extract location
@@ -63,48 +63,48 @@ Create new variables or append the value if the variable already exists:
 
 ### Linux
 
-Nothing to do.
+Niets te doen.
 
 ### macOS
 
-Nothing to do.
+Niets te doen.
 
-## 5. Download the UMS source code
+## 5. Download de UMS broncode
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Update naar de nieuwste bron (optioneel)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Compileren van de nieuwste versie van UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Waar `PACKAGENAME` de naam is van het doel besturingssysteem: `windows`, `macos-arm`, `macos-pre1015` of `linux-*`, waar `*` de architectuur is; één van: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+Je kunt ook een optionele vlag opgeven als je het downloaden  van binaries wilt overslaan, dit kan handig kunnen zijn om de bouwtijd te versnellen, vooral op Windows en Linux:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+De resulterende binaries zullen in de "target" map worden gebouwd:
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Automatische builds
 
-These last two commands can easily be automated using a script e.g.:
+Deze laatste twee commando's kunnen eenvoudig geautomatiseerd worden met behulp van een script, bijvoorbeeld:
 
 ### Windows
 
@@ -124,107 +124,107 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Verpakken en samenvoegen
 
-This section explains how it is possible to compile and package for one system while on another.
+Deze sectie legt uit hoe het mogelijk is om een systeem te compileren en te maken voor een ander systeem.
 
-## Building the Windows binaries
+## De Windows binaries bouwen
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+De Windows installers (`UMS-setup.exe`) en Windows executable (`UMS.exe`) kunnen op niet-Windows platformen worden gebouwd.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Ten eerste moet het `makensis` binary geïnstalleerd zijn. Op Debian/Ubuntu,
+kan dit gedaan worden met:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Dan moet de `NSISDIR` omgeving op het **absolute pad** gezet worden naar de
+`nsis` map. Dit kan per commando ingesteld worden:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Of:
 
-- Temporarily in the current shell:
+- Tijdelijk in de huidige shell:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Of permanent:
     ```bash
-    # these two commands only need to be run once
+    # deze twee opdrachten hoeven eenmaal uitgevoerd te worden
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Om het kort te houden gaan de volgende voorbeelden ervan uit dat dit al gebeurd is.
 
-The Windows installer can now be built with one of the following commands:
+De Windows installatieprogramma kan nu worden gebouwd met een van de volgende commando's:
 
-### On Linux and macOS
+### Op Linux en macOS
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Een Linux tarball bouwen
 
-### On Windows and macOS
+### Op Windows en macOS
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+waar `*` een van: x86, x86_64, arm64, armel, of armhf is
 
-## Building the macOS disk image
+## Bouwen van de macOS-schijf image
 
-### On Windows and Linux
+### Op Windows en Linux
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Bouw de macOS-wizard installatieprogramma
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Bouw UMS
+2. Installeer http://s.sudre.free.fr/Software/Packages/about.html
+3. Stel een variabele in voor het opslaan van de map van het build distributiebestand, b.v.
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Vervang gewenste pad in het .pkgproj bestand
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Bouw .pkg installatieprogramma. Dit zal uitvoeren naar `/target/Universal Media Server.pkg`
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Snelle builds
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+We hebben snelle build scripts die worden aanbevolen tijdens het ontwikkelen voor snelle
+iteratie. De scripts zullen de Java-code compileren, plaats het in de standaard installatiemap
+map en voer het programma uit, elk bestaand exemplaar van UMS zal gesloten worden.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Het zou moeten werken voor 64-bit Windows en macOS. Kan gemakkelijk worden uitgebreid voor anderen indien gewenst.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Waar `*` is `macos` of `windows`
