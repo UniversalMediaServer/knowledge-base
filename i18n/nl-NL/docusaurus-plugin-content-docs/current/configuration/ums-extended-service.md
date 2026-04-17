@@ -1,74 +1,74 @@
 # UMS UPnP Service
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS biedt een uitgebreide UPnP-service die het mogelijk maakt om externe controlepunten te laten communiceren met extra systeemfuncties.
 
-## Usage
+## Gebruik
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+De service is bekend onder namespace `schemas-upnp-org` met service type `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Voor Java control punten met behulp van JUPnP, zoek `findService` op de UMS `RemoteDevice`:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+De volgende acties zijn beschikbaar via deze service interface.
 
-## MyMusic interactions
+## MijnMuziek interacties
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Je kunt je vind-ik-leuk albums bekijken via de object-ID `MijnMuziek` als een directe link of door naar `Mijn albums` in de hoofdmap te navigeren.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Het behouden van favorieten is vooral nuttig in grote albumverzamelingen, waar het handmatig browsen van de volledige bibliotheek tijdrovend kan worden. Een samengestelde lijst van vind-ik-leuk albums helpt gebruikers snel naar relevante inhoud terug te keren zonder herhaalde uitgebreide zoekopdrachten of diepe mappen navigatie.
 
-In practice, favorites provide the following benefits:
+In de praktijk bieden favorieten de volgende voordelen:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Snellere toegang tot vaak gespeelde albums, zelfs in zeer grote bibliotheken.
+- Betere dagelijkse navigatie door de voorkeursinhoud te scheiden van de volledige catalogus.
+- Meer consistente afspeelwerkstromen voor spelers en automatiseringen die afhankelijk zijn van stabiele albumkeuzes.
 
-### Input Parameters
+### Invoerparameters
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Alle acties in deze sectie vereisen een invoerparameter. Het album moet worden geïdentificeerd door een MusicBrainz ID of een Discogs release ID. Er is ten minste één ID vereist; anders wordt er geen actie uitgevoerd.
 
-Example for Madonna's release `Like a Virgin`:
+Voorbeeld voor de uitgave van Madonna's `Like een Virgin`:
 
-| Attribute     |           Type           |             Example value            |
+| Attribuut     |           Type           |           Voorbeeld waarde           |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |        Tekenreeks        | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Als beide parameters (`MusicBrainzId` en `DiscogsId`) waren verstrekt tijdens het leuk vinden van een album, moeten beide ook worden verstrekt bij het niet-leuk-vinden van  een album.
 :::
 
-### LikeAlbum
+### Album leuk-vinden
 
-Marks a music album as liked.
+Markeert een album als vind-ik-leuk.
 
-### DislikeAlbum
+### Album niet-leuk-vinden
 
-Removes the liked status from a music album.
+Verwijdert de vind-ik-leuk status van een muziekalbum.
 
-### IsAlbumLikedInput
+### IsAlbumLeukbevondenInvoer
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Controleert of een album momenteel als vind-ik-leuk wordt gemarkeerd. Als zowel MusicBrainz als Discogs IDs zijn voorzien, geeft de methode `true`  als ten minste één van de ID's is gemarkeerd is als vind-ik-leuk.
 
-## Backup Actions
+## Back-up Acties
 
-The service provides backup and restore actions.
+De service biedt back-up en herstel acties.
 
 :::info
-A backup must be created before a restore can be performed.
+Er moet een back-up worden gemaakt voordat een herstel kan worden uitgevoerd.
 :::
 
-### BackupAudioLikes
+### BackupAudioVind-ik-leuks
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Maakt een back-up van de `vind-ik-leuk` audio albums tabel geïdentificeerd door MusicBrainz of Discogs IDs.
 
-### RestoreAudioLikes
+### HerstelAudioVind-ik-leuks
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Herstelt de vind-ik-leuk albums tabel. Call `BackupAudioLikes` before running this action.
 
 ### BackupRatings
 
