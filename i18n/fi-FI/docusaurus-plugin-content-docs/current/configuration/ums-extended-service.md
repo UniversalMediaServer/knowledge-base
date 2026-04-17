@@ -1,23 +1,23 @@
-# UMS UPnP Service
+# UMS UPnP-palvelu
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS tarjoaa laajennetun UPnP-palvelun, jonka avulla ulkoiset ohjauspisteet voivat olla vuorovaikutuksessa järjestelmän lisäominaisuuksien kanssa.
 
-## Usage
+## Käyttö
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Palvelu löytyy nimiavaruudessa `schemas-upnp-org`-alta, jonka palvelutyyppi on `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Javassa käyttäen JUPnP:tä, kutsu `findService` UMS `RemoteDevice`ssa:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Seuraavat toiminnot ovat käytettävissä tämän palvelukäyttöliittymän kautta.
 
-## MyMusic interactions
+## MyMusic vuorovaikutukset
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Pidettyjä albumeja voidaan selata käyttämällä object ID:tä `MYMUSIC$` syvänä linkkinä tai navigoimalla `My Albums`-kansioon.
 
 Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
 
