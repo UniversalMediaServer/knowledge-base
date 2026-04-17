@@ -64,7 +64,7 @@ A backup must be created before a restore can be performed.
 
 ### BackupAudioLikes
 
-
+Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
 
 ### RestoreAudioLikes
 
