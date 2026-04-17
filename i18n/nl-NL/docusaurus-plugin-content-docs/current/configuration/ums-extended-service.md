@@ -68,23 +68,23 @@ Maakt een back-up van de `vind-ik-leuk` audio albums tabel geïdentificeerd door
 
 ### HerstelAudioVind-ik-leuks
 
-Herstelt de vind-ik-leuk albums tabel. Call `BackupAudioLikes` before running this action.
+Herstelt de vind-ik-leuk albums tabel. Gebruik `BackupAudioVind-ik-leuks` op voordat u deze actie uitvoert.
 
-### BackupRatings
+### BackupWaarderingen
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Schrijft data voor audiowaarderingen naar een back-upbestand dat de waarde van het bestand hash en waardering bevat.
 
-### RestoreRatings
+### HerstelWaarderingen
 
-Restores rating information from a backup created with `BackupRatings`.
+Herstelt beoordelingsinformatie van een back-up gemaakt met `Backupwaarderingen`.
 
-## Library Interactions
+## Bibliotheek Interacties
 
-### RescanMediaStore
+### HerscanMediaStore
 
-Rescans the entire music library.
+De volledige muziekbibliotheek wordt opnieuw gescand.
 
-### RescanMediaStoreFolder
+### HerscanMediaStoreMap
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Herscant een specifieke map zonder recursie. De invoerparameter moet `ObjectID` van de map zijn.
 
