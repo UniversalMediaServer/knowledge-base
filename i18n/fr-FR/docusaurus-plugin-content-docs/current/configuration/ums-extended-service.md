@@ -1,90 +1,90 @@
 # UMS UPnP Service
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS fournit un service UPnP étendu qui permet aux points de contrôle externes d'interagir avec des fonctionnalités supplémentaires du système.
 
-## Usage
+## Utilisation :
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Le service est exposé dans l'espace de noms `schemas-upnp-org` avec le type de service `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Pour les points de contrôle Java en utilisant JUPnP, appelez `findService` sur l'UMS `RemoteDevice`:
 
 ```java
-RemoteService umsServicesService = remoteDevice.findService(
-    new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
+Service à distance umsServicesService = remoteDevice.findService(
+    nouveau type de service("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Les actions suivantes sont disponibles via cette interface de service.
 
-## MyMusic interactions
+## Interactions avec ma musique
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Les albums aimés peuvent être parcourus en utilisant l'objet ID `MYMUSIC$` en tant que lien profond ou en naviguant vers `My Albums` dans le dossier racine.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Le maintien des favoris est particulièrement utile dans les grandes collections d'albums, où la navigation manuelle dans la bibliothèque complète peut prendre du temps. Une liste d'albums préférés organisée permet aux utilisateurs de revenir rapidement au contenu pertinent sans avoir à répéter des recherches étendues ou une navigation profonde dans les dossiers.
 
-In practice, favorites provide the following benefits:
+Dans la pratique, les favoris offrent les avantages suivants :
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Accès plus rapide aux albums fréquemment joués, même dans de très grandes bibliothèques.
+- Meilleure navigation quotidienne en séparant le contenu préféré du catalogue complet.
+- Des flux de travail de lecture plus cohérents pour les clients et les automations qui dépendent des sélections d'albums stables.
 
-### Input Parameters
+### Paramètres d'entrée
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Toutes les actions de cette section nécessitent un paramètre d'entrée. L'album doit être identifié par un ID MusicBrainz ou un ID de sortie Discogs. Au moins un ID est requis ; sinon, aucune action n'est effectuée.
 
-Example for Madonna's release `Like a Virgin`:
+Exemple pour la version de Madonna `Like a Virgin`:
 
-| Attribute     |           Type           |             Example value            |
-| :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
-| DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
+| Attributs                            |           Type           |  Exemple de valeur : |
+| :----------------------------------- | :----------------------: | :----------------------------------: |
+| Identifiant du cerveau de la musique |           Texte          | b69580b9-7050-3994-b544-4407a22c097a |
+| DiscogsId                            | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Si les deux paramètres (`MusicBrainzId` et `DiscogsId`) ont été fournis lors de l'ajout d'un album à vos favoris, ils doivent également être fournis lorsque vous le retirez de vos favoris.
 :::
 
-### LikeAlbum
+### J'aime l'album
 
-Marks a music album as liked.
+Marque un album de musique comme aimé.
 
-### DislikeAlbum
+### Je n'aime pas cet album
 
-Removes the liked status from a music album.
+Supprime le statut aimé d'un album de musique.
 
-### IsAlbumLikedInput
+### L'album est-il apprécié ?
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Vérifie si un album est actuellement marqué comme aimé. Si les identifiants MusicBrainz et Discogs sont tous deux fournis, la méthode renvoie « true » si au moins l'un des identifiants est marqué comme « aimé ».
 
-## Backup Actions
+## Sauvegarde des actions
 
-The service provides backup and restore actions.
+Le service fournit des actions de sauvegarde et de restauration.
 
 :::info
-A backup must be created before a restore can be performed.
+Une sauvegarde doit être créée avant de pouvoir effectuer une restauration.
 :::
 
-### BackupAudioLikes
+### Sauvegarde audio
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Crée une sauvegarde de la table des albums audio « appréciés », identifiés par leurs identifiants MusicBrainz ou Discogs.
 
-### RestoreAudioLikes
+### Restaurer les mentions « J'aime » audio
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Restaure la table des albums favoris. Appelez `Sauvegarder les mentions « J'aime » audio` avant d'exécuter cette action.
 
-### BackupRatings
+### Notes de sauvegarde
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Écrit les données de notation audio dans un fichier de sauvegarde contenant le hachage du fichier et la valeur de notation.
 
-### RestoreRatings
+### Rétablir les évaluations
 
-Restores rating information from a backup created with `BackupRatings`.
+Restaure les informations d'évaluation à partir d'une sauvegarde créée avec `Notes de sauvegarde`.
 
-## Library Interactions
+## Interactions de la bibliothèque
 
-### RescanMediaStore
+### Réanalyser la boutique Rescan Media
 
-Rescans the entire music library.
+Reporte toute la bibliothèque musicale.
 
-### RescanMediaStoreFolder
+### Réanalyser le dossier de stockage multimédia
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Réanalyse un dossier spécifique sans récursivité. Le paramètre d'entrée doit être `Identifiant d'objet` du dossier.
 
