@@ -24,31 +24,31 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Burada `PACKAGENAME` hedef işletim sisteminin adıdır: `windows`, `macos`, `macos-arm`, `macos-pre1015` veya `linux-*`, burada `*` mimaridir; şunlardan biri: `x86`, `x86_64`, `arm64`, `armel` veya `armhf`
 
-The result will be built in the "target" directory:
+Sonuç "hedef" dizinde oluşturulacaktır:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Tam talimatlar
 
-First all required software has to be installed:
+Öncelikle gerekli tüm yazılımların yüklenmesi gerekir:
 
-## 1. Download and install the Java JDK 17
+## 1. Java JDK 17’yi indirin ve yükleyin
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+https://bell-sw.com/pages/downloads/#/java-17-lts adresine bakın
 
-## 2. Download and install Git
+## 2. Git’i indirin ve yükleyin
 
-See https://git-scm.com/
+https://git-scm.com/ adresine bakın
 
-## 3. Download and extract Maven
+## 3. Maven’i indirin ve çıkarın
 
-See http://maven.apache.org/
+http://maven.apache.org/ adresine bakın
 
-## 4. Set environment variables
+## 4. Ortam değişkenlerini ayarlayın
 
 ### Windows
 
