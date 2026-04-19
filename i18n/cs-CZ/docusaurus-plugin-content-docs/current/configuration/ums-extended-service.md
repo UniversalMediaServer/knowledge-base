@@ -1,50 +1,50 @@
 # UMS UPnP Service
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS poskytuje rozšířenou službu UPnP, která umožňuje externím kontrolním bodům interakci s dalšími systémovými funkcemi.
 
-## Usage
+## Využití
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Služba je vystavena pod názvem `schemas-upnp-org` s typem služby `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Pro ovládací body Javy pomocí JUPnP, volejte `findService` na UMS `RemoteDevice`:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Následující akce jsou dostupné prostřednictvím rozhraní služby.
 
-## MyMusic interactions
+## MyMusic interakce
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Alba, která se mi líbí lze prohlížet pomocí ID objektu `MYMUSIC$` jako hluboký odkaz nebo navigací do `My Albums` v kořenové složce.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Udržování oblíbených je užitečné zejména ve velkých sbírkách alb, kde se ruční prohlížení celé knihovny může stát časově náročným. Upravený seznam oblíbených alb pomáhá uživatelům rychle se vrátit k relevantnímu obsahu bez opakovaného širokého vyhledávání nebo hluboké navigace se složkami.
 
-In practice, favorites provide the following benefits:
+V praxi dávají oblíbené tyto výhody:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Rychlejší přístup k často přehrávaným albům, a to i ve velmi velkých knihovnách.
+- Lepší každodenní navigace oddělením preferovaného obsahu od celého katalogu.
+- Konsistentnější pracovní postupy přehrávání pro klienty a automatizace, které závisejí na stabilním výběru alba.
 
-### Input Parameters
+### Vstupní parametry
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Všechny akce v této sekci vyžadují vstupní parametr. Album musí být identifikováno pomocí MusicBrainz ID nebo ID vydání Discogs. Alespoň jedno ID je vyžadováno; jinak není provedena žádná akce.
 
-Example for Madonna's release `Like a Virgin`:
+Příklad pro Madonnino vydání `Like a Virgin`:
 
-| Attribute     |           Type           |             Example value            |
+| Atribut       |            Typ           |            Příklad hodnoty           |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |          Řetězec         | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Pokud byly oba parametry (`MusicBrainzId` a `DiscogsId`) poskytnuty při ocenění alba, musí být také poskytnuty při neocenění tohoto alba.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+Označí hudební album jako líbící se.
 
 ### DislikeAlbum
 
