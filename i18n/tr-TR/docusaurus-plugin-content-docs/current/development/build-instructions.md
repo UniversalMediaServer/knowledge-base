@@ -12,13 +12,11 @@ Aşağıdaki yazılım paketleri gerekir:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+Gerekli tüm yazılımların nasıl yükleneceğini ve her işletim sistemi için UMS’nin nasıl oluşturulacağına ilişkin tam bir açıklama için [Tam talimatlar](#full-instructions) bölümünü okuyun.
 
-# Short instructions
+# Kısa talimatlar
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Eğer gerekli tüm yazılım paketleri yüklüyse aşağıdaki komutlar en son kaynakları indirecek ve UMS’yi oluşturacaktır:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
