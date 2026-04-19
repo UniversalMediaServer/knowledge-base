@@ -48,37 +48,37 @@ Označí hudební album jako líbící se.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+Odstraní oblíbený stav z hudebního alba.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Zkontroluje, zda je album v současné době označeno jako líbící se. Pokud jsou poskytnuty jak MusicBrainz, tak Discogs ID, metoda vrátí `true` pokud je alespoň jedno z ID označeno jako líbící se.
 
-## Backup Actions
+## Zálohovat akce
 
-The service provides backup and restore actions.
+Služba poskytuje zálohu a obnovení.
 
 :::info
-A backup must be created before a restore can be performed.
+Před provedením obnovy musí být vytvořena záloha.
 :::
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Vytvoří zálohu tabulky 'líbí' audio alba identifikované MusicBrainz nebo Discogs ID.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Obnoví tabulku oblíbených alb. Před spuštěním této akce zavolejte `backupAudioLikes`.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Zapisuje zvuková hodnocení do záložního souboru obsahující hash souboru a hodnotu hodnocení.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+Obnoví hodnocení ze zálohy vytvořené pomocí `BackupRatings`.
 
-## Library Interactions
+## Interakce knihovny
 
 ### RescanMediaStore
 
