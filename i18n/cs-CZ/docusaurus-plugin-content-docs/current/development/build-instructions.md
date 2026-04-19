@@ -131,30 +131,30 @@ Tato část vysvětluje, jak je možné zkompilovat a balit pro jeden systém za
 
 Instalační systémy Windows (`UMS-setup.exe`) a spustitelné Windows (`UMS.exe`) mohou být postaveny na jiných platformách než Windows.
 
-Nejprve budete muset mít nainstalovaný binární soubor `makensis`. On Debian/Ubuntu,
-this can be done with:
+Nejprve budete muset mít nainstalovaný binární soubor `makensis`. Na Debianu/Ubuntu
+to lze provést pomocí:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Pak je nutné nastavit prostředí `NSISDIR` na **absolutní cestu** do adresáře
+`nsis`. Toto může být nastaveno pro každý příkaz:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Zatím:
 
 - Temporarily in the current shell:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Nebo trvale:
     ```bash
-    # these two commands only need to be run once
+    # Tyto dva příkazy musí být spuštěny pouze jednou
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
@@ -163,67 +163,67 @@ Either:
 
 For the sake of brevity, the following examples assume it has already been set.
 
-The Windows installer can now be built with one of the following commands:
+Instalační systém Windows může být nyní vytvořen jedním z následujících příkazů:
 
-### On Linux and macOS
+### Na Linuxu a macOS
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Vytváření linuxového tarbalu
 
-### On Windows and macOS
+### Na Windows a macOS
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+kde `*` je jeden z: x86, x86_64, arm64, armel, nebo armhf
 
-## Building the macOS disk image
+## Vytváření macOS obrazu disku
 
-### On Windows and Linux
+### Na Windows a Linuxu
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Budování průvodce intalací macOS
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Sestavit UMS
+2. Nainstalujte http://s.sudre.free.fr/Software/Packages/about.html
+3. Nastavte proměnnou ukládající cestu k adresáři souboru, např.
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Nahradit požadovanou cestu uvnitř .pkgproj souboru
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Postav .pkg instalátor. Toto bude výstup na `/target/Universal Media Server.pkg`
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Rychlé sestavení
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Máme rychle sestavené skripty, které jsou doporučeny během vývoje pro rychlou
+iteraci. Skripty zkompilují Java kód, vloží jej do výchozího instalačního adresáře
+a spustí program, který ukončí všechny existující instance UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Měl by fungovat pro 64bitové Windows a macOS. Lze snadno rozšířit i pro ostatní, je-li to žádoucí.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Kde je `*` je `macos` nebo `windows`
