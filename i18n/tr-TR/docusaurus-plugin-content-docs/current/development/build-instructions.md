@@ -52,10 +52,10 @@ http://maven.apache.org/ adresine bakın
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Yeni değişkenler oluşturun veya değişken zaten mevcutsa değeri ekleyin:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
+- Seviye: Sistem, değişken: `JAVA_HOME`, değer: JDK kurulum konumu
+- Seviye: Kullanıcı, değişken `M2_HOME`, değer: Maven çıkarma konumu
 - Level: User, variable `M2`, value: `%M2_HOME%\bin`
 - Level: User, variable `PATH`, value `%M2%`
 
