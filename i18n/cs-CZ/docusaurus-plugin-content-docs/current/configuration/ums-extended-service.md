@@ -82,9 +82,9 @@ Obnoví hodnocení ze zálohy vytvořené pomocí `BackupRatings`.
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+Znovu prohledá celou hudební knihovnu.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Znovu prohledá konkrétní složku bez rekurze. Vstupním parametrem musí být `ObjectID` složky.
 

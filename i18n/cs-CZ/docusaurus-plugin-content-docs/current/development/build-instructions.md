@@ -147,7 +147,7 @@ NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 
 Zatím:
 
-- Temporarily in the current shell:
+- Dočasně v aktuálním shellu:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
@@ -161,7 +161,7 @@ Zatím:
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Pro stručnost se v následujících příkladech předpokládá, že to bylo již nastaveno.
 
 Instalační systém Windows může být nyní vytvořen jedním z následujících příkazů:
 

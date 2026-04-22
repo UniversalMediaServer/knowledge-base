@@ -52,55 +52,55 @@ http://maven.apache.org/ adresine bakın
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Yeni değişkenler oluşturun veya değişken zaten mevcutsa değeri ekleyin:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Seviye: Sistem, değişken: `JAVA_HOME`, değer: JDK kurulum konumu
+- Seviye: Kullanıcı, değişken `M2_HOME`, değer: Maven çıkarma konumu
+- Seviye: Kullanıcı, değişken `M2`, değer: `%M2_HOME%\bin`
+- Seviye: Kullanıcı, değişken `PATH`, değer `%M2%`
 
 ### Linux
 
-Nothing to do.
+Yapacak bir şey yok.
 
 ### macOS
 
-Nothing to do.
+Yapacak bir şey yok.
 
-## 5. Download the UMS source code
+## 5. UMS kaynak kodunu indirin
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. En son kaynağa güncelleyin (isteğe bağlı)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. UMS’nin en son sürümünü derleyin
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Burada `PACKAGENAME` hedef işletim sisteminin adıdır: `windows`, `macos`, `macos-arm`, `macos-pre1015` veya `linux-*`, burada `*` mimaridir; şunlardan biri: `x86`, `x86_64`, `arm64`, `armel` veya `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+İkili dosyaları indirmeyi atlamak istiyorsanız isteğe bağlı bir işaret te belirtebilirsiniz; bu, özellikle Windows ve Linux’ta derleme süresini hızlandırmak için yararlı olabilir:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Ortaya çıkan ikili dosyalar "hedef" dizinde oluşturulacaktır:
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Otomatik yapılar
 
 These last two commands can easily be automated using a script e.g.:
 
