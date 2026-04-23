@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Sviluppo",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generated-index",
+    "description": "Come costruire e sviluppare UMS"
   }
 }
