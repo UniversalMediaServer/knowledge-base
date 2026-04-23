@@ -6,11 +6,11 @@ UMS gestisce i media in due modalità - via DLNA/UPnP per essere riprodotti con 
 
 Web browsers have easy security and privacy control by having user accounts with logins.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Le app di riproduzione multimediale in genere non supportano il concetto di “utente”, quindi solitamente ogni dispositivo riceve gli stessi contenuti. Questo potrebbe non essere quello che vuoi. Ad esempio, se hai due cartelle, kids_safe e kids_unsafe, potresti voler limitare l'accesso dei dispositivi nella stanza dei bambini alla sola cartella kids_safe. Un'altra situazione comune è quella in cui ci si trova sulla stessa rete di persone a cui non si vuole consentire l'accesso ai propri file multimediali, come i coinquilini, e quindi si desidera bloccare completamente determinati renderer.
 
-UMS provides a number of methods to control access in those situations.
+UMS fornisce una serie di metodi per controllare l'accesso in tali situazioni.
 
-## Allow or block renderers or network devices by default
+## Consenti o blocca renderer o dispositivi di default
 You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
 
 This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
