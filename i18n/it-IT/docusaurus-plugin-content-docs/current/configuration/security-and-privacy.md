@@ -2,7 +2,7 @@
 
 ## Introduction
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS gestisce i media in due modalità - via DLNA/UPnP per essere riprodotti con applicazioni media player e via HTTP(S) per essere riprodotti tramite browser web
 
 Web browsers have easy security and privacy control by having user accounts with logins.
 
