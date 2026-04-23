@@ -2,28 +2,28 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# Cosa c'è di nuovo in v15
 
-## Overview
+## Panoramica
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+I 2 obiettivi principali per la versione V15 sono stati semplificare la nostra interfaccia, basato su feedback e recensioni degli utenti, e rendere i nostri account utente più facili da usare.
 
-A quick overview of the changes in this version is:
+Una rapida panoramica dei cambiamenti in questa versione è:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
+- Un **switch utente** con il supporto per **utenti registrati multipli**
+-
 - **Pin code** logins
 - Dynamic **TV season metadata**
 - A file **media info** button
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
-## New features
+## Nuove funzioni
 
-### User switcher
+### Cambio utente
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+È ora possibile effettuare l'accesso con più utenti in un browser allo stesso tempo, e passare da uno all'altro.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
