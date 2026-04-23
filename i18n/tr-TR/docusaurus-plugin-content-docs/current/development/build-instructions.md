@@ -102,7 +102,7 @@ Ortaya çıkan ikili dosyalar "hedef" dizinde oluşturulacaktır:
 
 ## Otomatik yapılar
 
-These last two commands can easily be automated using a script e.g.:
+Bu son iki komut bir komut kodu kullanılarak kolayca otomatikleştirilebilir, örn.:
 
 ### Windows
 
@@ -122,38 +122,36 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Paketleme ve çapraz derleme
 
-This section explains how it is possible to compile and package for one system while on another.
+Bu bölümde başka bir sistem üzerindeyken bir sistem için derleme ve paketlemenin nasıl mümkün olduğu açıklanmaktadır.
 
-## Building the Windows binaries
+## Windows ikili dosyalarını oluşturma
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Windows yükleyicileri (`UMS-setup.exe`) ve Windows çalıştırılabilir dosyası (`UMS.exe`), Windows dışındaki platformlarda oluşturulabilir.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Öncelikle, `makensis` ikili dosyasının yüklü olması gerekir. Debian/Ubuntu üzerinde, bu şununla yapılabilir:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Ardından `NSISDIR` ortamının `nsis` dizinine giden **tam yola** ayarlanması gerekir. Bu, komut başına ya şöyle ayarlanabilir:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Ya da:
 
-- Temporarily in the current shell:
+- Şu anki kabukta geçici olarak:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Veya kalıcı olarak:
     ```bash
-    # these two commands only need to be run once
+    # bu iki komutun yalnızca bir kez çalıştırılması gerekir
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
