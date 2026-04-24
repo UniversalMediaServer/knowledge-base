@@ -30,7 +30,7 @@ Vervang `.ext` met een van de ondersteunde extensies.
 
 Voorbeelden:
 
-- `folder.webp`
+- `map.webp`
 - `map.jpg`
 - `map.png`
 
