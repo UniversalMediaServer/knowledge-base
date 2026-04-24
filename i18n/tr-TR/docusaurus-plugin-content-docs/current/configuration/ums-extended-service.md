@@ -4,18 +4,18 @@ UMS, harici denetim noktalarının ek sistem özellikleriyle etkileşime girmesi
 
 ## Kullanım
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Hizmet, `UmsExtendedServices` hizmet türüyle `schemas-upnp-org` ad alanı altında kullanıma sunulur.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+JUPnP kullanan Java denetim noktaları için UMS `RemoteDevice`’da `findService`’i çağrır:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Bu hizmet arayüzü aracılığıyla aşağıdaki eylemler gerçekleştirilebilir.
 
-## MyMusic interactions
+## MyMusic etkileşimleri
 
 Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
 
