@@ -1,17 +1,17 @@
-# How to add artwork
+# Hoe je artwork toevoegt
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Je kunt je eigen artwork toevoegen voor mappen en afspeellijsten, zodat je frontend aangepaste miniaturen laat zien in plaats van algemene standaardafbeeldingen.
 
-This guide explains:
+Deze handleiding legt uit:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- welke afbeeldingsformaten worden ondersteund
+- hoe je artwork bestanden een naam kan geven
+- waar je deze bestanden moet plaatsen
+- wat er gebeurt als een afspeellijst afbeelding ontbreekt
 
-## Supported image formats
+## Ondersteunde afbeeldingsformaten
 
-The following file types are supported and checked in this order. The first matching image file is used:
+De volgende bestandstypes worden ondersteund en aangevinkt in deze volgorde. Het eerste overeenkomende afbeeldingsbestand wordt gebruikt:
 
 - `webp`
 - `png`
