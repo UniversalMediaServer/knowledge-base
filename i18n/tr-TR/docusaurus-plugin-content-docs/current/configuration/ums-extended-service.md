@@ -17,11 +17,11 @@ Bu hizmet arayüzü aracılığıyla aşağıdaki eylemler gerçekleştirilebili
 
 ## MyMusic etkileşimleri
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Beğenilen albümlere derin bağlantı olarak `MYMUSIC$` nesne kimliği kullanılarak veya kök klasördeki `Albümlerim`e gidilerek göz atılabilir.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Sık kullanılanları korumak özellikle kitaplığın tamamına el ile göz atmanın zaman alıcı olabileceği büyük albüm koleksiyonlarında kullanışlıdır. Beğenilen albümlerin derlenmiş bir listesi, kullanıcıların tekrarlanan geniş aramalara veya derin klasörlerde gezinmeye gerek kalmadan ilgili içeriğe hızlı bir şekilde dönmelerine yardımcı olur.
 
-In practice, favorites provide the following benefits:
+Pratikte, sık kullanılanlar aşağıdaki faydaları sağlar:
 
 - Faster access to frequently played albums, even in very large libraries.
 - Better day-to-day navigation by separating preferred content from the full catalog.
