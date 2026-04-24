@@ -102,7 +102,7 @@ Ortaya çıkan ikili dosyalar "hedef" dizinde oluşturulacaktır:
 
 ## Otomatik yapılar
 
-These last two commands can easily be automated using a script e.g.:
+Bu son iki komut bir komut kodu kullanılarak kolayca otomatikleştirilebilir, örn.:
 
 ### Windows
 
@@ -122,107 +122,103 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Paketleme ve çapraz derleme
 
-This section explains how it is possible to compile and package for one system while on another.
+Bu bölümde başka bir sistem üzerindeyken bir sistem için derleme ve paketlemenin nasıl mümkün olduğu açıklanmaktadır.
 
-## Building the Windows binaries
+## Windows ikili dosyalarını oluşturma
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Windows yükleyicileri (`UMS-setup.exe`) ve Windows çalıştırılabilir dosyası (`UMS.exe`), Windows dışındaki platformlarda oluşturulabilir.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Öncelikle, `makensis` ikili dosyasının yüklü olması gerekir. Debian/Ubuntu üzerinde, bu şununla yapılabilir:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Ardından `NSISDIR` ortamının `nsis` dizinine giden **tam yola** ayarlanması gerekir. Bu, komut başına ya şöyle ayarlanabilir:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Ya da:
 
-- Temporarily in the current shell:
+- Şu anki kabukta geçici olarak:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Veya kalıcı olarak:
     ```bash
-    # these two commands only need to be run once
+    # bu iki komutun yalnızca bir kez çalıştırılması gerekir
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Kısaltmak adına, aşağıdaki örneklerde bunun zaten ayarlandığı varsayılmaktadır.
 
-The Windows installer can now be built with one of the following commands:
+Windows yükleyicisi artık aşağıdaki komutlardan biriyle oluşturulabilir:
 
-### On Linux and macOS
+### Linux ve macOS’ta
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Linux tarball oluşturma
 
-### On Windows and macOS
+### Windows ve macOS’ta
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+burada `*` şunlardan biridir: x86, x86_64, arm64, armel veya armhf
 
-## Building the macOS disk image
+## macOS disk kalıbı oluşturma
 
-### On Windows and Linux
+### Windows ve Linux’ta
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## macOS sihirbaz yükleyicisini oluşturma
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. UMS’yi oluşturun
+2. http://s.sudre.free.fr/Software/Packages/about.html yükleyin
+3. Yapım dağıtım dosyasının dizin yolunu saklayan bir değişken ayarlayın, örn.
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. .pkgproj dosyasındaki istenen yolu değiştirin
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. .pkg yükleyicisi oluşturun. Bu, `/target/Universal Media Server.pkg` dosyasını çıktı verecektir.
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Hızlı yapımlar
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Hızlı yineleme için geliştirme sırasında önerilen hızlı yapım komut kodlarımız var. Komut kodları Java kodunu derleyecek, varsayılan kurulum dizinine koyacak ve programı çalıştıracak, bu da varolan herhangi bir UMS örneğini kapatacaktır.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+64-bit Windows ve macOS için çalışmalıdır. İstenirse başkaları için de kolaylıkla genişletilebilir.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+`*` burada `macos` veya `windows`’tur

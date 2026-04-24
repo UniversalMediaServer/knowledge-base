@@ -1,8 +1,8 @@
-# UMS UPnP Service
+# UMS UPnP Hizmeti
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS, harici denetim noktalarının ek sistem özellikleriyle etkileşime girmesini sağlayan genişletilmiş bir UPnP hizmeti sağlar.
 
-## Usage
+## Kullanım
 
 The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
 

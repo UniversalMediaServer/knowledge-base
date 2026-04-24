@@ -22,28 +22,28 @@ Qui puoi aggiungere il tuo feed
 
 #### Nome
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Il campo "Nome" è disabilitato per i feed video, perché i feed definiscono i propri nomi.
 
-#### Path
+#### Percorso
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Il campo "Percorso" definisce la struttura della directory che verrà visualizzata da UMS. Ad esempio, se inserisci `Canali Web/YouTube`, il tuo feed sarà all'interno della directory `Canali YouTube`, all'interno della directory `Web`. Questo ti permette di organizzare i tuoi contenuti come vuoi, ed è particolarmente utile quando hai diversi fornitori di feed e si sta utilizzando UMS avendoli tutti nello stesso posto.
 
-#### Source/URL
+#### Fonte/URL:
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Questo è il link al feed video. Di solito finirà in `.xml`, ma gestiamo YouTube in modo diverso per accettare direttamente un URL del canale, permettendoti di inserire ad esempio `https://www.youtube.com/@kurzgesagt`
 
-#### Authorized groups
+#### Gruppi autorizzati
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Il campo "Gruppi autorizzati" consente di rendere questo feed disponibile solo per determinati gruppi definiti in UMS che sono associati a diversi utenti e/o dispositivi. Vedi [Sicurezza e Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) per maggiori dettagli.
 
-When you are happy with the options you entered, select the "Add" button.
+Quando sei soddisfatto delle opzioni inserite, seleziona il pulsante "Aggiungi".
 
-### Feed order
+### Ordine dei feed
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Se il link del feed è valido, ora dovresti vedere il campo "Nome" popolato, e ora puoi trascinare il feed su o giù per controllare l'ordine  
+! Elenco di contenuti condivisi e capacità di ordinare](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Salva modifiche
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+È possibile ripetere i passaggi precedenti per aggiungere/modificare più contenuti, e quando sei soddisfatto delle tue modifiche, seleziona il pulsante "Salva" in fondo alla pagina. Ora puoi vedere il tuo contenuto sui tuoi dispositivi:  
+![Esempio di feed video sul lettore web](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
