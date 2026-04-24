@@ -1,17 +1,17 @@
-# How to add artwork
+# Miten lisätä kansitaidetta
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Voit lisätä omaa kansitaidetta kansioille ja soittolistoille, joten etupaneelisi näyttää mukautettuja pienkuvia oletuskuvien sijaan.
 
-This guide explains:
+Tämä opas selittää:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- mitkä kuvamuodot ovat tuettuja
+- miten nimetään kansikuvia
+- mihin nämä tiedostot sijoitetaan
+- mitä tapahtuu, kun soittolistan kuva puuttuu
 
-## Supported image formats
+## Tuetut kuvamuodot
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Seuraavat tiedostotyypit ovat tuettu ja tarkistetaan tässä järjestyksessä. Ensimmäinen vastaava kuvatiedosto otetaan käyttöön:
 
 - `webp`
 - `png`
@@ -20,34 +20,34 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Voit käyttää mitä tahansa näistä tiedostomuodoista sekä kansioiden että soittolistan kansikuviin.
 
-## Folder
+## Kansio
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Asettaaksesi kansiolle kuva, aseta kuvatiedosto nimeltä `folder.ext` kyseisen kansion sisään.
 
-Replace `.ext` with one of the supported extensions.
+Korvaa `.ext` yhdellä tuetuista tiedostomuodoista.
 
-Examples:
+Esimerkkejä:
 
 - `folder.webp`
 - `folder.jpg`
 - `folder.png`
 
-## Playlists
+## Soittolistat
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Jos haluat asettaa soittolistalle kansikuvan, käytä samaa perustiedostonimeä kuin soittolistan tiedosto.
 
-Example:
+Esimerkki:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Soittolistan tiedosto: `Jazz.m3u8`
+- Kuvatiedosto: `Jazz.jpg` (tai `Jazz.webp`, `Jazz.png`, ja niin edelleen)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Jos sopivaa soittolistan kuvaa ei löydy, käytetään kansion kansikuvaa.
 
-## Example folder structure
+## Esimerkki kansiorakenteesta
 
-Use this as a reference:
+Käytä tätä ohjeellisena esimerkkinä:
 
 ```text
 Music/
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+Tässä esimerkissä
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Music/folder.jpg` on kuva ylimmälle tasolle, eli `Music`-kansiolle.
+- `Music/Jazz/folder.png` on kuva `Jazz`-kansiolle.
+- `Music/Jazz/Jazz.jpg` on käytössä `Jazz.m3u8`-soittolistalle.
+- `Musiikki/Jazz/Smooth.m3u8`:lle ei ole vastaavaa `Smooth.*` -kuvaa, joten käytetään `Jazz`-kansion kansikuvaa.
 
