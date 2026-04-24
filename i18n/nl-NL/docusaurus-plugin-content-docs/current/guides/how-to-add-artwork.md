@@ -1,17 +1,17 @@
-# How to add artwork
+# Hoe je artwork toevoegt
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Je kunt je eigen artwork toevoegen voor mappen en afspeellijsten, zodat je frontend aangepaste miniaturen laat zien in plaats van algemene standaardafbeeldingen.
 
-This guide explains:
+Deze handleiding legt uit:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- welke afbeeldingsformaten worden ondersteund
+- hoe je artwork bestanden een naam kan geven
+- waar je deze bestanden moet plaatsen
+- wat er gebeurt als een afspeellijst afbeelding ontbreekt
 
-## Supported image formats
+## Ondersteunde afbeeldingsformaten
 
-The following file types are supported and checked in this order. The first matching image file is used:
+De volgende bestandstypes worden ondersteund en aangevinkt in deze volgorde. Het eerste overeenkomende afbeeldingsbestand wordt gebruikt:
 
 - `webp`
 - `png`
@@ -20,54 +20,54 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Je kunt elk van deze formaten gebruiken voor zowel map artwork als afspeellijst artwork.
 
-## Folder
+## Map
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Om artwork in te stellen voor een map, plaats je een afbeeldingsbestand genaamd `map.ext` in die map.
 
-Replace `.ext` with one of the supported extensions.
+Vervang `.ext` met een van de ondersteunde extensies.
 
-Examples:
+Voorbeelden:
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `map.webp`
+- `map.jpg`
+- `map.png`
 
-## Playlists
+## Afspeellijsten
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Om artwork voor een afspeellijst in te stellen, gebruik je dezelfde basisbestandsnaam als het afspeellijstbestand.
 
-Example:
+Voorbeeld:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Afspeellijst bestand: `Jazz.m3u8`
+- Artwork bestand: `Jazz.jpg` (of `Jazz.webp`, `Jazz.png`, enzovoort)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Als een overeenkomend afspeellijst artwork bestand niet wordt gevonden, wordt de map artwork gebruikt als een terugval.
 
-## Example folder structure
+## Voorbeeld mappenstructuur
 
-Use this as a reference:
+Gebruik dit als referentie:
 
 ```text
-Music/
-|-- folder.jpg
+Muziek/
+|-- map.jpg
 |-- Jazz/
-|   |-- folder.png
+|   |-- map.png
 |   |-- Jazz.m3u8
 |   |-- Jazz.jpg
 |   |-- Smooth.m3u8
 |   `-- smooth-track01.mp3
 `-- Rock/
-    |-- folder.webp
+    |-- map.webp
     |-- RockHits.m3u8
     `-- track01.mp3
 ```
 
-In this example:
+In dit voorbeeld:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Muziek/map.jpg` is het artwork voor de hoofdmap `Muziek`.
+- `Muziek/Jazz/map.png` is het artwork voor de `Jazz` map.
+- `Muziek/Jazz/Jazz.jpg` is gebruikt voor de `Jazz.m3u8` afspeellijst.
+- `Muziek/Jazz/Smooth.m3u8` heeft geen overeenkomende `Smooth.*` afbeelding, dus de `Jazz` map artwork wordt gebruikt.
 
