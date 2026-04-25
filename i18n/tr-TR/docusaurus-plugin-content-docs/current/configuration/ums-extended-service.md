@@ -23,13 +23,13 @@ Sık kullanılanları korumak özellikle kitaplığın tamamına el ile göz atm
 
 Pratikte, sık kullanılanlar aşağıdaki faydaları sağlar:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Çok büyük kitaplıklarda bile sık çalınan albümlere daha hızlı erişim.
+- Tercih edilen içeriği tam katalogdan ayırarak günlük gezinmeyi daha iyi hale getirin.
+- Kararlı albüm seçimlerine bağlı olan istemciler ve otomatikleştirmeler için daha tutarlı oynatma iş akışları.
 
-### Input Parameters
+### Giriş Parametreleri
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Bu bölümdeki tüm eylemler bir giriş parametresi gerektirir. Albüm, MusicBrainz kimliği veya Discogs yayıö kimliğiyle tanımlanmak zorundadır. At least one ID is required; otherwise, no action is performed.
 
 Example for Madonna's release `Like a Virgin`:
 
