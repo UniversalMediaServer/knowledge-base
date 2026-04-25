@@ -1,17 +1,17 @@
-# How to add artwork
+# Jak přidat obrázky
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Můžete přidat vlastní obrázky pro složky a seznamy skladeb, aby vaše stránka zobrazovala vlastní náhledy namísto obecných výchozích obrázků.
 
-This guide explains:
+Tato příručka vysvětluje:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- které formáty obrázků jsou podporovány
+- jak pojmenovat soubory s obrázkem
+- kde tyto soubory umístit
+- co se stane, když chybí obrázek playlistu
 
-## Supported image formats
+## Podporované formáty obrázků
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Následující typy souborů jsou podporovány a zaškrtnuty v tomto pořadí. Používá se první odpovídající obrázek:
 
 - `webp`
 - `png`
@@ -20,54 +20,54 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Můžete použít libovolný z těchto formátů jak pro obrázky složek, tak pro obrázky skladeb.
 
-## Folder
+## Složka
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Chcete-li nastavit obrázek pro složku, umístěte soubor s názvem `folder.ext` do této složky.
 
-Replace `.ext` with one of the supported extensions.
+Nahraďte `.ext` jedním z podporovaných rozšíření.
 
-Examples:
+Příklady:
 
 - `folder.webp`
 - `folder.jpg`
 - `folder.png`
 
-## Playlists
+## Seznamy stop
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Chcete-li nastavit obrázek pro playlist, použijte stejné jméno souboru jako soubor playlistu.
 
-Example:
+Příklad:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Soubor playlistu: `Jazz.m3u8`
+- Soubor s obrázkem: `Jazz.jpg` (nebo `Jazz.webp`, `Jazz.png` a tak dále)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Pokud není nalezen odpovídající soubor s obrázkem playlistu, použije se jako záložní soubor.
 
-## Example folder structure
+## Příklad struktury složek
 
-Use this as a reference:
+Použije se jako odkaz:
 
 ```text
-Music/
+Hudba/
 |-- folder.jpg
 |-- Jazz/
-|   |-- folder.png
-|   |-- Jazz.m3u8
-|   |-- Jazz.jpg
-|   |-- Smooth.m3u8
-|   `-- smooth-track01.mp3
+| |-- složka. ng
+| |-- Jazz.m3u8
+| |-- Jazz.jpg
+| |-- Smooth. 3u8
+| `-- smooth-track01.mp3
 `-- Rock/
-    |-- folder.webp
+    |-- složka. ebp
     |-- RockHits.m3u8
     `-- track01.mp3
 ```
 
-In this example:
+V tomto příkladu:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Music/folder.jpg` je obrázek pro nejvyšší úroveň složky `Music`.
+- `Music/Jazz/folder.png` je obrázek pro složku `Jazz`.
+- `Music/Jazz/Jazz.jpg` se používá pro `Jazz.m3u8` playlist.
+- `Music/Jazz/Smooth.m3u8` nemá odpovídající obrázek `Smooth.*`, takže se používá obrázek `Jazz`.
 
