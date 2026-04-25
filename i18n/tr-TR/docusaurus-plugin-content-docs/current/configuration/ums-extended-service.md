@@ -29,13 +29,13 @@ Pratikte, sık kullanılanlar aşağıdaki faydaları sağlar:
 
 ### Giriş Parametreleri
 
-Bu bölümdeki tüm eylemler bir giriş parametresi gerektirir. Albüm, MusicBrainz kimliği veya Discogs yayıö kimliğiyle tanımlanmak zorundadır. At least one ID is required; otherwise, no action is performed.
+Bu bölümdeki tüm eylemler bir giriş parametresi gerektirir. Albüm, MusicBrainz kimliği veya Discogs yayıö kimliğiyle tanımlanmak zorundadır. En az bir kimlik gerekir; aksi halde bir eylem gerçekleşmez.
 
-Example for Madonna's release `Like a Virgin`:
+Madonna’nın `Like a Virgin` albümüne örnek:
 
-| Attribute     |           Type           |             Example value            |
+| Öznitelik     |            Tür           |              Örnek değer             |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |           Dizgi          | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
