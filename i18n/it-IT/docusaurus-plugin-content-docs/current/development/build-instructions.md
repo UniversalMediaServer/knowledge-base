@@ -1,9 +1,9 @@
-# Build instructions
+# Istruzioni di compilazione
 
-This document describes how to build Universal Media Server from the source files.
+Questo documento descrive come compilare Universal Media Server a partire dai file sorgente.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Nota importante:_
+Le versioni precompilate di Universal Media Server possono essere scaricate all'indirizzo: http://www.universalmediaserver.com/; pertanto NON è necessario eseguire questi passaggi come utente generico.
 
 The following software packages are required:
 
