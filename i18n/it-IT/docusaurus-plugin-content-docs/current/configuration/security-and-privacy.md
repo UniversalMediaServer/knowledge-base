@@ -1,47 +1,47 @@
-# Security and Privacy
+# Sicurezza e Privacy
 
-## Introduction
+## Introduzione
 
 UMS gestisce i media in due modalità - via DLNA/UPnP per essere riprodotti con applicazioni media player e via HTTP(S) per essere riprodotti tramite browser web
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+I browser web consentono di gestire facilmente la sicurezza e la privacy grazie agli account utente con credenziali di accesso.
 
 Le app di riproduzione multimediale in genere non supportano il concetto di “utente”, quindi solitamente ogni dispositivo riceve gli stessi contenuti. Questo potrebbe non essere quello che vuoi. Ad esempio, se hai due cartelle, kids_safe e kids_unsafe, potresti voler limitare l'accesso dei dispositivi nella stanza dei bambini alla sola cartella kids_safe. Un'altra situazione comune è quella in cui ci si trova sulla stessa rete di persone a cui non si vuole consentire l'accesso ai propri file multimediali, come i coinquilini, e quindi si desidera bloccare completamente determinati renderer.
 
 UMS fornisce una serie di metodi per controllare l'accesso in tali situazioni.
 
 ## Consenti o blocca renderer o dispositivi di default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+È possibile scegliere la strategia predefinita per i renderer e i dispositivi di rete. È possibile consentire o negare per impostazione predefinita, con denylists e permessi, per il controllo completo.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Ciò è utile per situazioni di vita condivise o reti locali larghe/low-trust. È utile anche per chi utilizza adattatori powerline per la propria rete, poiché ciò può comportare accessi indesiderati da parte dei vicini.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Esempio di come settare la preferenza di autorizzazione di rete](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Esempio di come settare la preferenza di autorizzazione del renderer](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Bloccare/consentire i renderer e i dispositivi di rete
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Dopo aver deciso se consentire o bloccare di default i renderer non riconosciuti, puoi creare la tua lista di esclusione o la tua lista di autorizzazioni dalla schermata Home, nell'area delle impostazioni.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Un esempio di come bloccare un renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Collegare un utente a un renderer
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+È possibile associare gli account utente ai dispositivi di riproduzione, consentendo così di monitorare separatamente l'accesso ai contenuti e la riproduzione.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Ad esempio, se hai un televisore in salotto e un altro in camera da letto, quello in salotto non deve essere influenzato da ciò che guardi in camera da letto.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Esempio di come assegnare un account a un renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Limitare i contenuti condivisi a determinati gruppi
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Ora puoi scegliere di condividere cartelle o contenuti online con determinati gruppi. Ad esempio, se hai una persona (o un dispositivo assegnato a una persona) che è un bambino, puoi assegnarla al gruppo “Bambini” e consentire a quel gruppo l'accesso alla cartella “Famiglia”, ma non ai contenuti ‘Horror’ o “Solo per adulti”. Oppure concedi loro l'accesso al feed web di Kurzgesagt, ma non ai podcast storici.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Esempio di gruppi di contenuti condivisi](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## Nascondi cartelle
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Gestisci la visibilità delle cartelle virtuali. Queste impostazioni si trovano nel file UMS.conf. Per nascondere alcune cartelle durante la navigazione, è sufficiente impostare il relativo valore su "true" oppure selezionarle nella scheda Impostazioni di navigazione/condivisione dalla modalità GUI avanzata.
 
 ```
 hide_recently_played_folder =true
@@ -53,32 +53,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Per nascondere la cartella Web, è necessario deselezionare l'opzione "Abilita rete esterna" nella scheda "Configurazione generale" della modalità GUI avanzata oppure modificare il valore di `external_network =` in `false` nel file UMS.conf. Ciò avrà come effetto collaterale che l'aggiornamento automatico non funzionerà. Le modifiche apportate tramite l'interfaccia grafica saranno effettive dopo il riavvio.
 
-## PIN code
+## Codice PIN
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Tutti i metodi sopra descritti limitano l'accesso da parte di vari renderer. Ma se hai accesso a un renderer autorizzato a visualizzare una cartella, questi metodi non ti saranno d'aiuto (se i bambini hanno accesso alla TV del soggiorno che ha accesso a tutti i contenuti multimediali, allora hanno accesso a quei contenuti multimediali). Il codice PIN risolve il problema. Consente di nascondere cartelle/file multimediali dietro un codice PIN che è necessario inserire DALLA schermata di rendering. Di default, l'input è una sequenza di cifre (0-9), proprio come il codice di un bancomat. Ti consiglio vivamente di utilizzare codici composti da cifre, poiché risulta difficile digitarli dal visualizzatore. Ma se sei particolarmente sospettoso, puoi aggiungere delle lettere. Aggiungi un file chiamato UMS.code nella stessa directory del tuo UMS.conf e a questo file aggiungi regexp,code dove regexp è un'espressione regolare proprio come nel file "UMS.deny" e code è il codice che concederà l'accesso alla cartella/al supporto. Il codice non prevede alcuna limitazione di lunghezza. Ad esempio:
 ```
-.*private.*,1234
+.*privato.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Ti chiederà di inserire un codice se la cartella o il file multimediale contiene la parola “private” e il codice corretto è 1234. Il codice rimane quindi valido per 4 ore (a meno che non si modifichi tale durata).
 
-## Custom Device Configuration
+## Configurazione personalizzata del dispositivo
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+È inoltre possibile impostare qualsiasi proprietà di configurazione a livello di singolo dispositivo creando una configurazione personalizzata del dispositivo per sovrascrivere le impostazioni predefinite di UMS (per ulteriori dettagli, consultare la sezione Creazione di una configurazione personalizzata del dispositivo).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Ad esempio, per personalizzare il televisore dei bambini:
+- Fai clic sul pulsante "Personalizza questo dispositivo" in alto a destra nel pannello a comparsa dell'interfaccia grafica del renderer e specifica un nome per la configurazione.
+- Nel nuovo file di configurazione che si aprirà, aggiungi tutte le impostazioni che desideri sovrascrivere per la TV, ad esempio per cambiare il nome del server e specificare cartelle diverse:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Profilo del dispositivo personalizzato
+# Consultare DefaultRenderer.conf per le descrizioni di tutte le possibili opzioni di rendering
+# e UMS.conf per le opzioni del programma.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Le opzioni contenute in questo file sovrascrivono le impostazioni predefinite per i dispositivi Sony Bravia EX specifici elencati di seguito.
+# Specificare i dispositivi tramite UUID (o indirizzo se non è presente un UUID), separandoli con virgole se ce n'è più di uno.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
