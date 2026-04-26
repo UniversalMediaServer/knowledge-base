@@ -11,9 +11,9 @@ Le app di riproduzione multimediale in genere non supportano il concetto di “u
 UMS fornisce una serie di metodi per controllare l'accesso in tali situazioni.
 
 ## Consenti o blocca renderer o dispositivi di default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+È possibile scegliere la strategia predefinita per i renderer e i dispositivi di rete. You can allow or deny by default, with denylists and allowlists, for complete control.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+This is useful for shared living situations or wide/low-trust local networks. È utile anche per chi utilizza adattatori powerline per la propria rete, poiché ciò può comportare accessi indesiderati da parte dei vicini.
 
 ![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
