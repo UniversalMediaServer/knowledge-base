@@ -1,10 +1,10 @@
-# Security and Privacy
+# Sicurezza e Privacy
 
-## Introduction
+## Introduzione
 
 UMS gestisce i media in due modalità - via DLNA/UPnP per essere riprodotti con applicazioni media player e via HTTP(S) per essere riprodotti tramite browser web
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+I browser web consentono di gestire facilmente la sicurezza e la privacy grazie agli account utente con credenziali di accesso.
 
 Le app di riproduzione multimediale in genere non supportano il concetto di “utente”, quindi solitamente ogni dispositivo riceve gli stessi contenuti. Questo potrebbe non essere quello che vuoi. Ad esempio, se hai due cartelle, kids_safe e kids_unsafe, potresti voler limitare l'accesso dei dispositivi nella stanza dei bambini alla sola cartella kids_safe. Un'altra situazione comune è quella in cui ci si trova sulla stessa rete di persone a cui non si vuole consentire l'accesso ai propri file multimediali, come i coinquilini, e quindi si desidera bloccare completamente determinati renderer.
 
@@ -25,13 +25,13 @@ When you have chosen whether to allow or block unrecognized renderers by default
 
 ![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Collegare un utente a un renderer
 
 You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
 
 For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Esempio di come assegnare un account a un renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Restrict shared content to certain groups
 
@@ -53,32 +53,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Per nascondere la cartella Web, è necessario deselezionare l'opzione "Abilita rete esterna" nella scheda "Configurazione generale" della modalità GUI avanzata oppure modificare il valore di `external_network =` in `false` nel file UMS.conf. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN code
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). Il codice PIN risolve il problema. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
 ```
-.*private.*,1234
+.*privato.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Ti chiederà di inserire un codice se la cartella o il file multimediale contiene la parola “private” e il codice corretto è 1234. The code then stays valid for 4 hours (if you don't change that time).
 
 ## Custom Device Configuration
 
 Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
 
-For example, to customize the kids' TV:
+Ad esempio, per personalizzare il televisore dei bambini:
 - Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+- Nel nuovo file di configurazione che si aprirà, aggiungi tutte le impostazioni che desideri sovrascrivere per la TV, ad esempio per cambiare il nome del server e specificare cartelle diverse:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Profilo del dispositivo personalizzato
+# Consultare DefaultRenderer.conf per le descrizioni di tutte le possibili opzioni di rendering
+# e UMS.conf per le opzioni del programma.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Le opzioni contenute in questo file sovrascrivono le impostazioni predefinite per i dispositivi Sony Bravia EX specifici elencati di seguito.
+# Specificare i dispositivi tramite UUID (o indirizzo se non è presente un UUID), separandoli con virgole se ce n'è più di uno.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
