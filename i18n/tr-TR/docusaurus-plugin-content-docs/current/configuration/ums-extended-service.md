@@ -39,27 +39,27 @@ Madonna’nın `Like a Virgin` albümüne örnek:
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Bir albümü beğenirken her iki parametre de (`MusicBrainzId` ve `DiscogsId`) sağlandıysa, o albümü beğenmediğinizde de her ikisi de sağlanmak zorundadır.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+Bir müzik albümünü beğenildi olarak işaretler.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+Bir müzik albümünden beğenildi durumunu kaldırır.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Bir albümün şu anda beğenildi olarak işaretlenip işaretlenmediğini denetler. Eğer hem MusicBrainz hem de Discogs kimlikleri sağlanırsa, kimliklerden en az biri beğenildi olarak işaretlenmişse yöntem `true` değerine döndürür.
 
-## Backup Actions
+## Yedekleme Eylemleri
 
-The service provides backup and restore actions.
+Hizmet, yedekleme ve geri yükleme eylemleri sağlar.
 
 :::info
-A backup must be created before a restore can be performed.
+Geri yüklemenin gerçekleştirilebilmesi için önce bir yedekleme oluşturulmak zorundadır.
 :::
 
 ### BackupAudioLikes
