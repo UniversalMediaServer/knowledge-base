@@ -82,9 +82,9 @@ Ripristina le informazioni di valutazione da un backup creato con `BackupRatings
 
 ### Riscansiona MediaStore
 
-Rescans the entire music library.
+Esegue una nuova scansione dell'intera libreria musicale.
 
-### RescanMediaStoreFolder
+### Riscansiona la cartella MediaStore
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Esegue una nuova scansione di una cartella specifica senza ricorrenza. The input parameter must be the folder's `ObjectID`.
 
