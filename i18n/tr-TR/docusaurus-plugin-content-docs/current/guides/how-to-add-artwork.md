@@ -1,4 +1,4 @@
-# How to add artwork
+# Görsel çalışma nasıl eklenir
 
 You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
 
