@@ -64,27 +64,27 @@ Geri yüklemenin gerçekleştirilebilmesi için önce bir yedekleme oluşturulma
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+MusicBrainz veya Discogs kimlikleri tarafından tanımlanan `beğenilen` ses albümleri tablosunun bir yedeğini oluşturur.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Beğenilen albümler tablosunu geri yükler. Bu eylemi çalıştırmadan önce `BackupAudioLikes` parametresini çağırır.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Ses derecelendirme verilerini, dosya adreslemesini ve derecelendirme değerini içeren bir yedekleme dosyasına yazar.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+`BackupRatings` ile oluşturulan bir yedeklemeden derecelendirme bilgilerini geri yükler.
 
-## Library Interactions
+## Kitaplık Etkileşimleri
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+Müzik kitaplığının tamamını yeniden tarar.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Belirli bir klasörü yineleme olmadan yeniden tarar. Giriş parametresi klasörün `ObjectID`’si olmak zorundadır.
 
