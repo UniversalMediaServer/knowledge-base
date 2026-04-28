@@ -24,17 +24,17 @@ Bu biçimlerden herhangi birini hem klasör görsel çalışması hem de çalma 
 
 ## Klasör
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Bir klasörün görsel çalışmasını ayarlamak için o klasörün içine `klasor.uzt` adlı bir resim dosyası yerleştirin.
 
-Replace `.ext` with one of the supported extensions.
+`.uzt`’yi desteklenen uzantılardan biriyle değiştirin.
 
-Examples:
+Örnekler:
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `klasor.webp`
+- `klasor.jpg`
+- `klasor.png`
 
-## Playlists
+## Oynatma listeleri
 
 To set artwork for a playlist, use the same base filename as the playlist file.
 
