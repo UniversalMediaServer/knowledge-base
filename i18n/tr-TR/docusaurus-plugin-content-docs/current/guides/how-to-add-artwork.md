@@ -11,7 +11,7 @@ Bu kılavuz şunları açıklamaktadır:
 
 ## Desteklenen resim biçimleri
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Aşağıdaki dosya türleri bu sırayla desteklenir ve denetlenir. İlk eşleşen resim dosyası kullanılır:
 
 - `webp`
 - `png`
@@ -20,9 +20,9 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Bu biçimlerden herhangi birini hem klasör görsel çalışması hem de çalma listesi görsel çalışması için kullanabilirsiniz.
 
-## Folder
+## Klasör
 
 To set artwork for a folder, place an image file named `folder.ext` inside that folder.
 
