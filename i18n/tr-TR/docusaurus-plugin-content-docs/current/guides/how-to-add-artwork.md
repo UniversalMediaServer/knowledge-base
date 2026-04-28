@@ -1,15 +1,15 @@
 # Görsel çalışma nasıl eklenir
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Klasörler ve oynatma listeleri için kendi görsel çalışmalarınızı ekleyebilirsiniz, böylece ön uçta genel varsayılan resimler yerine özel küçük resimler gösterilir.
 
-This guide explains:
+Bu kılavuz şunları açıklamaktadır:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- hangi resim biçimleri desteklenir
+- görsel çalışma dosyalarına nasıl ad verilir
+- bu dosyalar nereye koyulur
+- bir oynatma listesi resmi eksik olduğunda ne olur
 
-## Supported image formats
+## Desteklenen resim biçimleri
 
 The following file types are supported and checked in this order. The first matching image file is used:
 
