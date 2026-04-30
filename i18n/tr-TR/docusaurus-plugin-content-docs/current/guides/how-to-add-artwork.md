@@ -1,17 +1,17 @@
-# How to add artwork
+# Görsel çalışma nasıl eklenir
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Klasörler ve oynatma listeleri için kendi görsel çalışmalarınızı ekleyebilirsiniz, böylece ön uçta genel varsayılan resimler yerine özel küçük resimler gösterilir.
 
-This guide explains:
+Bu kılavuz şunları açıklamaktadır:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- hangi resim biçimleri desteklenir
+- görsel çalışma dosyalarına nasıl ad verilir
+- bu dosyalar nereye koyulur
+- bir oynatma listesi resmi eksik olduğunda ne olur
 
-## Supported image formats
+## Desteklenen resim biçimleri
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Aşağıdaki dosya türleri bu sırayla desteklenir ve denetlenir. İlk eşleşen resim dosyası kullanılır:
 
 - `webp`
 - `png`
@@ -20,21 +20,21 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Bu biçimlerden herhangi birini hem klasör görsel çalışması hem de çalma listesi görsel çalışması için kullanabilirsiniz.
 
-## Folder
+## Klasör
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Bir klasörün görsel çalışmasını ayarlamak için o klasörün içine `klasor.uzt` adlı bir resim dosyası yerleştirin.
 
-Replace `.ext` with one of the supported extensions.
+`.uzt`’yi desteklenen uzantılardan biriyle değiştirin.
 
-Examples:
+Örnekler:
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `klasor.webp`
+- `klasor.jpg`
+- `klasor.png`
 
-## Playlists
+## Oynatma listeleri
 
 To set artwork for a playlist, use the same base filename as the playlist file.
 
