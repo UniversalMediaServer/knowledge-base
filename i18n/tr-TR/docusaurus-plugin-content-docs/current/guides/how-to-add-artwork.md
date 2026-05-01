@@ -34,14 +34,14 @@ Bir klasörün görsel çalışmasını ayarlamak için o klasörün içine `kla
 - `klasor.jpg`
 - `klasor.png`
 
-## Oynatma listeleri
+## Çalma listeleri
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Bir çalma listesi için görsel çalışma ayarlamak amacıyla çalma listesi dosyasıyla aynı temel dosya adını kullanın.
 
-Example:
+Örnek:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Çalma listesi dosyası: `Jazz.m3u8`
+- Görsel çalışma dosyası: `Jazz.jpg` (veya `Jazz.webp`, `Jazz.png` ve benzeri)
 
 If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
 
