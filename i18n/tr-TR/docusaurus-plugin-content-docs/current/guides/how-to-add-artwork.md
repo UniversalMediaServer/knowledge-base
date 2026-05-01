@@ -43,31 +43,31 @@ Bir çalma listesi için görsel çalışma ayarlamak amacıyla çalma listesi d
 - Çalma listesi dosyası: `Jazz.m3u8`
 - Görsel çalışma dosyası: `Jazz.jpg` (veya `Jazz.webp`, `Jazz.png` ve benzeri)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Eğer eşleşen bir çalma listesi görsel çalışma dosyası bulunamazsa, klasör görsel çalışması geri dönüş olarak kullanılır.
 
-## Example folder structure
+## Örnek klasör yapısı
 
-Use this as a reference:
+Bunu başvuru olarak kullanın:
 
 ```text
-Music/
-|-- folder.jpg
+Müzik/
+|-- klasör.jpg
 |-- Jazz/
-|   |-- folder.png
+|   |-- klasör.png
 |   |-- Jazz.m3u8
 |   |-- Jazz.jpg
 |   |-- Smooth.m3u8
-|   `-- smooth-track01.mp3
+|   `-- smooth-parça01.mp3
 `-- Rock/
-    |-- folder.webp
+    |-- klasör.webp
     |-- RockHits.m3u8
-    `-- track01.mp3
+    `-- parça01.mp3
 ```
 
-In this example:
+Bu örnekte:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Müzik/klasör.jpg`, üst seviye `Müzik` klasörünün görsel çalışmasıdır.
+- `Müzik/Jazz/kalsör.png', `Jazz\` klasörünün görsel çalışmasıdır.
+- `Müzik/Jazz/Jazz.jpg`, `Jazz.m3u8` çalma listesi için kullanılır.
+- `Müzik/Jazz/Smooth.m3u8`, eşleşen `Smooth.*` resmine sahip değil, bu yüzden `Jazz` klasörü görsel çalışması kullanılır.
 
