@@ -136,8 +136,7 @@ Primero que todo, necesitarás tener instalado el binario `makensis`. En Debian/
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. Esto se puede establecer por comando:
+Después es necesario establecer la **ruta absoluta** del entorno `NSISDIR` con el directorio `nsis`. Esto se puede establecer por comando:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
