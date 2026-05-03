@@ -41,13 +41,13 @@ Pour définir une image de couverture pour une liste de lecture, utilisez le mê
 Exemple :
 
 - Fichier de la playlist : `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Fichier d'illustration: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Si aucun fichier d'illustration correspondant à la playlist n'est trouvé, l'illustration du dossier est utilisée à la place.
 
-## Example folder structure
+## Structure de dossier d'exemple
 
-Use this as a reference:
+Utilisez ceci comme référence :
 
 ```text
 Music/
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+Dans cet exemple :
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
+- « Music/folder.jpg » est l'image de couverture du dossier de niveau supérieur « Music ».
+- « Music/Jazz/folder.png » est l'image de couverture du dossier « Jazz ».
 - `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- Le fichier `Music/Jazz/Smooth.m3u8` ne contient aucune image correspondant à `Smooth.*` ; c'est donc la pochette du dossier `Jazz` qui est utilisée.
 
