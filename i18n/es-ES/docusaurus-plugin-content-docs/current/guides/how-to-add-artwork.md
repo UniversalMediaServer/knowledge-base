@@ -68,6 +68,6 @@ En este ejemplo:
 
 - `Música/carpeta.jpg` es la ilustración de la carpeta principal `Música`.
 - `Música/Jazz/carpeta.png` es la ilustración de la carpeta `Jazz`.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Música/Jazz/Jazz.jpg` se utiliza para la lista de reproducción `Jazz.m3u8`.
+- `Música/Jazz/Smooth.m3u8` no tiene una imagen `Smooth.*` que coincida, por lo que se utiliza la ilustración de la carpeta `Jazz`.
 
