@@ -1,17 +1,17 @@
-# How to add artwork
+# Comment ajouter une illustration
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Vous pouvez ajouter vos propres illustrations pour les dossiers et les listes de lecture afin que votre interface affiche des vignettes personnalisées au lieu des images par défaut génériques.
 
-This guide explains:
+Ce guide explique :
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- Quels formats d'image sont pris en charge
+- Comment nommer les fichiers d'illustrations
+- Où placer ces fichiers
+- Que se passe-t-il lorsqu'une image de liste de lecture est manquante ?
 
-## Supported image formats
+## Formats d'image pris en charge
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Les types de fichiers suivants sont pris en charge et vérifiés dans cet ordre. Le premier fichier image correspondant est utilisé :
 
 - `webp`
 - `png`
@@ -20,27 +20,27 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Vous pouvez utiliser n'importe lequel de ces formats aussi bien pour les pochettes d'albums que pour celles des listes de lecture.
 
-## Folder
+## Dossier
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Pour définir une image de couverture pour un dossier, placez un fichier image nommé `folder.ext` à l'intérieur de ce dossier.
 
-Replace `.ext` with one of the supported extensions.
+Remplacez `.ext` par une des extensions supportées.
 
-Examples:
+Exemples :
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `dossier.webp`
+- `dossier.jpg`
+- `dossier.png`
 
-## Playlists
+## Listes de lecture
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Pour définir une image de couverture pour une liste de lecture, utilisez le même nom de fichier de base que celui du fichier de la liste de lecture.
 
-Example:
+Exemple :
 
-- Playlist file: `Jazz.m3u8`
+- Fichier de la playlist : `Jazz.m3u8`
 - Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
 
 If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
