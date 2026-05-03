@@ -30,15 +30,15 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Montar el Almacenamiento al Cliente y enlacelo a ese directorio, probablemente solo de lectura `mount <Videos-Share> '/srv/UMS/Videos'`
+Montar el Almacenamiento al Cliente y enlace a ese directorio, probablemente solo de lectura `mount <Videos-Share> '/srv/UMS/Videos'`
 
 Texto de ejemplo: Enlace simbólico simple a otra ruta en el sistema anfitrión puede no funcionar, ya que no habrá acceso a él desde afuera de la ruta del volumen montado por el contenedor del docker.  En su lugar, intente copiar los archivos dentro de esta ubicación.
 
 ## Configurar Contenedor
 
 Montar los siguientes volúmenes:
-- Media folder `/root/media`
-- Profile folder containing UMS.conf `/root/.config/UMS`
+- Carpeta multimedia `/root/media`
+- Carpeta de perfil que contiene UMS.conf `/root/.config/UMS`
 
 Exponga/reenvíe estos puertos desde el host: 1044, 5001, 9001.
 
