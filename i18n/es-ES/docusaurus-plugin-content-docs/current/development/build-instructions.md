@@ -142,7 +142,7 @@ Después es necesario establecer la **ruta absoluta** del entorno `NSISDIR` con 
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+O también:
 
 - Temporalmente en el shell actual:
     ```bash
@@ -151,16 +151,16 @@ Either:
     ```
 - O permanentemente:
     ```bash
-    # these two commands only need to be run once
+    # estos dos comandos solo deben ejecutarse una vez
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+En beneficio de la brevedad, los siguientes ejemplos asumen que ya se ha establecido.
 
-The Windows installer can now be built with one of the following commands:
+Ahora se puede compilar el instalador de Windows con uno de los siguientes comandos:
 
 ### En Linux y macOS
 
@@ -168,7 +168,7 @@ The Windows installer can now be built with one of the following commands:
 mvn package -P system-makensis,windows
 ```
 
-## Compilando un tarball de Linux
+## Compilando un paquete tar de Linux
 
 ### En Windows y macOS
 
@@ -191,21 +191,21 @@ hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distrib
 
 1. Compilar UMS
 2. Instalar http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+3. Establezca una variable que almacene la ruta del directorio del archivo de distribución de compilación, p. ej.:
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Reemplace la ruta deseada dentro del archivo .pkgproj
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Compilar instalador .pkg. This will output to `/target/Universal Media Server.pkg`
+5. Compilar instalador .pkg. Esto se generará en `/target/Universal Media Server.pkg`.
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
@@ -213,10 +213,9 @@ sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkg
 
 # Compilaciones rápidas
 
-Disponemos de scripts de compilación rápidos que se recomiendan durante el desarrollo para una iteración rápida. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Disponemos de scripts de compilación rápidos que se recomiendan durante el desarrollo para una iteración rápida. Los scripts compilarán el código Java, lo colocarán en el directorio de instalación predeterminado, y ejecutarán el programa, lo que cerrará cualquier instancia existente de UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Debería funcionar en Windows y macOS de 64 bits. Se puede extender fácilmente para incluir otros si se desea.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
