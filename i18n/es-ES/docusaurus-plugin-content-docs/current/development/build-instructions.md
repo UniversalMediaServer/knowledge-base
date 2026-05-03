@@ -1,13 +1,13 @@
-# Build instructions
+# Instrucciones de compilación
 
-This document describes how to build Universal Media Server from the source files.
+Este documento describe cómo compilar Universal Media Server a partir de los archivos fuente.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Nota importante:_
+Los lanzamientos de precompilaciones de Universal Media Server se pueden descargar desde: http://www.universalmediaserver.com/ por lo que NO necesita ejecutar estos pasos como usuario general.
 
-The following software packages are required:
+Se requieren los siguientes paquetes de software:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (el JRE no es suficiente)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
