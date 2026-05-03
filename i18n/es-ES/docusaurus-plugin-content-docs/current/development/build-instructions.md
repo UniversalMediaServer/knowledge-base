@@ -54,10 +54,10 @@ Consulte http://maven.apache.org/
 
 Crea nuevas variables o agrega el valor si la variable ya existe:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Nivel: Sistema, variable: `JAVA_HOME`, valor: JDK install location
+- Nivel: Usuario, variable: `M2_HOME`, valor: Maven extract location
+- Nivel: Usuario, variable: `M2`, valor: `%M2_HOME%\bin`
+- Nivel: Usuario, variable: `PATH`, valor `%M2%`
 
 ### Linux
 
