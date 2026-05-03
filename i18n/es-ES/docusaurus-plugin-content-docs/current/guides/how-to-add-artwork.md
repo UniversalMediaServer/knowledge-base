@@ -1,17 +1,17 @@
-# How to add artwork
+# Cómo agregar ilustraciones
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Puedes añadir tus propios diseños de carpetas y listas de reproducción para que la interfaz muestre miniaturas personalizadas en lugar de imágenes genéricas predeterminadas.
 
-This guide explains:
+Esta guía explica:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- qué formatos de imagen son compatibles
+- cómo nombrar archivos de ilustraciones
+- dónde colocar esos archivos
+- qué sucede cuando falta la imagen de una lista de reproducción
 
-## Supported image formats
+## Formatos de imagen compatibles
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Los siguientes tipos de archivo son compatibles y se comprueban en este orden. Se utiliza el primer archivo de imagen que coincida:
 
 - `webp`
 - `png`
@@ -20,54 +20,54 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Puedes utilizar cualquiera de estos formatos tanto para la ilustración de la carpeta como para la ilustración de la lista de reproducción.
 
-## Folder
+## Carpeta
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Para asignar una ilustración a una carpeta, coloque un archivo de imagen llamado `carpeta.ext` dentro de esa carpeta.
 
-Replace `.ext` with one of the supported extensions.
+Reemplace `.ext` con una de las extensiones compatibles.
 
-Examples:
+Ejemplos:
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `carpeta.webp`
+- `carpeta.jpg`
+- `carpeta.png`
 
-## Playlists
+## Listas de reproducción
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Para asignar una ilustración a una lista de reproducción, utilice el mismo nombre de archivo base que el archivo de la lista de reproducción.
 
-Example:
+Ejemplos:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Archivo de lista de reproducción: `Jazz.m3u8`
+- Archivo de ilustración: `Jazz.jpg` (o `Jazz.webp`, `Jazz.png`, etc.)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Si no se encuentra un archivo de ilustración de lista de reproducción que coincida, se utiliza la ilustración de la carpeta como alternativa.
 
-## Example folder structure
+## Ejemplo de estructura de carpeta
 
-Use this as a reference:
+Utilice esto como referencia:
 
 ```text
-Music/
-|-- folder.jpg
+Música/
+|-- carpeta.jpg
 |-- Jazz/
-|   |-- folder.png
+|   |-- carpeta.png
 |   |-- Jazz.m3u8
 |   |-- Jazz.jpg
 |   |-- Smooth.m3u8
 |   `-- smooth-track01.mp3
 `-- Rock/
-    |-- folder.webp
+    |-- carpeta.webp
     |-- RockHits.m3u8
     `-- track01.mp3
 ```
 
-In this example:
+En este ejemplo:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
+- `Música/carpeta.jpg` es la ilustración de la carpeta principal `Música`.
+- `Música/Jazz/carpeta.png` es la ilustración de la carpeta `Jazz`.
 - `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
 - `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
 
