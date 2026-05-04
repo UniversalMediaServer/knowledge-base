@@ -66,29 +66,29 @@ docker start UMS;
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#ligar a docker [--no-stdin] UMS; # Aún así, detiene el contenedor involuntariamente una vez finalizada la inspección..
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Para ver los registros detallados en la terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problemas de montaje
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Al usar Fedora CoreOS, tuve problemas de acceso/permiso denegado al intentar usar montajes de enlace.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Puede que se recomiende utilizar la funcionalidad de volúmenes con nombre gestionados por Docker, pero para evitar esa complejidad, descubrí que el sufijo adicional `:Z` al valor de la opción del descriptor del montaje de enlace permite el acceso de escritura del contenedor a los archivos del host. `:z` también se puede usar en su lugar, pero los consejos de seguridad pueden sugerir mantener los recursos más aislados entre entornos de aplicaciones/servicios, en lugar de compartirlos.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Los mensajes de error coincidentes se pueden ver usando journalctl, por lo que se trata de un problema de SELinux. La solución para eso sería ejecutar `chcon -Rt svirt_sandbox_file_t` host_dir, pero eso también parece desaconsejable.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Parece ser un container-selinux.
+Extrañamente, esto no es un problema en Fedora Workstation, pero supongo que al instalarlo manualmente se añade un paquete para solucionar esto. Parece ser un container-selinux.
 
-## References
+## Referencias
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view
