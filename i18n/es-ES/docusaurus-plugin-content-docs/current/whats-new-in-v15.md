@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# Novedades en la v15
 
 ## Overview
 

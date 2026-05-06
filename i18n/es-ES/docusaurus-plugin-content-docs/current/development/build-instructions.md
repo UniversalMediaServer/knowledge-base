@@ -1,24 +1,22 @@
-# Build instructions
+# Instrucciones de compilación
 
-This document describes how to build Universal Media Server from the source files.
+Este documento describe cómo compilar Universal Media Server a partir de los archivos fuente.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Nota importante:_
+Los lanzamientos de precompilaciones de Universal Media Server se pueden descargar desde: http://www.universalmediaserver.com/ por lo que NO necesita ejecutar estos pasos como usuario general.
 
-The following software packages are required:
+Se requieren los siguientes paquetes de software:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (el JRE no es suficiente)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+Lea la sección [Instrucciones completas](#full-instructions) para obtener una explicación completa de cómo instalar todo el software necesario y cómo compilar UMS para cada sistema operativo.
 
-# Short instructions
+# Instrucciones cortas
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Si se han instalado todos los paquetes de software requeridos, los siguientes comandos descargarán el código fuente más reciente y la compilación UMS:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -26,85 +24,85 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Donde `PACKAGENAME` es el nombre del sistema operativo objetivo: `windows`, `macos`, `macos-arm`, `macos-pre1015` o `linux-*`, donde `*` es la arquitectura; una de: `x86`, `x86_64`, `arm64`, `armel` o `armhf`.
 
-The result will be built in the "target" directory:
+El resultado se compilará en el directorio "target":
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Instrucciones completas
 
-First all required software has to be installed:
+Primero se debe instalar todo el software requerido:
 
-## 1. Download and install the Java JDK 17
+## 1. Descargar e instala Java JDK 17.
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Consulte https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Descargar e instala Git
 
-See https://git-scm.com/
+Consulte https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Descargar y extraer Maven
 
-See http://maven.apache.org/
+Consulte http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Establecer variables de entorno
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Crea nuevas variables o agrega el valor si la variable ya existe:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Nivel: Sistema, variable: `JAVA_HOME`, valor: JDK install location
+- Nivel: Usuario, variable: `M2_HOME`, valor: Maven extract location
+- Nivel: Usuario, variable: `M2`, valor: `%M2_HOME%\bin`
+- Nivel: Usuario, variable: `PATH`, valor `%M2%`
 
 ### Linux
 
-Nothing to do.
+No hacer nada.
 
 ### macOS
 
-Nothing to do.
+No hacer nada.
 
-## 5. Download the UMS source code
+## 5. Descarga el código fuente UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Actualizar a la última versión (opcional)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Compilar la última versión de UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Donde `PACKAGENAME` es el nombre del sistema operativo objetivo: `windows`, `macos`, `macos-arm`, `macos-pre1015` o `linux-*`, donde `*` es la arquitectura; una de: `x86`, `x86_64`, `arm64`, `armel`, o `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+También puedes especificar una bandera opcional si quieres omitir la descarga de binarios, lo que puede ser útil para acelerar el tiempo de compilación, particularmente en Windows y Linux:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Los binarios resultantes se compilarán en el directorio "target":
 
 - Windows: `UMS-setup.exe`
-- Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
+- Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Compilaciones automáticas
 
-These last two commands can easily be automated using a script e.g.:
+Estos dos últimos comandos se pueden automatizar fácilmente usando un script p. ej.:
 
 ### Windows
 
@@ -124,107 +122,103 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Empaquetado y compilación cruzada
 
-This section explains how it is possible to compile and package for one system while on another.
+Esta sección explica cómo es posible compilar y empaquetar para un sistema mientras se está en otro.
 
-## Building the Windows binaries
+## Compilación de binarios de Windows
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Los instaladores de Windows (`UMS-setup.exe`) y el ejecutable de Windows (`UMS.exe`) se pueden compilar en plataformas que no sean Windows.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Primero que todo, necesitarás tener instalado el binario `makensis`. En Debian/Ubuntu, esto se puede hacer con:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Después es necesario establecer la **ruta absoluta** del entorno `NSISDIR` con el directorio `nsis`. Esto se puede establecer por comando:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+O también:
 
-- Temporarily in the current shell:
+- Temporalmente en el shell actual:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- O permanentemente:
     ```bash
-    # these two commands only need to be run once
+    # estos dos comandos solo deben ejecutarse una vez
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+En beneficio de la brevedad, los siguientes ejemplos asumen que ya se ha establecido.
 
-The Windows installer can now be built with one of the following commands:
+Ahora se puede compilar el instalador de Windows con uno de los siguientes comandos:
 
-### On Linux and macOS
+### En Linux y macOS
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Compilando un paquete tar de Linux
 
-### On Windows and macOS
+### En Windows y macOS
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+donde `*` es uno de: x86, x86_64, arm64, armel o armhf
 
-## Building the macOS disk image
+## Compilando la imagen de disco de macOS
 
-### On Windows and Linux
+### En Windows y Linux
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Compilando el instalador del asistente de macOS
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Compilar UMS
+2. Instalar http://s.sudre.free.fr/Software/Packages/about.html
+3. Establezca una variable que almacene la ruta del directorio del archivo de distribución de compilación, p. ej.:
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Reemplace la ruta deseada dentro del archivo .pkgproj
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Compilar instalador .pkg. Esto se generará en `/target/Universal Media Server.pkg`.
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Compilaciones rápidas
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Disponemos de scripts de compilación rápidos que se recomiendan durante el desarrollo para una iteración rápida. Los scripts compilarán el código Java, lo colocarán en el directorio de instalación predeterminado, y ejecutarán el programa, lo que cerrará cualquier instancia existente de UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Debería funcionar en Windows y macOS de 64 bits. Se puede extender fácilmente para incluir otros si se desea.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Donde `*` es `macOS` o `windows`

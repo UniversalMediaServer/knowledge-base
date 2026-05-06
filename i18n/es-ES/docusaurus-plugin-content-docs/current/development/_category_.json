@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Desarrollo",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generated-index",
+    "description": "Cómo compilar y desarrollar UMS"
   }
 }
