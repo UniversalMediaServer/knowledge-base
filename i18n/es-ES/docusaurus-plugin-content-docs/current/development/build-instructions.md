@@ -12,8 +12,6 @@ Se requieren los siguientes paquetes de software:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Lea la sección [Instrucciones completas](#full-instructions) para obtener una explicación completa de cómo instalar todo el software necesario y cómo compilar UMS para cada sistema operativo.
-
 # Instrucciones cortas
 
 Si se han instalado todos los paquetes de software requeridos, los siguientes comandos descargarán el código fuente más reciente y la compilación UMS:
