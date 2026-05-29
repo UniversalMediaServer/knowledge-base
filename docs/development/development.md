@@ -1,6 +1,6 @@
 # Development
 
-The [build instructions](./build-instructions.md) describe how to build the latest version of UMS. This document explains how to make and run your own changes.
+ This document explains how to make and run your own changes.
 
 ## Forking the code to your machine
 
