@@ -12,9 +12,6 @@ De volgende softwarepakketten zijn vereist:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Lees de [Volledige instructies] (#full-instructions) sectie voor een volledige uitleg over hoe je
-alle benodigde software installeert en hoe je UMS voor elk besturingssysteem kunt bouwen.
-
 # Korte instructies
 
 Als alle benodigde softwarepakketten zijn geïnstalleerd, zullen de volgende commando's
