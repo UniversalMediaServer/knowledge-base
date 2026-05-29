@@ -1,6 +1,6 @@
-# Development
+# Geliştirme
 
-This document explains how to make and run your own changes.
+Bu belge kendi değişikliklerinizi nasıl yapacağınızı ve çalıştıracağınızı açıklar.
 
 ## Forking the code to your machine
 
