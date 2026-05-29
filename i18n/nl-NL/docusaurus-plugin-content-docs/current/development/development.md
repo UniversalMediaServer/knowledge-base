@@ -1,101 +1,101 @@
-# Development
+# Ontwikkeling
 
-This document explains how to make and run your own changes.
+Dit document legt uit hoe u uw eigen wijzigingen kan maken en uitvoeren.
 
-## Forking the code to your machine
+## Forking de code naar je machine
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub maakt het heel eenvoudig voor ontwikkelaars om hun eigen versie van de officiële UMS-bronnen te forken om hun eigen aanpassingen of functies toe te voegen. GitHub vergemakkelijkt het indienen van deze functies als "Pull Requests" aan het officiële UMS ontwikkelteam.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [Uw machine instellen voor GitHub ontwikkeling](https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- Ga naar [de GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) en druk op de `Fork` knop rechtsboven.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Kloon de nieuwe GitHub repo naar je lokale machine. De URL van de kloon kan gezien worden
+  op de hoofdpagina van uw opslagplaats. Het zou zoiets moeten zijn als dit
+  (vervang YOURNAME met je echte GitHub naam):
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-You now have the new repository on your local machine.
+Je hebt nu de nieuwe repository op je lokale machine.
 
-## Development with IDEs
+## Ontwikkeling met IDEs
 
 ### [VS Code](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Dit is onze aanbevolen editor omdat het geweldig is in het verwerken van zowel Java als TypeScript, onze twee hoofdtalen.
 
 #### Java server
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Wanneer je de code hebt geopend, zie je waarschijnlijk enkele aanbevelingen voor Extensies om te installeren, zoals het `Extensie Pack voor Java`. Installeer deze/ze.
+Wanneer dat is geïnstalleerd en geconfigureerd, kunt u de Java server uitvoeren door op de top `Run -> Start Debugging` te klikken, en herlaad het met `Run -> Herstart Debugging`. Deze commando's moeten binnen 1 seconde voltooid zijn, voor een snelle ontwikkeling workflow.
 
-#### Web browser interfaces
+#### Webbrowser interfaces
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Als u wijzigingen wilt aanbrengen in onze webbrowserinterfaces, moet u ook de React server runnen. welke zal zorgen voor het compileren en bedienen van de TypeScript code.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+In VS Code kun je naar de `Command Palette` gaan en filteren op `Debug: Selecteer en Start Debugging` en selecteer `Start web interface`. Het zal alle wijzigingen die u aanbrengt in de React bestanden automatisch herladen.
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Voor een handmatige workflow, kunt u naar de `react-client` map gaan en `yarn` starten om de benodigde afhankelijkheden te downloaden. Voer dan `yarn dev` uit die de webspeler in de browser moet openen en automatisch codewijzigingen moet compileren.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Voor de webinstellingen interface kunt u `react-client/package.json` openen en de proxypoort veranderen van `9002` naar `9001`. Nu `yarn dev` moet de webinstellingen gebruiken in plaats van de webspeler.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
-- Install the m2e Eclipse plugin (http://eclipse.org/m2e/)
+- Installeer de m2e Eclipse plugin (http://eclipse.org/m2e/)
 
-- Install the EGit Eclipse plugin (http://eclipse.org/egit/)
+- Installeer de EGit Eclipse plugin (http://eclipse.org/egit/)
 
-- In Eclipse, select the menu "Window > Show View > Git Repositories". Then
-  select "Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+- Selecteer in het Eclipse menu "Venster > Weergeven > Git Repositories". Selecteer dan
+  "Venster > Navigatie > Toon Menu" en kies "Voeg een Repository toe".
+  Blader naar de map waar u uw repository heeft gekloond en druk op de
+  "Zoeken". Selecteer uw geforkte repository en druk op "OK".
+  De repository moet in het overzicht van de Git Repositories verschijnen.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Druk op de rechtermuisknop in de repository en selecteer "Importeer Maven
+  Projecten" in het menu. Selecteer het project "/pom.xml" en druk op "Voltooien".
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Opmerking: als een project met dezelfde naam al bestaat Klik op "Geavanceerd" en
+  zet het "Naam sjabloon" op "[artifactId]- JOUW NAAM" (vervang JOUW met
+  je GitHub naam). Druk vervolgens op "Voltooien".
 
-You now see the sources in Eclipse, but the project is still missing the "Git"
-nature. In other words, it is not tied to the local repository yet. This means
-you cannot perform any Git actions from Eclipse yet. Add the missing connection
-by sharing the project:
+Je ziet nu de bronnen in Eclipse, maar het project mist nog steeds de aard "Git"
+. Met andere woorden, het is nog niet gekoppeld aan de lokale repository. Dit betekent
+dat u nog geen Git acties van Eclipse kunt uitvoeren. Voeg de ontbrekende verbinding
+toe door het project te delen:
 
-- Press the right mouse button on the newly created project and select the
-  menu "Team > Share Project...". Select "Git" and press "Next >".
-  Check the checkbox "Use or create repository in parent folder of project"
-  and make sure the project is selected. Then press "Finish".
+- Druk op de rechtermuisknop op het nieuw aangemaakte project en selecteer het
+  menu "Team > Deel Project...". Selecteer "Git" en druk op "Next >".
+  Vink het selectievakje "Gebruik of maak repository aan in de bovenliggende map van project"
+  en zorg ervoor dat het project is geselecteerd. Druk vervolgens op "Voltooien".
 
-Verify that your project is now under Git control. Press the right mouse
-button on the project and under "Team" you now see all options to work with
+Controleer of uw project nu onder Git controle is. Druk op de rechtermuisknop
+op het project en onder "Team" zie je nu alle opties om te werken met
 Git.
 
-You can build UMS from Eclipse:
+U kunt UMS bouwen vanuit Eclipse:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
-  `package`. Select the tab "JRE" and add the following VM arguments
-  `-Xmx1500m -XX:MaxPermSize=256m`. Finally, press the "Apply" button.
+- Maak een nieuwe run configuratie onder "Run > Configuraties uitvoeren...", rechter
+  muisknop op "Maven Build", selecteer "Nieuw", Naam: `Build UMS`, Goals:
+  `package`. Selecteer het tabblad "JRE" en voeg de volgende VM argumenten toe
+  `-Xmx1500m -XX:MaxPermSize=256m`. Druk tenslotte op de knop "Toepassen".
 
-You will want to run UMS from Eclipse while developing. This is how you do it:
+Je wilt UMS uitvoeren vanaf Eclipse tijdens de ontwikkeling. Zo doe je het:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Run UMS`, Base
-  directory: `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
-  Select the tab "JRE" and add VM arguments `-Xmx1500m -XX:MaxPermSize=256m`.
-  Finally, press the "Apply" button.
+- Maak een nieuwe run configuratie onder "Run > Configuratie Uitvoeren... , rechter
+  muisknop op "Maven Build", selecteer "Nieuw", Naam: `Run UMS`, Basis
+  directory: `${project_loc}`, Bestemming: "test", Profiles: `run-from-eclipse`.
+  Selecteer het tabblad "JRE" en voeg VM-argumenten "-Xmx1500m -XX:MaxPermSize=256m" toe.
+  Druk tenslotte op de knop "Toepassen".
 
-You are now ready to start developing!
+Je bent nu klaar om te beginnen met ontwikkelen!
 
-When you are happy with your changes, you can commit them to your local
-repository from Eclipse using right mouse button, "Team > Commit...".
+Wanneer je tevreden bent met je wijzigingen, kun je deze toewijzen aan je lokale
+repository van Eclipse met behulp van de rechtermuisknop, "Team > Commit...".
 
-When you are satisfied with your commits and want to publish them to your
-repository at GitHub, you can press the right mouse button on the project and
-select "Team > Push to Upstream".
+Wanneer je tevreden bent met je verwijzingen en deze wilt publiceren naar je
+repository op GitHub, dan kan je op de rechter muisknop drukken op het project en
+selecteer "Team > Push naar Upstream".
 
-## Contributing your change back to us
+## Geef uw wijziging terug door aan ons
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Als je wilt bijdragen aan het UMS-project, kun je een "Pull request" naar het ontwikkelingsteam sturen. Zie [Een pull-aanvraag maken](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) voor meer details.
