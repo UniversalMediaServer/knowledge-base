@@ -1,37 +1,37 @@
-# Development
+# Rozvoj
 
-This document explains how to make and run your own changes.
+Tento dokument vysvětluje, jak provést a spustit vlastní změny.
 
-## Forking the code to your machine
+## Stáhněte kód na svůj počítač
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub velmi zjednodušuje vývojářům oddělit svou vlastní verzi oficiálních zdrojů UMS a přidávat vlastní vylepšení nebo funkce. GitHub usnadňuje odeslání těchto funkcí jako "Pull Requests" oficiálnímu vývojovému týmu UMS.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [Nastavte svůj stroj pro vývoj GitHubu] (https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- Přejděte na [GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) a stiskněte tlačítko `Fork` vpravo nahoře.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
+- Klonujte nový GitHub repozitář do vašeho lokálního počítače. URL klonu lze vidět
+  na hlavní stránce vašeho repozitáře. It should be something like this
   (replace YOURNAME with your actual GitHub name):
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-You now have the new repository on your local machine.
+Nyní máte nový repozitář na vašem lokálním počítači.
 
-## Development with IDEs
+## Vývoj s IDE
 
-### [VS Code](https://code.visualstudio.com/)
+### [VS kód](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+To je náš doporučený editor, protože je skvělý jak pro Javu, tak pro TypeScript, naše dva hlavní jazyky.
 
 #### Java server
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Když otevřete kód, pravděpodobně uvidíte některá doporučení k instalaci rozšíření, například `Extension Pack for Java`. Nainstalujte jej.
+Když je toto nainstalováno a nakonfigurováno, můžete spustit Java server kliknutím na horní tlačítko `Run -> Start Debugging`, a znovu načíst pomocí `Run -> Restart Debugging`. Tyto příkazy by měly být dokončeny do 1 sekundy pro rychlý vývojový pracovní postup.
 
-#### Web browser interfaces
+#### Webová rozhraní prohlížeče
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Pokud chcete provést změny v našem webovém prohlížeči, budete muset spustit React server, který se bude starat o kompilaci a obsluhu kódu TypeScript.
 
 In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
 
