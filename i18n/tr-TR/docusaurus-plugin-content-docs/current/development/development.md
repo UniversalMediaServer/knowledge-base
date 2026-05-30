@@ -2,7 +2,7 @@
 
 Bu belge kendi değişikliklerinizi nasıl yapacağınızı ve çalıştıracağınızı açıklar.
 
-## Forking the code to your machine
+## Kodu makinenize gönderme
 
 GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
 
