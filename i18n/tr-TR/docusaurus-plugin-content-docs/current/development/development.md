@@ -2,21 +2,19 @@
 
 Bu belge kendi değişikliklerinizi nasıl yapacağınızı ve çalıştıracağınızı açıklar.
 
-## Kodu makinenize gönderme
+## Kodu makinenize çatallamayla ikiye ayırma
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub, geliştiricilerin kendi ince ayarlarını veya özelliklerini eklemek için resmi UMS kaynaklarının kendi sürümlerini çatallamalarını çok kolaylaştırır. GitHub, bu özelliklerin resmi UMS geliştirme ekibine "Çekme İstekleri" olarak gönderilmesini kolaylaştırır.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [GitHub geliştirme için makinenizi ayarlayın](https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- [GitHub UMS deposuna](https://github.com/universalmediaserver/universalmediaserver) gidin ve sağ üstteki `Fork` düğmesine basın.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Yeni GitHub deposunu yerel makinenize çoğaltın. Çoğaltma URL’si deponuzun ana sayfasında görülebilir. Bu, şunun gibi bir şey olmalı (ADINIZI asıl GitHub adınızla değiştirin):
 
-        git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
+        git clone git@github.com:ADINIZ/universalmediaserver.git ADINIZ
 
-You now have the new repository on your local machine.
+Artık yerel makinenizde yeni deponuz var.
 
 ## Development with IDEs
 
