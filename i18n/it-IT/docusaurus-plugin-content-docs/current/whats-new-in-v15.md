@@ -11,7 +11,7 @@ I 2 obiettivi principali per la versione V15 sono stati semplificare la nostra i
 Una rapida panoramica dei cambiamenti in questa versione è:
 
 - Un **switch utente** con il supporto per **utenti registrati multipli**
--
+- A **mode switcher** to change between the two major areas: **Player** and **Settings**
 - **Pin code** logins
 - Dynamic **TV season metadata**
 - A file **media info** button
@@ -23,7 +23,7 @@ Una rapida panoramica dei cambiamenti in questa versione è:
 
 È ora possibile effettuare l'accesso con più utenti in un browser allo stesso tempo, e passare da uno all'altro.
 
-This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
