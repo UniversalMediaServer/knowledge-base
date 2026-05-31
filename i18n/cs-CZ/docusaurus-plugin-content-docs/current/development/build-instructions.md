@@ -12,8 +12,6 @@ Jsou vyžadovány následující balíčky programů:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-V sekci [plné instrukce] (#full-instructions) najdete kompletní vysvětlení jak instalovat všechen potřebný software a jak vytvořit UMS pro každý operační systém.
-
 # Krátké pokyny
 
 Pokud jsou nainstalovány všechny požadované balíky, následující příkazy

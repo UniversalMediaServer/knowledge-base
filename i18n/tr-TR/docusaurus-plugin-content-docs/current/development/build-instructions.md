@@ -12,8 +12,6 @@ Aşağıdaki yazılım paketleri gerekir:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Gerekli tüm yazılımların nasıl yükleneceğini ve her işletim sistemi için UMS’nin nasıl oluşturulacağına ilişkin tam bir açıklama için [Tam talimatlar](#full-instructions) bölümünü okuyun.
-
 # Kısa talimatlar
 
 Eğer gerekli tüm yazılım paketleri yüklüyse aşağıdaki komutlar en son kaynakları indirecek ve UMS’yi oluşturacaktır:
