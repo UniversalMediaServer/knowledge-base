@@ -33,7 +33,7 @@ Když je toto nainstalováno a nakonfigurováno, můžete spustit Java server kl
 
 Pokud chcete provést změny v našem webovém prohlížeči, budete muset spustit React server, který se bude starat o kompilaci a obsluhu kódu TypeScript.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+Ve VS kódu můžete přejít do `Příkazové palety` a filtrovat na `Ladění: Vyberte a spusťte ladění` a vyberte `Spustit webové rozhraní`. It will automatically reload any changes you make to the React files.
 
 For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
 
@@ -85,12 +85,12 @@ You will want to run UMS from Eclipse while developing. This is how you do it:
   mouse button on "Maven Build", select "New", Name: `Run UMS`, Base
   directory: `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
   Select the tab "JRE" and add VM arguments `-Xmx1500m -XX:MaxPermSize=256m`.
-  Finally, press the "Apply" button.
+  Nakonec stisněte tlačítko "Apply"
 
-You are now ready to start developing!
+Nyní jste připraveni začít vývoj!
 
-When you are happy with your changes, you can commit them to your local
-repository from Eclipse using right mouse button, "Team > Commit...".
+Když jste spokojeni s vašimi změnami, můžete je odeslat do svého místního
+repozitáře z Eclipse pomocí pravého tlačítka myši, "Team > Commit...".
 
 When you are satisfied with your commits and want to publish them to your
 repository at GitHub, you can press the right mouse button on the project and
@@ -98,4 +98,4 @@ select "Team > Push to Upstream".
 
 ## Contributing your change back to us
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Pokud chcete přispět k projektu UMS, můžete poslat vývojářskému týmu "Pull Request". Viz [Vytvoření požadavku na natažení](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) pro více informací.
