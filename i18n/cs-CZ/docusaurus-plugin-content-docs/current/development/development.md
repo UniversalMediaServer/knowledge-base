@@ -46,24 +46,24 @@ Pro webové nastavení můžete otevřít `react-client/package.json` a změnit 
 
 - V Eclipse vyberte nabídku "Window > Show View > Git Repositories". Pak
   Vyberte "8Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+  Procházejte adresář, kde jste naklonovali váš repositář a stiskněte tlačítko
+  "Search". Vyberte svůj repozitář a stiskněte "OK".
+  Repozitář by se měl zobrazit v zobrazení repozitářů.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Stiskněte pravé tlačítko myši v repozitáři a vyberte z nabídky "Importovat Maven
+  Projekty". Vyberte projekt "/pom.xml" a stiskněte "Finish".
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Poznámka: pokud projekt se stejným názvem již existuje, klikněte na "Advanced" a
+  nastavte "Name template" na `[artifactId]-YOURNAME` (relplace YOURNAME
+  ). Poté stiskněte "Finish".
 
-You now see the sources in Eclipse, but the project is still missing the "Git"
-nature. In other words, it is not tied to the local repository yet. This means
-you cannot perform any Git actions from Eclipse yet. Add the missing connection
-by sharing the project:
+Nyní vidíte zdroje v Eclipse, ale projektu stále chybí "Git"
+. Jinými slovy, ještě není vázán na místní úložiště. To znamená, že
+zatím nemůžete provést žádnou Git akci z Eclipse. Přidejte chybějící spojení
+sdílením projektu:
 
-- Press the right mouse button on the newly created project and select the
-  menu "Team > Share Project...". Select "Git" and press "Next >".
+- Stiskněte pravé tlačítko myši v nově vytvořeném projektu a vyberte nabídku
+  "Team > Share project...". Zvolte "Git" a stiskněte "Next >".
   Check the checkbox "Use or create repository in parent folder of project"
   and make sure the project is selected. Then press "Finish".
 
@@ -75,8 +75,8 @@ UMS můžete vytvořit z Eclipse:
 
 - Create a new run configuration under "Run > Run Configurations...", right
   mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
-  `package`. Select the tab "JRE" and add the following VM arguments
-  `-Xmx1500m -XX:MaxPermSize=256m`. Finally, press the "Apply" button.
+  `package`. Vyberte kartu "JRE" a přidejte následující VM argumenty
+  `-Xmx1500m -XX:MaxPermSize=256m`. Nakonec stisněte tlačítko "Apply"
 
 Při vývoji budete chtít spustit UMS z Eclipse. Jak na to: →
 
