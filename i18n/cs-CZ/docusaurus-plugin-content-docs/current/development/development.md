@@ -64,17 +64,16 @@ sdílením projektu:
 
 - Stiskněte pravé tlačítko myši v nově vytvořeném projektu a vyberte nabídku
   "Team > Share project...". Zvolte "Git" a stiskněte "Next >".
-  Check the checkbox "Use or create repository in parent folder of project"
-  and make sure the project is selected. Then press "Finish".
+  Zaškrtněte políčko "Use or create repository in parent folder of project" a ujistěte se, že je vybrán projekt. Poté stiskněte "Finish".
 
-Verify that your project is now under Git control. Press the right mouse
-button on the project and under "Team" you now see all options to work with
+Ověřte, že váš projekt je nyní pod kontrolou Gitu. Stiskněte pravé tlačítko myši
+na projektu a pod "Team" nyní vidíte všechny možnosti pracovat s
 Git.
 
 UMS můžete vytvořit z Eclipse:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
+- Vytvořte novou konfiguraci běhu pod "Run > Run Configurations...", pravé
+  tlačítko myši na "Maven Build", vyberte "New", Name: `Build UMS`, Goals:
   `package`. Vyberte kartu "JRE" a přidejte následující VM argumenty
   `-Xmx1500m -XX:MaxPermSize=256m`. Nakonec stisněte tlačítko "Apply"
 
