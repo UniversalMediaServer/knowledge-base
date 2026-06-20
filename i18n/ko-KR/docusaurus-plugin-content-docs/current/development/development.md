@@ -1,10 +1,10 @@
-# Development
+# 개발
 
-This document explains how to make and run your own changes.
+이 문서는 직접 변경하고 실행하는 방법을 설명합니다.
 
-## Forking the code to your machine
+## 머신에 코드 포크하기
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub를 사용하면 개발자가 공식 UMS 소스의 자체 버전을 포크하여 자체 조정 또는 기능을 추가하는 것이 매우 간단합니다. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
 
 - [Set up your machine for GitHub development](https://support.github.com/)
 
