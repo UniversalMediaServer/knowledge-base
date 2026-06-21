@@ -1,90 +1,90 @@
-# UMS UPnP Service
+# UMS UPnP 서비스
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS는 외부 제어 지점이 추가 시스템 기능과 상호 작용할 수 있도록 하는 확장된 UPnP 서비스를 제공합니다.
 
-## Usage
+## 사용법
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+서비스 유형이 'UmsExtended Services'인 네임스페이스 'schemas-upnp-org'로 노출됩니다.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+JUPnP를 사용하는 Java 제어 지점의 경우, UMS 'RemoteDevice'에서 'findService'를 호출합니다:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+이 서비스 인터페이스를 통해 다음 작업을 사용할 수 있습니다.
 
-## MyMusic interactions
+## 마이뮤직 상호작용
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+좋아요 앨범은 객체 ID 'MYMUSIC$'를 딥 링크로 사용하거나 루트 폴더의 'My Albums'로 이동하여 탐색할 수 있습니다.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+즐겨찾기를 유지하는 것은 특히 대규모 앨범 컬렉션에서 유용하며, 전체 라이브러리를 수동으로 탐색하는 데 시간이 많이 소요될 수 있습니다. 좋아요 앨범 목록은 사용자가 반복적인 광범위한 검색이나 딥 폴더 탐색 없이 관련 콘텐츠로 빠르게 돌아갈 수 있도록 도와줍니다.
 
-In practice, favorites provide the following benefits:
+실제로 즐겨찾기는 다음과 같은 이점을 제공합니다:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- 매우 큰 라이브러리에서도 자주 재생되는 앨범에 더 빠르게 접근할 수 있습니다.
+- 전체 카탈로그에서 선호하는 콘텐츠를 분리하여 일상적인 내비게이션을 개선합니다.
+- 안정적인 앨범 선택에 의존하는 클라이언트 및 자동화 기능을 위해 더욱 일관된 재생 워크플로우를 제공합니다.
 
-### Input Parameters
+### 입력 매개변수
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+이 섹션의 모든 작업에는 입력 매개변수가 필요합니다. 앨범은 MusicBrainz ID 또는 Discogs 릴리스 ID로 식별해야 합니다. 최소한 하나의 ID가 필요하며, 그렇지 않으면 아무런 조치도 수행되지 않습니다.
 
-Example for Madonna's release `Like a Virgin`:
+마돈나의 'Like a Virgin' 발매 예시:
 
-| Attribute     |           Type           |             Example value            |
+| 속성            |            유형            |                 예제 값                 |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |            문자열           | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+앨범을 좋아할 때 두 매개변수('MusicBrainzId'와 'DiscogsId')를 모두 제공했다면, 그 앨범을 싫어할 때도 두 매개변수를 모두 제공해야 합니다.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+음악 앨범을 좋아요로 표시합니다.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+음악 앨범에서 좋아요 상태를 제거합니다.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+앨범이 현재 좋아요로 표시되어 있는지 확인합니다. MusicBrainz와 Discogs ID가 모두 제공되는 경우, 적어도 하나의 ID가 좋아요로 표시되면 메서드는 'true'를 반환합니다.
 
-## Backup Actions
+## 백업 작업
 
-The service provides backup and restore actions.
+이 서비스는 백업 및 복원 작업을 제공합니다.
 
 :::info
-A backup must be created before a restore can be performed.
+복원을 수행하기 전에 백업을 생성해야 합니다.
 :::
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+MusicBrainz 또는 Discogs ID로 식별된 '좋아요' 오디오 앨범 테이블의 백업을 생성합니다.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+좋아요 앨범 테이블을 복원합니다. 작업을 실행하기 전에 'BackupAudioLikes'를 호출합니다.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+파일 해시와 평점 값이 포함된 백업 파일에 오디오 평점 데이터를 씁니다.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+'BackupRatings'으로 생성된 백업에서 평점 정보를 복원합니다.
 
-## Library Interactions
+## 라이브러리 상호작용
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+전체 음악 라이브러리를 다시 스캔합니다.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+특정 폴더를 재귀 없이 다시 스캔합니다. 입력 매개변수는 폴더의 'ObjectID'여야 합니다.
 

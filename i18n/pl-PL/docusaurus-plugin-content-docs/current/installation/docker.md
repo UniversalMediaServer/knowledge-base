@@ -1,26 +1,26 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+Niektóre z tych kroków mogą nie dotyczyć twojej instalacji.  Sprawdź, jaka jest ich rola i zignoruj je lub dostosuj w razie potrzeby.
 
-## Preparation
+## Przygotowanie
 
-For operating system support and service packages.
+Dla wsparcia systemów operacyjnych i pakietów usług.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Zainstaluj silnik Dockera: https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Zainstaluj silnik Dockera: https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Dodatkowe instrukcje
 
 ```
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Zaloguj się ponownie lub zrestartuj urządenie.
 
 ```
 sudo su -;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Zamontuj wolumin w systemie hosta i podłącz go do tego katalogu, prawdopodobnie w trybie tylko do odczytu. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Przykład testowy: Proste dowiązanie symboliczne do innej ścieżki w systemie hosta może nie zadziałać, ponieważ nie będzie do niej dostępu spoza ścieżki zamontowanej w kontenerze.  Zamiast tego spróbuj skopiować pliki do tej lokalizacji.
 
-## Container Setup
+## Konfiguracja kontenera
 
-Mount the following volumes:
+Zamontuj następujące woluminy:
 - Folder multimediów `/root/media`
 - Folder zawierający profil UMS.conf `/root/.config/UMS`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Udostępnij/przekieruj następujące porty z systemu hosta: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Poniższe skrypty spełniają tę funkcję (używając powłoki terminala fish):
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,35 +60,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Rozwiązywanie problemów
 
-### General
+### Ogólne
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Nadal nieumyślnie zatrzymuje kontener po skończonej inspekcji...
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+W celu uzyskania szczegółowych raportów w terminalu: &lt;containerName&gt;echo -e '\nlog_level=ALL' &gt;&gt; UMS.conf</code>
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problemy z montowaniem
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Używając Fedora CoreOS, próbując używać montowania z powiązaniem miałem problemy z uprawnieniami/odmową dostępu.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Zamiast niego można polecić używanie zarządzanych przez Dockera, nazwanych woluminów, lecz w celu uniknięcia tej złożoności zauważyłem, że dodanie `:Z` na końcu opcji deskryptora montowania z powiązaniem pozwala kontenerowi na zapis plików do hosta. Zamiast tego można użyć też `:z`, ale porady dotyczące bezpieczeństwa mogą zalecać utrzymywanie zasobów bardziej odizolowanych między środowiskami aplikacji/usług niż współdzielonych.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Takie same komunikaty błędów są widoczne przy użyciu journalctl, więc jest to problem SELinux. Rozwiązaniem byłoby uruchomienie `chcon -Rt svirt_sandbox_file_t` host_dir, ale wygląda na to, że to również jest odradzane.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Co dziwne, problem nie pojawia się na stacji roboczej z Fedorą. Możliwe, że manualna instalacja dodała pakiet, który sobie z tym radzi. Wygląda na to, że to container-selinux.
 
-## References
+## Źródła
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view

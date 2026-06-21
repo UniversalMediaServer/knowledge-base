@@ -16,9 +16,9 @@ GitHub, geliştiricilerin kendi ince ayarlarını veya özelliklerini eklemek i�
 
 Artık yerel makinenizde yeni deponuz var.
 
-## Development with IDEs
+## IDE’lerle Geliştirme
 
-### [VS Code](https://code.visualstudio.com/)
+### [VS Kodu](https://code.visualstudio.com/)
 
 This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
 

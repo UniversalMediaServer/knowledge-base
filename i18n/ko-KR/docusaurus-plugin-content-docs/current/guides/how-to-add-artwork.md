@@ -1,17 +1,17 @@
-# How to add artwork
+# 아트워크 추가 방법
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+폴더와 재생 목록을 위해 자신만의 아트워크를 추가하여 프론트엔드에 일반적인 기본 이미지 대신 사용자 지정 썸네일을 표시할 수 있습니다.
 
-This guide explains:
+이 가이드는 다음을 설명합니다:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- 지원되는 이미지 형식
+- 아트워크 파일 이름 지정 방법
+- 파일을 저장할 위치
+- 재생 목록 이미지가 누락된 경우 발생하는 일
 
-## Supported image formats
+## 지원되는 이미지 형식
 
-The following file types are supported and checked in this order. The first matching image file is used:
+다음 파일 유형은 이 순서대로 지원되고 확인됩니다. 첫 번째 일치하는 이미지 파일이 사용됩니다:
 
 - `webp`
 - `png`
@@ -20,34 +20,34 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+폴더 아트워크와 재생 목록 아트워크 모두에 이러한 형식 중 하나를 사용할 수 있습니다.
 
-## Folder
+## 폴더
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+폴더의 아트워크를 설정하려면 해당 폴더 안에 'folder.ext'라는 이름의 이미지 파일을 넣습니다.
 
-Replace `.ext` with one of the supported extensions.
+'.ext'를 지원되는 확장자 중 하나로 교체합니다.
 
-Examples:
+예시
 
 - `folder.webp`
 - `folder.jpg`
 - `folder.png`
 
-## Playlists
+## 재생 목록
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+재생 목록의 아트워크를 설정하려면 재생 목록 파일과 동일한 기본 파일 이름을 사용합니다.
 
-Example:
+예시:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- 재생 목록 파일: 'Jazz.m3u8'
+- 아트워크 파일: 'Jazz.jpg' (또는 'Jazz.webp', 'Jazz.png' 등)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+일치하는 재생 목록 아트워크 파일을 찾지 못하면 폴더 아트워크가 폴백으로 사용됩니다.
 
-## Example folder structure
+## 폴더 구조 예시
 
-Use this as a reference:
+이것을 참고 자료로 사용하세요:
 
 ```text
 Music/
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+이 예시에서는:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- 'Music/folder.jpg'는 최상위 'Music' 폴더의 아트워크입니다.
+- 'Music/Jazz/folder.png.png'는 '재즈' 폴더의 아트워크입니다.
+- 'Music/Jazz/Jazz.jpg'는 'Jazz.m3u8' 재생 목록에 사용됩니다.
+- 'Music/Jazz/Smooth.m3u8'에는 일치하는 'Smooth.\*' 이미지가 없으므로 'Jazz' 폴더 아트워크가 사용됩니다.
 

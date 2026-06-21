@@ -1,101 +1,99 @@
-# Development
+# Développement
 
-This document explains how to make and run your own changes.
 
-## Forking the code to your machine
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+## Copiez le code sur votre machine.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+GitHub permet très facilement aux développeurs de créer leur propre version des sources officielles d'UMS afin d'y ajouter leurs propres modifications ou fonctionnalités. GitHub facilite la soumission de ces fonctionnalités sous forme de « Pull Requests » à l'équipe de développement officielle d'UMS.
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+-
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Rendez-vous sur [le dépôt GitHub UMS](https://github.com/universalmediaserver/universalmediaserver) et appuyez sur le bouton `Fork` en haut à droite.
 
-        git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
+- Clonez le nouveau dépôt GitHub sur votre machine locale.  Cela devrait ressembler à ceci :(remplacez VOTRE_NOM par votre nom d'utilisateur GitHub) :
 
-You now have the new repository on your local machine.
+      git clone git@github.com:VOTRENOM/universalmediaserver.git VOTRENOM
 
-## Development with IDEs
 
-### [VS Code](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+## Développement avec IDEs
 
-#### Java server
+### [Code VS](https://code.visualstudio.com/)
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+C'est notre éditeur recommandé car il est excellent pour gérer à la fois Java et TypeScript, nos deux langues principales.
 
-#### Web browser interfaces
+#### Serveur Java
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Lorsque vous aurez ouvert le code, vous verrez probablement quelques recommandations pour des extensions à installer, comme le `Pack d'extension pour Java`. Installez le/les.
+Une fois installé et configuré, vous pouvez lancer le serveur Java en cliquant sur `Exécuter -> Démarrer le débogage` en haut, et le recharger avec `Exécuter -> Redémarrer le débogage`. Ces commandes devraient être terminées en 1 seconde, pour un flux de travail de développement rapide.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+#### Interfaces du navigateur web
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Si vous souhaitez apporter des modifications aux interfaces de notre navigateur Web, vous devrez également exécuter le serveur React, qui s'occupera de compiler et de servir le code TypeScript.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Dans VS Code, vous pouvez accéder à la `Palette de commandes`, filtrer sur `Débogage : Sélectionner et démarrer le débogage` et sélectionner `Lancer l'interface Web`. Il rechargera automatiquement toutes les modifications que vous apportez aux fichiers React.
+
+Pour un flux de travail manuel, vous pouvez aller dans le dossier `react-client` et exécuter `yarn` pour télécharger les dépendances nécessaires. Ensuite, il suffit d'exécuter `yarn dev` qui devrait ouvrir le lecteur web dans le navigateur et compiler automatiquement tous les changements de code que vous effectuez.
+
+Pour l'interface des paramètres web, vous pouvez ouvrir `react-client/package.json` et changer le port proxy de `9002` à `9001`. Maintenant, `yarn dev` devrait servir les paramètres web au lieu du lecteur web.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
-- Install the m2e Eclipse plugin (http://eclipse.org/m2e/)
+- Installez le plugin m2e Eclipse (http://eclipse.org/m2e/)
 
-- Install the EGit Eclipse plugin (http://eclipse.org/egit/)
+- Installer le plugin EGit Eclipse (http://eclipse.org/egit/)
 
-- In Eclipse, select the menu "Window > Show View > Git Repositories". Then
-  select "Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+- Dans Eclipse, sélectionnez le menu "Fenêtre > Afficher la vue > Dépôts Git ". Puis
+  sélectionnez "Fenêtre > Navigation > Afficher le Menu", choisissez "Ajouter un dépôt".
+  Naviguez dans le répertoire où vous avez cloné votre dépôt et appuyez sur le bouton
+  "Rechercher". Sélectionnez votre dépôt dérivé, puis cliquez sur « OK ».
+  Le dépôt devrait apparaître dans la vue des dépôts Git.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Appuyez sur le bouton droit de la souris sur le référentiel et sélectionnez "Importer Maven
+  Projects" dans le menu. Sélectionnez le projet "/pom.xml" et appuyez sur "Terminer".
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Remarque : si un projet portant le même nom existe déjà, cliquez sur "Advanced" et
+  définissez le "Name template" à `[artifactId]-YOURNAME` (remplacez VOTRE NOM par
+  votre nom GitHub). Puis appuyez sur "Terminer".
 
-You now see the sources in Eclipse, but the project is still missing the "Git"
-nature. In other words, it is not tied to the local repository yet. This means
-you cannot perform any Git actions from Eclipse yet. Add the missing connection
-by sharing the project:
+Vous voyez maintenant les sources dans Eclipse, mais le projet manque toujours la nature "Git"
+. En d'autres termes, il n'est pas encore lié au dépôt local. Cela signifie que
+vous ne pouvez pas encore effectuer d’actions Git depuis Eclipse. Ajoutez le lien manquant
+en partageant le projet :
 
-- Press the right mouse button on the newly created project and select the
-  menu "Team > Share Project...". Select "Git" and press "Next >".
-  Check the checkbox "Use or create repository in parent folder of project"
-  and make sure the project is selected. Then press "Finish".
+- Appuyez sur le bouton droit de la souris sur le projet nouvellement créé et sélectionnez le menu
+  "Équipe > Partager le projet...". Sélectionnez "Git" et appuyez sur "Next >".
+  Cochez la case "Utiliser ou créer un dépôt dans le dossier parent du projet"
+  et assurez-vous que le projet est sélectionné. Puis appuyez sur "Terminer".
 
-Verify that your project is now under Git control. Press the right mouse
-button on the project and under "Team" you now see all options to work with
+Vérifiez que votre projet est maintenant sous le contrôle de Git. Appuyez sur le bouton droit de la souris
+sur le projet et sous « Équipe » vous voyez maintenant toutes les options pour travailler avec
 Git.
 
-You can build UMS from Eclipse:
+Vous pouvez construire des UMS depuis Eclipse:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
-  `package`. Select the tab "JRE" and add the following VM arguments
-  `-Xmx1500m -XX:MaxPermSize=256m`. Finally, press the "Apply" button.
+- Créez une nouvelle configuration d'exécution dans « Exécuter > Configurations d'exécution... », cliquez avec le bouton droit
+  de la souris sur « Maven Build », sélectionnez « Nouveau », Nom : `Build UMS`, Objectifs :
+  `package`. Sélectionnez l'onglet "JRE" et ajoutez les arguments VM suivants
+  `-Xmx1500m -XX:MaxPermSize=256m`. Enfin, appuyez sur le bouton « Appliquer ».
 
-You will want to run UMS from Eclipse while developing. This is how you do it:
+Vous voudrez exécuter UMS depuis Eclipse en cours de développement. Voici comment vous le faîtes :
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Run UMS`, Base
-  directory: `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
-  Select the tab "JRE" and add VM arguments `-Xmx1500m -XX:MaxPermSize=256m`.
-  Finally, press the "Apply" button.
+- Créez une nouvelle configuration sous "Exécuter > Exécuter les Configurations... , bouton droit
+  de la souris sur "Maven Build", sélectionnez "New", Nom: `Run UMS`, Répertoire de base
+  : `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
+  Sélectionnez l'onglet "JRE" et ajoutez les arguments VM `-Xmx1500m -XX:MaxPermSize=256m`.
+  Enfin, appuyez sur le bouton « Appliquer ».
 
-You are now ready to start developing!
+Vous êtes maintenant prêt à commencer à développer !
 
-When you are happy with your changes, you can commit them to your local
-repository from Eclipse using right mouse button, "Team > Commit...".
+Lorsque vous êtes satisfait de vos modifications, vous pouvez les soumettre à votre dépôt local
+depuis Eclipse en utilisant le bouton droit de la souris, "Équipe > Commit...".
 
-When you are satisfied with your commits and want to publish them to your
-repository at GitHub, you can press the right mouse button on the project and
-select "Team > Push to Upstream".
+Lorsque vous êtes satisfait de vos modifications et que vous souhaitez les publier sur votre
+dépôt GitHub, vous pouvez cliquer avec le bouton droit de la souris sur le projet et
+sélectionner « Équipe > Envoyer vers le dépôt principal ».
 
-## Contributing your change back to us
+## Contribuer à votre changement
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Si vous souhaitez contribuer au projet UMS, vous pouvez envoyer une "Demande de modification" à l'équipe de développement. Voir [Créer une demande de tirage](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) pour plus de détails.
