@@ -20,9 +20,9 @@ Artık yerel makinenizde yeni deponuz var.
 
 ### [VS Kodu](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Bizim İki ana dilimiz olan Java ve TypeScript’i kullanma konusunda mükemmel olduğundan bu tavsiye ettiğimiz düzenleyicidir.
 
-#### Java server
+#### Java sunucusu
 
 When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
 When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
