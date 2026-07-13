@@ -24,10 +24,10 @@ Bizim İki ana dilimiz olan Java ve TypeScript’i kullanma konusunda mükemmel 
 
 #### Java sunucusu
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Kodu açtığınızda, muhtemelen `Java için Uzantı Paketi` gibi yüklenecek Uzantılar için bazı öneriler göreceksiniz. Bunu/bunları yükleyin.
+Yüklendiğinde ve yapılandırıldığında, Java sunucusunu üstteki `Çalıştır -> Hata Ayıklamayı Başlat` seçeneğine tıklayarak çalıştırabilir ve `Çalıştır -> Hata Ayıklamayı Yeniden Başlat` ile yeniden yükleyebilirsiniz. Hızlı bir geliştirme iş akışı için bu komutların 1 saniye içinde tamamlanması gerekir.
 
-#### Web browser interfaces
+#### Web tarayıcı arayüzleri
 
 If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
 
