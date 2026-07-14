@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# ما الجديد في الاصدار 15
 
-## Overview
+## ملخص
 
 The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
 
-A quick overview of the changes in this version is:
+مراجعة سريعة التغيرات في هذا الاصدار هي:
 
 - A **user switcher** with support for **multiple logged-in users**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
@@ -17,9 +17,9 @@ A quick overview of the changes in this version is:
 - A file **media info** button
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
-## New features
+## المزايا الجديده
 
-### User switcher
+### تغيير المستخدم
 
 You can now be logged in with multiple users in a browser at the same time, and switch between them.
 
