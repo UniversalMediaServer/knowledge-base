@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# ما الجديد في النسخة 15
 
-## Overview
+## ملخص
 
 The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
 
-A quick overview of the changes in this version is:
+مراجعة سريعة التغيرات في هذا الأصدار هي:
 
 - A **user switcher** with support for **multiple logged-in users**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
@@ -17,19 +17,20 @@ A quick overview of the changes in this version is:
 - A file **media info** button
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
-## New features
+## المزايا الجديدة
 
-### User switcher
+### تغيير المستخدم
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+يمكنك الآن الدخول بعده مستخدمين في المتصفح بنفس الوقت، والتغيير بينهم.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+يمكنك أيضا تفعيل أعدادات عرض المستخدمين المتاحين على شاشه الدخول. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
 
 ![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-### Mode switcher
+### وضع التغيير
 
-The web interface has been split into two areas: Player and Settings.
+واجهة الويب تم تقسيمها لمساحتين:
+مشغل و أعدادات .
 
 This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
 
@@ -47,7 +48,7 @@ Seasons of TV shows sometimes have their own data like titles and cover images, 
 
 ![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
-### More
+### أكثر
 
 For a full list of all changes in v15, see [the full changelog](https://github.com/UniversalMediaServer/UniversalMediaServer/blob/main/CHANGELOG.md).
 
