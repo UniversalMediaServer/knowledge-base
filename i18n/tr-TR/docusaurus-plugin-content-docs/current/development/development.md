@@ -29,9 +29,9 @@ Yüklendiğinde ve yapılandırıldığında, Java sunucusunu üstteki `Çalış
 
 #### Web tarayıcı arayüzleri
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Eğer web tarayıcı arayüzlerimizde değişiklik yapmak istiyorsanız, TypeScript kodunun derlenmesi ve sunulmasıyla ilgilenecek olan React sunucusunu da çalıştırmanız gerekecektir.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+VS Kodunda, `Komut Paleti`’ne gidebilir ve `Hata Ayıklama: Hata Ayıklamayı Seç ve Başlat`’ta süzebilir ve `Web arayüzünü başlat`’ı seçebilirsiniz. React dosyalarında yaptığınız değişiklikleri otomatik olarak yeniden yükleyecektir.
 
 For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
 
