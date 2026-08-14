@@ -33,9 +33,9 @@ Eğer web tarayıcı arayüzlerimizde değişiklik yapmak istiyorsanız, TypeScr
 
 VS Kodunda, `Komut Paleti`’ne gidebilir ve `Hata Ayıklama: Hata Ayıklamayı Seç ve Başlat`’ta süzebilir ve `Web arayüzünü başlat`’ı seçebilirsiniz. React dosyalarında yaptığınız değişiklikleri otomatik olarak yeniden yükleyecektir.
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Elle bir iş akışı için `react-client` klasörüne gidebilir ve gerekli bağımlılıkları indirmek için `yarn` komutunu çalıştırabilirsiniz. Daha sonra web oynatıcısını tarayıcıda açacak ve yaptığınız kod değişikliklerini otomatik olarak derleyecek olan `yarn dev` komutunu çalıştırın.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Web ayarları arayüzü için `react-client/package.json` dosyasını açabilir ve proksi bağlantı noktasını `9002`’den `9001`’e değiştirebilirsiniz. Artık `yarn dev`, web oynatıcısı yerine web ayarlarına hizmet etmelidir.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
