@@ -2,69 +2,69 @@
 sidebar_position: 4
 ---
 
-# History
+# Geschiedenis
 
-## Overview
+## Overzicht
 
-We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
+We zijn in 2012 begonnen als fork van PS3 Media Server, een van de populairste en hooggewaardeerde mediaservers in de buurt. Onze oprichter SubJunk was ook een ontwikkelaar van dat project. In die tijd was het gewoon een DLNA-mediaserver, met een veel eenvoudiger GUI en functies.
 
-It did its simple job well, but we have taken UMS in new directions, and to new heights.
+Het heeft zijn eenvoudige werk goed gedaan, maar we hebben UMS in nieuwe richtingen geleid, en naar nieuwe hoogten.
 
-Here are some highlights of the journey:
+Hier zijn enkele hoogtepunten van de reis:
 
-## Previous Versions
+## Eerdere versies
 
 ### v14 (2022-12-13)
 
-The biggest changes here involved the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices and media players/renderers.
+De grootste veranderingen hier betroffen de mogelijkheid om toegang tot uw inhoud te beheren. Dit omvat verbeteringen aan gebruikersaccounts zoals avatars en afspeelstatus per gebruiker, evenals de mogelijkheid om verschillende inhoud weer te geven aan verschillende apparaten en mediaspelers/spelers.
 
-![Example of blocking a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Voorbeeld van het blokkeren van een renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-We also added the ability to add a TMDB API key to manually add and edit metadata for TV series and videos, and to mark TV series and movies as fully played.
+We hebben ook de mogelijkheid toegevoegd om een TMDB API-sleutel voor het handmatig toevoegen en bewerken van metadata voor Tv-series en video's, en om Tv-series en films te markeren als volledig afgespeeld.
 
-![Example of editing metadata](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Voorbeeld van bewerken metagegevens (@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-[See more details on the What's New page](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+[Bekijk meer details op de wat is nieuw pagina](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
 ### v13 (2022-12-13)
 
-This release was all about 3D and virtual reality, led by the contributor threedguru.
+Deze release was alles over 3D en virtuele realiteit, geleid door de bijdrager threedguru.
 
-![Shared content](@site/docs/img/history-v13.png)
+![Gedeelde inhoud](@site/docs/img/history-v13.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v12 (2022-11-29)
 
-This was a complete rewrite of our GUI using modern tooling in the web browser, with huge effort by SurfaceS and js-kyle.
+Dit was een complete herschrijving van onze GUI met behulp van moderne gereedschappen in de webbrowser, met enorme inspanningen van SurfaceS en js-kyle.
 
-This also introduced the concept of authentication, users and groups.
+Hiermee werd ook het concept van authenticatie, gebruikers en groepen geïntroduceerd.
 
-![Authentication](@site/docs/img/history-v12-1.png)
+![Authenticatie](@site/docs/img/history-v12-1.png)
 
-Another change is that the Shared Content area has been unified, where before it was split between local and web content, now they are in the same list.
+Een andere wijziging is dat gedeelde inhoud is verenigd, waar voordat het werd opgesplitst tussen lokale en webinhoud staan ze nu in dezelfde lijst.
 
-![Shared content](@site/docs/img/history-v12-2.png)
+![Gedeelde inhoud](@site/docs/img/history-v12-2.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
 
 ### v11 (2022-05-27)
 
-We improved the web interface in many ways, including more rich data like logos and backgrounds to TV series, movies and episodes, improved device detection, improved network state detection/recovery, video playback and seeking, improved API metadata matching, HLS transcoding for all devices, and more!
+We hebben de webinterface op vele manieren verbeterd, inclusief rijkere data zoals logo's en achtergronden voor TV-series, films en afleveringen, verbeterde detectie van het apparaat, verbeterde netwerkstatus detectie/herstel, video afspelen en zoeken, verbeterde API metadata overeenkomen, HLS transcoding voor alle apparaten, en meer!
 
-![Web interface overview](@site/docs/img/history-v11.gif)
+![Web interface overzicht](@site/docs/img/history-v11.gif)
 
-This was our first version with our new superstar developer, SurfaceS, who put a lot into this release.
+Dit was onze eerste versie met onze nieuwe superster ontwikkelaar, SurfaceS, die veel in deze release heeft gestopt.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
 
 ### v10 (2021-01-12)
 
-Here we focused on making our rich metadata more useful.
+Hier hebben we ons gericht op het nuttiger maken van onze rijke metagegevens.
 
-We added new folders to the Media Library, including "Filter by Information", which lets you browse the videos by actor, genre, country, director, IMDb rating, and release date.
+We hebben nieuwe mappen aan de Media Bibliotheek toegevoegd, inclusief "Filter op informatie", waarmee u door de video's kunt bladeren op speler, genre, land, directeur, IMDB-beoordeling en verschijningsdatum.
 
-The web interface got a lot more functionality by letting you click on an item like an actor or genre of a video to see other matches for that person or genre (or other metadata). We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
+Het webinterface heeft veel meer functionaliteit door u op een item als een acteur of genre van een video te laten klikken om andere overeenkomsten voor die persoon of genre (of andere metadata) te zien. We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
 
 Thumbnails for TV series now have the fully played icon if all episodes have been fully played:
 
