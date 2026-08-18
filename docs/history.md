@@ -14,7 +14,7 @@ Here are some highlights of the journey:
 
 ## Previous Versions
 
-### v14 - 2022-12-13
+### v14 (2022-12-13)
 
 The biggest changes here involved the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices and media players/renderers.
 
@@ -26,7 +26,7 @@ We also added the ability to add a TMDB API key to manually add and edit metadat
 
 [See more details on the What's New page](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
-### v13 - 2022-12-13
+### v13 (2022-12-13)
 
 This release was all about 3D and virtual reality, led by the contributor threedguru.
 
@@ -34,7 +34,7 @@ This release was all about 3D and virtual reality, led by the contributor threed
 
 [See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
-### v12 - 2022-11-29
+### v12 (2022-11-29)
 
 This was a complete rewrite of our GUI using modern tooling in the web browser, with huge effort by SurfaceS and js-kyle.
 
@@ -48,7 +48,7 @@ Another change is that the Shared Content area has been unified, where before it
 
 [See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
 
-### v11 - 2022-05-27
+### v11 (2022-05-27)
 
 We improved the web interface in many ways, including more rich data like logos and backgrounds to TV series, movies and episodes, improved device detection, improved network state detection/recovery, video playback and seeking, improved API metadata matching, HLS transcoding for all devices, and more!
 
@@ -58,7 +58,7 @@ This was our first version with our new superstar developer, SurfaceS, who put a
 
 [See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
 
-### v10 - 2021-01-12
+### v10 (2021-01-12)
 
 Here we focused on making our rich metadata more useful.
 
