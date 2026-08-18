@@ -98,21 +98,21 @@ Olimme myös onnekkaita että mik_s, meidän foorumi moderaattori, liittyi meihi
 
 ### v6 (2016-01-30)
 
-Here we added the "Fully played action" with overlay icons and file management, which was highly-anticipated.
+Täällä lisäsimme "Täysin soitettu toiminta"-kuvakkeet ja tiedostojen hallinta, joka oli hyvin odotettu ominaisuus.
 
-We also welcomed Nadahar to the team, who improved stability, logging and language support.
+Toivotimme myös Nadaharin tervetulleeksi joukkueeseen, joka paransi vakautta, lokitusta ja kielitukea.
 
-Thanks to his Crowdin integration, we have had 523 contributors to our 40 languages!
+Kiitos hänen Crowdin integraation, meillä on ollut 523 osallistujaa meidän 40 kieleen!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
 
 ### v5 (2015-01-25)
 
-In this release, we added support for UPnP connections and playback, which meant that the community were able to connect to many more devices! Thanks largely to skeptical for that.
+Tässä julkaisussa lisäsimme tuen UPnP-yhteyksille ja toistolle, mikä tarkoitti sitä, että yhteisö pystyi yhdistämään monia muita laitteita! Käyttäjä skepticalia saadaan kiittää tästä.
 
-We also added our first pass at IMDb metadata, but we didn't yet have our own API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+Lisäsimme myös ensimmäisen version IMDb metatiedoista, mutta meillä ei vielä ollut omaa APIa. Meidän pitää kiittää OpenSubtitles tästä, ja pahoittelemme kaikkia pyyntöjä, joita tapahtui noina päivinä!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
 ### v4 (2014-07-25)
 
