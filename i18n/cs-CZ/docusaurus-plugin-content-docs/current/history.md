@@ -110,7 +110,7 @@ Díky jeho Crowdin integraci jsme měli 523 přispěvatelů do našich 40 jazyk�
 
 V této verzi jsme přidali podporu pro připojení a přehrávání UPnP, což znamenalo, že se komunita mohla připojit k mnoha dalším zařízením! Velice díky skeptical za to.
 
-Také jsme přidali naše první hledání v metadatech IMDb, ale ještě jsme neměli vlastní API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+Také jsme přidali naše první hledání v metadatech IMDb, ale ještě jsme neměli vlastní API. Máme OpenSubtitles za což děkujeme, a omlouváme se za všechny spamujíci požadavky v těchto dnech!
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
@@ -124,34 +124,34 @@ Přidali jsme také podporu pro obsazení a možnost převést zvuk do formátu 
 
 ### v3 (2013-11-01),
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+V3 byla obrovská verze a právě v té době jsme začali od PS3MS stahovat tuny vlastních funkcí.
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+Přidali jsme nové složky médií a nedávno přehrávané složky, obnovení přehrávání, pojmenování souborů a průvodce nastavením spouštěče.
 
-We also welcomed valib to the team, who is still contributing today!
+Také jsme uvítali v týmu valib, který dodnes přispívá!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
-### v2 (2012-10-31)
+### v2 (2012-10-31),
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+S v2 přišlo přidání záložky Plugin Management které se připojily k naší centralizované databázi pluginů, a opět jsme byli první, kdo zavedl nějaký prvek; Živé titulky, kde můžete streamovat titulky on-the-fly do vašeho zařízení.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
-### v1 (2012-05-31)
+### v1 (2012-05-31),
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+Tyto rané verze se zaměřily na "univerzální" aspekt nového programu přidáním podpory pro desítky nových zařízení.
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+Byli jsme také první media server který podpořil smooth motion, frame-interpolation rozšíření, které teď má každá TV, ovšem tehdy to byla novinka v high-end televizích.
 
-Our second developer, SharkHunter, also joined us within the first few days.
+Náš druhý vývojář, SharkHunter, se k nám také připojil během několika prvních dnů.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+[Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
 
 ### PS3 Media Server (2008)
 
-The project that started it all! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Projekt, který to všechno zahájil! Jsme větev tohoto projektu, který byl zahájen v roce 2008 shagratem ke kterému se krátce připojil SubJunk, zakladatel Universal Media Server.
 
-The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
+PS3 byl skvělý stroj pro přehrávání médií, ale nepodporoval mnoho video formátů, takže PS3 Media Server použil spoustu triků, aby přehrál jakékoli video. Uplatnili jsme stejnou strategii pro všechna zařízení a přehrávače.
 
 ![PS3 Media Server](@site/docs/img/history-pms.png)
