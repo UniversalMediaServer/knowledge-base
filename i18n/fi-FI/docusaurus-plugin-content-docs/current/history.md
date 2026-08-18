@@ -2,49 +2,49 @@
 sidebar_position: 4
 ---
 
-# History
+# Historia
 
-## Overview
+## Yhteenveto
 
-We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
+Aloitimme vuonna 2012 PS3 Media Serverin haarautumana, joka oli yksi suosituimmista ja arvostetuimmista mediapalvelimista. Perustajamme SubJunk oli myös tuon projektin kehittäjä. Tuolloin se oli yksinkertaisesti DLNA-mediapalvelin, jolla oli paljon yksinkertaisempi GUI ja yksinkertaisemmat ominaisuudet.
 
-It did its simple job well, but we have taken UMS in new directions, and to new heights.
+Se teki yksinkertaisen työnsä hyvin, mutta olemme ottaneet UMS:n uusiin suuntiin ja uusiin korkeuksiin.
 
-Here are some highlights of the journey:
+Tässä matkan muutamia kohokohtia:
 
-## Previous Versions
+## Edelliset versiot
 
-### v14 (2022-12-13)
+### v14 (2022–12–13)
 
-The biggest changes here involved the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices and media players/renderers.
+Suurimmat muutokset liittyvät kykyyn hallita sisällön käyttöoikeutta. Tämä sisältää parannuksia käyttäjätileihin, kuten käyttäjäkuvakkeet ja käyttäjäkohtainen soiton tila. Sen lisäksi on mahdollista soittaa eri sisältöä eri laitteisiin.
 
-![Example of blocking a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Esimerkki laitteen estämisestä](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-We also added the ability to add a TMDB API key to manually add and edit metadata for TV series and videos, and to mark TV series and movies as fully played.
+Lisäsimme myös mahdollisuuden lisätä TMDB API-avain käsin lisätäkseen ja muokatakseen metatietoja TV-sarjoihin ja videoihin, ja merkitä tv-sarjat ja elokuvat täysin soitetuksi.
 
-![Example of editing metadata](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Esimerkki metatietojen muokkauksesta](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-[See more details on the What's New page](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+[Katso lisätietoja uutta-sivulta](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
 ### v13 (2022-12-13)
 
-This release was all about 3D and virtual reality, led by the contributor threedguru.
+Tämä julkaisu keskittyi 3D-ja virtuaalitodellisuuteen, jota johti osallistuja threedguru.
 
-![Shared content](@site/docs/img/history-v13.png)
+![Jaettu sisältö](@site/docs/img/history-v13.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
+[Katso lisätietoja julkaisuilmoituksessa](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v12 (2022-11-29)
 
-This was a complete rewrite of our GUI using modern tooling in the web browser, with huge effort by SurfaceS and js-kyle.
+Tämä oli täydellinen GUIn uudelleenkirjoitus käyttäen nykyaikaisia työkaluja selaimessa, suurta ponnistusta johti SurfaceS ja js-kyle.
 
-This also introduced the concept of authentication, users and groups.
+Tässä versiossa otettiin käyttöön myös todentaminen, käyttäjien ja ryhmien käsite.
 
-![Authentication](@site/docs/img/history-v12-1.png)
+![Todentaminen](@site/docs/img/history-v12-1.png)
 
-Another change is that the Shared Content area has been unified, where before it was split between local and web content, now they are in the same list.
+Toinen muutos oli se, että Jaettu sisältö-alue oli yhtenäistetty, ennen ne jaettiin paikallisen sisällön ja web-sisällön välillä, nyt ne ovat samassa luettelossa.
 
-![Shared content](@site/docs/img/history-v12-2.png)
+![Jaettu sisältö](@site/docs/img/history-v12-2.png)
 
 [See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
 
