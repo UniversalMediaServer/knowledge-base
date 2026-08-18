@@ -64,94 +64,94 @@ Hier hebben we ons gericht op het nuttiger maken van onze rijke metagegevens.
 
 We hebben nieuwe mappen aan de Media Bibliotheek toegevoegd, inclusief "Filter op informatie", waarmee u door de video's kunt bladeren op speler, genre, land, directeur, IMDB-beoordeling en verschijningsdatum.
 
-Het webinterface heeft veel meer functionaliteit door u op een item als een acteur of genre van een video te laten klikken om andere overeenkomsten voor die persoon of genre (of andere metadata) te zien. We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
+De webinterface heeft veel meer functionaliteit door u op een item als een acteur of genre van een video te laten klikken om andere overeenkomsten voor die persoon of genre (of andere metadata) te zien. We hebben wat snelle links aan de voorpagina van de webinterface toegevoegd, zoals onlangs toegevoegd, in uitvoering, Meest Afgespeeld, etc.
 
-Thumbnails for TV series now have the fully played icon if all episodes have been fully played:
+Miniaturen voor de Tv-serie hebben nu het volledig afgespeelde icoon als alle afleveringen volledig zijn afgespeeld:
 
-![Fully played TV series](@site/docs/img/history-v10.png)
+![Volledig afgespeelde TV-series](@site/docs/img/history-v10.png)
 
-We also welcomed ik666 to the development team, who has added a new API for integrations, and greatly improved UPnP support.
+We hebben ook ik666 verwelkomd bij het ontwikkelingsteam, dat een nieuwe API voor integraties heeft toegevoegd en de UPnP-ondersteuning aanzienlijk heeft verbeterd.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
 
 ### v9 (2019-09-06)
 
-No need to install Java anymore!
+Geen noodzaak meer om Java te installeren!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
 
 ### v8 (2019-03-29)
 
-This version focused on making it easier to enjoy streaming web content like vodcasts, podcasts, internet radio, YouTube channels, and other streaming web content by adding the Shared Content tab.
+Deze versie was erop gericht om gemakkelijker te kunnen genieten van streaming webcontent zoals vodcasts, podcasts, internetradio, YouTube-kanalen en andere streamingwebinhoud door het tabblad Gedeelde Content toe te voegen.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
 
 ### v7 (2018-03-27)
 
-This was the version to focus on our dynamic media browsing features with the Media Library folder.
+Dit was de versie om te focussen op onze dynamische media browsen functies in de Media Bibliotheek map.
 
-We added detection of Movies and TV series and also added folder-watching so files could be automatically detected in shared folders
+We hebben de detectie van Films en Tv-series toegevoegd en ook mapbewaking toegevoegd zodat bestanden automatisch konden worden gedetecteerd in gedeelde mappen
 
-We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
+We hadden ook het geluk dat mik_s, onze forummoderator, rond deze tijd bij ons aansloot, die geweldig werk doet rond deze plek!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
 
 ### v6 (2016-01-30)
 
-Here we added the "Fully played action" with overlay icons and file management, which was highly-anticipated.
+Hier hebben we de "Volledig afgespeelde actie" toegevoegd met overlay iconen en bestandsbeheer, waar zeer op werd geanticipeerd.
 
-We also welcomed Nadahar to the team, who improved stability, logging and language support.
+We hebben ook Nadahar verwelkomd in het team, die de stabiliteit, de logboekregistratie en de taalondersteuning heeft verbeterd.
 
-Thanks to his Crowdin integration, we have had 523 contributors to our 40 languages!
+Dankzij zijn Crowdin-integratie hebben we 523 bijdragers in onze 40 talen gehad!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
 
 ### v5 (2015-01-25)
 
-In this release, we added support for UPnP connections and playback, which meant that the community were able to connect to many more devices! Thanks largely to skeptical for that.
+In deze versie hebben we ondersteuning voor UPnP verbindingen en afspelen toegevoegd, wat betekende dat de gemeenschap verbinding kon maken met nog veel meer apparaten! Daarvoor is skeptical grotendeels te danken.
 
-We also added our first pass at IMDb metadata, but we didn't yet have our own API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+We hebben ook een eerste opzet voor IMDb-metadata toegevoegd, maar we beschikten nog niet over een eigen API. We hebben dit te danken aan OpenSubtitles, en onze excuses voor alle spam aanvragen uit die tijd.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
 ### v4 (2014-07-25)
 
-The first web interface was added, finally we gave the UMS community the ability to access content via their web browsers!
+De eerste webinterface is toegevoegd, eindelijk heeft de UMS-gemeenschap de mogelijkheid gegeven om via hun webbrowser toegang te krijgen tot inhoud!
 
-We also added support for casting, and the ability to transcode to AAC.
+We hebben ook ondersteuning voor casten toegevoegd en de mogelijkheid om te transcoderen naar AAC.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
 
 ### v3 (2013-11-01)
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+V3 was een enorme uitgave; op dat moment begonnen we ons echt te onderscheiden van PS3MS met talloze eigen functies.
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+We hebben de Nieuwe Media en onlangs afgespeelde mappen toegevoegd, het afspelen hervatten, bestandsnaam verfraaiing en een configuratiewizard voor het opstarten.
 
-We also welcomed valib to the team, who is still contributing today!
+We verwelkomden ook valib tot het team, die tot de dag van vandaag nog steeds deelneemt!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
 ### v2 (2012-10-31)
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+Met v2 kwam de toevoeging van het tabblad Plug-in Beheer dat verbonden is met onze gecentraliseerde plug-in database, en weer waren wij de eersten die een functie hebben geïntroduceerd; Live ondertiteling, waarmee je ondertitels direct vanuit je speler kunt streamen.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
 ### v1 (2012-05-31)
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+Deze vroege versies waren gericht op het "universeel" aspect van het nieuwe programma, door ondersteuning toe te voegen voor tientallen nieuwe apparaten.
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+We waren ook de eerste mediaserver die smooth motion ondersteunde, een functie voor frame-interpolatie die nu elke TV ondersteund, maar toen alleen in nieuwe, hoogwaardige tv's.
 
-Our second developer, SharkHunter, also joined us within the first few days.
+Onze tweede ontwikkelaar, SharkHunter, heeft zich ook bij ons gevoegd in de eerste paar dagen.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+[Meer informatie bekijken in de release aankondiging](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
 
 ### PS3 Media Server (2008)
 
-The project that started it all! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Het project waarmee het allemaal mee begon! Wij zijn een fork van dat project, dat in 2008 werd gestart door shagrath, bij wie zich kort daarna SubJunk, de oprichter van Universal Media Server aansloot.
 
-The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
+De PS3 was een geweldige machine voor het afspelen van media, maar het  ondersteunde niet veel videoformaten, waardoor PS3 Media Server veel trucs gebruikte iedere video af te spelen die je wilde afspelen. We hebben dezelfde strategie toegepast voor alle apparaten en spelers.
 
 ![PS3 Media Server](@site/docs/img/history-pms.png)
