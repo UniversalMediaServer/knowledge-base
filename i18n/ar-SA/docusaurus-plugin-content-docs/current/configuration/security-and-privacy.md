@@ -1,6 +1,6 @@
-# Security and Privacy
+# الحمايه و الخصوصيه
 
-## Introduction
+## مقدمه
 
 UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
 

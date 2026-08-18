@@ -1,28 +1,28 @@
 # Audio Addict Network Radio
 
-The **Audio Addict Network** is a collection of premium internet radio stations, including:
+**Audio Addict Network** je súbor prémiových internetových rádiových staníc, medzi ktoré patria:
 
 Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+Na prístup k týmto rozhlasovým staniciam je potrebný platený **prémiový účet**. Stačí sa zaregistrovať len na jednej z týchto stránok, pretože s rovnakým používateľským menom a heslom získate prístup ku všetkým.
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS automaticky načítava všetky dostupné rádiové stránky AudioAddict, ich kanály a filtre. Podporovaný je aj kanál **Obľúbené**.
 
-## Configuration
+## Nastavenie
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+Ak chcete aktivovať podporu AudioAddict, pridajte do súboru `UMS.conf` nasledujúce riadky:
 
 ```
-# TRUE = prefer European streaming server
-audio_addict_europe = TRUE or FALSE
+# TRUE = uprednostňujem európsky streamovací server
+audio_addict_europe = TRUE alebo FALSE
 
-# Your username
+# Vaše používateľské meno
 audio_addict_user = USERNAME
 
-# Your password
+# Vaše heslo
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## Umiestnenie
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+Priečinok **Audio Addict Radio Network** sa nachádza vo vašej mediálnej knižnici. Odtiaľ môžete priamo prehliadať a prepínať medzi všetkými dostupnými stanicami.

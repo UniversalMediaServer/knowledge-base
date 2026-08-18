@@ -20,22 +20,22 @@ Artık yerel makinenizde yeni deponuz var.
 
 ### [VS Kodu](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Bizim İki ana dilimiz olan Java ve TypeScript’i kullanma konusunda mükemmel olduğundan bu tavsiye ettiğimiz düzenleyicidir.
 
-#### Java server
+#### Java sunucusu
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Kodu açtığınızda, muhtemelen `Java için Uzantı Paketi` gibi yüklenecek Uzantılar için bazı öneriler göreceksiniz. Bunu/bunları yükleyin.
+Yüklendiğinde ve yapılandırıldığında, Java sunucusunu üstteki `Çalıştır -> Hata Ayıklamayı Başlat` seçeneğine tıklayarak çalıştırabilir ve `Çalıştır -> Hata Ayıklamayı Yeniden Başlat` ile yeniden yükleyebilirsiniz. Hızlı bir geliştirme iş akışı için bu komutların 1 saniye içinde tamamlanması gerekir.
 
-#### Web browser interfaces
+#### Web tarayıcı arayüzleri
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Eğer web tarayıcı arayüzlerimizde değişiklik yapmak istiyorsanız, TypeScript kodunun derlenmesi ve sunulmasıyla ilgilenecek olan React sunucusunu da çalıştırmanız gerekecektir.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+VS Kodunda, `Komut Paleti`’ne gidebilir ve `Hata Ayıklama: Hata Ayıklamayı Seç ve Başlat`’ta süzebilir ve `Web arayüzünü başlat`’ı seçebilirsiniz. React dosyalarında yaptığınız değişiklikleri otomatik olarak yeniden yükleyecektir.
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Elle bir iş akışı için `react-client` klasörüne gidebilir ve gerekli bağımlılıkları indirmek için `yarn` komutunu çalıştırabilirsiniz. Daha sonra web oynatıcısını tarayıcıda açacak ve yaptığınız kod değişikliklerini otomatik olarak derleyecek olan `yarn dev` komutunu çalıştırın.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Web ayarları arayüzü için `react-client/package.json` dosyasını açabilir ve proksi bağlantı noktasını `9002`’den `9001`’e değiştirebilirsiniz. Artık `yarn dev`, web oynatıcısı yerine web ayarlarına hizmet etmelidir.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
