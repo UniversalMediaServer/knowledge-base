@@ -116,21 +116,21 @@ Lisäsimme myös ensimmäisen version IMDb metatiedoista, mutta meillä ei viel�
 
 ### v4 (2014-07-25)
 
-The first web interface was added, finally we gave the UMS community the ability to access content via their web browsers!
+Ensimmäinen web-käyttöliittymä lisättiin, lopulta annoimme UMS-yhteisölle mahdollisuuden käyttää sisältöä verkkoselaimilla!
 
-We also added support for casting, and the ability to transcode to AAC.
+Lisäsimme myös etätoiston tukemisen ja mahdollisuuden transkoodata AAC:lle.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
 
 ### v3 (2013-11-01)
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+V3 oli valtava julkaisu ja on kun aloimme todella eriytyä PS3MS:tä, siinä oli paljon uusia omia ominaisuuksia.
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+Lisäsimme uudet mediatiedostot ja äskettäin soitetut kansiot, toiston jatkaminen, tiedostonimen kaunistaminen ja asetus-velhon käynnistyksessä.
 
-We also welcomed valib to the team, who is still contributing today!
+Toivotimme myös valibin tervetulleeksi joukkueeseen, joka osallistuu edelleen tänään!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
 ### v2 (2012-10-31)
 
@@ -140,13 +140,13 @@ V2 tuli lisäyksenä Liitännäisen hallinta-välilehti, joka liittyy meidän ke
 
 ### v1 (2012-05-31)
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+Nämä varhaiset versiot keskittyivät uuden ohjelman "universaalisiin" puoleen lisäämällä tuki kymmenille uusille laitteille.
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+Olimme myös ensimmäinen mediapalvelin tukemaan sujuvaa liikettä, ruutu-interpolointi ominaisuus, joka on nykyään jokaisen TV:n mukana, mutta silloin se oli vain uusissa, korkean tason TV:ssä.
 
-Our second developer, SharkHunter, also joined us within the first few days.
+Myös toinen kehittäjämme, SharkHunter, liittyi meihin ensimmäisten päivien aikana.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
 
 ### PS3 Media Server (2008)
 
