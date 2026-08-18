@@ -82,19 +82,19 @@ Ei tarvitse enää asentaa Javaa!
 
 ### v8 (2019-03-29)
 
-This version focused on making it easier to enjoy streaming web content like vodcasts, podcasts, internet radio, YouTube channels, and other streaming web content by adding the Shared Content tab.
+Tämä versio keskittyi tekemään helpommaksi nauttia suoratoistoverkkosisällöstä, kuten vodcastit, podcastit, internet-radio, YouTube-kanavat ja muu suoratoistoverkkosisältö lisäämällä Jaetun sisällön välilehden.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+[Katso lisätietoja julkaisuilmoituksessa](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
 
 ### v7 (2018-03-27)
 
-This was the version to focus on our dynamic media browsing features with the Media Library folder.
+Tämä oli versio, jossa keskityttiin dynaamiseen mediaselausominaisuuksiimme Media Library -hakemiston avulla.
 
 Lisäsimme elokuvien ja tv-sarjojen havaitsemisen ja lisäsimme myös kansion seuraamisen jotta tiedostot voidaan automaattisesti havaita jaetuissa kansioissa
 
-We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
+Olimme myös onnekkaita että mik_s, meidän foorumi moderaattori, liittyi meihin noin tällä kertaa, joka tekee hämmästyttävää työtä!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
 
 ### v6 (2016-01-30)
 
@@ -134,9 +134,9 @@ We also welcomed valib to the team, who is still contributing today!
 
 ### v2 (2012-10-31)
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+V2 tuli lisäyksenä Liitännäisen hallinta-välilehti, joka liittyy meidän keskitettyyn liitännäis-tietokantaan. Ensimmäisenä ottettiin käyttöön ominaisuus; Live Tekstitys, jossa voit suoratoistaa tekstityksiä lennossa renderoijaltasi.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
 ### v1 (2012-05-31)
 
@@ -150,8 +150,8 @@ Our second developer, SharkHunter, also joined us within the first few days.
 
 ### PS3 Media Server (2008)
 
-Projekti joka aloitti kaiken! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Projekti joka aloitti kaiken! Olemme haarautuma sille hankkeelle, jonka aloitti shagrath vuonna 2008, pian mukaan liittyi SubJunk, Universal Media Serverin perustaja.
 
-The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
+PS3 oli hieno kone median pelaamiseen, mutta se ei tukenut monia videoformaatteja. joten PS3 Media Server käytti paljon temppuja, jotta se voisi toistaa minkä tahansa videon. Olemme soveltaneet samaa strategiaa kaikkiin laitteisiin ja soittimiin.
 
 ![PS3 Media Server](@site/docs/img/history-v13.png)
