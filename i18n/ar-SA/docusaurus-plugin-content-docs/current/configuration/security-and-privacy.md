@@ -70,7 +70,7 @@ Any configuration property can also be set on a per-device basis by creating a c
 
 For example, to customize the kids' TV:
 - Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
--
+- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
 ```
 #----------------------------------------------------------------------------
 # Custom Device profile
