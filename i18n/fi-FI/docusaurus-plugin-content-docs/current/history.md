@@ -46,39 +46,39 @@ Toinen muutos oli se, että Jaettu sisältö-alue oli yhtenäistetty, ennen ne j
 
 ![Jaettu sisältö](@site/docs/img/history-v12-2.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
 
 ### v11 (2022-05-27)
 
-We improved the web interface in many ways, including more rich data like logos and backgrounds to TV series, movies and episodes, improved device detection, improved network state detection/recovery, video playback and seeking, improved API metadata matching, HLS transcoding for all devices, and more!
+Paransimme web-rajapintaa monin tavoin, mukaan lukien rikkaat tiedot, kuten logot ja taustat tv-sarjoihin, elokuviin ja jaksoihin. Parannettu laitteen tunnistamista, parannettu verkkotilan tunnistusta / palautusta, videon toistoa ja etsimistä, parannettu API-metadatan yhdistämistä, HLS-transkoodaus kaikille laitteille ja paljon muuta!
 
-![Web interface overview](@site/docs/img/history-v11.gif)
+![Verkkokäyttöliittymän yleisnäkymä](@site/docs/img/history-v11.gif)
 
-This was our first version with our new superstar developer, SurfaceS, who put a lot into this release.
+Tämä oli ensimmäinen versio, jossa oli mukana uusi supertähti-kehittäjä, SurfaceS, joka lisäsi paljon tähän versioon.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
 
 ### v10 (2021-01-12)
 
-Here we focused on making our rich metadata more useful.
+Tässä keskityimme tekemään rikkaasta metadatasta hyödyllisempää.
 
-We added new folders to the Media Library, including "Filter by Information", which lets you browse the videos by actor, genre, country, director, IMDb rating, and release date.
+Lisäsimme uusia kansioita Media Kirjastoon, mukaan lukien "Suodata tiedon mukaan", jonka avulla voit selata videoita näyttelijän, genren, maan, ohjaajan, IMDb-luokituksen ja julkaisupäivämäärän mukaan.
 
-The web interface got a lot more functionality by letting you click on an item like an actor or genre of a video to see other matches for that person or genre (or other metadata). We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
+Web-käyttöliittymä sai paljon enemmän toiminnallisuutta antamalla sinun klikkata videon tietoja, kuten näyttelijä tai genre, nähdääksesi muita videoita kyseiseltä henkilöltä tai genrelle (tai muita metatietoja). Lisäsimme joitan pikalinkkejä verkko-käyttöliittymän etusivulle, kuten vasta lisätty, kesken olevat videot, eniten soitetut, jne.
 
-Thumbnails for TV series now have the fully played icon if all episodes have been fully played:
+TV-sarjan pikkukuvissa ovat nyt täysin soitettu kuvake, jos kaikki jaksot ovat täysin soitettu:
 
-![Fully played TV series](@site/docs/img/history-v10.png)
+![Täysin soitetut TV-sarjat](@site/docs/img/history-v10.png)
 
-We also welcomed ik666 to the development team, who has added a new API for integrations, and greatly improved UPnP support.
+Toivotimme myös ik666:n tervetulleeksi kehitysryhmään, joka on lisännyt uuden sovellusrajapinnan integraatioille ja parantanut huomattavasti UPnP-tukea.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
 
 ### v9 (2019-09-06)
 
-No need to install Java anymore!
+Ei tarvitse enää asentaa Javaa!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
 
 ### v8 (2019-03-29)
 
@@ -90,7 +90,7 @@ This version focused on making it easier to enjoy streaming web content like vod
 
 This was the version to focus on our dynamic media browsing features with the Media Library folder.
 
-We added detection of Movies and TV series and also added folder-watching so files could be automatically detected in shared folders
+Lisäsimme elokuvien ja tv-sarjojen havaitsemisen ja lisäsimme myös kansion seuraamisen jotta tiedostot voidaan automaattisesti havaita jaetuissa kansioissa
 
 We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
 
@@ -150,8 +150,8 @@ Our second developer, SharkHunter, also joined us within the first few days.
 
 ### PS3 Media Server (2008)
 
-The project that started it all! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Projekti joka aloitti kaiken! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
 
 The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
 
-![PS3 Media Server](@site/docs/img/history-pms.png)
+![PS3 Media Server](@site/docs/img/history-v13.png)
