@@ -154,4 +154,4 @@ Projekti joka aloitti kaiken! Olemme haarautuma sille hankkeelle, jonka aloitti 
 
 PS3 oli hieno kone median pelaamiseen, mutta se ei tukenut monia videoformaatteja. joten PS3 Media Server käytti paljon temppuja, jotta se voisi toistaa minkä tahansa videon. Olemme soveltaneet samaa strategiaa kaikkiin laitteisiin ja soittimiin.
 
-![PS3 Media Server](@site/docs/img/history-v13.png)
+![PS3 Media Server](@site/docs/img/history-pms.png)
