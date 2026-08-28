@@ -44,47 +44,47 @@ RemoteService umsServicesService = remoteDevice.findService(
 
 ### LikeAlbum
 
-Отмечает музыкальный альбом как понравившийся.
+Отмечает альбом как понравившийся.
 
 ### DislikeAlbum
 
-Удаляет отметку «понравившийся» у музыкального альбома.
+Убирает альбом из понравившихся.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Проверяет, отмечен ли альбом в данный момент как понравившийся. Если указаны оба ID— MusicBrainz и Discogs, — метод возвращает `true`, если хотя бы один из ID отмечен как понравившийся.
 
 ## Backup Actions
 
-The service provides backup and restore actions.
+Служба предоставляет действия для резервного копирования и восстановления.
 
 :::info
-A backup must be created before a restore can be performed.
+Перед восстановлением необходимо создать резервную копию.
 :::
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Создаёт резервную копию таблицы понравившихся аудиоальбомов, идентифицируемых по MusicBrainz или Discogs ID.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Восстанавливает таблицу понравившихся альбомов. Перед выполнением этого действия вызовите `BackupAudioLikes`.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Записывает данные оценок аудио в файл резервной копии, содержащий хеш файла и значение оценки.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+Восстанавливает информацию об оценках из резервной копии, созданной с помощью `BackupRatings`.
 
 ## Library Interactions
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+Выполняет полное пересканирование музыкальной библиотеки.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Выполняет пересканирование указанной папки без рекурсивного обхода. Входным параметром должен быть `ObjectID` папки.
 
