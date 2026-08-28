@@ -1,29 +1,29 @@
-# How to improve support for my device
+# Come inserire il supporto per il mio dispositivo
 
-Se il dispositivo non riesce a fare nulla, come la navigazione delle cartelle o la riproduzione di un file, potrebbe essere possibile per te correggerlo modificando le impostazioni nel file di configurazione del renderer Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Se il dispositivo non riesce a fare nulla, come la navigazione delle cartelle o la riproduzione di un file, potrebbe essere possibile per te correggerlo modificando le impostazioni nel file di configurazione del renderer Diversi dispositivi/renderer/client comunicano con i server come UMS in diversi modi, perciò il file di configurazione dice a UMS come parlare la stesso linguaggio del dispositivo.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Ogni profilo di configurazione serve a due propositi:
+- Permetti a UMS di riconoscere un renderer
+- Definisci le possibilità di quel renderer
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Abbiamo un file di configurazione renderer predefinito che contiene la documentazione su tutte le nostre impostazioni di renderer. Vedi l'ultima versione su https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
 ## Aggiunger il supporto per un dispositivo non riconosciuto
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Quando UMS non riconosce il dispositivo, significa che nessuno dei profili di configurazione del renderer corrisponde al dispositivo. Il risultato è che UMS visualizza un ` Renderer Sconosciuto`, e poiché non conosce le possibilità del tuo renderer, non può fornire un output ottimizzato per il tuo dispositivo.
 
 La soluzione è provare a creare il proprio file di configurazione del renderer.
-1. Fare una copia del file .conf che più somiglia al tuo dispositivo. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+1. Fare una copia del file .conf che più somiglia al tuo dispositivo. Ad esempio, se il vostro Samsung TV non è riconosciuto, una delle configurazioni TV Samsung potrebbe essere un buon punto da cui cominciare.
 
-1. Vai alla scheda `Log` in UMS e cerca il testo `Media renderer che non è stato riconosciuto. Possibile identificare intestazioni HTTP:`. That information is what is needed to make UMS recognize your device.
+1. Vai alla scheda `Log` in UMS e cerca il testo `Media renderer che non è stato riconosciuto. Possibile identificare intestazioni HTTP:`. Quelle informazioni sono ciò che è necessario a rendere UMS capace di riconoscere il dispositivo.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. Nel vostro nuovo file .conf, cerca la riga che definisce `UserAgentSearch` e/o `UpnpDetailsSearch` e sostituisci i valori con quelle informazioni identificative.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Sfoglia e riproduci alcuni file multimediali sul tuo dispositivo. Prendi nota di quali media hanno avuto un problema di riproduzione. Ora puoi passare alla prossima sezione per migliorare il supporto per il tuo dispositivo.
 
-## Improving support for a device
+## Migliorare il supporto per un dispositivo
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Se uno qualsiasi dei tuoi media ha un problema di riproduzione, la configurazione del renderer dovrebbe essere modificata fino a che funziona. Fare riferimento a [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) per l'elenco completo delle opzioni. I più comuni da modificare sono:
     ```
     Video
     Audio
@@ -33,10 +33,10 @@ La soluzione è provare a creare il proprio file di configurazione del renderer.
     SeekByTime
     Supportato
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Assicurati di non avere `MediaInfo = false` nella tua nuova configurazione, perché questo impedirà alle linee `supportate` di funzionare.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. Se riproduce, la transcodifica funziona.
+1. Per assicurarsi che la transcodifica funzioni sul tuo dispositivo, riproduci un file dalla cartella `#--TRANSCODE--#`. All'interno di quella cartella, riproduci una delle voci `FFmpeg`. Se riproduce, la transcodifica funziona.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Le linee `supportate` devono essere popolate per dire a UMS quali file il dispositivo supporta nativamente. Può essere una buona idea trovare online il manuale per il tuo dispositivo e usarlo per aiutare a popolare quelle linee.
 
-1. As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. Ti accrediteremo nel nostro annuncio di rilascio e changelog.
+1. Oltre a questo, è possibile dare un'occhiata ad altre configurazioni di renderer all'interno della cartella "renderers" nella directory di installazione, per vedere cosa stanno facendo. A volte avrete bisogno di aiuto, che possiamo darvi sul nostro forum, e ricordati per favore di comunicarci i miglioramenti quando li fai, in modo che altri utenti possano beneficiare della correzione con dispositivi come il tuo. Ti accrediteremo nel nostro annuncio di rilascio e changelog.
