@@ -1,54 +1,54 @@
-# UMS UPnP Service
+# UPnP-служба медиасервера UMS
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS предоставляет расширенную UPnP-службу, через которую внешние точки управления могут взаимодействовать с дополнительными возможностями системы.
 
-## Usage
+## Использование
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Служба доступна в пространстве имён `schemas-upnp-org` с типом службы `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Для Java-точек управления, использующих JUPnP, вызовите `findService` на `RemoteDevice` UMS:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Через этот интерфейс службы доступны следующие действия
 
-## MyMusic interactions
+## Взаимодействие с MyMusic
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+К понравившимся альбомам можно перейти, используя идентификатор объекта `MYMUSIC$` как глубокую ссылку, или через раздел `My Albums` в корневой папке.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Поддержание избранного особенно полезно в больших коллекциях альбомов, где ручной просмотр всей библиотеки может занимать много времени. Список понравившихся альбомов помогает пользователям быстро возвращаться к нужному контенту без повторных широких поисков или глубокой навигации по папкам.
 
-In practice, favorites provide the following benefits:
+На практике избранное даёт следующие преимущества:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Более быстрый доступ к часто проигрываемым альбомам, даже в очень больших библиотеках.
+- Улучшение повседневной навигации за счёт отделения предпочитаемого контента от полного каталога.
+- Более согласованные сценарии воспроизведения для клиентов и автоматизаций, зависящих от стабильного выбора альбомов.
 
-### Input Parameters
+### Входные параметры
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Все действия в этом разделе требуют входной параметр. Альбом должен быть идентифицирован с помощью MusicBrainz ID или Discogs release ID. Необходимо указать как минимум один ID; в противном случае действие не будет выполнено.
 
-Example for Madonna's release `Like a Virgin`:
+Пример для альбома Мадонны `Like a Virgin`:
 
-| Attribute     |           Type           |             Example value            |
+| Атрибут       |            Тип           |            Пример значения           |
 | :------------ | :----------------------: | :----------------------------------: |
 | MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Если при добавлении альбома в понравившиеся были указаны оба параметра (`MusicBrainzId` и `DiscogsId`), то при удалении из понравившихся также необходимо указать оба.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+Отмечает музыкальный альбом как понравившийся.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+Удаляет отметку «понравившийся» у музыкального альбома.
 
 ### IsAlbumLikedInput
 
