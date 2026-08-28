@@ -1,17 +1,17 @@
-# How to add artwork
+# Как добавить обложки
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Вы можете добавлять собственные обложки для папок и плейлистов, чтобы ваш интерфейс отображал пользовательские миниатюры вместо стандартных изображений по умолчанию.
 
-This guide explains:
+В этом руководстве объясняется:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- какие форматы изображений поддерживаются
+- как называть файлы обложек
+- где размещать эти файлы
+- что происходит, когда изображение плейлиста отсутствует
 
-## Supported image formats
+## Поддерживаемые форматы изображений
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Поддерживаются следующие типы файлов, которые проверяются в указанном порядке. Используется первый подходящий файл изображения:
 
 - `webp`
 - `png`
@@ -20,34 +20,34 @@ The following file types are supported and checked in this order. The first matc
 - `bmp`
 - `gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Вы можете использовать любой из этих форматов как для обложек папок, так и для обложек плейлистов.
 
-## Folder
+## Папка
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Чтобы установить обложку для папки, поместите файл изображения с именем `folder.ext` внутрь этой папки.
 
-Replace `.ext` with one of the supported extensions.
+Замените `.ext` на одно из поддерживаемых расширений.
 
-Examples:
+Примеры:
 
-- `folder.webp`
-- `folder.jpg`
-- `folder.png`
+- `папка.webp`
+- `папка.jpg`
+- `папка.png`
 
-## Playlists
+## Плейлисты
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Чтобы установить обложку для плейлиста, используйте то же базовое имя файла, что и у файла плейлиста.
 
-Example:
+Пример:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Файл плейлиста: `Jazz.m3u8`
+- Файл обложки: `Jazz.jpg` (или `Jazz.webp`, `Jazz.png` и так далее)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Если подходящий файл обложки для плейлиста не найден, в качестве запасного варианта используется обложка папки.
 
-## Example folder structure
+## Пример структуры папок
 
-Use this as a reference:
+Используйте это в качестве примера:
 
 ```text
 Music/
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+В этом примере:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Music/folder.jpg` — это обложка для папки верхнего уровня `Music`.
+- `Music/Jazz/folder.png` — это обложка для папки `Jazz`.
+- `Music/Jazz/Jazz.jpg` используется для плейлиста `Jazz.m3u8`.
+- `Music/Jazz/Smooth.m3u8` не имеет соответствующего изображения `Smooth.*`, поэтому используется обложка папки `Jazz`.
 
