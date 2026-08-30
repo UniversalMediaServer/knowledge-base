@@ -49,9 +49,7 @@ Web ayarları arayüzü için `react-client/package.json` dosyasını açabilir 
 
 - Depoda farenin sağ tuşuna basın ve menüden "Maven Projelerini İçe Aktar" seçeneğini seçin. "/pom.xml" projesini seçin ve "Bitir"e basın.
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Not: Eğer aynı ada sahip bir proje zaten mevcutsa, "Gelişmiş"e tıklayın ve "Ad şablonu"nu `[artifactId]-ADINIZ` (ADINIZ yazısını GitHub adınızla değiştirin) olarak ayarlayın. Ardından "Bitir"e basın.
 
 You now see the sources in Eclipse, but the project is still missing the "Git"
 nature. In other words, it is not tied to the local repository yet. This means
