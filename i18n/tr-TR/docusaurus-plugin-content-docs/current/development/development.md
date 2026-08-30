@@ -39,18 +39,15 @@ Web ayarları arayüzü için `react-client/package.json` dosyasını açabilir 
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
-- Install the m2e Eclipse plugin (http://eclipse.org/m2e/)
+- m2e Eclipse eklentisini yükleyin (https://eclipse.org/m2e/)
 
-- Install the EGit Eclipse plugin (http://eclipse.org/egit/)
+- EGit Eclipse eklentisini yükleyin (https://eclipse.org/egit/)
 
-- In Eclipse, select the menu "Window > Show View > Git Repositories". Then
-  select "Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+- Eclipse’de "Pencere > Görünümü Göster > Git Depoları" menüsünü seçin. Ardından "Pencere > Gezinme > Görünüm Menüsünü Göster"i seçin ve "Depo Ekle"yi seçin.
+  Deponuzu çoğalttığınız dizine göz atın ve "Ara" düğmesine basın. Çatallanan deponuzu seçin ve "Tamam"a basın.
+  Depo, Git Depoları görünümünde görünmelidir.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Depoda farenin sağ tuşuna basın ve menüden "Maven Projelerini İçe Aktar" seçeneğini seçin. "/pom.xml" projesini seçin ve "Bitir"e basın.
 
   Note: if a project with the same name already exists, click "Advanced" and
   set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
