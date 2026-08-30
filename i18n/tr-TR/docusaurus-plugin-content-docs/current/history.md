@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# History
+# Geçmiş
 
-## Overview
+## Genel Bakış
 
 We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
 
@@ -12,7 +12,7 @@ It did its simple job well, but we have taken UMS in new directions, and to new 
 
 Here are some highlights of the journey:
 
-## Previous Versions
+## Önceki Sürümler
 
 ### v14 (2022-12-13)
 
