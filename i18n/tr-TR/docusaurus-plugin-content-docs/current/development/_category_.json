@@ -1,8 +1,8 @@
 {
   "label": "Geliştirme",
-  "position": "",
+  "position": 3,
   "link": {
-    "type": "",
+    "type": "generated-index",
     "description": "UMS nasıl oluşturulur ve geliştirilir"
   }
 }

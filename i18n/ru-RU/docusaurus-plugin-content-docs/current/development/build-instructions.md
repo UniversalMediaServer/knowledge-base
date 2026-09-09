@@ -1,21 +1,20 @@
-# Build instructions
+# Инструкции по сборке
 
-This document describes how to build Universal Media Server from the source files.
+В этом документе описано, как собрать Universal Media Server из исходных файлов.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Важное примечание:_
+Готовые сборки Universal Media Server можно загрузить с: http://www.universalmediaserver.com/ — обычным пользователям НЕ нужно выполнять эти шаги.
 
-The following software packages are required:
+Для сборки необходимы следующие пакеты ПО:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (JRE недостаточно)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-# Short instructions
+# Краткая инструкция
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Если все необходимые пакеты установлены, следующие команды загрузят последние версии исходных файлов и соберут UMS:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -23,85 +22,85 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Где `PACKAGENAME` — это название целевой ОС: `windows`, `macos`, `macos-arm`, `macos-pre1015` или `linux-*`, где `*` — это архитектура; одна из: `x86`, `x86_64`, `arm64`, `armel` или `armhf`
 
-The result will be built in the "target" directory:
+Результат сборки будет находиться в каталоге `target`:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Полная инструкция
 
-First all required software has to be installed:
+Сначала необходимо установить всё необходимое ПО:
 
-## 1. Download and install the Java JDK 17
+## 1. Скачайте и установите Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+См. https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Скачать и установить Git
 
-See https://git-scm.com/
+См. https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Скачать и распаковать Maven
 
-See http://maven.apache.org/
+См. http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Настройте переменные среды
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Создайте новые переменные или добавьте значение, если переменная уже существует:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Уровень: Системный, переменная: `JAVA_HOME`, значение: путь к установке JDK
+- Уровень: Пользователь, переменная: `M2_HOME`, значение: путь к распакованной папке Maven
+- Уровень: Пользователь, переменная: `M2`, значение: `%M2_HOME%\bin`
+- Уровень: Пользователь, переменная: `PATH`, значение: `%M2%`
 
 ### Linux
 
-Nothing to do.
+Ничего делать не нужно.
 
 ### macOS
 
-Nothing to do.
+Ничего делать не нужно.
 
-## 5. Download the UMS source code
+## 5. Скачать исходный код UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Обновите до последней версии исходного кода (необязательно)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Скомпилировать последнюю версию UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Где `PACKAGENAME` — это имя целевой ОС: `windows`, `macos`, `macos-arm`, `macos-pre1015` или `linux-*`, где `*` — архитектура; одна из: `x86`, `x86_64`, `arm64`, `armel` или `armhf`.
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+Вы также можете указать необязательный флаг, если хотите пропустить загрузку бинарных файлов — это может ускорить сборку, особенно на Windows и Linux:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Собранные бинарные файлы будут находиться в каталоге `target`:
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Автоматические сборки
 
-These last two commands can easily be automated using a script e.g.:
+Эти последние две команды легко автоматизировать с помощью скрипта, например:
 
 ### Windows
 
@@ -121,36 +120,34 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Упаковка и кросскомпиляция
 
-This section explains how it is possible to compile and package for one system while on another.
+В этом разделе объясняется, как можно выполнить компиляцию и упаковку для одной системы, находясь в другой.
 
-## Building the Windows binaries
+## Сборка бинарных файлов для Windows
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Установщики Windows (`UMS-setup.exe`) и исполняемый файл Windows (`UMS.exe`) могут быть собраны на платформах, отличных от Windows.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Прежде всего, вам необходимо установить бинарный файл `makensis`. В Debian/Ubuntu это можно сделать с помощью:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Затем необходимо задать переменную окружения `NSISDIR`, указав в качестве значения **абсолютный путь** к каталогу `nsis`. Это можно задать как для отдельной команды:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Или:
 
-- Temporarily in the current shell:
+- Временно в текущей оболочке:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Или навсегда:
     ```bash
     # these two commands only need to be run once
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
@@ -159,69 +156,67 @@ Either:
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Для краткости в следующих примерах предполагается, что она уже задана.
 
-The Windows installer can now be built with one of the following commands:
+Теперь установщик Windows можно собрать с помощью одной из следующих команд:
 
-### On Linux and macOS
+### На Linux и macOS
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Создание архива Linux
 
-### On Windows and macOS
+### На Windows и macOS
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+где `*` — одно из значений: `x86`, `x86_64`, `arm64`, `armel` или `armhf`.
 
-## Building the macOS disk image
+## Сборка образа диска для macOS
 
-### On Windows and Linux
+### На Windows и Linux
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Сборка установщика-мастера для macOS
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Сборка UMS
+2. Установить http://s.sudre.free.fr/Software/Packages/about.html
+3. Задайте переменную, хранящую путь к каталогу с файлом дистрибутива сборки, например:
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Замените нужный путь внутри файла .pkgproj
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Соберите .pkg установщик. Результат будет помещён в `/target/Universal Media Server.pkg`
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Быстрые сборки
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+У нас есть скрипты для быстрой сборки, которые рекомендуются для быстрого цикла разработки. Скрипты скомпилируют Java-код, поместят его в каталог установки по умолчанию и запустят программу, предварительно закрыв все запущенные экземпляры UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Должно работать для 64-разрядных версий Windows и macOS. При желании можно легко расширить для других систем.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Где `*` — это `macos` или `windows`

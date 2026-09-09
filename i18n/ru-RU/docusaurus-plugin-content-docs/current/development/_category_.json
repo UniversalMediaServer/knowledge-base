@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Разработка",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "generated-index",
+    "description": "Как создавать и разрабатывать UMS"
   }
 }
