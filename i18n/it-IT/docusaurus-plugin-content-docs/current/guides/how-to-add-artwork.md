@@ -5,8 +5,8 @@ Puoi aggiungere le tue immagini personalizzate per le cartelle e le playlist, in
 Questa guida spiega:
 
 - quali formati immagine sono supportati
-- how to name artwork files
-- where to place those files
+- come nominare le immagini
+- dove posizionare questi file
 - cosa succede quando manca l'immagine di una playlist
 
 ## Formati di immagine supportati
@@ -22,38 +22,38 @@ I seguenti tipi di file sono supportati e controllati in questo ordine. Viene ut
 
 È possibile utilizzare uno qualsiasi di questi formati sia per le copertine delle cartelle che per quelle delle playlist.
 
-## Folder
+## Cartella
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Per impostare un'immagine di una cartella, posiziona un file immagine chiamato `cartella.ext` all'interno della cartella stessa.
 
-Replace `.ext` with one of the supported extensions.
+Sostituisci `.ext` con una delle estensioni supportate.
 
-Examples:
+Esempi:
 
-- `folder.webp`
-- `folder.jpg`
+- `cartella.webp`
+- `cartella.jpg`
 - `folder.png`
 
-## Playlists
+## Playlist
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Per impostare l'immagine di una playlist, usa lo stesso nome file della playlist.
 
-Example:
+Esempio
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- File playlist: `Jazz.m3u8`
+- File immagine: `Jazz.jpg` (oppure `Jazz.webp`, `Jazz.png`, e così via)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Se non viene trovato il file immagine corrispondente per la playlist, sarà utilizzato il file immagine della cartella.
 
-## Example folder structure
+## Esempio di struttura cartelle
 
-Use this as a reference:
+Utilizzare il seguente come riferimento:
 
 ```text
-Music/
-|-- folder.jpg
+Musica/
+|-- cartella.jpg
 |-- Jazz/
-|   |-- folder.png
+|   |-- cartella.png
 |   |-- Jazz.m3u8
 |   |-- Jazz.jpg
 |   |-- Smooth.m3u8
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+In questo esempio:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Musica/cartella.jpg` è l'immagine per la cartella radice `Musica`.
+- `Musica/Jazz/cartella.png` è l'immagine della cartella `Jazz` .
+- `Musica/Jazz/Jazz.jpg` è l'immagine per la playlist `Jazz.m3u8`.
+- `Musica/Jazz/Smooth.m3u8` non ha un'immagine corrispondente chiamata `Smooth.*`, quindi sarà utilizzata della cartella `Jazz` .
 
