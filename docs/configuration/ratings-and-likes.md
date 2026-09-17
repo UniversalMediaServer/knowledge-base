@@ -56,3 +56,11 @@ answers together itself.
 
 The ratings are read from the database, so the search also finds items that carry no rating in their
 file, such as radio stations.
+
+## Backing them up
+
+Because ratings and likes live in the database, they are worth keeping a copy of before anything
+drastic happens to it. UMS can hand them out and take them back in, which also makes it possible to
+move them to another installation. The
+[UMS UPnP service](/configuration/ums-extended-service) lists the actions a control point uses for
+that.
