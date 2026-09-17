@@ -12,13 +12,9 @@ Aşağıdaki yazılım paketleri gerekir:
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Read the [Full instructions](#full-instructions) section for a complete explanation of how to
-install all required software and how to build UMS for each operating system.
+# Kısa talimatlar
 
-# Short instructions
-
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Eğer gerekli tüm yazılım paketleri yüklüyse aşağıdaki komutlar en son kaynakları indirecek ve UMS’yi oluşturacaktır:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -26,85 +22,85 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Burada `PACKAGENAME` hedef işletim sisteminin adıdır: `windows`, `macos`, `macos-arm`, `macos-pre1015` veya `linux-*`, burada `*` mimaridir; şunlardan biri: `x86`, `x86_64`, `arm64`, `armel` veya `armhf`
 
-The result will be built in the "target" directory:
+Sonuç "hedef" dizinde oluşturulacaktır:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Tam talimatlar
 
-First all required software has to be installed:
+Öncelikle gerekli tüm yazılımların yüklenmesi gerekir:
 
-## 1. Download and install the Java JDK 17
+## 1. Java JDK 17’yi indirin ve yükleyin
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+https://bell-sw.com/pages/downloads/#/java-17-lts adresine bakın
 
-## 2. Download and install Git
+## 2. Git’i indirin ve yükleyin
 
-See https://git-scm.com/
+https://git-scm.com/ adresine bakın
 
-## 3. Download and extract Maven
+## 3. Maven’i indirin ve çıkarın
 
-See http://maven.apache.org/
+http://maven.apache.org/ adresine bakın
 
-## 4. Set environment variables
+## 4. Ortam değişkenlerini ayarlayın
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Yeni değişkenler oluşturun veya değişken zaten mevcutsa değeri ekleyin:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Seviye: Sistem, değişken: `JAVA_HOME`, değer: JDK kurulum konumu
+- Seviye: Kullanıcı, değişken `M2_HOME`, değer: Maven çıkarma konumu
+- Seviye: Kullanıcı, değişken `M2`, değer: `%M2_HOME%\bin`
+- Seviye: Kullanıcı, değişken `PATH`, değer `%M2%`
 
 ### Linux
 
-Nothing to do.
+Yapacak bir şey yok.
 
 ### macOS
 
-Nothing to do.
+Yapacak bir şey yok.
 
-## 5. Download the UMS source code
+## 5. UMS kaynak kodunu indirin
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. En son kaynağa güncelleyin (isteğe bağlı)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. UMS’nin en son sürümünü derleyin
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Burada `PACKAGENAME` hedef işletim sisteminin adıdır: `windows`, `macos`, `macos-arm`, `macos-pre1015` veya `linux-*`, burada `*` mimaridir; şunlardan biri: `x86`, `x86_64`, `arm64`, `armel` veya `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+İkili dosyaları indirmeyi atlamak istiyorsanız isteğe bağlı bir işaret te belirtebilirsiniz; bu, özellikle Windows ve Linux’ta derleme süresini hızlandırmak için yararlı olabilir:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Ortaya çıkan ikili dosyalar "hedef" dizinde oluşturulacaktır:
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Otomatik yapılar
 
-These last two commands can easily be automated using a script e.g.:
+Bu son iki komut bir komut kodu kullanılarak kolayca otomatikleştirilebilir, örn.:
 
 ### Windows
 
@@ -124,107 +120,103 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Paketleme ve çapraz derleme
 
-This section explains how it is possible to compile and package for one system while on another.
+Bu bölümde başka bir sistem üzerindeyken bir sistem için derleme ve paketlemenin nasıl mümkün olduğu açıklanmaktadır.
 
-## Building the Windows binaries
+## Windows ikili dosyalarını oluşturma
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Windows yükleyicileri (`UMS-setup.exe`) ve Windows çalıştırılabilir dosyası (`UMS.exe`), Windows dışındaki platformlarda oluşturulabilir.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Öncelikle, `makensis` ikili dosyasının yüklü olması gerekir. Debian/Ubuntu üzerinde, bu şununla yapılabilir:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Ardından `NSISDIR` ortamının `nsis` dizinine giden **tam yola** ayarlanması gerekir. Bu, komut başına ya şöyle ayarlanabilir:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Ya da:
 
-- Temporarily in the current shell:
+- Şu anki kabukta geçici olarak:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Veya kalıcı olarak:
     ```bash
-    # these two commands only need to be run once
+    # bu iki komutun yalnızca bir kez çalıştırılması gerekir
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Kısaltmak adına, aşağıdaki örneklerde bunun zaten ayarlandığı varsayılmaktadır.
 
-The Windows installer can now be built with one of the following commands:
+Windows yükleyicisi artık aşağıdaki komutlardan biriyle oluşturulabilir:
 
-### On Linux and macOS
+### Linux ve macOS’ta
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Linux tarball oluşturma
 
-### On Windows and macOS
+### Windows ve macOS’ta
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+burada `*` şunlardan biridir: x86, x86_64, arm64, armel veya armhf
 
-## Building the macOS disk image
+## macOS disk kalıbı oluşturma
 
-### On Windows and Linux
+### Windows ve Linux’ta
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## macOS sihirbaz yükleyicisini oluşturma
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. UMS’yi oluşturun
+2. http://s.sudre.free.fr/Software/Packages/about.html yükleyin
+3. Yapım dağıtım dosyasının dizin yolunu saklayan bir değişken ayarlayın, örn.
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. .pkgproj dosyasındaki istenen yolu değiştirin
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. .pkg yükleyicisi oluşturun. Bu, `/target/Universal Media Server.pkg` dosyasını çıktı verecektir.
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Hızlı yapımlar
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Hızlı yineleme için geliştirme sırasında önerilen hızlı yapım komut kodlarımız var. Komut kodları Java kodunu derleyecek, varsayılan kurulum dizinine koyacak ve programı çalıştıracak, bu da varolan herhangi bir UMS örneğini kapatacaktır.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+64-bit Windows ve macOS için çalışmalıdır. İstenirse başkaları için de kolaylıkla genişletilebilir.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+`*` burada `macos` veya `windows`’tur

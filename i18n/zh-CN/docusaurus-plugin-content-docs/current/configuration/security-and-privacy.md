@@ -1,27 +1,27 @@
-# Security and Privacy
+# 安全和隐私
 
-## Introduction
+## 介绍
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS主要通过两种方式提供媒体服务——通过DLNA/UPnP供媒体播放器应用使用，以及通过HTTP(S)供网页浏览器使用。
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+网页浏览器通过用户账号登录，可以方便地进行安全与隐私控制。
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+媒体播放器应用通常不支持“用户”概念，因此，一般而言每台设备都会获取相同的内容。 这可能不是你想要的。 例如，如果你有两个文件夹 kids_safe 和 kids_unsafe，你可能想要限制儿童房中的渲染器，使其只能访问 kids_safe 文件夹。 另一种常见情况是，你和不想让其访问你媒体的人（例如室友）处于同一网络，因此你想要完全屏蔽某些渲染器。
 
-UMS provides a number of methods to control access in those situations.
+UMS 提供了多种方法来控制这些情况下的访问。
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## 默认允许或阻止渲染器或网络设备
+你可以为渲染器和网络设备选择默认策略。 你可以默认允许或拒绝，配合黑名单和白名单，实现完全控制。
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+这对于合住环境或广泛/低信任度的本地网络非常有用。 对于使用电力线适配器搭建网络的用户也很有用，因为这可能导致来自邻居的意外访问。
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![设置网络允许偏好的示例](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![设置渲染器允许偏好的示例](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## 阻止/允许渲染器和网络设备
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+当你选定了默认允许还是阻止未识别的渲染器后，就可以在设置区域的主屏幕上构建黑名单或白名单。
 
 ![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
 

@@ -34,7 +34,7 @@ Bu görüntü yayınının bağlantısıdır. Genellikle ".xml" ile biter, ancak
 
 #### Yetkili gruplar
 
-"Yetkili gruplar" alanı, bu yayını yalnızca UMS’de tanımlanmış ve farklı kullanıcılar ve/veya cihazlarla ilişkilendirilmiş belirli gruplar tarafından kullanılabilir olmasını sağlar. Daha fazla ayrıntı için [Güvenlik ve Gizlilik](../configuration/security-and-privacy.md#link-person-to-renderer) konusuna bakın.
+"Yetkili gruplar" alanı, bu yayını yalnızca UMS’de tanımlanmış ve farklı kullanıcılar ve/veya cihazlarla ilişkilendirilmiş belirli gruplar tarafından kullanılabilir olmasını sağlar. Daha fazla ayrıntı için [Güvenlik ve Gizlilik](../configuration/security-and-privacy.md#kişiyi-işleyiciye-bağlantılayın) konusuna bakın.
 
 Girdiğiniz seçeneklerden memnun olduğunuzda "Ekle" düğmesine tıklayın.
 

@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Ontwikkeling",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "gegenereerde index",
+    "description": "Hoe bouw en ontwikkel je een UMS"
   }
 }

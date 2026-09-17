@@ -12,9 +12,6 @@ Les progiciels suivants sont requis :
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-Lisez la section [Instructions complètes] (#full-instructions) pour une explication complète de la façon dont
-installer tous les logiciels nécessaires et comment construire UMS pour chaque système d'exploitation.
-
 # Instructions de construction
 
 Si tous les paquets logiciels nécessaires sont installés, les commandes suivantes

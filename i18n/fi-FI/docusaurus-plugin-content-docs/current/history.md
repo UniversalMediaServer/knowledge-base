@@ -1,0 +1,157 @@
+---
+sidebar_position: 4
+---
+
+# Historia
+
+## Yhteenveto
+
+Aloitimme vuonna 2012 PS3 Media Serverin haarautumana, joka oli yksi suosituimmista ja arvostetuimmista mediapalvelimista. Perustajamme SubJunk oli myös tuon projektin kehittäjä. Tuolloin se oli yksinkertaisesti DLNA-mediapalvelin, jolla oli paljon yksinkertaisempi GUI ja yksinkertaisemmat ominaisuudet.
+
+Se teki yksinkertaisen työnsä hyvin, mutta olemme ottaneet UMS:n uusiin suuntiin ja uusiin korkeuksiin.
+
+Tässä matkan muutamia kohokohtia:
+
+## Edelliset versiot
+
+### v14 (2022–12–13)
+
+Suurimmat muutokset liittyvät kykyyn hallita sisällön käyttöoikeutta. Tämä sisältää parannuksia käyttäjätileihin, kuten käyttäjäkuvakkeet ja käyttäjäkohtainen soiton tila. Sen lisäksi on mahdollista soittaa eri sisältöä eri laitteisiin.
+
+![Esimerkki laitteen estämisestä](@site/docs/img/whats-new-in-v14-block-renderer.png)
+
+Lisäsimme myös mahdollisuuden lisätä TMDB API-avain käsin lisätäkseen ja muokatakseen metatietoja TV-sarjoihin ja videoihin, ja merkitä tv-sarjat ja elokuvat täysin soitetuksi.
+
+![Esimerkki metatietojen muokkauksesta](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+
+[Katso lisätietoja uutta-sivulta](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+
+### v13 (2022-12-13)
+
+Tämä julkaisu keskittyi 3D-ja virtuaalitodellisuuteen, jota johti osallistuja threedguru.
+
+![Jaettu sisältö](@site/docs/img/history-v13.png)
+
+[Katso lisätietoja julkaisuilmoituksessa](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
+
+### v12 (2022-11-29)
+
+Tämä oli täydellinen GUIn uudelleenkirjoitus käyttäen nykyaikaisia työkaluja selaimessa, suurta ponnistusta johti SurfaceS ja js-kyle.
+
+Tässä versiossa otettiin käyttöön myös todentaminen, käyttäjien ja ryhmien käsite.
+
+![Todentaminen](@site/docs/img/history-v12-1.png)
+
+Toinen muutos oli se, että Jaettu sisältö-alue oli yhtenäistetty, ennen ne jaettiin paikallisen sisällön ja web-sisällön välillä, nyt ne ovat samassa luettelossa.
+
+![Jaettu sisältö](@site/docs/img/history-v12-2.png)
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
+
+### v11 (2022-05-27)
+
+Paransimme web-rajapintaa monin tavoin, mukaan lukien rikkaat tiedot, kuten logot ja taustat tv-sarjoihin, elokuviin ja jaksoihin. Parannettu laitteen tunnistamista, parannettu verkkotilan tunnistusta / palautusta, videon toistoa ja etsimistä, parannettu API-metadatan yhdistämistä, HLS-transkoodaus kaikille laitteille ja paljon muuta!
+
+![Verkkokäyttöliittymän yleisnäkymä](@site/docs/img/history-v11.gif)
+
+Tämä oli ensimmäinen versio, jossa oli mukana uusi supertähti-kehittäjä, SurfaceS, joka lisäsi paljon tähän versioon.
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
+
+### v10 (2021-01-12)
+
+Tässä keskityimme tekemään rikkaasta metadatasta hyödyllisempää.
+
+Lisäsimme uusia kansioita Media Kirjastoon, mukaan lukien "Suodata tiedon mukaan", jonka avulla voit selata videoita näyttelijän, genren, maan, ohjaajan, IMDb-luokituksen ja julkaisupäivämäärän mukaan.
+
+Web-käyttöliittymä sai paljon enemmän toiminnallisuutta antamalla sinun klikkata videon tietoja, kuten näyttelijä tai genre, nähdääksesi muita videoita kyseiseltä henkilöltä tai genrelle (tai muita metatietoja). Lisäsimme joitan pikalinkkejä verkko-käyttöliittymän etusivulle, kuten vasta lisätty, kesken olevat videot, eniten soitetut, jne.
+
+TV-sarjan pikkukuvissa ovat nyt täysin soitettu kuvake, jos kaikki jaksot ovat täysin soitettu:
+
+![Täysin soitetut TV-sarjat](@site/docs/img/history-v10.png)
+
+Toivotimme myös ik666:n tervetulleeksi kehitysryhmään, joka on lisännyt uuden sovellusrajapinnan integraatioille ja parantanut huomattavasti UPnP-tukea.
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
+
+### v9 (2019-09-06)
+
+Ei tarvitse enää asentaa Javaa!
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+
+### v8 (2019-03-29)
+
+Tämä versio keskittyi tekemään helpommaksi nauttia suoratoistoverkkosisällöstä, kuten vodcastit, podcastit, internet-radio, YouTube-kanavat ja muu suoratoistoverkkosisältö lisäämällä Jaetun sisällön välilehden.
+
+[Katso lisätietoja julkaisuilmoituksessa](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+
+### v7 (2018-03-27)
+
+Tämä oli versio, jossa keskityttiin dynaamiseen mediaselausominaisuuksiimme Media Library -hakemiston avulla.
+
+Lisäsimme elokuvien ja tv-sarjojen havaitsemisen ja lisäsimme myös kansion seuraamisen jotta tiedostot voidaan automaattisesti havaita jaetuissa kansioissa
+
+Olimme myös onnekkaita että mik_s, meidän foorumi moderaattori, liittyi meihin noin tällä kertaa, joka tekee hämmästyttävää työtä!
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+
+### v6 (2016-01-30)
+
+Täällä lisäsimme "Täysin soitettu toiminta"-kuvakkeet ja tiedostojen hallinta, joka oli hyvin odotettu ominaisuus.
+
+Toivotimme myös Nadaharin tervetulleeksi joukkueeseen, joka paransi vakautta, lokitusta ja kielitukea.
+
+Kiitos hänen Crowdin integraation, meillä on ollut 523 osallistujaa meidän 40 kieleen!
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+
+### v5 (2015-01-25)
+
+Tässä julkaisussa lisäsimme tuen UPnP-yhteyksille ja toistolle, mikä tarkoitti sitä, että yhteisö pystyi yhdistämään monia muita laitteita! Käyttäjä skepticalia saadaan kiittää tästä.
+
+Lisäsimme myös ensimmäisen version IMDb metatiedoista, mutta meillä ei vielä ollut omaa APIa. Meidän pitää kiittää OpenSubtitles tästä, ja pahoittelemme kaikkia pyyntöjä, joita tapahtui noina päivinä!
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+
+### v4 (2014-07-25)
+
+Ensimmäinen web-käyttöliittymä lisättiin, lopulta annoimme UMS-yhteisölle mahdollisuuden käyttää sisältöä verkkoselaimilla!
+
+Lisäsimme myös etätoiston tukemisen ja mahdollisuuden transkoodata AAC:lle.
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+
+### v3 (2013-11-01)
+
+V3 oli valtava julkaisu ja on kun aloimme todella eriytyä PS3MS:tä, siinä oli paljon uusia omia ominaisuuksia.
+
+Lisäsimme uudet mediatiedostot ja äskettäin soitetut kansiot, toiston jatkaminen, tiedostonimen kaunistaminen ja asetus-velhon käynnistyksessä.
+
+Toivotimme myös valibin tervetulleeksi joukkueeseen, joka osallistuu edelleen tänään!
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+
+### v2 (2012-10-31)
+
+V2 tuli lisäyksenä Liitännäisen hallinta-välilehti, joka liittyy meidän keskitettyyn liitännäis-tietokantaan. Ensimmäisenä ottettiin käyttöön ominaisuus; Live Tekstitys, jossa voit suoratoistaa tekstityksiä lennossa renderoijaltasi.
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+
+### v1 (2012-05-31)
+
+Nämä varhaiset versiot keskittyivät uuden ohjelman "universaalisiin" puoleen lisäämällä tuki kymmenille uusille laitteille.
+
+Olimme myös ensimmäinen mediapalvelin tukemaan sujuvaa liikettä, ruutu-interpolointi ominaisuus, joka on nykyään jokaisen TV:n mukana, mutta silloin se oli vain uusissa, korkean tason TV:ssä.
+
+Myös toinen kehittäjämme, SharkHunter, liittyi meihin ensimmäisten päivien aikana.
+
+[Katso lisätietoja julkaisuilmoituksesta](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+
+### PS3 Media Server (2008)
+
+Projekti joka aloitti kaiken! Olemme haarautuma sille hankkeelle, jonka aloitti shagrath vuonna 2008, pian mukaan liittyi SubJunk, Universal Media Serverin perustaja.
+
+PS3 oli hieno kone median pelaamiseen, mutta se ei tukenut monia videoformaatteja. joten PS3 Media Server käytti paljon temppuja, jotta se voisi toistaa minkä tahansa videon. Olemme soveltaneet samaa strategiaa kaikkiin laitteisiin ja soittimiin.
+
+![PS3 Media Server](@site/docs/img/history-pms.png)

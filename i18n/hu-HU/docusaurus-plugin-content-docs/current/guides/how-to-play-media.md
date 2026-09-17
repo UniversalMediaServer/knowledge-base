@@ -24,7 +24,7 @@ The UMS interface itself has the ability to "push" media to renderers if they su
 
 The web interface can be accessed anywhere within your local network, including on computers and renderers. In many ways it offers our most advanced UI and features.
 
-1. Open the web interface. If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
+1. Nyitsd meg az online felületet If you know the address you can go to that, otherwise an easy way is to click the Web interface button on our UI  
    ![Open the web interface](@site/docs/guides/img/how-to-play-media-4.png)
 2. Clicking that will open the web interface in your default browser. From there you can navigate to your file and click to play it  
    ![Video on the web interface](@site/docs/guides/img/how-to-play-media-5.png)
@@ -34,6 +34,6 @@ The web interface can be accessed anywhere within your local network, including 
 Similar to above in option 2, you can push your media to a renderer via our web interface.
 
 1. Clicking the little cast icon for a file when browsing a directory. It is on the lower right of the thumbnail.  
-   ![Cast icon](@site/docs/guides/img/how-to-play-media-6.png)
+   ![Közvetítés ikon](@site/docs/guides/img/how-to-play-media-6.png)
 2. That will make a mini floating control panel appear, which you can use to control playback of the file, and manage dynamic playlists if you choose.  
    ![Lebegő vezérlőpanel](@site/docs/guides/img/how-to-play-media-7.png)
