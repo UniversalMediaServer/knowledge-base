@@ -44,7 +44,7 @@ The rules are the same for all of them:
 ### Artwork
 
 `#EXTIMG:` takes an absolute address of a picture, which UMS downloads once and then uses for that
-entry. See [How to add artwork](../guides/how-to-add-artwork.md) for the details and the accepted
+entry. See [How to add artwork](/guides/how-to-add-artwork) for the details and the accepted
 forms.
 
 ### Ratings
@@ -79,7 +79,7 @@ station, so there is rarely a reason to type it by hand.
 ### Title order
 
 `#EXTICYORDER:` controls whether a station's announcement is read as *Artist - Title* or as
-*Title - Station*. See [Internet radio and live titles](internet-radio.md).
+*Title - Station*. See [Internet radio and live titles](/configuration/internet-radio).
 
 ## Directives UMS writes itself
 

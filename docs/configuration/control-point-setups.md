@@ -45,7 +45,7 @@ themselves rather than by the address alone.
 
 Neither setting is more correct than the other; for maximum compatibility turn authentication **off**. The price is that UMS then has no accounts: there is no per-user access control, and everything it shares is visible to everything on the network that can
 reach it. If that is a concern, restrict which devices may reach UMS at all — see
-[Security and privacy](security-and-privacy.md).
+[Security and privacy](/configuration/security-and-privacy).
 
 Leave it **on** if your players browse and play for themselves, or if you need the per-user
 separation. This is the default.

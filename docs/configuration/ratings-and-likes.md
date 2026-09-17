@@ -29,7 +29,7 @@ This only applies to files that can hold a rating, and only from the moment you 
 not go back and write out ratings you set earlier.
 
 A rating that has to survive a rebuilt database, or travel with a playlist you copy elsewhere,
-belongs in the playlist file instead. See [Playlist directives](playlist-directives.md).
+belongs in the playlist file instead. See [Playlist directives](/configuration/playlist-directives).
 
 ## The My Albums folder
 

@@ -31,7 +31,7 @@ So with a library like this:
 *Frank Sinatra* and *Miles Davis* get their pictures, *Zaz* does not.
 
 The artwork inside the artist folder follows the ordinary rules, so the file is called `folder.jpg`,
-`folder.png`, `folder.webp` and so on. See [How to add artwork](how-to-add-artwork.md) for the full
+`folder.png`, `folder.webp` and so on. See [How to add artwork](/guides/how-to-add-artwork) for the full
 list of supported formats.
 
 ## Two conditions

@@ -35,7 +35,7 @@ address:
 - the **station identifier** from the directory
 
 The last one is the interesting part. It stays in the playlist file as a
-[`#RADIOBROWSERUUID:` directive](playlist-directives.md), which means the entry remains connected to
+[`#RADIOBROWSERUUID:` directive](/configuration/playlist-directives), which means the entry remains connected to
 the directory entry it came from. UMS uses that connection to fill in details the stream itself does
 not reveal, such as the genre and the bitrate.
 
@@ -56,4 +56,4 @@ directive out costs you only the extra details; the station itself plays either 
 
 The station behaves like any other entry in the playlist from then on. You can rate it, replace its
 picture, and correct how its live titles are read; see
-[Internet radio and live titles](internet-radio.md).
+[Internet radio and live titles](/configuration/internet-radio).

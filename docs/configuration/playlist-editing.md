@@ -27,7 +27,7 @@ available; nothing happens unless something asks for it.
 What UMS writes are plain playlist files in your shared folders — not entries in a database that
 only UMS understands. You can open them in any editor afterwards, copy them to another player, or
 keep them in a backup. Additional details that a playlist entry cannot express on its own, such as
-artwork for a radio station, are stored as [directives](playlist-directives.md) in the same file.
+artwork for a radio station, are stored as [directives](/configuration/playlist-directives) in the same file.
 
 Changes are announced to connected control points, so a playlist edited on one device shows its new
 contents on the others without a manual refresh.
@@ -55,4 +55,4 @@ setting. That is convenient — you can turn playlist editing on from the app yo
 reach the UPnP service on your network can change it.
 
 If that matters to you, restrict which devices may reach UMS at all. See
-[Security and privacy](security-and-privacy.md).
+[Security and privacy](/configuration/security-and-privacy).

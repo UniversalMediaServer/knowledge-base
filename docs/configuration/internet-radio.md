@@ -5,7 +5,7 @@ now. UMS picks that announcement up and passes it on, so your control point can 
 currently on air instead of just the station name.
 
 This works for radio streams you have added to a playlist and for the stations of the
-[Audio Addict Network](audio-addict.md).
+[Audio Addict Network](/configuration/audio-addict).
 
 ## How the title reaches your player
 
@@ -67,7 +67,7 @@ http://stream.example.com/jazz.mp3
 | `title-first` | Always read it as *Title - Station*. |
 
 An unknown value is treated as `auto`. The setting applies to that one station; see
-[Playlist directives](playlist-directives.md) for how such lines work in general.
+[Playlist directives](/configuration/playlist-directives) for how such lines work in general.
 
 If your control point offers a way to switch the order while listening, it can set the same value
 through UMS, and UMS writes it into the playlist file so the choice survives a restart.

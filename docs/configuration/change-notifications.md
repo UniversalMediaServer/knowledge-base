@@ -23,7 +23,7 @@ messages.
 Typical moments when this happens:
 
 - a file appears in, or disappears from, a shared folder
-- you [edit a playlist](playlist-editing.md) from a control point
+- you [edit a playlist](/configuration/playlist-editing) from a control point
 - you rate something, because that changes what the ratings folders contain
 - artwork is added for a station or a folder
 
@@ -48,4 +48,4 @@ business following and claiming control of the players: the control point is doi
 parties steering the same device is a good way to get confusing results. Switching this off makes
 UMS keep its hands off and simply serve the media.
 
-See [Two-box and three-box setups](control-point-setups.md) for what that arrangement looks like.
+See [Two-box and three-box setups](/configuration/control-point-setups) for what that arrangement looks like.
