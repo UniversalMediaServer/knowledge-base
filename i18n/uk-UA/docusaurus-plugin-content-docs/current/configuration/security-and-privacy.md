@@ -15,15 +15,15 @@ UMS пропонує низку методів контролю доступно
 
 Це корисно в умовах спільного проживання або в місцевих мережах із широким колом учасників чи низьким рівнем довіри. Це також корисно для тих з вас, хто використовує мережеві адаптери "Powerline" для підключення до мережі, оскільки це може призвести до небажаного доступу з боку сусідів.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Приклад налаштування параметра допуску мережі](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Приклад налаштування переваги доступу до програвача](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
 ## Блокувати/дозволяти програвачі та мережеві пристрої
 
 Визначившись із тим, дозволяти чи блокувати невідомі програвачі за замовчуванням, ви можете створити список заборонених або дозволених програвачів на домашній сторінці в розділі налаштувань.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Приклад налаштування блокування доступу до програвача](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
 ## Прив'язка особи до програвача
 
@@ -31,13 +31,13 @@ UMS пропонує низку методів контролю доступно
 
 Наприклад, якщо у вас є телевізор у вітальні та ще один у спальні, ваш перегляд у спальні не повинен впливати на роботу телевізора у вітальні.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Приклад налаштування присвоєння (привʼязки) облікового запису до програвача](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
 ## Обмеження доступу до спільного вмісту для певних груп
 
 Тепер ви можете налаштувати спільний доступ до каталогів або мережевого вмісту для певних груп. Приміром, якщо у вас є дитина (або пристрій, призначений для дитини), ви можете додати її до групи "Діти" й надати цій групі доступ до каталогу "Сім’я", але не до каталогу із вмістом "Жахи" чи "Тільки для дорослих". Або надати їм доступ до інформаційного каналу "Kurzgesagt", але не до записів подкастів.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Приклад налаштування груп зі вмістом спільного доступу](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Приховування тек
 
