@@ -1,10 +1,10 @@
-# Security and Privacy
+# Безпека та приватність
 
-## Introduction
+## Вступна частина
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS надає доступ до медіафайлів двома основними шляхами: через DLNA/UPnP для відтворення за допомогою програм медіапрогравачів та через HTTP(S) для перегляду через веббраузер.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Веббраузери забезпечують простий контроль безпеки та приватності завдяки наявності облікових записів користувачів із їх обліковими даними.
 
 Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
 
