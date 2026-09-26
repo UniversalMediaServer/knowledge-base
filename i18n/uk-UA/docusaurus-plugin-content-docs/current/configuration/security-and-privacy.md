@@ -1,47 +1,47 @@
-# Security and Privacy
+# Безпека та приватність
 
-## Introduction
+## Вступ
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS надає доступ до медіафайлів двома основними шляхами: через DLNA/UPnP для відтворення за допомогою програм медіапрогравачів та через HTTP(S) для перегляду через веббраузер.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Веббраузери забезпечують простий контроль безпеки та приватності завдяки наявності облікових записів користувачів із їх обліковими даними.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Зазвичай медіапрогравачі не підтримують концепцію «користувача», тому кожен пристрій отримує однаковий вміст. Ймовірно, це не те, що вас цікавить. Приміром, якщо у вас є дві теки "kids_safe" та "kids_unsafe", ви, можливо, хотіли б обмежити доступ пристроям програвачів у дитячій кімнаті лише до теки "kids_safe". Інша типова ситуація – ви перебуваєте в одній мережі з особами, яким не хочете надавати доступ до своїх медіафайлів, наприклад, із сусідами по квартирі, тому вам потрібно повністю заблокувати певні пристрої для відтворення.
 
-UMS provides a number of methods to control access in those situations.
+UMS пропонує низку методів контролю доступності в таких ситуаціях.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Дозволяти чи блокувати програвачі чи мережеві пристрої типово.
+Можете обирати типову стратегію для програвачів та мережевих пристроїв. Можете за замовчуванням дозволяти або забороняти доступ за допомогою списків заборонених та дозволених джерел для повного контролю.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+Це корисно в умовах спільного проживання або в місцевих мережах із широким колом учасників чи низьким рівнем довіри. Це також корисно для тих з вас, хто використовує мережеві адаптери "Powerline" для підключення до мережі, оскільки це може призвести до небажаного доступу з боку сусідів.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Приклад налаштування параметра допуску мережі](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Приклад налаштування переваги доступу до програвача](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Блокувати/дозволяти програвачі та мережеві пристрої
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Визначившись із тим, дозволяти чи блокувати невідомі програвачі за замовчуванням, ви можете створити список заборонених або дозволених програвачів на домашній сторінці в розділі налаштувань.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Приклад налаштування блокування доступу до програвача](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Прив'язка особи до програвача
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Ви можете пов’язати облікові записи користувачів із програвачами/пристроями, що дозволить вам здійснювати незалежний доступ до вмісту та відстежувати його відтворення.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Наприклад, якщо у вас є телевізор у вітальні та ще один у спальні, ваш перегляд у спальні не повинен впливати на роботу телевізора у вітальні.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Приклад налаштування присвоєння (привʼязки) облікового запису до програвача](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Обмеження доступу до спільного вмісту для певних груп
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Тепер ви можете налаштувати спільний доступ до каталогів або мережевого вмісту для певних груп. Приміром, якщо у вас є дитина (або пристрій, призначений для дитини), ви можете додати її до групи "Діти" й надати цій групі доступ до каталогу "Сім’я", але не до каталогу із вмістом "Жахи" чи "Тільки для дорослих". Або надати їм доступ до інформаційного каналу "Kurzgesagt", але не до записів подкастів.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Приклад налаштування груп зі вмістом спільного доступу](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## Приховування тек
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Керуйте видимістю віртуальних тек. Такі налаштування містяться у файлі UMS.conf Аби приховати деякі теки під час пошуку, просто встановіть для них значення "true" або поставте галочку біля них на вкладці "Налаштування навігації/спільного доступу" у розширеному режимі графічного інтерфейсу.
 
 ```
 hide_recently_played_folder =true
@@ -53,32 +53,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Щоби приховати вебтеку, потрібно зняти галочку біля пункту "Дозволити зовнішню мережу" на вкладці "Загальні налаштування" у розширеному режимі графічного інтерфейсу або змінити значення "external_network =" на "false" у вашому UMS.conf файлі. Це призведе до того, що програма автоматичного оновлення перестане працювати. Зміни, внесені через графічний інтерфейс, запрацюють після перезапуску програми.
 
-## PIN code
+## PIN-код
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Усі наведені вище методи обмежують доступ з боку різних програвачів. Проте, якщо ви отримаєте доступ до програвача, якому дозволено переглядати певну теку, ці методи вам не допоможуть (якщо діти мають доступ до телевізора у вітальні, а з нього – до всіх медіафайлів, то вони матимуть доступ і до медіафайлів з обмеженнями). PIN-код усуває таку проблему. Ця функція дозволяє приховати теки/медіа за допомогою PIN-коду, який потрібно вводити на стороні самого програвача. Типово, він складається із послідовності цифр (0~9), на кшталт коду доступу до вашої кредитної картки, коли ви користуєтесь банкоматом. Наполегливо рекомендується використовувати коди, котрі складаються із цифр, оскільки їх легше вводити на програвачі. Однак якщо ви надто переймаєтесь, можете додати літери. Принцип роботи такий: Додайте файл із назвою "UMS.code" у той самий каталог, що й файл "UMS.conf", і в цей файл введіть "regexp,code", де "regexp" – це регулярний вираз, такий самий, як у файлі "UMS.deny", а "cod" – це код, що надає доступ до теки/медіафайлу. Код немає обмеження щодо довжини (кількості символів у ньому, цифр чи літер). До прикладу:
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Змусить щоразу вводити код "1234", якщо у назві папки/файлу міститься слово "private". Зазначений код залишається дійсним протягом 4 годин (якщо ви не внесете змін у цей час).
 
-## Custom Device Configuration
+## Власне налаштування пристрою
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Будь-яку властивість також можна встановити окремо для кожного пристрою, створивши власний набір налаштувань для пристрою, яке замінить стандартні налаштування UMS (деталі у розділі «Створення власного налаштування пристрою»).
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Наприклад, аби налаштувати телевізор для дітей:
+- Натисніть кнопку "Налаштувати цей пристрій" у правому верхньому куті панелі програвача, що спливає, та вкажіть назву для цієї конфігурації.
+- У новоствореному файлі конфігурації додайте будь-які налаштування, котрі бажаєте застосувати до конкретного телевізора, як-от, змінити назву сервера чи доступ до тек:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Користувацький профіль пристрою
+# Звертатися до DefaultRenderer.conf для опису усіх можливих варіантів програвача
+# та до UMS.conf для варіантів програм.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Параметри в цьому файлі замінюють типові налаштування для конкретних пристроїв Sony Bravia EX, перелічених нижче.
+# Вкажіть пристрої за UUID (або за адресою, якщо UUID відсутній), розділяючи їх комами, якщо їх більше одного.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
