@@ -1,35 +1,35 @@
-# Development
+# Розробка
 
-This document explains how to make and run your own changes.
+У цьому документі роз'яснюється, як вносити та застосовувати власні зміни.
 
-## Forking the code to your machine
+## Копіювання коду на ваш комп’ютер
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub значно спрощує розробникам створення відгалужень власних версій офіційних вихідних кодів UMS для додавання їхніх удосконалень або додаткових функцій. GitHub дозволяє надсилати такі зміни у вигляді "Pull Requests" офіційній команді розробників UMS.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [Налаштуйте свій комп'ютер для розробки на платформі GitHub](https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- Перейдіть до [репозиторію UMS на GitHub](https://github.com/universalmediaserver/universalmediaserver) і натисніть кнопку `Fork` праворуч угорі.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Скопіюйте новий репозиторій GitHub на свій комп'ютер. URL-адресу копії можна переглянути
+  на головній сторінці вашого репозиторію. Вона повинна виглядати приблизно так
+  (замініть YOURNAME на ваше справжнє ім’я в GitHub):
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-You now have the new repository on your local machine.
+Тепер на вашому локальному комп’ютері є новий репозиторій.
 
-## Development with IDEs
+## Розробка за допомогою IDE
 
 ### [VS Code](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Ми рекомендуємо цей редактор, оскільки він чудово справляється як з Java, так і з TypeScript – нашими двома основними мовами програмування.
 
-#### Java server
+#### Сервер Java
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Відкривши код, ви, ймовірно, побачите кілька рекомендацій щодо розширень, які варто встановити, наприклад, `Extension Pack for Java`. Встановіть його/їх.
+Після його встановлення та налаштування ви можете запустити сервер Java, натиснувши у верхній частині вікна `Run -> Start Debugging`, а також перезапустити його за допомогою `Run -> Restart Debugging`. Виконання цих команд має відбутися протягом 1 секунди, що забезпечує швидкий хід розробки.
 
-#### Web browser interfaces
+#### Інтерфейси веббраузерів
 
 If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
 
