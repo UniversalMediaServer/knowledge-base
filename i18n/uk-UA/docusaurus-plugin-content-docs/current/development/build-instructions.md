@@ -1,21 +1,20 @@
-# Build instructions
+# Інструкція зі збірки
 
-This document describes how to build Universal Media Server from the source files.
+Цей документ містить опис того, як зібрати Universal Media Server із вихідних файлів.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Важлива примітка:_
+Попередньо скомпільовані версії Universal Media Server можна завантажити за посиланням: http://www.universalmediaserver.com/, тому вам НЕ потрібно виконувати ці кроки як звичайному користувачеві.
 
-The following software packages are required:
+Необхідні наступні програмні пакети:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (JRE буде недостатньо)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-# Short instructions
+# Коротка інструкція
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Якщо всі необхідні програмні пакети встановлено, за допомогою наведених нижче команд можна завантажити найновіші вихідні коди та зібрати UMS:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -23,33 +22,33 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Де `PACKAGENAME` – це назва цільової операційної системи: `windows`, `macos`, `macos-arm`, `macos-pre1015` або `linux-*`, де `*` позначає архітектуру; є однією з наступних: `x86`, `x86_64`, `arm64`, `armel` або `armhf`
 
-The result will be built in the "target" directory:
+Результат буде зібрано в каталозі "target":
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Детальні інструкції
 
-First all required software has to be installed:
+Спершу необхідно встановити все потрібне ПЗ:
 
-## 1. Download and install the Java JDK 17
+## 1. Завантажте та встановіть Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Зверніться до → https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Завантажте та встановіть Git
 
-See https://git-scm.com/
+Зверніться до → https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Завантажте та розпакуйте Maven
 
-See http://maven.apache.org/
+Зверніться до → http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Задайте змінні середовища
 
-### Windows
+### ОС Windows
 
 Create new variables or append the value if the variable already exists:
 
@@ -58,7 +57,7 @@ Create new variables or append the value if the variable already exists:
 - Level: User, variable `M2`, value: `%M2_HOME%\bin`
 - Level: User, variable `PATH`, value `%M2%`
 
-### Linux
+### ОС Linux
 
 Nothing to do.
 
