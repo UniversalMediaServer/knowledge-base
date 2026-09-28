@@ -88,4 +88,4 @@ GitHub значно спрощує розробникам створення в�
 
 ## Доповнення нашого коду вашими змінами
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Якщо ви бажаєте долучитися до проєкту UMS, ви можете надіслати запит через "Pull Request" до команди розробників. Відвідайте [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request), щоби дізнатися більше.
