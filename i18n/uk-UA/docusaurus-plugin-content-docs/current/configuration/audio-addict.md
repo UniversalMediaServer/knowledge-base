@@ -2,7 +2,7 @@
 
 **Audio Addict Network** – це добірка якісних інтернет-радіостанцій, серед яких:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio та DI.fm
+«Classical Radio», «Radio Tunes», «Rock Radio», «Jazz Radio», «Zen Radio» та «DI.fm»
 
 Для доступу до цих радіостанцій необхідний платний **преміум обліковий запис**. Вам достатньо зареєструватися лише на одному з цих сайтів, оскільки одне й те саме ім’я користувача та пароль нададуть доступ до них усіх.
 
