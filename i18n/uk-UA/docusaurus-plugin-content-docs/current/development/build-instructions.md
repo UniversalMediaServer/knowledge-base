@@ -23,7 +23,7 @@ mvn package -P PACKAGENAME
 
 Де `PACKAGENAME` – це назва цільової операційної системи: `windows`, `macos`, `macos-arm`, `macos-pre1015` або `linux-*`, а `*` – одна з таких архітектур: `x86`, `x86_64`, `arm64`, `armel` або `armhf`
 
-Результат буде зібрано в каталозі "target":
+Результат буде зібрано в каталозі «target»:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
@@ -91,7 +91,7 @@ mvn package -P PACKAGENAME
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-Отримані бінарні файли будуть зібрані в каталозі "target":
+Отримані бінарні файли будуть зібрані в каталозі «target»:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
@@ -127,7 +127,7 @@ mvn package
 
 Установники для ОС Windows (`UMS-setup.exe`) та виконуваний файл для Windows (`UMS.exe`) можна скомпілювати на платформах, відмінних від ОС Windows.
 
-Перш за все, вам потрібно встановити бінарний файл `makensis`. У Debian/Ubuntu це можна зробити за допомогою:
+Перш за все, вам потрібно встановити бінарний файл `makensis`. У «Debian»/«Ubuntu» це можна зробити за допомогою:
 
 ```bash
 sudo apt-get install nsis
