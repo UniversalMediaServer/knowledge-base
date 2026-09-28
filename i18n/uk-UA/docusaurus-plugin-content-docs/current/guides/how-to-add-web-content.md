@@ -1,10 +1,10 @@
-# How to add web content
+# Як додавати вебвміст
 
-This article will explain how to add web content.
+Ця стаття присвячена процесу додавання вебвмісту
 
-## Video feeds
+## Відео
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Ви можете підписатися на потоки/канали відео, додавши посилання на RSS-стрічки, а у випадку з YouTube – просто ввівши посилання на канал.
 
 ### 1: Go to the Shared Content section
 
