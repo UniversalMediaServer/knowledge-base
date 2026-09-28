@@ -1,21 +1,21 @@
-# How to improve support for my device
+# Як покращити підтримку мого пристрою
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Якщо ваш пристрій не функціонує належним чином – наприклад, не вдається переглядати теки або відтворювати файли – можливо, ви зможете розв'язати цю проблему шляхом зміни налаштувань у файлі конфігурації програвача. Різні пристрої/програвачі/клієнти по-різному взаємодіють із серверами, подібними до UMS, тому файл конфігурації вказує UMS, як саме налагодити взаємодію з вашим пристроєм.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Кожен профіль конфігурації слугує двом цілям:
+- Дозволяє UMS розпізнавати конкретний програвач під час спроби підключення
+- Визначає можливості такого програвача
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Ми маємо файл конфігурації типового програвача, котрий містить документацію щодо всіх наших налаштувань. Ознайомтеся з останньою версією за посиланням → https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
-## Adding support for an unrecognized device
+## Додавання підтримки для невідомого пристрою
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Якщо UMS не розпізнає ваш пристрій, це означає, що жоден із профілів конфігурації програвача не відповідає вашому пристрою. В результаті UMS показує повідомлення `Невідомий програвач`, і, оскільки він не знає можливостей вашого програвача, то й не може забезпечити оптимізований вивід для вашого пристрою.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Відповідь полягає в тому, щоб спробувати створити власний файл конфігурації програвача.
+1. Створіть копію файлу .conf, який є найближчим до вашого пристрою. Приміром, якщо ваш телевізор Samsung не розпізнається, для початку варто спробувати одну з конфігурацій для телевізорів Samsung іншої моделі.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. Перейдіть на вкладку `Журнали` в UMS і знайдіть текст `Медіапрогравач не було розпізнано. Можливе розпізнання заголовків HTTP:`. Саме ця інформація необхідна для того, щоб система UMS розпізнала ваш пристрій.
 
 1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
 
