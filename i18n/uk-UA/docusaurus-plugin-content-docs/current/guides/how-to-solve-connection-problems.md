@@ -1,12 +1,12 @@
-# How to solve connection problems
+# Як усунути проблеми з підключенням
 
-This page provides solutions for the most common connection problems our users encounter.
+На цій сторінці наведено способи розв'язання найпоширеніших проблем із підключенням, із якими стикаються наші користувачі.
 
-## UMS detects renderer, but renderer does not detect UMS
+## UMS розпізнає програвач, але не навпаки
 
-This usually happens when your computer has more than one active network connection (for example, one wired and one wireless). You can solve it by setting which network interface you want:
+Зазвичай це трапляється, коли на вашому комп’ютері активні кілька мережевих підключень (наприклад, одне дротове та одне по WiFi). Ви можете усунути цю проблему, вказавши потрібний мережевий інтерфейс:
 
-1. Open UMS
-2. Select the `General Settings` tab
-3. Expand the `Force networking on interface:` dropdown and select the interface you want. There might be a lot of options in the dropdown. The one you want will usually have an IP address in brackets after the name, for example:  
-   ![Open the GUI](@site/docs/guides/img/how-to-solve-connection-problems.png)
+1. Відкрийте UMS
+2. Оберіть вкладку `Загальні налаштування`
+3. Розгорніть спадний список `Примусове підключення до мережі через інтерфейс:` та виберіть потрібний. У спадному меню може бути багато варіантів. Зазвичай бажаний варіант має IP-адресу, вказану в дужках після назви, наприклад:  
+   ![Відкрийте графічний інтерфейс користувача](@site/docs/guides/img/how-to-solve-connection-problems.png)
