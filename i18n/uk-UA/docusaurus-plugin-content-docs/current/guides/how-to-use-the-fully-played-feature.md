@@ -1,13 +1,13 @@
-# How to use the "Fully played" feature
+# Як користуватися функцією «Повністю відтворено»?
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+Функція «Повністю відтворено» дозволяє відстежувати файли, які ви повністю відтворили; для відео це означає, що ви переглянули щонайменше 92%, а для аудіо – що ви прослухали щонайменше 92% тривалості.
 
-## Setup
+## Як це працює?
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Цю функцію увімкнена типово, тож якщо ви нічого не змінювали – можете нею користуватися одразу ж. Якщо вона не працює, будь ласка, переконайтеся, що наступні дії не були скасовані:
 
-1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
+1. На вкладці **Налаштування навігації** виберіть дію **«Повністю відтворено»**. Зокрема, переконайтеся, що ви не вибрали **Не робити нічого**. Типово, це функція **Позначити медіа**, яка накладає значок на мініатюру, щоб відмітити, що відео вже переглянуто.
+2. На вкладці **Спільний вміст** знайдіть теку, котру потрібно відстежувати, і встановіть прапорець **Відстежувати стан відтворення файлів** навпроти відповідного рядка.
 3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
 
 ## Marking files as fully played automatically
