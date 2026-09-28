@@ -17,13 +17,13 @@
 
 1. Перейдіть на вкладку `Журнали` в UMS і знайдіть текст `Медіапрогравач не було розпізнано. Можливе розпізнання заголовків HTTP:`. Саме ця інформація необхідна для того, щоб система UMS розпізнала ваш пристрій.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. У вашому новому файлі .conf знайдіть рядок, що визначає `UserAgentSearch` та/або `UpnpDetailsSearch`, і замініть значення на відповідну ідентифікаційну інформацію.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Перегляньте та відтворіть якісь мультимедійні файли на своєму пристрої. Зверніть увагу, з якими із них виникли проблеми з відтворенням. Тепер можете перейти до наступного розділу, щоб покращити підтримку вашого пристрою.
 
-## Improving support for a device
+## Покращення підтримки пристрою
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Якщо з відтворенням якогось із ваших медіафайлів виникають проблеми, слід змінювати налаштування програвача, доки все не запрацює. Повний перелік параметрів знаходиться у файлі [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Найчастіше змінюють такі елементи:
     ```
     Video
     Audio
@@ -33,10 +33,10 @@
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Переконайтеся, що у вашому новому файлі конфігурації немає рядка `MediaInfo = false`, оскільки це призведе до того, що рядки `Supported` перестануть працювати.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Щоб переконатися, що на вашому пристрої працює функція перекодування, відтворіть файл із теки `#--TRANSCODE--#`. У цій теці відтворіть будь-який запис із `FFmpeg`. Якщо відео відтворюється, значить, процес перекодування працює.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Поля `Supported` потрібно заповнити, щоб повідомити UMS, які файли ваш пристрій підтримує безпосередньо. Може бути доцільним знайти в Інтернеті інструкцію до вашого пристрою та скористатися нею для заповнення цих рядків.
 
-1. As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+1. Окрім того, ви можете переглянути інші конфігураційні файли програвачів у теці «renderers» каталогу інсталяції, щоб дізнатися, як вони працюють. Іноді вам може знадобитися допомога, яку можна отримати на нашому форумі. Будь ласка, не забудьте повідомити нам про внесені вами поліпшення, щоб інші користувачі, які мають такий самий пристрій, також змогли ними скористатися. Ми згадаємо вас у нашому анонсі випуску та у списку змін.
