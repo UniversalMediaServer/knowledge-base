@@ -6,12 +6,12 @@
 
 Ви можете підписатися на потоки/канали відео, додавши посилання на RSS-стрічки, а у випадку з YouTube – просто ввівши посилання на канал.
 
-### 1: Go to the Shared Content section
+### 1. Перейдіть до розділу Спільний вміст
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+У налаштуваннях UMS у вашому веббраузері відкрийте меню та виберіть "Спільний вміст"  
+![Меню налаштувань](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2. Відкрийте віконце "Додати новий спільний вміст"
 
 When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
 ![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
