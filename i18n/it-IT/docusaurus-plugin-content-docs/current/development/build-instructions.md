@@ -5,17 +5,17 @@ Questo documento descrive come compilare Universal Media Server a partire dai fi
 _Nota importante:_
 Le versioni precompilate di Universal Media Server possono essere scaricate all'indirizzo: http://www.universalmediaserver.com/; pertanto NON è necessario eseguire questi passaggi come utente generico.
 
-The following software packages are required:
+Sono richiesti i seguenti software:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (il JRE non è sufficiente)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-# Short instructions
+# Istruzioni brevi
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Se tutti i software richiesti sono installati, i seguenti comandi
+scaricheranno gli ultimi sorgenti e genereranno UMS:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -23,83 +23,83 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Dove `PACKAGENAME` è il nome del sistema operativo di destinazione: `windows`, `macos`, `macos-arm`, `macos-pre1015` o `linux-*`, dove `*` è l'architettura; una delle seguenti: `x86`, `x86_64`, `arm64`, `armel`, o `armhf`
 
-The result will be built in the "target" directory:
+Il risultato sarà depositato nella directory "target":
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Istruzioni complete
 
-First all required software has to be installed:
+Prima tutto il software richiesto deve essere installato:
 
-## 1. Download and install the Java JDK 17
+## 1. Scarica e installa Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Vedi https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Scarica e installa Git
 
-See https://git-scm.com/
+Vedi https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Scarica ed estrai Maven
 
-See http://maven.apache.org/
+Vedi http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Impostazione variabili di ambiente
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Crea nuove variabili o aggiungi il valore se la variabile esiste già:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Livello: Sistema, variabile: `JAVA_HOME`, valore: path di installazione JDK
+- Livello: utente, variabile `M2_HOME`, valore: path di estrazione di Maven
+- Livello: Utente, variabile `M2`, valore: `%M2_HOME%\bin`
+- Livello: Utente, variabile `PATH`, valore `%M2%`
 
 ### Linux
 
-Nothing to do.
+Niente da fare.
 
-### macOS
+### Mac OS X
 
-Nothing to do.
+Niente da fare.
 
-## 5. Download the UMS source code
+## 5. Scarica il codice sorgente UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Aggiorna i sorgenti all'ultima versione (opzionale)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Compila l'ultima versione di UMS
 
 ```bash
-mvn package -P PACKAGENAME
+pacchetto mvn -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+Dove `PACKAGENAME` è il nome del sistema operativo di destinazione: `windows`, `macos`, `macos-arm`, `macos-pre1015` o `linux-*`, dove `*` è l'architettura; uno di: `x86`, `x86_64`, `arm64`, `armel`, o `armhf`
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+È anche possibile specificare un flag opzionale se si desidera saltare il download di binari, che può essere utile per accelerare il tempo di compilazione, in particolare su Windows e Linux:
 
 ```bash
-mvn package -P PACKAGENAME -Doffline=true
+pacchetto mvn -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+I binari risultanti saranno costruiti nella directory "target":
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Compilazioni automatiche
 
 These last two commands can easily be automated using a script e.g.:
 
