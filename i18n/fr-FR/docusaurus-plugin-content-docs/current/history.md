@@ -2,156 +2,156 @@
 sidebar_position: 4
 ---
 
-# History
+# Historique
 
-## Overview
+## Résumé
 
-We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
+Nous avons commencé en 2012 en tant que fork de PS3 Media Server, qui était l'un des serveurs de médias les plus populaires et les plus notés autour de nous. Notre fondateur, SubJunk, était également un développeur de ce projet. À l'époque, il s'agissait simplement d'un serveur multimédia DLNA, avec une interface graphique beaucoup plus simple et un ensemble de fonctionnalités.
 
-It did its simple job well, but we have taken UMS in new directions, and to new heights.
+Il a bien fait son travail simple, mais nous avons pris UMS dans de nouvelles directions, et à de nouveaux sommets.
 
-Here are some highlights of the journey:
+Voici quelques points saillants de la course :
 
-## Previous Versions
+## Versions précédentes
 
 ### v14 (2022-12-13)
 
-The biggest changes here involved the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices and media players/renderers.
+Les changements les plus importants impliquent la possibilité de contrôler l'accès à votre contenu. Cela inclut des améliorations aux comptes utilisateurs comme les avatars et le suivi de lecture par utilisateur, ainsi que la possibilité d'afficher du contenu différent selon l'appareil.
 
-![Example of blocking a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Exemple de blocage d'un moteur de rendu](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-We also added the ability to add a TMDB API key to manually add and edit metadata for TV series and videos, and to mark TV series and movies as fully played.
+Nous avons également ajouté la possibilité d'ajouter une clé API TMDB pour ajouter et éditer manuellement des métadonnées pour les séries TV et les vidéos, et de marquer les séries TV et les films comme pleinement joués.
 
-![Example of editing metadata](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Exemple d'attribution d'un compte à un moteur de rendu](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-[See more details on the What's New page](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+[Voir plus de détails sur la page Quoi de neuf](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
 ### v13 (2022-12-13)
 
-This release was all about 3D and virtual reality, led by the contributor threedguru.
+Cette version était entièrement consacrée à la 3D et à la réalité virtuelle, sous la direction du contributeur threedguru.
 
-![Shared content](@site/docs/img/history-v13.png)
+![Contenu partagé](@site/docs/img/history-v13.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v12 (2022-11-29)
 
-This was a complete rewrite of our GUI using modern tooling in the web browser, with huge effort by SurfaceS and js-kyle.
+Ce fut une réécriture complète de notre interface graphique en utilisant des outils modernes dans le navigateur web, avec un effort énorme de SurfaceS et js-kyle.
 
-This also introduced the concept of authentication, users and groups.
+Cela a également introduit le concept d'authentification, d'utilisateurs et de groupes.
 
 ![Authentication](@site/docs/img/history-v12-1.png)
 
-Another change is that the Shared Content area has been unified, where before it was split between local and web content, now they are in the same list.
+Un autre changement est que la zone de contenu partagé a été unifiée, où auparavant il était divisé entre le contenu local et le contenu web, maintenant ils sont dans la même liste.
 
-![Shared content](@site/docs/img/history-v12-2.png)
+![Contenu partagé](@site/docs/img/history-v13.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v11 (2022-05-27)
 
-We improved the web interface in many ways, including more rich data like logos and backgrounds to TV series, movies and episodes, improved device detection, improved network state detection/recovery, video playback and seeking, improved API metadata matching, HLS transcoding for all devices, and more!
+Nous avons amélioré l'interface web de plusieurs façons, y compris des données plus riches telles que les logos et les arrière-plans des séries télévisées, des films et des épisodes, une meilleure détection de l'appareil, amélioration de la détection et de la récupération d'état réseau, de la lecture et de la recherche de vidéos, de la correspondance des métadonnées de l'API, du transcodage HLS pour tous les appareils, et plus encore !
 
-![Web interface overview](@site/docs/img/history-v11.gif)
+![Vue d'ensemble de l'interface Web](@site/docs/img/history-v11.gif)
 
-This was our first version with our new superstar developer, SurfaceS, who put a lot into this release.
+Ce fut notre première version avec notre nouveau développeur Superstar, SurfaceS, qui a mis beaucoup de choses dans cette version.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v10 (2021-01-12)
 
-Here we focused on making our rich metadata more useful.
+Ici, nous nous sommes efforcés de rendre nos riches métadonnées plus utiles.
 
-We added new folders to the Media Library, including "Filter by Information", which lets you browse the videos by actor, genre, country, director, IMDb rating, and release date.
+Nous avons ajouté de nouveaux dossiers à la médiathèque, y compris "Filtrer par information", qui vous permet de parcourir les vidéos par acteur, genre, pays, réalisateur, note IMDb, et date de sortie.
 
-The web interface got a lot more functionality by letting you click on an item like an actor or genre of a video to see other matches for that person or genre (or other metadata). We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
+L'interface web a eu beaucoup plus de fonctionnalités en vous permettant de cliquer sur un élément comme un acteur ou un genre de vidéo pour voir d'autres correspondances pour cette personne ou ce genre (ou d'autres métadonnées). Nous avons ajouté quelques liens rapides à la page d'accueil de l'interface web, comme récemment ajouté, en cours, les plus joués, etc.
 
-Thumbnails for TV series now have the fully played icon if all episodes have been fully played:
+Les miniatures de la série TV ont maintenant l'icône entièrement jouée si tous les épisodes ont été entièrement joués:
 
-![Fully played TV series](@site/docs/img/history-v10.png)
+![Séries télévisées visionnées dans leur intégralité](@site/docs/img/history-v10.png)
 
-We also welcomed ik666 to the development team, who has added a new API for integrations, and greatly improved UPnP support.
+Nous avons également accueilli ik666 dans l'équipe de développement, qui a ajouté une nouvelle API pour les intégrations, et grandement amélioré le support UPnP.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v9 (2019-09-06)
 
-No need to install Java anymore!
+Plus besoin d'installer Java !
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v8 (2019-03-29)
 
-This version focused on making it easier to enjoy streaming web content like vodcasts, podcasts, internet radio, YouTube channels, and other streaming web content by adding the Shared Content tab.
+Cette version a pour but de faciliter la diffusion de contenu web comme les vodcasts, les podcasts, radio Internet, chaînes YouTube, et autres contenus Web en streaming en ajoutant l'onglet Contenu Partagé.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v7 (2018-03-27)
 
-This was the version to focus on our dynamic media browsing features with the Media Library folder.
+C'est la version à laquelle nous nous concentrons sur nos fonctionnalités de navigation dynamique avec le dossier Médiathèque.
 
-We added detection of Movies and TV series and also added folder-watching so files could be automatically detected in shared folders
+Nous avons ajouté la détection de Films et de séries TV et ajouté la surveillance de dossiers afin que les fichiers puissent être automatiquement détectés dans les dossiers partagés
 
-We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
+Nous avons également eu la chance d'avoir mik_s, notre modérateur de forum, rejoignez-nous autour de cette fois-ci, qui fait un travail incroyable autour de cet endroit!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v6 (2016-01-30)
 
-Here we added the "Fully played action" with overlay icons and file management, which was highly-anticipated.
+Ici, nous avons ajouté l'action "Complètement joué" avec les icônes de superposition et la gestion des fichiers, qui était très attendue.
 
-We also welcomed Nadahar to the team, who improved stability, logging and language support.
+Nous avons également accueilli Nadahar dans son équipe, qui a amélioré la stabilité, la journalisation et le support linguistique.
 
-Thanks to his Crowdin integration, we have had 523 contributors to our 40 languages!
+Grâce à son intégration de Crowdin, nous avons eu 523 contributeurs à nos 40 langues !
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v5 (2015-01-25)
 
-In this release, we added support for UPnP connections and playback, which meant that the community were able to connect to many more devices! Thanks largely to skeptical for that.
+Dans cette version, nous avons ajouté la prise en charge des connexions UPnP et de la lecture, ce qui a permis à la communauté de se connecter à beaucoup plus de périphériques ! Merci en grande partie à ceux qui sont sceptiques pour cela.
 
-We also added our first pass at IMDb metadata, but we didn't yet have our own API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+Nous avons également ajouté notre premier mot de passe aux métadonnées IMDb, mais nous n'avons pas encore eu notre propre API. Nous avons OpenSubtitles pour le remercier, et désolé pour tous les spams de requête de ces jours-là !
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v4 (2014-07-25)
 
-The first web interface was added, finally we gave the UMS community the ability to access content via their web browsers!
+La première interface web a été ajoutée, enfin nous avons donné à la communauté UMS la possibilité d'accéder au contenu via leurs navigateurs Web!
 
-We also added support for casting, and the ability to transcode to AAC.
+Nous avons également ajouté le support du casting, et la possibilité de transcoder en AAC.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v3 (2013-11-01)
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+V3 a été une énorme sortie, et c'est quand nous avons commencé à nous éloigner de la PS3MS avec des tonnes de nos propres fonctionnalités.
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+Nous avons ajouté les nouveaux médias et les dossiers récemment joués, la reprise de la lecture, le prettifing du nom de fichier et un assistant de configuration de démarrage.
 
-We also welcomed valib to the team, who is still contributing today!
+Nous avons également salué le valib dans l'équipe, qui contribue encore aujourd'hui!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v2 (2012-10-31)
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+Avec v2 est venu l'ajout de l'onglet de gestion des plugins qui se connecte à notre base de données centralisée, et nous avons de nouveau été les premiers à introduire une fonctionnalité; Sous-titres en direct, où vous pouvez diffuser des sous-titres à la volée depuis votre moteur de rendu.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v1 (2012-05-31)
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+Ces premières versions ont porté sur l'aspect "universel" du nouveau programme, en ajoutant le support de dizaines de nouveaux appareils.
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+Nous avons également été le premier serveur média à supporter un mouvement fluide, une fonction d'interpolation de cadre qui vient maintenant avec chaque téléviseur, mais à l'époque était seulement dans de nouveaux téléviseurs haut de gamme.
 
-Our second developer, SharkHunter, also joined us within the first few days.
+Notre deuxième développeur, SharkHunter, nous a aussi rejoint dans les premiers jours.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+[Voir plus de détails dans l'annonce de publication](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
-### PS3 Media Server (2008)
+### Serveur de média PS3 (2008)
 
-The project that started it all! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Le projet qui a tout commencé ! Nous sommes un fork de ce projet qui a été lancé en 2008 par Shagrath, qui a été rejoint par SubJunk, le fondateur de Universal Media Server.
 
-The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
+La PS3 était une excellente machine pour lire des médias, mais elle ne supportait pas beaucoup de formats vidéo, PS3 Media Server a donc utilisé beaucoup de trucs pour le faire lire n'importe quelle vidéo que vous pourriez lui donner. Nous avons appliqué la même stratégie, pour tous les appareils et tous les acteurs.
 
-![PS3 Media Server](@site/docs/img/history-pms.png)
+![Serveur de média PS3](@site/docs/img/history-pms.png)

@@ -1,33 +1,33 @@
-# How to use the "Fully played" feature
+# Як користуватися функцією «Повністю відтворено»?
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+Функція «Повністю відтворено» дозволяє відстежувати файли, які ви повністю відтворили; для відео це означає, що ви переглянули щонайменше 92%, а для аудіо – що ви прослухали щонайменше 92% тривалості.
 
-## Setup
+## Як це працює?
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Цю функцію увімкнена типово, тож якщо ви нічого не змінювали – можете нею користуватися одразу ж. Якщо вона не працює, будь ласка, переконайтеся, що наступні дії не були скасовані:
 
-1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+1. На вкладці **Налаштування навігації** виберіть дію **«Повністю відтворено»**. Зокрема, переконайтеся, що ви не вибрали **Не робити нічого**. Типово, це функція **Позначити медіа**, яка накладає значок на мініатюру, щоб відмітити, що відео вже переглянуто.
+2. На вкладці **Спільний вміст** знайдіть теку, котру потрібно відстежувати, і встановіть прапорець **Відстежувати стан відтворення файлів** навпроти відповідного рядка.
+3. Якщо ви хочете, щоб статус відтворення відстежувався окремо для різних програвачів, ви можете прив’язати пристрої до різних облікових записів користувачів. Кожен обліковий запис зберігатиме власні дані прогресу відтворень.
 
-## Marking files as fully played automatically
+## Автоматичне позначення файлів як повністю відтворених
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Після того як ви виконаєте всі кроки налаштування, вам залишиться лише відтворити більше ніж 92% тривалості файлу.
 
-## Mark TV series, videos, or directories as fully played manually
+## Ручне позначення серій, відео або каталогів повністю переглянутими
 
-You can mark TV series and videos as fully played directly via the web player:
+Ви можете позначити серіали та відео як повністю переглянуті безпосередньо через вебпрогравач:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Приклад того, як позначати серіали та відео як повністю переглянуті](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Щоб позначити всі файли у спільній теці як повністю відтворені в _старому_ інтерфейсі налаштувань, на вкладці **Спільний вміст** клацніть правою кнопкою миші на теці, яку потрібно позначити як повністю відтворену, а потім натисніть **Позначити вміст як повністю відтворений**
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Приклад того, як позначати теку як повністю відтворену](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Усунення повністю відтвореного статусу
 
-To "unplay" a file, you can do one of the following options:
+Щоб «відіграти назад факт відтворення» файлу, можна скористатися одним із таких варіантів:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Перейменуйте файл як будь-яким способом. Згодом ви знову можете повернути йому початкову назву, оскільки UMS видалить цей запис зі свого кешу після того, як ви зміните найменування.
+- Перемістіть файл до іншого каталогу. Після цього ви зможете повернути його у початкове місце, оскільки UMS видалить цей запис зі свого кешу після того, як ви перемістите файл.
+- Щоб «відіграти назад факт відтворення» усього спільного каталогу, на вкладці **Спільний вміст** клацніть правою кнопкою миші на каталозі, який потрібно позначити як невідтворений, а потім натисніть **Позначити вміст як невідтворений**.
