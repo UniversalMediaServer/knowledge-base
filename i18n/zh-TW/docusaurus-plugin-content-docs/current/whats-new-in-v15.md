@@ -8,7 +8,7 @@ sidebar_position: 2
 
 The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
 
-
+A quick overview of the changes in this version is:
 
 - A **user switcher** with support for **multiple logged-in users**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
