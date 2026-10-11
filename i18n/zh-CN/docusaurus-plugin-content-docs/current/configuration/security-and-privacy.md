@@ -53,7 +53,7 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-要隐藏 Web 文件夹，你需要在高级 GUI 模式下的常规配置选项卡中取消勾选“启用外部网络”，或者在你的 UMS.conf 文件中将 `external_network =` 的值改为 false。 This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+要隐藏 Web 文件夹，你需要在高级 GUI 模式下的常规配置选项卡中取消勾选“启用外部网络”，或者在你的 UMS.conf 文件中将 `external_network =` 的值改为 false。 This will have the side effect that the automatic updater won't work. 从GUI所做的更改将在重新启动后生效。
 
 ## PIN code
 
