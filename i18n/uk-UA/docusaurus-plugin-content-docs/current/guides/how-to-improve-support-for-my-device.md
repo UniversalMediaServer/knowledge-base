@@ -1,29 +1,29 @@
-# How to improve support for my device
+# Як покращити підтримку мого пристрою
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Якщо ваш пристрій не функціонує належним чином – наприклад, не вдається переглядати теки або відтворювати файли – можливо, ви зможете розв'язати цю проблему шляхом зміни налаштувань у файлі конфігурації програвача. Різні пристрої/програвачі/клієнти по-різному взаємодіють із серверами, подібними до UMS, тому файл конфігурації вказує UMS, як саме налагодити взаємодію з вашим пристроєм.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Кожен профіль конфігурації слугує двом цілям:
+- Дозволяє UMS розпізнавати конкретний програвач під час спроби підключення
+- Визначає можливості такого програвача
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Ми маємо файл конфігурації типового програвача, котрий містить документацію щодо всіх наших налаштувань. Ознайомтеся з останньою версією за посиланням → https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
-## Adding support for an unrecognized device
+## Додавання підтримки для невідомого пристрою
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Якщо UMS не розпізнає ваш пристрій, це означає, що жоден із профілів конфігурації програвача не відповідає вашому пристрою. В результаті UMS показує повідомлення `Невідомий програвач`, і, оскільки він не знає можливостей вашого програвача, то й не може забезпечити оптимізований вивід для вашого пристрою.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Відповідь полягає в тому, щоб спробувати створити власний файл конфігурації програвача.
+1. Створіть копію файлу .conf, який є найближчим до вашого пристрою. Приміром, якщо ваш телевізор Samsung не розпізнається, для початку варто спробувати одну з конфігурацій для телевізорів Samsung іншої моделі.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. Перейдіть на вкладку `Журнали` в UMS і знайдіть текст `Медіапрогравач не було розпізнано. Можливе розпізнання заголовків HTTP:`. Саме ця інформація необхідна для того, щоб система UMS розпізнала ваш пристрій.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. У вашому новому файлі .conf знайдіть рядок, що визначає `UserAgentSearch` та/або `UpnpDetailsSearch`, і замініть значення на відповідну ідентифікаційну інформацію.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Перегляньте та відтворіть якісь мультимедійні файли на своєму пристрої. Зверніть увагу, з якими із них виникли проблеми з відтворенням. Тепер можете перейти до наступного розділу, щоб покращити підтримку вашого пристрою.
 
-## Improving support for a device
+## Покращення підтримки пристрою
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Якщо з відтворенням якогось із ваших медіафайлів виникають проблеми, слід змінювати налаштування програвача, доки все не запрацює. Повний перелік параметрів знаходиться у файлі [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Найчастіше змінюють такі елементи:
     ```
     Video
     Audio
@@ -33,10 +33,10 @@ The solution is to try creating your own renderer configuration file.
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Переконайтеся, що у вашому новому файлі конфігурації немає рядка `MediaInfo = false`, оскільки це призведе до того, що рядки `Supported` перестануть працювати.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Щоб переконатися, що на вашому пристрої працює функція перекодування, відтворіть файл із теки `#--TRANSCODE--#`. У цій теці відтворіть будь-який запис із `FFmpeg`. Якщо відео відтворюється, значить, процес перекодування працює.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Поля `Supported` потрібно заповнити, щоб повідомити UMS, які файли ваш пристрій підтримує безпосередньо. Може бути доцільним знайти в Інтернеті інструкцію до вашого пристрою та скористатися нею для заповнення цих рядків.
 
-1. As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+1. Окрім того, ви можете переглянути інші конфігураційні файли програвачів у теці «renderers» каталогу інсталяції, щоб дізнатися, як вони працюють. Іноді вам може знадобитися допомога, яку можна отримати на нашому форумі. Будь ласка, не забудьте повідомити нам про внесені вами поліпшення, щоб інші користувачі, які мають такий самий пристрій, також змогли ними скористатися. Ми згадаємо вас у нашому анонсі випуску та у списку змін.
