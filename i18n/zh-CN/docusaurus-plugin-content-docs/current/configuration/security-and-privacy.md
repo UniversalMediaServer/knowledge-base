@@ -6,14 +6,14 @@ UMS主要通过两种方式提供媒体服务——通过DLNA/UPnP供媒体播�
 
 网页浏览器通过用户账号登录，可以方便地进行安全与隐私控制。
 
-媒体播放器应用通常不支持“用户”概念，因此，一般而言每台设备都会获取相同的内容。 这可能不是你想要的。 例如，如果你有两个文件夹 kids_safe 和 kids_unsafe，你可能想要限制儿童房中的渲染器，使其只能访问 kids_safe 文件夹。 另一种常见情况是，你和不想让其访问你媒体的人（例如室友）处于同一网络，因此你想要完全屏蔽某些渲染器。
+媒体播放器应用通常不支持“用户”概念，因此，一般而言每台设备都会获取相同的内容。这可能不是你想要的。例如，如果你有两个文件夹 kids_safe 和 kids_unsafe，你可能想要限制儿童房中的渲染器，使其只能访问 kids_safe 文件夹。另一种常见情况是，你和不想让其访问你媒体的人（例如室友）处于同一网络，因此你想要完全屏蔽某些渲染器。
 
 UMS 提供了多种方法来控制这些情况下的访问。
 
 ## 默认允许或阻止渲染器或网络设备
-你可以为渲染器和网络设备选择默认策略。 你可以默认允许或拒绝，配合黑名单和白名单，实现完全控制。
+你可以为渲染器和网络设备选择默认策略。你可以默认允许或拒绝，配合黑名单和白名单，实现完全控制。
 
-这对于合住环境或广泛/低信任度的本地网络非常有用。 对于使用电力线适配器搭建网络的用户也很有用，因为这可能导致来自邻居的意外访问。
+这对于合住环境或广泛/低信任度的本地网络非常有用。对于使用电力线适配器搭建网络的用户也很有用，因为这可能导致来自邻居的意外访问。
 
 ![设置网络允许偏好的示例](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
@@ -53,7 +53,7 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+要隐藏 Web 文件夹，你需要在高级 GUI 模式下的常规配置选项卡中取消勾选“启用外部网络”，或者在你的 UMS.conf 文件中将 `external_network =` 的值改为 false。 This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
 
 ## PIN code
 
