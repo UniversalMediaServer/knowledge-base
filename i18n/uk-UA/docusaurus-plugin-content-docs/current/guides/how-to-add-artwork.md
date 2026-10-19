@@ -1,53 +1,53 @@
-# How to add artwork
+# Як додавати обкладинки
 
-You can add your own artwork for folders and playlists so your frontend shows custom thumbnails instead of generic default images.
+Ви можете додати власні обкладинки для тек та списків відтворення, щоб в інтерфейсі показувалися власні мініатюри замість типових зображень.
 
-This guide explains:
+Цей посібник пояснює:
 
-- which image formats are supported
-- how to name artwork files
-- where to place those files
-- what happens when a playlist image is missing
+- які формати зображень підтримуються
+- як називати файли обкладинок
+- куди розміщувати такі файли
+- що трапляється, коли зображення списку відтворення відсутнє
 
-## Supported image formats
+## Підтримувані формати файлів зображень
 
-The following file types are supported and checked in this order. The first matching image file is used:
+Наступні файлові типи підтримуються та перевіряються в зазначеному порядку. Використовується найперший відповідний файл зображення:
 
-- `webp`
-- `png`
-- `jpeg`
-- `jpg`
-- `bmp`
-- `gif`
+- `.webp`
+- `.png`
+- `.jpeg`
+- `.jpg`
+- `.bmp`
+- `.gif`
 
-You can use any one of these formats for both folder artwork and playlist artwork.
+Ви можете використовувати будь-який із цих форматів як для обкладинок тек, так і для обкладинок списків відтворення.
 
-## Folder
+## Теки
 
-To set artwork for a folder, place an image file named `folder.ext` inside that folder.
+Аби встановити обкладинку для теки, помістіть у неї файл зображення із назвою `folder.ext`.
 
-Replace `.ext` with one of the supported extensions.
+Замініть `.ext` на одне з підтримуваних розширень.
 
-Examples:
+Приклади:
 
 - `folder.webp`
 - `folder.jpg`
 - `folder.png`
 
-## Playlists
+## Списки відтворення
 
-To set artwork for a playlist, use the same base filename as the playlist file.
+Щоб встановити обкладинку для списку відтворення, використовуйте те саме базове ім’я файлу, що й у самому файлі списку відтворення.
 
-Example:
+Приклад:
 
-- Playlist file: `Jazz.m3u8`
-- Artwork file: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
+- Файл списку відтворення: `Jazz.m3u8`
+- Файл обкладинки: `Jazz.jpg` (або `Jazz.webp`, `Jazz.png` тощо)
 
-If a matching playlist artwork file is not found, the folder artwork is used as a fallback.
+Якщо файл обкладинки відповідного списку відтворення не знайдено, як замінник використовуватиметься обкладинка теки.
 
-## Example folder structure
+## Приклад структури тек
 
-Use this as a reference:
+Використовуйте його за зразок:
 
 ```text
 Music/
@@ -64,10 +64,10 @@ Music/
     `-- track01.mp3
 ```
 
-In this example:
+У цьому прикладі:
 
-- `Music/folder.jpg` is the artwork for the top-level `Music` folder.
-- `Music/Jazz/folder.png` is the artwork for the `Jazz` folder.
-- `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` has no matching `Smooth.*` image, so the `Jazz` folder artwork is used.
+- `Music/folder.jpg` – це обкладинка для теки верхнього рівня `Music`.
+- `Music/Jazz/folder.png` – це обкладинка для теки `Jazz`.
+- Обкладинка `Music/Jazz/Jazz.jpg` використовується для списку відтворення `Jazz.m3u8`.
+- Список відтворення `Music/Jazz/Smooth.m3u8` немає відповідної обкладинки з назвою `Smooth.*`, натомість використовується обкладинка з теки `Jazz`.
 
