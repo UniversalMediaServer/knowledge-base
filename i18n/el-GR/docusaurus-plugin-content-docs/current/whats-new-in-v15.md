@@ -2,22 +2,22 @@
 sidebar_position: 2
 ---
 
-# What's New in v15
+# Τι νέο υπάρχει στην έκδοση v15
 
-## Overview
+## Επισκόπηση
 
-The 2 main goals for V15 have been to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+Οι 2 βασικοί στόχοι για την V15 ήταν η απλούστευση του περιβάλλοντος, με βάση την ανατροφοδότηση των χρηστών και τις κριτικές, και να κάνουμε τους λογαριασμούς χρηστών μας ευκολότερους στη χρήση.
 
-A quick overview of the changes in this version is:
+Μια γρήγορη επισκόπηση των αλλαγών σε αυτήν την έκδοση είναι:
 
 - A **user switcher** with support for **multiple logged-in users**
 - A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
+- Σύνδεση με \*\*Κωδικόυς PIN \*\*
+- Δυναμικά **Μεταδεδομένα τηλεοπτικής σεζόν**
+- Ένα κουμπί **πληροφορίες πολυμέσων** για αρχεία
 - Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
 
-## New features
+## Νέα χαρακτηριστικά
 
 ### User switcher
 
