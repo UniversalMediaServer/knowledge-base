@@ -1,90 +1,90 @@
-# UMS UPnP Service
+# UPnP Служба програми UMS
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS забезпечує розширену службу UPnP, завдяки якій зовнішні пристрої управління можуть взаємодіяти з додатковими функціями системи.
 
-## Usage
+## Використання
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Ця служба розміщена в просторі імен `schemas-upnp-org` і відповідає типу `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Для точок контролю Java, що використовують JUPnP, слід викликати метод `findService` для об’єкта UMS `RemoteDevice`:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Наступні дії доступні через цей службовий інтерфейс.
 
-## MyMusic interactions
+## Взаємодія з MyMusic
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Вподобані альбоми можна проглядати, використовуючи ідентифікатор об’єкта `MYMUSIC$` як пряме посилання або шляхом переходу до розділу `My Albums` у кореневій теці.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Ведення списку улюблених є особливо корисним для великих колекцій альбомів, де ручний перегляд усієї бібліотеки може займати надто багато часу. Відібраний список улюблених альбомів допомагає користувачам швидко повертатися до потрібного вмісту без необхідності повторювати широкомасштабний пошук або глибоку навігацію по теках.
 
-In practice, favorites provide the following benefits:
+На практиці вподобання дають наступні переваги:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Швидший доступ до альбомів, які часто прослуховуються, навіть у дуже великих медіатеках.
+- Покращення повсякденного пошуку завдяки розмежуванню улюбленого контенту від повного каталогу.
+- Плавніший процес відтворення для користувачів та інструментів автоматизації, які потребують стабільного добору альбомів.
 
-### Input Parameters
+### Параметри введення
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Усі дії цього розділу вимагають введення вхідного параметра. Альбом має бути визначений за ідентифікатором MusicBrainz або ідентифікатором видання з Discogs. Вимагається принаймні один ідентифікатор; в іншому разі жодних дій не виконається.
 
-Example for Madonna's release `Like a Virgin`:
+Приклад для альбому співачки Мадонни `Like a Virgin`:
 
-| Attribute     |           Type           |             Example value            |
+| Attribute     |            Тип           |           Приклад значення           |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |           Рядок          | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Якщо під час вподобання альбому було вказано обидва параметри (`MusicBrainzId` та `DiscogsId`), то під час скасування вподобання цього альбому також необхідно вказувати обидва параметри.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+Позначає музичний альбом як вподобаний.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+Скасовує позначку вподобання музичного альбому.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Перевіряє, чи альбом наразі позначений як вподобаний. Якщо вказано обидва ідентифікатори (MusicBrainz та Discogs), метод повертає `true`, якщо хоча б один із цих ідентифікаторів позначений як вподобаний.
 
-## Backup Actions
+## Можливості резервного копіювання
 
-The service provides backup and restore actions.
+Ця служба забезпечує виконання операцій резервного копіювання та відновлення.
 
 :::info
-A backup must be created before a restore can be performed.
+Передумовою відновлення даних є попереднє створення їх резервної копії.
 :::
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Створює резервну копію бази даних `liked`, що містить аудіоальбоми, виявлені за ідентифікаторами MusicBrainz або Discogs.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Відновлює таблицю вподобаних альбомів. Перед виконанням цієї дії викличте функцію `BackupAudioLikes`.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Записує дані про оцінку аудіофайлу у файл резервної копії, що містить хеш-код файлу та його оцінку.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+Відновлює інформацію про рейтинги з резервної копії, створеної за допомогою функції `BackupRatings`.
 
-## Library Interactions
+## Взаємодія з бібліотекою
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+Повторно зчитує всю музичну бібліотеку.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Повторно зчитує вказану теку без повторення. Вхідним параметром має бути `ObjectID` теки.
 

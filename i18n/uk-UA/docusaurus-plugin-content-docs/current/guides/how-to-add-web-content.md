@@ -1,49 +1,49 @@
-# How to add web content
+# Як додавати вебвміст
 
-This article will explain how to add web content.
+Ця стаття присвячена процесу додавання вебвмісту
 
-## Video feeds
+## Відеопотік
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Ви можете підписатися на потоки/канали відео, додавши посилання на RSS-стрічки, а у випадку з YouTube – просто ввівши посилання на канал.
 
-### 1: Go to the Shared Content section
+### 1. Перейдіть до розділу Спільний вміст
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+У налаштуваннях UMS у вашому веббраузері відкрийте меню та виберіть «Спільний вміст»  
+![Меню налаштувань](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2. Відкрийте віконце «Додати новий спільний вміст»
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+Коли ви натиснете кнопку «Додати новий спільний вміст», відкриється віконце, у якому можна додати будь-який тип мультимедіа. Крок 1-ий – вибрати тип «Відеопотік»  
+![Модальне вікно з новими параметрами спільного доступу до вмісту](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3. Додайте вашу стрічку
 
-Here you can add your feed
+Тут ви можете додати вашу стрічку
 
-#### Name
+#### Назва
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Поле «Назва» для відеопотоків недоступне, оскільки потоки мають власні назви.
 
-#### Path
+#### Шлях
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Поле «Шлях» визначає структуру та підпорядкування каталогів, яка показуватиметься в UMS. Наприклад, якщо ви введете `Web/YouTube Channels`, вашу стрічку буде розміщено у каталозі `YouTube Channels`, який своєю чергою знаходиться в каталозі `Web`. Це дозволяє вам упорядковувати контент на власний розсуд і є особливо корисним, коли у вас є різні постачальники стрічок, а завдяки UMS ви можете зібрати їх усі в одному місці.
 
-#### Source/URL
+#### Джерело/URL-посилання
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Це посилання на відеопотік. Зазвичай воно закінчується на `.xml`, але у випадку з YouTube ми застосовуємо інший підхід і підтримуємо пряме введення URL-адреси каналу, що дозволяє вказати, наприклад, `https://www.youtube.com/@kurzgesagt`
 
-#### Authorized groups
+#### Дозволені групи
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Поле «Дозволені групи» дозволяє зробити цю стрічку доступною лише для певних груп, визначених в UMS, які пов’язані з різними користувачами та/або пристроями. Докладнішу інформацію шукайте в розділі [Безпека та приватність](../configuration/security-and-privacy.md#link-person-to-renderer).
 
-When you are happy with the options you entered, select the "Add" button.
+Коли ви будете задоволені введеними параметрами, натисніть кнопку «Додати».
 
-### Feed order
+### Порядок стрічок
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Якщо посилання на стрічку було правильним, поле «Назва» має заповнитися, і тепер ви можете перетягувати стрічку вгору або вниз, аби змінювати порядок
+![Список спільного вмісту та можливості сортування](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Збереження змін
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Ви можете повторити попередні кроки, щоб додати або змінити більше вмісту, а коли будете задоволені змінами, натисніть кнопку «Зберегти» внизу сторінки. Тепер ви можете переглядати ваш вміст на своїх пристроях:
+![Приклад відеопотоку у вебпрогравачі](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
