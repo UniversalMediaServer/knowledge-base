@@ -73,7 +73,7 @@ a value that is nearly right is then quietly treated as right.
 
 ## Notes
 
-Search ignores capitalisation. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
+Search ignores capitalization. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
 
 If a search does not return what you expect, the debug log shows the query UMS built from your
 input, on a line beginning with `lucene search string is`. Comparing it with what you typed usually
