@@ -36,7 +36,7 @@ belongs in the playlist file instead. See [Playlist directives](/configuration/p
 Albums you have liked are collected in a folder called **My Albums**. It is filled automatically:
 like an album and it appears, remove the like and it is gone again.
 
-By default the folder sits inside the media library with the other audio folders. If you reach for
+By default the folder sits inside the Media Library with the other audio folders. If you reach for
 it often, you can have it shown at the top level instead:
 
 ```
