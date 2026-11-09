@@ -97,7 +97,7 @@ What the line accepts:
 - A `data:` URI, if you would rather keep the picture inside the playlist file than host it somewhere.
 - Only `.m3u` and `.m3u8` playlists. Other playlist formats have no place to put the line.
 
-Capitalisation of the directive itself does not matter, `#EXTIMG:` and `#extimg:` both work.
+Capitalization of the directive itself does not matter, `#EXTIMG:` and `#extimg:` both work.
 
 ### Letting UMS write the line for you
 
