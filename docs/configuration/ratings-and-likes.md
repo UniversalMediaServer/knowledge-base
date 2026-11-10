@@ -29,7 +29,7 @@ This only applies to files that can hold a rating, and only from the moment you 
 not go back and write out ratings you set earlier.
 
 A rating that has to survive a rebuilt database, or travel with a playlist you copy elsewhere,
-belongs in the playlist file instead. See [Playlist directives](./playlist-directives).
+belongs in the playlist file instead. See [Playlist directives](/configuration/playlist-directives).
 
 ## The My Albums folder
 
@@ -62,5 +62,5 @@ file, such as radio stations.
 Because ratings and likes live in the database, they are worth keeping a copy of before anything
 drastic happens to it. UMS can hand them out and take them back in, which also makes it possible to
 move them to another installation. The
-[UMS UPnP service](./ums-extended-service) lists the actions a control point uses for
+[UMS UPnP service](/configuration/ums-extended-service) lists the actions a control point uses for
 that.
