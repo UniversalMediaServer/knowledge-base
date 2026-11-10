@@ -2,64 +2,50 @@
 
 UMS kan onthouden hoe je je muziek beoordeelt – op een schaal van nul tot vijf sterren – en via besturingselementen met beoordelingsknoppen kun je die waarden instellen en wijzigen terwijl je naar de muziek luistert.
 
-Likes are not a separate mechanism. A **like is a rating of five stars**, a **dislike is zero**. If
-your control point shows a heart instead of stars, it is writing the same value into the same place,
-which is why the two never contradict each other.
+Vind-ik-leuk zijn geen apart mechanisme. Een **'vind-ik-leuk' staat gelijk aan een beoordeling van vijf sterren**, een **'vind-ik-niet-leuk' aan nul**. Als je besturingselement een hartje in plaats van sterren toont, wordt dezelfde waarde op dezelfde plek geschreven;
+daarom spreken de twee elkaar nooit tegen.
 
-## Where a rating is kept
+## Waar een beoordeling wordt bewaard
 
-The rating lives in the UMS database, attached to the item rather than to the file. That has two
-consequences worth knowing:
+De beoordeling bevindt zich in de UMS-database en is gekoppeld aan het item, niet aan het bestand. Dat heeft twee
+gevolgen die het weten waard zijn:
 
-- It works for things that have nowhere to store a rating of their own — an internet radio station,
-  for instance, or an audio format whose tags have no rating field.
-- It is independent of the file, so re-tagging your collection with another tool does not overwrite
-  what you rated in UMS.
+- Het werkt voor zaken die zelf geen ruimte hebben om een ​​beoordeling op te slaan — bijvoorbeeld een internetradiozender, of een audioformaat waarvan de metadata geen veld voor een beoordeling bevat.
+- Dit staat los van het bestand; het opnieuw voorzien van tags in je verzameling met een andere tool overschrijft dus niet de beoordelingen die je in UMS hebt gegeven.
 
-If you would rather have the rating in the files as well, so that other programs can see it, UMS can
-write it into the tag when you rate something:
+Als je de beoordeling ook in de bestanden zelf wilt opslaan, zodat andere programma's deze kunnen zien, dan kan UMS de beoordeling in de tag schrijven zodra je een item beoordeelt:
 
 ```
-# Also write the rating into the file's tag. Off by default.
-audio_update_rating_tag = TRUE
+# Schrijf de beoordeling ook naar de tag van het bestand. Standaard uitgeschakeld.
+audio_update_rating_tag = WAAR
 ```
 
-This only applies to files that can hold a rating, and only from the moment you turn it on — it does
-not go back and write out ratings you set earlier.
+Dit geldt alleen voor bestanden waaraan een beoordeling kan worden toegekend, en uitsluitend vanaf het moment dat je deze functie inschakelt; eerder toegekende beoordelingen worden niet met terugwerkende kracht vastgelegd.
 
-A rating that has to survive a rebuilt database, or travel with a playlist you copy elsewhere,
-belongs in the playlist file instead. See [Playlist directives](/configuration/playlist-directives).
+Een beoordeling die behouden moet blijven bij het opnieuw opbouwen van een database, of die mee moet gaan met een afspeellijst die je naar een andere locatie kopieert, hoort in het bestand van de afspeellijst zelf thuis. Zie [Afspeellijst-richtlijnen](/configuration/playlist-directives).
 
-## The My Albums folder
+## De map Mijn Albums
 
-Albums you have liked are collected in a folder called **My Albums**. It is filled automatically:
-like an album and it appears, remove the like and it is gone again.
+Albums die je leuk bevonden hebt, worden verzameld in een map genaamd **Mijn albums**. Het wordt automatisch gevuld:
+zoals bij een album – als je een 'vind-ik-leuk' plaatst, verschijnt het; verwijder je die 'vind-ik-leuk', dan is het weer verdwenen.
 
-By default the folder sits inside the Media Library with the other audio folders. If you reach for
-it often, you can have it shown at the top level instead:
+Standaard bevindt de map zich in de mediabibliotheek, bij de andere audiomappen. Als je het vaak nodig hebt, kun je ervoor zorgen dat het op het hoogste niveau wordt weergegeven:
 
 ```
-# Show My Albums in the root folder. Off by default.
-audio_likes_visible_root = TRUE
+# Toon 'Mijn albums' in de hoofdmap. Standaard uitgeschakeld.
+audio_likes_visible_root = WAAR
 ```
 
-## Searching by rating
+## Zoeken op beoordeling
 
-UMS announces the rating as one of the properties it can be searched on, so a control point can ask
-for it the same way it asks for a title or an artist. A request for everything rated five stars
-finds what the My Albums folder shows; any other value works as well.
+UMS geeft aan dat de beoordeling één van de kenmerken is waarop gezocht kan worden; een 'besturingselement' kan hier dus op dezelfde manier naar vragen als naar een titel of een artiest. Een verzoek om alles met een beoordeling van vijf sterren
+levert op wat de map 'Mijn albums' laat zien; elke andere waarde werkt eveneens.
 
-The search matches an **exact** value. There is no way to ask for "four stars or better" in one
-request — a control point that offers such a filter has to ask for each value separately and put the
-answers together itself.
+De zoekopdracht komt overeen met een **exacte** waarde. Er is geen mogelijkheid om in één verzoek om "vier sterren of meer" te vragen; een besturingselement dat een dergelijk filter aanbiedt, moet voor elke waarde afzonderlijk een verzoek indienen en de antwoorden vervolgens zelf samenvoegen.
 
-The ratings are read from the database, so the search also finds items that carry no rating in their
-file, such as radio stations.
+De beoordelingen worden uit de database gelezen, waardoor de zoekopdracht ook items vindt die in hun bestand geen beoordeling hebben, zoals radiozenders.
 
-## Backing them up
+## Back-up ervan maken
 
-Because ratings and likes live in the database, they are worth keeping a copy of before anything
-drastic happens to it. UMS can hand them out and take them back in, which also makes it possible to
-move them to another installation. The
-[UMS UPnP service](/configuration/ums-extended-service) lists the actions a control point uses for
-that.
+Omdat beoordelingen en 'vind-ik-leuk' in de database staan, is het verstandig om er een kopie van te bewaren, voor het geval er iets ingrijpends met de database gebeurt. UMS kan ze uitreiken en weer innemen, wat het bovendien mogelijk maakt om ze naar een andere installatie te verplaatsen. De
+[UMS UPnP-service](/configuration/ums-extended-service) somt de acties op die een 'besturingselement' daarvoor gebruikt.
