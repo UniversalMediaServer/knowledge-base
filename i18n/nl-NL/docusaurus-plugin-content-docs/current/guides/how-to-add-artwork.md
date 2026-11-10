@@ -1,11 +1,11 @@
-# Hoe je artwork toevoegt
+# Hoe je illustratiemateriaal toevoegt
 
-Je kunt je eigen artwork toevoegen voor mappen en afspeellijsten, zodat je frontend aangepaste miniaturen laat zien in plaats van algemene standaardafbeeldingen.
+Je kunt je eigen illustratiemateriaal toevoegen voor mappen en afspeellijsten, zodat je frontend aangepaste miniaturen laat zien in plaats van algemene standaardafbeeldingen.
 
 Deze handleiding legt uit:
 
 - welke afbeeldingsformaten worden ondersteund
-- hoe je artwork bestanden een naam kan geven
+- hoe je illustratiemateriaal bestanden een naam geeft
 - waar je deze bestanden moet plaatsen
 - wat er gebeurt als een afspeellijst afbeelding ontbreekt
 
@@ -20,11 +20,11 @@ De volgende bestandstypes worden ondersteund en aangevinkt in deze volgorde. Het
 - `bmp`
 - `gif`
 
-Je kunt elk van deze formaten gebruiken voor zowel map artwork als afspeellijst artwork.
+Je kunt elk van deze formaten gebruiken voor zowel map illustratiemateriaal als afspeellijst illustratiemateriaal.
 
 ## Map
 
-Om artwork in te stellen voor een map, plaats je een afbeeldingsbestand genaamd `map.ext` in die map.
+Om illustratiemateriaal in te stellen voor een map, plaats je een afbeeldingsbestand genaamd `map.ext` in die map.
 
 Vervang `.ext` met een van de ondersteunde extensies.
 
@@ -36,14 +36,14 @@ Voorbeelden:
 
 ## Afspeellijsten
 
-Om artwork voor een afspeellijst in te stellen, gebruik je dezelfde basisbestandsnaam als het afspeellijstbestand.
+Om illustratiemateriaal voor een afspeellijst in te stellen, gebruik je dezelfde basisbestandsnaam als het afspeellijstbestand.
 
 Voorbeeld:
 
 - Afspeellijst bestand: `Jazz.m3u8`
-- Artwork bestand: `Jazz.jpg` (of `Jazz.webp`, `Jazz.png`, enzovoort)
+- Illustratiemateriaal bestand: `Jazz.jpg` (of `Jazz.webp`, `Jazz.png`, enzovoort)
 
-Als een overeenkomend afspeellijst artwork bestand niet wordt gevonden, wordt de map artwork gebruikt als een terugval.
+Als een overeenkomend afspeellijst illustratiemateriaal bestand niet wordt gevonden, wordt de map illustratiemateriaal gebruikt als een terugval.
 
 ## Voorbeeld mappenstructuur
 
@@ -81,31 +81,28 @@ het volgende invoer, waardoor elke stream een ​​eigen regel krijgt:
 ```text
 #EXTM3U
 #EXTINF:-1,Jazz Radio
-#EXTIMG:https://example.com/stations/jazz-radio.png
-http://stream.example.com/jazz.mp3
+#EXTIMG:https://voorbeeld.com/zenders/jazz-radio.png
+http://stream.voorbeeld.com/jazz.mp3
 
 #EXTINF:-1,Rock Radio
-#EXTIMG:https://example.com/stations/rock-radio.jpg
-http://stream.example.com/rock.mp3
+#EXTIMG:https://voorbeeld.com/zenders/rock-radio.jpg
+http://stream.voorbeeld.com/rock.mp3
 ```
 
-UMS downloads the image once, stores it, and uses it for that stream from then on. It does not fetch
-it again on every start.
+UMS downloadt de afbeelding één keer, slaat deze op en gebruikt haar vanaf dat moment voor die stream. Het wordt niet bij elke start opnieuw opgehaald.
 
-What the line accepts:
+Wat de regel accepteert:
 
-- An **absolute** address. `https://example.com/cover.png` works, `cover.png` and `../art/cover.png`
-  do not — a relative path is ignored and the stream keeps the default image.
-- A `data:` URI, if you would rather keep the picture inside the playlist file than host it somewhere.
-- Only `.m3u` and `.m3u8` playlists. Other playlist formats have no place to put the line.
+- Een **absoluut** adres. `https://voorbeeld.com/cover.png` werkt, maar `cover.png` en `../art/cover.png`
+  niet — een relatief pad wordt genegeerd en de stream behoudt de standaardafbeelding.
+- Een `data:`-URI, voor het geval je de afbeelding liever in het afspeellijstbestand zelf bewaart in plaats van deze ergens anders te hosten.
+- Alleen `.m3u`- en `.m3u8`-afspeellijsten. Andere afspeellijstformaten hebben geen plaats om de regel toe te voegen.
 
-Capitalization of the directive itself does not matter, `#EXTIMG:` and `#extimg:` both work.
+Het gebruik van hoofdletters of kleine letters in de richtlijn zelf maakt niet uit: `#EXTIMG:` en `#extimg:` werken beide.
 
-### Letting UMS write the line for you
+### Laat UMS de regel voor je schrijven
 
-If your control point can set the artwork of an entry, you do not have to edit the playlist by hand.
-UMS writes the `#EXTIMG:` line into the playlist file itself, and only after it has successfully
-loaded the picture — so a broken address leaves the file untouched instead of storing a dead link.
+Als je besturingselement het illustratiemateriaal van een invoer kan instellen, hoef je de afspeellijst niet handmatig te bewerken.
+UMS schrijft de `#EXTIMG:`-regel in het afspeellijstbestand zelf, en wel pas nadat de afbeelding succesvol is geladen; een ongeldig adres zorgt er dus voor dat het bestand ongewijzigd blijft, in plaats van dat er een niet-werkende koppeling wordt opgeslagen.
 
-Because the artwork then lives in the playlist file rather than only in the database, it survives a
-rebuilt database and travels with the file when you copy the playlist elsewhere.
+Omdat het illustratiemateriaal in dat geval in het afspeellijstbestand zelf is opgeslagen – en niet enkel in de database – blijft het behouden wanneer de database opnieuw wordt opgebouwd; bovendien verhuist het illustratiemateriaal mee met het bestand als je de afspeellijst naar een andere locatie kopieert.
