@@ -39,16 +39,14 @@ De regels zijn voor hen allemaal hetzelfde:
 | `#RADIOBROWSERUID:`   | de volgende invoer   | Identificeert een station in de RadioBrowser map                            |
 | `#EXTPLAYLISTRATING:` | de hele afspeellijst | Ster beoordeling van de afspeellijst zelf                                   |
 
-### Artwork
+### Illustratiemateriaal
 
-`#EXTIMG:` takes an absolute address of a picture, which UMS downloads once and then uses for that
-entry. See [How to add artwork](/guides/how-to-add-artwork) for the details and the accepted
-forms.
+`#EXTIMG:` vereist een absoluut adres van een afbeelding; UMS downloadt deze eenmalig en gebruikt haar vervolgens voor dat item. Zie [Hoe voeg je illustratiemateriaal toe](/guides/how-to-add-artwork) voor de details en de geaccepteerde
+vormen.
 
-### Ratings
+### Beoordelingen
 
-`#EXTRATING:` and `#EXTPLAYLISTRATING:` take a whole number from **0 to 5**. The first rates the
-entry that follows it, the second rates the playlist as a whole and can stand anywhere in the file.
+`#EXTRATING:` and `#EXTPLAYLISTRATING:` neemt een heel getal over van **0 tot 5**. De eerste beoordeelt de invoer dat erop volgt; de tweede beoordeelt de afspeellijst als geheel en kan op een willekeurige plek in het bestand staan.
 
 ```text
 #EXTPLAYLISTRATING:5
@@ -58,33 +56,22 @@ entry that follows it, the second rates the playlist as a whole and can stand an
 http://stream.example.com/jazz.mp3
 ```
 
-A rating in the file is the **starting value**, not a running record: UMS applies it when the entry
-is not rated yet and leaves an existing rating alone. So editing the file changes nothing for
-something you have already rated in your control point — rate it there instead, and UMS updates the
-line for you.
+Een beoordeling in het bestand is de **beginwaarde**, geen actueel overzicht: UMS past deze toe wanneer het item nog niet is beoordeeld, en laat een al bestaande beoordeling ongemoeid. Het bewerken van het bestand heeft dus geen effect op
+items die je al in je controlepunt hebt beoordeeld; beoordeel ze daar in plaats daarvan, dan werkt UMS de regel voor je bij.
 
-For a file on disk this is a convenience, because the rating is stored in the database and can also
-be written into the file's tags. For a radio station it is the only durable home the rating has: it
-is what lets the rating survive a rebuilt database and travel with the playlist when you copy it.
+Voor een bestand op de schijf is dit handig, omdat de beoordeling in de database wordt opgeslagen en ook naar de tags van het bestand kan worden geschreven. Voor een radiozender is dit de enige duurzame plek waar de waardering behouden blijft: het zorgt ervoor dat de waardering een vernieuwing van de database overleeft en met de afspeellijst meegaat wanneer je deze kopieert.
 
-### Radio station identity
+### Identiteit van radiostation
 
-`#RADIOBROWSERUUID:` holds the identifier a station has in the RadioBrowser directory. With it, UMS
-can look up additional details about the station instead of showing only what the stream itself
-reveals. Control points that offer a station picker write this line themselves when you pick a
-station, so there is rarely a reason to type it by hand.
+`#RADIOBROWSERUID:` bevat de identifier die een station heeft in de RadioBrowser map. Hiermee kan UMS aanvullende details over het station opzoeken, in plaats van alleen te tonen wat de stream zelf prijsgeeft. Besturingselementen die een stationselectieoptie bieden, voegen deze regel zelf toe zodra je een station kiest; er is dus zelden een reden om deze handmatig in te typen.
 
-### Title order
+### Titel volgorde
 
-`#EXTICYORDER:` controls whether a station's announcement is read as _Artist - Title_ or as
-_Title - Station_. See [Internet radio and live titles](/configuration/internet-radio).
+`#EXTICYORDER:` bepaalt of een bericht van het station wordt gelezen als _Artiest - Titel_ of als
+_Titel - Station_. Zie [Internet radio en live titels](/configuration/internet-radio).
 
-## Directives UMS writes itself
+## UMS-richtlijnen schrijven zichzelf
 
-You do not have to edit playlists by hand. When your control point sets artwork, a rating or the
-title order, UMS writes the corresponding line into the playlist file. Each directive is replaced
-individually, so setting a cover never disturbs a rating and the other way round, and removing a
-value removes just its line.
+Je hoeft de afspeellijsten niet handmatig te bewerken. Wanneer uw bedieningselement illustratiemateriaal, een beoordeling of de volgorde van titels instelt, schrijft UMS de bijbehorende regel naar het afspeellijstbestand. Elke richtlijn wordt afzonderlijk vervangen; het instellen van een dekking heeft dus geen invloed op een beoordeling (en vice versa), en het verwijderen van een waarde verwijdert uitsluitend de bijbehorende regel.
 
-Artwork is only written after the picture has actually been loaded, so a broken address leaves the
-file untouched instead of storing a dead link.
+Het illustratiemateriaal wordt pas weggeschreven nadat de afbeelding daadwerkelijk is geladen; bij een ongeldig adres blijft het bestand dus ongewijzigd, in plaats van dat er een dode link wordt opgeslagen.
