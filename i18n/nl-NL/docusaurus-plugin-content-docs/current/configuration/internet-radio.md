@@ -29,9 +29,8 @@ maar sommige stations plaatsen de stationsnaam juist aan het einde:
 So What - Jazz Radio on example.com
 ```
 
-Uitgaande van een indeling waarbij de artiest voorop staat, zou op de tweede regel _So What_ als artiest worden vermeld. UMS therefore looks at
-the part after the last dash and treats it as a station name, not an artist, when any of these
-applies:
+Uitgaande van een indeling waarbij de artiest voorop staat, zou op de tweede regel _So What_ als artiest worden vermeld. UMS kijkt daarom naar
+het gedeelte na het laatste streepje en beschouwt dit als een stationsnaam, niet als een artiest, wanneer een van de volgende situaties van toepassing is:
 
 - het bevat iets wat lijkt op een webadres, zoals `example.com`
 - het lijkt op de stationsnaam die UMS al kent uit je afspeellijst
@@ -72,5 +71,4 @@ van buiten.
 audio_addict_icy_metadata = WAAR
 ```
 
-Turn this off if a player of yours reacts badly to in-band metadata; the titles pushed to the
-control point are unaffected by it.
+Schakel dit uit als een van je afspeelapparaten slecht reageert op 'in-band'-metadata; de titels die naar het bedieningspunt worden gestuurd, blijven hierdoor ongewijzigd.
