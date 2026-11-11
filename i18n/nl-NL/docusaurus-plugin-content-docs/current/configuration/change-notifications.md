@@ -20,7 +20,7 @@ Beide worden hooguit een paar keer per seconde aangekondigd. Een scan waarbij du
 Typische momenten wanneer dit gebeurt:
 
 - een bestand verschijnt of verdwijnt uit een gedeelde map
-- you [edit a playlist](./playlist-editing) from a control point
+- je [bewerk een afspeellijst](./playlist-editing) vanaf een besturingselement
 - je geeft iets een beoordeling, omdat dat verandert wat de beoordelingsmappen bevatten
 - artwork is toegevoegd voor een station of map
 
@@ -42,4 +42,4 @@ Laat dit ingeschakeld als UMS de plek is van waaruit je het afspelen aanstuurt.
 Schakel het uit wanneer het afspelen wordt aangestuurd door een apart bedieningspunt. In die opstelling heeft UMS geen enkele reden om de spelers te volgen en de controle erover op te eisen: het controlepunt doet dat al, en wanneer twee partijen hetzelfde apparaat aansturen, leidt dat al snel tot verwarrende resultaten. Door dit uit te schakelen,
 blijft UMS ervan af en worden de mediabestanden simpelweg aangeboden.
 
-See [Two-box and three-box setups](./control-point-setups) for what that arrangement looks like.
+Zie [Opstellingen met twee of drie apparaten](./control-point-setups) voor hoe zo'n opstelling eruitziet.
