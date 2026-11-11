@@ -1,47 +1,47 @@
-# Security and Privacy
+# Bezpečnosť a súkromie
 
-## Introduction
+## Úvod
 
-UMS serves media in two main ways - via DLNA/UPnP to be consumed via media player apps, and via HTTP(S) to be consumed via web browsers.
+UMS sprístupňuje médiá dvoma hlavnými spôsobmi: cez DLNA/UPnP pre aplikácie na prehrávanie médií a cez HTTP(S) pre webové prehliadače.
 
-Web browsers have easy security and privacy control by having user accounts with logins.
+Vo webových prehliadačoch možno bezpečnosť a súkromie jednoducho riadiť pomocou používateľských účtov s prihlasovaním.
 
-Media player apps do not generally support the concept of a "user", so usually every device gets the same content. This might not be what you want. For example if you have two folders kids_safe and kids_unsafe you might want to restrict the renderers in the kids' room to only have access to the kids_safe folder. Another common situation is you are on the same network as people you do not want to have access to your media, like flatmates, so you want to block certain renderers completely.
+Aplikácie na prehrávanie médií spravidla nepracujú s pojmom „používateľ“, takže každé zariadenie zvyčajne dostáva rovnaký obsah. To vám nemusí vyhovovať. Ak napríklad máte dva priečinky kids_safe a kids_unsafe, môžete chcieť obmedziť prehrávače v detskej izbe tak, aby mali prístup iba k priečinku kids_safe. Ďalšou bežnou situáciou je zdieľanie siete s ľuďmi, ktorým nechcete sprístupniť svoje médiá, napríklad so spolubývajúcimi. Vtedy môžete chcieť určité prehrávače úplne zablokovať.
 
-UMS provides a number of methods to control access in those situations.
+UMS ponúka niekoľko spôsobov, ako v takýchto situáciách riadiť prístup.
 
-## Allow or block renderers or network devices by default
-You can choose the default strategy for renderers and network devices. You can allow or deny by default, with denylists and allowlists, for complete control.
+## Predvolené povolenie alebo blokovanie prehrávačov a sieťových zariadení
+Pre prehrávače a sieťové zariadenia si môžete zvoliť predvolený spôsob riadenia prístupu. Predvolene ich môžete povoliť alebo zakázať a pomocou zoznamov povolených a blokovaných zariadení mať prístup úplne pod kontrolou.
 
-This is useful for shared living situations or wide/low-trust local networks. It is also useful for those of you using powerline adapters for your network since that can result in unwanted access from neighbors.
+To je užitočné pri spoločnom bývaní alebo v rozsiahlych miestnych sieťach či sieťach s nízkou úrovňou dôvery. Je to užitočné aj pri používaní sieťových adaptérov powerline, pretože cez ne môžu získať nechcený prístup susedia.
 
-![Example of how to set network allow preference](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Príklad nastavenia predvoleného povolenia sieťových zariadení](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Example of how to set renderer allow preference](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Príklad nastavenia predvoleného povolenia prehrávačov](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
-## Block/allow renderers and network devices
+## Blokovanie a povoľovanie prehrávačov a sieťových zariadení
 
-When you have chosen whether to allow or block unrecognized renderers by default, you can build your denylist or allowlist from the Home screen in the settings area.
+Keď zvolíte, či sa nerozpoznané prehrávače majú predvolene povoliť alebo zablokovať, môžete na domovskej obrazovke v nastaveniach vytvoriť zoznam blokovaných alebo povolených zariadení.
 
-![Example of how to block a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Príklad zablokovania prehrávača](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Link person to renderer
+## Prepojenie osoby s prehrávačom {#link-person-to-renderer}
 
-You can link user accounts to renderers/devices, allowing you to have independent content access and playback tracking.
+Používateľské účty môžete prepojiť s prehrávačmi alebo zariadeniami a oddeliť tak ich prístup k obsahu aj sledovanie prehrávania.
 
-For example, if you have a TV in the living room and another in your bedroom, the living room TV doesn't need to be affected by what you watch in your bedroom.
+Ak napríklad máte jeden televízor v obývačke a druhý v spálni, sledovanie v spálni nemusí ovplyvňovať obsah a stav prehrávania na televízore v obývačke.
 
-![Example of how to assign an account to a renderer](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Príklad priradenia účtu k prehrávaču](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Restrict shared content to certain groups
+## Obmedzenie zdieľaného obsahu na určité skupiny
 
-You can now choose to share directories or online content with certain groups. For example, if you have a person (or a device that is assigned to a person) who is a child, you can assign them to the "Kids" group, and give that group access to the "Family" directory, but not the "Horror" or "Adult Only" content. Or give them access to the Kurzgesagt web feed, but not the history podcasts.
+Teraz si môžete vybrať, s ktorými skupinami budete zdieľať priečinky alebo online obsah. Ak je napríklad používateľom dieťa alebo je zariadenie priradené dieťaťu, môžete ho zaradiť do skupiny „Deti“. Tejto skupine môžete sprístupniť priečinok „Rodina“, ale nie obsah „Horor“ alebo „Iba pre dospelých“. Môžete im tiež sprístupniť webový kanál Kurzgesagt, ale nie historické podcasty.
 
-![Example of shared content groups](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Príklad skupín pre zdieľaný obsah](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
-## Hiding folders
+## Skrytie priečinkov
 
-Control the visibility of the virtual folders. These settings can be found in UMS.conf file. To hide some folders while browsing, just set their value to true or tick them in the Navigation/Share Settings tab from the advanced GUI mode.
+Určite, ktoré virtuálne priečinky budú viditeľné. Tieto nastavenia nájdete v súbore UMS.conf. Ak chcete pri prehliadaní skryť niektoré priečinky, nastavte príslušné hodnoty na true alebo začiarknite ich možnosti na karte Nastavenia navigácie a zdieľania v rozšírenom režime grafického rozhrania.
 
 ```
 hide_recently_played_folder =true
@@ -53,32 +53,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-To hide the Web folder, you will need to untick Enable external network in General Configuration tab from the advanced GUI mode or change the `external_network =' value to false in your UMS.conf file. This will have the side effect that the automatic updater won't work. The change(s) made from the GUI will be effective after a restart.
+Ak chcete skryť priečinok Web, v rozšírenom režime grafického rozhrania na karte Všeobecné nastavenia zrušte začiarknutie možnosti Povoliť externú sieť alebo v súbore UMS.conf nastavte `external_network = false`. Vedľajším účinkom je, že prestane fungovať automatická aktualizácia. Zmeny vykonané v grafickom rozhraní sa prejavia po reštarte.
 
-## PIN code
+## Kód PIN
 
-All the above methods restricts access from various renderers. But if you can get access to a render that is allowed to see a folder those methods will not help you (if the kids has access to the living room tv which have access to all media then they have access to that media). The PIN code solves this issue. It allows you to hide folders/media behind a PIN code which you must enter FROM the render. By default the input is a sequence of digits (0-9) just like an ATM code. I strongly suggests that you use digit based codes as it becomes hard to type in from the renderer. But if you are extra paranoid you can add letters. It works as follows: Add a file called UMS.code to the same directory as your UMS.conf and to that file add regexp,code where regexp is a regular expression just like in "UMS.deny" file and code is the code that will grant access to the folder/media. There is no length regulation on the code. For example:
+Všetky uvedené metódy obmedzujú prístup jednotlivých prehrávačov. Ak však niekto získa prístup k prehrávaču, ktorý má daný priečinok povolený, tieto metódy nepomôžu. Ak majú napríklad deti prístup k televízoru v obývačke so všetkými médiami, získajú prístup aj k týmto médiám. Tento problém rieši kód PIN. Umožňuje chrániť priečinky a médiá kódom PIN, ktorý musíte zadať priamo z prehrávača. Predvolene ide o postupnosť číslic (0–9), podobne ako pri kóde k bankomatu. Dôrazne odporúčame používať číselné kódy, pretože iné znaky sa na prehrávači zadávajú ťažko. Ak však chcete zvýšiť ochranu, môžete pridať aj písmená. Postup je nasledujúci: Do priečinka so súborom UMS.conf pridajte súbor s názvom UMS.code. Doň vložte zápis regexp,code, kde regexp je regulárny výraz ako v súbore „UMS.deny“ a code je kód, ktorý umožní prístup k priečinku alebo médiu. Dĺžka kódu nie je obmedzená. Napríklad:
 ```
 .*private.*,1234
 ```
 
-Will force you to enter a code if the folder/media contains the word "private" and the correct code is 1234. The code then stays valid for 4 hours (if you don't change that time).
+Ak názov priečinka alebo média obsahuje slovo „private“, tento zápis vyžiada kód. Správny kód je 1234. Kód potom zostáva platný 4 hodiny, ak túto dobu nezmeníte.
 
-## Custom Device Configuration
+## Vlastná konfigurácia zariadenia
 
-Any configuration property can also be set on a per-device basis by creating a custom device configuration to override the default UMS settings (for full details see Creating a Custom Device Configuration).
+Každú konfiguračnú vlastnosť možno nastaviť aj pre konkrétne zariadenie. Vytvorte preň vlastnú konfiguráciu, ktorá prepíše predvolené nastavenia UMS. Podrobnosti nájdete v časti Vytvorenie vlastnej konfigurácie zariadenia.
 
-For example, to customize the kids' TV:
-- Click the 'Customize this device' button in the top right of the renderer's GUI popup panel and specify a name for the configuration.
-- In the new conf file that opens up add any settings you wish to override for the TV, e.g. to change the server name and specify different folders:
+Ak chcete napríklad prispôsobiť detský televízor:
+- V pravom hornom rohu vyskakovacieho panela prehrávača v grafickom rozhraní kliknite na tlačidlo „Prispôsobiť toto zariadenie“ a zadajte názov konfigurácie.
+- Do novootvoreného súboru conf pridajte nastavenia, ktoré chcete pre televízor prepísať. Napríklad takto zmeníte názov servera a určíte iné priečinky:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Vlastný profil zariadenia
+# Popis všetkých možností prehrávača nájdete v súbore DefaultRenderer.conf
+# a možnosti programu v súbore UMS.conf.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Možnosti v tomto súbore prepisujú predvolené nastavenia konkrétnych zariadení Sony Bravia EX uvedených nižšie.
+# Zariadenia určite pomocou uuid (alebo adresy, ak uuid nemajú). Viaceré zariadenia oddeľte čiarkami.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
