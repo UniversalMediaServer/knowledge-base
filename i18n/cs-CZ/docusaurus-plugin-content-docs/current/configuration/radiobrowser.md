@@ -34,9 +34,9 @@ address:
 - the **station logo**, so the entry has a picture instead of a default icon
 - the **station identifier** from the directory
 
-The last one is the interesting part. It stays in the playlist file as a
-[`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
-the directory entry it came from. UMS uses that connection to fill in details the stream itself does
+The last one is the interesting part. Zůstává v souboru playlistu jako
+[`#RADIOBROWSERUUID:` directive](./playlist-directives), což znamená, že položka zůstává připojena k
+položka adresáře, odkud pochází. UMS uses that connection to fill in details the stream itself does
 not reveal, such as the genre and the bitrate.
 
 The result is a playlist file that still reads like a plain playlist and works in any other player:
