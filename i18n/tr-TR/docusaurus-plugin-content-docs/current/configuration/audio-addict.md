@@ -31,9 +31,7 @@ audio_addict_pass = PAROLA
 
 DI.fm ağı, canlı istasyonların yanı sıra bir **Olaylar** klasörü de sunar. Yaklaşan programları listeler ve zaten yayınlanmış bir programın kaydını da sunar, böylece daha sonra dinleyebilirsiniz.
 
-Arka kataloğu olan programlar, eski bölümleri tutan kendilerine ait bir klasöre sahiptir. Some shows have
-hundreds of them, so the folder is split into smaller groups, each labelled with the episode numbers
-and dates it contains.
+Arka kataloğu olan programlar, eski bölümleri tutan kendilerine ait bir klasöre sahiptir. Bazı programların yüzlercesi bulunur, bu yüzden klasör, her biri içerdiği bölüm numaraları ve tarihlerle etiketlenmiş daha küçük gruplara bölünmüştür.
 
 ```
 # How many episodes one group holds before it is split. Default 20, minimum 1.
