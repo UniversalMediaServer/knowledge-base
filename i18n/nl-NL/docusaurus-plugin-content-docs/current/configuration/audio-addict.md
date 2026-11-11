@@ -57,8 +57,8 @@ waarde klein te houden.
 ## Live titels
 
 Audio Addict stations kondigen het huidige nummer in de audiostream niet aan. UMS vraagt in plaats daarvan de
-service aan en levert het resultaat aan je speler, zodat je nog steeds ziet wat er speelt. This is
-described in [Internet radio and live titles](./internet-radio).
+service aan en levert het resultaat aan je speler, zodat je nog steeds ziet wat er speelt. Dit is
+beschreven in [Internet radio en live titel](./internet-radio).
 
 ```
 # Stuur live titels voor Audio Addict stations. Standaard aan.
