@@ -1,51 +1,40 @@
-# Change Notifications
+# Oznámenia o zmenách
 
-When something in your library changes, connected apps should notice without you pressing refresh —
-and without asking UMS every few seconds whether anything happened. UPnP solves this with
-subscriptions: an app registers its interest once, and UMS tells it when there is news.
+Keď sa vo vašej knižnici niečo zmení, pripojené aplikácie by sa o tom mali dozvedieť bez ručného obnovenia a bez toho, aby sa každých pár sekúnd pýtali UMS, či nastala zmena. UPnP to rieši odberom udalostí: aplikácia sa raz prihlási na odber a UMS jej oznámi novinky.
 
-This works in both directions, and the two are controlled separately.
+Funguje to v oboch smeroch, pričom každý smer sa ovláda samostatne.
 
-## What UMS announces about your library
+## Čo UMS oznamuje o vašej knižnici
 
-UMS publishes two pieces of information whenever the library changes:
+Pri každej zmene knižnice UMS zverejní dve informácie:
 
-- a **counter** that goes up on any change, which tells a subscriber that something happened
-- a **list of the containers that changed**, which tells it what
+- **počítadlo**, ktoré sa pri každej zmene zvýši a odberateľovi oznámi, že sa niečo stalo
+- **zoznam zmenených kontajnerov**, ktorý oznámi, čo sa zmenilo
 
-The second one is what keeps things quick. An app that learns only "something changed" has to
-reload; one that learns "this folder changed" reloads that folder and leaves the rest alone.
+Druhá informácia zabezpečuje rýchlu odozvu. Aplikácia, ktorá sa dozvie iba „niečo sa zmenilo“, musí obsah načítať znova. Ak sa dozvie „zmenil sa tento priečinok“, načíta znova iba tento priečinok a zvyšok ponechá bez zmeny.
 
-Both are announced at most a few times per second. A scan that imports a thousand files therefore
-does not produce a thousand notifications — the changes are collected and reported as a handful of
-messages.
+Obe informácie sa oznamujú najviac niekoľkokrát za sekundu. Skenovanie, ktoré naimportuje tisíc súborov, preto nevytvorí tisíc oznámení. Zmeny sa zhromaždia a oznámia v niekoľkých správach.
 
-Typical moments when this happens:
+Typické situácie, keď sa to deje:
 
-- a file appears in, or disappears from, a shared folder
-- you [edit a playlist](./playlist-editing) from a control point
-- you rate something, because that changes what the ratings folders contain
-- artwork is added for a station or a folder
+- v zdieľanom priečinku sa objaví súbor alebo z neho zmizne
+- z ovládacieho bodu [upravíte zoznam skladieb](./playlist-editing)
+- niečo ohodnotíte, čím sa zmení obsah priečinkov s hodnoteniami
+- k stanici alebo priečinku sa pridá obrázok
 
-Whether your app acts on the news is up to the app. Most refresh the view you are looking at; some
-only use the information when you open a folder again. If a change does not appear, it is worth
-opening the folder anew before assuming it was not delivered.
+To, či aplikácia na oznámenie zareaguje, závisí od nej. Väčšina aplikácií obnoví práve zobrazený obsah. Niektoré túto informáciu využijú až pri opätovnom otvorení priečinka. Ak sa zmena nezobrazí, skúste najprv priečinok znova otvoriť, až potom predpokladajte, že oznámenie nebolo doručené.
 
-## What UMS listens to on your players
+## Aké udalosti UMS odoberá z prehrávačov
 
-The other direction is UMS subscribing to your **players**, so it can show what they are doing —
-what is playing, whether they are paused, how loud they are — and offer controls for them.
+V opačnom smere UMS odoberá udalosti z vašich **prehrávačov**, aby mohol zobrazovať ich stav: čo prehrávajú, či sú pozastavené a akú majú hlasitosť. Zároveň ich môže ovládať.
 
 ```
-# Follow the players on the network. On by default.
+# Sledovať prehrávače v sieti. Predvolene zapnuté.
 upnp_subscribe_services = TRUE
 ```
 
-Leave this on when UMS is the place you control playback from.
+Ak prehrávanie ovládate z UMS, ponechajte toto nastavenie zapnuté.
 
-Turn it off when playback is driven by a separate control point. In that arrangement UMS has no
-business following and claiming control of the players: the control point is doing that, and two
-parties steering the same device is a good way to get confusing results. Switching this off makes
-UMS keep its hands off and simply serve the media.
+Ak prehrávanie riadi samostatný ovládací bod, vypnite ho. V takomto zapojení UMS nemá prehrávače sledovať ani sa pokúšať o ich ovládanie. Túto úlohu má ovládací bod a dva súčasné zdroje ovládania toho istého zariadenia môžu viesť k nepredvídateľnému správaniu. Po vypnutí tohto nastavenia UMS ponechá ovládanie prehrávačov na ostatných a bude iba poskytovať médiá.
 
-See [Two-box and three-box setups](./control-point-setups) for what that arrangement looks like.
+Takéto zapojenie opisuje časť [Zapojenia s dvoma a troma zariadeniami](./control-point-setups).
