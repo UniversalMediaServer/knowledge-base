@@ -1,8 +1,8 @@
 {
   "label": "Nastavenia",
-  "position": "",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": "Ako sa nastavuje UMS"
+    "type": "generated-index",
+    "description": "Ako nastaviť UMS"
   }
 }
