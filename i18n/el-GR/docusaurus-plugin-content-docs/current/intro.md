@@ -3,12 +3,12 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Εισαγωγή
 
-This website contains the official support documentation for using Universal Media Server.
+Αυτή η ιστοσελίδα περιέχει την επίσημη τεκμηρίωση υποστήριξης για τη χρήση του Universal Media Server.
 
 Αν δεν είστε ενεργός χρήστης, και ψάχνετε να το κατεβάσετε ή να αποφασίσετε αν θα το χρησιμοποιήσετε, πιθανότατα θα βρείτε [την κύρια ιστοσελίδα μας](https://www.universalmediaserver.com) πιο χρήσιμη.
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Είναι χωρισμένο σε 3 κύριες ενότητες: Διαμόρφωση, Οδηγοί και Εγκατάσταση.
 
 Αν ήρθατε εδώ ψάχνοντας για συγκεκριμένες πληροφορίες και δεν τις βρήκατε, παρακαλούμε ενημερώστε μας στο GitHub ώστε να τις προσθέσουμε.
