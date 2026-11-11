@@ -1,6 +1,6 @@
-# Dokovací modul
+# Docker
 
-Některé z těchto kroků se na vaši instalaci nevztahují.  Pochopit, co dělají, a ignorovat nebo podle potřeby přizpůsobit.
+Některé z těchto kroků se na vaši instalaci nemusí vztahovat.  Nejprve si ujasněte, k čemu slouží, a podle potřeby je vynechte nebo upravte.
 
 ## Příprava
 
@@ -8,11 +8,11 @@ Pro podporu operačního systému a balíčky služeb.
 
 ### Debian Linux
 
-Instalovat Docker (Engine): https://docs.docker.com/engine/install/debian/
+Nainstalujte Docker Engine: https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Instalovat Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Nainstalujte Docker Engine: https://docs.docker.com/engine/install/fedora/
 
 #### Další pokyny
 
@@ -30,9 +30,9 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Připojit úložiště k hostování a odkazovat do tohoto adresáře, pravděpodobně pouze pro čtení. `mount <Videos-Share> '/srv/UMS/Videos'`
+Připojte úložiště k hostitelskému systému a zpřístupněte je v tomto adresáři, pravděpodobně pouze pro čtení. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Zkušební příklad: Jednoduché symbolické propojení s jinou cestou v systému hostitele nemusí fungovat, vzhledem k tomu, že k němu nebude mít přístup z vnějšku.  Zkuste místo toho zkopírovat soubory uvnitř tohoto umístění.
+Zkušební příklad: Pouhý symbolický odkaz na jinou cestu v hostitelském systému nemusí fungovat, protože kontejner Dockeru nemá přístup mimo cestu připojeného svazku.  Zkuste místo toho soubory zkopírovat přímo do tohoto umístění.
 
 ## Nastavení kontejneru
 
@@ -40,9 +40,9 @@ Připojte následující svazky:
 - Složka médií `/root/media`
 - Složka profilu obsahující UMS.conf `/root/.config/UMS`
 
-Zobrazit/povolit tyto porty hostitele: 1044, 5001, 9001
+Zpřístupněte nebo přesměrujte tyto porty hostitele: 1044, 5001, 9001.
 
-Tyto skripty to docílí (pomocí fish shell):
+Provedou to následující skripty používající shell fish:
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,33 +60,33 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Vyšetřování problémů/problémů
+## Hledání příčin problémů
 
-### Obecná ustanovení
+### Obecně
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Přesto nezáměrně zastaví kontejner při provedení prohlídky..
+#docker attach [--no-stdin] UMS; # Po dokončení kontroly stále neúmyslně zastavuje kontejner.
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-Podrobné logy v terminálu: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Pro podrobné protokoly v terminálu: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Problém s připojením
+### Potíže s připojením svazků
 
-Použití Fedora CoreOS, jsem měl přístup a oprávnění odepřen problémy se spojením spojení.
+Při použití Fedora CoreOS jsem při pokusu o připojení hostitelských adresářů (bind mounts) narazil na chyby odepřeného přístupu.
 
-Namísto toho může být doporučeno použít funkci pojmenovaných objemů řízenou dokovací stanicí, ale vyhnout se této složitosti, Zjistil jsem, že dodatečná `:Z` jako přípona pro příponu deskriptoru povolená hodnota deskriptoru kontejneru pro zápis do hostitelských souborů. Místo toho lze použít i `:z` ale bezpečnostní doporučení mohou naznačovat, že zdroje jsou izolovanější mezi aplikacemi/servisním prostředím spíše než sdílenými.
+Místo toho lze doporučit pojmenované svazky spravované Dockerem. Abych se však vyhnul dalším komplikacím, zjistil jsem, že přidání přípony `:Z` k definici připojeného adresáře umožnilo kontejneru zapisovat do souborů hostitele. Lze použít také `:z`, ale z bezpečnostního hlediska může být vhodnější prostředky mezi aplikacemi a službami oddělit, místo aby je sdílely.
 
-Pomocí deníku můžete vidět odpovídající chybové zprávy, takže je to problém SELinux. Řešením by bylo spustit `chcon -Rt svirt_sandbox_file_t` host_dir, ale to se také nezdá být dobré.
+Odpovídající chybové zprávy lze zobrazit pomocí journalctl, jde tedy o problém se SELinuxem. Řešením by bylo spustit `chcon -Rt svirt_sandbox_file_t` host_dir, ale ani tento postup se zřejmě nedoporučuje.
 
-Nejedná se o záležitost na pracovní stanici Fedory, ale domnívám se, že manulni instalace balíčku to vyřeší.  Vypadá to na container-selinux
+Ve Fedora Workstation se tento problém kupodivu nevyskytuje. Předpokládám, že se při ruční instalaci přidal balíček, který jej řeší. Zřejmě jde o container-selinux.
 
 ## Odkazy
 
