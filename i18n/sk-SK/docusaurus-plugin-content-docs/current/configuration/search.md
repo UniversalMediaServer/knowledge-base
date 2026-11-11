@@ -7,72 +7,58 @@ Keď ovládací bod ponúka vyhľadávacie pole, nefiltruje zoznam, ktorý už m
 UMS môže vyhľadávať dvoma spôsobmi:
 
 - **Fulltextový index (predvolené).** UMS udržiava popri databáze index Lucene a vyhľadáva v ňom.
-  It is fast even on large libraries and it is what makes partial words and typo tolerance possible.
-- **Plain database search.** A straight SQL query. Slower on large libraries and it only matches
-  what is literally there, but it has no index to go out of date.
+  Je rýchly aj pri veľkých knižniciach a umožňuje vyhľadávanie častí slov aj tolerovanie preklepov.
+- **Priame vyhľadávanie v databáze.** Priamy dopyt SQL. Pri veľkých knižniciach je pomalšie a vyhľadá iba doslovné zhody, ale nepoužíva index, ktorý by mohol byť neaktuálny.
 
-The full-text index covers the file name of every media file, and for audio also the song title,
-album, artist, album artist, composer, conductor and genre.
+Fulltextový index zahŕňa názov každého mediálneho súboru a pri zvukových súboroch aj názov skladby, album, interpreta, interpreta albumu, skladateľa, dirigenta a žáner.
 
-UMS switches to the database search on its own when a control point sends a criterion the index
-cannot answer, so turning the index off is rarely necessary.
+Ak ovládací bod odošle kritérium, ktoré index nedokáže spracovať, UMS automaticky prejde na vyhľadávanie v databáze. Index preto zvyčajne netreba vypínať.
 
 ```
-# Use the full-text index. FALSE falls back to a plain database search.
+# Použiť fulltextový index. Hodnota FALSE prepne na priame vyhľadávanie v databáze.
 search_lucene_use_engine = TRUE
 ```
 
-## Searching for part of a word
+## Vyhľadávanie časti slova
 
-Most search boxes send a `contains` criterion while you are still typing. UMS turns each word of
-your input into two alternatives at once:
+Väčšina vyhľadávacích polí odosiela kritérium `contains` už počas písania. UMS prevedie každé slovo zo zadania súčasne na dve alternatívy:
 
-- a **prefix** match, so `beat` already finds _Beatles_ before you finish the word
-- a **fuzzy** match, so `beatlse` still finds _Beatles_ despite the typo
+- zhodu podľa **začiatku slova**, takže `beat` nájde _Beatles_ ešte pred dopísaním celého slova
+- **približnú zhodu**, takže `beatlse` nájde _Beatles_ aj napriek preklepu
 
 ```
-# Tolerate typos in addition to matching prefixes.
+# Okrem zhody začiatkov slov tolerovať aj preklepy.
 search_lucene_contains_fuzzy = TRUE
 ```
 
-Both settings match prefixes. They differ in what else they match:
+Obe hodnoty nastavenia vyhľadávajú zhodné začiatky slov. Líšia sa tým, aké ďalšie zhody vyhľadajú:
 
-|                                  | `TRUE` (default) | `FALSE` |
-| -------------------------------- | ---------------- | ------- |
-| `beat` finds _Beatles_           | yes              | yes     |
-| `beatlse` finds _Beatles_        | yes              | no      |
-| unrelated results on short input | possible         | no      |
+|                                         | `TRUE` (predvolené) | `FALSE` |
+| --------------------------------------- | ------------------- | ------- |
+| `beat` nájde _Beatles_                  | áno                 | áno     |
+| `beatlse` nájde _Beatles_               | áno                 | nie     |
+| nesúvisiace výsledky pri krátkom zadaní | možné               | nie     |
 
-The last row is the reason the setting exists. Typo tolerance allows up to two wrong, missing or
-extra letters, and on a short word that reaches surprisingly far: searching for `ranz` also returns
-everything called _Jazz_, because two substitutions get you from one to the other. If that noise
-bothers you more than the typo tolerance helps, set it to `FALSE`.
+Posledný riadok vysvetľuje, prečo toto nastavenie existuje. Tolerovanie preklepov pripúšťa až dve nesprávne, chýbajúce alebo nadbytočné písmená. Pri krátkom slove to môže viesť k prekvapivým výsledkom: vyhľadávanie výrazu `ranz` vráti aj všetko s názvom _Jazz_, pretože na zmenu jedného slova na druhé stačia dve zámeny písmen. Ak vám takéto nechcené výsledky prekážajú viac, než vám tolerovanie preklepov pomáha, nastavte hodnotu `FALSE`.
 
-Two details worth knowing:
+Dve užitočné podrobnosti:
 
-- A prefix is only used from **three characters** on. One or two letters would match a large part of
-  the library without telling you anything the typo tolerance does not already find.
-- Putting your input in quotation marks searches for the **words next to each other** instead, which
-  is useful when the individual words are common but the combination is not.
+- Zhoda podľa začiatku slova sa používa až od **troch znakov**. Jedno alebo dve písmená by zodpovedali veľkej časti knižnice a nepriniesli by nič navyše oproti tomu, čo už nájde vyhľadávanie s tolerovaním preklepov.
+- Ak zadanie vložíte do úvodzoviek, vyhľadávajú sa namiesto toho **slová vedľa seba**. To je užitočné, keď sú jednotlivé slová bežné, ale ich kombinácia nie.
 
-## Searching for an exact value
+## Vyhľadávanie presnej hodnoty
 
-Some criteria ask for an exact value rather than a part of one — a control point browsing by genre
-sends `upnp:genre = "Jazz"`, for instance. By default that is taken literally.
+Niektoré kritériá vyžadujú presnú hodnotu namiesto jej časti. Napríklad ovládací bod pri prehliadaní podľa žánru odosiela `upnp:genre = "Jazz"`. Predvolene sa toto kritérium vyhodnocuje doslovne.
 
 ```
-# Tolerate typos in exact matches as well. Off by default.
+# Tolerovať preklepy aj pri presných zhodách. Predvolene vypnuté.
 search_lucene_equal_fuzzy = FALSE
 ```
 
-Turning this on makes exact comparisons tolerate typos too. That is rarely what you want, because
-these criteria usually come from the control point itself rather than from something you typed, and
-a value that is nearly right is then quietly treated as right.
+Po zapnutí tohto nastavenia sa preklepy tolerujú aj pri presnom porovnávaní. To je zriedka žiaduce, pretože tieto kritériá zvyčajne vytvára samotný ovládací bod, nie používateľ pri písaní. Takmer správna hodnota sa potom bez upozornenia považuje za správnu.
 
-## Notes
+## Poznámky
 
-Search ignores capitalization. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
+Vyhľadávanie nerozlišuje veľké a malé písmená. `chapitre`, `Chapitre` a `CHAPITRE` vrátia rovnaké výsledky.
 
-If a search does not return what you expect, the debug log shows the query UMS built from your
-input, on a line beginning with `lucene search string is`. Comparing it with what you typed usually
-explains the result on the spot.
+Ak vyhľadávanie nevráti očakávané výsledky, v ladiacom protokole nájdete dopyt, ktorý UMS vytvoril z vášho zadania, na riadku začínajúcom výrazom `lucene search string is`. Porovnanie tohto dopytu so zadaným textom zvyčajne hneď vysvetlí výsledok.
