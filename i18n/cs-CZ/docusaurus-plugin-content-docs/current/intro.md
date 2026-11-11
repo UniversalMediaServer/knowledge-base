@@ -5,10 +5,10 @@ slug: /
 
 # Úvod
 
-Tato stránka obsahuje oficiální dokumentaci podpory pro použití Universal Media Server.
+Tento web obsahuje oficiální dokumentaci k používání Universal Media Serveru.
 
-Pokud nejste aktuálním uživatelem a chcete jej stáhnout nebo rozhodnout, zda ho použijete, pravděpodobně najdete [naše hlavní webové stránky](https://www.universalmediaserver.com) užitečnější.
+Pokud UMS zatím nepoužíváte a chcete si jej stáhnout nebo se rozhodnout, zda jej používat, pravděpodobně pro vás budou užitečnější [naše hlavní webové stránky](https://www.universalmediaserver.com).
 
-Je rozdělen na 3 hlavní oddíly: Konfigurace, návody a instalace.
+Dokumentace je rozdělena do tří hlavních částí: Nastavení, Návody a Instalace.
 
-Pokud jste přišli sem a nenašli jste žádné konkrétní informace, dejte nám prosím vědět na GitHub, abychom je mohli přidat.
+Pokud jste zde hledali konkrétní informace a nenašli je, dejte nám prosím vědět na GitHubu, abychom je mohli doplnit.
