@@ -1,80 +1,64 @@
-# Hledat
+# Vyhledávání
 
-Pokud kontrolní bod nabízí vyhledávací pole, nefiltruje seznam, který již má. Vysílá
-hledání UMS jako UPnP kritérium jako \`dc:title obsahuje "beatles"a UMS odpovědi s odpovídajícími
-položkami. Jak se toto kritérium změnilo v dotaz, je to, co je nastaveno na tomto ovládání stránky.
+Pokud řídicí bod nabízí vyhledávací pole, nefiltruje seznam, který již má k dispozici. Odesílá do UMS vyhledávací kritérium UPnP, například `dc:title contains "beatles"`, a UMS vrátí odpovídající položky. Nastavení popsaná na této stránce určují, jak se toto kritérium převede na dotaz.
 
-## Dva vyhledávače
+## Dva způsoby vyhledávání
 
-UMS může odpovědět na hledání dvěma způsoby:
+UMS může vyhledávat dvěma způsoby:
 
-- **Celotextový index (výchozí).** UMS udržuje index Lucene vedle databáze a hledá to.
-  Je rychlý i na velkých knihovnách a právě to umožňuje částečná slova a toleranci vůči špatnému zápisu.
-- **Prosté vyhledávání databáze.** Přímý SQL dotaz. Pomalejší na velkých knihovnách a odpovídá pouze
-  tomu, co je doslova tam, ale nemá žádný index, který by byl zastaralý.
+- **Fulltextový index (výchozí).** UMS vedle databáze udržuje index Lucene a vyhledává v něm.
+  Vyhledávání je rychlé i ve velkých knihovnách a umožňuje hledat části slov a tolerovat překlepy.
+- **Přímé vyhledávání v databázi.** Používá přímý dotaz SQL. Ve velkých knihovnách je pomalejší a vyhledává pouze doslovné shody, ale nepoužívá žádný index, který by mohl být neaktuální.
 
-Celý textový index pokrývá název souboru každého mediálního souboru a pro zvuk také název písně,
-album, umělce, album umělce, skladatel, dirigent a žánr.
+Fulltextový index zahrnuje názvy všech mediálních souborů a u zvukových souborů také název skladby, album, interpreta, interpreta alba, skladatele, dirigenta a žánr.
 
-UMS přepíná na vlastní vyhledávání v databázi, když kontrolní bod odesílá kritérium, na které index
-nemůže odpovědět, vypnutí indexu je zřídka nutné.
+Pokud řídicí bod odešle kritérium, které index nedokáže zpracovat, UMS automaticky přejde na vyhledávání v databázi. Proto je vypnutí indexu potřeba jen zřídka.
 
 ```
-# Použijte fulltextový index. FALSE se vrátí k prostému vyhledávání databáze.
+# Používat fulltextový index. Hodnota FALSE přepne na přímé vyhledávání v databázi.
 search_lucene_use_engine = TRUE
 ```
 
 ## Vyhledávání části slova
 
-Většina vyhledávacích polí odesílá kritérium `obsahuje`, zatímco stále píšete. UMS promění každé slovo
-váš vstup ve dvě alternativy najednou:
+Většina vyhledávacích polí odesílá kritérium s operátorem `contains` už během psaní. UMS pro každé slovo zadaného textu hledá současně dva druhy shod:
 
-- **prefix** shoda, takže `beat` již náleží _Beatles_ před tím, než dokončíte slovo
-- **fuzzy** odpovídá, takže `beatlse` stále náleží _Beatles_ navzdory chybě zápisu
+- shodu podle **začátku slova (prefixu)**, takže `beat` najde _Beatles_ ještě před dopsáním celého slova
+- **přibližnou shodu (fuzzy)**, takže `beatlse` najde _Beatles_ i přes překlep
 
 ```
-# Povolte chybné zápisy kromě odpovídajících prefixů.
+# Kromě shody podle začátku slova tolerovat i překlepy.
 search_lucene_contains_fuzzy = TRUE
 ```
 
-Obě nastavení odpovídají prefixům. Rozlišují se v tom, co ostatní odpovídají:
+Při obou hodnotách tohoto nastavení se vyhledává podle začátku slova. Liší se tím, jaké další shody najdou:
 
-|                                    | `TRUE` (výchozí) | `FALSE` |
-| ---------------------------------- | ---------------- | ------- |
-| `beat` nalezne _Beatles_           | ano              | ano     |
-| `beatlse` nalezne _Beatles_        | ano              | ne      |
-| Nezávislé výsledky krátkého vstupu | možné            | ne      |
+|                                           | `TRUE` (výchozí) | `FALSE` |
+| ----------------------------------------- | ---------------- | ------- |
+| `beat` najde _Beatles_                    | ano              | ano     |
+| `beatlse` najde _Beatles_                 | ano              | ne      |
+| Nesouvisející výsledky při krátkém zadání | možné            | ne      |
 
-Poslední řádek je důvodem, proč nastavení existuje. Typo tolerance allows up to two wrong, missing or
-extra letters, and on a short word that reaches surprisingly far: searching for `ranz` also returns
-everything called _Jazz_, because two substitutions get you from one to the other. If that noise
-bothers you more than the typo tolerance helps, set it to `FALSE`.
+Poslední řádek vysvětluje, proč toto nastavení existuje. Tolerance překlepů připouští až dvě chybná, chybějící nebo nadbytečná písmena. U krátkého slova tak může vést k překvapivě široké shodě: vyhledání `ranz` vrátí i všechny položky s názvem _Jazz_, protože k přeměně jednoho slova na druhé stačí dvě záměny písmen. Pokud vám nesouvisející výsledky vadí více, než vám tolerance překlepů pomáhá, nastavte hodnotu na `FALSE`.
 
-Two details worth knowing:
+Dvě užitečné podrobnosti:
 
-- A prefix is only used from **three characters** on. One or two letters would match a large part of
-  the library without telling you anything the typo tolerance does not already find.
-- Putting your input in quotation marks searches for the **words next to each other** instead, which
-  is useful when the individual words are common but the combination is not.
+- Shoda podle začátku slova se používá až od **tří znaků**. Jedno nebo dvě písmena by odpovídala velké části knihovny, aniž by našla něco navíc oproti vyhledávání s tolerancí překlepů.
+- Pokud zadaný text uzavřete do uvozovek, hledají se místo toho **slova stojící vedle sebe**. To je užitečné, když jsou jednotlivá slova běžná, ale jejich kombinace nikoli.
 
-## Searching for an exact value
+## Vyhledávání přesné hodnoty
 
-Some criteria ask for an exact value rather than a part of one — a control point browsing by genre
-sends `upnp:genre = "Jazz"`, for instance. By default that is taken literally.
+Některá kritéria požadují přesnou hodnotu, nikoli jen její část. Například při procházení podle žánru řídicí bod odesílá `upnp:genre = "Jazz"`. Ve výchozím nastavení se takové kritérium vyhodnocuje doslovně.
 
 ```
-# Tolerate typos in exact matches as well. Off by default.
+# Tolerovat překlepy i při hledání přesné shody. Ve výchozím nastavení vypnuto.
 search_lucene_equal_fuzzy = FALSE
 ```
 
-Turning this on makes exact comparisons tolerate typos too. That is rarely what you want, because
-these criteria usually come from the control point itself rather than from something you typed, and
-a value that is nearly right is then quietly treated as right.
+Zapnutím tohoto nastavení se překlepy tolerují i při porovnávání přesných hodnot. To je žádoucí jen zřídka, protože tato kritéria obvykle vytváří sám řídicí bod a nevycházejí z textu, který zadáváte. Hodnota, která je správná jen přibližně, se pak bez upozornění považuje za správnou.
 
-## Notes
+## Poznámky
 
-Search ignores capitalization. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
+Vyhledávání nerozlišuje velká a malá písmena. `chapitre`, `Chapitre` a `CHAPITRE` vracejí stejné výsledky.
 
-If a search does not return what you expect, the debug log shows the query UMS built from your
-input, on a line beginning with `lucene search string is`. Comparing it with what you typed usually
-explains the result on the spot.
+Pokud vyhledávání nevrací očekávané výsledky, v ladicím protokolu najdete dotaz, který UMS vytvořil ze zadaného textu, na řádku začínajícím `lucene search string is`. Porovnání tohoto dotazu se zadaným textem obvykle hned objasní, proč vyhledávání vrátilo daný výsledek.
