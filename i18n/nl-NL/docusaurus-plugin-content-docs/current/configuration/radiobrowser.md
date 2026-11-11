@@ -30,9 +30,9 @@ adres:
 - het **zender logo**, zodat het invoer een ​​afbeelding bevat in plaats van een standaardpictogram
 - de **zender-identificatie** uit de map
 
-Het laatste punt is het interessante gedeelte. Het blijft in het afspeellijstbestand staan ​​als een
-[`#RADIOBROWSERUUID:`-richtlijn](/configuration/playlist-directives), wat betekent dat het item verbonden blijft met
-het item in de directory waar het vandaan kwam. UMS gebruikt die verbinding om details aan te vullen die de stream zelf niet prijsgeeft, zoals het genre en de bitrate.
+Het laatste punt is het interessante gedeelte. It stays in the playlist file as a
+[`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
+the directory entry it came from. UMS gebruikt die verbinding om details aan te vullen die de stream zelf niet prijsgeeft, zoals het genre en de bitrate.
 
 Het resultaat is een afspeellijstbestand dat nog steeds leesbaar is als een gewone afspeellijst en in elke andere speler werkt:
 
@@ -48,5 +48,6 @@ Je kunt zo'n invoer ook handmatig invoeren, als je de identificatiecode van de z
 
 ## Daarna
 
-Vanaf dat moment gedraagt ​​de zender zich als elk ander item in de afspeellijst. Je kunt het beoordelen, de afbeelding ervan vervangen en corrigeren hoe de 'live'-titels worden gelezen; zie
-[Internetradio en 'live'-titels](/configuration/internet-radio).
+Vanaf dat moment gedraagt ​​de zender zich als elk ander item in de afspeellijst. You can rate it, replace its
+picture, and correct how its live titles are read; see
+[Internet radio and live titles](./internet-radio).
