@@ -1,51 +1,51 @@
-# Search
+# Hledat
 
-When a control point offers a search box, it does not filter the list it already has. It sends the
-search to UMS as a UPnP criterion such as `dc:title contains "beatles"`, and UMS answers with the
-matching items. How that criterion is turned into a query is what the settings on this page control.
+Pokud kontrolní bod nabízí vyhledávací pole, nefiltruje seznam, který již má. Vysílá
+hledání UMS jako UPnP kritérium jako \`dc:title obsahuje "beatles"a UMS odpovědi s odpovídajícími
+položkami. Jak se toto kritérium změnilo v dotaz, je to, co je nastaveno na tomto ovládání stránky.
 
-## The two search engines
+## Dva vyhledávače
 
-UMS can answer a search in two ways:
+UMS může odpovědět na hledání dvěma způsoby:
 
-- **Full-text index (default).** UMS keeps a Lucene index next to the database and searches that.
-  It is fast even on large libraries and it is what makes partial words and typo tolerance possible.
-- **Plain database search.** A straight SQL query. Slower on large libraries and it only matches
-  what is literally there, but it has no index to go out of date.
+- **Celotextový index (výchozí).** UMS udržuje index Lucene vedle databáze a hledá to.
+  Je rychlý i na velkých knihovnách a právě to umožňuje částečná slova a toleranci vůči špatnému zápisu.
+- **Prosté vyhledávání databáze.** Přímý SQL dotaz. Pomalejší na velkých knihovnách a odpovídá pouze
+  tomu, co je doslova tam, ale nemá žádný index, který by byl zastaralý.
 
-The full-text index covers the file name of every media file, and for audio also the song title,
-album, artist, album artist, composer, conductor and genre.
+Celý textový index pokrývá název souboru každého mediálního souboru a pro zvuk také název písně,
+album, umělce, album umělce, skladatel, dirigent a žánr.
 
-UMS switches to the database search on its own when a control point sends a criterion the index
-cannot answer, so turning the index off is rarely necessary.
+UMS přepíná na vlastní vyhledávání v databázi, když kontrolní bod odesílá kritérium, na které index
+nemůže odpovědět, vypnutí indexu je zřídka nutné.
 
 ```
-# Use the full-text index. FALSE falls back to a plain database search.
+# Použijte fulltextový index. FALSE se vrátí k prostému vyhledávání databáze.
 search_lucene_use_engine = TRUE
 ```
 
-## Searching for part of a word
+## Vyhledávání části slova
 
-Most search boxes send a `contains` criterion while you are still typing. UMS turns each word of
-your input into two alternatives at once:
+Většina vyhledávacích polí odesílá kritérium `obsahuje`, zatímco stále píšete. UMS promění každé slovo
+váš vstup ve dvě alternativy najednou:
 
-- a **prefix** match, so `beat` already finds _Beatles_ before you finish the word
-- a **fuzzy** match, so `beatlse` still finds _Beatles_ despite the typo
+- **prefix** shoda, takže `beat` již náleží _Beatles_ před tím, než dokončíte slovo
+- **fuzzy** odpovídá, takže `beatlse` stále náleží _Beatles_ navzdory chybě zápisu
 
 ```
-# Tolerate typos in addition to matching prefixes.
+# Povolte chybné zápisy kromě odpovídajících prefixů.
 search_lucene_contains_fuzzy = TRUE
 ```
 
-Both settings match prefixes. They differ in what else they match:
+Obě nastavení odpovídají prefixům. Rozlišují se v tom, co ostatní odpovídají:
 
-|                                  | `TRUE` (default) | `FALSE` |
-| -------------------------------- | ---------------- | ------- |
-| `beat` finds _Beatles_           | yes              | yes     |
-| `beatlse` finds _Beatles_        | yes              | no      |
-| unrelated results on short input | possible         | no      |
+|                                    | `TRUE` (výchozí) | `FALSE` |
+| ---------------------------------- | ---------------- | ------- |
+| `beat` nalezne _Beatles_           | ano              | ano     |
+| `beatlse` nalezne _Beatles_        | ano              | ne      |
+| Nezávislé výsledky krátkého vstupu | možné            | ne      |
 
-The last row is the reason the setting exists. Typo tolerance allows up to two wrong, missing or
+Poslední řádek je důvodem, proč nastavení existuje. Typo tolerance allows up to two wrong, missing or
 extra letters, and on a short word that reaches surprisingly far: searching for `ranz` also returns
 everything called _Jazz_, because two substitutions get you from one to the other. If that noise
 bothers you more than the typo tolerance helps, set it to `FALSE`.
