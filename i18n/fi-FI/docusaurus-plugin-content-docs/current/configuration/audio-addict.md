@@ -51,8 +51,7 @@ Pidempi aika tekee selaamisesta nopeampaa, lyhyempi löytää äskettäin julkai
 
 ## Live-otsikot
 
-Audio Addictin asemat eivät ilmoita nykyistä kappaletta äänen mukana. Sen sijaan, UMS kysyy palvelulta ja näyttää tuloksen soittimessa, joten näet mitä soitetaan. This is
-described in [Internet radio and live titles](./internet-radio).
+Audio Addictin asemat eivät ilmoita nykyistä kappaletta äänen mukana. Sen sijaan, UMS kysyy palvelulta ja näyttää tuloksen soittimessa, joten näet mitä soitetaan. Tämä on kuvattu [Internet radio ja live-otsikot](./internet-radio).
 
 ```
 # Lähetä live-otsikot Audio Addict-asemille. Vakiona Päällä.

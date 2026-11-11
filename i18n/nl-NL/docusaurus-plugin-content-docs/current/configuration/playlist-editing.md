@@ -22,8 +22,7 @@ Wanneer deze instelling is ingeschakeld, kan een besturingselement dat dit onder
 Of je voor dit alles knoppen ziet, hangt af van je besturingselement. UMS stelt enkel de operaties beschikbaar; er gebeurt niets, tenzij erom wordt gevraagd.
 
 Wat UMS aanmaakt, zijn gewone afspeellijstbestanden in je gedeelde mappen — geen vermeldingen in een database die alleen door UMS worden begrepen. Je kunt ze achteraf in elk gewenst programma openen, naar een andere speler kopiëren of
-in een back-up bewaren. Additional details that a playlist entry cannot express on its own, such as
-artwork for a radio station, are stored as [directives](./playlist-directives) in the same file.
+in een back-up bewaren. Aanvullende details die een afspeellijstitem niet op zichzelf kan uitdrukken – zoals artwork voor een radiozender – worden opgeslagen als [richtlijnen](./playlist-directives) in hetzelfde bestand.
 
 Er zijn wijzigingen doorgevoerd voor gekoppelde bedieningselementen: een afspeellijst die op het ene apparaat wordt bewerkt, toont de nieuwe inhoud direct op de andere apparaten, zonder dat een handmatige verversing nodig is.
 

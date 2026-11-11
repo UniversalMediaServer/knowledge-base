@@ -27,15 +27,11 @@ audio_addict_pass = PAROLA
 
 **Audio Addict Radio Network** klasörü ortam kitaplığınızda bulunur. Buradan mevcut tüm istasyonlara doğrudan göz atabilir ve bunlara doğrudan erişebilirsiniz.
 
-## Shows and episodes
+## Programlar ve bölümler
 
-Besides the live stations, DI.fm network offers an **Events** folder. It lists the upcoming shows, and
-for a show that has already been broadcast it also offers the recording, so you can listen to it
-afterwards.
+DI.fm ağı, canlı istasyonların yanı sıra bir **Olaylar** klasörü de sunar. Yaklaşan programları listeler ve zaten yayınlanmış bir programın kaydını da sunar, böylece daha sonra dinleyebilirsiniz.
 
-Shows with a back catalogue get a folder of their own holding the older episodes. Some shows have
-hundreds of them, so the folder is split into smaller groups, each labelled with the episode numbers
-and dates it contains.
+Arka kataloğu olan programlar, eski bölümleri tutan kendilerine ait bir klasöre sahiptir. Bazı programların yüzlercesi bulunur, bu yüzden klasör, her biri içerdiği bölüm numaraları ve tarihlerle etiketlenmiş daha küçük gruplara bölünmüştür.
 
 ```
 # How many episodes one group holds before it is split. Default 20, minimum 1.
