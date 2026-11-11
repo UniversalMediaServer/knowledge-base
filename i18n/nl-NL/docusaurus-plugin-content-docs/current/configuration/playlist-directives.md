@@ -68,7 +68,7 @@ Voor een bestand op de schijf is dit handig, omdat de beoordeling in de database
 ### Titel volgorde
 
 `#EXTICYORDER:` bepaalt of een bericht van het station wordt gelezen als _Artiest - Titel_ of als
-_Titel - Station_. Zie [Internet radio en live titels](/configuration/internet-radio).
+_Titel - Station_. See [Internet radio and live titles](./internet-radio).
 
 ## UMS-richtlijnen schrijven zichzelf
 
