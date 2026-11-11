@@ -26,8 +26,8 @@ available; nothing happens unless something asks for it.
 
 What UMS writes are plain playlist files in your shared folders — not entries in a database that
 only UMS understands. You can open them in any editor afterwards, copy them to another player, or
-keep them in a backup. Additional details that a playlist entry cannot express on its own, such as
-artwork for a radio station, are stored as [directives](./playlist-directives) in the same file.
+keep them in a backup. Další podrobnosti, které nemůže záznam ze seznamu skladeb vyjádřit, jako je
+obrázek pro rádiovou stanici, jsou uloženy jako [directives](./playlist-directives) ve stejném souboru.
 
 Changes are announced to connected control points, so a playlist edited on one device shows its new
 contents on the others without a manual refresh.
