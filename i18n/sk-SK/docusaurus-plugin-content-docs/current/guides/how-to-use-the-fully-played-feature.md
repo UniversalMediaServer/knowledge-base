@@ -1,33 +1,33 @@
-# How to use the "Fully played" feature
+# Ako používať funkciu „Úplne prehrané“
 
-The "Fully played" feature lets you keep track of files you have fully played; for a video it means you have watched at least 92%, and for audio you have listened to at least 92%.
+Funkcia „Úplne prehrané“ umožňuje sledovať, ktoré súbory ste už prehrali. Pri videu to znamená, že ste pozreli aspoň 92 %, pri zvuku, že ste vypočuli aspoň 92 %.
 
-## Setup
+## Nastavenie
 
-This feature is enabled by default, so if you have not changed anything, you can use it. If the feature is not working, please check that these steps have not been undone:
+Táto funkcia je predvolene zapnutá. Ak ste nastavenia nezmenili, môžete ju rovno používať. Ak funkcia nefunguje, skontrolujte, či stále platia tieto nastavenia:
 
-1. On the **Navigation Settings** tab, choose your **Fully played action**. In particular, make sure you have not selected **Do nothing**. This is **Mark media** by default, which will overlay an icon on the thumbnail to indicate it has been watched.
-2. On the **Shared Content** tab, find the folder you want to track, and select the **Monitor played status of files** checkbox on that row.
-3. If you want played status to be tracked separately for different renderers, you can link renderers to different user accounts. Each account will store its own played statuses.
+1. Na karte **Nastavenia navigácie** vyberte **Akciu po úplnom prehraní**. Najmä skontrolujte, že nie je vybraná možnosť **Nerobiť nič**. Predvolene je vybraná možnosť **Označiť médiá**, ktorá na miniatúre zobrazí ikonu označujúcu prehrané médium.
+2. Na karte **Zdieľaný obsah** nájdite priečinok, ktorý chcete sledovať, a v jeho riadku začiarknite možnosť **Sledovať stav prehrania súborov**.
+3. Ak chcete sledovať stav prehrania samostatne pre rôzne prehrávače, môžete ich prepojiť s rôznymi používateľskými účtami. Každý účet bude uchovávať vlastný stav prehrania.
 
-## Marking files as fully played automatically
+## Automatické označovanie súborov ako úplne prehraných
 
-After you have completed the setup steps, you just need to play 92% or more of a file.
+Po dokončení nastavenia stačí prehrať aspoň 92 % súboru.
 
-## Mark TV series, videos, or directories as fully played manually
+## Ručné označenie seriálov, videí alebo priečinkov ako úplne prehraných
 
-You can mark TV series and videos as fully played directly via the web player:
+Seriály a videá môžete označiť ako úplne prehrané priamo vo webovom prehrávači:
 
 ![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
-To mark all files within a shared directory as fully played on the _old_ Settings interface, on the **Shared Content** tab, right-click on the directory you want to mark as fully played, and then click **Mark contents fully played**
+Ak chcete v _starom_ rozhraní nastavení označiť všetky súbory v zdieľanom priečinku ako úplne prehrané, na karte **Zdieľaný obsah** kliknite pravým tlačidlom na daný priečinok a vyberte **Označiť obsah ako úplne prehraný**.
 
 ![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
-## Removing fully played status / unplaying
+## Odstránenie označenia „úplne prehrané“
 
-To "unplay" a file, you can do one of the following options:
+Ak chcete súbor označiť ako neprehraný, môžete použiť jednu z nasledujúcich možností:
 
-- Rename the file in any way. You can put it back to its original name after that, because UMS will have cleared the entry from its cache when you changed the name.
-- Move the file to another directory. You can put it back to its original directory after that, because UMS will have cleared the entry from its cache when you moved the file.
-- To "unplay" a whole shared directory, on the **Shared Content** tab, right-click on the directory to mark as unplayed, and then click **Mark contents unplayed**.
+- Ľubovoľným spôsobom premenujte súbor. Potom mu môžete vrátiť pôvodný názov, pretože UMS pri premenovaní odstráni jeho záznam z vyrovnávacej pamäte.
+- Presuňte súbor do iného priečinka. Potom ho môžete vrátiť do pôvodného priečinka, pretože UMS pri presunutí odstráni jeho záznam z vyrovnávacej pamäte.
+- Ak chcete ako neprehraný označiť celý zdieľaný priečinok, na karte **Zdieľaný obsah** naň kliknite pravým tlačidlom a vyberte **Označiť obsah ako neprehraný**.
