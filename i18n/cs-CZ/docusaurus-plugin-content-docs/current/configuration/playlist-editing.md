@@ -1,58 +1,43 @@
-# Editing Playlists from a Control Point
+# Úpravy seznamů skladeb z řídicího bodu
 
-Playlists are ordinary `.m3u8` files, and you can always edit them in a text editor. UMS can also
-let your control point do it for you: create a playlist, add the track you are listening to, drop
-one you no longer want, rename or delete the whole thing — without touching a file by hand.
+Seznamy skladeb jsou běžné soubory `.m3u8`, které můžete kdykoli upravit v textovém editoru. UMS také umožňuje, aby je za vás upravoval řídicí bod: můžete vytvořit seznam skladeb, přidat právě poslouchanou skladbu, odebrat nechtěnou položku nebo celý seznam přejmenovat či smazat — bez ručních úprav souboru.
 
-This is switched **off** by default. Writing to a playlist means writing to your disk, so it has to
-be something you allow deliberately rather than something that is simply on.
+Tato funkce je ve výchozím nastavení **vypnutá**. Zápis do seznamu skladeb znamená zápis na váš disk, a proto jej musíte výslovně povolit.
 
 ```
-# Allow control points to create, change and delete objects. Off by default.
+# Povolit řídicím bodům vytvářet, měnit a mazat objekty. Ve výchozím nastavení vypnuto.
 upnp_cds_write = TRUE
 ```
 
-## What becomes possible
+## Jaké možnosti se zpřístupní
 
-With the setting on, a control point that supports it can
+Po zapnutí nastavení může řídicí bod, který tuto funkci podporuje,
 
-- create a new playlist,
-- add an item to a playlist, including one it is playing right now,
-- remove an item from a playlist,
-- rename or delete a playlist.
+- vytvořit nový seznam skladeb,
+- přidat do seznamu položku, včetně té, kterou právě přehrává,
+- odebrat položku ze seznamu skladeb,
+- přejmenovat nebo smazat seznam skladeb.
 
-Whether you see buttons for all of this depends on your control point. UMS only makes the operations
-available; nothing happens unless something asks for it.
+Zda uvidíte tlačítka pro všechny tyto operace, záleží na řídicím bodu. UMS tyto operace pouze zpřístupňuje; nic se neprovede, dokud o to někdo nepožádá.
 
-What UMS writes are plain playlist files in your shared folders — not entries in a database that
-only UMS understands. You can open them in any editor afterwards, copy them to another player, or
-keep them in a backup. Další podrobnosti, které nemůže záznam ze seznamu skladeb vyjádřit, jako je
-obrázek pro rádiovou stanici, jsou uloženy jako [directives](./playlist-directives) ve stejném souboru.
+UMS zapisuje obyčejné soubory seznamů skladeb do sdílených složek, nikoli záznamy v databázi, kterým rozumí jen UMS. Poté je můžete otevřít v libovolném editoru, zkopírovat do jiného přehrávače nebo zálohovat. Další údaje, které samotná položka seznamu skladeb nedokáže vyjádřit, například obrázek rozhlasové stanice, se ukládají jako [direktivy](./playlist-directives) do stejného souboru.
 
-Changes are announced to connected control points, so a playlist edited on one device shows its new
-contents on the others without a manual refresh.
+Změny se oznamují připojeným řídicím bodům, takže seznam upravený na jednom zařízení zobrazí nový obsah i na ostatních bez ručního obnovení.
 
-## Uploading files
+## Nahrávání souborů
 
-A second setting governs something different and considerably more far-reaching: whether a device
-may send **file content** to UMS and have it written to disk.
+Druhé nastavení řídí odlišnou možnost s podstatně větším dopadem: zda zařízení smí poslat UMS **obsah souboru** a nechat jej zapsat na disk.
 
 ```
-# Allow unidentified devices to write files to disk. Off by default.
+# Povolit neidentifikovaným zařízením zapisovat soubory na disk. Ve výchozím nastavení vypnuto.
 anonymous_devices_write = TRUE
 ```
 
-Leave this off unless you have a concrete reason. It permits a device on your network that UMS
-cannot attribute to a known user to create, replace and delete media files in your shared folders.
-That is a large amount of trust to extend to anything that happens to be on the network, and it is
-why the setting exists separately from playlist editing instead of being included in it.
+Pokud pro zapnutí nemáte konkrétní důvod, ponechte toto nastavení vypnuté. Umožňuje zařízení ve vaší síti, které UMS nedokáže přiřadit ke známému uživateli, vytvářet, nahrazovat a mazat mediální soubory ve sdílených složkách.
+Tím poskytujete značnou důvěru jakémukoli zařízení, které se právě nachází v síti. Proto je toto nastavení oddělené od úprav seznamů skladeb.
 
-## Both settings can be changed remotely
+## Obě nastavení lze měnit na dálku
 
-A control point can read and set both switches itself, in the same way it reads any other UMS
-setting. That is convenient — you can turn playlist editing on from the app you are already holding
-— but it also means the value in your configuration file is not the last word: anything that can
-reach the UPnP service on your network can change it.
+Řídicí bod může oba přepínače sám číst i nastavovat, stejně jako čte ostatní nastavení UMS. Je to pohodlné — úpravy seznamů skladeb můžete zapnout přímo z aplikace, kterou právě používáte. Hodnota v konfiguračním souboru ale není konečná: může ji změnit cokoli, co má ve vaší síti přístup ke službě UPnP.
 
-If that matters to you, restrict which devices may reach UMS at all. See
-[Security and privacy](/configuration/security-and-privacy).
+Pokud je to pro vás důležité, omezte, která zařízení se smějí k UMS vůbec připojit. Viz [Zabezpečení a soukromí](/configuration/security-and-privacy).
