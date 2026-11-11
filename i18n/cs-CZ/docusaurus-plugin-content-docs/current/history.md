@@ -6,29 +6,29 @@ sidebar_position: 4
 
 ## Přehled
 
-Začali jsme v roce 2012 jako fork PS3 Media Server, který byl jedním z nejpopulárnějších a nejcennějších mediálních serverů. Náš zakladatel SubJunk byl také vývojářem tohoto projektu. V těchto dnech to byl jednoduše media server DLNA s mnohem jednodušším grafickým rozhraním a sadou funkcí.
+Projekt vznikl v roce 2012 jako odnož (fork) PS3 Media Serveru, tehdy jednoho z nejoblíbenějších a nejlépe hodnocených mediálních serverů. Náš zakladatel SubJunk byl také vývojářem tohoto projektu. Tehdy šlo pouze o mediální server DLNA s mnohem jednodušším grafickým rozhraním a menší sadou funkcí.
 
-Dělal svou jednoduchou práci dobře, ale my jsme se ujali UMS v nových směrech a do nových výšek.
+Svůj základní úkol plnil dobře, ale od té doby jsme UMS rozvinuli novými směry a posunuli výrazně dál.
 
-Zde jsou některé hlavní body cesty:
+Zde jsou některé důležité milníky:
 
 ## Předchozí verze
 
 ### v14 (2022-12-13)
 
-Největší změny zahrnují schopnost kontrolovat přístup k vašemu obsahu. To zahrnuje vylepšení uživatelských účtů, jako jsou avatary a stav přehrávání podle uživatele, stejně jako možnost zobrazit jiný obsah na různých zařízeních.
+Největší změny se týkaly možnosti řídit přístup k obsahu. Patřila k nim vylepšení uživatelských účtů, například avatary a samostatná evidence přehrání pro každého uživatele, i možnost zobrazovat různý obsah různým zařízením a přehrávačům.
 
 ![Příklad jak zablokovat přehrávač](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-Přidali jsme také možnost přidat klíč TMDB API pro ruční přidávání a úpravu metadat televizních sérií a videí, a označit televizní série a filmy za plně přehrané.
+Přidali jsme také možnost zadat klíč API služby TMDB pro ruční přidávání a úpravy metadat seriálů a videí a možnost označit seriály a filmy jako plně přehrané.
 
 ![Příklad úpravy metadat](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-[Více informací o nové stránce](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+[Podrobnosti najdete na stránce s novinkami](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
 ### v13 (2022-12-13)
 
-Toto vydání bylo celé o 3D a virtuální realitě, vedená přispěvatelem threedguru.
+Toto vydání se zaměřilo na 3D a virtuální realitu. Vývoj těchto funkcí vedl přispěvatel threedguru.
 
 ![Sdílený obsah](@site/docs/img/history-v13.png)
 
@@ -36,13 +36,13 @@ Toto vydání bylo celé o 3D a virtuální realitě, vedená přispěvatelem th
 
 ### v12 (2022-11-29)
 
-Toto bylo kompletní přepsání našeho GUI pomocí moderního nástroje ve webovém prohlížeči, s obrovským úsilím SurfaceS a js-kyle.
+Grafické rozhraní bylo kompletně přepracováno s využitím moderních webových nástrojů. Velkou zásluhu na tom měli SurfaceS a js-kyle.
 
-Tím byl také zaveden pojem autentizace, uživatelé a skupiny.
+Přibylo také ověřování přihlášení, uživatelské účty a skupiny.
 
 ![Autentikace](@site/docs/img/history-v12-1.png)
 
-Další změnou je, že sdílená oblast obsahu byla sjednocena, kde před rozdělením na místní a webový obsah jsou nyní na stejném seznamu.
+Sjednotili jsme také část Sdílený obsah: místní a webový obsah, které byly dříve oddělené, se nyní zobrazují v jednom seznamu.
 
 ![Sdílený obsah](@site/docs/img/history-v12-2.png)
 
@@ -50,11 +50,11 @@ Další změnou je, že sdílená oblast obsahu byla sjednocena, kde před rozd�
 
 ### v11 (2022-05-27)
 
-Zlepšili jsme webové rozhraní mnoha způsoby, včetně bohatších dat, jako jsou loga a pozadí televizních seriálů, filmů a epizod, lepší detekce zařízení, vylepšené rozpoznání/obnovení stavu sítě, video přehrávání a vyhledávání, vylepšené API metadata hledání, HLS překódování pro všechna zařízení a další!
+Webové rozhraní jsme vylepšili v mnoha směrech. Přibyly bohatší údaje, například loga a pozadí seriálů, filmů a epizod. Zlepšili jsme rozpoznávání zařízení, zjišťování stavu sítě a obnovu připojení, přehrávání videa a posun v něm, přiřazování metadat z API, překódování do HLS pro všechna zařízení a další funkce.
 
 ![Přehled webového rozhraní](@site/docs/img/history-v11.gif)
 
-Byla to naše první verze s naším superhvězdným vývojářem SurfaceS, který do této verze vložil hodně.
+Byla to první verze, na které se podílel náš nový výjimečný vývojář SurfaceS, jenž do ní vložil mnoho práce.
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
 
@@ -62,19 +62,19 @@ Byla to naše první verze s naším superhvězdným vývojářem SurfaceS, kter
 
 Zde jsme se zaměřili na to, aby byla naše bohatá metadata užitečnější.
 
-Přidali jsme nové složky do knihovny médií, včetně "Filtrovat podle informací", která vám umožňuje procházet videa podle aktéra, žánru, země, ředitel, IMDb hodnocení a data vydání.
+Do knihovny médií jsme přidali nové složky, včetně „Filtrovat podle informací“, která umožňuje procházet videa podle herce, žánru, země, režiséra, hodnocení IMDb a data vydání.
 
-Webové rozhraní získalo mnohem více funkčnosti tím, že vám umožní kliknout na položku jako herec nebo žánr videa, abyste viděli jiné shody pro tuto osobu nebo žánr (nebo jiná metadata). Přidali jsme některé rychlé odkazy na titulní stránku webového rozhraní, například nedávno přidané, v průběhu, nejhranější, atd.
+Webové rozhraní získalo další možnosti: kliknutím na údaj u videa, například na herce nebo žánr, můžete zobrazit další odpovídající položky. Totéž platí i pro ostatní metadata. Na úvodní stránku webového rozhraní jsme přidali rychlé odkazy, například Nedávno přidané, Rozkoukané a Nejčastěji přehrávané.
 
-Náhledy pro TV seriál mají nyní plně přehrávanou ikonu, pokud byly všechny epizody zcela přehrány:
+Miniatury seriálů nyní zobrazují ikonu úplného přehrání, pokud byly plně přehrány všechny epizody:
 
-![Plně přehrané TV série](@site/docs/img/history-v10.png)
+![Plně přehrané seriály](@site/docs/img/history-v10.png)
 
-Také jsme uvítali ik666 ve vývojovém týmu, který přidal nové API pro integraci a výrazně zlepšil podporu UPnP.
+Ve vývojovém týmu jsme přivítali také ik666, který přidal nové API pro integrace a výrazně zlepšil podporu UPnP.
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
 
-### v9 (2019-09-06),
+### v9 (2019-09-06)
 
 Již není třeba instalovat Javu!
 
@@ -82,35 +82,35 @@ Již není třeba instalovat Javu!
 
 ### v8 (2019-03-29)
 
-Tato verze se zaměřuje na usnadnění streamování webového obsahu, jako jsou vodcasty, podcasty, internetové rádio, YouTube kanály a další streamovací webový obsah přidáním záložky Sdílený obsah.
+Tato verze přidala kartu Sdílený obsah, která usnadnila přehrávání streamovaného webového obsahu, například video podcastů, podcastů, internetových rádií a kanálů YouTube.
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
 
 ### v7 (2018-03-27)
 
-Tato verze se zaměřuje na naše dynamické funkce prohlížení médií ve složce Knihovna médií.
+Tato verze se zaměřila na dynamické procházení médií ve složce Knihovna médií.
 
-Přidali jsme detekci filmů a televizních sérií a také přidali sledování složek, takže soubory mohou být automaticky detekovány ve sdílených složkách
+Přidali jsme rozpoznávání filmů a seriálů i sledování složek, díky kterému se soubory ve sdílených složkách zjišťují automaticky.
 
-Měli jsme také štěstí, že máme mik_s, našeho moderátora fóra, připojil se k nám v tomto čase, který dělá úžasnou práci kolem tohoto místa!
+V té době se k nám naštěstí připojil také mik_s, náš moderátor fóra, který zde odvádí skvělou práci!
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
 
 ### v6 (2016-01-30)
 
-Zde jsme přidali "Plně hrané akce" s překryvnými ikonami a správou souborů, které byly velmi očekávané.
+Přidali jsme dlouho očekávanou funkci „Akce po úplném přehrání“ s ikonami překrývajícími miniatury a správou souborů.
 
-Také jsme přivítali Nadahar v týmu, který zlepšil stabilitu, logování a jazykovou podporu.
+V týmu jsme přivítali také Nadahara, který zlepšil stabilitu, protokolování a jazykovou podporu.
 
-Díky jeho Crowdin integraci jsme měli 523 přispěvatelů do našich 40 jazyků!
+Díky jeho propojení s Crowdin se na překladech do 40 jazyků podílelo 523 přispěvatelů!
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
 
 ### v5 (2015-01-25)
 
-V této verzi jsme přidali podporu pro připojení a přehrávání UPnP, což znamenalo, že se komunita mohla připojit k mnoha dalším zařízením! Velice díky skeptical za to.
+V této verzi jsme přidali podporu pro připojení a přehrávání UPnP, což znamenalo, že se komunita mohla připojit k mnoha dalším zařízením! Velkou zásluhu na tom měl skeptical, kterému děkujeme.
 
-Také jsme přidali naše první hledání v metadatech IMDb, ale ještě jsme neměli vlastní API. Máme OpenSubtitles za což děkujeme, a omlouváme se za všechny spamujíci požadavky v těchto dnech!
+Přidali jsme také první podporu metadat IMDb, ale vlastní API jsme ještě neměli. Za to děkujeme službě OpenSubtitles a omlouváme se za záplavu požadavků, kterou jsme jí tehdy posílali!
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
@@ -118,31 +118,31 @@ Také jsme přidali naše první hledání v metadatech IMDb, ale ještě jsme n
 
 Bylo přidáno první webové rozhraní, konečně jsme UMS komunitě umožnili přístup k obsahu prostřednictvím jejich webových prohlížečů!
 
-Přidali jsme také podporu pro obsazení a možnost převést zvuk do formátu AAC.
+Přidali jsme také podporu odesílání médií na jiná zařízení (casting) a možnost překódování zvuku do AAC.
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
 
-### v3 (2013-11-01),
+### v3 (2013-11-01)
 
-V3 byla obrovská verze a právě v té době jsme začali od PS3MS stahovat tuny vlastních funkcí.
+Verze 3 byla rozsáhlým vydáním. Právě tehdy jsme se díky mnoha vlastním funkcím začali od PS3MS výrazně odlišovat.
 
-Přidali jsme nové složky médií a nedávno přehrávané složky, obnovení přehrávání, pojmenování souborů a průvodce nastavením spouštěče.
+Přidali jsme složky Nová média a Nedávno přehrávané, pokračování v přehrávání, úpravu zobrazovaných názvů souborů a průvodce počátečním nastavením.
 
-Také jsme uvítali v týmu valib, který dodnes přispívá!
+V týmu jsme přivítali také valib, který přispívá dodnes!
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
-### v2 (2012-10-31),
+### v2 (2012-10-31)
 
-S v2 přišlo přidání záložky Plugin Management které se připojily k naší centralizované databázi pluginů, a opět jsme byli první, kdo zavedl nějaký prvek; Živé titulky, kde můžete streamovat titulky on-the-fly do vašeho zařízení.
+Ve verzi 2 přibyla karta Správa doplňků propojená s naší centrální databází doplňků. Opět jsme také jako první nabídli novou funkci: Živé titulky, které umožňují načítat titulky za běhu přímo z přehrávače.
 
 [Více informací v oznámení vydání](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
-### v1 (2012-05-31),
+### v1 (2012-05-31)
 
 Tyto rané verze se zaměřily na "univerzální" aspekt nového programu přidáním podpory pro desítky nových zařízení.
 
-Byli jsme také první media server který podpořil smooth motion, frame-interpolation rozšíření, které teď má každá TV, ovšem tehdy to byla novinka v high-end televizích.
+Byli jsme také prvním mediálním serverem s podporou vyhlazení pohybu pomocí interpolace snímků. Tuto funkci dnes nabízí každý televizor, ale tehdy byla dostupná jen v nových špičkových modelech.
 
 Náš druhý vývojář, SharkHunter, se k nám také připojil během několika prvních dnů.
 
@@ -150,8 +150,8 @@ Náš druhý vývojář, SharkHunter, se k nám také připojil během několika
 
 ### PS3 Media Server (2008)
 
-Projekt, který to všechno zahájil! Jsme větev tohoto projektu, který byl zahájen v roce 2008 shagratem ke kterému se krátce připojil SubJunk, zakladatel Universal Media Server.
+Projekt, který to všechno zahájil! UMS je odnoží projektu, který v roce 2008 založil shagrath. Krátce nato se k němu připojil SubJunk, zakladatel Universal Media Serveru.
 
-PS3 byl skvělý stroj pro přehrávání médií, ale nepodporoval mnoho video formátů, takže PS3 Media Server použil spoustu triků, aby přehrál jakékoli video. Uplatnili jsme stejnou strategii pro všechna zařízení a přehrávače.
+PS3 byla skvělá konzole pro přehrávání médií, ale řadu formátů videa nepodporovala. PS3 Media Server proto používal různé postupy, aby na ní šlo přehrát prakticky jakékoli video. Uplatnili jsme stejnou strategii pro všechna zařízení a přehrávače.
 
 ![PS3 Media Server](@site/docs/img/history-pms.png)
