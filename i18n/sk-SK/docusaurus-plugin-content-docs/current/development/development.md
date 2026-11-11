@@ -1,101 +1,79 @@
-# Development
+# Vývoj
 
-This document explains how to make and run your own changes.
+Tento dokument vysvetľuje, ako vytvárať a spúšťať vlastné úpravy.
 
-## Forking the code to your machine
+## Vytvorenie forku a získanie kódu do počítača
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub vývojárom uľahčuje vytvorenie vlastného forku oficiálnych zdrojových kódov UMS, do ktorého môžu pridávať úpravy a funkcie. Tieto zmeny potom možno prostredníctvom GitHubu predložiť oficiálnemu vývojovému tímu UMS ako návrhy na začlenenie zmien, označované „Pull Request“.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [Pripravte počítač na vývoj s GitHubom](https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- Otvorte [repozitár UMS na GitHube](https://github.com/universalmediaserver/universalmediaserver) a vpravo hore kliknite na tlačidlo `Fork`.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Naklonujte nový repozitár z GitHubu do svojho počítača. Adresu na klonovanie nájdete na hlavnej stránke svojho repozitára. Príkaz by mal vyzerať približne takto. YOURNAME nahraďte svojím používateľským menom na GitHube:
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-You now have the new repository on your local machine.
+Nový repozitár teraz máte v svojom počítači.
 
-## Development with IDEs
+## Vývoj v integrovaných vývojových prostrediach
 
 ### [VS Code](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Tento editor odporúčame, pretože veľmi dobre podporuje Javu aj TypeScript, naše dva hlavné programovacie jazyky.
 
-#### Java server
+#### Server v Jave
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Po otvorení kódu sa pravdepodobne zobrazia odporúčania na inštaláciu rozšírení, napríklad `Extension Pack for Java`. Nainštalujte odporúčané rozšírenia.
+Po ich inštalácii a nastavení môžete server v Jave spustiť pomocou ponuky `Run -> Start Debugging` a znova načítať pomocou `Run -> Restart Debugging`. Tieto príkazy by sa mali vykonať do jednej sekundy, čo umožňuje rýchly vývoj.
 
-#### Web browser interfaces
+#### Rozhrania pre webový prehliadač
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Ak chcete upravovať webové rozhrania, musíte spustiť aj server React, ktorý sa postará o kompiláciu a poskytovanie kódu TypeScript.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+Vo VS Code otvorte `Command Palette`, vyhľadajte `Debug: Select and Start Debugging` a vyberte `Launch web interface`. Zmeny v súboroch React sa budú automaticky načítavať.
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Pri ručnom postupe prejdite do priečinka `react-client` a spustením `yarn` stiahnite potrebné závislosti. Potom spustite `yarn dev`. Mal by otvoriť webový prehrávač v prehliadači a automaticky kompilovať zmeny kódu.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Pre webové rozhranie nastavení otvorte `react-client/package.json` a zmeňte port proxy z `9002` na `9001`. Príkaz `yarn dev` by teraz mal poskytovať webové nastavenia namiesto webového prehrávača.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
-- Install the m2e Eclipse plugin (http://eclipse.org/m2e/)
+- Nainštalujte doplnok m2e pre Eclipse (http://eclipse.org/m2e/).
 
-- Install the EGit Eclipse plugin (http://eclipse.org/egit/)
+- Nainštalujte doplnok EGit pre Eclipse (http://eclipse.org/egit/).
 
-- In Eclipse, select the menu "Window > Show View > Git Repositories". Then
-  select "Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+- V Eclipse vyberte ponuku „Window > Show View > Git Repositories“. Potom vyberte „Window > Navigation > Show View Menu“ a zvoľte „Add a Repository“.
+  Vyhľadajte priečinok, do ktorého ste repozitár naklonovali, a kliknite na „Search“. Vyberte svoj fork repozitára a kliknite na „OK“.
+  Repozitár by sa mal zobraziť v pohľade Git Repositories.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Kliknite na repozitár pravým tlačidlom a z ponuky vyberte „Import Maven Projects“. Vyberte projekt „/pom.xml“ a kliknite na „Finish“.
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Poznámka: ak už projekt s rovnakým názvom existuje, kliknite na „Advanced“ a nastavte „Name template“ na `[artifactId]-YOURNAME`. YOURNAME nahraďte svojím používateľským menom na GitHube. Potom kliknite na „Finish“.
 
-You now see the sources in Eclipse, but the project is still missing the "Git"
-nature. In other words, it is not tied to the local repository yet. This means
-you cannot perform any Git actions from Eclipse yet. Add the missing connection
-by sharing the project:
+Zdrojové kódy už vidíte v Eclipse, ale projektu ešte chýba podpora Gitu. Inými slovami, ešte nie je prepojený s miestnym repozitárom. Preto zatiaľ nemožno z Eclipse vykonávať operácie Gitu. Chýbajúce prepojenie pridajte zdieľaním projektu:
 
-- Press the right mouse button on the newly created project and select the
-  menu "Team > Share Project...". Select "Git" and press "Next >".
-  Check the checkbox "Use or create repository in parent folder of project"
-  and make sure the project is selected. Then press "Finish".
+- Kliknite pravým tlačidlom na novovytvorený projekt a vyberte „Team > Share Project...“. Vyberte „Git“ a kliknite na „Next >“.
+  Začiarknite „Use or create repository in parent folder of project“ a skontrolujte, že je projekt vybraný. Potom kliknite na „Finish“.
 
-Verify that your project is now under Git control. Press the right mouse
-button on the project and under "Team" you now see all options to work with
-Git.
+Overte, že projekt je teraz spravovaný Gitom. Po kliknutí pravým tlačidlom na projekt by sa v ponuke „Team“ mali zobrazovať všetky možnosti práce s Gitom.
 
-You can build UMS from Eclipse:
+UMS môžete zostaviť priamo z Eclipse:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
-  `package`. Select the tab "JRE" and add the following VM arguments
-  `-Xmx1500m -XX:MaxPermSize=256m`. Finally, press the "Apply" button.
+- V ponuke „Run > Run Configurations...“ vytvorte novú konfiguráciu: pravým tlačidlom kliknite na „Maven Build“ a vyberte „New“. Ako Name zadajte `Build UMS` a ako Goals `package`. Vyberte kartu „JRE“ a pridajte nasledujúce argumenty virtuálneho stroja: `-Xmx1500m -XX:MaxPermSize=256m`. Nakoniec kliknite na tlačidlo „Apply“.
 
-You will want to run UMS from Eclipse while developing. This is how you do it:
+Počas vývoja budete chcieť spúšťať UMS priamo z Eclipse. Postup je nasledujúci:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Run UMS`, Base
-  directory: `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
-  Select the tab "JRE" and add VM arguments `-Xmx1500m -XX:MaxPermSize=256m`.
-  Finally, press the "Apply" button.
+- V ponuke „Run > Run Configurations...“ vytvorte novú konfiguráciu: pravým tlačidlom kliknite na „Maven Build“ a vyberte „New“. Nastavte Name na `Run UMS`, Base directory na `${project_loc}`, Goals na „test“ a Profiles na `run-from-eclipse`.
+  Vyberte kartu „JRE“ a pridajte argumenty virtuálneho stroja `-Xmx1500m -XX:MaxPermSize=256m`.
+  Nakoniec kliknite na tlačidlo „Apply“.
 
-You are now ready to start developing!
+Teraz môžete začať vyvíjať!
 
-When you are happy with your changes, you can commit them to your local
-repository from Eclipse using right mouse button, "Team > Commit...".
+Keď ste s úpravami spokojní, môžete ich v Eclipse zaznamenať do miestneho repozitára kliknutím pravým tlačidlom a výberom „Team > Commit...“.
 
-When you are satisfied with your commits and want to publish them to your
-repository at GitHub, you can press the right mouse button on the project and
-select "Team > Push to Upstream".
+Keď chcete svoje commity zverejniť v repozitári na GitHube, kliknite pravým tlačidlom na projekt a vyberte „Team > Push to Upstream“.
 
-## Contributing your change back to us
+## Prispenie svojou zmenou do projektu
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Ak chcete prispieť do projektu UMS, môžete vývojovému tímu poslať návrh na začlenenie zmien („Pull Request“). Podrobnosti nájdete v návode [Vytvorenie pull requestu](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
