@@ -79,7 +79,8 @@ station, so there is rarely a reason to type it by hand.
 ### Title order
 
 `#EXTICYORDER:` controls whether a station's announcement is read as _Artist - Title_ or as
-_Title - Station_. See [Internet radio and live titles](./internet-radio).
+_Title - Station_. Toto je
+popsáno v [Internetové rádio a živé tituly](./internet-radio).
 
 ## Directives UMS writes itself
 
