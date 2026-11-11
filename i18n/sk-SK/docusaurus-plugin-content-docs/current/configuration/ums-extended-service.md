@@ -1,90 +1,90 @@
-# UMS UPnP Service
+# Služba UPnP v UMS
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS poskytuje rozšírenú službu UPnP, ktorá externým ovládacím bodom umožňuje používať ďalšie funkcie systému.
 
-## Usage
+## Použitie
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Služba je dostupná v mennom priestore `schemas-upnp-org` s typom služby `UmsExtendedServices`.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+V ovládacích bodoch napísaných v Jave s knižnicou JUPnP zavolajte `findService` na objekte `RemoteDevice` predstavujúcom UMS:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
     new ServiceType("schemas-upnp-org", "UmsExtendedServices"));
 ```
 
-The following actions are available through this service interface.
+Prostredníctvom tohto rozhrania služby sú dostupné nasledujúce akcie.
 
-## MyMusic interactions
+## Práca s MyMusic
 
-Liked albums can be browsed using the object ID `MYMUSIC$` as a deep link or by navigating to `My Albums` in the root folder.
+Obľúbené albumy možno prehliadať priamym odkazom s identifikátorom objektu `MYMUSIC$` alebo prechodom do priečinka `My Albums` v koreňovom priečinku.
 
-Maintaining favorites is especially useful in large album collections, where manually browsing the complete library can become time-consuming. A curated list of liked albums helps users quickly return to relevant content without repeated broad searches or deep folder navigation.
+Správa obľúbených položiek je užitočná najmä vo veľkých zbierkach albumov, kde môže byť ručné prehliadanie celej knižnice zdĺhavé. Vybraný zoznam obľúbených albumov umožňuje rýchly návrat k požadovanému obsahu bez opakovaného širokého vyhľadávania alebo prechádzania hlbokej štruktúry priečinkov.
 
-In practice, favorites provide the following benefits:
+V praxi prinášajú obľúbené položky tieto výhody:
 
-- Faster access to frequently played albums, even in very large libraries.
-- Better day-to-day navigation by separating preferred content from the full catalog.
-- More consistent playback workflows for clients and automations that depend on stable album selections.
+- Rýchlejší prístup k často prehrávaným albumom aj vo veľmi veľkých knižniciach.
+- Pohodlnejšie každodenné prehliadanie vďaka oddeleniu uprednostňovaného obsahu od celého katalógu.
+- Stabilnejšie postupy prehrávania pre klientov a automatizácie, ktoré potrebujú nemenný výber albumov.
 
-### Input Parameters
+### Vstupné parametre
 
-All actions in this section require an input parameter. The album must be identified by a MusicBrainz ID or a Discogs release ID. At least one ID is required; otherwise, no action is performed.
+Všetky akcie v tejto časti vyžadujú vstupný parameter. Album musí byť určený identifikátorom MusicBrainz alebo identifikátorom vydania Discogs. Vyžaduje sa aspoň jeden identifikátor. Inak sa žiadna akcia nevykoná.
 
-Example for Madonna's release `Like a Virgin`:
+Príklad pre album Madonny `Like a Virgin`:
 
-| Attribute     |           Type           |             Example value            |
+| Atribút       |            Typ           |            Príklad hodnoty           |
 | :------------ | :----------------------: | :----------------------------------: |
 | MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-If both parameters (`MusicBrainzId` and `DiscogsId`) were provided when liking an album, both must also be provided when disliking that album.
+Ak boli pri označení albumu ako obľúbeného zadané oba parametre (`MusicBrainzId` a `DiscogsId`), pri zrušení tohto označenia sa musia zadať tiež oba.
 :::
 
 ### LikeAlbum
 
-Marks a music album as liked.
+Označí hudobný album ako obľúbený.
 
 ### DislikeAlbum
 
-Removes the liked status from a music album.
+Zruší označenie hudobného albumu ako obľúbeného.
 
 ### IsAlbumLikedInput
 
-Checks whether an album is currently marked as liked. If both MusicBrainz and Discogs IDs are provided, the method returns `true` if at least one of the IDs is marked as liked.
+Overí, či je album aktuálne označený ako obľúbený. Ak sú zadané identifikátory MusicBrainz aj Discogs, metóda vráti `true`, ak je ako obľúbený označený aspoň jeden z nich.
 
-## Backup Actions
+## Akcie zálohovania
 
-The service provides backup and restore actions.
+Služba poskytuje akcie na zálohovanie a obnovenie.
 
 :::info
-A backup must be created before a restore can be performed.
+Pred obnovením je potrebné vytvoriť zálohu.
 :::
 
 ### BackupAudioLikes
 
-Creates a backup of the `liked` audio albums table identified by MusicBrainz or Discogs IDs.
+Vytvorí zálohu tabuľky `liked` s obľúbenými hudobnými albumami identifikovanými pomocou MusicBrainz alebo Discogs ID.
 
 ### RestoreAudioLikes
 
-Restores the liked albums table. Call `BackupAudioLikes` before running this action.
+Obnoví tabuľku obľúbených albumov. Pred spustením tejto akcie zavolajte `BackupAudioLikes`.
 
 ### BackupRatings
 
-Writes audio rating data to a backup file containing the file hash and rating value.
+Zapíše hodnotenia zvukových súborov do záložného súboru, ktorý obsahuje hash súboru a hodnotu hodnotenia.
 
 ### RestoreRatings
 
-Restores rating information from a backup created with `BackupRatings`.
+Obnoví hodnotenia zo zálohy vytvorenej pomocou `BackupRatings`.
 
-## Library Interactions
+## Práca s knižnicou
 
 ### RescanMediaStore
 
-Rescans the entire music library.
+Znova preskenuje celú hudobnú knižnicu.
 
 ### RescanMediaStoreFolder
 
-Rescans a specific folder without recursion. The input parameter must be the folder's `ObjectID`.
+Znova preskenuje konkrétny priečinok bez rekurzívneho prechádzania podpriečinkov. Vstupným parametrom musí byť `ObjectID` priečinka.
 
