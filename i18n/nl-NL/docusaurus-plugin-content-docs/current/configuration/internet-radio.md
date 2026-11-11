@@ -2,8 +2,8 @@
 
 Een internetradiostation stuurt niet alleen audio, maar meldt ook het nummer dat nu wordt afgespeeld. UMS pikt die aankondiging op en geeft deze door, zodat uw controlepunt kan weergeven wat er op dat moment wordt uitgezonden, in plaats van alleen de zendernaam.
 
-Dit werkt voor radiostreams die je aan een afspeellijst hebt toegevoegd, en voor de zenders van het
-[Audio Addict Network](/configuration/audio-addict).
+This works for radio streams you have added to a playlist and for the stations of the
+[Audio Addict Network](./audio-addict).
 
 ## Hoe de titel je speler bereikt
 
@@ -55,8 +55,8 @@ http://stream.example.com/jazz.mp3
 | `artiest-eerst` | Lees altijd de aankondiging als _Artiest - Titel_.                                |
 | `titel-eerst`   | Altijd lezen als _Titel - Station_.                                               |
 
-Een onbekende waarde wordt behandeld als `auto`. De instelling is van toepassing op dat ene station; zie
-[Playlist Directives](/configuration/playlist-directives) voor hoe zulke lijnen in het algemeen werken.
+Een onbekende waarde wordt behandeld als `auto`. The setting applies to that one station; see
+[Playlist directives](./playlist-directives) for how such lines work in general.
 
 Als je bedieningspunt de mogelijkheid biedt om tijdens het luisteren de volgorde te wijzigen, kan dit via UMS dezelfde waarde instellen; UMS schrijft deze vervolgens naar het afspeellijstbestand, zodat de keuze ook na een herstart behouden blijft.
 

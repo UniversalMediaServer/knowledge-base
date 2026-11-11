@@ -1,12 +1,12 @@
 # UMS UPnP Service
 
-UMS provides an extended UPnP service that enables external control points to interact with additional system features.
+UMS bietet einen erweiterten UPnP-Service der es externen Control Points ermöglicht, mit zusätzlichen System Features zu interagieren
 
-## Usage
+## Handhabung
 
-The service is exposed under namespace `schemas-upnp-org` with service type `UmsExtendedServices`.
+Der Dienst wird unter dem Namespace `schemas-upnp-org` mit dem Diensttyp `UmsExtendedServices` bereitgestellt.
 
-For Java control points using JUPnP, call `findService` on the UMS `RemoteDevice`:
+Für Java-Kontrollpunkte, die JUPnP verwenden, rufen Sie `findService` auf dem UMS-`RemoteDevice` auf:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(

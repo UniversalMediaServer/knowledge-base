@@ -22,7 +22,7 @@ audio_update_rating_tag = WAAR
 
 Dit geldt alleen voor bestanden waaraan een beoordeling kan worden toegekend, en uitsluitend vanaf het moment dat je deze functie inschakelt; eerder toegekende beoordelingen worden niet met terugwerkende kracht vastgelegd.
 
-Een beoordeling die behouden moet blijven bij het opnieuw opbouwen van een database, of die mee moet gaan met een afspeellijst die je naar een andere locatie kopieert, hoort in het bestand van de afspeellijst zelf thuis. Zie [Afspeellijst-richtlijnen](/configuration/playlist-directives).
+Een beoordeling die behouden moet blijven bij het opnieuw opbouwen van een database, of die mee moet gaan met een afspeellijst die je naar een andere locatie kopieert, hoort in het bestand van de afspeellijst zelf thuis. See [Playlist directives](./playlist-directives).
 
 ## De map Mijn Albums
 
@@ -47,5 +47,6 @@ De beoordelingen worden uit de database gelezen, waardoor de zoekopdracht ook it
 
 ## Back-up ervan maken
 
-Omdat beoordelingen en 'vind-ik-leuk' in de database staan, is het verstandig om er een kopie van te bewaren, voor het geval er iets ingrijpends met de database gebeurt. UMS kan ze uitreiken en weer innemen, wat het bovendien mogelijk maakt om ze naar een andere installatie te verplaatsen. De
-[UMS UPnP-service](/configuration/ums-extended-service) somt de acties op die een 'besturingselement' daarvoor gebruikt.
+Omdat beoordelingen en 'vind-ik-leuk' in de database staan, is het verstandig om er een kopie van te bewaren, voor het geval er iets ingrijpends met de database gebeurt. UMS kan ze uitreiken en weer innemen, wat het bovendien mogelijk maakt om ze naar een andere installatie te verplaatsen. The
+[UMS UPnP service](./ums-extended-service) lists the actions a control point uses for
+that.

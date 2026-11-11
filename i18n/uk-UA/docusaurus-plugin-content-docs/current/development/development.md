@@ -1,101 +1,91 @@
-# Development
+# Розробка
 
-This document explains how to make and run your own changes.
+У цьому документі роз'яснюється, як вносити та застосовувати власні зміни.
 
-## Forking the code to your machine
+## Копіювання коду на ваш комп’ютер
 
-GitHub makes it very simple for developers to fork their own version of the official UMS sources to add their own tweaks or features. GitHub facilitates submitting these features as "Pull Requests" to the official UMS development team.
+GitHub значно спрощує розробникам створення відгалужень власних версій офіційних вихідних кодів UMS для додавання їхніх удосконалень або додаткових функцій. GitHub дозволяє надсилати такі зміни у вигляді «Pull Requests» офіційній команді розробників UMS.
 
-- [Set up your machine for GitHub development](https://support.github.com/)
+- [Налаштуйте свій комп'ютер для розробки на платформі GitHub](https://support.github.com/)
 
-- Go to [the GitHub UMS repo](https://github.com/universalmediaserver/universalmediaserver) and press the `Fork` button on the top right.
+- Перейдіть до [репозиторію UMS на GitHub](https://github.com/universalmediaserver/universalmediaserver) і натисніть кнопку `Fork` праворуч угорі.
 
-- Clone the new GitHub repo to your local machine. The clone URL can be seen
-  on the main page of your repository. It should be something like this
-  (replace YOURNAME with your actual GitHub name):
+- Скопіюйте новий репозиторій GitHub на свій комп'ютер. URL-адресу копії можна переглянути
+  на головній сторінці вашого репозиторію. Вона повинна виглядати приблизно так
+  (замініть YOURNAME на ваше справжнє ім’я в GitHub):
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-You now have the new repository on your local machine.
+Тепер на вашому локальному комп’ютері є новий репозиторій.
 
-## Development with IDEs
+## Розробка за допомогою IDE
 
 ### [VS Code](https://code.visualstudio.com/)
 
-This is our recommended editor because it is great at handling both Java and TypeScript, our two main languages.
+Ми рекомендуємо цей редактор, оскільки він чудово справляється як з Java, так і з TypeScript – нашими двома основними мовами програмування.
 
-#### Java server
+#### Сервер Java
 
-When you have opened the code, you will probably see some recommendations for Extensions to install, like the `Extension Pack for Java`. Install it/them.
-When that is installed and configured, you can run the Java server by clicking up the top `Run -> Start Debugging`, and reload it with `Run -> Restart Debugging`. These commands should complete within 1 second, for a fast development workflow.
+Відкривши код, ви, ймовірно, побачите кілька рекомендацій щодо розширень, які варто встановити, наприклад, `Extension Pack for Java`. Встановіть його/їх.
+Після його встановлення та налаштування ви можете запустити сервер Java, натиснувши у верхній частині вікна `Run → Start Debugging`, а також перезапустити його за допомогою `Run → Restart Debugging`. Виконання цих команд має відбутися протягом 1 секунди, що забезпечує швидкий хід розробки.
 
-#### Web browser interfaces
+#### Інтерфейси веббраузерів
 
-If you want to make changes to our web browser interfaces, you will also need to run the React server, which will take care of compiling and serving the TypeScript code.
+Якщо ви бажаєте внести зміни в інтерфейси наших веббраузерів, вам також потрібно буде розгорнути сервер React, який буде відповідати за компіляцію та обслуговування коду TypeScript.
 
-In VS Code, you can go into the `Command Palette` and filter on `Debug: Select and Start Debugging` and select `Launch web interface`. It will automatically reload any changes you make to the React files.
+У VS Code можете перейти до `Command Palette`, відфільтрувати за `Debug: Select and Start Debugging` та обрати `Launch web interface`. Він автоматично оновлюватиме усі зміни, які ви вноситимете у файли React.
 
-For a manual workflow, you can go into the `react-client` folder and run `yarn` to download the necessary dependencies. Then just run `yarn dev` which should open the web player in the browser and automatically compile any code changes you make.
+Для ручної обробки можна перейти до теки `react-client` і запустити `yarn`, аби завантажити необхідні модулі. Далі просто запустіть команду `yarn dev` – вона відкриє вебпрогравач у браузері та автоматично скомпілює всі зміни, внесені вами в код.
 
-For the web settings interface, you can open `react-client/package.json` and change the proxy port from `9002` to `9001`. Now `yarn dev` should serve the web settings instead of web player.
+Щоб налаштувати параметри вебінтерфейсу, відкрийте файл `react-client/package.json` і змініть порт проксі з `9002` на `9001`. Тепер команда `yarn dev` має запускати вебінтерфейс налаштувань замість вебпрогравача.
 
 ### [Eclipse](http://www.eclipse.org/downloads/)
 
-- Install the m2e Eclipse plugin (http://eclipse.org/m2e/)
+- Встановіть доповнення m2e для Eclipse (http://eclipse.org/m2e/)
 
-- Install the EGit Eclipse plugin (http://eclipse.org/egit/)
+- Встановіть доповнення EGit для Eclipse (http://eclipse.org/egit/)
 
-- In Eclipse, select the menu "Window > Show View > Git Repositories". Then
-  select "Window > Navigation > Show View Menu", choose "Add a Repository".
-  Browse for the directory where you cloned your repository and press the
-  "Search" button. Select your forked repository and press "OK".
-  The repository should appear in the Git Repositories view.
+- У Eclipse виберіть меню «Window → Show View → Git Repositories». Потім
+  оберіть «Window → Navigation → Show View Menu», скористайтесь «Add a Repository».
+  Виберіть каталог, у який ви клонували репозиторій, і натисніть кнопку
+  «Search». Вкажіть на ваше відгалуження репозиторію та натисніть «ОК».
+  Як результат, він мусить зʼявитися у поданні репозиторіїв Git Repositories.
 
-- Press the right mouse button on the repository and select "Import Maven
-  Projects" from the menu. Select the project "/pom.xml" and press "Finish".
+- Клацніть правою кнопкою миші на репозиторії та виберіть у меню пункт «Import Maven
+  Projects». Оберіть проєкт «/pom.xml» та натисніть «Finish».
 
-  Note: if a project with the same name already exists, click "Advanced" and
-  set the "Name template" to `[artifactId]-YOURNAME` (replace YOURNAME with
-  your GitHub name). Then press "Finish".
+  Примітка: якщо проєкт із такою самою назвою вже існує, натисніть «Advanced» та
+  встановіть для параметра «Name template» значення `[artifactId]-YOURNAME` (де замість YOURNAME вкажіть
+  ваше ім’я користувача на GitHub). Далі тисніть кнопку «Finish».
 
-You now see the sources in Eclipse, but the project is still missing the "Git"
-nature. In other words, it is not tied to the local repository yet. This means
-you cannot perform any Git actions from Eclipse yet. Add the missing connection
-by sharing the project:
+Тепер ви бачите вихідні коди в Eclipse, але в проєкті все ще відсутня властивість «Git». Іншими словами, він ще не прив’язаний до локального репозиторію. Це означає, що на цю мить ви ще не можете виконувати жодних дій Git із Eclipse. Додайте відсутнє сполучення, надавши доступ до проєкту:
 
-- Press the right mouse button on the newly created project and select the
-  menu "Team > Share Project...". Select "Git" and press "Next >".
-  Check the checkbox "Use or create repository in parent folder of project"
-  and make sure the project is selected. Then press "Finish".
+- Клацніть правою кнопкою миші на щойно створеному проєкті та виберіть
+  меню «Team → Share Project...». Виберіть «Git» і натисніть «Далі →».
+  Встановіть прапорець «Use or create repository in parent folder of project»
+  та переконайтеся, що потрібний проєкт вибрано. Далі тисніть кнопку «Finish».
 
-Verify that your project is now under Git control. Press the right mouse
-button on the project and under "Team" you now see all options to work with
-Git.
+Упевніться, що ваш проєкт тепер перебуває під контролем Git. Клацніть правою кнопкою миші на проєкті, і в розділі «Team» ви побачите всі варіанти роботи з Git.
 
-You can build UMS from Eclipse:
+Ви можете зібрати UMS за допомогою Eclipse:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Build UMS`, Goals:
-  `package`. Select the tab "JRE" and add the following VM arguments
-  `-Xmx1500m -XX:MaxPermSize=256m`. Finally, press the "Apply" button.
+- Створіть нову конфігурацію запуску в меню «Run → Run Configurations...», клацніть
+  правою кнопкою миші на «Maven Build», оберіть «New», назва: `Build UMS`, цілі: `package`. Перейдіть до вкладки «JRE» та додайте такі аргументи віртуальної машини: `-Xmx1500m -XX:MaxPermSize=256m`. Наостанок натисніть кнопку «Apply».
 
-You will want to run UMS from Eclipse while developing. This is how you do it:
+Під час розробки вам, ймовірно, знадобиться запускати UMS з Eclipse. Ось як це можна робити:
 
-- Create a new run configuration under "Run > Run Configurations...", right
-  mouse button on "Maven Build", select "New", Name: `Run UMS`, Base
-  directory: `${project_loc}`, Goals: "test", Profiles: `run-from-eclipse`.
-  Select the tab "JRE" and add VM arguments `-Xmx1500m -XX:MaxPermSize=256m`.
-  Finally, press the "Apply" button.
+- Створіть нову конфігурацію запуску в меню «Run → Run Configurations...», клацніть
+  правою кнопкою миші на «Maven Build», виберіть «New», назва: `Run UMS`, базовий
+  каталог: `${project_loc}`, цілі: «test», профілі: `run-from-eclipse`.
+  Перейдіть до вкладки «JRE» та додайте такі аргументи віртуальної машини: `-Xmx1500m -XX:MaxPermSize=256m`.
+  Наостанок натисніть кнопку «Apply».
 
-You are now ready to start developing!
+Тепер ви готові розпочати розробку!
 
-When you are happy with your changes, you can commit them to your local
-repository from Eclipse using right mouse button, "Team > Commit...".
+Коли ви будете задоволені своїми змінами, ви зможете зафіксувати їх у власному локальному репозиторії з Eclipse, натиснувши праву кнопку миші та вибравши «Team → Commit...».
 
-When you are satisfied with your commits and want to publish them to your
-repository at GitHub, you can press the right mouse button on the project and
-select "Team > Push to Upstream".
+Коли ви переконалися в правильності своїх правок і вирішили опублікувати їх у своєму репозиторії на GitHub, потрібно натиснути праву кнопку миші на проєкті та вибрати «Team → Push to Upstream».
 
-## Contributing your change back to us
+## Доповнення нашого коду вашими змінами
 
-If you would like to contribute to the UMS project, you can send a "Pull Request" to the development team. See [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for more details.
+Якщо ви бажаєте долучитися до проєкту UMS, ви можете надіслати запит через «Pull Request» до команди розробників. Відвідайте [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request), щоби дізнатися більше.

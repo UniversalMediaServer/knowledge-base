@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "Ανάπτυξη",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "Δημιουργημένο ευρετήριο",
+    "description": "Πως να αναπτύξετε το UMS"
   }
 }

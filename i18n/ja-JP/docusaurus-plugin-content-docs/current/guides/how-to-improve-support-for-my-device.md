@@ -1,19 +1,19 @@
 # デバイスのサポートを改善する方法
 
-デバイスがフォルダの閲覧やファイルの再生などを実行できない場合、レンダラーの設定ファイルの設定を変更することで修正できるかもしれません。 デバイス/レンダラー/クライアントによってUMSのようなサーバーとのやり取りの方法はさまざまです。そのため、設定ファイルは、UMSがあなたのデバイスと同じ「言語」でやり取りできるように指示します。
+デバイスがフォルダの閲覧やファイルの再生などを実行できない場合、レンダラーの設定ファイルの設定を変更することで修正できるかもしれません。デバイス/レンダラー/クライアントによってUMSのようなサーバーとのやり取りの方法はさまざまです。そのため、設定ファイルは、UMSがあなたのデバイスと同じ「言語」でやり取りできるように指示します。
 
 すべての構成ファイルには以下の二つの目的があります。
 - 接続を試行するレンダラーをUMSが特定できるようにする
 - そのレンダラーの機能を定義する
 
-すべてのレンダラー設定項目について解説を含む、デフォルトのレンダラー設定ファイルがあります。 最新バージョンはhttps://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.confをご覧ください。
+すべてのレンダラー設定項目について解説を含む、デフォルトのレンダラー設定ファイルがあります。最新バージョンはhttps://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.confをご覧ください。
 
 ## 認識されないデバイスへの対応
 
-UMSがデバイスを認識しない場合、いずれのレンダラー構成プロファイルもそのデバイスに一致していません。 その結果、UMSは`不明なレンダラー（=Unknown Renderer）`として表示し、レンダラーの機能が分からないため、そのデバイス向けに最適化した出力を提供できません。
+UMSがデバイスを認識しない場合、いずれのレンダラー構成プロファイルもそのデバイスに一致していません。その結果、UMSは`不明なレンダラー（=Unknown Renderer）`として表示し、レンダラーの機能が分からないため、そのデバイス向けに最適化した出力を提供できません。
 
 解決策は、独自のレンダラー構成ファイルを作成してみることです。
-1. お使いのデバイスに最も近い.confファイルをコピーします。 たとえば、Samsungのテレビが認識されない場合は、Samsung TVの構成のいずれかを出発点として選ぶとよいでしょう。
+1. お使いのデバイスに最も近い.confファイルをコピーします。たとえば、Samsungのテレビが認識されない場合は、Samsung TVの構成のいずれかを出発点として選ぶとよいでしょう。
 
 1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
 
