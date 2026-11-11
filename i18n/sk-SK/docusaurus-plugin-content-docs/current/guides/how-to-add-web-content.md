@@ -1,49 +1,49 @@
-# How to add web content
+# Ako pridať webový obsah
 
-This article will explain how to add web content.
+Tento článok vysvetľuje, ako pridať webový obsah.
 
-## Video feeds
+## Videokanály
 
-You can subscribe to video feeds/channels by adding the RSS feed links, or in the case of YouTube, just input the link to the channel.
+Videokanály môžete odoberať pridaním odkazov na ich kanály RSS. Pri YouTube stačí zadať odkaz na samotný kanál.
 
-### 1: Go to the Shared Content section
+### 1: Prejdite do časti Zdieľaný obsah
 
-In the UMS settings in your web browser, open the menu and select Shared Content  
-![Settings menu](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
+V nastaveniach UMS vo webovom prehliadači otvorte ponuku a vyberte Zdieľaný obsah.  
+![Ponuka nastavení](@site/docs/guides/img/how-to-add-web-content-1-shared-content.png)
 
-### 2: Open the "Add new shared content" modal
+### 2: Otvorte dialóg „Pridať nový zdieľaný obsah“
 
-When you select the "Add new shared content" button, it will open a modal that allows you to add any type of media. The first step is to choose the "Video feed" type  
-![New shared content options modal](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
+Kliknutím na tlačidlo „Pridať nový zdieľaný obsah“ otvoríte dialóg, ktorý umožňuje pridať ľubovoľný typ médií. Najprv vyberte typ „Videokanál“.  
+![Dialóg s možnosťami nového zdieľaného obsahu](@site/docs/guides/img/how-to-add-web-content-2-add-modal.png)
 
-### 3: Add your feed
+### 3: Pridajte kanál
 
-Here you can add your feed
+Tu môžete pridať svoj kanál.
 
-#### Name
+#### Názov
 
-The "Name" field is disabled for video feeds, because the feeds define their own names.
+Pole „Názov“ je pri videokanáloch neaktívne, pretože kanály určujú vlastný názov.
 
-#### Path
+#### Cesta
 
-The "Path" field defines the directory structure that will be displayed by UMS. For example, if you enter `Web/YouTube Channels`, your feed will be inside the `YouTube Channels` directory, nested within the `Web` directory. This lets you organize your content however you want, and is especially useful when you have different feed providers, and you are using UMS have them all in the same place.
+Pole „Cesta“ určuje štruktúru priečinkov, ktorú UMS zobrazí. Ak napríklad zadáte `Web/YouTube Channels`, kanál bude v priečinku `YouTube Channels` umiestnenom v priečinku `Web`. Obsah si tak môžete usporiadať podľa vlastných potrieb. Je to užitočné najmä vtedy, keď používate kanály od rôznych poskytovateľov a chcete ich mať v UMS na jednom mieste.
 
-#### Source/URL
+#### Zdroj/URL
 
-This is the link to the video feed. It will usually end in `.xml`, but we handle YouTube differently to accept a channel URL directly, allowing you to enter e.g. `https://www.youtube.com/@kurzgesagt`
+Ide o odkaz na videokanál. Zvyčajne sa končí príponou `.xml`. YouTube však spracúvame odlišne a prijímame priamo adresu kanála, takže môžete zadať napríklad `https://www.youtube.com/@kurzgesagt`.
 
-#### Authorized groups
+#### Oprávnené skupiny
 
-The "Authorized groups" field lets you make this feed only available to certain groups defined in UMS that are associated with different users and/or devices. See [Security and Privacy](../configuration/security-and-privacy.md#link-person-to-renderer) for more details.
+Pole „Oprávnené skupiny“ umožňuje sprístupniť kanál iba určitým skupinám vytvoreným v UMS, ku ktorým sú priradení používatelia alebo zariadenia. Podrobnosti nájdete v časti [Bezpečnosť a súkromie](../configuration/security-and-privacy.md#link-person-to-renderer).
 
-When you are happy with the options you entered, select the "Add" button.
+Keď sú zadané možnosti správne, kliknite na tlačidlo „Pridať“.
 
-### Feed order
+### Poradie kanálov
 
-If the feed link was valid, you should now see the "Name" field populated, and now you can drag the feed up or down to control the order  
-![Shared content list and ordering ability](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
+Ak bol odkaz na kanál platný, pole „Názov“ by už malo byť vyplnené. Kanál teraz môžete presunúť nahor alebo nadol a upraviť tak poradie.  
+![Zoznam zdieľaného obsahu a možnosť zmeny poradia](@site/docs/guides/img/how-to-add-web-content-3-see-name-and-sort.png)
 
-### Save changes
+### Uloženie zmien
 
-You can repeat the previous steps to add/edit more content, and when you are happy with your changes, select the "Save" button at the bottom of the page. Now you can see your content on your devices:  
-![Example of a video feed on the web player](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
+Predchádzajúce kroky môžete zopakovať a pridať alebo upraviť ďalší obsah. Keď ste so zmenami spokojní, kliknite na tlačidlo „Uložiť“ v dolnej časti stránky. Teraz si môžete obsah pozrieť na svojich zariadeniach:  
+![Príklad videokanála vo webovom prehrávači](@site/docs/guides/img/how-to-add-web-content-4-feed-player.png)
