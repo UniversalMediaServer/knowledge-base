@@ -1,14 +1,12 @@
-# Search
+# Vyhľadávanie
 
-When a control point offers a search box, it does not filter the list it already has. It sends the
-search to UMS as a UPnP criterion such as `dc:title contains "beatles"`, and UMS answers with the
-matching items. How that criterion is turned into a query is what the settings on this page control.
+Keď ovládací bod ponúka vyhľadávacie pole, nefiltruje zoznam, ktorý už má k dispozícii. Odošle vyhľadávanie do UMS ako kritérium UPnP, napríklad `dc:title contains "beatles"`, a UMS vráti zodpovedajúce položky. Nastavenia na tejto stránke určujú, ako sa toto kritérium prevedie na vyhľadávací dopyt.
 
-## The two search engines
+## Dva spôsoby vyhľadávania
 
-UMS can answer a search in two ways:
+UMS môže vyhľadávať dvoma spôsobmi:
 
-- **Full-text index (default).** UMS keeps a Lucene index next to the database and searches that.
+- **Fulltextový index (predvolené).** UMS udržiava popri databáze index Lucene a vyhľadáva v ňom.
   It is fast even on large libraries and it is what makes partial words and typo tolerance possible.
 - **Plain database search.** A straight SQL query. Slower on large libraries and it only matches
   what is literally there, but it has no index to go out of date.
