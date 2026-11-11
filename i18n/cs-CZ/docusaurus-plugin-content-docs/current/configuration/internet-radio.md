@@ -1,57 +1,44 @@
-# Internet Radio and Live Titles
+# Internetová rádia a názvy právě přehrávaných skladeb
 
-An internet radio station does not only send audio, it also announces the track it is playing right
-now. UMS picks that announcement up and passes it on, so your control point can show what is
-currently on air instead of just the station name.
+Internetová rozhlasová stanice neposílá jen zvuk, ale také oznamuje, kterou skladbu právě přehrává. UMS tuto informaci zachytí a předá dál, takže řídicí bod může místo pouhého názvu stanice zobrazit právě vysílanou skladbu.
 
-To funguje pro rádiové streamy, které jste přidali do playlistu a pro stanice
-[Audio Addict Network](./audio-addict).
+To funguje pro rozhlasové streamy přidané do seznamu skladeb i pro stanice sítě [Audio Addict Network](./audio-addict).
 
-## How the title reaches your player
+## Jak se název dostane do přehrávače
 
-There are two ways a title can travel, and UMS uses whichever fits:
+Název lze předat dvěma způsoby a UMS použije ten, který je vhodný:
 
-- Players that ask for in-band metadata get the title woven into the audio stream, the way internet
-  radio has always done it.
-- Players that do not ask : Because UMS reads the announcement itself and pushes it to the control point separately, the live title
-  appears even with players that know nothing about radio metadata.
+- Přehrávače, které požadují metadata přímo ve streamu, dostanou název vložený do zvukového streamu, jak je u internetových rádií běžné.
+- Přehrávače, které je nepožadují: UMS čte oznámení sám a název posílá řídicímu bodu samostatně, takže se aktuální název zobrazí i při použití přehrávačů, které metadata internetových rádií nepodporují.
 
-There is one case without live titles: if UMS has to **transcode** the stream for your player, the
-title cannot be woven in, because the transcoder produces the audio and knows nothing about the
-station's announcements. Streams that play directly — which is the normal case for MP3 and AAC
-stations — are unaffected.
+V jednom případě se aktuální názvy do streamu nedostanou: pokud UMS musí stream pro přehrávač **překódovat**, název do něj nelze vložit, protože zvuk vytváří překódovací nástroj, který o oznámeních stanice nic neví. Streamů přehrávaných přímo — což je u stanic ve formátu MP3 a AAC běžné — se to netýká.
 
-## Interpreting the announcement
+## Rozpoznání obsahu oznámení
 
-Stations announce a single line of text, and there is no rule that says which part is the artist.
-The common convention is:
+Stanice posílají jediný řádek textu a žádné pravidlo neurčuje, která část obsahuje jméno interpreta.
+Běžně se používá toto pořadí:
 
 ```text
 Miles Davis - So What
 ```
 
-but some stations put the station name at the end instead:
+Některé stanice ale na konec místo toho připojují název stanice:
 
 ```text
 So What - Jazz Radio on example.com
 ```
 
-Taken as "artist first", the second line would list _So What_ as the artist. UMS therefore looks at
-the part after the last dash and treats it as a station name, not an artist, when any of these
-applies:
+Při výkladu „nejprve interpret“ by druhý řádek uváděl _So What_ jako interpreta. UMS proto zkoumá část za poslední pomlčkou a považuje ji za název stanice, nikoli interpreta, pokud platí alespoň jedna z těchto podmínek:
 
-- it contains something that looks like a web address, such as `example.com`
-- it resembles the station name UMS already knows from your playlist
-- it resembles the host name of the stream address, ignoring generic parts like `stream`, `listen`
-  or `radio`
+- obsahuje něco, co vypadá jako webová adresa, například `example.com`
+- podobá se názvu stanice, který UMS již zná ze seznamu skladeb
+- podobá se názvu hostitele v adrese streamu, přičemž se ignorují obecné části jako `stream`, `listen` nebo `radio`
 
-If none of them applies, the first part is taken as the artist, which is the usual convention.
+Pokud neplatí žádná z těchto podmínek, první část se považuje za interpreta, jak je obvyklé.
 
-## Correcting a station by hand
+## Ruční oprava pro konkrétní stanici
 
-The rules above get it right for most stations, but a station can always break them — a show name
-at the end, an unusual separator, or an artist whose name happens to contain a domain. For those,
-tell UMS explicitly with an `#EXTICYORDER:` line in the playlist, directly above the stream:
+U většiny stanic fungují uvedená pravidla správně, některé stanice se jim však mohou vymykat — například názvem pořadu na konci, neobvyklým oddělovačem nebo jménem interpreta, které obsahuje doménu. V takovém případě zadejte pořadí výslovně pomocí řádku `#EXTICYORDER:` v seznamu skladeb, přímo nad adresou streamu:
 
 ```text
 #EXTM3U
@@ -60,28 +47,23 @@ tell UMS explicitly with an `#EXTICYORDER:` line in the playlist, directly above
 http://stream.example.com/jazz.mp3
 ```
 
-| Value          | Meaning                                                        |
-| -------------- | -------------------------------------------------------------- |
-| `auto`         | Decide automatically, as described above. This is the default. |
-| `artist-first` | Always read the announcement as _Artist - Title_.              |
-| `title-first`  | Always read it as _Title - Station_.                           |
+| Hodnota        | Význam                                                                           |
+| -------------- | -------------------------------------------------------------------------------- |
+| `auto`         | Rozhodnout automaticky podle pravidel uvedených výše. Toto je výchozí nastavení. |
+| `artist-first` | Vždy vykládat oznámení jako _Interpret - Název skladby_.                         |
+| `title-first`  | Vždy je vykládat jako _Název skladby - Stanice_.                                 |
 
-An unknown value is treated as `auto`. Toto nastavení se týká jedné stanice; podívejte se na
-[směrnice Playlistů](./playlist-directives) pro to, jak tyto řádky fungují obecně.
+Neznámá hodnota se vyhodnotí jako `auto`. Nastavení platí pouze pro danou stanici. Obecné fungování těchto řádků popisuje část [Direktivy seznamů skladeb](./playlist-directives).
 
-If your control point offers a way to switch the order while listening, it can set the same value
-through UMS, and UMS writes it into the playlist file so the choice survives a restart.
+Pokud řídicí bod umožňuje přepnout pořadí během poslechu, může stejnou hodnotu nastavit prostřednictvím UMS. UMS ji zapíše do souboru seznamu skladeb, takže se volba zachová i po restartu.
 
-## Audio Addict stations
+## Stanice Audio Addict
 
-Stations of the Audio Addict Network do not announce their titles in the stream. UMS asks the
-service for the current track instead and delivers it the same way, so the behaviour is identical
-from the outside.
+Stanice sítě Audio Addict Network neposílají názvy skladeb ve streamu. UMS se místo toho dotazuje služby na aktuální skladbu a předává ji stejným způsobem, takže navenek je chování totožné.
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# Předávat názvy právě přehrávaných skladeb ze stanic Audio Addict. Ve výchozím nastavení zapnuto.
 audio_addict_icy_metadata = TRUE
 ```
 
-Turn this off if a player of yours reacts badly to in-band metadata; the titles pushed to the
-control point are unaffected by it.
+Pokud některý přehrávač špatně reaguje na metadata vložená do streamu, toto nastavení vypněte. Na názvy posílané samostatně řídicímu bodu to nemá vliv.
