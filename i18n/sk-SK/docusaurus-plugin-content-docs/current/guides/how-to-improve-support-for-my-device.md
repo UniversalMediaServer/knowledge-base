@@ -23,7 +23,7 @@ Riešením je skúsiť vytvoriť vlastný konfiguračný súbor prehrávača.
 
 ## Zlepšenie podpory zariadenia
 
-1. Ak sa niektoré médiá neprehrávajú správne, konfiguráciu prehrávača treba upravovať, kým prehrávanie nezačne fungovať. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. Najčastejšie sa menia tieto nastavenia:
+1. Ak sa niektoré médiá neprehrávajú správne, konfiguráciu prehrávača treba upravovať, kým prehrávanie nezačne fungovať. Úplný zoznam možností nájdete v súbore [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Najčastejšie sa menia tieto nastavenia:
     ```
     Video
     Audio
