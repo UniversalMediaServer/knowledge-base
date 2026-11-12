@@ -2,156 +2,156 @@
 sidebar_position: 4
 ---
 
-# History
+# História
 
-## Overview
+## Prehľad
 
-We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
+Projekt sme začali v roku 2012 ako fork PS3 Media Server, jedného z najobľúbenejších a najlepšie hodnotených mediálnych serverov tej doby. Náš zakladateľ SubJunk bol aj vývojárom tohto projektu. Vtedy išlo iba o mediálny server DLNA s oveľa jednoduchším grafickým rozhraním a menším počtom funkcií.
 
-It did its simple job well, but we have taken UMS in new directions, and to new heights.
+Svoju jednoduchú úlohu plnil dobre, no UMS sme odvtedy posunuli novými smermi a výrazne rozšírili.
 
-Here are some highlights of the journey:
+Tu sú niektoré významné míľniky:
 
-## Previous Versions
+## Predchádzajúce verzie
 
 ### v14 (2022-12-13)
 
-The biggest changes here involved the ability to control access to your content. This includes improvements to user accounts like avatars and playback status per user, as well as the ability to display different content to different devices and media players/renderers.
+Najväčšie zmeny sa týkali možností riadenia prístupu k obsahu. Zahŕňali vylepšenia používateľských účtov, napríklad avatary a samostatný stav prehrania pre každého používateľa, aj možnosť zobrazovať rôzny obsah jednotlivým zariadeniam a prehrávačom médií.
 
-![Example of blocking a renderer](@site/docs/img/whats-new-in-v14-block-renderer.png)
+![Príklad zablokovania prehrávača](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-We also added the ability to add a TMDB API key to manually add and edit metadata for TV series and videos, and to mark TV series and movies as fully played.
+Pridali sme tiež možnosť zadať kľúč API služby TMDB na ručné pridávanie a úpravu metadát seriálov a videí a možnosť označiť seriály a filmy ako úplne prehrané.
 
-![Example of editing metadata](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
+![Príklad úpravy metadát](@site/docs/img/whats-new-in-v14-tmdb-edit-metadata.png)
 
-[See more details on the What's New page](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
+[Podrobnosti nájdete na stránke s novinkami](https://support.universalmediaserver.com/14.x/whats-new-in-v14)
 
 ### v13 (2022-12-13)
 
-This release was all about 3D and virtual reality, led by the contributor threedguru.
+Toto vydanie sa sústredilo na 3D a virtuálnu realitu pod vedením prispievateľa threedguru.
 
-![Shared content](@site/docs/img/history-v13.png)
+![Zdieľaný obsah](@site/docs/img/history-v13.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=15489)
 
 ### v12 (2022-11-29)
 
-This was a complete rewrite of our GUI using modern tooling in the web browser, with huge effort by SurfaceS and js-kyle.
+Táto verzia priniesla úplne prepracované grafické rozhranie využívajúce moderné webové technológie. Veľkú zásluhu na ňom mali SurfaceS a js-kyle.
 
-This also introduced the concept of authentication, users and groups.
+Zároveň zaviedla overovanie totožnosti, používateľov a skupiny.
 
-![Authentication](@site/docs/img/history-v12-1.png)
+![Overovanie totožnosti](@site/docs/img/history-v12-1.png)
 
-Another change is that the Shared Content area has been unified, where before it was split between local and web content, now they are in the same list.
+Zjednotila sa aj časť Zdieľaný obsah. Miestny a webový obsah, ktoré boli predtým oddelené, sú teraz v jednom zozname.
 
-![Shared content](@site/docs/img/history-v12-2.png)
+![Zdieľaný obsah](@site/docs/img/history-v12-2.png)
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=15459)
 
 ### v11 (2022-05-27)
 
-We improved the web interface in many ways, including more rich data like logos and backgrounds to TV series, movies and episodes, improved device detection, improved network state detection/recovery, video playback and seeking, improved API metadata matching, HLS transcoding for all devices, and more!
+Webové rozhranie sme vylepšili v mnohých smeroch: pribudli bohatšie údaje, napríklad logá a pozadia seriálov, filmov a epizód; zlepšilo sa rozpoznávanie zariadení, zisťovanie a obnovovanie stavu siete, prehrávanie a posúvanie videa aj priraďovanie metadát z API. Pribudlo tiež prekódovanie HLS pre všetky zariadenia a ďalšie funkcie.
 
-![Web interface overview](@site/docs/img/history-v11.gif)
+![Prehľad webového rozhrania](@site/docs/img/history-v11.gif)
 
-This was our first version with our new superstar developer, SurfaceS, who put a lot into this release.
+Bola to prvá verzia s naším novým významným vývojárom SurfaceS, ktorý do tohto vydania vložil veľa práce.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=15141)
 
 ### v10 (2021-01-12)
 
-Here we focused on making our rich metadata more useful.
+V tejto verzii sme sa sústredili na užitočnejšie využitie bohatých metadát.
 
-We added new folders to the Media Library, including "Filter by Information", which lets you browse the videos by actor, genre, country, director, IMDb rating, and release date.
+Do knižnice médií sme pridali nové priečinky vrátane „Filtrovať podľa informácií“, ktorý umožňuje prehliadať videá podľa herca, žánru, krajiny, režiséra, hodnotenia IMDb a dátumu vydania.
 
-The web interface got a lot more functionality by letting you click on an item like an actor or genre of a video to see other matches for that person or genre (or other metadata). We added some quick links to the front page of the web interface, like Recently Added, In Progress, Most Played, etc.
+Webové rozhranie získalo ďalšie funkcie: kliknutím napríklad na herca alebo žáner videa možno nájsť ďalší obsah zodpovedajúci tejto osobe, žánru alebo iným metadátam. Na úvodnú stránku webového rozhrania sme pridali rýchle odkazy, napríklad Nedávno pridané, Rozpozerané a Najviac prehrávané.
 
-Thumbnails for TV series now have the fully played icon if all episodes have been fully played:
+Ak sú všetky epizódy seriálu úplne prehrané, jeho miniatúra teraz zobrazuje príslušnú ikonu:
 
-![Fully played TV series](@site/docs/img/history-v10.png)
+![Úplne prehraný seriál](@site/docs/img/history-v10.png)
 
-We also welcomed ik666 to the development team, who has added a new API for integrations, and greatly improved UPnP support.
+Do vývojového tímu sme privítali aj ik666, ktorý pridal nové API na integrácie a výrazne zlepšil podporu UPnP.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
 
 ### v9 (2019-09-06)
 
-No need to install Java anymore!
+Javu už netreba inštalovať samostatne!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
 
 ### v8 (2019-03-29)
 
-This version focused on making it easier to enjoy streaming web content like vodcasts, podcasts, internet radio, YouTube channels, and other streaming web content by adding the Shared Content tab.
+Táto verzia zjednodušila prehrávanie streamovaného webového obsahu, napríklad videopodcastov, podcastov, internetového rádia a kanálov YouTube, pridaním karty Zdieľaný obsah.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
 
 ### v7 (2018-03-27)
 
-This was the version to focus on our dynamic media browsing features with the Media Library folder.
+Táto verzia sa zamerala na dynamické prehliadanie médií prostredníctvom priečinka Knižnica médií.
 
-We added detection of Movies and TV series and also added folder-watching so files could be automatically detected in shared folders
+Pridali sme rozpoznávanie filmov a seriálov aj sledovanie priečinkov, aby sa nové súbory v zdieľaných priečinkoch zisťovali automaticky.
 
-We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
+Približne v tom čase sa k nám pridal aj moderátor fóra mik_s, ktorý tu odvádza skvelú prácu!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
 
 ### v6 (2016-01-30)
 
-Here we added the "Fully played action" with overlay icons and file management, which was highly-anticipated.
+Pridali sme dlho očakávanú funkciu „Akcia po úplnom prehraní“ s ikonami na miniatúrach a správou súborov.
 
-We also welcomed Nadahar to the team, who improved stability, logging and language support.
+Do tímu prišiel aj Nadahar, ktorý zlepšil stabilitu, protokolovanie a jazykovú podporu.
 
-Thanks to his Crowdin integration, we have had 523 contributors to our 40 languages!
+Vďaka jeho integrácii služby Crowdin prispelo k našim 40 jazykovým verziám už 523 ľudí!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
 
 ### v5 (2015-01-25)
 
-In this release, we added support for UPnP connections and playback, which meant that the community were able to connect to many more devices! Thanks largely to skeptical for that.
+V tomto vydaní sme pridali podporu pripojenia a prehrávania cez UPnP, takže používatelia mohli pripojiť oveľa viac zariadení. Veľkú zásluhu na tom mal skeptical.
 
-We also added our first pass at IMDb metadata, but we didn't yet have our own API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+Pridali sme aj prvú podporu metadát IMDb, hoci sme ešte nemali vlastné API. Za túto možnosť ďakujeme OpenSubtitles a ospravedlňujeme sa za množstvo požiadaviek, ktoré sme vtedy odosielali!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
 ### v4 (2014-07-25)
 
-The first web interface was added, finally we gave the UMS community the ability to access content via their web browsers!
+Pridali sme prvé webové rozhranie a komunita UMS tak konečne získala prístup k obsahu cez webové prehliadače.
 
-We also added support for casting, and the ability to transcode to AAC.
+Pridali sme aj podporu odosielania médií do iných zariadení (casting) a prekódovania do AAC.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
 
 ### v3 (2013-11-01)
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+Verzia 3 bola veľkým vydaním. Množstvom vlastných funkcií sme sa začali výrazne odlišovať od PS3MS.
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+Pridali sme priečinky Nové médiá a Nedávno prehrané, pokračovanie v prehrávaní, úpravu zobrazovaných názvov súborov a úvodného sprievodcu nastavením.
 
-We also welcomed valib to the team, who is still contributing today!
+K tímu sa pridal aj valib, ktorý prispieva dodnes!
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
 ### v2 (2012-10-31)
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+Vo verzii 2 pribudla karta Správa doplnkov prepojená s našou centrálnou databázou doplnkov. Opäť sme ako prví predstavili novú funkciu: živé titulky, ktoré možno priebežne streamovať priamo z prehrávača.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
 ### v1 (2012-05-31)
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+Tieto rané verzie sa zameriavali na „univerzálnosť“ nového programu a pridávali podporu desiatok nových zariadení.
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+Boli sme aj prvým mediálnym serverom s podporou vyhladzovania pohybu pomocou interpolácie snímok. Táto funkcia je dnes bežnou súčasťou televízorov, no vtedy ju mali iba nové špičkové modely.
 
-Our second developer, SharkHunter, also joined us within the first few days.
+Už počas prvých dní sa k nám pridal aj náš druhý vývojár SharkHunter.
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
+[Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
 
 ### PS3 Media Server (2008)
 
-The project that started it all! We are a fork of that project which was started in 2008 by shagrath, who was shortly joined by SubJunk, the founder of Universal Media Server.
+Projekt, ktorým sa to všetko začalo! Sme forkom projektu, ktorý v roku 2008 založil shagrath. Krátko nato sa k nemu pridal SubJunk, zakladateľ Universal Media Server.
 
-The PS3 was a great machine for playing media, but it did not support many video formats, so PS3 Media Server used a lot of tricks to make it play any video you could throw at it. We have applied the same strategy, for all devices and players.
+PS3 bola výborným zariadením na prehrávanie médií, no nepodporovala veľa videoformátov. PS3 Media Server preto používal množstvo postupov, aby na nej bolo možné prehrať prakticky akékoľvek video. Rovnaký prístup sme uplatnili pri všetkých zariadeniach a prehrávačoch.
 
 ![PS3 Media Server](@site/docs/img/history-pms.png)
