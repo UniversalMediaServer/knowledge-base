@@ -18,11 +18,11 @@ Po dokončení nastavenia stačí prehrať aspoň 92 % súboru.
 
 Seriály a videá môžete označiť ako úplne prehrané priamo vo webovom prehrávači:
 
-![Example of how to mark TV series and videos as fully played](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
+![Príklad označenia seriálov a videí ako úplne prehraných](@site/docs/img/whats-new-in-v14-mark-tv-series-fully-played.png)
 
 Ak chcete v _starom_ rozhraní nastavení označiť všetky súbory v zdieľanom priečinku ako úplne prehrané, na karte **Zdieľaný obsah** kliknite pravým tlačidlom na daný priečinok a vyberte **Označiť obsah ako úplne prehraný**.
 
-![Example of how to mark a directory as fully played](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
+![Príklad označenia priečinka ako úplne prehraného](@site/docs/guides/img/how-to-use-the-fully-played-feature.png)
 
 ## Odstránenie označenia „úplne prehrané“
 
