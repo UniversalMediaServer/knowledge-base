@@ -17,6 +17,7 @@ A quick overview of the changes in this version is:
 - Added support for **updating renderers** about specific files and containers that have changed
 - Increased startup performance by **~95%**, as well as server responsiveness while scanning files
 - Improved **server responsiveness** while scanning files
+- Modernized the codebase by updating **8 major dependency versions**
 
 ## New features
 
@@ -36,7 +37,7 @@ The first episode in each TV series folder is the one you are up to; if you're h
 
 Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
 
-See [Audio Addict](./configuration/audio-addict) and [Internet Radio](./configuration/internet-radio) for more.
+See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
 
 [![a video thumbnail for DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
@@ -48,7 +49,7 @@ Added [RadioBrowser](https://www.radio-browser.info/) support for finding and ad
 - Language
 - Genre
 
-See [RadioBrowser](./configuration/radiobrowser) for more
+See our [RadioBrowser](./configuration/radiobrowser) documentation and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
 
 [![a video thumbnail for RadioBrowser support](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
@@ -59,17 +60,21 @@ Added support for running in 3-box mode, which is when there are 3 devices (boxe
 2. A control point (often a phone or browser interface)
 3. A renderer / media player
 
-See [Two-Box and Three-Box Setups](./configuration/control-point-setups)
+See [Two-Box and Three-Box Setups](./configuration/control-point-setups) for more.
 
 ### Liking/rating via renderers
 
 Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+
+See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
 
 [![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
 ### Updating album art via renderers
 
 Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+
+See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
 
 [![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
