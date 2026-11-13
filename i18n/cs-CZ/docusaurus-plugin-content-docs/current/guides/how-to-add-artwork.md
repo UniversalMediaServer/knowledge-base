@@ -1,17 +1,17 @@
 # Jak přidat obrázky
 
-Můžete přidat vlastní obrázky pro složky a seznamy skladeb, aby vaše stránka zobrazovala vlastní náhledy namísto obecných výchozích obrázků.
+Ke složkám a seznamům skladeb můžete přidat vlastní obrázky, aby klientské rozhraní zobrazovalo vlastní miniatury místo obecných výchozích obrázků.
 
 Tato příručka vysvětluje:
 
 - které formáty obrázků jsou podporovány
-- jak pojmenovat soubory s obrázkem
-- kde tyto soubory umístit
-- co se stane, když chybí obrázek playlistu
+- jak pojmenovat soubory s obrázky
+- kam tyto soubory umístit
+- co se stane, když chybí obrázek seznamu skladeb
 
 ## Podporované formáty obrázků
 
-Následující typy souborů jsou podporovány a zaškrtnuty v tomto pořadí. Používá se první odpovídající obrázek:
+Podporovány jsou následující typy souborů, které se hledají v tomto pořadí. Použije se první nalezený odpovídající soubor s obrázkem:
 
 - `webp`
 - `png`
@@ -20,13 +20,13 @@ Následující typy souborů jsou podporovány a zaškrtnuty v tomto pořadí. P
 - `bmp`
 - `gif`
 
-Můžete použít libovolný z těchto formátů jak pro obrázky složek, tak pro obrázky skladeb.
+Libovolný z těchto formátů můžete použít pro obrázky složek i seznamů skladeb.
 
 ## Složka
 
-Chcete-li nastavit obrázek pro složku, umístěte soubor s názvem `folder.ext` do této složky.
+Chcete-li nastavit obrázek složky, umístěte do ní soubor s obrázkem pojmenovaný `folder.ext`.
 
-Nahraďte `.ext` jedním z podporovaných rozšíření.
+Nahraďte `.ext` jednou z podporovaných přípon.
 
 Příklady:
 
@@ -34,51 +34,48 @@ Příklady:
 - `folder.jpg`
 - `folder.png`
 
-## Seznamy stop
+## Seznamy skladeb
 
-Chcete-li nastavit obrázek pro playlist, použijte stejné jméno souboru jako soubor playlistu.
+Pro obrázek seznamu skladeb použijte stejný název souboru bez přípony, jaký má soubor seznamu skladeb.
 
 Příklad:
 
-- Soubor playlistu: `Jazz.m3u8`
+- Soubor seznamu skladeb: `Jazz.m3u8`
 - Soubor s obrázkem: `Jazz.jpg` (nebo `Jazz.webp`, `Jazz.png` a tak dále)
 
-Pokud není nalezen odpovídající soubor s obrázkem playlistu, použije se jako záložní soubor.
+Pokud se odpovídající obrázek seznamu skladeb nenajde, použije se místo něj obrázek složky.
 
 ## Příklad struktury složek
 
-Použije se jako odkaz:
+Řiďte se tímto příkladem:
 
 ```text
-Hudba/
+Music/
 |-- folder.jpg
 |-- Jazz/
-| |-- složka. ng
-| |-- Jazz.m3u8
-| |-- Jazz.jpg
-| |-- Smooth. 3u8
-| `-- smooth-track01.mp3
+|   |-- folder.png
+|   |-- Jazz.m3u8
+|   |-- Jazz.jpg
+|   |-- Smooth.m3u8
+|   `-- smooth-track01.mp3
 `-- Rock/
-    |-- složka. ebp
+    |-- folder.webp
     |-- RockHits.m3u8
     `-- track01.mp3
 ```
 
 V tomto příkladu:
 
-- `Music/folder.jpg` je obrázek pro nejvyšší úroveň složky `Music`.
+- `Music/folder.jpg` je obrázek složky `Music` na nejvyšší úrovni.
 - `Music/Jazz/folder.png` je obrázek pro složku `Jazz`.
-- `Music/Jazz/Jazz.jpg` se používá pro `Jazz.m3u8` playlist.
-- `Music/Jazz/Smooth.m3u8` nemá odpovídající obrázek `Smooth.*`, takže se používá obrázek `Jazz`.
+- `Music/Jazz/Jazz.jpg` se používá pro seznam skladeb `Jazz.m3u8`.
+- Pro `Music/Jazz/Smooth.m3u8` neexistuje odpovídající obrázek `Smooth.*`, takže se použije obrázek složky `Jazz`.
 
-## Web streams inside a playlist
+## Webové streamy v seznamu skladeb
 
-The naming rules above work because there is a file to put the image next to. An internet radio
-station or any other web address listed in a playlist has no such file, so it needs a different way
-to carry its artwork: a `#EXTIMG:` line that points at the picture.
+Výše uvedená pravidla pojmenování fungují proto, že existuje soubor, vedle kterého lze obrázek umístit. Internetová rozhlasová stanice ani jiná webová adresa v seznamu skladeb takový soubor nemá, a proto potřebuje jiný způsob přiřazení obrázku: řádek `#EXTIMG:`, který na něj odkazuje.
 
-Put the line directly **above** the entry it belongs to, the same way `#EXTINF:` works. It applies to
-the next entry only, so each stream gets its own line:
+Řádek umístěte přímo **nad položku**, ke které patří, stejně jako u `#EXTINF:`. Platí pouze pro následující položku, takže každý stream potřebuje vlastní řádek:
 
 ```text
 #EXTM3U
@@ -91,23 +88,19 @@ http://stream.example.com/jazz.mp3
 http://stream.example.com/rock.mp3
 ```
 
-UMS downloads the image once, stores it, and uses it for that stream from then on. It does not fetch
-it again on every start.
+UMS obrázek jednou stáhne, uloží jej a od té chvíle jej pro daný stream používá. Při každém spuštění jej znovu nestahuje.
 
-What the line accepts:
+Co lze na řádku uvést:
 
-- An **absolute** address. `https://example.com/cover.png` works, `cover.png` and `../art/cover.png`
-  do not — a relative path is ignored and the stream keeps the default image.
-- A `data:` URI, if you would rather keep the picture inside the playlist file than host it somewhere.
-- Only `.m3u` and `.m3u8` playlists. Other playlist formats have no place to put the line.
+- **Absolutní** adresu. `https://example.com/cover.png` funguje, ale `cover.png` a `../art/cover.png` nikoli — relativní cesta se ignoruje a u streamu zůstane výchozí obrázek.
+- URI s předponou `data:`, pokud chcete obrázek uchovat přímo v souboru seznamu skladeb místo jeho umístění na webu.
+- Pouze pro seznamy skladeb `.m3u` a `.m3u8`. Jiné formáty seznamů skladeb nemají pro tento řádek místo.
 
-Capitalization of the directive itself does not matter, `#EXTIMG:` and `#extimg:` both work.
+Na velikosti písmen v direktivě nezáleží: funguje `#EXTIMG:` i `#extimg:`.
 
-### Letting UMS write the line for you
+### Automatický zápis řádku pomocí UMS
 
-If your control point can set the artwork of an entry, you do not have to edit the playlist by hand.
-UMS writes the `#EXTIMG:` line into the playlist file itself, and only after it has successfully
-loaded the picture — so a broken address leaves the file untouched instead of storing a dead link.
+Pokud řídicí bod umožňuje nastavit obrázek položky, nemusíte seznam skladeb upravovat ručně.
+UMS zapíše řádek `#EXTIMG:` přímo do souboru seznamu skladeb, a to až po úspěšném načtení obrázku. Nefunkční adresa tak ponechá soubor beze změny, místo aby se do něj uložil neplatný odkaz.
 
-Because the artwork then lives in the playlist file rather than only in the database, it survives a
-rebuilt database and travels with the file when you copy the playlist elsewhere.
+Protože je odkaz na obrázek uložen v souboru seznamu skladeb, nikoli pouze v databázi, zůstane zachován i při opětovném vytvoření databáze a přenese se se souborem při kopírování seznamu skladeb jinam.

@@ -1,26 +1,26 @@
 # Docker
 
-Some of these steps may not apply to your installation.  Understand what they do, and ignore, or customize as necessary.
+Niektoré z týchto krokov sa nemusia vzťahovať na vašu inštaláciu.  Najprv si overte, na čo slúžia, a podľa potreby ich vynechajte alebo upravte.
 
-## Preparation
+## Príprava
 
-For operating system support and service packages.
+Podpora operačného systému a potrebné balíky služieb.
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+Nainštalujte Docker Engine: https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+Nainštalujte Docker Engine: https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### Ďalšie pokyny
 
 ```
 sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+Odhláste sa a znova prihláste alebo reštartujte počítač.
 
 ```
 sudo su -;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+Pripojte úložisko k hostiteľskému systému a sprístupnite ho v tomto priečinku, pravdepodobne iba na čítanie. `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+Skúšobný príklad: Samotný symbolický odkaz na inú cestu v hostiteľskom systéme nemusí fungovať, pretože kontajner Docker nemá prístup k cestám mimo pripojeného zväzku.  Namiesto toho skúste do tohto umiestnenia súbory skopírovať.
 
-## Container Setup
+## Nastavenie kontajnera
 
-Mount the following volumes:
-- Media folder `/root/media`
-- Profile folder containing UMS.conf `/root/.config/UMS`
+Pripojte nasledujúce zväzky:
+- Priečinok s médiami `/root/media`
+- Priečinok profilu obsahujúci UMS.conf `/root/.config/UMS`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+Sprístupnite alebo presmerujte tieto porty hostiteľa: 1044, 5001, 9001.
 
-The following scripts accomplish that (using the fish shell):
+Nasledujúce skripty to vykonajú v shelli fish:
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,35 +60,35 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## Hľadanie príčin problémov
 
-### General
+### Všeobecné postupy
 
 ```
 docker ps -a;
-#docker attach [--no-stdin] UMS; # Still unintentionally stops container when done inspecting..
+#docker attach [--no-stdin] UMS; # Po ukončení kontroly stále nechtiac zastaví kontajner.
 docker container logs [-f] UMS;
 docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+Podrobné protokoly v termináli: `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### Problémy s pripájaním zväzkov
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+Pri používaní Fedora CoreOS som narazil na chyby odmietnutia prístupu alebo oprávnení pri pripájaní priečinkov hostiteľa pomocou bind mount.
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+Namiesto toho sa môže odporúčať použitie pomenovaných zväzkov spravovaných Dockerom. Aby som sa vyhol tejto zložitosti, zistil som, že pridanie prípony `:Z` k hodnote voľby bind mount umožnilo kontajneru zapisovať do súborov hostiteľa. Možno použiť aj `:z`, no z bezpečnostného hľadiska sa môže odporúčať oddeliť prostriedky jednotlivých aplikácií a služieb namiesto ich zdieľania.
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+Zodpovedajúce chybové hlásenia možno zobraziť pomocou journalctl, takže ide o problém so SELinux. Riešením by bolo spustiť `chcon -Rt svirt_sandbox_file_t` host_dir, ale zdá sa, že ani tento postup sa neodporúča.
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+Zaujímavé je, že na Fedora Workstation sa tento problém nevyskytuje. Predpokladám, že ručná inštalácia pridala balík, ktorý ho rieši. Zrejme ide o balík container-selinux.
 
-## References
+## Odkazy
 
 - https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
 - https://drive.google.com/file/d/1ORNc113a8is1K1ZZtp1r3iz44uzJDeRp/view

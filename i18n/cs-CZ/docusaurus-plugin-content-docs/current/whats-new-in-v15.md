@@ -2,50 +2,50 @@
 sidebar_position: 2
 ---
 
-# Co je nového v v15
+# Co je nového ve verzi 15
 
 ## Přehled
 
-2 hlavními cíli pro V15 bylo zjednodušení našeho rozhraní, na základě zpětné vazby a recenzí uživatelů a usnadnění používání našich uživatelských účtů.
+Dvěma hlavními cíli verze 15 bylo zjednodušit rozhraní na základě zpětné vazby a recenzí uživatelů a usnadnit používání uživatelských účtů.
 
 Rychlý přehled změn v této verzi:
 
-- **Uživatelský přepínač** s podporou **více přihlášených uživatelů**
+- **Přepínač uživatelů** s podporou **více současně přihlášených účtů**
 - **Přepínač režimu** pro změnu mezi dvěma hlavními oblastmi: **Přehrávač** a **Nastavení**
-- Přhlášení **PIN kódem**
-- Dynamická **metadata TV sezóna**
+- Přihlašování pomocí **kódu PIN**
+- Dynamická **metadata řad seriálů**
 - Tlačítko **informace o médiu**
-- Také přepisuje naše oznámení a kód v reálném čase, lepší správa paměti, a mnoho dalších změn ke zlepšení využitelnosti a snížení počtu opatření potřebných k provedení toho, co chcete.
+- Dále jsme přepracovali kód oznámení a aktualizací v reálném čase, zlepšili správu paměti a provedli mnoho dalších změn, které usnadňují používání a snižují počet potřebných kroků.
 
 ## Nové funkce
 
-### Přepnutí uživatele
+### Přepínač uživatelů
 
-Nyní můžete být přihlášen společně s více uživateli v prohlížeči a přepínat mezi nimi.
+V jednom prohlížeči nyní můžete být současně přihlášeni k více uživatelským účtům a přepínat mezi nimi.
 
-Toto nastavení se z bezpečnostních důvodů přihlásí, protože možná nechcete, aby všichni viděli všechny uživatelské účty. Také existuje mezi nastavení, kde jsou uživatelské účty uloženy v prohlížeči po přihlášení prohlížeče na základě účtu.
+Můžete také zapnout zobrazení dostupných uživatelů na přihlašovací obrazovce. Tuto možnost musíte z bezpečnostních důvodů výslovně zapnout, protože možná nechcete, aby každý viděl všechny uživatelské účty. K dispozici je také kompromisní nastavení: prohlížeč si zapamatuje jednotlivé uživatelské účty až poté, co se v něm k nim přihlásíte.
 
-![Příklad jak upravit nastavení uživatele](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Příklad přepínače uživatelů](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
 ### Přepínač režimu
 
-Webové rozhraní bylo rozděleno do dvou oblastí: Přehrávač a nastavení.
+Webové rozhraní bylo rozděleno do dvou částí: Přehrávač a Nastavení.
 
-To by mělo zvýšit intuitivitu a snazší navigaci snížením počtu kliknutí.
+Díky menšímu počtu potřebných kliknutí by mělo být ovládání webového rozhraní intuitivnější a přehlednější.
 
-![Příklad změny nastavení modu](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Příklad přepínače režimů](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-### Přhlášení **PIN kódem**
+### Přihlašování pomocí kódu PIN
 
-Nyní můžete povolit přihlášení PIN kódu v nastavení serveru.
+V nastavení serveru nyní můžete povolit přihlašování pomocí kódu PIN.
 
 ![Příklad zobrazení PIN kódu](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-### Dynamická **metadata sezóna**
+### Dynamická metadata řad seriálů
 
-Sezóny televizních pořadů někdy mají vlastní data jako titulky a titulky obrázků, takže je nyní vidíme na sezonních stránkách.
+Jednotlivé řady seriálů někdy mají vlastní údaje, například názvy a obrázky obalů. Tyto údaje nyní zobrazujeme na stránkách příslušných řad.
 
-![Příklad zobrazení sezóny](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Příklad zobrazení řady seriálu](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### Více
 
@@ -53,6 +53,6 @@ Sezóny televizních pořadů někdy mají vlastní data jako titulky a titulky 
 
 ## Migrace
 
-Nejsou žádné konkrétní migrační kroky, kterých bychom si byli vědomi.
+Přechod nevyžaduje žádné zvláštní migrační kroky.
 
-Stejně jako v případě jakékoliv větší aktualizace, pokud chcete mít možnost se před aktualizací vrátit k aktuální verzi, můžete vytvořit zálohu adresáře vašeho profilu, který obsahuje konfiguraci a místní databázi. Umístění tohoto adresáře můžete najít v horní části logů programu. Vyhledat `Adresář profilu: [nějaká stránka]/UMS`.
+Stejně jako před každou významnou aktualizací si můžete zálohovat adresář profilu, který obsahuje konfiguraci a místní databázi. Budete se tak moci vrátit k dosavadní verzi. Umístění tohoto adresáře najdete poblíž začátku protokolu programu. Hledejte `Profile directory: [some page]/UMS`.

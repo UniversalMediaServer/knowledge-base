@@ -1,55 +1,47 @@
-# How to add artist images
+# Jak přidat obrázky interpretů
 
-When you browse your library by artist, UMS can show a picture for each artist instead of a generic
-folder icon. The picture does not come from the audio files — it comes from the folder that carries
-the artist's name.
+Při procházení knihovny podle interpretů může UMS u každého interpreta zobrazit obrázek místo obecné ikony složky. Obrázek se nenačítá ze zvukových souborů, ale ze složky pojmenované podle interpreta.
 
-## How UMS finds the picture
+## Jak UMS obrázek vyhledá
 
-You tell UMS **one** directory: the one whose subfolders are named after your artists. For an artist,
-UMS then looks for a subfolder with exactly that name and uses that folder's artwork.
+UMS zadáte **jediný** adresář: ten, jehož podsložky jsou pojmenované podle interpretů. Pro daného interpreta pak UMS vyhledá podsložku přesně tohoto jména a použije její obrázek.
 
 ```
-# The directory whose subfolders are named after the artists.
+# Adresář, jehož podsložky jsou pojmenované podle interpretů.
 audio_artist_dir = /music/Albums
 ```
 
-So with a library like this:
+Například v takto uspořádané knihovně:
 
 ```text
 /music/Albums/
 |-- Frank Sinatra/
-|   |-- folder.jpg          <- the picture shown for "Frank Sinatra"
+|   |-- folder.jpg          <- obrázek zobrazený pro interpreta "Frank Sinatra"
 |   `-- Come Fly with Me/
 |-- Miles Davis/
 |   |-- folder.jpg
 |   `-- Kind of Blue/
 `-- Zaz/
-    `-- Paris/              <- no folder.jpg, so Zaz gets the default icon
+    `-- Paris/              <- chybí folder.jpg, takže Zaz dostane výchozí ikonu
 ```
 
-_Frank Sinatra_ and _Miles Davis_ get their pictures, _Zaz_ does not.
+_Frank Sinatra_ a _Miles Davis_ dostanou své obrázky, _Zaz_ nikoli.
 
-The artwork inside the artist folder follows the ordinary rules, so the file is called `folder.jpg`,
-`folder.png`, `folder.webp` and so on. See [How to add artwork](/guides/how-to-add-artwork) for the full
-list of supported formats.
+Pro obrázek ve složce interpreta platí obvyklá pravidla, takže soubor se jmenuje `folder.jpg`, `folder.png`, `folder.webp` a podobně. Úplný seznam podporovaných formátů najdete v části [Jak přidat obrázky](/guides/how-to-add-artwork).
 
-## Two conditions
+## Dvě podmínky
 
-An artist picture appears only when both are true:
+Obrázek interpreta se zobrazí pouze tehdy, když platí obě podmínky:
 
-1. A subfolder of the artist directory is named **exactly** like the artist, ignoring capitalisation.
-   _Frank Sinatra_ finds the folder `Frank Sinatra`, and also `frank sinatra`, but not
-   `Sinatra, Frank`. The name has to match the whole folder name, not a part of it.
-2. That folder has artwork of its own.
+1. Podsložka v adresáři interpretů má **přesně** stejné jméno jako interpret, bez ohledu na velikost písmen.
+   Pro interpreta _Frank Sinatra_ se najde složka `Frank Sinatra` i `frank sinatra`, ale ne `Sinatra, Frank`. Jméno se musí shodovat s celým názvem složky, nikoli jen s jeho částí.
+2. Tato složka má vlastní obrázek.
 
-If either is missing, UMS falls back to the default icon. Nothing is broken — there is simply no
-picture to show.
+Pokud některá podmínka není splněna, UMS použije výchozí ikonu. Nejde o chybu — jen není k dispozici obrázek, který by se dal zobrazit.
 
-## Finding out which artists have none
+## Jak zjistit, kterým interpretům obrázek chybí
 
-The quickest check is on the file system: list the subfolders of your artist directory and look for
-those without an image file. On Linux or macOS:
+Nejrychlejší je kontrola v souborovém systému: projděte podsložky adresáře interpretů a vyhledejte ty, které neobsahují soubor s obrázkem. V Linuxu nebo macOS:
 
 ```bash
 cd /music/Albums
@@ -58,15 +50,10 @@ for d in */; do
 done
 ```
 
-Everything it prints is an artist that will show the default icon.
+Každý vypsaný řádek označuje interpreta, u kterého se zobrazí výchozí ikona.
 
-Two causes are common. Either the folder really has no picture yet, or the folder name and the
-artist name in the tags have drifted apart — a guest artist, a different spelling, or a name written
-as _Surname, First name_ on disk but the other way round in the tags. The second case is worth
-checking before you go looking for a picture that is already there.
+Běžné jsou dvě příčiny. Buď složka obrázek skutečně ještě nemá, nebo se její název liší od jména interpreta ve značkách — například kvůli hostujícímu interpretovi, jinému pravopisu nebo jménu zapsanému na disku jako _Příjmení, Jméno_, ale ve značkách v opačném pořadí. Druhý případ se vyplatí zkontrolovat dříve, než začnete hledat obrázek, který už ve složce je.
 
-## Setting the directory from your control point
+## Nastavení adresáře z řídicího bodu
 
-If your control point supports it, you can point UMS at the artist directory by browsing to it and
-choosing it there, instead of editing the configuration file. UMS stores the path itself, so the
-setting survives a restart either way.
+Pokud to řídicí bod podporuje, můžete adresář interpretů v jeho rozhraní vyhledat a vybrat místo úpravy konfiguračního souboru. UMS cestu sám uloží, takže nastavení v obou případech zůstane zachováno i po restartu.

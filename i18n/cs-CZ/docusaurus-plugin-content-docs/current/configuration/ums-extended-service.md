@@ -1,12 +1,12 @@
-# UMS UPnP Service
+# Služba UPnP v UMS
 
-UMS poskytuje rozšířenou službu UPnP, která umožňuje externím kontrolním bodům interakci s dalšími systémovými funkcemi.
+UMS poskytuje rozšířenou službu UPnP, která externím řídicím bodům zpřístupňuje další systémové funkce.
 
 ## Využití
 
-Služba je vystavena pod názvem `schemas-upnp-org` s typem služby `UmsExtendedServices`.
+Služba je dostupná ve jmenném prostoru `schemas-upnp-org` s typem služby `UmsExtendedServices`.
 
-Pro ovládací body Javy pomocí JUPnP, volejte `findService` na UMS `RemoteDevice`:
+V řídicím bodu napsaném v Javě s použitím JUPnP zavolejte `findService` na objektu `RemoteDevice` představujícím UMS:
 
 ```java
 RemoteService umsServicesService = remoteDevice.findService(
@@ -15,48 +15,48 @@ RemoteService umsServicesService = remoteDevice.findService(
 
 Následující akce jsou dostupné prostřednictvím rozhraní služby.
 
-## MyMusic interakce
+## Práce s MyMusic
 
-Alba, která se mi líbí lze prohlížet pomocí ID objektu `MYMUSIC$` jako hluboký odkaz nebo navigací do `My Albums` v kořenové složce.
+Oblíbená alba lze procházet přímo pomocí ID objektu `MYMUSIC$` nebo otevřením složky `My Albums` v kořenové složce.
 
-Udržování oblíbených je užitečné zejména ve velkých sbírkách alb, kde se ruční prohlížení celé knihovny může stát časově náročným. Upravený seznam oblíbených alb pomáhá uživatelům rychle se vrátit k relevantnímu obsahu bez opakovaného širokého vyhledávání nebo hluboké navigace se složkami.
+Správa oblíbených alb je užitečná zejména u rozsáhlých sbírek, ve kterých ruční procházení celé knihovny zabírá hodně času. Vlastní výběr oblíbených alb umožňuje rychlý návrat k požadovanému obsahu bez opakovaného rozsáhlého vyhledávání nebo procházení hluboké struktury složek.
 
-V praxi dávají oblíbené tyto výhody:
+Oblíbené položky v praxi přinášejí tyto výhody:
 
 - Rychlejší přístup k často přehrávaným albům, a to i ve velmi velkých knihovnách.
 - Lepší každodenní navigace oddělením preferovaného obsahu od celého katalogu.
-- Konsistentnější pracovní postupy přehrávání pro klienty a automatizace, které závisejí na stabilním výběru alba.
+- Jednotnější postupy přehrávání pro klienty a automatizace, které závisejí na stálém výběru alb.
 
 ### Vstupní parametry
 
 Všechny akce v této sekci vyžadují vstupní parametr. Album musí být identifikováno pomocí MusicBrainz ID nebo ID vydání Discogs. Alespoň jedno ID je vyžadováno; jinak není provedena žádná akce.
 
-Příklad pro Madonnino vydání `Like a Virgin`:
+Příklad pro album Madonny `Like a Virgin`:
 
 | Atribut       |            Typ           |            Příklad hodnoty           |
 | :------------ | :----------------------: | :----------------------------------: |
-| MusicBrainzId |          Řetězec         | b69580b9-7050-3994-b544-4407a22c097a |
+| MusicBrainzId |          String          | b69580b9-7050-3994-b544-4407a22c097a |
 | DiscogsId     | UnsignedIntegerFourBytes |                1069538               |
 
 :::caution
-Pokud byly oba parametry (`MusicBrainzId` a `DiscogsId`) poskytnuty při ocenění alba, musí být také poskytnuty při neocenění tohoto alba.
+Pokud byly při označení alba jako oblíbeného zadány oba parametry (`MusicBrainzId` a `DiscogsId`), musí být oba zadány také při odebrání tohoto označení.
 :::
 
 ### LikeAlbum
 
-Označí hudební album jako líbící se.
+Označí hudební album jako oblíbené.
 
 ### DislikeAlbum
 
-Odstraní oblíbený stav z hudebního alba.
+Odebere hudebnímu albu označení jako oblíbené.
 
 ### IsAlbumLikedInput
 
-Zkontroluje, zda je album v současné době označeno jako líbící se. Pokud jsou poskytnuty jak MusicBrainz, tak Discogs ID, metoda vrátí `true` pokud je alespoň jedno z ID označeno jako líbící se.
+Ověří, zda je album právě označeno jako oblíbené. Pokud jsou zadány identifikátory MusicBrainz i Discogs, metoda vrátí `true`, pokud je alespoň jeden z nich označen jako oblíbený.
 
-## Zálohovat akce
+## Akce pro zálohování
 
-Služba poskytuje zálohu a obnovení.
+Služba poskytuje akce pro zálohování a obnovení.
 
 :::info
 Před provedením obnovy musí být vytvořena záloha.
@@ -64,21 +64,21 @@ Před provedením obnovy musí být vytvořena záloha.
 
 ### BackupAudioLikes
 
-Vytvoří zálohu tabulky 'líbí' audio alba identifikované MusicBrainz nebo Discogs ID.
+Vytvoří zálohu tabulky `liked` s oblíbenými hudebními alby identifikovanými pomocí ID MusicBrainz nebo Discogs.
 
 ### RestoreAudioLikes
 
-Obnoví tabulku oblíbených alb. Před spuštěním této akce zavolejte `backupAudioLikes`.
+Obnoví tabulku oblíbených alb. Před spuštěním této akce zavolejte `BackupAudioLikes`.
 
 ### BackupRatings
 
-Zapisuje zvuková hodnocení do záložního souboru obsahující hash souboru a hodnotu hodnocení.
+Zapíše hodnocení zvukových položek do záložního souboru, který obsahuje hash souboru a hodnotu hodnocení.
 
 ### RestoreRatings
 
 Obnoví hodnocení ze zálohy vytvořené pomocí `BackupRatings`.
 
-## Interakce knihovny
+## Práce s knihovnou
 
 ### RescanMediaStore
 

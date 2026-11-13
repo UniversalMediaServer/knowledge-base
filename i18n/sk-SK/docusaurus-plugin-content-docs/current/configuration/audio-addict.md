@@ -1,20 +1,20 @@
-# Audio Addict Network Radio
+# Internetové rádio Audio Addict Network
 
-**Audio Addict Network** je súbor prémiových internetových rádiových staníc, medzi ktoré patria:
+**Audio Addict Network** je skupina prémiových internetových rozhlasových služieb, medzi ktoré patria:
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio a DI.fm.
 
-Na prístup k týmto rozhlasovým staniciam je potrebný platený **prémiový účet**. Stačí sa zaregistrovať len na jednej z týchto stránok, pretože s rovnakým používateľským menom a heslom získate prístup ku všetkým.
+Na prístup k týmto rozhlasovým staniciam je potrebný platený **prémiový účet**. Stačí sa zaregistrovať na jednej z týchto stránok. Rovnaké používateľské meno a heslo vám umožnia prístup ku všetkým.
 
-UMS automaticky načítava všetky dostupné rádiové stránky AudioAddict, ich kanály a filtre. Podporovaný je aj kanál **Obľúbené**.
+UMS automaticky načíta všetky dostupné rozhlasové služby AudioAddict, ich kanály a filtre. Podporovaný je aj kanál **Obľúbené**.
 
 ## Nastavenie
 
-Ak chcete aktivovať podporu AudioAddict, pridajte do súboru `UMS.conf` nasledujúce riadky:
+Ak chcete povoliť podporu AudioAddict, pridajte do súboru `UMS.conf` nasledujúce riadky:
 
 ```
-# TRUE = uprednostňujem európsky streamovací server
-audio_addict_europe = TRUE alebo FALSE
+# TRUE = uprednostniť európsky streamovací server
+audio_addict_europe = TRUE or FALSE
 
 # Vaše používateľské meno
 audio_addict_user = USERNAME
@@ -25,66 +25,55 @@ audio_addict_pass = PASSWORD
 
 ## Umiestnenie
 
-Priečinok **Audio Addict Radio Network** sa nachádza vo vašej mediálnej knižnici. Odtiaľ môžete priamo prehliadať a prepínať medzi všetkými dostupnými stanicami.
+Priečinok **Audio Addict Radio Network** sa nachádza vo vašej knižnici médií. Odtiaľ môžete priamo prehliadať a prehrávať všetky dostupné stanice.
 
-## Shows and episodes
+## Relácie a epizódy
 
-Besides the live stations, DI.fm network offers an **Events** folder. It lists the upcoming shows, and
-for a show that has already been broadcast it also offers the recording, so you can listen to it
-afterwards.
+Okrem živých staníc ponúka sieť DI.fm aj priečinok **Udalosti**. Nájdete v ňom nadchádzajúce relácie. Pri už odvysielaných reláciách ponúka aj záznam, takže si ich môžete vypočuť neskôr.
 
-Shows with a back catalogue get a folder of their own holding the older episodes. Some shows have
-hundreds of them, so the folder is split into smaller groups, each labelled with the episode numbers
-and dates it contains.
+Relácie s archívom majú vlastný priečinok so staršími epizódami. Niektoré relácie ich majú stovky, preto sa priečinok rozdelí do menších skupín. Každá je označená číslami a dátumami epizód, ktoré obsahuje.
 
 ```
-# How many episodes one group holds before it is split. Default 20, minimum 1.
+# Počet epizód v jednej skupine pred jej rozdelením. Predvolene 20, najmenej 1.
 audio_addict_episodes_per_container = 20
 ```
 
-Building this list means asking the service for the events and for each show's episodes, which takes
-a moment. UMS remembers the answer so that browsing and starting playback do not each pay for it
-again:
+Zostavenie tohto zoznamu chvíľu trvá, pretože UMS musí od služby získať udalosti aj epizódy jednotlivých relácií. UMS si odpoveď zapamätá, aby pri každom prehliadaní alebo spustení prehrávania nemusel tento postup opakovať:
 
 ```
-# How long the show and episode lists are reused, in minutes.
-# Default 60. Set to 0 to ask the service every time.
+# Ako dlho sa zoznamy relácií a epizód opakovane používajú, v minútach.
+# Predvolene 60. Hodnota 0 znamená, že sa služba osloví zakaždým.
 audio_addict_tree_cache_ttl_minutes = 60
 ```
 
-A longer time makes browsing snappier, a shorter one picks up newly published episodes sooner. The
-addresses UMS receives stay valid far longer than the default hour, so there is no need to keep this
-value small.
+Dlhší interval zrýchli prehliadanie, kratší skôr zachytí novo zverejnené epizódy. Adresy, ktoré UMS dostáva, zostávajú platné podstatne dlhšie než predvolenú hodinu. Túto hodnotu preto netreba udržiavať nízku.
 
-## Live titles
+## Názvy práve prehrávaných skladieb
 
-Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
-service instead and delivers the result to your player, so you still see what is playing. This is
-described in [Internet radio and live titles](./internet-radio).
+Stanice Audio Addict neposielajú názov aktuálnej skladby v samotnom zvukovom prúde. UMS si túto informáciu vyžiada od služby a odovzdá ju prehrávaču, takže stále vidíte, čo sa práve prehráva. Podrobnosti nájdete v časti [Internetové rádio a názvy práve prehrávaných skladieb](./internet-radio).
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# Posielať názvy práve prehrávaných skladieb staníc Audio Addict. Predvolene zapnuté.
 audio_addict_icy_metadata = TRUE
 ```
 
-## Curated playlists
+## Zostavené zoznamy skladieb
 
-Curated playlists play one track after another from your account. When the playlist reaches its end,
-UMS can start over instead of stopping:
+Zostavené zoznamy skladieb prehrávajú jednu skladbu za druhou z vášho účtu. Keď zoznam dosiahne koniec, UMS môže namiesto zastavenia začať znova:
 
 ```
-# Start a curated playlist again when it ends. Off by default.
+# Po skončení znova spustiť zostavený zoznam skladieb. Predvolene vypnuté.
 audio_addict_playlist_loop = FALSE
 ```
 
-## All settings at a glance
+## Prehľad všetkých nastavení
 
-| Setting                               | Default | Purpose                                    |
-| ------------------------------------- | ------- | ------------------------------------------ |
-| `audio_addict_user`                   | —       | Your account name                          |
-| `audio_addict_pass`                   | —       | Your password                              |
-| `audio_addict_europe`                 | `TRUE`  | Prefer the European streaming server       |
-| `audio_addict_icy_metadata`           | `TRUE`  | Send live titles to the player             |
-| `audio_addict_episodes_per_container` | `20`    | Episodes per group before splitting        |
-| `audio_addict_tree_cache_ttl_minutes` | `60`    | How long show and episode lists are reused |
-| `audio_addict_playlist_loop`          | `FALSE` | Repeat a curated playlist when it ends     |
+| Nastavenie                            | Predvolená hodnota | Účel                                                     |
+| ------------------------------------- | ------------------ | -------------------------------------------------------- |
+| `audio_addict_user`                   | —                  | Názov vášho účtu                                         |
+| `audio_addict_pass`                   | —                  | Vaše heslo                                               |
+| `audio_addict_europe`                 | `TRUE`             | Uprednostniť európsky streamovací server                 |
+| `audio_addict_icy_metadata`           | `TRUE`             | Posielať prehrávaču názvy práve prehrávaných skladieb    |
+| `audio_addict_episodes_per_container` | `20`               | Počet epizód v skupine pred jej rozdelením               |
+| `audio_addict_tree_cache_ttl_minutes` | `60`               | Ako dlho sa opakovane používajú zoznamy relácií a epizód |
+| `audio_addict_playlist_loop`          | `FALSE`            | Po skončení zopakovať zostavený zoznam skladieb          |

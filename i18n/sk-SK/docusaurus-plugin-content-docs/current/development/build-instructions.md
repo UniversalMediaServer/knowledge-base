@@ -1,21 +1,20 @@
-# Build instructions
+# Pokyny na zostavenie
 
-This document describes how to build Universal Media Server from the source files.
+Tento dokument opisuje, ako zostaviť Universal Media Server zo zdrojových súborov.
 
-_Important note:_
-Prebuilt Universal Media Server releases can be downloaded from: http://www.universalmediaserver.com/ so you DO NOT need to run these steps as a general user.
+_Dôležitá poznámka:_
+Hotové vydania Universal Media Server si môžete stiahnuť z http://www.universalmediaserver.com/. Bežný používateľ preto tieto kroky NEMUSÍ vykonávať.
 
-The following software packages are required:
+Vyžadujú sa nasledujúce softvérové balíky:
 
-- The Java JDK 17 (the JRE is not enough)
+- Java JDK 17 (samotné JRE nestačí)
 - Git
 - Maven
 - [MediaInfo](https://mediaarea.net/en/MediaInfo/Download)
 
-# Short instructions
+# Stručný postup
 
-If all required software packages are installed, the following commands will
-download the latest sources and build UMS:
+Ak máte nainštalované všetky potrebné balíky, nasledujúce príkazy stiahnu najnovšie zdrojové kódy a zostavia UMS:
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
@@ -23,85 +22,85 @@ cd universalmediaserver
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+`PACKAGENAME` je názov cieľového operačného systému: `windows`, `macos`, `macos-arm`, `macos-pre1015` alebo `linux-*`. Znak `*` označuje architektúru: `x86`, `x86_64`, `arm64`, `armel` alebo `armhf`.
 
-The result will be built in the "target" directory:
+Výsledok zostavenia bude v priečinku „target“:
 
 - Windows: `UMS-setup.exe`
 - Linux: `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `UMS-setup-macosx-x.xx.x.tar.gz`
 
-# Full instructions
+# Úplný postup
 
-First all required software has to be installed:
+Najprv nainštalujte všetok potrebný softvér:
 
-## 1. Download and install the Java JDK 17
+## 1. Stiahnite a nainštalujte Java JDK 17
 
-See https://bell-sw.com/pages/downloads/#/java-17-lts
+Pozrite si https://bell-sw.com/pages/downloads/#/java-17-lts
 
-## 2. Download and install Git
+## 2. Stiahnite a nainštalujte Git
 
-See https://git-scm.com/
+Pozrite si https://git-scm.com/
 
-## 3. Download and extract Maven
+## 3. Stiahnite a rozbaľte Maven
 
-See http://maven.apache.org/
+Pozrite si http://maven.apache.org/
 
-## 4. Set environment variables
+## 4. Nastavte premenné prostredia
 
 ### Windows
 
-Create new variables or append the value if the variable already exists:
+Vytvorte nové premenné, alebo ak už existujú, pripojte k nim uvedenú hodnotu:
 
-- Level: System, variable: `JAVA_HOME`, value: JDK install location
-- Level: User, variable `M2_HOME`, value: Maven extract location
-- Level: User, variable `M2`, value: `%M2_HOME%\bin`
-- Level: User, variable `PATH`, value `%M2%`
+- Úroveň: systémová; premenná: `JAVA_HOME`; hodnota: umiestnenie inštalácie JDK
+- Úroveň: používateľská; premenná: `M2_HOME`; hodnota: umiestnenie rozbaleného Mavenu
+- Úroveň: používateľská; premenná: `M2`; hodnota: `%M2_HOME%\bin`
+- Úroveň: používateľská; premenná: `PATH`; hodnota: `%M2%`
 
 ### Linux
 
-Nothing to do.
+Netreba nič nastavovať.
 
 ### macOS
 
-Nothing to do.
+Netreba nič nastavovať.
 
-## 5. Download the UMS source code
+## 5. Stiahnite zdrojový kód UMS
 
 ```bash
 git clone https://github.com/UniversalMediaServer/UniversalMediaServer.git
 cd universalmediaserver
 ```
 
-## 6. Update to the latest source (optional)
+## 6. Aktualizujte zdrojový kód na najnovšiu verziu (voliteľné)
 
 ```bash
 git pull
 ```
 
-## 7. Compile the latest version of UMS
+## 7. Zostavte najnovšiu verziu UMS
 
 ```bash
 mvn package -P PACKAGENAME
 ```
 
-Where `PACKAGENAME` is the name of the target operating system: `windows`, `macos`, `macos-arm`, `macos-pre1015` or `linux-*`, where `*` is the architecture; one of: `x86`, `x86_64`, `arm64`, `armel`, or `armhf`
+`PACKAGENAME` je názov cieľového operačného systému: `windows`, `macos`, `macos-arm`, `macos-pre1015` alebo `linux-*`. Znak `*` označuje architektúru: `x86`, `x86_64`, `arm64`, `armel` alebo `armhf`.
 
-You can also specify an optional flag if you want to skip downloading binaries, which can be useful to speed up build time, particularly on Windows and Linux:
+Môžete tiež pridať voliteľný parameter, ktorý preskočí sťahovanie binárnych súborov. To môže zrýchliť zostavenie, najmä v systémoch Windows a Linux:
 
 ```bash
 mvn package -P PACKAGENAME -Doffline=true
 ```
 
-The resulting binaries will be built in the "target" directory:
+Výsledné binárne súbory budú v priečinku „target“:
 
 - Windows: `UMS-setup.exe`
 - Linux:   `UMS-linux-generic-x.xx.x.tar.gz`
 - macOS: `ums-x.xx.x-SNAPSHOT-distribution/Universal Media Server.app`
 
-## Automatic builds
+## Automatické zostavenia
 
-These last two commands can easily be automated using a script e.g.:
+Posledné dva príkazy možno jednoducho automatizovať pomocou skriptu, napríklad:
 
 ### Windows
 
@@ -111,7 +110,7 @@ start /D universalmediaserver /wait /b git pull
 start /D universalmediaserver /wait /b mvn package
 ```
 
-### Linux, macOS &c.
+### Linux, macOS a ďalšie systémy
 
 ```bash
 #!/bin/sh
@@ -121,107 +120,103 @@ git pull
 mvn package
 ```
 
-# Packaging and cross-compilation
+# Vytváranie balíkov a krížová kompilácia
 
-This section explains how it is possible to compile and package for one system while on another.
+Táto časť vysvetľuje, ako zostaviť a pripraviť balík pre jeden operačný systém pri práci v inom systéme.
 
-## Building the Windows binaries
+## Zostavenie binárnych súborov pre Windows
 
-The Windows installers (`UMS-setup.exe`) and Windows executable (`UMS.exe`) can be built on non-Windows platforms.
+Inštalátor pre Windows (`UMS-setup.exe`) aj spustiteľný súbor pre Windows (`UMS.exe`) možno zostaviť aj na iných platformách.
 
-First of all, you'll need to have the `makensis` binary installed. On Debian/Ubuntu,
-this can be done with:
+Najprv musíte mať nainštalovaný program `makensis`. V systémoch Debian a Ubuntu ho môžete nainštalovať takto:
 
 ```bash
 sudo apt-get install nsis
 ```
 
-Then the `NSISDIR` environment needs to be set to the **absolute path** to the
-`nsis` directory. This can either be set per-command:
+Potom nastavte premennú prostredia `NSISDIR` na **absolútnu cestu** k priečinku `nsis`. Môžete ju nastaviť pre jednotlivý príkaz:
 
 ```bash
 NSISDIR=$PWD/src/main/external-resources/third-party/nsis mvn ...
 ```
 
-Either:
+Alebo:
 
-- Temporarily in the current shell:
+- Dočasne v aktuálnom shelli:
     ```bash
     export NSISDIR=$PWD/src/main/external-resources/third-party/nsis
     mvn ...
     ```
-- Or permanently:
+- Prípadne natrvalo:
     ```bash
-    # these two commands only need to be run once
+    # Tieto dva príkazy stačí spustiť raz
     echo "export NSISDIR=$PWD/src/main/external-resources/third-party/nsis" >> ~/.bashrc
     source ~/.bashrc
     
     mvn...
     ```
 
-For the sake of brevity, the following examples assume it has already been set.
+Pre stručnosť nasledujúce príklady predpokladajú, že premenná už je nastavená.
 
-The Windows installer can now be built with one of the following commands:
+Inštalátor pre Windows teraz môžete zostaviť jedným z nasledujúcich príkazov:
 
-### On Linux and macOS
+### V systémoch Linux a macOS
 
 ```bash
 mvn package -P system-makensis,windows
 ```
 
-## Building a Linux tarball
+## Vytvorenie archívu tar pre Linux
 
-### On Windows and macOS
+### V systémoch Windows a macOS
 
 ```bash
 mvn package -P linux-*
 ```
 
-where `*` is one of: x86, x86_64, arm64, armel, or armhf
+kde `*` je jedna z hodnôt: x86, x86_64, arm64, armel alebo armhf
 
-## Building the macOS disk image
+## Vytvorenie obrazu disku pre macOS
 
-### On Windows and Linux
+### V systémoch Windows a Linux
 
 ```bash
 mvn package -P macos
 hdiutil create -volname "Universal Media Server" -srcfolder target/ums-*-distribution UMS.dmg
 ```
 
-## Building the macOS wizard installer
+## Vytvorenie sprievodcu inštaláciou pre macOS
 
-1. Build UMS
-2. Install http://s.sudre.free.fr/Software/Packages/about.html
-3. Set a variable storing the directory path of the build distribution file, e.g.
+1. Zostavte UMS
+2. Nainštalujte nástroj z http://s.sudre.free.fr/Software/Packages/about.html
+3. Nastavte premennú s cestou k priečinku zostavenej distribúcie, napríklad:
 
 ```bash
 export UMS_DIST_FOLDER="/Users/dev/ums/target/ums-7.3.1-SNAPSHOT-distribution/Universal Media Server.app"
 export UMS_LOGO_FILE="/Users/dev/ums/src/main/external-resources/third-party/nsis/Contrib/Graphics/Wizard/win.png"
 ```
 
-4. Replace desired path inside the .pkgproj file
+4. Nahraďte požadovanú cestu v súbore .pkgproj
 
 ```bash
 sed -i '' "s#UMS_DIST_FOLDER#$UMS_DIST_FOLDER#g" src/main/assembly/osx-installer.pkgproj
 sed -i '' "s#UMS_LOGO_FILE#$UMS_LOGO_FILE#g" src/main/assembly/osx-installer.pkgproj
 ```
 
-5. Build .pkg installer. This will output to `/target/Universal Media Server.pkg`
+5. Zostavte inštalátor .pkg. Výsledok sa uloží do `/target/Universal Media Server.pkg`.
 
 ```bash
 /usr/local/bin/packagesbuild src/main/assembly/osx-installer.pkgproj
 ```
 
-# Quick builds
+# Rýchle zostavenia
 
-We have quick build scripts that are recommended during development for fast
-iteration. The scripts will compile the Java code, put it in the default install
-directory, and run the program, which will close any existing instance of UMS.
+Na rýchle opakovanie cyklu úprav počas vývoja odporúčame naše skripty na rýchle zostavenie. Skripty skompilujú kód Javy, umiestnia ho do predvoleného inštalačného priečinka a spustia program. Tým sa ukončí prípadná už spustená inštancia UMS.
 
-It should work for 64-bit Windows and macOS. Can be extended for others easily if desired.
+Mali by fungovať v 64-bitových systémoch Windows a macOS. V prípade potreby ich možno jednoducho rozšíriť aj pre ďalšie systémy.
 
 ```bash
 mvn verify -P quickrun-* -DskipTests
 ```
 
-Where `*` is `macos` or `windows`
+Znak `*` nahraďte hodnotou `macos` alebo `windows`.

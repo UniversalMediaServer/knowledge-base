@@ -1,51 +1,33 @@
-# Two-Box and Three-Box Setups
+# Zapojenia s dvoma a troma zariadeniami
 
-UPnP knows two ways of arranging the parts of a media system, and UMS behaves differently in each.
+UPnP rozlišuje dva spôsoby usporiadania častí mediálneho systému a UMS sa v každom z nich správa inak.
 
-In a **two-box** setup, the device that browses your library is also the device that plays: a TV, a
-streaming box, a phone app that shows the folders and then plays the track itself. The device asking
-for the list and the device asking for the audio are one and the same.
+V zapojení s **dvoma zariadeniami** knižnicu prehliada aj obsah prehráva rovnaké zariadenie: televízor, multimediálny prehrávač alebo aplikácia v telefóne, ktorá zobrazí priečinky a potom sama prehrá skladbu. Zariadenie, ktoré žiada zoznam, je totožné so zariadením, ktoré žiada zvukové dáta.
 
-In a **three-box** setup they are separate. A _control point_ — an app on your phone or a web
-interface — shows the library and tells a _renderer_ to play. The app never touches the audio; it
-only points the renderer at it. This is the arrangement typical of hi-fi streamers, where a
-dedicated device does the playing and you steer it from somewhere else.
+V zapojení s **troma zariadeniami** sú tieto úlohy oddelené. _Ovládací bod_, napríklad aplikácia v telefóne alebo webové rozhranie, zobrazuje knižnicu a dáva _prehrávaču_ pokyn na prehrávanie. Samotná aplikácia zvukové dáta nespracúva. Iba odkáže prehrávač na ich umiestnenie. Takéto usporiadanie je typické pre hi-fi sieťové prehrávače: vyhradené zariadenie prehráva obsah a vy ho ovládate odinakiaľ.
 
-## Why UMS has to know the difference
+## Prečo musí UMS tieto zapojenia rozlišovať
 
-UMS decides how to deliver a track based on what the receiving device can handle: a player that
-cannot decode FLAC gets a converted stream, one that can gets the file untouched.
+UMS rozhoduje, ako doručí skladbu, podľa možností prijímajúceho zariadenia. Prehrávaču, ktorý nedokáže dekódovať FLAC, poskytne prevedený prúd; prehrávaču, ktorý ho podporuje, odošle súbor bez úprav.
 
-In a two-box setup that decision is easy, because whoever asked for the list is whoever will play.
-In a three-box setup it is not: the request for the list comes from your phone, the request for the
-audio from the streamer. Deciding on the basis of the phone would be exactly wrong — it would send
-the streamer whatever suits a phone.
+V zapojení s dvoma zariadeniami je rozhodovanie jednoduché, pretože zariadenie, ktoré požiadalo o zoznam, bude aj prehrávať.
+V zapojení s troma zariadeniami to tak nie je: o zoznam žiada telefón, ale o zvukové dáta žiada sieťový prehrávač. Rozhodovať sa podľa telefónu by bolo nesprávne. Sieťový prehrávač by dostal formát vhodný pre telefón.
 
-## How UMS tells them apart
+## Ako ich UMS rozlišuje
 
 ```
-# Require accounts and sign-in. On by default.
+# Vyžadovať účty a prihlásenie. Predvolene zapnuté.
 authentication_enabled = TRUE
 ```
 
-With authentication **on**, UMS ties playback to the identity that browsed, so that what a user is
-allowed to see is also what that user gets to play. This is the right behaviour for a household with
-several accounts and per-user access, and it assumes a two-box arrangement.
+Pri **zapnutom** overovaní totožnosti UMS priradí prehrávanie k identite, ktorá prehliadala knižnicu. Používateľ tak môže prehrávať práve ten obsah, ktorý má povolené vidieť. To je správne správanie v domácnosti s viacerými účtami a prístupom riadeným podľa používateľov. Predpokladá však zapojenie s dvoma zariadeniami.
 
-With authentication **off**, UMS stops assuming the two are the same. It determines the playing
-device at the moment the audio is requested, from that request itself — its address and what it says
-about itself — and makes the conversion decision for _that_ device. The identity in the browse
-request is then understood as the control point it actually is.
+Pri **vypnutom** overovaní totožnosti UMS prestane predpokladať, že obe úlohy plní rovnaké zariadenie. Prehrávajúce zariadenie určí až pri žiadosti o zvukové dáta, a to zo samotnej žiadosti: z jeho adresy a údajov, ktoré o sebe uvádza. O prevode potom rozhodne podľa možností _tohto_ zariadenia. Identitu zo žiadosti o prehliadanie potom správne považuje za identitu ovládacieho bodu.
 
-Two devices sharing one address, which happens when the control point and the renderer run on the
-same machine, are still told apart, because they are distinguished by what they report about
-themselves rather than by the address alone.
+Aj dve zariadenia s rovnakou adresou dokáže rozlíšiť. Táto situácia nastáva, keď ovládací bod aj prehrávač bežia na tom istom počítači. UMS ich rozlišuje podľa údajov, ktoré o sebe uvádzajú, nie iba podľa adresy.
 
-## Choosing
+## Voľba nastavenia
 
-Neither setting is more correct than the other; for maximum compatibility turn authentication **off**. The price is that UMS then has no accounts: there is no per-user access control, and everything it shares is visible to everything on the network that can
-reach it. If that is a concern, restrict which devices may reach UMS at all — see
-[Security and privacy](/configuration/security-and-privacy).
+Ani jedna možnosť nie je všeobecne správnejšia. Pre čo najširšiu kompatibilitu overovanie totožnosti **vypnite**. Nevýhodou je, že UMS potom nepoužíva účty: prístup nemožno riadiť podľa používateľov a všetok zdieľaný obsah je viditeľný pre každé zariadenie v sieti, ktoré sa k UMS dokáže pripojiť. Ak vám to nevyhovuje, obmedzte, ktoré zariadenia sa vôbec môžu pripojiť k UMS. Pozrite si časť [Bezpečnosť a súkromie](/configuration/security-and-privacy).
 
-Leave it **on** if your players browse and play for themselves, or if you need the per-user
-separation. This is the default.
+Overovanie ponechajte **zapnuté**, ak vaše prehrávače samy prehliadajú aj prehrávajú obsah alebo ak potrebujete oddeliť prístup jednotlivých používateľov. Toto je predvolené nastavenie.

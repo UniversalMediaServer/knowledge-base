@@ -1,78 +1,58 @@
-# Performance
+# Výkon
 
-The defaults are chosen to be safe on modest hardware. On a machine with a large library and cores
-to spare, a few settings are worth revisiting — and one of them matters more than the rest.
+Predvolené hodnoty sú zvolené tak, aby bezpečne fungovali aj na menej výkonnom hardvéri. Na počítači s veľkou knižnicou a dostatkom voľných jadier sa oplatí prehodnotiť niekoľko nastavení. Jedno z nich má väčší vplyv než ostatné.
 
-Change one thing at a time and watch the result. Every setting here trades one resource for another,
-so a value that helps one installation can hurt the next.
+Meňte vždy iba jednu vec a sledujte výsledok. Každé z týchto nastavení mení využívanie jedného zdroja na úkor druhého. Hodnota, ktorá jednej inštalácii pomôže, môže inej uškodiť.
 
-## Reading the library in parallel
+## Súbežné načítavanie knižnice
 
-Before UMS can present a file, it has to work out what it is: read the metadata, find the artwork,
-determine what the requesting device needs. This is the single biggest factor in how long a scan
-takes and how quickly a large folder opens, and it is done by a pool of worker threads.
+Skôr než UMS súbor sprístupní, musí zistiť, o aký súbor ide: načítať metadáta, nájsť obrázky a určiť požiadavky zariadenia, ktoré oň žiada. Táto práca má najväčší vplyv na dĺžku skenovania a rýchlosť otvárania veľkých priečinkov. Vykonáva ju skupina pracovných vlákien.
 
 ```
-# How many files UMS works on at once. Default 4, allowed 1 to 64.
+# Koľko súborov UMS spracúva naraz. Predvolene 4, povolený rozsah 1 až 64.
 media_resolve_threads = 4
 ```
 
-The work is dominated by waiting — for the disk, for the database, occasionally for the network — so
-more threads help well beyond the number of cores you have. On a server with a large library, a
-value in the region of the core count or above is reasonable. On a small machine, or one where UMS
-shares the disk with something else, leave it alone.
+Väčšinu času sa čaká na disk, databázu a niekedy na sieť. Preto môže pomôcť aj počet vlákien výrazne vyšší než počet jadier. Na serveri s veľkou knižnicou je rozumná hodnota približne zodpovedajúca počtu jadier alebo vyššia. Na malom počítači alebo tam, kde UMS zdieľa disk s inými aplikáciami, ponechajte predvolenú hodnotu.
 
-This setting also sizes the pool of database connections, which is kept at twice the number of
-threads and never below ten. That is deliberate: worker threads need connections, and raising the
-threads without the connections to go with them would leave them queueing for one another. Because
-the two move together, there is nothing separate to adjust.
+Toto nastavenie určuje aj počet databázových pripojení. Ten sa udržiava na dvojnásobku počtu vlákien, najmenej však na desiatich. Je to zámerné: pracovné vlákna potrebujú pripojenia. Ak by sa zvýšil iba počet vlákien bez zodpovedajúceho počtu pripojení, museli by na seba čakať. Keďže sa obe hodnoty menia spoločne, pripojenia netreba nastavovať samostatne.
 
-## Database memory
+## Pamäť databázy
 
-The database keeps recently used pages in memory. How much it may use is decided automatically, and
-that is normally the right answer:
+Databáza uchováva nedávno použité dátové stránky v pamäti. Dostupné množstvo pamäte sa určuje automaticky, čo je zvyčajne najvhodnejšie:
 
 ```
-# Database cache in KB. Default -1, which lets UMS decide.
+# Vyrovnávacia pamäť databázy v KB. Predvolene -1, pri čom rozhodne UMS.
 database_media_cache_size = -1
 ```
 
-Two further switches trade memory for speed. Both are off by default and both are worth a
-measurement rather than a guess:
+Dve ďalšie nastavenia umožňujú upraviť pomer medzi spotrebou pamäte a rýchlosťou. Obe sú predvolene vypnuté. Ich prínos je vhodné overiť meraním, nie odhadom:
 
 ```
-# Hold database indexes in memory.
+# Uchovávať databázové indexy v pamäti.
 database_media_use_memory_indexes = FALSE
 
-# Let the cache give memory back under pressure instead of holding it.
+# Pri nedostatku pamäte ju uvoľniť z vyrovnávacej pamäte namiesto jej zadržiavania.
 database_media_use_cache_soft = FALSE
 ```
 
-Memory indexes make lookups faster at the cost of memory that is then unavailable for anything else.
-The soft cache is the opposite trade: it releases memory when the system needs it, which keeps UMS
-out of trouble on a machine that is short of memory, at the price of having to read those pages
-again afterwards.
+Indexy v pamäti zrýchľujú vyhľadávanie, ale zaberajú pamäť, ktorá potom nie je dostupná na iné účely.
+Uvoľniteľná vyrovnávacia pamäť predstavuje opačný kompromis: keď systém potrebuje pamäť, uvoľní ju. To pomáha UMS na počítači s nedostatkom pamäte, no neskôr musí príslušné dátové stránky načítať znova.
 
-## Logging
+## Zapisovanie protokolov
 
-By default UMS writes each log line out as it happens. Buffering makes logging cheaper:
+UMS predvolene zapisuje každý riadok protokolu ihneď po jeho vzniku. Ukladanie do vyrovnávacej pamäte znižuje náročnosť zápisu:
 
 ```
-# Collect log lines before writing them out. Off by default.
+# Pred zápisom zhromažďovať riadky protokolu vo vyrovnávacej pamäti. Predvolene vypnuté.
 logging_buffered = FALSE
 ```
 
-The catch shows up exactly when you need the log most. If UMS is killed or crashes, whatever is
-still in the buffer is lost, so the log can stop short of the event you are investigating — and an
-abruptly ending log then looks like a freeze that never happened. Leave buffering off while chasing
-a problem.
+Nevýhoda sa prejaví práve vtedy, keď protokol najviac potrebujete. Ak je UMS násilne ukončený alebo zlyhá, obsah zostávajúci vo vyrovnávacej pamäti sa stratí. Protokol tak môže končiť ešte pred udalosťou, ktorú skúmate, a jeho náhly koniec môže vyzerať ako zamrznutie, ku ktorému nedošlo. Pri hľadaní príčiny problému ponechajte ukladanie protokolu do vyrovnávacej pamäte vypnuté.
 
-## What to measure
+## Čo merať
 
-Two numbers tell you whether a change helped:
+Či zmena pomohla, zistíte z dvoch údajov:
 
-- How long a full scan of your library takes. It is in the log, as a line reporting the media scan
-  completed and the number of seconds it needed.
-- How long it takes to open your largest folder in a control point, once after a restart and once
-  again straight afterwards. The first time includes the work of building the folder, the second
-  does not, and the difference is what these settings act on.
+- Ako dlho trvá úplné skenovanie knižnice. Tento údaj nájdete v protokole na riadku, ktorý oznamuje dokončenie skenovania médií a počet potrebných sekúnd.
+- Ako dlho trvá otvorenie najväčšieho priečinka v ovládacom bode: raz po reštarte a druhýkrát hneď po prvom otvorení. Prvý čas zahŕňa aj zostavenie obsahu priečinka, druhý už nie. Práve tento rozdiel uvedené nastavenia ovplyvňujú.

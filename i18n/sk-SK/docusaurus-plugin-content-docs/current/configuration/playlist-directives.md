@@ -1,15 +1,12 @@
-# Playlist Directives
+# Direktívy zoznamov skladieb
 
-A playlist entry is just an address. That is enough for a file on disk, where UMS can read the tags
-and find the cover next to it, but not for an internet radio station: there is no file to read, so
-artwork, rating and other details have nowhere to live.
+Položka zoznamu skladieb obsahuje iba adresu. Pri súbore na disku to stačí, pretože UMS z neho môže načítať značky a nájsť vedľa neho obal. Pri internetovej rozhlasovej stanici však žiadny súbor na načítanie nie je, a preto obrázok, hodnotenie a ďalšie údaje nemajú prirodzené miesto na uloženie.
 
-Directives fill that gap. They are comment lines that carry the missing information along with the
-entry, inside the playlist file itself.
+Tento nedostatok riešia direktívy. Sú to riadky komentárov, ktoré uchovávajú chýbajúce informácie spolu s položkou priamo v súbore zoznamu skladieb.
 
-## How a directive is written
+## Ako sa zapisuje direktíva
 
-Put the directive **directly above** the entry it belongs to, the same way `#EXTINF:` works:
+Direktívu umiestnite **priamo nad** položku, ku ktorej patrí, rovnako ako pri `#EXTINF:`:
 
 ```text
 #EXTM3U
@@ -23,34 +20,30 @@ http://stream.example.com/jazz.mp3
 http://stream.example.com/rock.mp3
 ```
 
-The rules are the same for all of them:
+Pre všetky platia rovnaké pravidlá:
 
-- A directive applies to the **next entry only**. Several directives can precede the same entry, as
-  above, and each entry needs its own lines.
-- Only `.m3u` and `.m3u8` playlists. Other playlist formats have no place for them.
-- Capitalisation of the directive name does not matter: `#EXTIMG:` and `#extimg:` both work.
-- Any other comment line is left alone, so your own notes in the file are safe.
+- Direktíva platí **iba pre nasledujúcu položku**. Pred jednou položkou môže byť viac direktív, ako v príklade vyššie. Každá položka potrebuje vlastné riadky.
+- Podporované sú iba zoznamy skladieb `.m3u` a `.m3u8`. Iné formáty zoznamov skladieb pre ne nemajú miesto.
+- Na veľkosti písmen v názve direktívy nezáleží: funguje `#EXTIMG:` aj `#extimg:`.
+- Ostatné riadky komentárov zostanú bez zmeny, takže vlastné poznámky v súbore sa zachovajú.
 
-## The directives
+## Prehľad direktív
 
-| Directive             | Applies to         | Purpose                                               |
-| --------------------- | ------------------ | ----------------------------------------------------- |
-| `#EXTIMG:`            | the next entry     | Artwork for an entry that has no file to take it from |
-| `#EXTRATING:`         | the next entry     | Star rating of that entry                             |
-| `#EXTICYORDER:`       | the next entry     | How to read the live title of a radio station         |
-| `#RADIOBROWSERUUID:`  | the next entry     | Identifies a station in the RadioBrowser directory    |
-| `#EXTPLAYLISTRATING:` | the whole playlist | Star rating of the playlist itself                    |
+| Direktíva             | Platí pre            | Účel                                                                   |
+| --------------------- | -------------------- | ---------------------------------------------------------------------- |
+| `#EXTIMG:`            | nasledujúcu položku  | Obrázok položky, ktorá nemá vlastný súbor, z ktorého by sa dal načítať |
+| `#EXTRATING:`         | nasledujúcu položku  | Hodnotenie danej položky hviezdičkami                                  |
+| `#EXTICYORDER:`       | nasledujúcu položku  | Spôsob čítania názvu práve prehrávanej skladby rozhlasovej stanice     |
+| `#RADIOBROWSERUUID:`  | nasledujúcu položku  | Identifikácia stanice v adresári RadioBrowser                          |
+| `#EXTPLAYLISTRATING:` | celý zoznam skladieb | Hodnotenie samotného zoznamu skladieb hviezdičkami                     |
 
-### Artwork
+### Obrázky
 
-`#EXTIMG:` takes an absolute address of a picture, which UMS downloads once and then uses for that
-entry. See [How to add artwork](/guides/how-to-add-artwork) for the details and the accepted
-forms.
+`#EXTIMG:` obsahuje absolútnu adresu obrázka. UMS ho raz stiahne a potom používa pre danú položku. Podrobnosti a podporované formy zápisu nájdete v časti [Ako pridať obrázky](/guides/how-to-add-artwork).
 
-### Ratings
+### Hodnotenia
 
-`#EXTRATING:` and `#EXTPLAYLISTRATING:` take a whole number from **0 to 5**. The first rates the
-entry that follows it, the second rates the playlist as a whole and can stand anywhere in the file.
+`#EXTRATING:` a `#EXTPLAYLISTRATING:` prijímajú celé číslo od **0 do 5**. Prvá direktíva hodnotí nasledujúcu položku. Druhá hodnotí celý zoznam skladieb a môže byť kdekoľvek v súbore.
 
 ```text
 #EXTPLAYLISTRATING:5
@@ -60,33 +53,20 @@ entry that follows it, the second rates the playlist as a whole and can stand an
 http://stream.example.com/jazz.mp3
 ```
 
-A rating in the file is the **starting value**, not a running record: UMS applies it when the entry
-is not rated yet and leaves an existing rating alone. So editing the file changes nothing for
-something you have already rated in your control point — rate it there instead, and UMS updates the
-line for you.
+Hodnotenie v súbore je **počiatočná hodnota**, nie priebežne čítaný záznam: UMS ho použije iba pri položke, ktorá ešte nemá hodnotenie. Existujúce hodnotenie ponechá bez zmeny. Úprava súboru preto nezmení hodnotenie položky, ktorú ste už ohodnotili v ovládacom bode. Zmeňte ho tam a UMS príslušný riadok upraví za vás.
 
-For a file on disk this is a convenience, because the rating is stored in the database and can also
-be written into the file's tags. For a radio station it is the only durable home the rating has: it
-is what lets the rating survive a rebuilt database and travel with the playlist when you copy it.
+Pri súbore na disku je to praktický doplnok, pretože hodnotenie je uložené v databáze a možno ho zapísať aj do značiek súboru. Pri rozhlasovej stanici je to jediné trvalé úložisko hodnotenia. Vďaka nemu sa hodnotenie zachová po opätovnom vytvorení databázy a prenesie sa spolu so skopírovaným zoznamom skladieb.
 
-### Radio station identity
+### Identifikácia rozhlasovej stanice
 
-`#RADIOBROWSERUUID:` holds the identifier a station has in the RadioBrowser directory. With it, UMS
-can look up additional details about the station instead of showing only what the stream itself
-reveals. Control points that offer a station picker write this line themselves when you pick a
-station, so there is rarely a reason to type it by hand.
+`#RADIOBROWSERUUID:` uchováva identifikátor stanice v adresári RadioBrowser. UMS vďaka nemu môže vyhľadať ďalšie informácie o stanici namiesto zobrazovania iba tých údajov, ktoré poskytuje samotný prúd. Ovládacie body s výberom staníc zapisujú tento riadok automaticky pri výbere stanice, takže ho zvyčajne netreba zadávať ručne.
 
-### Title order
+### Poradie údajov v názve
 
-`#EXTICYORDER:` controls whether a station's announcement is read as _Artist - Title_ or as
-_Title - Station_. See [Internet radio and live titles](./internet-radio).
+`#EXTICYORDER:` určuje, či sa oznámenie stanice číta ako _Interpret - Názov skladby_ alebo _Názov skladby - Stanica_. Pozrite si časť [Internetové rádio a názvy práve prehrávaných skladieb](./internet-radio).
 
-## Directives UMS writes itself
+## Direktívy, ktoré UMS zapisuje automaticky
 
-You do not have to edit playlists by hand. When your control point sets artwork, a rating or the
-title order, UMS writes the corresponding line into the playlist file. Each directive is replaced
-individually, so setting a cover never disturbs a rating and the other way round, and removing a
-value removes just its line.
+Zoznamy skladieb nemusíte upravovať ručne. Keď ovládací bod nastaví obrázok, hodnotenie alebo poradie údajov v názve, UMS zapíše príslušný riadok do súboru zoznamu skladieb. Každá direktíva sa nahrádza samostatne, takže zmena obalu neovplyvní hodnotenie a naopak. Odstránením hodnoty sa odstráni iba jej riadok.
 
-Artwork is only written after the picture has actually been loaded, so a broken address leaves the
-file untouched instead of storing a dead link.
+Údaj o obrázku sa zapíše až po jeho úspešnom načítaní. Pri nefunkčnej adrese tak súbor zostane bez zmeny a neuloží sa doň neplatný odkaz.

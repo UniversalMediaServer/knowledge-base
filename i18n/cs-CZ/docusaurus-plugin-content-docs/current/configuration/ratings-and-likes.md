@@ -1,66 +1,46 @@
-# Ratings and Likes
+# Hodnocení a oblíbené položky
 
-UMS can remember how you rate your music, from zero to five stars, and control points that offer
-rating buttons can set and change those values while you listen.
+UMS si dokáže zapamatovat vaše hodnocení hudby od nuly do pěti hvězdiček. Řídicí body, které nabízejí tlačítka hodnocení, mohou tyto hodnoty nastavovat a měnit během poslechu.
 
-Likes are not a separate mechanism. A **like is a rating of five stars**, a **dislike is zero**. If
-your control point shows a heart instead of stars, it is writing the same value into the same place,
-which is why the two never contradict each other.
+Označení „líbí se mi“ není samostatný mechanismus. **„Líbí se mi“ odpovídá pěti hvězdičkám**, **„nelíbí se mi“ odpovídá nule**. Pokud řídicí bod zobrazuje místo hvězdiček srdíčko, zapisuje stejnou hodnotu na stejné místo. Proto si tyto dva způsoby hodnocení nikdy neodporují.
 
-## Where a rating is kept
+## Kde se hodnocení ukládá
 
-The rating lives in the UMS database, attached to the item rather than to the file. That has two
-consequences worth knowing:
+Hodnocení je uloženo v databázi UMS a je přiřazeno k položce, nikoli k souboru. To má dva důležité důsledky:
 
-- It works for things that have nowhere to store a rating of their own — an internet radio station,
-  for instance, or an audio format whose tags have no rating field.
-- It is independent of the file, so re-tagging your collection with another tool does not overwrite
-  what you rated in UMS.
+- Funguje i pro položky, které nemají kam vlastní hodnocení uložit — například internetové rozhlasové stanice nebo zvukové formáty, jejichž značky neobsahují pole pro hodnocení.
+- Hodnocení je nezávislé na souboru, takže změna značek vaší sbírky jiným nástrojem nepřepíše hodnocení nastavené v UMS.
 
-If you would rather have the rating in the files as well, so that other programs can see it, UMS can
-write it into the tag when you rate something:
+Pokud chcete mít hodnocení také v souborech, aby je mohly číst jiné programy, může je UMS při hodnocení zapsat do značky souboru:
 
 ```
-# Also write the rating into the file's tag. Off by default.
+# Zapisovat hodnocení také do značky souboru. Ve výchozím nastavení vypnuto.
 audio_update_rating_tag = TRUE
 ```
 
-This only applies to files that can hold a rating, and only from the moment you turn it on — it does
-not go back and write out ratings you set earlier.
+To platí pouze pro soubory, které hodnocení podporují, a až od okamžiku zapnutí. Dříve zadaná hodnocení se zpětně nezapíší.
 
-A rating that has to survive a rebuilt database, or travel with a playlist you copy elsewhere,
-belongs in the playlist file instead. See [Playlist directives](./playlist-directives).
+Hodnocení, které se má zachovat při opětovném vytvoření databáze nebo při kopírování seznamu skladeb jinam, patří do souboru seznamu skladeb. Viz [Direktivy seznamů skladeb](./playlist-directives).
 
-## The My Albums folder
+## Složka Moje alba
 
-Albums you have liked are collected in a folder called **My Albums**. It is filled automatically:
-like an album and it appears, remove the like and it is gone again.
+Alba označená jako oblíbená se shromažďují ve složce **Moje alba**. Její obsah se vytváří automaticky: když u alba označíte „líbí se mi“, objeví se v ní; po odebrání označení opět zmizí.
 
-By default the folder sits inside the Media Library with the other audio folders. If you reach for
-it often, you can have it shown at the top level instead:
+Ve výchozím nastavení je složka umístěna v knihovně médií spolu s ostatními složkami zvuku. Pokud ji používáte často, můžete ji místo toho zobrazit na nejvyšší úrovni:
 
 ```
-# Show My Albums in the root folder. Off by default.
+# Zobrazit Moje alba v kořenové složce. Ve výchozím nastavení vypnuto.
 audio_likes_visible_root = TRUE
 ```
 
-## Searching by rating
+## Vyhledávání podle hodnocení
 
-UMS announces the rating as one of the properties it can be searched on, so a control point can ask
-for it the same way it asks for a title or an artist. A request for everything rated five stars
-finds what the My Albums folder shows; any other value works as well.
+UMS uvádí hodnocení mezi vlastnostmi, podle kterých lze vyhledávat, takže se na ně může řídicí bod dotazovat stejně jako na název nebo interpreta. Dotaz na vše s hodnocením pěti hvězdiček najde obsah zobrazovaný ve složce Moje alba; fungují i ostatní hodnoty.
 
-The search matches an **exact** value. There is no way to ask for "four stars or better" in one
-request — a control point that offers such a filter has to ask for each value separately and put the
-answers together itself.
+Vyhledávání hledá **přesnou** hodnotu. Jedním dotazem nelze požádat o „čtyři hvězdičky nebo více“. Řídicí bod, který takový filtr nabízí, se musí na každou hodnotu zeptat zvlášť a výsledky sám spojit.
 
-The ratings are read from the database, so the search also finds items that carry no rating in their
-file, such as radio stations.
+Hodnocení se čtou z databáze, takže vyhledávání najde i položky, které nemají hodnocení uložené v souboru, například rozhlasové stanice.
 
-## Backing them up
+## Zálohování hodnocení
 
-Because ratings and likes live in the database, they are worth keeping a copy of before anything
-drastic happens to it. UMS can hand them out and take them back in, which also makes it possible to
-move them to another installation. The
-[UMS UPnP service](./ums-extended-service) lists the actions a control point uses for
-that.
+Protože hodnocení i označení oblíbených položek jsou uloženy v databázi, vyplatí se je zálohovat před jakýmkoli zásadním zásahem do databáze. UMS je umí exportovat i znovu importovat, což umožňuje také jejich přenesení do jiné instalace. Akce, které k tomu řídicí bod používá, jsou uvedeny v části [Služba UPnP v UMS](./ums-extended-service).

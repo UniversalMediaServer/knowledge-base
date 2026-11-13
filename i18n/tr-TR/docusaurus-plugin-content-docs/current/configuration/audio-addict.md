@@ -34,25 +34,21 @@ DI.fm ağı, canlı istasyonların yanı sıra bir **Olaylar** klasörü de suna
 Arka kataloğu olan programlar, eski bölümleri tutan kendilerine ait bir klasöre sahiptir. Bazı programların yüzlercesi bulunur, bu yüzden klasör, her biri içerdiği bölüm numaraları ve tarihlerle etiketlenmiş daha küçük gruplara bölünmüştür.
 
 ```
-# How many episodes one group holds before it is split. Default 20, minimum 1.
+# Bir grubun bölünmeden önce elinde tuttuğu bölüm sayısı. Varsayılan 20, en az 1.
 audio_addict_episodes_per_container = 20
 ```
 
-Building this list means asking the service for the events and for each show's episodes, which takes
-a moment. UMS remembers the answer so that browsing and starting playback do not each pay for it
-again:
+Bu listeyi oluşturmak, biraz zaman alan, hizmetten etkinlikleri ve her programın bölümlerini istemek anlamına gelir. UMS yanıtı hatırlar böylece gözatma ve oynatmayı başlatmadan tekrar ücret ödenmez:
 
 ```
-# How long the show and episode lists are reused, in minutes.
-# Default 60. Set to 0 to ask the service every time.
+# Program ve bölüm listelerinin dakika olarak ne kadar süreyle yeniden kullanıldığı.
+# Varsayılan 60. Hizmete her seferinde sormak için 0’a ayarlayın.
 audio_addict_tree_cache_ttl_minutes = 60
 ```
 
-A longer time makes browsing snappier, a shorter one picks up newly published episodes sooner. The
-addresses UMS receives stay valid far longer than the default hour, so there is no need to keep this
-value small.
+Daha uzun bir süre gözatmayı daha hızlı hale getirir, daha kısa bir süre yeni yayınlanan bölümleri daha çabuk alır. UMS’nin aldığı adresler varsayılan saatten çok daha uzun süre geçerli kalır, bu yüzden bu değeri küçük tutmaya gerek yoktur.
 
-## Live titles
+## Canlı başlıklar
 
 Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
 service instead and delivers the result to your player, so you still see what is playing. This is

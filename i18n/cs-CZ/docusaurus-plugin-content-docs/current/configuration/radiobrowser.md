@@ -1,45 +1,35 @@
 # RadioBrowser
 
-Adding an internet radio station to a playlist normally means hunting down its stream address
-somewhere on the web and pasting it into a file. UMS can take that step off your hands: it is
-connected to **RadioBrowser**, a community-maintained directory of internet radio stations, and can
-search it and add a station for you.
+Přidání internetové rozhlasové stanice do seznamu skladeb obvykle znamená vyhledat na webu adresu jejího streamu a vložit ji do souboru. UMS to může udělat za vás: je propojený s **RadioBrowserem**, komunitně spravovaným adresářem internetových rozhlasových stanic, ve kterém může stanici vyhledat a přidat ji do seznamu.
 
-There is nothing to configure. The directory is used on demand, and only when you ask for it.
+Není třeba nic nastavovat. Adresář se používá pouze na vyžádání.
 
-## Finding a station
+## Vyhledání stanice
 
-If your control point offers a station search, it is asking UMS, and UMS is asking RadioBrowser.
-Stations can be narrowed down by
+Pokud řídicí bod nabízí vyhledávání stanic, obrací se na UMS, který se následně dotazuje RadioBrowseru.
+Výběr stanic lze omezit podle
 
-- name
-- country
-- language
-- tag, such as a genre or a theme
+- názvu
+- země
+- jazyka
+- štítku, například žánru nebo tématu
 
-Which of these your control point lets you use, and how it presents them, is up to the control
-point. UMS also supplies the possible values for the country, language and tag filters, so such a
-search box can offer them as a list instead of making you type them.
+Které z těchto možností můžete využít a jak se zobrazují, záleží na řídicím bodu. UMS poskytuje také možné hodnoty pro filtry země, jazyka a štítků, takže je vyhledávací pole může nabídnout v seznamu a nemusíte je psát ručně.
 
-Long result lists are fetched in portions, so a broad search does not have to be transferred in one
-go.
+Dlouhé seznamy výsledků se načítají po částech, takže výsledky širokého vyhledávání není nutné přenést najednou.
 
-## Adding a station
+## Přidání stanice
 
-When you pick a station, UMS writes a complete entry into the playlist you chose — not just the
-address:
+Po výběru stanice UMS zapíše do zvoleného seznamu skladeb úplnou položku, která obsahuje více než jen adresu:
 
-- the **stream address**
-- the **station name**, or a title of your own if your control point lets you enter one
-- the **station logo**, so the entry has a picture instead of a default icon
-- the **station identifier** from the directory
+- **adresu streamu**
+- **název stanice**, případně vlastní název, pokud jej řídicí bod umožňuje zadat
+- **logo stanice**, aby se u položky zobrazoval obrázek místo výchozí ikony
+- **identifikátor stanice** z adresáře
 
-The last one is the interesting part. It stays in the playlist file as a
-[`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
-the directory entry it came from. UMS uses that connection to fill in details the stream itself does
-not reveal, such as the genre and the bitrate.
+Právě poslední údaj je zajímavý. Zůstává v souboru seznamu skladeb jako [direktiva `#RADIOBROWSERUUID:`](./playlist-directives), takže položka zůstává propojena se svým původním záznamem v adresáři. UMS toto propojení využívá k doplnění údajů, které samotný stream neposkytuje, například žánru a datového toku.
 
-The result is a playlist file that still reads like a plain playlist and works in any other player:
+Výsledkem je soubor, který nadále vypadá jako obyčejný seznam skladeb a funguje i v jiných přehrávačích:
 
 ```text
 #EXTM3U
@@ -49,11 +39,8 @@ The result is a playlist file that still reads like a plain playlist and works i
 http://stream.example.com/jazz.mp3
 ```
 
-You can write such an entry by hand as well, if you know the station's identifier. Leaving the
-directive out costs you only the extra details; the station itself plays either way.
+Pokud znáte identifikátor stanice, můžete takovou položku zapsat i ručně. Vynecháním direktivy přijdete pouze o doplňující údaje; stanice se bude přehrávat i bez ní.
 
-## Afterwards
+## Po přidání
 
-The station behaves like any other entry in the playlist from then on. You can rate it, replace its
-picture, and correct how its live titles are read; see
-[Internet radio and live titles](./internet-radio).
+Stanice se pak chová jako jakákoli jiná položka seznamu skladeb. Můžete ji ohodnotit, vyměnit její obrázek a opravit rozpoznávání názvů právě přehrávaných skladeb; viz [Internetová rádia a názvy právě přehrávaných skladeb](./internet-radio).

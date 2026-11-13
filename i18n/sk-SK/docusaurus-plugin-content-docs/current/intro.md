@@ -3,12 +3,12 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# Úvod
 
-This website contains the official support documentation for using Universal Media Server.
+Táto webová stránka obsahuje oficiálnu dokumentáciu na používanie Universal Media Server.
 
-If you are not a current user, and you are looking to download it or decide whether to use it, you will probably find [our main website](https://www.universalmediaserver.com) more useful.
+Ak UMS ešte nepoužívate a chcete si ho stiahnuť alebo sa rozhodnúť, či ho používať, užitočnejšia pre vás bude pravdepodobne [naša hlavná webová stránka](https://www.universalmediaserver.com).
 
-It is split into 3 main sections: Configuration, Guides, and Installation.
+Dokumentácia je rozdelená do troch hlavných častí: Nastavenia, Návody a Inštalácia.
 
-If you came here looking for specific information and didn't find it, please let us know on GitHub so we can add it.
+Ak ste tu hľadali konkrétnu informáciu a nenašli ste ju, dajte nám vedieť na GitHube, aby sme ju mohli doplniť.

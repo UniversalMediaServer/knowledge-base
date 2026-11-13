@@ -1,29 +1,29 @@
-# How to improve support for my device
+# Ako zlepšiť podporu môjho zariadenia
 
-If your device is failing to do anything, like browsing folders or playing a file, it may be possible for you to fix it by changing settings in the renderer config file. Different devices/renderers/clients communicate with servers like UMS in different ways, so the config file tells UMS how to speak the same language as your device.
+Ak na vašom zariadení nefunguje niektorá činnosť, napríklad prehliadanie priečinkov alebo prehrávanie súboru, možno ju opraviť zmenou nastavení v konfiguračnom súbore prehrávača. Rôzne zariadenia, prehrávače a klienti komunikujú so servermi, ako je UMS, rôznymi spôsobmi. Konfiguračný súbor preto určuje, ako má UMS komunikovať s vaším zariadením.
 
-Every configuration profile serves two purposes:
-- Allow UMS to recognize a specific renderer when it tries to connect
-- Define the possibilities of that renderer
+Každý konfiguračný profil má dva účely:
+- Umožniť UMS rozpoznať konkrétny prehrávač pri pokuse o pripojenie
+- Určiť možnosti daného prehrávača
 
-We have a default renderer config file that contains documentation on all of our renderer settings. See the latest version at https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
+Predvolený konfiguračný súbor prehrávača obsahuje dokumentáciu všetkých dostupných nastavení prehrávačov. Najnovšiu verziu nájdete na https://github.com/UniversalMediaServer/UniversalMediaServer/blob/master/src/main/external-resources/renderers/DefaultRenderer.conf
 
-## Adding support for an unrecognized device
+## Pridanie podpory nerozpoznaného zariadenia
 
-When UMS does not recognize your device, it means none of the renderer configuration profiles match your device. The result is that UMS displays an `Unknown Renderer`, and since it does not know the possibilities of your renderer, it cannot provide optimized output for your device.
+Ak UMS vaše zariadenie nerozpozná, znamená to, že mu nezodpovedá žiadny konfiguračný profil prehrávača. UMS preto zobrazí `Unknown Renderer`. Keďže nepozná možnosti prehrávača, nemôže pre vaše zariadenie pripraviť optimalizovaný výstup.
 
-The solution is to try creating your own renderer configuration file.
-1. Make a copy of the .conf file that is closest to your device. For example, if your Samsung TV is not recognized, one of the Samsung TV configs might be a good place to start from.
+Riešením je skúsiť vytvoriť vlastný konfiguračný súbor prehrávača.
+1. Vytvorte kópiu súboru .conf, ktorý najviac zodpovedá vášmu zariadeniu. Ak napríklad UMS nerozpozná váš televízor Samsung, vhodným základom môže byť niektorá z konfigurácií televízorov Samsung.
 
-1. Go to the `Logs` tab in UMS and look for the text `Media renderer was not recognized. Possible identifying HTTP headers:`. That information is what is needed to make UMS recognize your device.
+1. V UMS otvorte kartu Protokoly (`Logs`) a vyhľadajte text `Media renderer was not recognized. Possible identifying HTTP headers:`. Tieto informácie sú potrebné na to, aby UMS rozpoznal vaše zariadenie.
 
-1. In your new .conf file, look for the line that defines `UserAgentSearch` and/or `UpnpDetailsSearch` and replace the values with that identifying information.
+1. V novom súbore .conf nájdite riadok s nastavením `UserAgentSearch` alebo `UpnpDetailsSearch`, prípadne oba, a nahraďte ich hodnoty týmito identifikačnými údajmi.
 
-1. Browse and play some media on your device. Take note of which media had a problem playing. Now you can move on to the next section to improve support for your device.
+1. Na zariadení prehliadajte a prehrajte niekoľko médií. Poznačte si, pri ktorých médiách sa vyskytol problém s prehrávaním. Potom pokračujte ďalšou časťou a zlepšite podporu svojho zariadenia.
 
-## Improving support for a device
+## Zlepšenie podpory zariadenia
 
-1. If any of your media has a problem playing, the renderer config should be modified until it works. Refer to [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf) for the full list of options. The most common ones to change are:
+1. Ak sa niektoré médiá neprehrávajú správne, konfiguráciu prehrávača treba upravovať, kým prehrávanie nezačne fungovať. Úplný zoznam možností nájdete v súbore [DefaultRenderer.conf](https://raw.github.com/UniversalMediaServer/UniversalMediaServer/master/src/main/external-resources/renderers/DefaultRenderer.conf). Najčastejšie sa menia tieto nastavenia:
     ```
     Video
     Audio
@@ -33,10 +33,10 @@ The solution is to try creating your own renderer configuration file.
     SeekByTime
     Supported
     ```
-    Make sure you do not have `MediaInfo = false` in your new config, because that will stop the `Supported` lines from working.
+    Skontrolujte, že nová konfigurácia neobsahuje `MediaInfo = false`, pretože toto nastavenie vyradí riadky `Supported` z činnosti.
 
-1. To make sure transcoding is working on your device, play a file from the `#--TRANSCODE--#` folder. Within that folder, play one of the `FFmpeg` entries. If it plays, then transcoding is working.
+1. Ak chcete overiť, že na zariadení funguje prekódovanie, prehrajte súbor z priečinka `#--TRANSCODE--#`. V tomto priečinku spustite niektorú z položiek `FFmpeg`. Ak sa prehráva, prekódovanie funguje.
 
-1. The `Supported` lines need to be populated to tell UMS which files your device supports natively. It can be a good idea to find the manual for your device online and use that to help populate those lines.
+1. Riadky `Supported` treba vyplniť tak, aby UMS vedel, ktoré súbory vaše zariadenie podporuje priamo. Pri vypĺňaní týchto riadkov môže pomôcť návod k zariadeniu, ktorý nájdete na internete.
 
-1. As well as that, you can have a look at other renderer configs inside the "renderers" folder in your installation directory, to see what they are doing. Sometimes you will need help, which we can give you on our forum, and please remember to tell us about the improvement when you make it, so that other users with your device can benefit from the fix. We will credit you in our release announcement and changelog.
+1. Môžete si tiež pozrieť konfigurácie iných prehrávačov v priečinku „renderers“ v inštalačnom adresári a zistiť, ako sú nastavené. Ak budete potrebovať pomoc, poradíme vám na našom fóre. Keď podporu zlepšíte, nezabudnite nám dať vedieť, aby opravu mohli využiť aj ostatní používatelia rovnakého zariadenia. Vaše meno uvedieme v oznámení o vydaní aj v zozname zmien.

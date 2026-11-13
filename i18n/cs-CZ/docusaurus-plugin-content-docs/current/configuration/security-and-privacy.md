@@ -1,47 +1,47 @@
-# Bezpečnost a soukromí
+# Zabezpečení a soukromí
 
 ## Úvod
 
-UMS slouží pro média dvěma hlavními způsoby - přes DLNA/UPnP  prostřednictvím aplikací přehrávače médií, a přes HTTP(S) prostřednictvím webových prohlížečů.
+UMS poskytuje média dvěma hlavními způsoby: přes DLNA/UPnP aplikacím pro přehrávání médií a přes HTTP(S) webovým prohlížečům.
 
-Webové prohlížeče mají snadnou kontrolu zabezpečení a soukromí tím, že mají uživatelské účty s přihlašovacími údaji.
+Při přístupu přes webový prohlížeč lze zabezpečení a soukromí snadno řídit pomocí uživatelských účtů s přihlášením.
 
-Aplikace přehrávače médií obecně nepodporují koncepci "uživatele", takže obvykle každé zařízení získává stejný obsah. To nemusí být to, co chcete. Například pokud máte dvě složky kids_safe a kids_unsafe můžete chtít, aby přehrávače v místnosti pro děti měly přístup pouze do složky kids_safe . Další společnou situací je, že jste ve stejné síti jako lidé, který nechcete dát přístup ke svým médiím, takže chcete zcela zablokovat některé přehrávače.
+Aplikace pro přehrávání médií obvykle nepodporují pojem „uživatel“, takže všechna zařízení zpravidla získají stejný obsah. To nemusí být to, co chcete. Například pokud máte dvě složky kids_safe a kids_unsafe, můžete chtít omezit přehrávače v dětském pokoji tak, aby měly přístup pouze do složky kids_safe. Další běžná situace nastává, když sdílíte síť s lidmi, kterým nechcete zpřístupnit svá média, například se spolubydlícími, a proto chcete některé přehrávače úplně zablokovat.
 
-UMS poskytuje řadu metod kontroly přístupu v těchto situacích.
+UMS nabízí několik způsobů, jak v těchto situacích řídit přístup.
 
 ## Povolit nebo blokovat přehrávače nebo síťová zařízení ve výchozím nastavení
-Můžete si vybrat výchozí strategii pro přehrávače a síťová zařízení. Ve výchozím nastavení můžete povolit nebo zamítnout denylisty a povolené seznamy pro úplné ovládání.
+Můžete si vybrat výchozí strategii pro přehrávače a síťová zařízení. Jako výchozí chování můžete zvolit povolení nebo blokování přístupu a doplnit je seznamem zakázaných nebo povolených zařízení, abyste měli přístup plně pod kontrolou.
 
-To je užitečné pro sdílené životní situace nebo místní sítě s nízkou důvěrou. Je také užitečný pro ty z vás, kteří používáte adaptéry powerline pro vaši síť, protože to může mít za následek nežádoucí přístup od sousedů.
+To se hodí ve sdílených domácnostech nebo v rozsáhlých místních sítích či sítích s nízkou mírou důvěry. Je to užitečné také při použití síťových adaptérů powerline, protože přes elektrické rozvody mohou někdy získat nežádoucí přístup i sousedé.
 
-![Příklad povolených předvoleb sítě](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
+![Příklad nastavení výchozího povolení síťových zařízení](@site/docs/img/whats-new-in-v14-network-allowblock-preference.png)
 
-![Příklad povolených předvoleb sítě](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
+![Příklad nastavení výchozího povolení přehrávačů](@site/docs/img/whats-new-in-v14-renderer-allow-preference.png)
 
 ## Blokovat/povolit přehrávače a síťová zařízení
 
-Když jste se rozhodli, zda ve výchozím nastavení povolit nebo blokovat neznámé přehrávače, můžete sestavit seznam zakázaných nebo je povolit z domovské obrazovky v nastavení.
+Jakmile zvolíte, zda se mají neznámé přehrávače ve výchozím nastavení povolit, nebo blokovat, můžete na domovské obrazovce v části nastavení sestavit seznam zakázaných či povolených zařízení.
 
 ![Příklad blokování přehrávače](@site/docs/img/whats-new-in-v14-block-renderer.png)
 
-## Propojit osobu s přehrávačem
+## Propojit osobu s přehrávačem {#link-person-to-renderer}
 
-Uživatelské účty můžete propojit s přehrávačem/zařízeními, což vám umožní nezávislé sledování přehrávání.
+Uživatelské účty můžete propojit s přehrávači či zařízeními, a tím pro ně oddělit přístup k obsahu i sledování přehrávání.
 
-Například pokud máte TV v obývacím pokoji a další ve své ložnici, TV v obývacím pokoji nepotřebuje být ovlivněna tím co sledujete v ložnici.
+Pokud máte například televizor v obývacím pokoji a další v ložnici, nemusí obsah sledovaný v ložnici ovlivňovat televizor v obývacím pokoji.
 
-![Příklad jak přiřadit účet k přehrávači](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
+![Příklad přiřazení účtu k přehrávači](@site/docs/img/whats-new-in-v14-assign-account-to-renderer.png)
 
-## Omezit sdílený obsah pro určité skupiny
+## Omezení sdíleného obsahu na určité skupiny
 
-Nyní si můžete vybrat sdílení adresářů nebo online obsahu s určitými skupinami. Například pokud máte osobu (nebo zařízení přidělené osobě), která je dítětem, můžete je přiřadit ke skupině "Kids", a povolit skupině přístup do adresáře "Rodina", ale ne "Horor" nebo "Pouze pro dospělé". Nebo jim umožněte přístup k webovému kanálu Kurzgesagt, ale ne k podcastům historie.
+Můžete zvolit, že se adresáře nebo online obsah budou sdílet pouze s určitými skupinami. Například účet dítěte (nebo zařízení přiřazené tomuto účtu) můžete zařadit do skupiny „Děti“ a této skupině povolit přístup do adresáře „Rodina“, ale ne k obsahu „Horor“ nebo „Pouze pro dospělé“. Nebo jí zpřístupněte webový kanál Kurzgesagt, ale ne historické podcasty.
 
-![Příklad sdílených skupin obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
+![Příklad skupin pro sdílení obsahu](@site/docs/img/whats-new-in-v14-shared-content-group.png)
 
 ## Skrytí složek
 
-Ovládá viditelnost virtuálních složek. Tato nastavení naleznete v souboru UMS.conf. Pro skrytí některých složek při prohlížení stačí nastavit jejich hodnotu na hodnotu true, nebo je zaškrtněte v záložce Navigace/Nastavení sdílení v pokročilém režimu GUI.
+Viditelnost virtuálních složek lze nastavit. Tato nastavení naleznete v souboru UMS.conf. Chcete-li některé složky při procházení skrýt, nastavte příslušné hodnoty na true nebo je zaškrtněte na kartě Navigace/Nastavení sdílení v pokročilém režimu grafického rozhraní.
 
 ```
 hide_recently_played_folder =true
@@ -53,32 +53,32 @@ hide_media_library_folder =true
 hide_live_subtitles_folder =true
 ```
 
-Pro možnost skrýt webovou složku budete muset zrušit zaškrtnutí Povolit externí síť v záložce Obecná konfigurace v pokročilém režimu GUI nebo změnit hodnotu `external_network =' na false ve vašem UMS. conf soubor. Toto bude mít vedlejší efekt, že automatická aktualizace nebude fungovat. Změny provedené z GUI budou účinné po restartu.
+Chcete-li skrýt složku Web, zrušte zaškrtnutí možnosti Povolit externí síť na kartě Obecná konfigurace v pokročilém režimu grafického rozhraní nebo v souboru UMS.conf nastavte `external_network = false`. Vedlejším účinkem bude nefunkční automatická aktualizace. Změny provedené v grafickém rozhraní se projeví po restartu.
 
-## Pin kód
+## Kód PIN
 
-Všechny výše uvedené metody omezují přístup z různých přehrávačů. Ale pokud můžete získat přístup k přehrávači, kterému je povoleno vidět složku, tyto metody vám nepomůžou (pokud děti mají přístup k TV v obývacímu pokoji, který má přístup ke všem médiím, pak mají přístup k těmto médiím). PIN kód řeší tento problém. Umožňuje skryt složky/média za PIN kódem, který musíte zadat z přehrávače. Ve výchozím nastavení je vstup posloupností číslic (0-9) stejně jako kód bankomatu. Důrazně navrhuji, abyste použili číselné kódy, které se z přehrávače obtížně napíší. Ale pokud jste extra paranoidní, můžete přidat písmena. Funguje to následovně: Přidejte soubor s názvem UMS.code do stejného adresáře jako váš UMS. conf a do tohoto souboru přidejte regexp,kód, kde regexp je regulerní výraz stejně jako v "UMS.deny" souboru a kód je kód, který umožní přístup ke složce/médiím. Neexistuje žádná regulace délky kódu. Například:
+Všechny výše uvedené metody omezují přístup z různých přehrávačů. Pokud ale někdo získá přístup k přehrávači, který smí danou složku zobrazit, tyto metody nepomohou. Například děti s přístupem k televizoru v obývacím pokoji, který má přístup ke všem médiím, získají přístup také k těmto médiím. PIN kód řeší tento problém. Umožňuje chránit složky a média kódem PIN, který je nutné zadat přímo z přehrávače. Ve výchozím nastavení je vstup posloupností číslic (0-9) stejně jako kód bankomatu. Důrazně doporučujeme používat číselné kódy, protože jiné znaky se z přehrávače zadávají obtížně. Pokud chcete být obzvlášť opatrní, můžete přidat i písmena. Funguje to následovně: Do stejného adresáře jako UMS.conf přidejte soubor UMS.code. Do něj zapisujte dvojice regexp,code, kde regexp je regulární výraz jako v souboru UMS.deny a code je kód umožňující přístup ke složce nebo médiu. Délka kódu není omezena. Například:
 ```
 .*private.*,1234
 ```
 
-Vynutíte zadání kódu, pokud složka/média obsahuje slovo "private" a správný kód je 1234. Kód pak zůstane v platnosti 4 hodiny (pokud tento čas nezměníte).
+Tento zápis vyžádá kód u složky nebo média, jejichž název obsahuje slovo „private“. Správný kód je 1234. Kód pak zůstane v platnosti 4 hodiny (pokud tento čas nezměníte).
 
-## Vlastní konfigurace
+## Vlastní konfigurace zařízení
 
-Jakákoliv konfigurace může být také nastavena na základě jednotlivých zařízení vytvořením vlastní konfigurace zařízení pro přepsání výchozích nastavení UMS (pro úplné podrobnosti viz vytvoření vlastní konfigurace zařízení).
+Libovolnou konfigurační vlastnost lze nastavit také pro jednotlivá zařízení: vytvořte vlastní konfiguraci zařízení, která přepíše výchozí nastavení UMS. Podrobnosti najdete v části Vytvoření vlastní konfigurace zařízení.
 
-Například, přizpůsobit dětskou televizi:
+Například pro přizpůsobení dětského televizoru:
 - Klikněte na tlačítko 'Přizpůsobit toto zařízení' v pravém horním rohu vyskakovacího okna přehrávače a zadejte název konfigurace.
-- V novém konfiguračním souboru, který otevře, přidejte všechna nastavení, která si přejete přepsat televizi, např. změnit název serveru a specifikovat různé složky:
+- Do nově otevřeného konfiguračního souboru přidejte nastavení, která chcete pro tento televizor změnit, například název serveru a sdílené složky:
 ```
 #----------------------------------------------------------------------------
-# Custom Device profile
-# See DefaultRenderer.conf for descriptions of all possible renderer options
-# and UMS.conf for program options.
+# Vlastní profil zařízení
+# Popisy všech možností přehrávačů najdete v DefaultRenderer.conf
+# a možnosti programu v UMS.conf.
 
-# Options in this file override the default settings for the specific Sony Bravia EX device(s) listed below.
-# Specify devices by uuid (or address if no uuid), separated by commas if more than one.
+# Možnosti v tomto souboru přepisují výchozí nastavení níže uvedených zařízení Sony Bravia EX.
+# Zařízení určete pomocí uuid (nebo adresy, pokud uuid nemají). Více zařízení oddělte čárkami.
 
 device = uuid:7744ff6c-541f-48a8-0878-05fdebf240db
 server_name = Kid Stuff
