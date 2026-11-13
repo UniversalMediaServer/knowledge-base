@@ -10,9 +10,50 @@ Aloitimme vuonna 2012 PS3 Media Serverin haarautumana, joka oli yksi suosituimmi
 
 Se teki yksinkertaisen työnsä hyvin, mutta olemme ottaneet UMS:n uusiin suuntiin ja uusiin korkeuksiin.
 
-Tässä matkan muutamia kohokohtia:
+For an overview of the changes in the latest version, see [What's New in V16](./whats-new-in-v16)
 
 ## Edelliset versiot
+
+### v15 (2025-08-23)
+
+The 2 main goals for V15 were to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+
+A quick overview of the changes in this version is:
+
+- A **user switcher** with support for **multiple logged-in users**
+- A **mode switcher** to change between the two major areas: **Player** and **Settings**
+- **Pin code** logins
+- Dynamic **TV season metadata**
+- A file **media info** button
+- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+
+#### User switcher
+
+You can now be logged in with multiple users in a browser at the same time, and switch between them.
+
+You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+
+![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+
+#### Mode switcher
+
+The web interface has been split into two areas: Player and Settings.
+
+This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+
+![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+
+#### Pin code logins
+
+You can now enable pin code logins in the server settings.
+
+![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+
+#### Dynamic season metadata
+
+Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+
+![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### v14 (2022–12–13)
 
