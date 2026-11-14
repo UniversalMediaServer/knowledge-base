@@ -2,90 +2,90 @@
 sidebar_position: 2
 ---
 
-# What's New in v16
+# Wat is er nieuw in v16
 
-## Overview
+## Overzicht
 
-The main goals for v16 were to make it easier for people to continue watching TV series, and to improve support for Internet radio.
+De belangrijkste doelstellingen voor v16 waren het voor mensen eenvoudiger te maken om tv-series te blijven kijken en de ondersteuning van internetradio te verbeteren.
 
-A quick overview of the changes in this version is:
-- Added a **Continue Watching** folder to the Media Library.
-- Added support for **[DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists**
-- Added **[RadioBrowser](https://www.radio-browser.info/)** support for finding and adding radio stations to server side playlists.
-- Added support for **3-box configuration**
-- Added support for **liking/rating** and **updating album art** for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
-- Added support for **updating renderers** about specific files and containers that have changed
-- Increased startup performance by **~95%**, as well as server responsiveness while scanning files
-- Improved **server responsiveness** while scanning files
-- Modernized the codebase by updating **8 major dependency versions**
+Een kort overzicht van de wijzigingen in deze versie is:
+- Een map **Doorgaan met kijken** toegevoegd aan de Media Bibliotheek
+- Ondersteuning toegevoegd voor **[DI.fm (AudioAddict)](https://www.di.fm/) Gebeurtenissen en afspeellijsten**
+- Toegevoegd **[RadioBrowser](https://www.radio-browser.info/)** ondersteuning voor het vinden en toevoegen van radiostations aan afspeellijsten aan server zijde.
+- Ondersteuning toegevoegd voor **3 apparaten configuraties**
+- Ondersteuning toegevoegd voor **vind-ik-leuk/beoordelen** en **bijwerken van albumhoezen** voor alle mediatypes (zoals video's, afspeellijsten, mappen, etc.) via spelers en mediaspelers (eerder was het alleen beschikbaar voor audio)
+- Ondersteuning toegevoegd voor **het bijwerken van spelers** over specifieke bestanden en containers die zijn veranderd
+- Toegenomen opstartprestaties met **~95%**, evenals server responsiviteit tijdens het scannen van bestanden
+- Verbeterde **server responsiviteit** tijdens het scannen van bestanden
+- De codebase gemoderniseerd door **8 belangrijke afhankelijkheidsversies** bij te werken
 
-## New features
+## Nieuwe functies
 
-### Continue Watching folder
+### Doorgaan met kijken map
 
-It shows all videos that are in progress, as well as the next episodes for in-progress TV series, ordered by most recently played.
+Het toont alle video's die momenteel worden bekeken, evenals de volgende afleveringen van series die inmiddels zijn gestart, gesorteerd op basis van wanneer ze voor het laatst zijn afgespeeld.
 
-The contents of the folder - and the contents of the TV series folders within it - are dynamic.
+De inhoud van de map - en de inhoud van de tv-series mappen daarin - zijn dynamisch.
 
-So if you are up-to-date on your TV series, its folder will disappear, and then when a new episode is added it will reappear.
+Als je dus helemaal bij bent met je tv-series, zal de bijbehorende map verdwijnen; zodra er een nieuwe aflevering wordt toegevoegd, verschijnt de map weer.
 
-The first episode in each TV series folder is the one you are up to; if you're half way through episode S01E02 you will see that, and when it is fully played you'll see S01E03 if it exists.
+De eerste aflevering in de map van een tv-serie is de aflevering waar je op dat moment bent; als je halverwege aflevering S01E02 bent, wordt deze getoond, en zodra deze volledig is afgespeeld, zie je S01E03 (mits die bestaat).
 
-![a video showing the Continue Watching folder](@site/docs/img/whats-new-in-v16-continue-watching.gif)
+![een video die de map 'Doorgaan met kijken' laat zien](@site/docs/img/whats-new-in-v16-continue-watching.gif)
 
 ### DI.fm (AudioAddict)
 
-Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
+Ondersteuning toegevoegd voor [DI.fm (AudioAddict)](https://www.di.fm/) Gebeurtenissen en afspeellijsten\*\*
 
-See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Raadpleeg onze documentatie voor [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), en bekijk de onderstaande video over het gebruik van [NextCP/2](https://sf666.github.io/nextcp2/) voor meer informatie:
 
-[![a video thumbnail for DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
+[![een videominiatuur voor DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
 ### RadioBrowser
 
-Added [RadioBrowser](https://www.radio-browser.info/) support for finding and adding radio stations to server side playlists. Search supports:
-- Station name
-- Country
-- Language
+Toegevoegd [RadioBrowser](https://www.radio-browser.info/) ondersteuning voor het vinden en toevoegen van radiostations aan afspeellijsten aan server zijde. Zoeken ondersteund:
+- Zendernaam
+- Land
+- Taal
 - Genre
 
-See our [RadioBrowser](./configuration/radiobrowser) documentation and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Bekijk onze [RadioBrowser](./configuration/radiobrowser)-documentatie en de video over het gebruik van [NextCP/2](https://sf666.github.io/nextcp2/) hieronder voor meer informatie:
 
-[![a video thumbnail for RadioBrowser support](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
+[![een videominiatuur voor RadioBrowser-ondersteuning](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
-### 3-box Configuration
+### 3 Apparaten configuraties
 
-Added support for running in 3-box mode, which is when there are 3 devices (boxes) involved in playback:
-1. The server (UMS)
-2. A control point (often a phone or browser interface)
-3. A renderer / media player
+Ondersteuning toegevoegd voor gebruik in 3 apparaten modus, waarbij 3 apparaten betrokken zijn bij het afspelen:
+1. De server (UMS)
+2. Een besturingselement (vaak een telefoon of browser interface)
+3. Een speler/mediaspeler
 
-See [Two-Box and Three-Box Setups](./configuration/control-point-setups) for more.
+Zie [Twee- en Drie-Apparaten Setups](./configuration/control-point-setups) voor meer.
 
-### Liking/rating via renderers
+### Vind-ik-leuk/beoordelen via spelers
 
-Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Ondersteuning toegevoegd voor vind-ik-leuk/beoordelen van alle mediatypen (zoals video's, afspeellijsten, mappen, enz.) via spelers en mediaspelers (eerder was het alleen beschikbaar voor audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Bekijk de video met behulp van [NextCP/2](https://sf666.github.io/nextcp2/) hieronder voor meer:
 
-[![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
+[![een videominiatuur over ondersteuning voor vind-ik-leuk en beoordelen ondersteuning](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Updating album art via renderers
+### Albumhoezen bijwerken via spelers
 
-Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Ondersteuning toegevoegd voor het bijwerken van albumhoezen voor alle mediatypes (zoals video's, afspeellijsten, mappen, etc.) via spelers en mediaspelers (eerder was het alleen beschikbaar voor audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Bekijk de video met behulp van [NextCP/2](https://sf666.github.io/nextcp2/) hieronder voor meer:
 
-[![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
+[![een videominiatuur over het bijwerken van albumhoezen](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Breaking Changes
+## Ingrijpende wijzigingen
 
-We no longer support x86 or i586 (32-bit) architectures. This means we are not doing the following 4 releases: Linux ARMel, Linux ARMhf, Linux x86, and Windows x86.
+Wij ondersteunen geen x86- of i586-architecturen (32-bit) meer. Dit betekent dat we de volgende 4 releases niet uitbrengen: Linux ARMel, Linux ARMhf, Linux x86 en Windows x86.
 
-Backups made prior to v16 will not work after v16, so if you are in the habit of maintaining backups, make sure you store your v15 one separately to the v16 one until you are confident the automatic migration worked.
+Back-ups die vóór versie 16 zijn gemaakt, werken niet meer vanaf versie 16. Als je de gewoonte hebt om back-ups bij te houden, zorg er dan voor dat je de back-up van versie 15 apart bewaart van die van versie 16, totdat je er zeker van bent dat de automatische migratie is geslaagd.
 
-## Migration
+## Migratie
 
-There are no specific migration steps to be aware of.
+Er zijn geen specifieke migratiestappen waar u rekening mee hoeft te houden.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Net als bij elke belangrijke update, als u de mogelijkheid wilt hebben om terug te gaan naar uw huidige versie, kunt u voordat u de update uitvoert een back-up maken van uw profielmap. Deze bevat uw configuratie en lokale database. De locatie van die map is te vinden nabij het begin van je programmalogs. Zoek naar `Profiel map: [some page]/UMS`.
