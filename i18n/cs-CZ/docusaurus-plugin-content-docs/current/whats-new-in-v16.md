@@ -2,18 +2,18 @@
 sidebar_position: 2
 ---
 
-# What's New in v16
+# Co je nového ve verzi 16
 
-## Overview
+## Přehled
 
-The main goals for v16 were to make it easier for people to continue watching TV series, and to improve support for Internet radio.
+Hlavními cíli v16 bylo usnadnit lidem další sledování televizních seriálů a zlepšit podporu internetového rozhlasu.
 
-A quick overview of the changes in this version is:
-- Added a **Continue Watching** folder to the Media Library.
-- Added support for **[DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists**
-- Added **[RadioBrowser](https://www.radio-browser.info/)** support for finding and adding radio stations to server side playlists.
-- Added support for **3-box configuration**
-- Added support for **liking/rating** and **updating album art** for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Rychlý přehled změn v této verzi:
+- Přidána složka **Pokračovat ve sledování** do knihovny médií.
+- Přidána podpora **[DI.fm (AudioAddict)](https://www.di.fm/) Události a playlisty**
+- Přidána **[RadioBrowser](https://www.radio-browser.info/)** podpora pro hledání a přidávání rozhlasových stanic na server seznamu skladeb.
+- Přidána podpora pro **3-boxovou konfiguraci**
+- Přidána podpora pro **líbí/hodnocení** a **aktualizaci obrázku** pro všechny typy médií (jako videa, playlisty, složky atd.) via renderers and media players (before, it was only available for audio)
 - Added support for **updating renderers** about specific files and containers that have changed
 - Increased startup performance by **~95%**, as well as server responsiveness while scanning files
 - Improved **server responsiveness** while scanning files
