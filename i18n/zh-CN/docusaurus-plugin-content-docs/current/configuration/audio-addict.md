@@ -29,62 +29,51 @@ audio_addict_pass = PASSWORD
 
 ## 节目和剧集
 
-Besides the live stations, DI.fm network offers an **Events** folder. It lists the upcoming shows, and
-for a show that has already been broadcast it also offers the recording, so you can listen to it
-afterwards.
+除直播电台外，DI.fm 网络还提供**活动**文件夹。这里会列出即将播出的节目，对于已经播出的节目还提供录制，方便你之后收听。
 
-Shows with a back catalogue get a folder of their own holding the older episodes. Some shows have
-hundreds of them, so the folder is split into smaller groups, each labelled with the episode numbers
-and dates it contains.
+具有往期节目的节目会拥有独立文件夹，用于存放历史剧集。部分节目拥有数百集，因此文件夹会拆分成多个小组，每组标注内含剧集的编号和日期。
 
 ```
-# How many episodes one group holds before it is split. Default 20, minimum 1.
+# 每组包含多少集后进行拆分。默认 20，最小值 1。
 audio_addict_episodes_per_container = 20
 ```
 
-Building this list means asking the service for the events and for each show's episodes, which takes
-a moment. UMS remembers the answer so that browsing and starting playback do not each pay for it
-again:
+生成该列表需要向服务器请求相关信息以及每个节目的单集信息，这个过程需要一点时间。 UMS 会缓存获取到的数据，这样浏览和播放时就不用重复加载：
 
 ```
-# How long the show and episode lists are reused, in minutes.
-# Default 60. Set to 0 to ask the service every time.
+# 节目和剧集列表的复用时长，单位 分钟。
+# 默认 60。设为 0 则每次都向服务器请求数据。
 audio_addict_tree_cache_ttl_minutes = 60
 ```
 
-A longer time makes browsing snappier, a shorter one picks up newly published episodes sooner. The
-addresses UMS receives stay valid far longer than the default hour, so there is no need to keep this
-value small.
+更长的缓存时间会让浏览更流畅，更短的缓存时间可以更快获取新发布的剧集。 UMS 获取到的地址有效期远长于默认的一小时，所以无需将该数值设置得很小。
 
-## Live titles
+## 直播标题
 
-Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
-service instead and delivers the result to your player, so you still see what is playing. This is
-described in [Internet radio and live titles](./internet-radio).
+Audio Addict 电台不会在音频流中推送当前曲目信息。 UMS 向服务器查询信息并发送给播放器，因此你仍然可以看到正在播放的内容。相关说明见 [网络电台与直播标题](./internet-radio)。
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# 为 Audio Addict 电台发送直播标题。默认开启。
 audio_addict_icy_metadata = TRUE
 ```
 
-## Curated playlists
+## 已保存播放列表
 
-Curated playlists play one track after another from your account. When the playlist reaches its end,
-UMS can start over instead of stopping:
+已保存播放列表会按顺序播放你账号内的曲目。播放列表播放完毕后，UMS 可以循环播放而不是停止：
 
 ```
-# Start a curated playlist again when it ends. Off by default.
+已保存播放列表播放结束后自动重新播放。默认关闭。
 audio_addict_playlist_loop = FALSE
 ```
 
-## All settings at a glance
+## 查看所有设置
 
-| Setting                               | Default | Purpose                                    |
-| ------------------------------------- | ------- | ------------------------------------------ |
-| `audio_addict_user`                   | —       | Your account name                          |
-| `audio_addict_pass`                   | —       | Your password                              |
-| `audio_addict_europe`                 | `TRUE`  | Prefer the European streaming server       |
-| `audio_addict_icy_metadata`           | `TRUE`  | Send live titles to the player             |
-| `audio_addict_episodes_per_container` | `20`    | Episodes per group before splitting        |
-| `audio_addict_tree_cache_ttl_minutes` | `60`    | How long show and episode lists are reused |
-| `audio_addict_playlist_loop`          | `FALSE` | Repeat a curated playlist when it ends     |
+| 设置                                    | 默认​​​​​ | 意义               |
+| ------------------------------------- | ------- | ---------------- |
+| `audio_addict_user`                   | —       | 您的帐户名称           |
+| `audio_addict_pass`                   | —       | 您的密码             |
+| `audio_addict_europe`                 | `TRUE`  | 优先使用欧洲流媒体服务器     |
+| `audio_addict_icy_metadata`           | `TRUE`  | 向播放器发送直播标题       |
+| `audio_addict_episodes_per_container` | `20`    | 每组剧集数量上限         |
+| `audio_addict_tree_cache_ttl_minutes` | `60`    | 节目和剧集列表的缓存复用时长   |
+| `audio_addict_playlist_loop`          | `FALSE` | 已保存播放列表播放结束后循环播放 |
