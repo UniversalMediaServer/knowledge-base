@@ -13,79 +13,79 @@ Rychlý přehled změn v této verzi:
 - Přidána podpora **[DI.fm (AudioAddict)](https://www.di.fm/) Události a playlisty**
 - Přidána **[RadioBrowser](https://www.radio-browser.info/)** podpora pro hledání a přidávání rozhlasových stanic na server seznamu skladeb.
 - Přidána podpora pro **3-boxovou konfiguraci**
-- Přidána podpora pro **líbí/hodnocení** a **aktualizaci obrázku** pro všechny typy médií (jako videa, playlisty, složky atd.) via renderers and media players (before, it was only available for audio)
-- Added support for **updating renderers** about specific files and containers that have changed
-- Increased startup performance by **~95%**, as well as server responsiveness while scanning files
-- Improved **server responsiveness** while scanning files
-- Modernized the codebase by updating **8 major dependency versions**
+- Přidána podpora pro **líbí/hodnocení** a **aktualizaci obrázku** pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
+- Přidána podpora **aktualizace přehrávačů** o konkrétních souborech a kontejnerech, které se změnily
+- Zvýšený výkon spouštění o **~95%**, stejně jako odezva serveru při skenování souborů
+- Vylepšená **odezva serveru** při skenování souborů
+- Aktualizována kódová databáze aktualizací **8 verzí hlavních závislostí**
 
-## New features
+## Nové funkce
 
-### Continue Watching folder
+### Pokračovat ve sledované složce
 
-It shows all videos that are in progress, as well as the next episodes for in-progress TV series, ordered by most recently played.
+Zobrazuje všechna probíhající videa, stejně jako další epizody pro probíhající televizní seriály, seřazené podle naposledy přehrávané.
 
-The contents of the folder - and the contents of the TV series folders within it - are dynamic.
+Obsah složky - a obsah televizních sériových složek v ní - jsou dynamické.
 
-So if you are up-to-date on your TV series, its folder will disappear, and then when a new episode is added it will reappear.
+Takže pokud jste aktuální na televizních seriálech, jeho složka zmizí, a když je přidána nová epizoda se znovu objeví.
 
-The first episode in each TV series folder is the one you are up to; if you're half way through episode S01E02 you will see that, and when it is fully played you'll see S01E03 if it exists.
+První epizoda v každé složce TV série je ta, na kterou jste připraveni. Pokud jste v polovině epizody S01E02 uvidíte to a když je plně přehrána uvidíte S01E03, pokud existuje.
 
-![a video showing the Continue Watching folder](@site/docs/img/whats-new-in-v16-continue-watching.gif)
+![video zobrazující složku pro sledování pokračování](@site/docs/img/whats-new-in-v16-continue-watching.gif)
 
 ### DI.fm (AudioAddict)
 
-Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
+Přidána podpora pro [DI.fm (AudioAddict)](https://www.di.fm/) Události a seznamy skladeb
 
-See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Podívejte se na naši dokumentaci pro [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio) a video pomocí [NextCP/2](https://sf666.github.io/nextcp2/) níže.
 
-[![a video thumbnail for DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
+[![a náhled videa pro DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
-### RadioBrowser
+### Radioprohlížeč
 
-Added [RadioBrowser](https://www.radio-browser.info/) support for finding and adding radio stations to server side playlists. Search supports:
-- Station name
-- Country
-- Language
-- Genre
+Přidána [RadioBrowser](https://www.radio-browser.info/) podpora pro hledání a přidávání rádiových stanic na straně serveru. Hledat podpory:
+- Název stanice
+- Země
+- Jazyk
+- Žánr
 
-See our [RadioBrowser](./configuration/radiobrowser) documentation and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Více informací naleznete v dokumentaci [RadioBrowser](./configuration/radiobrowser) a video pomocí [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for RadioBrowser support](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
+[![a video náhled pro podporu RadioBrowser](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
-### 3-box Configuration
+### Konfigurace 3-boxu
 
-Added support for running in 3-box mode, which is when there are 3 devices (boxes) involved in playback:
-1. The server (UMS)
-2. A control point (often a phone or browser interface)
-3. A renderer / media player
+Přidána podpora pro běh v režimu 3-box, což je případ, kdy jsou do přehrávání zapojena 3 zařízení (boxy):
+1. Server (UMS)
+2. Kontrolní bod (často telefon nebo prohlížeč rozhraní)
+3. Přehrávač / media player
 
-See [Two-Box and Three-Box Setups](./configuration/control-point-setups) for more.
+Více informací naleznete v [Dvou-boxové a troj-boxové nastavení](./configuration/control-point-setups).
 
-### Liking/rating via renderers
+### Líbí se / hodnocení prostřednictvím přehrávačů
 
-Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Přidána podpora pro **líbí/hodnocení** pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Podívejte se více na video: [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
+[![ náhled videa pro oblíbené a hodnocené podpory](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Updating album art via renderers
+### Aktualizace obalu alba pomocí přehrávačů
 
-Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Přidána podpora pro aktualizaci obalu alba pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Podívejte se více na video: [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
+[![video náhled pro aktualizaci zobrazení alba](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Breaking Changes
+## Zrušení změn
 
-We no longer support x86 or i586 (32-bit) architectures. This means we are not doing the following 4 releases: Linux ARMel, Linux ARMhf, Linux x86, and Windows x86.
+Již nepodporujeme x86 nebo i586 (32-bit) architektury. To znamená, že neděláme 4 verze: Linux ARMel, Linux ARMhf, Linux x86 a Windows x86.
 
-Backups made prior to v16 will not work after v16, so if you are in the habit of maintaining backups, make sure you store your v15 one separately to the v16 one until you are confident the automatic migration worked.
+Zálohy vytvořené před v16 nebudou pracovat po v16, takže pokud jste měli ve zvyku udržovat zálohy, ujistěte se, že ukládáte vaše v15 samostatně od v16 zvlášť, dokud si nejste jistí, že automatická migrace funguje.
 
-## Migration
+## Migrace
 
-There are no specific migration steps to be aware of.
+Přechod nevyžaduje žádné zvláštní migrační kroky.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Stejně jako před každou významnou aktualizací si můžete zálohovat adresář profilu, který obsahuje konfiguraci a místní databázi. Budete se tak moci vrátit k dosavadní verzi. Umístění tohoto adresáře najdete poblíž začátku protokolu programu. Hledejte `Profile directory: [some page]/UMS`.
