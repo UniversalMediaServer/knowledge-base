@@ -1,33 +1,33 @@
-# Audio Addict Network Radio
+# Audio Addict网络电台
 
 Audio Addict Network汇聚了一系列优质的互联网广播电台，包括：
 
-Classical Radio, Radio Tunes, Rock Radio, Jazz Radio, Zen Radio, and DI.fm.
+古典电台、Radio Tunes、摇滚电台、爵士电台、禅意电台以及 DI.fm。
 
-A paid **premium account** is required to access these radio stations. You only need to register on one of the sites, as the same username and password will grant access to all of them.
+需要付费**高级账号**才能访问这些电台。你只需在其中任意一个网站注册，同一组用户名和密码即可登录全部站点。
 
-UMS automatically reads all available AudioAddict radio sites, their channels, and filters. The **Favorites** channel is also supported.
+UMS 会自动读取所有可用的 AudioAddict 电台站点、频道以及筛选条件。**收藏**频道也支持。
 
-## Configuration
+## 配置
 
-To enable AudioAddict support, add the following lines to your `UMS.conf` file:
+如需开启 AudioAddict 支持，请在你的 UMS.conf 文件中添加以下内容：
 
 ```
-# TRUE = prefer European streaming server
+# TRUE = 优先使用欧洲流媒体服务器
 audio_addict_europe = TRUE or FALSE
 
-# Your username
+# 你的用户名
 audio_addict_user = USERNAME
 
-# Your password
+# 你的密码
 audio_addict_pass = PASSWORD
 ```
 
-## Location
+## 位置
 
-The **Audio Addict Radio Network** folder is located within your media library. From there, you can browse and access all available stations directly.
+**Audio Addict 网络电台** 文件夹位于您的媒体库。完成设置后，你就可以直接浏览并访问所有可用电台。
 
-## Shows and episodes
+## 节目和剧集
 
 Besides the live stations, DI.fm network offers an **Events** folder. It lists the upcoming shows, and
 for a show that has already been broadcast it also offers the recording, so you can listen to it
