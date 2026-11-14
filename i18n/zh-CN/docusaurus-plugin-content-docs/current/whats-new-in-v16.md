@@ -62,30 +62,30 @@ v16 版本的主要目标是让用户更方便连续观看电视剧，同时优�
 
 详见 [2-Box 和 3-Box 设置](./configuration/control-point-setups)了解更多。
 
-### Liking/rating via renderers
+### 通过渲染器赞/评分
 
-Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+新增支持对所有媒体类型（视频、播放列表、文件夹等）进行点赞/评分。可通过渲染器和媒体播放器操作（此前仅音频支持该功能）
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+更多内容请见基于 [NextCP/2](https://sf666.github.io/nextcp2/)  的演示视频：
 
-[![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
+[![点赞与评分功能演示视频缩略图](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Updating album art via renderers
+### 通过渲染器更新专辑封面
 
-Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+新增支持对所有媒体类型（视频、播放列表、文件夹等）进行更新封面。可通过渲染器和媒体播放器操作（此前仅音频支持该功能）
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+更多内容请见基于 [NextCP/2](https://sf666.github.io/nextcp2/)  的演示视频：
 
-[![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
+[![更新专辑封面功能演示视频缩略图](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Breaking Changes
+## 重大更新
 
-We no longer support x86 or i586 (32-bit) architectures. This means we are not doing the following 4 releases: Linux ARMel, Linux ARMhf, Linux x86, and Windows x86.
+我们不再支持 x86 或 i586 (32位) 架构。这意味着我们将不再提供以下4个版本安装包：Linux ARMel、Linux ARMhf、Linux x86和 Windows x86。
 
-Backups made prior to v16 will not work after v16, so if you are in the habit of maintaining backups, make sure you store your v15 one separately to the v16 one until you are confident the automatic migration worked.
+v16之前版本生成的备份无法在v16中使用。如果你习惯备份，请将v15的备份与v16的分开保存，确认自动迁移正常完成后再处理。
 
-## Migration
+## 迁移
 
-There are no specific migration steps to be aware of.
+无需手动执行迁移步骤。
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+和所有大版本升级一样，如果你希望升级后可以回退到当前版本，可以备份你的配置目录，该目录存放着你的设置与本地数据库。你可以在程序日志的开头附近找到该目录的路径。查找这一行：`Profile directory: [路径]/UMS`
