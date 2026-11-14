@@ -10,13 +10,13 @@ We zijn in 2012 begonnen als fork van PS3 Media Server, een van de populairste e
 
 Het heeft zijn eenvoudige werk goed gedaan, maar we hebben UMS in nieuwe richtingen geleid, en naar nieuwe hoogten.
 
-For an overview of the changes in the latest version, see [What's New in V16](./whats-new-in-v16)
+Voor een overzicht van de wijzigingen in de laatste versie, zie [Wat is nieuw in V16](./whats-new-in-v16)
 
 ## Eerdere versies
 
 ### v15 (2025-08-23)
 
-The 2 main goals for V15 were to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+De twee belangrijkste doelen voor V15 waren het vereenvoudigen van onze interface – gebaseerd op feedback en beoordelingen van gebruikers – en het gebruiksvriendelijker maken van onze gebruikersaccounts.
 
 A quick overview of the changes in this version is:
 
