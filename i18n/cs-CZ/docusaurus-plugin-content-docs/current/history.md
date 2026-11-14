@@ -10,9 +10,50 @@ Projekt vznikl v roce 2012 jako odnož (fork) PS3 Media Serveru, tehdy jednoho z
 
 Svůj základní úkol plnil dobře, ale od té doby jsme UMS rozvinuli novými směry a posunuli výrazně dál.
 
-Zde jsou některé důležité milníky:
+Přehled změn v poslední verzi naleznete v [Co je nového v V16](./whats-new-in-v16)
 
 ## Předchozí verze
+
+### v15 (2025-08-23)
+
+2 hlavními cíli pro V15 bylo zjednodušení našeho rozhraní, na základě zpětné vazby a recenzí uživatelů a usnadnění používání našich uživatelských účtů.
+
+Rychlý přehled změn v této verzi je:
+
+- **Přepínač uživatelů** s podporou **více současně přihlášených účtů**
+- **Přepínač režimu** pro změnu mezi dvěma hlavními oblastmi: **Přehrávač** a **Nastavení**
+- Přihlašování pomocí **kódu PIN**
+- Dynamická **metadata řad seriálů**
+- Tlačítko **informace o médiu**
+- Dále jsme přepracovali kód oznámení a aktualizací v reálném čase, zlepšili správu paměti a provedli mnoho dalších změn, které usnadňují používání a snižují počet potřebných kroků.
+
+#### Přepínač uživatelů
+
+V jednom prohlížeči nyní můžete být současně přihlášeni k více uživatelským účtům a přepínat mezi nimi.
+
+Můžete také povolit nastavení pro zobrazení dostupných uživatelů na přihlašovací obrazovce. Tuto možnost musíte z bezpečnostních důvodů výslovně zapnout, protože možná nechcete, aby každý viděl všechny uživatelské účty. K dispozici je také kompromisní nastavení: prohlížeč si zapamatuje jednotlivé uživatelské účty až poté, co se v něm k nim přihlásíte.
+
+![Příklad přepínače uživatelů](@site/docs/img/whats-new-in-v15-user-switcher.png)
+
+#### Přepínač režimu
+
+Webové rozhraní bylo rozděleno do dvou částí: Přehrávač a Nastavení.
+
+Díky menšímu počtu potřebných kliknutí by mělo být ovládání webového rozhraní intuitivnější a přehlednější.
+
+![Příklad přepínače režimů](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+
+#### Přihlašování pomocí kódu PIN
+
+V nastavení serveru nyní můžete povolit přihlašování pomocí kódu PIN.
+
+![Příklad zobrazení PIN kódu](@site/docs/img/whats-new-in-v15-pin-code.png)
+
+#### Dynamická metadata řad seriálů
+
+Jednotlivé řady seriálů někdy mají vlastní údaje, například názvy a obrázky obalů. Tyto údaje nyní zobrazujeme na stránkách příslušných řad.
+
+![Příklad zobrazení řady seriálu](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### v14 (2022-12-13)
 
