@@ -10,50 +10,50 @@ Projekt vznikl v roce 2012 jako odnož (fork) PS3 Media Serveru, tehdy jednoho z
 
 Svůj základní úkol plnil dobře, ale od té doby jsme UMS rozvinuli novými směry a posunuli výrazně dál.
 
-For an overview of the changes in the latest version, see [What's New in V16](./whats-new-in-v16)
+Přehled změn v poslední verzi naleznete v [Co je nového v V16](./whats-new-in-v16)
 
 ## Předchozí verze
 
 ### v15 (2025-08-23)
 
-The 2 main goals for V15 were to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+2 hlavními cíli pro V15 bylo zjednodušení našeho rozhraní, na základě zpětné vazby a recenzí uživatelů a usnadnění používání našich uživatelských účtů.
 
-A quick overview of the changes in this version is:
+Rychlý přehled změn v této verzi je:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **Přepínač uživatelů** s podporou **více současně přihlášených účtů**
+- **Přepínač režimu** pro změnu mezi dvěma hlavními oblastmi: **Přehrávač** a **Nastavení**
+- Přihlašování pomocí **kódu PIN**
+- Dynamická **metadata řad seriálů**
+- Tlačítko **informace o médiu**
+- Dále jsme přepracovali kód oznámení a aktualizací v reálném čase, zlepšili správu paměti a provedli mnoho dalších změn, které usnadňují používání a snižují počet potřebných kroků.
 
-#### User switcher
+#### Přepínač uživatelů
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+V jednom prohlížeči nyní můžete být současně přihlášeni k více uživatelským účtům a přepínat mezi nimi.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Můžete také povolit nastavení pro zobrazení dostupných uživatelů na přihlašovací obrazovce. Tuto možnost musíte z bezpečnostních důvodů výslovně zapnout, protože možná nechcete, aby každý viděl všechny uživatelské účty. K dispozici je také kompromisní nastavení: prohlížeč si zapamatuje jednotlivé uživatelské účty až poté, co se v něm k nim přihlásíte.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Příklad přepínače uživatelů](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-#### Mode switcher
+#### Přepínač režimu
 
-The web interface has been split into two areas: Player and Settings.
+Webové rozhraní bylo rozděleno do dvou částí: Přehrávač a Nastavení.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+Díky menšímu počtu potřebných kliknutí by mělo být ovládání webového rozhraní intuitivnější a přehlednější.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Příklad přepínače režimů](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-#### Pin code logins
+#### Přihlašování pomocí kódu PIN
 
-You can now enable pin code logins in the server settings.
+V nastavení serveru nyní můžete povolit přihlašování pomocí kódu PIN.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Příklad zobrazení PIN kódu](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-#### Dynamic season metadata
+#### Dynamická metadata řad seriálů
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Jednotlivé řady seriálů někdy mají vlastní údaje, například názvy a obrázky obalů. Tyto údaje nyní zobrazujeme na stránkách příslušných řad.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Příklad zobrazení řady seriálu](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### v14 (2022-12-13)
 
