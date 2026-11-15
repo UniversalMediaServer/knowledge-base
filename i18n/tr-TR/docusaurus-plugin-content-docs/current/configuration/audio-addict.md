@@ -50,33 +50,30 @@ Daha uzun bir süre gözatmayı daha hızlı hale getirir, daha kısa bir süre 
 
 ## Canlı başlıklar
 
-Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
-service instead and delivers the result to your player, so you still see what is playing. This is
-described in [Internet radio and live titles](./internet-radio).
+Audio Addict istasyonları ses akışı içinde şu anki parçayı duyurmaz. UMS bunun yerine hizmete sorar ve sonucu çalıcınıza iletir, böylece ne çalındığını görmeye devam edersiniz. Bu, [İnternet radyosu ve canlı başlıklar](./internet-radio) bölümünde açıklanır.
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# Audio Addict istasyonları için canlı başlıklar gönderin. Varsayılan olarak açıktır.
 audio_addict_icy_metadata = TRUE
 ```
 
-## Curated playlists
+## Seçmece çalma listeleri
 
-Curated playlists play one track after another from your account. When the playlist reaches its end,
-UMS can start over instead of stopping:
+Seçmece çalma listeleri, hesabınızdaki parçaları birbiri ardına çalar. Çalma listesi sona erdiğinde, UMS durmak yerine baştan başlayabilir:
 
 ```
-# Start a curated playlist again when it ends. Off by default.
+# Seçmece bir çalma listesini sona erdiğinde yeniden başlatın. Varsayılan olarak kapalıdır.
 audio_addict_playlist_loop = FALSE
 ```
 
-## All settings at a glance
+## Bir bakışta tüm ayarlar
 
-| Setting                               | Default | Purpose                                    |
-| ------------------------------------- | ------- | ------------------------------------------ |
-| `audio_addict_user`                   | —       | Your account name                          |
-| `audio_addict_pass`                   | —       | Your password                              |
-| `audio_addict_europe`                 | `TRUE`  | Prefer the European streaming server       |
-| `audio_addict_icy_metadata`           | `TRUE`  | Send live titles to the player             |
-| `audio_addict_episodes_per_container` | `20`    | Episodes per group before splitting        |
-| `audio_addict_tree_cache_ttl_minutes` | `60`    | How long show and episode lists are reused |
-| `audio_addict_playlist_loop`          | `FALSE` | Repeat a curated playlist when it ends     |
+| Ayar                                  | Varsayılan | Amaç                                                            |
+| ------------------------------------- | ---------- | --------------------------------------------------------------- |
+| `audio_addict_user`                   | —          | Hesap adınız                                                    |
+| `audio_addict_pass`                   | —          | Parolanız                                                       |
+| `audio_addict_europe`                 | `TRUE`     | Avrupa yayın akışı sunucusunu tercih et                         |
+| `audio_addict_icy_metadata`           | `TRUE`     | Çalıcıya canlı başlıklar gönder                                 |
+| `audio_addict_episodes_per_container` | `20`       | Ayırmadan önce grup başına bölümler                             |
+| `audio_addict_tree_cache_ttl_minutes` | `60`       | Program ve bölüm listeleri ne kadar süreyle yeniden kullanılsın |
+| `audio_addict_playlist_loop`          | `FALSE`    | Seçmece bir çalma listesini bittiğinde tekrarla                 |
