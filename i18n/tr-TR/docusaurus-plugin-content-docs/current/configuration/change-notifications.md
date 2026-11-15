@@ -8,10 +8,10 @@ Bu her iki yönde de çalışır ve ikisi ayrı ayrı denetlenir.
 
 UMS, kitaplık her değiştiğinde iki bilgi parçası yayınlar:
 
-- a **counter** that goes up on any change, which tells a subscriber that something happened
-- a **list of the containers that changed**, which tells it what
+- aboneye bir şey olduğunu bildiren ve her değişiklikte yükselen bir **sayaç**
+- buna ne olduğunu söyleyen, **değişen kapsayıcıların listesi**
 
-The second one is what keeps things quick. An app that learns only "something changed" has to
+İkincisi ise işleri hızlı tutan şeydir. An app that learns only "something changed" has to
 reload; one that learns "this folder changed" reloads that folder and leaves the rest alone.
 
 Both are announced at most a few times per second. A scan that imports a thousand files therefore
