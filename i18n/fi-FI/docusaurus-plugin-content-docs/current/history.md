@@ -10,7 +10,7 @@ Aloitimme vuonna 2012 PS3 Media Serverin haarautumana, joka oli yksi suosituimmi
 
 Se teki yksinkertaisen työnsä hyvin, mutta olemme ottaneet UMS:n uusiin suuntiin ja uusiin korkeuksiin.
 
-For an overview of the changes in the latest version, see [What's New in V16](./whats-new-in-v16)
+Nähdäksesi mitä muutoksia tuli uusimmassa versiossa, katso [Uutta versiossa 16](./whats-new-in-v16)
 
 ## Edelliset versiot
 
