@@ -1,8 +1,8 @@
 {
-  "label": "",
-  "position": "",
+  "label": "开发",
+  "position": 3,
   "link": {
-    "type": "",
-    "description": ""
+    "type": "生成索引",
+    "description": "如何构建和开发 UMS"
   }
 }

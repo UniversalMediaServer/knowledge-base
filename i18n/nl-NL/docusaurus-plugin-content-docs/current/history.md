@@ -10,9 +10,50 @@ We zijn in 2012 begonnen als fork van PS3 Media Server, een van de populairste e
 
 Het heeft zijn eenvoudige werk goed gedaan, maar we hebben UMS in nieuwe richtingen geleid, en naar nieuwe hoogten.
 
-Hier zijn enkele hoogtepunten van de reis:
+Voor een overzicht van de wijzigingen in de laatste versie, zie [Wat is nieuw in V16](./whats-new-in-v16)
 
 ## Eerdere versies
+
+### v15 (2025-08-23)
+
+De twee belangrijkste doelen voor V15 waren het vereenvoudigen van onze interface – gebaseerd op feedback en beoordelingen van gebruikers – en het gebruiksvriendelijker maken van onze gebruikersaccounts.
+
+Een kort overzicht van de wijzigingen in deze versie is:
+
+- Een **gebruiker wisselaar** met ondersteuning voor **meerdere ingelogde gebruikers**
+- Een **mode wisselaar** om te veranderen tussen de twee belangrijkste gebieden: **Speler** en **Instellingen**
+- **Pincode** logins
+- Dynamische **Tv-seizoen metagegevens**
+- Een bestand **media info** knop
+- Ook herschrijvingen van onze melding en realtime code, verbeterd geheugenbeheer en een heleboel andere wijzigingen om de bruikbaarheid te verbeteren en het aantal benodigde acties te verminderen om te doen wat je wilt.
+
+#### Gebruiker wisselen
+
+Je kunt nu worden aangemeld met meerdere gebruikers in een browser op hetzelfde moment, en tussen hen wisselen.
+
+U kunt ook een instelling inschakelen om de beschikbare gebruikers weer te geven op het inlogscherm. Deze instelling is opt-in om veiligheidsredenen, omdat u misschien niet iedereen alle gebruikersaccounts wilt laten zien. Er zit ook een in-between instelling waarbij gebruikersaccounts worden opgeslagen in de browser nadat die browser inlogt, op een per account basis.
+
+![Voorbeeld van de gebruiker wisselaar](@site/docs/img/whats-new-in-v15-user-switcher.png)
+
+#### Mode wisselaar
+
+Het webinterface is verdeeld in twee onderdelen: Speler en Instellingen.
+
+Dit zou het webinterface meer intuïtief en makkelijker navigeerbaar moeten maken door het aantal benodigde kliks te verminderen.
+
+![Voorbeeld van de mode wisselaar](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+
+#### Pincode logins
+
+U kunt nu Pincode logins inschakelen in de serverinstellingen.
+
+![Voorbeeld van de pincode weergave](@site/docs/img/whats-new-in-v15-pin-code.png)
+
+#### Dynamisch seizoen metagegevens
+
+Seizoen van tv-series hebben soms hun eigen data zoals titels en omslagafbeeldingen, dus nu tonen we dat op het seizoen pagina's.
+
+![Voorbeeld van seizoen weergave](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### v14 (2022-12-13)
 
