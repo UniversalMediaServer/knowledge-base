@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# History
+# 版本历史
 
-## Overview
+## 简介
 
 We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
 
