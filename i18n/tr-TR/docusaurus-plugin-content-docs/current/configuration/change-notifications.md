@@ -4,9 +4,9 @@ Kitaplığınızdaki bir şey değiştiğinde, siz yenileye basmanıza gerek kal
 
 Bu her iki yönde de çalışır ve ikisi ayrı ayrı denetlenir.
 
-## What UMS announces about your library
+## UMS kitaplığınız hakkında neler duyurur
 
-UMS publishes two pieces of information whenever the library changes:
+UMS, kitaplık her değiştiğinde iki bilgi parçası yayınlar:
 
 - a **counter** that goes up on any change, which tells a subscriber that something happened
 - a **list of the containers that changed**, which tells it what
