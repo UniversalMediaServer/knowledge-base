@@ -1,10 +1,8 @@
-# Change Notifications
+# Bildirimleri Değiştirin
 
-When something in your library changes, connected apps should notice without you pressing refresh —
-and without asking UMS every few seconds whether anything happened. UPnP solves this with
-subscriptions: an app registers its interest once, and UMS tells it when there is news.
+Kitaplığınızdaki bir şey değiştiğinde, siz yenileye basmanıza gerek kalmadan — ve UMS’e birkaç saniyede bir şey olup olmadığını sormadan bağlı uygulamalar bunu fark etmelidir. UPnP bunu aboneliklerle çözer: bir uygulama ilgisini bir kez kaydeder ve UMS, bir haber olduğunda bunu ona bildirir.
 
-This works in both directions, and the two are controlled separately.
+Bu her iki yönde de çalışır ve ikisi ayrı ayrı denetlenir.
 
 ## What UMS announces about your library
 
