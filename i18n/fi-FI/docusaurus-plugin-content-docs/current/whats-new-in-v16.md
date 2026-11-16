@@ -2,16 +2,16 @@
 sidebar_position: 2
 ---
 
-# What's New in v16
+# Version V16 muutokset
 
-## Overview
+## Yhteenveto
 
-The main goals for v16 were to make it easier for people to continue watching TV series, and to improve support for Internet radio.
+V16:n päätavoitteena oli helpottaa televisiosarjojen katselun jatkamista ja parantaa Internetin radion tukea.
 
-A quick overview of the changes in this version is:
-- Added a **Continue Watching** folder to the Media Library.
-- Added support for **[DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists**
-- Added **[RadioBrowser](https://www.radio-browser.info/)** support for finding and adding radio stations to server side playlists.
+Nopea katsaus tähän versioon tehdyistä muutoksista:
+- Lisätty **Jatka katsomista** -kansio mediakirjastoon.
+- Lisätty tuki **[DI.fm (AudioAddict)](https://www.di.fm/) tapahtumille ja soittolistoille**
+- Lisätty **[RadioBrowser](https://www.radio-browser.info/)**-tuki radioasemien löytämiselle ja lisäämiselle palvelimen puolella oleviin soittolistoihin.
 - Added support for **3-box configuration**
 - Added support for **liking/rating** and **updating album art** for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
 - Added support for **updating renderers** about specific files and containers that have changed
@@ -35,7 +35,7 @@ The first episode in each TV series folder is the one you are up to; if you're h
 
 ### DI.fm (AudioAddict)
 
-Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
+Lisätty tuki **[DI.fm (AudioAddict)](https://www.di.fm/) tapahtumille ja soittolistoille**
 
 See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
 
