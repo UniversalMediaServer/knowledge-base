@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## 简介
 
-We started in 2012 as a fork of PS3 Media Server, which was one of the most popular and highly-rated media servers around. Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
+我们于2012年作为PS3 Media Server的一个分支项目启动，而PS3 Media Server当时是市场上最受欢迎、评价最高的媒体服务器之一。 Our founder, SubJunk, was also a developer of that project. In those days, it was simply a DLNA media server, with a much simpler GUI and set of features.
 
 It did its simple job well, but we have taken UMS in new directions, and to new heights.
 
