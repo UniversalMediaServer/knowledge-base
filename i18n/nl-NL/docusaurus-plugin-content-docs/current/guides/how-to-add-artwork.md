@@ -11,7 +11,7 @@ Deze handleiding legt uit:
 
 ## Ondersteunde afbeeldingsformaten
 
-UMS supports these image formats for folder and playlist artwork:
+UMS ondersteunt deze afbeeldingsformaten voor illustratiemateriaal van mappen en afspeellijsten:
 
 - `webp`
 - `png`
@@ -32,24 +32,19 @@ Voorbeelden:
 - `map.jpg`
 - `map.png`
 
-### Use existing filenames such as `cover.jpg`
+### Gebruik bestaande bestandsnamen zoals 'omslag.jpg'
 
-You can define alternative names for folder artwork. To look for
-`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+Je kunt alternatieve namen opgeven voor illustratiemateriaal voor mapafbeeldingen. Om te zoeken naar `omslag.jpg` of `voorkant.png`, voegt u deze regel toe aan `UMS.conf` in uw UMS-profielmap; start daarna UMS opnieuw op.
 
 ```ini
-folder_thumbnail_names = cover, front
+map_miniatuur_namen = omslag, voorkant
 ```
 
-Enter the names without file extensions and separate them with commas. Matching ignores
-capitalization, so `cover` also matches `Cover.JPG`.
+Voer de namen in zonder bestandsextensies en scheid ze met komma's. Matchen maakt geen onderscheid tussen hoofdletters en kleine letters; `omslag` komt dus ook overeen met `Omslag.JPG`.
 
-With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
-supported images with `albumart` in the filename. Leave the setting empty to use the standard
-folder artwork lookup.
+Met deze instelling zoekt UMS eerst naar `map.*`, vervolgens naar `omslag.*`, dan naar `voorkant.*` en tot slot naar ondersteunde afbeeldingen die `illustratiemateriaal` in de bestandsnaam hebben staan. Laat de instelling leeg om gebruik te maken van de standaardmethode voor het opzoeken van illustratiemateriaal voor mapafbeeldingen.
 
-The selected image can also serve as fallback artwork for tracks in the folder and for local
-playlists in the same directory.
+De geselecteerde afbeelding kan ook dienen als reserveafbeelding voor nummers in de map en voor lokale afspeellijsten in dezelfde map.
 
 ## Afspeellijsten
 
@@ -60,12 +55,12 @@ Voorbeeld:
 - Afspeellijst bestand: `Jazz.m3u8`
 - Illustratiemateriaal bestand: `Jazz.jpg` (of `Jazz.webp`, `Jazz.png`, enzovoort)
 
-For a local playlist, UMS checks these sources in order.
+Voor een lokale afspeellijst controleert UMS deze bronnen in de aangegeven volgorde.
 
-1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
-2. Artwork assigned to that playlist through a compatible control point.
-3. The directory's artwork, which can come from `folder.*`, a name in
-   `folder_thumbnail_names`, or an `albumart` image.
+1. Een afbeelding met exact dezelfde basisbestandsnaam als de afspeellijst, zoals `Jazz.jpg` bij `Jazz.m3u8`.
+2. Illustratiemateriaal die via een compatibel besturingselement aan die afspeellijst is toegewezen.
+3. Het illustratiemateriaal van de map, die afkomstig kan zijn van `map.*`, een naam in
+   `map_miniatuur_namen` of een `album illustratiemateriaal`-afbeelding.
 
 ## Voorbeeld mappenstructuur
 
