@@ -11,7 +11,7 @@ Tento návod vysvetľuje:
 
 ## Podporované obrazové formáty
 
-Podporované sú nasledujúce typy súborov, ktoré sa hľadajú v uvedenom poradí. Použije sa prvý nájdený zodpovedajúci obrázok:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Podporované sú nasledujúce typy súborov, ktoré sa hľadajú v uvedenom pora
 - `jpg`
 - `bmp`
 - `gif`
-
-Ktorýkoľvek z týchto formátov môžete použiť pre obrázok priečinka aj zoznamu skladieb.
 
 ## Priečinok
 
@@ -34,6 +32,25 @@ Príklady:
 - `folder.jpg`
 - `folder.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Zoznamy skladieb
 
 Ak chcete nastaviť obrázok zoznamu skladieb, použite rovnaký základ názvu ako pri súbore zoznamu skladieb.
@@ -43,7 +60,12 @@ Príklad:
 - Súbor zoznamu skladieb: `Jazz.m3u8`
 - Súbor obrázka: `Jazz.jpg` (alebo `Jazz.webp`, `Jazz.png` a podobne)
 
-Ak sa zodpovedajúci obrázok zoznamu skladieb nenájde, použije sa namiesto neho obrázok priečinka.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Príklad štruktúry priečinkov
 
