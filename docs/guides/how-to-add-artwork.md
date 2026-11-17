@@ -31,7 +31,7 @@ Examples:
 
 ### Use existing filenames such as `cover.jpg`
 
-In UMS 16, you can add alternative names for folder artwork. To use a library that already has
+You can define alternative names for folder artwork. To look for
 `cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
 
 ```ini
