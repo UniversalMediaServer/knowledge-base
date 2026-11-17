@@ -11,7 +11,7 @@
 
 ## 지원되는 이미지 형식
 
-다음 파일 유형은 이 순서대로 지원되고 확인됩니다. 첫 번째 일치하는 이미지 파일이 사용됩니다:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@
 - `jpg`
 - `bmp`
 - `gif`
-
-폴더 아트워크와 재생 목록 아트워크 모두에 이러한 형식 중 하나를 사용할 수 있습니다.
 
 ## 폴더
 
@@ -34,6 +32,25 @@
 - `folder.jpg`
 - `folder.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## 재생 목록
 
 재생 목록의 아트워크를 설정하려면 재생 목록 파일과 동일한 기본 파일 이름을 사용합니다.
@@ -43,7 +60,12 @@
 - 재생 목록 파일: 'Jazz.m3u8'
 - 아트워크 파일: 'Jazz.jpg' (또는 'Jazz.webp', 'Jazz.png' 등)
 
-일치하는 재생 목록 아트워크 파일을 찾지 못하면 폴더 아트워크가 폴백으로 사용됩니다.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## 폴더 구조 예시
 
