@@ -1,26 +1,26 @@
 # Docker
 
-其中一些安装步骤可能不适用于您。理解它们干了什么再略过，或者根据需要调整。
+其中某些步骤可能不适用于您的安装环境。了解它们的功能，然后根据需要忽略或进行自定义。
 
-## Preparation
+## 准备工作
 
-For operating system support and service packages.
+有关操作系统支持和服务包的信息。
 
 ### Debian Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/debian/
+安装 Docker (Engine): https://docs.docker.com/engine/install/debian/
 
 ### Fedora Linux
 
-Install Docker (Engine): https://docs.docker.com/engine/install/fedora/
+安装 Docker (Engine): https://docs.docker.com/engine/install/fedora/
 
-#### Extra instructions
+#### 补充说明
 
 ```
-sudo usermod -a -G docker <username>
+sudo usermod -a -G docker <username>;
 ```
 
-Re-login or restart the machine.
+请重新登录或重启计算机。
 
 ```
 sudo su -;
@@ -30,19 +30,19 @@ chgrp docker /srv/UMS;
 chmod -R g+w /srv/UMS;
 ```
 
-Mount storage to host and link into that directory, probably read-only. `mount <Videos-Share> '/srv/UMS/Videos'`
+将存储挂载到主机上，并链接到该目录，通常为只读模式。 `mount <Videos-Share> '/srv/UMS/Videos'`
 
-Test example: Simple symlinking to another path on the host system may not work, since there will be no access to it outside of the mounted volume path for the docker container.  Try copying files inside this location instead.
+测试示例： 单纯在主机系统上创建指向另一个路径的符号链接可能无法正常工作，因为在 Docker 容器的已挂载卷路径之外，无法访问该路径。不妨试着将文件复制到此位置内。
 
-## Container Setup
+## 容器配置
 
-Mount the following volumes:
-- Media folder `/root/media`
-- Profile folder containing UMS.conf `/root/.config/UMS`
+挂载以下卷：
+- 媒体文件夹 `/root/media`
+- 包含 UMS.conf 的配置文件夹 `/root/.config/UMS`
 
-Expose/forward these ports from the host: 1044, 5001, 9001.
+请从主机上开放/转发以下端口：1044、5001、9001。
 
-The following scripts accomplish that (using the fish shell):
+以下脚本可实现这一功能（使用 fish shell）：
 ```
 sudo su -;
 set rootDir "$HOME/.config/UMS";
@@ -60,9 +60,9 @@ docker create --name UMS \
 docker start UMS;
 ```
 
-## Investigating Problems/Issues
+## 调查问题/事项
 
-### General
+### 概述
 
 ```
 docker ps -a;
@@ -72,21 +72,21 @@ docker exec -it UMS /bin/sh;
 docker diff UMS;
 ```
 
-For detailed logs in the terminal: `echo -e '\nlog_level=ALL' >> UMS.conf`
+要在终端中查看详细日志： `echo -e '\nlog_level=ALL' >> UMS.conf`
 
 ```
 docker cp <containerName>:/var/log/UMS/root/debug.log ./;
 ```
 
-### Mount trouble
+### 挂载问题
 
-Using Fedora CoreOS, I had access/permission denied problems trying to use bind mounts.
+在使用 Fedora CoreOS 时，我在尝试使用绑定挂载时遇到了访问/权限被拒绝的问题。
 
-It may be recommended to use the Docker-managed, named-volumes capability instead, but to avoid that complexity, I found that the additional `:Z` as a suffix to the bind mount's descriptor option value allowed container write access to host files. `:z` can also be used instead, but security advice may suggest keeping resources more isolated between application/service environments, rather than shared.
+虽然建议改用 Docker 管理的命名卷功能，但为了避免这种复杂性，我发现只要在绑定挂载的描述符选项值后添加后缀 `:Z`，容器就能对主机文件进行写入操作。 `:z` 也可以作为替代方案，但安全建议通常会建议在应用程序/服务环境之间保持资源的隔离，而不是共享资源。
 
-Matching error messages can be seen using journalctl, so it is an SELinux problem. The solution for that would be to run `chcon -Rt svirt_sandbox_file_t` host_dir, but that also seems discouraged.
+通过 journalctl 可以查看相应的错误信息，因此这是 SELinux 方面的问题。解决该问题的办法是运行 `chcon -Rt svirt_sandbox_file_t` host_dir，但这种做法似乎也不被推荐。
 
-Strangely this is not an issue on Fedora Workstation, but I guess installing it manually added a package to deal with this. Seems to be container-selinux.
+奇怪的是，在 Fedora Workstation 上并没有这个问题，但我猜是手动安装时添加了一个用于处理此问题的软件包。看来是SELinux容器的问题。
 
 ## 参考资料：
 
