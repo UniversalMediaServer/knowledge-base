@@ -11,7 +11,7 @@ Tämä opas selittää:
 
 ## Tuetut kuvamuodot
 
-UMS supports these image formats for folder and playlist artwork:
+UMS tukee näitä kuvaformaatteja kansion ja soittolistan taideteokselle:
 
 - `webp`
 - `png`
@@ -32,10 +32,10 @@ Esimerkkejä:
 - `folder.jpg`
 - `folder.png`
 
-### Use existing filenames such as `cover.jpg`
+### Käytä olemassa olevia tiedostonimiä kuten `cover.jpg`
 
-You can define alternative names for folder artwork. To look for
-`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+Voit määritellä vaihtoehtoisia nimiä kansioiden taideteoksille. Jos haluat etsiä
+`cover.jpg` tai `front.png`, lisää tämä rivi `UMS.conf`-tiedostoon UMS-profiilikansiossasi ja käynnistä UMS uudelleen.
 
 ```ini
 folder_thumbnail_names = cover, front
