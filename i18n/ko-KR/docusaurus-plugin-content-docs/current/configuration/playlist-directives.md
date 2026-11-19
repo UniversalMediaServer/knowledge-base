@@ -79,7 +79,7 @@ station, so there is rarely a reason to type it by hand.
 ### Title order
 
 `#EXTICYORDER:` controls whether a station's announcement is read as _Artist - Title_ or as
-_Title - Station_. See [Internet radio and live titles](./internet-radio).
+_Title - Station_. [인터넷 라디오 및 라이브 타이틀](./internet-radio)을 참조하세요.
 
 ## Directives UMS writes itself
 
