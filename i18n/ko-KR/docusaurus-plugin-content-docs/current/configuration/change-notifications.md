@@ -23,7 +23,7 @@ messages.
 Typical moments when this happens:
 
 - a file appears in, or disappears from, a shared folder
-- you [edit a playlist](./playlist-editing) from a control point
+- 제어 지점에서 [재생목록 편집](./playlist-editing)
 - you rate something, because that changes what the ratings folders contain
 - artwork is added for a station or a folder
 
@@ -48,4 +48,4 @@ business following and claiming control of the players: the control point is doi
 parties steering the same device is a good way to get confusing results. Switching this off makes
 UMS keep its hands off and simply serve the media.
 
-See [Two-box and three-box setups](./control-point-setups) for what that arrangement looks like.
+해당 구성이 어떤 모습인지 확인하시려면 [2박스 및 3박스 구성](./control-point-setups)을 참조하세요.
