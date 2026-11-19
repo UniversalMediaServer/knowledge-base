@@ -59,8 +59,7 @@ value small.
 ## Live titles
 
 Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
-service instead and delivers the result to your player, so you still see what is playing. This is
-described in [Internet radio and live titles](./internet-radio).
+service instead and delivers the result to your player, so you still see what is playing. 이는  [인터넷 라디오 및 라이브 타이틀](./internet-radio)에 설명되어 있습니다.
 
 ```
 # Send live titles for Audio Addict stations. On by default.

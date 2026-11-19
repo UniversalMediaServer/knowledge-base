@@ -11,7 +11,7 @@ Questa guida spiega:
 
 ## Formati di immagine supportati
 
-I seguenti tipi di file sono supportati e controllati in questo ordine. Viene utilizzato il primo file immagine corrispondente:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ I seguenti tipi di file sono supportati e controllati in questo ordine. Viene ut
 - `jpg`
 - `bmp`
 - `gif`
-
-È possibile utilizzare uno qualsiasi di questi formati sia per le copertine delle cartelle che per quelle delle playlist.
 
 ## Cartella
 
@@ -34,6 +32,25 @@ Esempi:
 - `cartella.jpg`
 - `folder.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Playlist
 
 Per impostare l'immagine di una playlist, usa lo stesso nome file della playlist.
@@ -43,7 +60,12 @@ Esempio
 - File playlist: `Jazz.m3u8`
 - File immagine: `Jazz.jpg` (oppure `Jazz.webp`, `Jazz.png`, e così via)
 
-Se non viene trovato il file immagine corrispondente per la playlist, sarà utilizzato il file immagine della cartella.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Esempio di struttura cartelle
 

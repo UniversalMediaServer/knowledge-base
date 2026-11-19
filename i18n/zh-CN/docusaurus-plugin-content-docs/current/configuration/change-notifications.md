@@ -1,51 +1,41 @@
-# Change Notifications
+# 变更通知
 
-When something in your library changes, connected apps should notice without you pressing refresh —
-and without asking UMS every few seconds whether anything happened. UPnP solves this with
-subscriptions: an app registers its interest once, and UMS tells it when there is news.
+当您的库中发生变化时，关联的应用程序应能自动察觉，而无需您手动刷新——也无需每隔几秒就向 UMS 查询是否有新动态。 UPnP 通过订阅机制解决了这个问题：应用程序只需注册一次订阅，当有新消息时，UMS 就会通知它。
 
-This works in both directions, and the two are controlled separately.
+这在两个方向上都适用，且两者是分别控制的。
 
-## What UMS announces about your library
+## UMS关于影视库的通知
 
-UMS publishes two pieces of information whenever the library changes:
+每当影视库发生变更时，UMS都会发布两条信息：
 
-- a **counter** that goes up on any change, which tells a subscriber that something happened
-- a **list of the containers that changed**, which tells it what
+- 一个在发生任何变化时都会递增的**计数器**，它会通知订阅者发生了某些事情
+- 一个 **已发生变化的容器列表**，该列表告知系统发生哪些变化
 
-The second one is what keeps things quick. An app that learns only "something changed" has to
-reload; one that learns "this folder changed" reloads that folder and leaves the rest alone.
+第二个才是让事情的关键。一个仅识别“发生了变化”的应用程序必须
+重新加载；而一个能识别“此文件夹发生了变化”的应用程序则只重新加载该文件夹，其余部分保持不变。
 
-Both are announced at most a few times per second. A scan that imports a thousand files therefore
-does not produce a thousand notifications — the changes are collected and reported as a handful of
-messages.
+这两者每秒最多发布几次。因此，一次扫描导入一千个文件时，并不会产生一千条通知——系统会汇总这些更改，并以几条消息的形式进行报告。
 
-Typical moments when this happens:
+通常有以下几种情况会出现：
 
-- a file appears in, or disappears from, a shared folder
-- you [edit a playlist](./playlist-editing) from a control point
-- you rate something, because that changes what the ratings folders contain
-- artwork is added for a station or a folder
+- 某个文件出现在共享文件夹中，或从共享文件夹中消失
+- 您可以从控制中心 [编辑播放列表](./playlist-editing)
+- 你给某项内容打分，因为这会改变评分文件夹中的内容
+- 为某个电台或文件夹添加了封面图
 
-Whether your app acts on the news is up to the app. Most refresh the view you are looking at; some
-only use the information when you open a folder again. If a change does not appear, it is worth
-opening the folder anew before assuming it was not delivered.
+您的应用是否根据消息采取行动，这取决于该应用本身。大多数会刷新您当前查看的视图；有些则仅在您再次打开文件夹时使用这些信息。如果未显示更改，建议先重新打开该文件夹，再断定更改未被成功传输。
 
-## What UMS listens to on your players
+## UMS 会监听您播放器中的内容
 
-The other direction is UMS subscribing to your **players**, so it can show what they are doing —
-what is playing, whether they are paused, how loud they are — and offer controls for them.
+另一种方式是 UMS 订阅您的 **播放器**，以便显示它们的当前状态——正在播放什么、是否已暂停、音量大小——并提供相应的控制功能。
 
 ```
-# Follow the players on the network. On by default.
+# 在网络中跟踪播放器。默认开启。
 upnp_subscribe_services = TRUE
 ```
 
-Leave this on when UMS is the place you control playback from.
+当您通过 UMS 控制播放时，请保持此选项启用。
 
-Turn it off when playback is driven by a separate control point. In that arrangement UMS has no
-business following and claiming control of the players: the control point is doing that, and two
-parties steering the same device is a good way to get confusing results. Switching this off makes
-UMS keep its hands off and simply serve the media.
+当播放由单独的控制中心驱动时，请将其关闭。在这种情况下，UMS 不该追踪并控制这些播放器：控制中心负责执行这一任务，而由两个主体同时控制同一设备，往往会导致混乱。关闭此选项后，UMS 将不再干预播放，仅负责提供媒体文件。
 
-See [Two-box and three-box setups](./control-point-setups) for what that arrangement looks like.
+有关该布局的具体样式，请参见[2-box and 3-box 配置](./control-point-setups)。

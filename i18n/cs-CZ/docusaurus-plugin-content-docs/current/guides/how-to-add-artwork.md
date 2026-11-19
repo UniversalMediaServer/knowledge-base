@@ -11,7 +11,7 @@ Tato příručka vysvětluje:
 
 ## Podporované formáty obrázků
 
-Podporovány jsou následující typy souborů, které se hledají v tomto pořadí. Použije se první nalezený odpovídající soubor s obrázkem:
+
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Podporovány jsou následující typy souborů, které se hledají v tomto pořa
 - `jpg`
 - `bmp`
 - `gif`
-
-Libovolný z těchto formátů můžete použít pro obrázky složek i seznamů skladeb.
 
 ## Složka
 
@@ -34,6 +32,25 @@ Příklady:
 - `folder.jpg`
 - `folder.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Seznamy skladeb
 
 Pro obrázek seznamu skladeb použijte stejný název souboru bez přípony, jaký má soubor seznamu skladeb.
@@ -43,7 +60,12 @@ Příklad:
 - Soubor seznamu skladeb: `Jazz.m3u8`
 - Soubor s obrázkem: `Jazz.jpg` (nebo `Jazz.webp`, `Jazz.png` a tak dále)
 
-Pokud se odpovídající obrázek seznamu skladeb nenajde, použije se místo něj obrázek složky.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Příklad struktury složek
 

@@ -4,8 +4,7 @@ An internet radio station does not only send audio, it also announces the track 
 now. UMS picks that announcement up and passes it on, so your control point can show what is
 currently on air instead of just the station name.
 
-This works for radio streams you have added to a playlist and for the stations of the
-[Audio Addict Network](./audio-addict).
+이 기능은 재생목록에 추가하신 라디오 스트림과 [오디오 애청자 네트워크](./audio-addict)의 방송국에 적용됩니다.
 
 ## How the title reaches your player
 
@@ -66,8 +65,7 @@ http://stream.example.com/jazz.mp3
 | `artist-first` | Always read the announcement as _Artist - Title_.              |
 | `title-first`  | Always read it as _Title - Station_.                           |
 
-An unknown value is treated as `auto`. The setting applies to that one station; see
-[Playlist directives](./playlist-directives) for how such lines work in general.
+An unknown value is treated as `auto`. 이 설정은 해당 방송국에만 적용됩니다. 이러한 줄이 일반적으로 어떻게 동작하는지는 [재생목록 지시문](./playlist-directives)를 참조하세요.
 
 If your control point offers a way to switch the order while listening, it can set the same value
 through UMS, and UMS writes it into the playlist file so the choice survives a restart.

@@ -11,7 +11,7 @@ Esta guía explica:
 
 ## Formatos de imagen compatibles
 
-Los siguientes tipos de archivo son compatibles y se comprueban en este orden. Se utiliza el primer archivo de imagen que coincida:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Los siguientes tipos de archivo son compatibles y se comprueban en este orden. S
 - `jpg`
 - `bmp`
 - `gif`
-
-Puedes utilizar cualquiera de estos formatos tanto para la ilustración de la carpeta como para la ilustración de la lista de reproducción.
 
 ## Carpeta
 
@@ -34,6 +32,25 @@ Ejemplos:
 - `carpeta.jpg`
 - `carpeta.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Listas de reproducción
 
 Para asignar una ilustración a una lista de reproducción, utilice el mismo nombre de archivo base que el archivo de la lista de reproducción.
@@ -43,7 +60,12 @@ Ejemplos:
 - Archivo de lista de reproducción: `Jazz.m3u8`
 - Archivo de ilustración: `Jazz.jpg` (o `Jazz.webp`, `Jazz.png`, etc.)
 
-Si no se encuentra un archivo de ilustración de lista de reproducción que coincida, se utiliza la ilustración de la carpeta como alternativa.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Ejemplo de estructura de carpeta
 
