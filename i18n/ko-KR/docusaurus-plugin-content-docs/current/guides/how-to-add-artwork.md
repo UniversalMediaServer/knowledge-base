@@ -11,7 +11,7 @@
 
 ## 지원되는 이미지 형식
 
-UMS supports these image formats for folder and playlist artwork:
+UMS는 폴더 및 재생목록 아트워크에 대해 다음 이미지 형식을 지원합니다:
 
 - `webp`
 - `png`
@@ -32,24 +32,19 @@ UMS supports these image formats for folder and playlist artwork:
 - `folder.jpg`
 - `folder.png`
 
-### Use existing filenames such as `cover.jpg`
+### `cover.jpg`와 같은 기존 파일 이름 사용
 
-You can define alternative names for folder artwork. To look for
-`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+폴더 아트워크의 대체 이름을 정의할 수 있습니다. `cover.jpg` 또는 `front.png`를 찾으려면 UMS 프로필 폴더의 `UMS.conf`에 다음 줄을 추가한 다음 UMS를 다시 시작하세요.
 
 ```ini
 folder_thumbnail_names = cover, front
 ```
 
-Enter the names without file extensions and separate them with commas. Matching ignores
-capitalization, so `cover` also matches `Cover.JPG`.
+파일 확장자 없이 이름을 입력하고 쉼표로 구분합니다. 일치 여부를 확인할 때 대소문자는 구분하지 않으므로, `cover`는 `Cover.JPG`와도 일치합니다.
 
-With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
-supported images with `albumart` in the filename. Leave the setting empty to use the standard
-folder artwork lookup.
+이 설정에서 UMS는 `folder.*`, `cover.*`, `front.*` 순으로 파일을 찾고, 마지막으로 파일명에 `albumart`가 포함된 지원 가능한 이미지 파일을 찾습니다. 표준 폴더 아트워크 조회를 사용하려면 설정을 비워 두세요.
 
-The selected image can also serve as fallback artwork for tracks in the folder and for local
-playlists in the same directory.
+선택한 이미지는 해당 폴더의 트랙과 같은 디렉터리의 로컬 재생목록에 사용할 대체 아트워크로도 활용할 수 있습니다.
 
 ## 재생 목록
 
@@ -60,12 +55,11 @@ playlists in the same directory.
 - 재생 목록 파일: 'Jazz.m3u8'
 - 아트워크 파일: 'Jazz.jpg' (또는 'Jazz.webp', 'Jazz.png' 등)
 
-For a local playlist, UMS checks these sources in order.
+로컬 재생목록의 경우 UMS가 이 소스들을 순서대로 확인합니다.
 
-1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
-2. Artwork assigned to that playlist through a compatible control point.
-3. The directory's artwork, which can come from `folder.*`, a name in
-   `folder_thumbnail_names`, or an `albumart` image.
+1. 재생 목록과 기본 파일 이름이 완전히 동일한 이미지 (예: `Jazz.m3u8`에 대한 `Jazz.jpg`).
+2. 호환 가능한 제어점을 통해 해당 재생목록에 할당된 아트워크입니다.
+3. 디렉터리의 아트워크는 `folder.*` 파일, `folder_thumbnail_names`에 지정된 이름의 파일, 또는 `albumart` 이미지에서 가져올 수 있습니다.
 
 ## 폴더 구조 예시
 
