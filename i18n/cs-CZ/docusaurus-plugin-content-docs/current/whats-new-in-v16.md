@@ -6,83 +6,83 @@ sidebar_position: 2
 
 ## Přehled
 
-Hlavními cíli v16 bylo usnadnit lidem další sledování televizních seriálů a zlepšit podporu internetového rozhlasu.
+Hlavními cíli verze 16 bylo usnadnit pokračování ve sledování televizních seriálů a zlepšit podporu internetových rádií.
 
 Rychlý přehled změn v této verzi:
 - Přidána složka **Pokračovat ve sledování** do knihovny médií.
-- Přidána podpora **[DI.fm (AudioAddict)](https://www.di.fm/) Události a playlisty**
-- Přidána **[RadioBrowser](https://www.radio-browser.info/)** podpora pro hledání a přidávání rozhlasových stanic na server seznamu skladeb.
-- Přidána podpora pro **3-boxovou konfiguraci**
-- Přidána podpora pro **líbí/hodnocení** a **aktualizaci obrázku** pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
-- Přidána podpora **aktualizace přehrávačů** o konkrétních souborech a kontejnerech, které se změnily
-- Zvýšený výkon spouštění o **~95%**, stejně jako odezva serveru při skenování souborů
-- Vylepšená **odezva serveru** při skenování souborů
-- Aktualizována kódová databáze aktualizací **8 verzí hlavních závislostí**
+- Přidána podpora **událostí a seznamů skladeb [DI.fm (AudioAddict)](https://www.di.fm/)**
+- Přidána podpora **[RadioBrowseru](https://www.radio-browser.info/)** pro vyhledávání rozhlasových stanic a jejich přidávání do seznamů skladeb na serveru.
+- Přidána podpora **uspořádání se třemi zařízeními**
+- Přidána podpora **označování oblíbených položek a hodnocení** a **změny obrázků obalů** u všech typů médií (například videí, seznamů skladeb a složek) prostřednictvím přehrávacích zařízení a aplikací pro přehrávání médií (dříve to bylo možné pouze u zvukových souborů)
+- Přidána podpora **informování přehrávačů** o změnách konkrétních souborů a kontejnerů
+- Zrychleno spouštění přibližně o **95 %** a zlepšena odezva serveru během skenování souborů
+- Zlepšena **odezva serveru** během skenování souborů
+- Modernizován zdrojový kód přechodem na nové hlavní verze **8 závislostí**
 
 ## Nové funkce
 
-### Pokračovat ve sledované složce
+### Složka Pokračovat ve sledování
 
-Zobrazuje všechna probíhající videa, stejně jako další epizody pro probíhající televizní seriály, seřazené podle naposledy přehrávané.
+Zobrazuje všechna rozkoukaná videa i následující epizody rozkoukaných seriálů, seřazené od naposledy přehrávaných.
 
-Obsah složky - a obsah televizních sériových složek v ní - jsou dynamické.
+Obsah této složky i vnořených složek jednotlivých seriálů se průběžně mění.
 
-Takže pokud jste aktuální na televizních seriálech, jeho složka zmizí, a když je přidána nová epizoda se znovu objeví.
+Pokud jste již zhlédli všechny dostupné epizody seriálu, jeho složka zmizí. Jakmile přibude nová epizoda, složka se znovu objeví.
 
-První epizoda v každé složce TV série je ta, na kterou jste připraveni. Pokud jste v polovině epizody S01E02 uvidíte to a když je plně přehrána uvidíte S01E03, pokud existuje.
+První položkou ve složce každého seriálu je epizoda, u které jste se sledováním skončili. Pokud máte rozkoukanou epizodu S01E02, zobrazí se tato epizoda. Po jejím úplném přehrání se zobrazí S01E03, pokud je k dispozici.
 
-![video zobrazující složku pro sledování pokračování](@site/docs/img/whats-new-in-v16-continue-watching.gif)
+![Video ukazující složku Pokračovat ve sledování](@site/docs/img/whats-new-in-v16-continue-watching.gif)
 
 ### DI.fm (AudioAddict)
 
-Přidána podpora pro [DI.fm (AudioAddict)](https://www.di.fm/) Události a seznamy skladeb
+Přidána podpora událostí a seznamů skladeb [DI.fm (AudioAddict)](https://www.di.fm/)
 
-Podívejte se na naši dokumentaci pro [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio) a video pomocí [NextCP/2](https://sf666.github.io/nextcp2/) níže.
+Podrobnosti najdete v dokumentaci k [Audio Addict](./configuration/audio-addict) a [internetovým rádiím](./configuration/internet-radio) a v následujícím videu s ukázkou použití [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a náhled videa pro DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
+[![Náhled videa o DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
-### Radioprohlížeč
+### RadioBrowser
 
-Přidána [RadioBrowser](https://www.radio-browser.info/) podpora pro hledání a přidávání rádiových stanic na straně serveru. Hledat podpory:
+Přidána podpora [RadioBrowseru](https://www.radio-browser.info/) pro vyhledávání rozhlasových stanic a jejich přidávání do seznamů skladeb na serveru. Vyhledávat lze podle těchto údajů:
 - Název stanice
 - Země
 - Jazyk
 - Žánr
 
-Více informací naleznete v dokumentaci [RadioBrowser](./configuration/radiobrowser) a video pomocí [NextCP/2](https://sf666.github.io/nextcp2/):
+Podrobnosti najdete v dokumentaci k [RadioBrowseru](./configuration/radiobrowser) a v následujícím videu s ukázkou použití [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video náhled pro podporu RadioBrowser](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
+[![Náhled videa o podpoře RadioBrowseru](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
-### Konfigurace 3-boxu
+### Uspořádání se třemi zařízeními
 
-Přidána podpora pro běh v režimu 3-box, což je případ, kdy jsou do přehrávání zapojena 3 zařízení (boxy):
+Přidána podpora režimu se třemi zařízeními (3-box), ve kterém se na přehrávání podílejí:
 1. Server (UMS)
-2. Kontrolní bod (často telefon nebo prohlížeč rozhraní)
-3. Přehrávač / media player
+2. Řídicí bod (často telefon nebo webové rozhraní)
+3. Přehrávací zařízení nebo aplikace pro přehrávání médií
 
-Více informací naleznete v [Dvou-boxové a troj-boxové nastavení](./configuration/control-point-setups).
+Podrobnosti najdete v části [Uspořádání se dvěma a třemi zařízeními](./configuration/control-point-setups).
 
-### Líbí se / hodnocení prostřednictvím přehrávačů
+### Označování oblíbených položek a hodnocení prostřednictvím přehrávačů
 
-Přidána podpora pro **líbí/hodnocení** pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
+Přidána podpora označování oblíbených položek a hodnocení u všech typů médií (například videí, seznamů skladeb a složek) prostřednictvím přehrávacích zařízení a aplikací pro přehrávání médií (dříve to bylo možné pouze u zvukových souborů)
 
-Podívejte se více na video: [NextCP/2](https://sf666.github.io/nextcp2/):
+Další informace najdete v následujícím videu s ukázkou použití [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![ náhled videa pro oblíbené a hodnocené podpory](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
+[![Náhled videa o označování oblíbených položek a hodnocení](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Aktualizace obalu alba pomocí přehrávačů
+### Změna obrázků obalů prostřednictvím přehrávačů
 
-Přidána podpora pro aktualizaci obalu alba pro všechny typy médií (jako videa, playlisty, složky atd.) pomocí přehrávačů a přehrávačů médií (předtím to bylo pouze pro audio)
+Přidána podpora změny obrázků obalů u všech typů médií (například videí, seznamů skladeb a složek) prostřednictvím přehrávacích zařízení a aplikací pro přehrávání médií (dříve to bylo možné pouze u zvukových souborů)
 
-Podívejte se více na video: [NextCP/2](https://sf666.github.io/nextcp2/):
+Další informace najdete v následujícím videu s ukázkou použití [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![video náhled pro aktualizaci zobrazení alba](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
+[![Náhled videa o změně obrázků obalů](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Zrušení změn
+## Změny narušující zpětnou kompatibilitu
 
-Již nepodporujeme x86 nebo i586 (32-bit) architektury. To znamená, že neděláme 4 verze: Linux ARMel, Linux ARMhf, Linux x86 a Windows x86.
+Již nepodporujeme 32bitové architektury x86 a i586. Proto již nevydáváme tyto čtyři varianty: Linux ARMel, Linux ARMhf, Linux x86 a Windows x86.
 
-Zálohy vytvořené před v16 nebudou pracovat po v16, takže pokud jste měli ve zvyku udržovat zálohy, ujistěte se, že ukládáte vaše v15 samostatně od v16 zvlášť, dokud si nejste jistí, že automatická migrace funguje.
+Zálohy vytvořené před verzí 16 nejsou kompatibilní s verzí 16 a novějšími. Pokud si pravidelně vytváříte zálohy, uchovejte zálohu z verze 15 odděleně od záloh verze 16, dokud si neověříte, že automatická migrace proběhla správně.
 
 ## Migrace
 
