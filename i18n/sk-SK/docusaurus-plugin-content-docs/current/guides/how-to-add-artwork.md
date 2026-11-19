@@ -11,7 +11,7 @@ Tento návod vysvetľuje:
 
 ## Podporované obrazové formáty
 
-UMS supports these image formats for folder and playlist artwork:
+
 
 - `webp`
 - `png`
