@@ -10,11 +10,11 @@ Tato funkce je ve výchozím nastavení povolena, takže pokud jste nic nezměni
 2. Na kartě **Sdílený obsah** najděte požadovanou složku a na jejím řádku zaškrtněte **Sledovat stav přehrání souborů**.
 3. Pokud chcete, aby byl stav přehrávání sledován zvlášť pro různé přehrávače, můžete propojit přehrávače s různými uživatelskými účty. Každý účet si uchovává vlastní údaje o přehrání.
 
-## Automatické označení souborů jako plně přehrané
+## Automatické označení souborů jako plně přehraných
 
 Po dokončení nastavení stačí přehrát alespoň 92 % souboru.
 
-## Ruční označení seriálů, videí nebo adresářů jako plně přehrané
+## Ruční označení seriálů, videí nebo adresářů jako plně přehraných
 
 Seriály a videa můžete označit jako plně přehrané přímo ve webovém přehrávači:
 
@@ -26,8 +26,8 @@ Chcete-li ve _starém_ rozhraní nastavení označit všechny soubory sdílenéh
 
 ## Zrušení označení jako plně přehrané
 
-Chcete-li u souboru zrušit označení jako přehrané, použijte jednu z následujících možností:
+Chcete-li u souboru zrušit označení jako přehraného, použijte jednu z následujících možností:
 
 - Libovolně soubor přejmenujte. Poté můžete vrátit původní název, protože při přejmenování UMS odstraní příslušný záznam z mezipaměti.
 - Přesuňte soubor do jiného adresáře. Poté jej můžete vrátit do původního adresáře, protože při přesunutí UMS odstraní příslušný záznam z mezipaměti.
-- Pro "unplay" celý sdílený adresář na záložce **Sdílený obsah** Klepněte pravým tlačítkem myši na adresář a označte jej jako nepřehraný, a klepněte na tlačítko **Označit obsah nepřehraný**.
+- Chcete-li zrušit označení jako přehrané u celého sdíleného adresáře, na kartě **Sdílený obsah** klikněte pravým tlačítkem na daný adresář a zvolte **Označit obsah jako nepřehraný**.
