@@ -27,64 +27,61 @@ audio_addict_pass = PASSWORD
 
 Le dossier **Audio Addict Radio Network** se trouve dans votre médiathèque. A partir de là, vous pouvez naviguer et accéder directement à toutes les stations disponibles.
 
-## Shows and episodes
+## Montre et épisodes
 
-Besides the live stations, DI.fm network offers an **Events** folder. It lists the upcoming shows, and
-for a show that has already been broadcast it also offers the recording, so you can listen to it
-afterwards.
+Outre les stations en direct, le réseau DI.fm offre un dossier **Événements**. Il liste les émissions à venir, et
+pour une série qui a déjà été diffusée, il offre également l'enregistrement, pour que vous puissiez l'écouter
+par la suite.
 
-Shows with a back catalogue get a folder of their own holding the older episodes. Some shows have
-hundreds of them, so the folder is split into smaller groups, each labelled with the episode numbers
-and dates it contains.
+Montre avec un catalogue arrière obtenir un dossier de leur propre tenant les épisodes plus anciens. Certaines séries en comptentdes centaines, le dossier est donc divisé en groupes plus petits, chacun étiqueté avec les numéros d'épisodeset les dates qu'il contient.
 
 ```
-# How many episodes one group holds before it is split. Default 20, minimum 1.
+# Combien d'épisodes un groupe contient avant d'être divisé. Défaut 20, minimum 1.
 audio_addict_episodes_per_container = 20
 ```
 
-Building this list means asking the service for the events and for each show's episodes, which takes
-a moment. UMS remembers the answer so that browsing and starting playback do not each pay for it
-again:
+Construire cette liste signifie demander au service pour les événements et pour les épisodes de chaque série, ce qui prend
+un instant. UMS se souvient de la réponse afin que la navigation et le démarrage de la lecture ne payent pas chacun pour
+à nouveau:
 
 ```
-# How long the show and episode lists are reused, in minutes.
-# Default 60. Set to 0 to ask the service every time.
+# Combien de temps les listes de séries et d'épisodes sont réutilisées, en minutes.
+# Par défaut 60. Mettre à 0 pour demander au service à chaque fois.
 audio_addict_tree_cache_ttl_minutes = 60
 ```
 
-A longer time makes browsing snappier, a shorter one picks up newly published episodes sooner. The
-addresses UMS receives stay valid far longer than the default hour, so there is no need to keep this
-value small.
+Un temps plus long rend la navigation plus rapide, un plus court ramasse plus tôt les épisodes nouvellement publiés. Les adresses
+que l'UMS reçoit restent valides bien plus longtemps que l'heure par défaut, donc il n'est pas nécessaire de garder cette valeur
+petite.
 
-## Live titles
+## Titre en direct
 
-Audio Addict stations do not announce the current track inside the audio stream. UMS asks the
-service instead and delivers the result to your player, so you still see what is playing. This is
-described in [Internet radio and live titles](./internet-radio).
+Les stations Audio Addict n'annoncent pas la piste en cours dans le flux audio. UMS interroge le
+service à sa place et transmet le résultat à votre lecteur, vous permettant ainsi de toujours voir ce qui est en cours de lecture. Ceci estdécrit dans [Internet radio and live titles](./internet-radio).
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# Envoyer des titres en direct pour les stations Audio Addict. Activé par défaut.
 audio_addict_icy_metadata = TRUE
 ```
 
-## Curated playlists
+## Playlists enregistrées
 
-Curated playlists play one track after another from your account. When the playlist reaches its end,
-UMS can start over instead of stopping:
+Les listes de lecture conservées jouent une piste après une autre depuis votre compte. Lorsque la playlist atteint sa fin,
+UMS peut recommencer au lieu de s'arrêter:
 
 ```
-# Start a curated playlist again when it ends. Off by default.
+# Redémarre une playlist organisée quand elle se termine. Désactivé par défaut.
 audio_addict_playlist_loop = FALSE
 ```
 
-## All settings at a glance
+## Tous les paramètres en un coup d'œil
 
-| Setting                               | Default | Purpose                                    |
-| ------------------------------------- | ------- | ------------------------------------------ |
-| `audio_addict_user`                   | —       | Your account name                          |
-| `audio_addict_pass`                   | —       | Your password                              |
-| `audio_addict_europe`                 | `TRUE`  | Prefer the European streaming server       |
-| `audio_addict_icy_metadata`           | `TRUE`  | Send live titles to the player             |
-| `audio_addict_episodes_per_container` | `20`    | Episodes per group before splitting        |
-| `audio_addict_tree_cache_ttl_minutes` | `60`    | How long show and episode lists are reused |
-| `audio_addict_playlist_loop`          | `FALSE` | Repeat a curated playlist when it ends     |
+| Réglages                              | Par défaut | Raison                                                              |
+| ------------------------------------- | ---------- | ------------------------------------------------------------------- |
+| `audio_addict_user`                   | —          | Votre nom de compte                                                 |
+| `audio_addict_pass`                   | —          | Votre mot de passe                                                  |
+| `audio_addict_europe`                 | `TRUE`     | Préférer le serveur de streaming européen                           |
+| `audio_addict_icy_metadata`           | `TRUE`     | Envoyer des titres en direct au lecteur                             |
+| `audio_addict_episodes_per_container` | `20`       | Épisodes par groupe avant de séparer                                |
+| `audio_addict_tree_cache_ttl_minutes` | `60`       | Combien de temps les listes de séries et d'épisodes sont réutilisés |
+| `audio_addict_playlist_loop`          | `FALSE`    | Répéter une playlist organisée à la fin                             |
