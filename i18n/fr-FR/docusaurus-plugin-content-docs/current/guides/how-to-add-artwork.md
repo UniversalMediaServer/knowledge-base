@@ -11,7 +11,7 @@ Ce guide explique :
 
 ## Formats d'image pris en charge
 
-UMS supports these image formats for folder and playlist artwork:
+UMS prend en charge ces formats d'image pour les fichiers de dossier et de playlist :
 
 - `webp`
 - `png`
@@ -32,24 +32,23 @@ Exemples :
 - `dossier.jpg`
 - `dossier.png`
 
-### Use existing filenames such as `cover.jpg`
+### Utiliser des noms de fichiers existants tels que `cover.jpg`
 
-You can define alternative names for folder artwork. To look for
-`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+Vous pouvez définir des noms alternatifs pour les illustrations de dossiers. Pour rechercher
+`cover.jpg` ou `front.png`, ajoutez cette ligne à `UMS.conf` dans votre dossier de profil UMS, puis redémarrez UMS.
 
 ```ini
-folder_thumbnail_names = cover, front
+dossier_thumbnail_names = couverture, devant
 ```
 
-Enter the names without file extensions and separate them with commas. Matching ignores
-capitalization, so `cover` also matches `Cover.JPG`.
+Entrez les noms sans extensions de fichier et séparez-les par des virgules. La correspondance ignore la casse ; donc `cover` correspond également à `Cover.JPG`.
 
-With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
-supported images with `albumart` in the filename. Leave the setting empty to use the standard
-folder artwork lookup.
+Avec ce paramètre, UMS recherche d'abord le `répertoire.*`, puis `cover.*`, puis `front.*`, et enfin
+les images supportées avec `albumart` dans le nom du fichier. Laissez le paramètre vide pour utiliser la recherche standard
+de fichier d'illustration.
 
-The selected image can also serve as fallback artwork for tracks in the folder and for local
-playlists in the same directory.
+L'image sélectionnée peut également servir d'illustration de secours pour les pistes dans le dossier et pour les playlists
+locales dans le même répertoire.
 
 ## Listes de lecture
 
@@ -60,12 +59,12 @@ Exemple :
 - Fichier de la playlist : `Jazz.m3u8`
 - Fichier d'illustration: `Jazz.jpg` (or `Jazz.webp`, `Jazz.png`, and so on)
 
-For a local playlist, UMS checks these sources in order.
+Pour une playlist locale, UMS vérifie ces sources dans l'ordre.
 
-1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
-2. Artwork assigned to that playlist through a compatible control point.
-3. The directory's artwork, which can come from `folder.*`, a name in
-   `folder_thumbnail_names`, or an `albumart` image.
+1. Une image avec exactement le même nom de fichier de base que la playlist, comme `Jazz.jpg` pour `Jazz.m3u8`.
+2. Œuvre assignée à cette playlist à travers un point de contrôle compatible.
+3. L'œuvre d'art du répertoire, qui peut provenir de `dossier.*`, un nom dans
+   `dossier_thumbnail_names`, ou une image `albumart`.
 
 ## Structure de dossier d'exemple
 
@@ -93,14 +92,14 @@ Dans cet exemple :
 - `Music/Jazz/Jazz.jpg` is used for the `Jazz.m3u8` playlist.
 - Le fichier `Music/Jazz/Smooth.m3u8` ne contient aucune image correspondant à `Smooth.*` ; c'est donc la pochette du dossier `Jazz` qui est utilisée.
 
-## Web streams inside a playlist
+## Flux Web dans une playlist
 
-The naming rules above work because there is a file to put the image next to. An internet radio
-station or any other web address listed in a playlist has no such file, so it needs a different way
-to carry its artwork: a `#EXTIMG:` line that points at the picture.
+Les règles de nommage ci-dessus fonctionnent car il y a un fichier à placer à côté de l'image. Une station de radio
+ou toute autre adresse Web listée dans une playlist n'a pas de fichier de ce type, donc il a besoin d'une façon différente
+pour porter son œuvre : une ligne `#EXTIMG:` qui pointe sur l'image.
 
-Put the line directly **above** the entry it belongs to, the same way `#EXTINF:` works. It applies to
-the next entry only, so each stream gets its own line:
+Mettez la ligne directement **au-dessus** de l'entrée à laquelle elle appartient, de la même manière que `#EXTINF:` fonctionne. Il s'applique à
+seulement à l'entrée suivante, donc chaque flux obtient sa propre ligne:
 
 ```text
 #EXTM3U
@@ -113,23 +112,23 @@ http://stream.example.com/jazz.mp3
 http://stream.example.com/rock.mp3
 ```
 
-UMS downloads the image once, stores it, and uses it for that stream from then on. It does not fetch
-it again on every start.
+UMS télécharge l'image une fois, la stocke et l'utilise pour ce flux à partir de ce moment. Il ne récupère pas
+à chaque démarrage.
 
-What the line accepts:
+Ce que la ligne accepte:
 
-- An **absolute** address. `https://example.com/cover.png` works, `cover.png` and `../art/cover.png`
-  do not — a relative path is ignored and the stream keeps the default image.
-- A `data:` URI, if you would rather keep the picture inside the playlist file than host it somewhere.
-- Only `.m3u` and `.m3u8` playlists. Other playlist formats have no place to put the line.
+- Une adresse **absolue**. `https://example.com/cover.png` fonctionne, `cover.png` et `../art/cover.png`
+  ne fonctionnent pas — un chemin relatif est ignoré et le flux conserve l'image par défaut.
+- Une URI `data:`, si vous préférez garder l'image dans le fichier de la playlist plutôt que de l'héberger quelque part.
+- Seulement les listes de lecture `.m3u` et `.m3u8`. D'autres formats de playlist n'ont pas de place pour mettre la ligne.
 
-Capitalization of the directive itself does not matter, `#EXTIMG:` and `#extimg:` both work.
+La capitalisation de la directive elle-même n'a pas d'importance, `#EXTIMG:` et `#extimg:` fonctionnent tous les deux.
 
-### Letting UMS write the line for you
+### Laisser UMS écrire la ligne pour vous
 
-If your control point can set the artwork of an entry, you do not have to edit the playlist by hand.
-UMS writes the `#EXTIMG:` line into the playlist file itself, and only after it has successfully
-loaded the picture — so a broken address leaves the file untouched instead of storing a dead link.
+Si votre point de contrôle peut définir l'œuvre d'une entrée, vous n'avez pas à modifier la playlist à la main.
+UMS écrit la ligne `#EXTIMG:` dans le fichier de la playlist elle-même, et seulement après qu'il ait réussi
+chargé l'image — donc une adresse cassée laisse le fichier intact au lieu de stocker un lien mort.
 
-Because the artwork then lives in the playlist file rather than only in the database, it survives a
-rebuilt database and travels with the file when you copy the playlist elsewhere.
+Comme l'illustration est alors stockée dans le fichier de la liste de lecture et non plus seulement dans la base de données, elle survit à une
+reconstruction de la base de données et est conservée avec le fichier lorsque vous copiez la liste de lecture ailleurs.
