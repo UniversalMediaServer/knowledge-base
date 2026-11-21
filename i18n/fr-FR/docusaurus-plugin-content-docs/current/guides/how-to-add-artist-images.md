@@ -31,25 +31,28 @@ So with a library like this:
 _Frank Sinatra_ and _Miles Davis_ get their pictures, _Zaz_ does not.
 
 The artwork inside the artist folder follows the ordinary rules, so the file is called `folder.jpg`,
-`folder.png`, `folder.webp` and so on. See [How to add artwork](/guides/how-to-add-artwork) for the full
-list of supported formats.
+`folder.png`, `folder.webp` and so on. Voir [Comment ajouter un artwork](/guides/how-to-add-artwork) pour la liste complète
+des formats pris en charge.
 
-## Two conditions
+## Deux conditions
 
-An artist picture appears only when both are true:
+Une photo d'artiste n'apparaît que lorsque les deux sont vraies :
 
-1. A subfolder of the artist directory is named **exactly** like the artist, ignoring capitalisation.
-   _Frank Sinatra_ finds the folder `Frank Sinatra`, and also `frank sinatra`, but not
-   `Sinatra, Frank`. The name has to match the whole folder name, not a part of it.
-2. That folder has artwork of its own.
+1. Un sous-dossier du répertoire d'artistes est nommé **exactement** comme l'artiste, ignorant la capitalisation.
+   _Frank Sinatra_ trouve le dossier `Frank Sinatra`, et aussi `frank sinatra`, mais pas
 
-If either is missing, UMS falls back to the default icon. Nothing is broken — there is simply no
-picture to show.
+    `Sinatra, Frank`. Le nom doit correspondre à l'ensemble du nom du dossier, pas à une partie.
 
-## Finding out which artists have none
+2. Ce dossier contient ses propres illustrations.
 
-The quickest check is on the file system: list the subfolders of your artist directory and look for
-those without an image file. On Linux or macOS:
+Si l'une ou l'autre est manquante, UMS utilise l'icône par défaut. Rien n'est cassé — il n'y a tout simplement pas
+d'image à afficher.
+
+## Découvrir quels artistes n'en ont aucun
+
+La vérification la plus rapide consiste à examiner le système de fichiers : listez les sous-dossiers de votre répertoire d’artiste et recherchez
+
+ceux qui ne contiennent pas de fichier image. Sous Linux ou macOS :
 
 ```bash
 cd /music/Albums
