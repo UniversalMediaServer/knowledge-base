@@ -1,6 +1,6 @@
 # RadioBrowser
 
-Pri pridávaní internetovej rozhlasovej stanice do zoznamu skladieb zvyčajne musíte nájsť adresu jej prúdu na webe a vložiť ju do súboru. UMS to môže urobiť za vás: je prepojený s **RadioBrowser**, komunitne spravovaným adresárom internetových rozhlasových staníc, v ktorom dokáže vyhľadať stanicu a pridať ju.
+Pri pridávaní internetovej rozhlasovej stanice do zoznamu skladieb zvyčajne musíte nájsť adresu jej prúdu na webe a vložiť ju do súboru. UMS to môže urobiť za vás: je prepojený so službou **RadioBrowser**, komunitne spravovaným adresárom internetových rozhlasových staníc, v ktorom dokáže vyhľadať stanicu a pridať ju.
 
 Netreba nič nastavovať. Adresár sa používa iba na vyžiadanie, keď o to požiadate.
 
