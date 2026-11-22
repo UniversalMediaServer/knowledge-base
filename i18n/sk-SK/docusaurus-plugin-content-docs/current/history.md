@@ -10,50 +10,50 @@ Projekt sme začali v roku 2012 ako fork PS3 Media Server, jedného z najobľúb
 
 Svoju jednoduchú úlohu plnil dobre, no UMS sme odvtedy posunuli novými smermi a výrazne rozšírili.
 
-For an overview of the changes in the latest version, see [What's New in V16](./whats-new-in-v16)
+Prehľad zmien v najnovšej verzii nájdete v časti [Čo je nové vo verzii 16](./whats-new-in-v16).
 
 ## Predchádzajúce verzie
 
 ### v15 (2025-08-23)
 
-The 2 main goals for V15 were to simplify our interface, based on user feedback and reviews, and to make our user accounts easier to use.
+Dva hlavné ciele verzie 15 boli zjednodušiť rozhranie na základe spätnej väzby a recenzií používateľov a uľahčiť používanie používateľských účtov.
 
-A quick overview of the changes in this version is:
+Stručný prehľad zmien v tejto verzii:
 
-- A **user switcher** with support for **multiple logged-in users**
-- A **mode switcher** to change between the two major areas: **Player** and **Settings**
-- **Pin code** logins
-- Dynamic **TV season metadata**
-- A file **media info** button
-- Also rewrites of our notification and realtime code, improved memory management, and a lot of other changes to improve usability and reduce the number of actions needed to do what you want.
+- **Prepínač používateľov** s podporou **viacerých súčasne prihlásených účtov**
+- **Prepínač režimov** na prepínanie medzi dvoma hlavnými časťami: **Prehrávač** a **Nastavenia**
+- Prihlasovanie pomocou **kódu PIN**
+- Dynamické **metadáta sérií seriálov**
+- Tlačidlo s **informáciami o médiu** pre jednotlivé súbory
+- Prepracovali sme aj kód oznámení a aktualizácií v reálnom čase, zlepšili správu pamäte a vykonali mnoho ďalších zmien, ktoré uľahčujú používanie a znižujú počet potrebných krokov.
 
-#### User switcher
+#### Prepínač používateľov
 
-You can now be logged in with multiple users in a browser at the same time, and switch between them.
+V jednom prehliadači teraz môžete byť súčasne prihlásení do viacerých používateľských účtov a prepínať medzi nimi.
 
-You can also enable a setting to display the available users on the login screen. This setting is opt-in for security reasons, because you might not want everyone to see all user accounts. There is also an in-between setting where user accounts are saved in the browser after that browser logs in, on a per-account basis.
+Môžete tiež zapnúť nastavenie, ktoré zobrazí dostupných používateľov na prihlasovacej obrazovke. Túto možnosť musíte z bezpečnostných dôvodov výslovne zapnúť, pretože možno nechcete, aby každý videl všetky používateľské účty. K dispozícii je aj kompromisné nastavenie: prehliadač si zapamätá jednotlivé používateľské účty až po tom, čo sa v ňom do nich prihlásite.
 
-![Example of the user switcher](@site/docs/img/whats-new-in-v15-user-switcher.png)
+![Príklad prepínača používateľov](@site/docs/img/whats-new-in-v15-user-switcher.png)
 
-#### Mode switcher
+#### Prepínač režimov
 
-The web interface has been split into two areas: Player and Settings.
+Webové rozhranie bolo rozdelené na dve časti: Prehrávač a Nastavenia.
 
-This should make the web interface more intuitive and easier navigate by reducing the number of clicks needed.
+Vďaka menšiemu počtu potrebných kliknutí by malo byť ovládanie webového rozhrania intuitívnejšie a prehľadnejšie.
 
-![Example of the mode switcher](@site/docs/img/whats-new-in-v15-mode-switcher.png)
+![Príklad prepínača režimov](@site/docs/img/whats-new-in-v15-mode-switcher.png)
 
-#### Pin code logins
+#### Prihlasovanie pomocou kódu PIN
 
-You can now enable pin code logins in the server settings.
+V nastaveniach servera teraz môžete povoliť prihlasovanie pomocou kódu PIN.
 
-![Example of the pin code view](@site/docs/img/whats-new-in-v15-pin-code.png)
+![Príklad zobrazenia kódu PIN](@site/docs/img/whats-new-in-v15-pin-code.png)
 
-#### Dynamic season metadata
+#### Dynamické metadáta sérií seriálov
 
-Seasons of TV shows sometimes have their own data like titles and cover images, so now we display that on the season pages.
+Jednotlivé série seriálov niekedy majú vlastné údaje, napríklad názvy a obrázky obalov. Tieto údaje teraz zobrazujeme na stránkach príslušných sérií.
 
-![Example of season view](@site/docs/img/whats-new-in-v15-season-metadata.png)
+![Príklad zobrazenia série seriálu](@site/docs/img/whats-new-in-v15-season-metadata.png)
 
 ### v14 (2022-12-13)
 
@@ -111,7 +111,7 @@ Ak sú všetky epizódy seriálu úplne prehrané, jeho miniatúra teraz zobrazu
 
 ![Úplne prehraný seriál](@site/docs/img/history-v10.png)
 
-Do vývojového tímu sme privítali aj ik666, ktorý pridal nové API na integrácie a výrazne zlepšil podporu UPnP.
+Vo vývojovom tíme sme privítali aj ik666, ktorý pridal nové API na integrácie a výrazne zlepšil podporu UPnP.
 
 [Podrobnosti nájdete v oznámení o vydaní](https://www.universalmediaserver.com/forum/viewtopic.php?t=14535)
 
