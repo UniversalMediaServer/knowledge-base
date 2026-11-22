@@ -6,7 +6,7 @@ Tento článok vysvetľuje štyri hlavné spôsoby prehrávania videa, zvuku a z
 
 Ak je prehrávač pripojený k UMS cez DLNA/UPnP, UMS sa zvyčajne zobrazí v ponuke s názvom „Mediálne servery“ alebo podobným, podľa konkrétneho prehrávača. Odtiaľ môžete otvoriť UMS a prejsť k požadovaným médiám.
 
-Vzhľad sa medzi prehrávačmi výrazne líši, no základný postup je rovnaký: nájdite požadované médium a vyberte ho na prehrávanie.
+Spôsob ovládania sa medzi prehrávačmi výrazne líši, no základný postup je rovnaký: nájdite požadované médium a jeho výberom spustite prehrávanie.
 
 ## 2: Odoslanie média z rozhrania UMS do prehrávača
 
@@ -24,7 +24,7 @@ Samotné rozhranie UMS dokáže odoslať médiá do prehrávačov, ktoré podpor
 
 Webové rozhranie je dostupné odkiaľkoľvek z miestnej siete vrátane počítačov a prehrávačov. V mnohých ohľadoch ponúka naše najpokročilejšie používateľské rozhranie a funkcie.
 
-1. Otvorte webové rozhranie. Ak poznáte jeho adresu, môžete ju priamo otvoriť. Inak najjednoduchšie kliknite na tlačidlo Webové rozhranie v používateľskom rozhraní UMS.  
+1. Otvorte webové rozhranie. Ak poznáte jeho adresu, môžete ju priamo otvoriť. Inak stačí kliknúť na tlačidlo Webové rozhranie v používateľskom rozhraní UMS.  
    ![Otvorenie webového rozhrania](@site/docs/guides/img/how-to-play-media-4.png)
 2. Kliknutím sa webové rozhranie otvorí v predvolenom prehliadači. V ňom nájdite požadovaný súbor a kliknutím ho prehrajte.  
    ![Video vo webovom rozhraní](@site/docs/guides/img/how-to-play-media-5.png)
