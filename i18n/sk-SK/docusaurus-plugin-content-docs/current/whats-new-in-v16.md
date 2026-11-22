@@ -2,90 +2,90 @@
 sidebar_position: 2
 ---
 
-# What's New in v16
+# Čo je nové vo verzii 16
 
-## Overview
+## Prehľad
 
-The main goals for v16 were to make it easier for people to continue watching TV series, and to improve support for Internet radio.
+Hlavné ciele verzie 16 boli uľahčiť pokračovanie v sledovaní televíznych seriálov a zlepšiť podporu internetového rádia.
 
-A quick overview of the changes in this version is:
-- Added a **Continue Watching** folder to the Media Library.
-- Added support for **[DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists**
-- Added **[RadioBrowser](https://www.radio-browser.info/)** support for finding and adding radio stations to server side playlists.
-- Added support for **3-box configuration**
-- Added support for **liking/rating** and **updating album art** for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
-- Added support for **updating renderers** about specific files and containers that have changed
-- Increased startup performance by **~95%**, as well as server responsiveness while scanning files
-- Improved **server responsiveness** while scanning files
-- Modernized the codebase by updating **8 major dependency versions**
+Stručný prehľad zmien v tejto verzii:
+- Do knižnice médií bol pridaný priečinok **Pokračovať v sledovaní**.
+- Pridaná podpora **udalostí a zoznamov skladieb [DI.fm (AudioAddict)](https://www.di.fm/)**
+- Pridaná podpora služby **[RadioBrowser](https://www.radio-browser.info/)** na vyhľadávanie rozhlasových staníc a ich pridávanie do zoznamov skladieb na serveri.
+- Pridaná podpora **zapojenia s troma zariadeniami**
+- Pridaná podpora **označovania obľúbených položiek a hodnotenia** a **zmeny obrázkov obalov** pri všetkých typoch médií (napríklad videách, zoznamoch skladieb a priečinkoch) prostredníctvom prehrávacích zariadení a aplikácií na prehrávanie médií (predtým to bolo možné iba pri zvukových súboroch)
+- Pridaná podpora **informovania prehrávačov** o zmenách konkrétnych súborov a kontajnerov
+- Spúšťanie zrýchlené približne o **95 %** a zlepšená odozva servera počas skenovania súborov
+- Zlepšená **odozva servera** počas skenovania súborov
+- Modernizovaný zdrojový kód prechodom na nové hlavné verzie **8 závislostí**
 
-## New features
+## Nové funkcie
 
-### Continue Watching folder
+### Priečinok Pokračovať v sledovaní
 
-It shows all videos that are in progress, as well as the next episodes for in-progress TV series, ordered by most recently played.
+Zobrazuje všetky rozpozerané videá aj nasledujúce epizódy rozpozeraných seriálov, zoradené od naposledy prehrávaných.
 
-The contents of the folder - and the contents of the TV series folders within it - are dynamic.
+Obsah tohto priečinka aj vnorených priečinkov jednotlivých seriálov sa priebežne mení.
 
-So if you are up-to-date on your TV series, its folder will disappear, and then when a new episode is added it will reappear.
+Ak ste už pozreli všetky dostupné epizódy seriálu, jeho priečinok zmizne. Keď pribudne nová epizóda, priečinok sa znova objaví.
 
-The first episode in each TV series folder is the one you are up to; if you're half way through episode S01E02 you will see that, and when it is fully played you'll see S01E03 if it exists.
+Prvou položkou v priečinku každého seriálu je epizóda, pri ktorej ste so sledovaním skončili. Ak máte rozpozeranú epizódu S01E02, zobrazí sa táto epizóda. Po jej úplnom prehraní sa zobrazí S01E03, ak je k dispozícii.
 
-![a video showing the Continue Watching folder](@site/docs/img/whats-new-in-v16-continue-watching.gif)
+![Video zobrazujúce priečinok Pokračovať v sledovaní](@site/docs/img/whats-new-in-v16-continue-watching.gif)
 
 ### DI.fm (AudioAddict)
 
-Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
+Pridaná podpora udalostí a zoznamov skladieb [DI.fm (AudioAddict)](https://www.di.fm/)
 
-See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Podrobnosti nájdete v dokumentácii k službe [Audio Addict](./configuration/audio-addict) a [internetovému rádiu](./configuration/internet-radio) a v nasledujúcom videu s ukážkou použitia [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
+[![Náhľad videa o DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
 ### RadioBrowser
 
-Added [RadioBrowser](https://www.radio-browser.info/) support for finding and adding radio stations to server side playlists. Search supports:
-- Station name
-- Country
-- Language
-- Genre
+Pridaná podpora služby [RadioBrowser](https://www.radio-browser.info/) na vyhľadávanie rozhlasových staníc a ich pridávanie do zoznamov skladieb na serveri. Vyhľadávať možno podľa týchto údajov:
+- Názov stanice
+- Krajina
+- Jazyk
+- Žáner
 
-See our [RadioBrowser](./configuration/radiobrowser) documentation and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Podrobnosti nájdete v dokumentácii k službe [RadioBrowser](./configuration/radiobrowser) a v nasledujúcom videu s ukážkou použitia [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for RadioBrowser support](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
+[![Náhľad videa o podpore služby RadioBrowser](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
-### 3-box Configuration
+### Zapojenie s troma zariadeniami
 
-Added support for running in 3-box mode, which is when there are 3 devices (boxes) involved in playback:
-1. The server (UMS)
-2. A control point (often a phone or browser interface)
-3. A renderer / media player
+Pridaná podpora režimu s troma zariadeniami (3-box), v ktorom sa na prehrávaní podieľajú:
+1. Server (UMS)
+2. Ovládací bod (často telefón alebo webové rozhranie)
+3. Prehrávacie zariadenie alebo aplikácia na prehrávanie médií
 
-See [Two-Box and Three-Box Setups](./configuration/control-point-setups) for more.
+Podrobnosti nájdete v časti [Zapojenia s dvoma a troma zariadeniami](./configuration/control-point-setups).
 
-### Liking/rating via renderers
+### Označovanie obľúbených položiek a hodnotenie prostredníctvom prehrávačov
 
-Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Pridaná podpora označovania obľúbených položiek a hodnotenia pri všetkých typoch médií (napríklad videách, zoznamoch skladieb a priečinkoch) prostredníctvom prehrávacích zariadení a aplikácií na prehrávanie médií (predtým to bolo možné iba pri zvukových súboroch)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Ďalšie informácie nájdete v nasledujúcom videu s ukážkou použitia [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
+[![Náhľad videa o označovaní obľúbených položiek a hodnotení](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Updating album art via renderers
+### Zmena obrázkov obalov prostredníctvom prehrávačov
 
-Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Pridaná podpora zmeny obrázkov obalov pri všetkých typoch médií (napríklad videách, zoznamoch skladieb a priečinkoch) prostredníctvom prehrávacích zariadení a aplikácií na prehrávanie médií (predtým to bolo možné iba pri zvukových súboroch)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Ďalšie informácie nájdete v nasledujúcom videu s ukážkou použitia [NextCP/2](https://sf666.github.io/nextcp2/):
 
-[![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
+[![Náhľad videa o zmene obrázkov obalov](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Breaking Changes
+## Zmeny narúšajúce spätnú kompatibilitu
 
-We no longer support x86 or i586 (32-bit) architectures. This means we are not doing the following 4 releases: Linux ARMel, Linux ARMhf, Linux x86, and Windows x86.
+Už nepodporujeme 32-bitové architektúry x86 a i586. Preto už nevydávame tieto štyri varianty: Linux ARMel, Linux ARMhf, Linux x86 a Windows x86.
 
-Backups made prior to v16 will not work after v16, so if you are in the habit of maintaining backups, make sure you store your v15 one separately to the v16 one until you are confident the automatic migration worked.
+Zálohy vytvorené pred verziou 16 nie sú kompatibilné s verziou 16 a novšími. Ak si pravidelne vytvárate zálohy, uchovajte zálohu z verzie 15 oddelene od záloh verzie 16, kým si neoveríte, že automatická migrácia prebehla správne.
 
-## Migration
+## Migrácia
 
-There are no specific migration steps to be aware of.
+Prechod nevyžaduje žiadne osobitné migračné kroky.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Rovnako ako pred každou významnou aktualizáciou si môžete zálohovať priečinok profilu, ktorý obsahuje konfiguráciu a miestnu databázu. Budete sa tak môcť vrátiť k doterajšej verzii. Umiestnenie tohto priečinka nájdete blízko začiatku protokolu programu. Hľadajte `Profile directory: [some page]/UMS`.
