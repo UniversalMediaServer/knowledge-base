@@ -28,23 +28,23 @@ authentication_enabled = TRUE
 ```
 
 Avec l'authentification **activée**, UMS lie la lecture à l'identité de l'utilisateur qui a effectué la navigation, de sorte que ce qu'un utilisateur est
-autorisé à voir est également ce qu'il peut lire. This is the right behaviour for a household with
-several accounts and per-user access, and it assumes a two-box arrangement.
+autorisé à voir est également ce qu'il peut lire. C'est le comportement attendu pour un foyer disposant de
+plusieurs comptes et d'un accès par utilisateur, et cela suppose une configuration à deux appareils.
 
-With authentication **off**, UMS stops assuming the two are the same. It determines the playing
-device at the moment the audio is requested, from that request itself — its address and what it says
-about itself — and makes the conversion decision for _that_ device. The identity in the browse
-request is then understood as the control point it actually is.
+Avec l'authentification **off**, UMS s'arrête en supposant que les deux sont les mêmes. Il détermine le périphérique de lecture
+au moment où l'audio est demandé, de cette requête elle-même — son adresse et ce qu'elle dit
+sur elle-même — et prend la décision de conversion pour _que_ périphérique. L'identité dans la requête de navigation
+est alors comprise comme le point de contrôle qu'elle est.
 
-Two devices sharing one address, which happens when the control point and the renderer run on the
-same machine, are still told apart, because they are distinguished by what they report about
-themselves rather than by the address alone.
+Deux appareils partageant une adresse, ce qui se produit lorsque le point de contrôle et le moteur de rendu s'exécutent sur la même machine
+sont encore racontés séparément, parce qu'ils se distinguent par ce qu'ils rapportent sur
+eux-mêmes plutôt que par l'adresse seule.
 
-## Choosing
+## Choix en cours
 
-Neither setting is more correct than the other; for maximum compatibility turn authentication **off**. The price is that UMS then has no accounts: there is no per-user access control, and everything it shares is visible to everything on the network that can
-reach it. If that is a concern, restrict which devices may reach UMS at all — see
-[Security and privacy](/configuration/security-and-privacy).
+Aucune des deux options n'est plus correcte que les autres; pour une compatibilité maximale l'authentification **désactivée**. Le prix est que UMS n'a alors aucun compte : il n'y a pas de contrôle d'accès par utilisateur et tout ce qu'il partage est visible à tout sur le réseau qui peut
+l'atteindre. Si c'est un problème, restreignez quels appareils peuvent atteindre UMS — voir
+[Sécurité et confidentialité](/configuration/security-and-privacy).
 
-Leave it **on** if your players browse and play for themselves, or if you need the per-user
-separation. This is the default.
+Laissez ce **on** si vos joueurs naviguent et jouent pour eux-mêmes, ou si vous avez besoin de la séparation
+par utilisateur. C'est la valeur par défaut.
