@@ -64,28 +64,28 @@ Voir [Deux boîtes et trois configurations de boîtes] (./configuration/control-
 
 ### J'aime/note via les moteurs de rendu
 
-Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Ajout du support de **J'aime/évaluation** et de **mise à jour de la pochette d'album** pour tous les types de média (comme les vidéos, les listes de lecture, les dossiers, etc.) via les lecteurs multimédias et les lecteurs multimédia (avant, il n'était disponible que pour l'audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Voir la vidéo en utilisant [NextCP/2](https://sf666.github.io/nextcp2/) ci-dessous pour plus de détails :
 
 [![a video thumbnail for liking and rating support](@site/docs/img/whats-new-in-v16-like.png)](https://github.com/user-attachments/assets/f6c6085c-dbf0-491b-afd3-ef7bc490caaa)
 
-### Updating album art via renderers
+### Mise à jour de la pochette d'album via les moteurs de rendu
 
-Added support for updating album art for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
+Ajout du support de la mise à jour des pochettes d'album pour tous les types de média (comme les vidéos, les listes de lecture, les dossiers, etc.) via les lecteurs multimédias et les lecteurs multimédia (avant, il n'était disponible que pour l'audio)
 
-See the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Voir la vidéo en utilisant [NextCP/2](https://sf666.github.io/nextcp2/) ci-dessous pour plus de détails :
 
 [![a video thumbnail for updating album art](@site/docs/img/whats-new-in-v16-album-art.png)](https://github.com/user-attachments/assets/5f5739b2-77da-43d3-b7e8-a53cd938cdb8)
 
-## Breaking Changes
+## Changements en cours
 
-We no longer support x86 or i586 (32-bit) architectures. This means we are not doing the following 4 releases: Linux ARMel, Linux ARMhf, Linux x86, and Windows x86.
+Nous ne supportons plus les architectures x86 ou i586 (32-bits). Cela signifie que nous ne faisons pas les 4 versions suivantes : Linux ARMel, Linux ARMhf, Linux x86, et Windows x86.
 
-Backups made prior to v16 will not work after v16, so if you are in the habit of maintaining backups, make sure you store your v15 one separately to the v16 one until you are confident the automatic migration worked.
+Les sauvegardes effectuées avant la v16 ne fonctionneront pas après la v16, donc si vous avez l'habitude de maintenir des sauvegardes, assurez-vous de stocker votre v15 séparément dans la v16 jusqu'à ce que vous soyez sûr que la migration automatique a fonctionné.
 
 ## Migration
 
-There are no specific migration steps to be aware of.
+Il n'y a aucune étape de migration spécifique à connaître.
 
-As with any major update, if you want to have the ability to go back to your current version before updating, you can make a backup of your profile directory, which contains your configuration and local database. You can find the location of that directory near the top of your program logs. Look for `Profile directory: [some page]/UMS`.
+Comme pour toute mise à jour majeure, si vous voulez avoir la possibilité de revenir à votre version actuelle avant de mettre à jour, vous pouvez faire une sauvegarde du répertoire de votre profil, qui contient votre configuration et la base de données locale. Vous pouvez trouver l'emplacement de ce répertoire en haut des journaux de votre programme. Recherchez le `Répertoire Profil: [une page]/UMS`.
