@@ -1,6 +1,6 @@
-# Editing Playlists from a Control Point
+# Édition des listes de lecture à partir d'un point de contrôle
 
-Playlists are ordinary `.m3u8` files, and you can always edit them in a text editor. UMS can also
+Les listes de lecture sont des fichiers ordinaires `.m3u8`, et vous pouvez toujours les modifier dans un éditeur de texte. UMS can also
 let your control point do it for you: create a playlist, add the track you are listening to, drop
 one you no longer want, rename or delete the whole thing — without touching a file by hand.
 
