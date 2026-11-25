@@ -1,66 +1,66 @@
-# Ratings and Likes
+# Évaluations et J'aime
 
-UMS can remember how you rate your music, from zero to five stars, and control points that offer
-rating buttons can set and change those values while you listen.
+UMS peut mémoriser vos notes attribuées à vos morceaux, de zéro à cinq étoiles, et les points de contrôle dotés de
+boutons de notation permettent de définir et de modifier ces valeurs pendant que vous écoutez.
 
-Likes are not a separate mechanism. A **like is a rating of five stars**, a **dislike is zero**. If
-your control point shows a heart instead of stars, it is writing the same value into the same place,
-which is why the two never contradict each other.
+Les J'aime ne sont pas un mécanisme séparé. Un **« j'aime » correspond à une note de cinq étoiles**, un **« je n'aime pas » correspond à zéro**. Si
+votre point de contrôle affiche un cœur au lieu des étoiles, il écrit la même valeur dans le même endroit,
+ce qui explique pourquoi les deux ne se contredisent jamais.
 
-## Where a rating is kept
+## Là où une note est conservée
 
-The rating lives in the UMS database, attached to the item rather than to the file. That has two
-consequences worth knowing:
+La notation réside dans la base de données UMS, attachée à l'élément plutôt qu'au fichier. Cela a deux conséquences
+qui valent la peine d'être connues :
 
-- It works for things that have nowhere to store a rating of their own — an internet radio station,
-  for instance, or an audio format whose tags have no rating field.
-- It is independent of the file, so re-tagging your collection with another tool does not overwrite
-  what you rated in UMS.
+- Cela fonctionne pour des choses qui n'ont nulle part où stocker leur propre évaluation — une station de radio Internet,
+  par exemple, ou un format audio dont les tags n'ont pas de champ de notation.
+- Il est indépendant du fichier, donc le re-marquage de votre collection avec un autre outil n'écrase pas
+  ce que vous avez noté en UMS.
 
-If you would rather have the rating in the files as well, so that other programs can see it, UMS can
-write it into the tag when you rate something:
+Si vous préférez avoir la notation dans les fichiers, afin que d'autres programmes puissent la voir, UMS peut
+l'écrire dans le tag lorsque vous notez quelque chose :
 
 ```
-# Also write the rating into the file's tag. Off by default.
+# Écrire également l'évaluation dans la balise du fichier. Désactivé par défaut.
 audio_update_rating_tag = TRUE
 ```
 
-This only applies to files that can hold a rating, and only from the moment you turn it on — it does
-not go back and write out ratings you set earlier.
+Cela ne s'applique qu'aux fichiers pouvant faire l'objet d'une note, et uniquement à partir du moment où vous activez cette fonctionnalité — elle
+ne remonte pas dans le temps pour enregistrer les notes que vous aviez attribuées auparavant.
 
-A rating that has to survive a rebuilt database, or travel with a playlist you copy elsewhere,
-belongs in the playlist file instead. See [Playlist directives](./playlist-directives).
+Une note qui doit être conservée lors de la reconstruction d'une base de données ou qui doit être transférée avec une liste de lecture que vous copiez ailleurs
+doit plutôt figurer dans le fichier de la liste de lecture. Voir [les directives de la liste de lecture](./playlist-directives).
 
-## The My Albums folder
+## Le dossier Mes albums
 
-Albums you have liked are collected in a folder called **My Albums**. It is filled automatically:
-like an album and it appears, remove the like and it is gone again.
+Les albums que vous avez aimé sont collectés dans un dossier appelé **Mes Albums**. Il est rempli automatiquement :
+comme un album et il apparaît, enlevez le même et il est à nouveau parti.
 
-By default the folder sits inside the Media Library with the other audio folders. If you reach for
-it often, you can have it shown at the top level instead:
+Par défaut, le dossier se trouve à l'intérieur de la Médiathèque avec les autres dossiers audio. Si vous atteignez
+souvent, vous pouvez le faire afficher au niveau supérieur à la place:
 
 ```
-# Show My Albums in the root folder. Off by default.
+# Afficher mes albums dans le dossier racine. Désactivé par défaut.
 audio_likes_visible_root = TRUE
 ```
 
-## Searching by rating
+## Recherche par évaluation
 
-UMS announces the rating as one of the properties it can be searched on, so a control point can ask
-for it the same way it asks for a title or an artist. A request for everything rated five stars
-finds what the My Albums folder shows; any other value works as well.
+UMS annonce que l'évaluation est l'une des propriétés sur lesquelles elle peut être recherchée, afin qu'un point de contrôle puisse demander à
+de la même manière qu'il demande un titre ou un artiste. Une requête portant sur tous les éléments notés cinq étoiles
+renvoie le contenu du dossier « Mes albums » ; toute autre valeur fonctionne également.
 
-The search matches an **exact** value. There is no way to ask for "four stars or better" in one
-request — a control point that offers such a filter has to ask for each value separately and put the
-answers together itself.
+La recherche correspond à une valeur **exacte** Il n'est pas possible de demander « quatre étoiles ou plus » en une seule
+requête : un point de contrôle proposant un tel filtre doit demander chaque valeur séparément et regrouper lui-même les
+réponses.
 
-The ratings are read from the database, so the search also finds items that carry no rating in their
-file, such as radio stations.
+Les notes sont lues à partir de la base de données, donc la recherche trouve également des éléments qui ne portent aucune note dans leur fichier
+, comme les stations de radio.
 
-## Backing them up
+## Les sauvegarder
 
-Because ratings and likes live in the database, they are worth keeping a copy of before anything
-drastic happens to it. UMS can hand them out and take them back in, which also makes it possible to
-move them to another installation. The
-[UMS UPnP service](./ums-extended-service) lists the actions a control point uses for
-that.
+Comme les notes et les « j'aime » sont stockés dans la base de données, il est judicieux d'en conserver une copie avant qu'un
+incident grave ne vienne l'affecter. UMS peut les distribuer et les récupérer, ce qui permet également de
+les transférer vers un autre site. Le
+[service UMS UPnP](./ums-extended-service) liste les actions qu'un point de contrôle utilise pour
+cela.
