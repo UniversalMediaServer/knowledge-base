@@ -67,14 +67,14 @@ envoie `upnp:genre = "Jazz"`, par exemple. Par défaut, cela est pris littérale
 search_lucene_equal_fuzzy = FALSE
 ```
 
-Si vous activez cette option, les comparaisons exactes tolèrent également les fautes de frappe. That is rarely what you want, because
-these criteria usually come from the control point itself rather than from something you typed, and
-a value that is nearly right is then quietly treated as right.
+Si vous activez cette option, les comparaisons exactes tolèrent également les fautes de frappe. C'est rarement ce que vous voulez, car
+ces critères proviennent généralement du point de contrôle lui-même plutôt que de quelque chose que vous avez tapé, et
+une valeur qui est presque à droite est alors traitée tranquillement comme bonne.
 
 ## Notes
 
-Search ignores capitalization. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
+La recherche ignore la majuscule. `chapitre`, `Chapitre` et `CHAPITRE` retournent les mêmes résultats.
 
-If a search does not return what you expect, the debug log shows the query UMS built from your
-input, on a line beginning with `lucene search string is`. Comparing it with what you typed usually
-explains the result on the spot.
+Si une recherche ne retourne pas ce que vous attendez, le journal de débogage affiche la requête UMS construite à partir de votre entrée
+, sur une ligne commençant par `chaine de recherche lucene est`. Comparer avec ce que vous avez tapé habituellement
+explique le résultat sur place.
