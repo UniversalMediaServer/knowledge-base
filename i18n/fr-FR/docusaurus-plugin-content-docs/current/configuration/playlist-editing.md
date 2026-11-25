@@ -1,58 +1,58 @@
 # Édition des listes de lecture à partir d'un point de contrôle
 
-Les listes de lecture sont des fichiers ordinaires `.m3u8`, et vous pouvez toujours les modifier dans un éditeur de texte. UMS can also
-let your control point do it for you: create a playlist, add the track you are listening to, drop
-one you no longer want, rename or delete the whole thing — without touching a file by hand.
+Les listes de lecture sont des fichiers ordinaires `.m3u8`, et vous pouvez toujours les modifier dans un éditeur de texte. UMS peut aussi
+laisser votre point de contrôle le faire pour vous: créer une playlist, ajouter la piste que vous écoutez, Déposez
+un que vous ne voulez plus, renommez ou supprimez tout le contenu — sans toucher un fichier à la main.
 
-This is switched **off** by default. Writing to a playlist means writing to your disk, so it has to
-be something you allow deliberately rather than something that is simply on.
+Ceci est désactivé **par défaut** L'écriture dans une liste de lecture implique une écriture sur votre disque ; il s'agit donc d'une
+opération que vous devez autoriser délibérément, et non d'une fonction activée par défaut.
 
 ```
-# Allow control points to create, change and delete objects. Off by default.
+# Autoriser les points de contrôle à créer, modifier et supprimer des objets. Désactivé par défaut.
 upnp_cds_write = TRUE
 ```
 
-## What becomes possible
+## Ce qui devient possible
 
-With the setting on, a control point that supports it can
+Avec le paramètre, un point de contrôle qui le supporte peut
 
-- create a new playlist,
-- add an item to a playlist, including one it is playing right now,
-- remove an item from a playlist,
-- rename or delete a playlist.
+- Créer une nouvelle liste de lecture
+- ajouter un élément à une playlist, y compris celui qu'il joue en ce moment,
+- supprimer un élément d'une playlist
+- renommer ou supprimer une playlist.
 
-Whether you see buttons for all of this depends on your control point. UMS only makes the operations
-available; nothing happens unless something asks for it.
+Si vous voyez des boutons pour tout cela dépend de votre point de contrôle. UMS rend seulement les opérations
+disponibles; rien ne se passe à moins que quelque chose ne le demande.
 
-What UMS writes are plain playlist files in your shared folders — not entries in a database that
-only UMS understands. You can open them in any editor afterwards, copy them to another player, or
-keep them in a backup. Additional details that a playlist entry cannot express on its own, such as
-artwork for a radio station, are stored as [directives](./playlist-directives) in the same file.
+Ce qu'UMS enregistre, ce sont de simples fichiers de listes de lecture dans vos dossiers partagés — et non des entrées dans une base de données que
+seul UMS est capable d'interpréter. Vous pouvez les ouvrir dans n'importe quel éditeur par la suite, les copier dans un autre lecteur, ou
+les garder dans une sauvegarde. Plus de détails qu'une entrée de playlist ne peut pas exprimer seule, tels que les illustrations
+pour une station radio, sont stockées comme [directives](./playlist-directives) dans le même fichier.
 
-Changes are announced to connected control points, so a playlist edited on one device shows its new
-contents on the others without a manual refresh.
+Les changements sont annoncés sur les points de contrôle connectés, donc une playlist modifiée sur un appareil montre son nouveau contenu
+sur les autres sans rafraichissement manuel.
 
-## Uploading files
+## Mise en ligne des fichiers
 
-A second setting governs something different and considerably more far-reaching: whether a device
-may send **file content** to UMS and have it written to disk.
+Un deuxième réglage régit quelque chose de différent et de bien plus grande portée : si un périphérique
+peut envoyer **le contenu du fichier** à UMS et le faire écrire sur le disque.
 
 ```
-# Allow unidentified devices to write files to disk. Off by default.
+# Autoriser les périphériques non identifiés à écrire des fichiers sur le disque. Désactivé par défaut.
 anonymous_devices_write = TRUE
 ```
 
-Leave this off unless you have a concrete reason. It permits a device on your network that UMS
-cannot attribute to a known user to create, replace and delete media files in your shared folders.
-That is a large amount of trust to extend to anything that happens to be on the network, and it is
-why the setting exists separately from playlist editing instead of being included in it.
+Laissez cela à moins que vous ayez une raison concrète. Il permet un appareil sur votre réseau que UMS
+ne peut pas attribuer à un utilisateur connu à créer, remplacez et supprimez les fichiers multimédias dans vos dossiers partagés.
+C'est une grande confiance à étendre à tout ce qui se trouve sur le réseau, et c'est
+pourquoi le paramètre existe séparément de l'édition de la liste de lecture au lieu d'être inclus dans celle-ci.
 
-## Both settings can be changed remotely
+## Les deux paramètres peuvent être modifiés à distance
 
-A control point can read and set both switches itself, in the same way it reads any other UMS
-setting. That is convenient — you can turn playlist editing on from the app you are already holding
-— but it also means the value in your configuration file is not the last word: anything that can
-reach the UPnP service on your network can change it.
+Un point de contrôle peut lire et définir les deux commutateurs, de la même manière qu'il lit tous les autres paramètres UMS
+. C'est pratique — vous pouvez activer l'édition de la playlist depuis l'application que vous détenez déjà
+— mais cela signifie aussi que la valeur de votre fichier de configuration n'est pas le dernier mot : tout ce qui peut
+atteindre le service UPnP sur votre réseau peut le modifier.
 
-If that matters to you, restrict which devices may reach UMS at all. See
-[Security and privacy](/configuration/security-and-privacy).
+Si cela vous importe, restreignez les périphériques qui peuvent atteindre UMS du tout. Voir
+[Sécurité et confidentialité] (/configuration/security-and-privacy).
