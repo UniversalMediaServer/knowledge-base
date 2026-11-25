@@ -1,57 +1,57 @@
-# Internet Radio and Live Titles
+# Titres de Radio Internet et Live
 
-An internet radio station does not only send audio, it also announces the track it is playing right
-now. UMS picks that announcement up and passes it on, so your control point can show what is
-currently on air instead of just the station name.
+Une station de radio internet n'envoie pas seulement de l'audio, elle annonce également la piste qu'elle joue actuellement en
+. UMS récupère cette annonce et la transmet, afin que votre point de contrôle puisse afficher ce qui est
+actuellement en l'air au lieu du nom de la station.
 
-This works for radio streams you have added to a playlist and for the stations of the
+Cela fonctionne pour les flux radio que vous avez ajoutés à une playlist et pour les stations de la
 [Audio Addict Network](./audio-addict).
 
-## How the title reaches your player
+## Comment le titre atteint votre joueur
 
-There are two ways a title can travel, and UMS uses whichever fits:
+Il y a deux façons de voyager d'un titre, et UMS utilise la méthode la plus appropriée :
 
-- Players that ask for in-band metadata get the title woven into the audio stream, the way internet
-  radio has always done it.
-- Players that do not ask : Because UMS reads the announcement itself and pushes it to the control point separately, the live title
-  appears even with players that know nothing about radio metadata.
+- Les joueurs qui demandent des métadonnées en bande obtiennent le titre tissé dans le flux audio, la façon dont la radio Internet
+  l'a toujours fait.
+- Joueurs qui ne demandent pas : Parce que UMS lit l'annonce elle-même et la pousse au point de contrôle séparément, le titre en direct
+  apparaît même avec les joueurs qui ne savent rien des métadonnées radio.
 
-There is one case without live titles: if UMS has to **transcode** the stream for your player, the
-title cannot be woven in, because the transcoder produces the audio and knows nothing about the
-station's announcements. Streams that play directly — which is the normal case for MP3 and AAC
-stations — are unaffected.
+Il y a un cas sans titres en direct: si UMS doit **transcoder** le flux pour votre joueur, le titre
+ne peut pas être tissé, parce que le transcodeur produit l'audio et ne sait rien des annonces de la station
+. Les flux qui jouent directement - ce qui est le cas normal pour les stations MP3 et AAC
+\- ne sont pas affectés.
 
-## Interpreting the announcement
+## Interprétation de l'annonce
 
-Stations announce a single line of text, and there is no rule that says which part is the artist.
-The common convention is:
-
-```text
-Miles Davis - So What
-```
-
-but some stations put the station name at the end instead:
+Les stations annoncent une seule ligne de texte, et il n'y a pas de règle qui dit quelle partie est l'artiste.
+La convention commune est :
 
 ```text
-So What - Jazz Radio on example.com
+Miles Davis - Alors quoi
 ```
 
-Taken as "artist first", the second line would list _So What_ as the artist. UMS therefore looks at
-the part after the last dash and treats it as a station name, not an artist, when any of these
-applies:
+mais certaines stations ont mis le nom de la station à la fin à la place:
 
-- it contains something that looks like a web address, such as `example.com`
-- it resembles the station name UMS already knows from your playlist
-- it resembles the host name of the stream address, ignoring generic parts like `stream`, `listen`
-  or `radio`
+```text
+Alors quoi - Jazz Radio sur example.com
+```
 
-If none of them applies, the first part is taken as the artist, which is the usual convention.
+Pris comme "artiste en premier", la deuxième ligne liste _So What_ comme l'artiste. UMS regarde donc
+la partie après le dernier tiret et la traite comme un nom de station. pas un artiste, lorsque l'un de ces
+s'applique :
 
-## Correcting a station by hand
+- il contient quelque chose qui ressemble à une adresse web, comme `example.com`
+- cela ressemble au nom de la station UMS déjà connu de votre playlist
+- cela ressemble au nom d'hôte de l'adresse de flux, ignorant les parties génériques comme `stream`, `listen`
+  ou `radio`
 
-The rules above get it right for most stations, but a station can always break them — a show name
-at the end, an unusual separator, or an artist whose name happens to contain a domain. For those,
-tell UMS explicitly with an `#EXTICYORDER:` line in the playlist, directly above the stream:
+Si aucun d'entre eux ne s'applique, la première partie est considérée comme l'artiste, ce qui est la convention habituelle.
+
+## Correction d'une station à la main
+
+Les règles ci-dessus sont correctes pour la plupart des stations, mais une station peut toujours les enfreindre — un nom de série
+à la fin, un séparateur inhabituel, ou un artiste dont le nom contient un domaine. Pour ceux-ci,
+dire explicitement à UMS avec une ligne `#EXTICYORDER:` dans la playlist, directement au-dessus du stream:
 
 ```text
 #EXTM3U
@@ -60,28 +60,28 @@ tell UMS explicitly with an `#EXTICYORDER:` line in the playlist, directly above
 http://stream.example.com/jazz.mp3
 ```
 
-| Value          | Meaning                                                        |
-| -------------- | -------------------------------------------------------------- |
-| `auto`         | Decide automatically, as described above. This is the default. |
-| `artist-first` | Always read the announcement as _Artist - Title_.              |
-| `title-first`  | Always read it as _Title - Station_.                           |
+| Valeur         | Signification                                                                |
+| -------------- | ---------------------------------------------------------------------------- |
+| `auto`         | Décidez automatiquement, comme décrit ci-dessus. C'est la valeur par défaut. |
+| `artist-first` | Toujours lire l'annonce comme _Artiste - Titre_.                             |
+| `title-first`  | Toujours le lire comme _Titre - Station_.                                    |
 
-An unknown value is treated as `auto`. The setting applies to that one station; see
-[Playlist directives](./playlist-directives) for how such lines work in general.
+Une valeur inconnue est traitée comme `auto`. Le réglage s'applique à cette seule station ; voir
+[directives de la liste de lecture](./playlist-directives) pour savoir comment fonctionnent ces lignes en général.
 
-If your control point offers a way to switch the order while listening, it can set the same value
-through UMS, and UMS writes it into the playlist file so the choice survives a restart.
+Si votre point de contrôle offre un moyen de changer l'ordre lors de l'écoute, il peut définir la même valeur
+via UMS, et UMS l'écrit dans le fichier de la playlist afin que le choix survit à un redémarrage.
 
-## Audio Addict stations
+## Stations audio Addict
 
-Stations of the Audio Addict Network do not announce their titles in the stream. UMS asks the
-service for the current track instead and delivers it the same way, so the behaviour is identical
-from the outside.
+Les stations du réseau Audio Addict n'annoncent pas leurs titres dans le stream. UMS demande au service
+de la piste actuelle et la délivre de la même manière, donc le comportement est identique
+de l'extérieur.
 
 ```
-# Send live titles for Audio Addict stations. On by default.
+# Envoyer des titres en direct pour les stations Audio Addict. Activé par défaut.
 audio_addict_icy_metadata = TRUE
 ```
 
-Turn this off if a player of yours reacts badly to in-band metadata; the titles pushed to the
-control point are unaffected by it.
+Désactivez cette option si un joueur de votre groupe réagit mal aux métadonnées en bande ; les titres poussés vers le point de contrôle
+ne sont pas affectés par elle.
