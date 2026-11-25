@@ -61,15 +61,15 @@ for d in */; do
 done
 ```
 
-Everything it prints is an artist that will show the default icon.
+Tout ce qu'il affiche est un artiste qui affichera l'icône par défaut.
 
-Two causes are common. Either the folder really has no picture yet, or the folder name and the
-artist name in the tags have drifted apart — a guest artist, a different spelling, or a name written
-as _Surname, First name_ on disk but the other way round in the tags. The second case is worth
-checking before you go looking for a picture that is already there.
+Deux causes sont courantes. Soit le dossier ne contient effectivement encore aucune image, soit le nom du dossier et le
+nom de l'artiste figurant dans les balises ne correspondent plus — il peut s'agir d'un artiste invité, d'une orthographe différente, ou d'un nom écrit
+sous la forme _Nom, Prénom_ sur le disque, mais dans l'ordre inverse dans les balises. Dans ce deuxième cas, il vaut mieux
+vérifier avant de chercher une image qui se trouve déjà là.
 
-## Setting the directory from your control point
+## Définition du répertoire depuis votre point de contrôle
 
-If your control point supports it, you can point UMS at the artist directory by browsing to it and
-choosing it there, instead of editing the configuration file. UMS stores the path itself, so the
-setting survives a restart either way.
+Si votre point de contrôle le supporte, vous pouvez pointer UMS vers le répertoire d'artistes en naviguant vers lui et
+en le choisissant là, au lieu de modifier le fichier de configuration. UMS enregistre le chemin d'accès lui-même ; ainsi, le
+paramètre est conservé après un redémarrage, quelle que soit la méthode utilisée.
