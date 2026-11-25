@@ -36,10 +36,10 @@ address:
 
 The last one is the interesting part. It stays in the playlist file as a
 [`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
-the directory entry it came from. UMS uses that connection to fill in details the stream itself does
-not reveal, such as the genre and the bitrate.
+the directory entry it came from. UMS utilise cette connexion pour compléter les informations que le flux lui-même
+ne fournit pas, telles que le genre et le débit binaire.
 
-The result is a playlist file that still reads like a plain playlist and works in any other player:
+Le résultat est un fichier de liste de lecture qui continue de lire comme une liste de lecture simple et fonctionne dans n'importe quel autre lecteur:
 
 ```text
 #EXTM3U
@@ -49,11 +49,11 @@ The result is a playlist file that still reads like a plain playlist and works i
 http://stream.example.com/jazz.mp3
 ```
 
-You can write such an entry by hand as well, if you know the station's identifier. Leaving the
-directive out costs you only the extra details; the station itself plays either way.
+Vous pouvez aussi écrire une telle entrée à la main si vous connaissez l'identifiant de la station. Laisser la directive
+vous coûte seulement les détails supplémentaires ; la station elle-même joue dans les deux sens.
 
-## Afterwards
+## Par la suite
 
-The station behaves like any other entry in the playlist from then on. You can rate it, replace its
-picture, and correct how its live titles are read; see
-[Internet radio and live titles](./internet-radio).
+La station se comporte comme toute autre entrée de la playlist à partir de ce moment-là. Vous pouvez l'évaluer, remplacer son image
+et corriger la façon dont ses titres en direct sont lus ; voir
+[radio Internet et titres en direct](./internet-radio).
