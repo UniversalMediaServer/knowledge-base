@@ -2,67 +2,67 @@
 sidebar_position: 2
 ---
 
-# What's New in v16
+# Nouveautés de la v16
 
-## Overview
+## Résumé
 
-The main goals for v16 were to make it easier for people to continue watching TV series, and to improve support for Internet radio.
+Les principaux objectifs de la v16 étaient de faciliter la surveillance des séries télévisées et d'améliorer le support de la radio sur Internet.
 
-A quick overview of the changes in this version is:
-- Added a **Continue Watching** folder to the Media Library.
-- Added support for **[DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists**
-- Added **[RadioBrowser](https://www.radio-browser.info/)** support for finding and adding radio stations to server side playlists.
-- Added support for **3-box configuration**
-- Added support for **liking/rating** and **updating album art** for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
-- Added support for **updating renderers** about specific files and containers that have changed
-- Increased startup performance by **~95%**, as well as server responsiveness while scanning files
-- Improved **server responsiveness** while scanning files
-- Modernized the codebase by updating **8 major dependency versions**
+Un aperçu rapide des changements dans cette version est :
+- Ajout d'un dossier **Continuer à regarder** à la médiathèque.
+- Ajout du support de **[DI.fm (AudioAddict)](https://www.di.fm/) Événements et Playlists**
+- Ajout du support de **[RadioBrowser](https://www.radio-browser.info/)** pour la recherche et l'ajout de stations radio aux listes de lecture côté serveur.
+- Support de **configuration 3-box** ajouté
+- Ajout du support de **J'aime/évaluation** et de **mise à jour de la pochette d'album** pour tous les types de média (comme les vidéos, les listes de lecture, les dossiers, etc.) via les lecteurs multimédias et les lecteurs multimédia (avant, il n'était disponible que pour l'audio)
+- Ajout du support de **mise à jour des renderers** à propos des fichiers et conteneurs spécifiques qui ont changé
+- Augmentation des performances de démarrage de **~95%**, ainsi que de la réactivité du serveur lors de l'analyse des fichiers
+- Amélioration de la **réactivité du serveur** lors de l'analyse des fichiers
+- Modernisation de la base de code en mettant à jour **8 versions majeures de dépendance**
 
-## New features
+## Nouvelles fonctionnalités
 
-### Continue Watching folder
+### Continuer à regarder le dossier
 
-It shows all videos that are in progress, as well as the next episodes for in-progress TV series, ordered by most recently played.
+Il montre toutes les vidéos en cours, ainsi que les prochains épisodes de la série télévisée en cours commandée par la dernière lecture.
 
-The contents of the folder - and the contents of the TV series folders within it - are dynamic.
+Le contenu du dossier - et le contenu des dossiers de la série TV à l'intérieur - sont dynamiques.
 
-So if you are up-to-date on your TV series, its folder will disappear, and then when a new episode is added it will reappear.
+Donc, si vous êtes à jour sur votre série télévisée, son dossier disparaîtra, et quand un nouvel épisode est ajouté, il réapparaîtra.
 
-The first episode in each TV series folder is the one you are up to; if you're half way through episode S01E02 you will see that, and when it is fully played you'll see S01E03 if it exists.
+Le premier épisode de chaque dossier de série télévisée est celui que vous êtes à la hauteur; Si vous êtes à mi-chemin de l'épisode S01E02 vous verrez cela, et quand il est entièrement joué, vous verrez S01E03 s'il existe.
 
-![a video showing the Continue Watching folder](@site/docs/img/whats-new-in-v16-continue-watching.gif)
+![une vidéo montrant le dossier Continuer à regarder](@site/docs/img/whats-new-in-v16-continue-watching.gif)
 
 ### DI.fm (AudioAddict)
 
-Added support for [DI.fm (AudioAddict)](https://www.di.fm/) Events and Playlists
+Ajout du support de **[DI.fm (AudioAddict)](https://www.di.fm/) Événements et Playlists**
 
-See our documentation for [Audio Addict](./configuration/audio-addict), [Internet Radio](./configuration/internet-radio), and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Voir notre documentation pour [Audio Addict](./configuration/audio-addict), [Radio Internet] (./configuration/internet-radio) et la vidéo en utilisant [NextCP/2](https://sf666.github.io/nextcp2/) ci-dessous pour plus de détails :
 
 [![a video thumbnail for DI.fm](@site/docs/img/whats-new-in-v16-difm.png)](https://github.com/user-attachments/assets/61d680d0-911b-4cd6-a564-cffc51b05e83)
 
-### RadioBrowser
+### Navigateur radio
 
-Added [RadioBrowser](https://www.radio-browser.info/) support for finding and adding radio stations to server side playlists. Search supports:
-- Station name
-- Country
-- Language
-- Genre
+Ajout du support de **[RadioBrowser](https://www.radio-browser.info/)** pour la recherche et l'ajout de stations radio aux listes de lecture côté serveur. Recherche de supports:
+- Nom de la station
+- Pays
+- Langue
+- Genres
 
-See our [RadioBrowser](./configuration/radiobrowser) documentation and the video using [NextCP/2](https://sf666.github.io/nextcp2/) below for more:
+Voir notre documentation [RadioBrowser](./configuration/radiobrowser) et la vidéo en utilisant [NextCP/2](https://sf666.github.io/nextcp2/) ci-dessous pour plus de détails :
 
 [![a video thumbnail for RadioBrowser support](@site/docs/img/whats-new-in-v16-radiobrowser.png)](https://github.com/user-attachments/assets/38193429-f478-4284-aa67-de2fd5a3da6e)
 
-### 3-box Configuration
+### Configuration 3-box
 
-Added support for running in 3-box mode, which is when there are 3 devices (boxes) involved in playback:
-1. The server (UMS)
-2. A control point (often a phone or browser interface)
-3. A renderer / media player
+Ajout du support pour l'exécution en mode 3-box, qui est quand il y a 3 périphériques (boxes) impliqués dans la lecture :
+1. Le serveur (UMS)
+2. Un point de contrôle (souvent un téléphone ou une interface de navigateur)
+3. Un lecteur multimédia
 
-See [Two-Box and Three-Box Setups](./configuration/control-point-setups) for more.
+Voir [Deux boîtes et trois configurations de boîtes] (./configuration/control-point-setups) pour en savoir plus.
 
-### Liking/rating via renderers
+### J'aime/note via les moteurs de rendu
 
 Added support for liking/rating for all media types (like videos, playlists, folders, etc.) via renderers and media players (before, it was only available for audio)
 
