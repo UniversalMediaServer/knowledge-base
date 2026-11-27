@@ -117,75 +117,75 @@ Web 界面已分为“播放器”和“设置”两个区域。
 
 ### v9 (2019-09-06)
 
-No need to install Java anymore!
+不再需要安装 Java 了！
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=13765)
 
 ### v8 (2019-03-29)
 
-This version focused on making it easier to enjoy streaming web content like vodcasts, podcasts, internet radio, YouTube channels, and other streaming web content by adding the Shared Content tab.
+此版本通过新增“共享内容”标签页，致力于让用户更轻松地欣赏视频播客、音频播客、网络电台、YouTube 频道及其他流媒体网络内容。
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=13523)
 
 ### v7 (2018-03-27)
 
-This was the version to focus on our dynamic media browsing features with the Media Library folder.
+此版本的重点是突出“媒体库”文件夹中的动态媒体浏览功能。
 
-We added detection of Movies and TV series and also added folder-watching so files could be automatically detected in shared folders
+我们新增了电影和电视剧的检测功能，并增加了文件夹扫描功能，以便能够自动检测共享文件夹中的文件。
 
-We were also lucky to have mik_s, our forum moderator, join us around this time, who does an amazing job around this place!
+我们也很幸运，论坛版主 mik_s 也在这段时间加入了我们，他在这里的工作做得非常出色！
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=12407)
 
 ### v6 (2016-01-30)
 
-Here we added the "Fully played action" with overlay icons and file management, which was highly-anticipated.
+我们添加了备受期待的“已完全播放的操作”功能，其中包含叠加图标和文件管理功能。
 
-We also welcomed Nadahar to the team, who improved stability, logging and language support.
+我们还欢迎 Nadahar 加入团队，他提升了系统的稳定性，并改进了日志记录和语言支持功能。
 
-Thanks to his Crowdin integration, we have had 523 contributors to our 40 languages!
+得益于他与 Crowdin 的集成，我们的 40 种语言版本已吸引了 523 位贡献者！
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
+[更多详情请参见发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=6037)
 
 ### v5 (2015-01-25)
 
-In this release, we added support for UPnP connections and playback, which meant that the community were able to connect to many more devices! Thanks largely to skeptical for that.
+在此版本中，我们新增了对 UPnP 连接和播放的支持，这意味着社区用户能够连接到更多设备了！这主要得感谢skeptical。
 
-We also added our first pass at IMDb metadata, but we didn't yet have our own API. We have OpenSubtitles to thank for this, and sorry for all the request spam in those days!
+我们还添加了IMDb元数据的第一版，但当时还没有自己的API。这要感谢 OpenSubtitles，同时也为当时那些冗余请求向大家致歉！
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=2901)
 
 ### v4 (2014-07-25)
 
-The first web interface was added, finally we gave the UMS community the ability to access content via their web browsers!
+首个网页界面已上线，我们终于让 UMS 社区的用户能够通过网页浏览器访问内容了！
 
-We also added support for casting, and the ability to transcode to AAC.
+我们还增加了对投屏功能的支持，以及转码为 AAC 格式的能力。
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=2032)
 
 ### v3 (2013-11-01)
 
-V3 was a huge release, and is when we started to really pull away from PS3MS with tons of our own features.
+V3 是一个重大的版本更新，正是从那时起，我们凭借大量自主开发的功能，开始真正与 PS3MS 拉开差距。
 
-We added the New Media and Recently Played folders, playback resuming, filename prettifying, and a startup configuration wizard.
+我们新增了“新媒体”和“最近播放”文件夹、播放续播功能、文件名美化功能，以及一个启动配置引导。
 
-We also welcomed valib to the team, who is still contributing today!
+我们还欢迎 valib 加入团队，他至今仍在为团队做出贡献！
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
+[更多详情请参见发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=1295)
 
 ### v2 (2012-10-31)
 
-With v2 came the addition of the Plugin Management tab that connected to our centralized plugin database, and we again were the first to introduce a feature; Live Subtitles, where you can stream subtitles on-the-fly from your renderer.
+v2 版本新增了“插件管理”选项卡，该选项卡连接到我们的集中式插件数据库，而且我们再次率先推出了一项功能：实时字幕，您可以通过渲染器实时传输字幕。
 
-[See more details in the release announcement](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
+[更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=325)
 
 ### v1 (2012-05-31)
 
-These early versions focused on the "universal" aspect of the new program, by adding support for dozens of new devices.
+这些早期版本通过新增对数十种新设备的支持，突出了新程序的“通用”特性。
 
-We were also the first media server to support smooth motion, a frame-interpolation feature that now comes with every TV, but back then was only in new, high-end TVs.
+我们还是首款支持“平滑运动”功能的媒体服务器——这是一种帧插值技术，如今已普及到所有电视机中，但在当时仅出现在新款高端电视机上。
 
-Our second developer, SharkHunter, also joined us within the first few days.
+我们的第二位开发者SharkHunter也在头几天加入了我们。
 
 [更多详情请参阅发布公告](https://www.universalmediaserver.com/forum/viewtopic.php?t=3)
 

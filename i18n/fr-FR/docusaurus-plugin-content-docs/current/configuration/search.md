@@ -1,80 +1,80 @@
-# Search
+# Rechercher
 
-When a control point offers a search box, it does not filter the list it already has. It sends the
-search to UMS as a UPnP criterion such as `dc:title contains "beatles"`, and UMS answers with the
-matching items. How that criterion is turned into a query is what the settings on this page control.
+Lorsqu'un point de contrôle offre une zone de recherche, il ne filtre pas la liste qu'il a déjà. Il envoie la recherche
+à UMS en tant que critère UPnP tel que `dc:title contient "beatles`, et les réponses UMS avec les éléments
+correspondants. Comment ce critère est transformé en requête est ce que les paramètres de cette page contrôle.
 
-## The two search engines
+## Les deux moteurs de recherche
 
-UMS can answer a search in two ways:
+UMS peut répondre à une recherche de deux manières:
 
-- **Full-text index (default).** UMS keeps a Lucene index next to the database and searches that.
-  It is fast even on large libraries and it is what makes partial words and typo tolerance possible.
-- **Plain database search.** A straight SQL query. Slower on large libraries and it only matches
-  what is literally there, but it has no index to go out of date.
+- **Index plein texte (par défaut).** UMS garde un index Lucene à côté de la base de données et recherche cela.
+  Il est rapide même sur les grandes bibliothèques et c'est ce qui rend possible la tolérance des mots partiels et des typos.
+- **Recherche simple dans une base de données.** Une requête SQL classique. Plus lent sur les grandes bibliothèques et il ne correspond qu'à
+  ce qui est littéralement là, mais il n'a pas d'index pour être obsolète.
 
-The full-text index covers the file name of every media file, and for audio also the song title,
-album, artist, album artist, composer, conductor and genre.
+L'index en texte intégral couvre le nom du fichier de chaque fichier multimédia, et aussi le titre de la chanson,
+album, artiste, artiste, compositeur, chef d'orchestre et genre.
 
-UMS switches to the database search on its own when a control point sends a criterion the index
-cannot answer, so turning the index off is rarely necessary.
+UMS passe à la recherche de la base de données seul lorsqu'un point de contrôle envoie un critère, l'index
+ne peut pas répondre, donc désactiver l'index est rarement nécessaire.
 
 ```
-# Use the full-text index. FALSE falls back to a plain database search.
+# Utiliser l'index en texte complet. FALSE revient à une recherche de base de données simple.
 search_lucene_use_engine = TRUE
 ```
 
-## Searching for part of a word
+## Recherche d'une partie d'un mot
 
-Most search boxes send a `contains` criterion while you are still typing. UMS turns each word of
-your input into two alternatives at once:
+La plupart des boîtes de recherche envoient un critère `contains` pendant que vous tapez encore. UMS transforme chaque mot de
+votre entrée en deux alternatives à la fois :
 
-- a **prefix** match, so `beat` already finds _Beatles_ before you finish the word
-- a **fuzzy** match, so `beatlse` still finds _Beatles_ despite the typo
+- un **préfixe** correspondant, donc `beat` trouve déjà _Beatles_ avant de terminer le mot
+- une correspondance **floue** donc `beatlse` trouve encore _Beatles_ malgré la faute
 
 ```
-# Tolerate typos in addition to matching prefixes.
+# Tolérer les fautes de frappe en plus des préfixes correspondants.
 search_lucene_contains_fuzzy = TRUE
 ```
 
-Both settings match prefixes. They differ in what else they match:
+Les deux paramètres correspondent aux préfixes. Ils diffèrent dans ce qu'ils correspondent d'autre:
 
-|                                  | `TRUE` (default) | `FALSE` |
-| -------------------------------- | ---------------- | ------- |
-| `beat` finds _Beatles_           | yes              | yes     |
-| `beatlse` finds _Beatles_        | yes              | no      |
-| unrelated results on short input | possible         | no      |
+|                                          | `TRUE` (par défaut) | `FALSE` |
+| ---------------------------------------- | ------------------- | ------- |
+| `beat` trouve _Beatles_                  | oui                 | oui     |
+| `beat` trouve _Beatles_                  | oui                 | Non     |
+| résultats non liés sur une entrée courte | possible            | Non     |
 
-The last row is the reason the setting exists. Typo tolerance allows up to two wrong, missing or
-extra letters, and on a short word that reaches surprisingly far: searching for `ranz` also returns
-everything called _Jazz_, because two substitutions get you from one to the other. If that noise
-bothers you more than the typo tolerance helps, set it to `FALSE`.
+La dernière ligne est la raison pour laquelle le paramètre existe. La tolérance type permet jusqu'à deux erreurs, manquantes ou
+lettres supplémentaires, et sur un mot court qui atteint étonnamment loin : la recherche de `ranz` renvoie aussi
+tout ce que l'on appelle _Jazz_, parce que deux substitutions vous amènent de l'une à l'autre. Si ce bruit
+vous ennuie plus que la tolérance de la faute de frappe vous aide, définissez-le à `FALSE`.
 
-Two details worth knowing:
+Deux détails qui valent la peine d'être connus :
 
-- A prefix is only used from **three characters** on. One or two letters would match a large part of
-  the library without telling you anything the typo tolerance does not already find.
-- Putting your input in quotation marks searches for the **words next to each other** instead, which
-  is useful when the individual words are common but the combination is not.
+- Un préfixe n'est utilisé qu'à partir de **trois caractères** activé. Une ou deux lettres correspondent à une grande partie de
+  la bibliothèque sans vous dire quoi que ce soit que la tolérance de la faute de frappe ne trouve pas déjà.
+- Mettre votre entrée entre guillemets recherche les **mots à côté des uns des autres** à la place, qui
+  est utile lorsque les mots individuels sont communs mais que la combinaison ne l'est pas.
 
-## Searching for an exact value
+## Recherche d'une valeur exacte
 
-Some criteria ask for an exact value rather than a part of one — a control point browsing by genre
-sends `upnp:genre = "Jazz"`, for instance. By default that is taken literally.
+Certains critères demandent une valeur exacte plutôt qu'une partie d'un seul — une navigation par genre
+envoie `upnp:genre = "Jazz"`, par exemple. Par défaut, cela est pris littéralement.
 
 ```
-# Tolerate typos in exact matches as well. Off by default.
+# Tolérer les fautes de frappe dans les correspondances exactes. Désactivé par défaut.
 search_lucene_equal_fuzzy = FALSE
 ```
 
-Turning this on makes exact comparisons tolerate typos too. That is rarely what you want, because
-these criteria usually come from the control point itself rather than from something you typed, and
-a value that is nearly right is then quietly treated as right.
+Si vous activez cette option, les comparaisons exactes tolèrent également les fautes de frappe. C'est rarement ce que vous voulez, car
+ces critères proviennent généralement du point de contrôle lui-même plutôt que de quelque chose que vous avez tapé, et
+une valeur qui est presque à droite est alors traitée tranquillement comme bonne.
 
 ## Notes
 
-Search ignores capitalization. `chapitre`, `Chapitre` and `CHAPITRE` return the same results.
+La recherche ignore la majuscule. `chapitre`, `Chapitre` et `CHAPITRE` retournent les mêmes résultats.
 
-If a search does not return what you expect, the debug log shows the query UMS built from your
-input, on a line beginning with `lucene search string is`. Comparing it with what you typed usually
-explains the result on the spot.
+Si une recherche ne retourne pas ce que vous attendez, le journal de débogage affiche la requête UMS construite à partir de votre entrée
+, sur une ligne commençant par `chaine de recherche lucene est`. Comparer avec ce que vous avez tapé habituellement
+explique le résultat sur place.

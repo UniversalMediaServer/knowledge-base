@@ -1,45 +1,45 @@
-# RadioBrowser
+# Navigateur radio
 
-Adding an internet radio station to a playlist normally means hunting down its stream address
-somewhere on the web and pasting it into a file. UMS can take that step off your hands: it is
-connected to **RadioBrowser**, a community-maintained directory of internet radio stations, and can
-search it and add a station for you.
+Ajouter une station de radio internet à une playlist signifie normalement chasser son adresse de flux
+quelque part sur le web et le coller dans un fichier. UMS peut prendre cette étape de vos mains : c'est
+connecté à **RadioBrowser**, un annuaire de stations de radio Internet géré par la communauté, et peut
+effectuer une recherche et ajouter une station pour vous.
 
-There is nothing to configure. The directory is used on demand, and only when you ask for it.
+Il n'y a rien à configurer. Le répertoire est utilisé à la demande, et uniquement lorsque vous le demandez.
 
-## Finding a station
+## Trouver une station
 
-If your control point offers a station search, it is asking UMS, and UMS is asking RadioBrowser.
-Stations can be narrowed down by
+Si votre point de contrôle propose une recherche de station, il demande UMS, et UMS demande RadioBrowser.
+Les stations peuvent être réduites de
 
-- name
-- country
-- language
-- tag, such as a genre or a theme
+- Nom
+- Pays
+- langue
+- , comme un genre ou un thème
 
-Which of these your control point lets you use, and how it presents them, is up to the control
-point. UMS also supplies the possible values for the country, language and tag filters, so such a
-search box can offer them as a list instead of making you type them.
+Lequel de ces points de contrôle vous permet d'utiliser, et comment il les présente, dépend du point de contrôle
+. UMS fournit également les valeurs possibles pour les filtres « pays », « langue » et « balise » ; ainsi, un tel
+champ de recherche peut les proposer sous forme de liste plutôt que de vous obliger à les saisir manuellement.
 
-Long result lists are fetched in portions, so a broad search does not have to be transferred in one
-go.
+Les listes de résultats longues sont extraites en portions, donc une recherche large ne doit pas être transférée en un seul
+.
 
-## Adding a station
+## Trouver une station
 
-When you pick a station, UMS writes a complete entry into the playlist you chose — not just the
-address:
+Lorsque vous choisissez une station, UMS écrit une entrée complète dans la playlist que vous avez choisie — pas seulement l'adresse
+:
 
-- the **stream address**
-- the **station name**, or a title of your own if your control point lets you enter one
-- the **station logo**, so the entry has a picture instead of a default icon
-- the **station identifier** from the directory
+- l'adresse du **flux**
+- le **nom de la station**, ou un titre propre si votre point de contrôle vous permet d'en saisir un
+- le **logo de la station**, donc l'entrée a une image au lieu d'une icône par défaut
+- le **identifiant de la station** du répertoire
 
-The last one is the interesting part. It stays in the playlist file as a
-[`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
-the directory entry it came from. UMS uses that connection to fill in details the stream itself does
-not reveal, such as the genre and the bitrate.
+La dernière est la partie intéressante. Il reste dans le fichier de playlist en tant que
+[`#RADIOBROWSERUUID:` directive](./playlist-directives), ce qui signifie que l'entrée reste connectée à
+l'entrée du répertoire d'où elle vient. UMS utilise cette connexion pour compléter les informations que le flux lui-même
+ne fournit pas, telles que le genre et le débit binaire.
 
-The result is a playlist file that still reads like a plain playlist and works in any other player:
+Le résultat est un fichier de liste de lecture qui continue de lire comme une liste de lecture simple et fonctionne dans n'importe quel autre lecteur:
 
 ```text
 #EXTM3U
@@ -49,11 +49,11 @@ The result is a playlist file that still reads like a plain playlist and works i
 http://stream.example.com/jazz.mp3
 ```
 
-You can write such an entry by hand as well, if you know the station's identifier. Leaving the
-directive out costs you only the extra details; the station itself plays either way.
+Vous pouvez aussi écrire une telle entrée à la main si vous connaissez l'identifiant de la station. Laisser la directive
+vous coûte seulement les détails supplémentaires ; la station elle-même joue dans les deux sens.
 
-## Afterwards
+## Par la suite
 
-The station behaves like any other entry in the playlist from then on. You can rate it, replace its
-picture, and correct how its live titles are read; see
-[Internet radio and live titles](./internet-radio).
+La station se comporte comme toute autre entrée de la playlist à partir de ce moment-là. Vous pouvez l'évaluer, remplacer son image
+et corriger la façon dont ses titres en direct sont lus ; voir
+[radio Internet et titres en direct](./internet-radio).

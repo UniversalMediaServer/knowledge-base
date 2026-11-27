@@ -11,7 +11,7 @@ Tämä opas selittää:
 
 ## Tuetut kuvamuodot
 
-Seuraavat tiedostotyypit ovat tuettu ja tarkistetaan tässä järjestyksessä. Ensimmäinen vastaava kuvatiedosto otetaan käyttöön:
+UMS tukee näitä kuvaformaatteja kansion ja soittolistan taideteokselle:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Seuraavat tiedostotyypit ovat tuettu ja tarkistetaan tässä järjestyksessä. E
 - `jpg`
 - `bmp`
 - `gif`
-
-Voit käyttää mitä tahansa näistä tiedostomuodoista sekä kansioiden että soittolistan kansikuviin.
 
 ## Kansio
 
@@ -34,6 +32,25 @@ Esimerkkejä:
 - `folder.jpg`
 - `folder.png`
 
+### Käytä olemassa olevia tiedostonimiä kuten `cover.jpg`
+
+Voit määritellä vaihtoehtoisia nimiä kansioiden taideteoksille. Jos haluat etsiä
+`cover.jpg` tai `front.png`, lisää tämä rivi `UMS.conf`-tiedostoon UMS-profiilikansiossasi ja käynnistä UMS uudelleen.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Soittolistat
 
 Jos haluat asettaa soittolistalle kansikuvan, käytä samaa perustiedostonimeä kuin soittolistan tiedosto.
@@ -43,7 +60,12 @@ Esimerkki:
 - Soittolistan tiedosto: `Jazz.m3u8`
 - Kuvatiedosto: `Jazz.jpg` (tai `Jazz.webp`, `Jazz.png`, ja niin edelleen)
 
-Jos sopivaa soittolistan kuvaa ei löydy, käytetään kansion kansikuvaa.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Esimerkki kansiorakenteesta
 

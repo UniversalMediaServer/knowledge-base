@@ -11,7 +11,7 @@ Deze handleiding legt uit:
 
 ## Ondersteunde afbeeldingsformaten
 
-De volgende bestandstypes worden ondersteund en aangevinkt in deze volgorde. Het eerste overeenkomende afbeeldingsbestand wordt gebruikt:
+UMS ondersteunt deze afbeeldingsformaten voor illustratiemateriaal van mappen en afspeellijsten:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ De volgende bestandstypes worden ondersteund en aangevinkt in deze volgorde. Het
 - `jpg`
 - `bmp`
 - `gif`
-
-Je kunt elk van deze formaten gebruiken voor zowel map illustratiemateriaal als afspeellijst illustratiemateriaal.
 
 ## Map
 
@@ -34,6 +32,20 @@ Voorbeelden:
 - `map.jpg`
 - `map.png`
 
+### Gebruik bestaande bestandsnamen zoals 'omslag.jpg'
+
+Je kunt alternatieve namen opgeven voor illustratiemateriaal voor mapafbeeldingen. Om te zoeken naar `omslag.jpg` of `voorkant.png`, voegt u deze regel toe aan `UMS.conf` in uw UMS-profielmap; start daarna UMS opnieuw op.
+
+```ini
+map_miniatuur_namen = omslag, voorkant
+```
+
+Voer de namen in zonder bestandsextensies en scheid ze met komma's. Matchen maakt geen onderscheid tussen hoofdletters en kleine letters; `omslag` komt dus ook overeen met `Omslag.JPG`.
+
+Met deze instelling zoekt UMS eerst naar `map.*`, vervolgens naar `omslag.*`, dan naar `voorkant.*` en tot slot naar ondersteunde afbeeldingen die `illustratiemateriaal` in de bestandsnaam hebben staan. Laat de instelling leeg om gebruik te maken van de standaardmethode voor het opzoeken van illustratiemateriaal voor mapafbeeldingen.
+
+De geselecteerde afbeelding kan ook dienen als reserveafbeelding voor nummers in de map en voor lokale afspeellijsten in dezelfde map.
+
 ## Afspeellijsten
 
 Om illustratiemateriaal voor een afspeellijst in te stellen, gebruik je dezelfde basisbestandsnaam als het afspeellijstbestand.
@@ -43,7 +55,12 @@ Voorbeeld:
 - Afspeellijst bestand: `Jazz.m3u8`
 - Illustratiemateriaal bestand: `Jazz.jpg` (of `Jazz.webp`, `Jazz.png`, enzovoort)
 
-Als een overeenkomend afspeellijst illustratiemateriaal bestand niet wordt gevonden, wordt de map illustratiemateriaal gebruikt als een terugval.
+Voor een lokale afspeellijst controleert UMS deze bronnen in de aangegeven volgorde.
+
+1. Een afbeelding met exact dezelfde basisbestandsnaam als de afspeellijst, zoals `Jazz.jpg` bij `Jazz.m3u8`.
+2. Illustratiemateriaal die via een compatibel besturingselement aan die afspeellijst is toegewezen.
+3. Het illustratiemateriaal van de map, die afkomstig kan zijn van `map.*`, een naam in
+   `map_miniatuur_namen` of een `album illustratiemateriaal`-afbeelding.
 
 ## Voorbeeld mappenstructuur
 

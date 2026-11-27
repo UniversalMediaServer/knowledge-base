@@ -11,7 +11,7 @@
 
 ## Поддерживаемые форматы изображений
 
-Поддерживаются следующие типы файлов, которые проверяются в указанном порядке. Используется первый подходящий файл изображения:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@
 - `jpg`
 - `bmp`
 - `gif`
-
-Вы можете использовать любой из этих форматов как для обложек папок, так и для обложек плейлистов.
 
 ## Папка
 
@@ -34,6 +32,25 @@
 - `папка.jpg`
 - `папка.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Плейлисты
 
 Чтобы установить обложку для плейлиста, используйте то же базовое имя файла, что и у файла плейлиста.
@@ -43,7 +60,12 @@
 - Файл плейлиста: `Jazz.m3u8`
 - Файл обложки: `Jazz.jpg` (или `Jazz.webp`, `Jazz.png` и так далее)
 
-Если подходящий файл обложки для плейлиста не найден, в качестве запасного варианта используется обложка папки.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Пример структуры папок
 

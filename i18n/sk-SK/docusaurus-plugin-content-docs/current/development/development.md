@@ -14,7 +14,7 @@ GitHub vývojárom uľahčuje vytvorenie vlastného forku oficiálnych zdrojový
 
         git clone git@github.com:YOURNAME/universalmediaserver.git YOURNAME
 
-Nový repozitár teraz máte v svojom počítači.
+Nový repozitár teraz máte vo svojom počítači.
 
 ## Vývoj v integrovaných vývojových prostrediach
 

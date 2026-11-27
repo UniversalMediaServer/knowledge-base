@@ -11,7 +11,7 @@ Bu kılavuz şunları açıklamaktadır:
 
 ## Desteklenen resim biçimleri
 
-Aşağıdaki dosya türleri bu sırayla desteklenir ve denetlenir. İlk eşleşen resim dosyası kullanılır:
+UMS supports these image formats for folder and playlist artwork:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Aşağıdaki dosya türleri bu sırayla desteklenir ve denetlenir. İlk eşleşe
 - `jpg`
 - `bmp`
 - `gif`
-
-Bu biçimlerden herhangi birini hem klasör görsel çalışması hem de çalma listesi görsel çalışması için kullanabilirsiniz.
 
 ## Klasör
 
@@ -34,6 +32,25 @@ Bir klasörün görsel çalışmasını ayarlamak için o klasörün içine `kla
 - `klasor.jpg`
 - `klasor.png`
 
+### Use existing filenames such as `cover.jpg`
+
+You can define alternative names for folder artwork. To look for
+`cover.jpg` or `front.png`, add this line to `UMS.conf` in your UMS profile folder, then restart UMS.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Enter the names without file extensions and separate them with commas. Matching ignores
+capitalization, so `cover` also matches `Cover.JPG`.
+
+With this setting, UMS looks for `folder.*` first, then `cover.*`, then `front.*`, and finally
+supported images with `albumart` in the filename. Leave the setting empty to use the standard
+folder artwork lookup.
+
+The selected image can also serve as fallback artwork for tracks in the folder and for local
+playlists in the same directory.
+
 ## Çalma listeleri
 
 Bir çalma listesi için görsel çalışma ayarlamak amacıyla çalma listesi dosyasıyla aynı temel dosya adını kullanın.
@@ -43,7 +60,12 @@ Bir çalma listesi için görsel çalışma ayarlamak amacıyla çalma listesi d
 - Çalma listesi dosyası: `Jazz.m3u8`
 - Görsel çalışma dosyası: `Jazz.jpg` (veya `Jazz.webp`, `Jazz.png` ve benzeri)
 
-Eğer eşleşen bir çalma listesi görsel çalışma dosyası bulunamazsa, klasör görsel çalışması geri dönüş olarak kullanılır.
+For a local playlist, UMS checks these sources in order.
+
+1. An image with exactly the same base filename as the playlist, such as `Jazz.jpg` for `Jazz.m3u8`.
+2. Artwork assigned to that playlist through a compatible control point.
+3. The directory's artwork, which can come from `folder.*`, a name in
+   `folder_thumbnail_names`, or an `albumart` image.
 
 ## Örnek klasör yapısı
 

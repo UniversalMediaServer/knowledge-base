@@ -81,7 +81,7 @@ audio_addict_playlist_loop = FALSE
 
 | Setting                               | Default | Purpose                                    |
 | ------------------------------------- | ------- | ------------------------------------------ |
-| `audio_addict_user`                   | —       | Your account name                          |
+|                                       | —       | Your account name                          |
 | `audio_addict_pass`                   | —       | Your password                              |
 | `audio_addict_europe`                 | `TRUE`  | Prefer the European streaming server       |
 | `audio_addict_icy_metadata`           | `TRUE`  | Send live titles to the player             |

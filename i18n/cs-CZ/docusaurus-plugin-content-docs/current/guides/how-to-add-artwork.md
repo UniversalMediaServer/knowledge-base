@@ -11,7 +11,7 @@ Tato příručka vysvětluje:
 
 ## Podporované formáty obrázků
 
-Podporovány jsou následující typy souborů, které se hledají v tomto pořadí. Použije se první nalezený odpovídající soubor s obrázkem:
+UMS podporuje pro obrázky složek a seznamů skladeb tyto formáty:
 
 - `webp`
 - `png`
@@ -19,8 +19,6 @@ Podporovány jsou následující typy souborů, které se hledají v tomto pořa
 - `jpg`
 - `bmp`
 - `gif`
-
-Libovolný z těchto formátů můžete použít pro obrázky složek i seznamů skladeb.
 
 ## Složka
 
@@ -34,6 +32,20 @@ Příklady:
 - `folder.jpg`
 - `folder.png`
 
+### Použití stávajících názvů souborů, například `cover.jpg`
+
+Pro obrázky složek můžete nastavit i jiné názvy souborů. Chcete-li vyhledávat soubory `cover.jpg` nebo `front.png`, přidejte do souboru `UMS.conf` ve složce profilu UMS následující řádek a poté UMS restartujte.
+
+```ini
+folder_thumbnail_names = cover, front
+```
+
+Názvy zadávejte bez přípon souborů a oddělujte je čárkami. Při hledání se nerozlišují velká a malá písmena, takže názvu `cover` odpovídá i soubor `Cover.JPG`.
+
+S tímto nastavením UMS nejprve hledá `folder.*`, poté `cover.*`, následně `front.*` a nakonec obrázky v podporovaných formátech, jejichž název obsahuje `albumart`. Chcete-li použít standardní způsob vyhledávání obrázků složek, ponechte toto nastavení prázdné.
+
+Vybraný obrázek může sloužit také jako náhradní obrázek pro skladby ve složce a pro místní seznamy skladeb ve stejném adresáři.
+
 ## Seznamy skladeb
 
 Pro obrázek seznamu skladeb použijte stejný název souboru bez přípony, jaký má soubor seznamu skladeb.
@@ -43,7 +55,11 @@ Příklad:
 - Soubor seznamu skladeb: `Jazz.m3u8`
 - Soubor s obrázkem: `Jazz.jpg` (nebo `Jazz.webp`, `Jazz.png` a tak dále)
 
-Pokud se odpovídající obrázek seznamu skladeb nenajde, použije se místo něj obrázek složky.
+U místního seznamu skladeb UMS kontroluje následující zdroje v uvedeném pořadí.
+
+1. Obrázek se zcela shodným názvem souboru bez přípony, jaký má seznam skladeb, například `Jazz.jpg` pro `Jazz.m3u8`.
+2. Obrázek přiřazený k danému seznamu skladeb prostřednictvím kompatibilního řídicího bodu.
+3. Obrázek adresáře ze souboru `folder.*`, ze souboru s názvem uvedeným v `folder_thumbnail_names` nebo z obrázku s `albumart` v názvu.
 
 ## Příklad struktury složek
 

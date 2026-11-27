@@ -10,21 +10,21 @@ Projekt vznikl v roce 2012 jako odnož (fork) PS3 Media Serveru, tehdy jednoho z
 
 Svůj základní úkol plnil dobře, ale od té doby jsme UMS rozvinuli novými směry a posunuli výrazně dál.
 
-Přehled změn v poslední verzi naleznete v [Co je nového v V16](./whats-new-in-v16)
+Přehled změn v nejnovější verzi najdete v části [Co je nového ve verzi 16](./whats-new-in-v16).
 
 ## Předchozí verze
 
 ### v15 (2025-08-23)
 
-2 hlavními cíli pro V15 bylo zjednodušení našeho rozhraní, na základě zpětné vazby a recenzí uživatelů a usnadnění používání našich uživatelských účtů.
+Dvěma hlavními cíli verze 15 bylo zjednodušit rozhraní na základě zpětné vazby a recenzí uživatelů a usnadnit používání uživatelských účtů.
 
-Rychlý přehled změn v této verzi je:
+Stručný přehled změn v této verzi:
 
 - **Přepínač uživatelů** s podporou **více současně přihlášených účtů**
 - **Přepínač režimu** pro změnu mezi dvěma hlavními oblastmi: **Přehrávač** a **Nastavení**
 - Přihlašování pomocí **kódu PIN**
 - Dynamická **metadata řad seriálů**
-- Tlačítko **informace o médiu**
+- Tlačítko s **informacemi o médiu** pro jednotlivé soubory
 - Dále jsme přepracovali kód oznámení a aktualizací v reálném čase, zlepšili správu paměti a provedli mnoho dalších změn, které usnadňují používání a snižují počet potřebných kroků.
 
 #### Přepínač uživatelů

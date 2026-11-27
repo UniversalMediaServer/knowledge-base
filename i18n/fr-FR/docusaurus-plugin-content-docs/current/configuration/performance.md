@@ -1,78 +1,78 @@
 # Performance
 
-The defaults are chosen to be safe on modest hardware. On a machine with a large library and cores
-to spare, a few settings are worth revisiting — and one of them matters more than the rest.
+Les valeurs par défaut sont choisies pour être sûres sur un matériel modeste. Sur une machine avec une grande bibliothèque et des cœurs
+à donner, quelques réglages valent la peine d’être revus — et l’un d’eux importe plus que le reste.
 
-Change one thing at a time and watch the result. Every setting here trades one resource for another,
-so a value that helps one installation can hurt the next.
+Changez une chose à la fois et regardez le résultat. Chaque réglage ici trade une ressource pour une autre,
+donc une valeur qui aide à une installation peut nuire à l'autre.
 
-## Reading the library in parallel
+## Lecture de la bibliothèque en parallèle
 
-Before UMS can present a file, it has to work out what it is: read the metadata, find the artwork,
-determine what the requesting device needs. This is the single biggest factor in how long a scan
-takes and how quickly a large folder opens, and it is done by a pool of worker threads.
+Avant que UMS puisse présenter un fichier, il doit comprendre ce qu'il est : lire les métadonnées, trouver l'œuvre d'art,
+déterminer ce dont l'appareil demandeur a besoin. Ceci est le facteur le plus important de la durée d'une analyse
+et de la vitesse à laquelle un grand dossier s'ouvre, et il est fait par un ensemble de fils de travail.
 
 ```
-# How many files UMS works on at once. Default 4, allowed 1 to 64.
+# Combien de fichiers UMS fonctionne à la fois. Défaut 4, autorisé 1 à 64.
 media_resolve_threads = 4
 ```
 
-The work is dominated by waiting — for the disk, for the database, occasionally for the network — so
-more threads help well beyond the number of cores you have. On a server with a large library, a
-value in the region of the core count or above is reasonable. On a small machine, or one where UMS
-shares the disk with something else, leave it alone.
+L'œuvre est dominée par l'attente — pour le disque, pour la base de données, occasionnellement pour le réseau — donc
+plus de fils de discussion aident bien au-delà du nombre de cœurs que vous avez. Sur un serveur avec une grande bibliothèque, une valeur
+dans la région du nombre de noyaux ou au-dessus est raisonnable. Sur une petite machine, ou sur une machine où UMS
+partage le disque avec autre chose, laissez-le seul.
 
-This setting also sizes the pool of database connections, which is kept at twice the number of
-threads and never below ten. That is deliberate: worker threads need connections, and raising the
-threads without the connections to go with them would leave them queueing for one another. Because
-the two move together, there is nothing separate to adjust.
+Ce paramètre taille également le pool de connexions de base de données, qui est conservé à deux fois le nombre de threads
+et jamais en dessous de dix. C'est délibéré: les fils de travail ont besoin de connexions, et augmenter les fils de discussion
+sans les connexions à les suivre, les laisserait se mettre en file d'attente. Parce qu'
+les deux se déplacent ensemble, il n'y a rien de séparé à ajuster.
 
-## Database memory
+## Mémoire de la base de données
 
-The database keeps recently used pages in memory. How much it may use is decided automatically, and
-that is normally the right answer:
+La base de données garde les pages récemment utilisées en mémoire. Combien il peut utiliser est décidé automatiquement, et
+qui est normalement la bonne réponse :
 
 ```
-# Database cache in KB. Default -1, which lets UMS decide.
+# Cache de base de données en KB. Par défaut -1, qui permet à UMS de décider.
 database_media_cache_size = -1
 ```
 
-Two further switches trade memory for speed. Both are off by default and both are worth a
-measurement rather than a guess:
+Deux autres commutateurs échangent de la mémoire contre la vitesse. Les deux sont désactivés par défaut et les deux valent une mesure
+plutôt qu'une supposition :
 
 ```
-# Hold database indexes in memory.
+# Conserver les index de la base de données dans la mémoire.
 database_media_use_memory_indexes = FALSE
 
-# Let the cache give memory back under pressure instead of holding it.
+# Laisser le cache restituer la mémoire sous pression au lieu de la maintenir.
 database_media_use_cache_soft = FALSE
 ```
 
-Memory indexes make lookups faster at the cost of memory that is then unavailable for anything else.
-The soft cache is the opposite trade: it releases memory when the system needs it, which keeps UMS
-out of trouble on a machine that is short of memory, at the price of having to read those pages
-again afterwards.
+Les index de mémoire rendent les recherches plus rapides au prix de la mémoire qui est alors indisponible pour tout autre chose.
+Le cache logiciel est le commerce inverse : il libère de la mémoire quand le système en a besoin, qui garde UMS
+de problèmes sur une machine qui manque de mémoire, au prix d'avoir à lire ces pages
+à nouveau par la suite.
 
-## Logging
+## Journalisation
 
-By default UMS writes each log line out as it happens. Buffering makes logging cheaper:
+Par défaut, UMS écrit chaque ligne de log telle qu'elle se produit. La mise en mémoire tampon rend la journalisation moins chère:
 
 ```
-# Collect log lines before writing them out. Off by default.
+# Collecter les lignes de log avant de les écrire. Désactivé par défaut.
 logging_buffered = FALSE
 ```
 
-The catch shows up exactly when you need the log most. If UMS is killed or crashes, whatever is
-still in the buffer is lost, so the log can stop short of the event you are investigating — and an
-abruptly ending log then looks like a freeze that never happened. Leave buffering off while chasing
-a problem.
+Le catch apparaît exactement quand vous avez le plus besoin de la bûche. Si l'UMS est tué ou crash, tout ce qui est
+encore dans le tampon est perdu, pour que le journal puisse s'arrêter à court de l'événement que vous étudiez — et un journal
+se terminant brusquement ressemble à un gel qui ne s'est jamais produit. Laissez la mise en mémoire tampon éteinte en poursuivant
+un problème.
 
-## What to measure
+## Que mesurer
 
-Two numbers tell you whether a change helped:
+Deux chiffres vous indiquent si un changement vous a aidé:
 
-- How long a full scan of your library takes. It is in the log, as a line reporting the media scan
-  completed and the number of seconds it needed.
-- How long it takes to open your largest folder in a control point, once after a restart and once
-  again straight afterwards. The first time includes the work of building the folder, the second
-  does not, and the difference is what these settings act on.
+- Combien de temps prend une analyse complète de votre bibliothèque. Il est dans le journal, comme une ligne signalant le scan de média
+  terminé et le nombre de secondes nécessaires.
+- Combien de temps faut-il pour ouvrir votre plus grand dossier dans un point de contrôle, une fois après un redémarrage et une fois de plus
+  tout de suite. La première fois inclut le travail de construction du dossier, la seconde
+  ne le fait pas, et la différence est sur laquelle ces paramètres agissent.

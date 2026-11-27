@@ -34,9 +34,8 @@ address:
 - the **station logo**, so the entry has a picture instead of a default icon
 - the **station identifier** from the directory
 
-The last one is the interesting part. It stays in the playlist file as a
-[`#RADIOBROWSERUUID:` directive](./playlist-directives), which means the entry remains connected to
-the directory entry it came from. UMS uses that connection to fill in details the stream itself does
+The last one is the interesting part. 이 항목은 재생목록 파일에서 [`#RADIOBROWSERUUID:` 지시문](./playlist-directives)으로 남아 있으며, 이는 해당 항목이 계속
+원래 속한 디렉터리 항목입니다. UMS uses that connection to fill in details the stream itself does
 not reveal, such as the genre and the bitrate.
 
 The result is a playlist file that still reads like a plain playlist and works in any other player:
@@ -54,6 +53,4 @@ directive out costs you only the extra details; the station itself plays either 
 
 ## Afterwards
 
-The station behaves like any other entry in the playlist from then on. You can rate it, replace its
-picture, and correct how its live titles are read; see
-[Internet radio and live titles](./internet-radio).
+The station behaves like any other entry in the playlist from then on. 평가하시고, 이미지를 교체하시며, 라이브 타이틀의 읽는 방식을 수정하실 수 있습니다. 자세한 내용은 [인터넷 라디오 및 라이브 타이틀](./internet-radio)를 참조하세요.

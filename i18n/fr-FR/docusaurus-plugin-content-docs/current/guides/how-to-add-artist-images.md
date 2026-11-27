@@ -1,55 +1,58 @@
-# How to add artist images
+# Comment ajouter des images d'artiste
 
-When you browse your library by artist, UMS can show a picture for each artist instead of a generic
-folder icon. The picture does not come from the audio files — it comes from the folder that carries
-the artist's name.
+Lorsque vous naviguez dans votre bibliothèque par artiste, UMS peut afficher une image pour chaque artiste au lieu d'une icône de dossier
+générique. L'image ne provient pas des fichiers audio — elle provient du dossier qui porte
+le nom de l'artiste.
 
-## How UMS finds the picture
+## Comment UMS trouve l'image
 
-You tell UMS **one** directory: the one whose subfolders are named after your artists. For an artist,
-UMS then looks for a subfolder with exactly that name and uses that folder's artwork.
+Vous indiquez à UMS **un** répertoire: celui dont les sous-répertoires sont nommés d'après vos artistes. Pour un artiste,
+UMS recherche ensuite un sous-dossier avec exactement ce nom et utilise l'œuvre de ce dossier.
 
 ```
-# The directory whose subfolders are named after the artists.
+# Le répertoire dont les sous-dossiers sont nommés d'après les artistes.
 audio_artist_dir = /music/Albums
 ```
 
-So with a library like this:
+Donc, avec une librairie comme celle-ci :
 
 ```text
 /music/Albums/
 |-- Frank Sinatra/
-|   |-- folder.jpg          <- the picture shown for "Frank Sinatra"
-|   `-- Come Fly with Me/
+| |-- dossier. pg <- l'image affichée pour "Frank Sinatra"
+| `-- Come Fly with Me/
 |-- Miles Davis/
-|   |-- folder.jpg
-|   `-- Kind of Blue/
+| |-- dossier. pg
+| `-- Type de bleu/
 `-- Zaz/
-    `-- Paris/              <- no folder.jpg, so Zaz gets the default icon
+    `-- Paris/ <- pas de dossier. pg, donc Zaz obtient l'icône par défaut
 ```
 
-_Frank Sinatra_ and _Miles Davis_ get their pictures, _Zaz_ does not.
+_Frank Sinatra_ et _Miles Davis_ obtiennent leurs photos, _Zaz_ ne le fait pas.
 
-The artwork inside the artist folder follows the ordinary rules, so the file is called `folder.jpg`,
-`folder.png`, `folder.webp` and so on. See [How to add artwork](/guides/how-to-add-artwork) for the full
-list of supported formats.
+L'œuvre d'art dans le dossier d'artistes suit les règles ordinaires, donc le fichier est appelé `folder.jpg`,
+`folder.png`, `folder.webp` et ainsi de suite. Voir [Comment ajouter un artwork](/guides/how-to-add-artwork) pour la liste complète
+des formats pris en charge.
 
-## Two conditions
+## Deux conditions
 
-An artist picture appears only when both are true:
+Une photo d'artiste n'apparaît que lorsque les deux sont vraies :
 
-1. A subfolder of the artist directory is named **exactly** like the artist, ignoring capitalisation.
-   _Frank Sinatra_ finds the folder `Frank Sinatra`, and also `frank sinatra`, but not
-   `Sinatra, Frank`. The name has to match the whole folder name, not a part of it.
-2. That folder has artwork of its own.
+1. Un sous-dossier du répertoire d'artistes est nommé **exactement** comme l'artiste, ignorant la capitalisation.
+   _Frank Sinatra_ trouve le dossier `Frank Sinatra`, et aussi `frank sinatra`, mais pas
 
-If either is missing, UMS falls back to the default icon. Nothing is broken — there is simply no
-picture to show.
+    `Sinatra, Frank`. Le nom doit correspondre à l'ensemble du nom du dossier, pas à une partie.
 
-## Finding out which artists have none
+2. Ce dossier contient ses propres illustrations.
 
-The quickest check is on the file system: list the subfolders of your artist directory and look for
-those without an image file. On Linux or macOS:
+Si l'une ou l'autre est manquante, UMS utilise l'icône par défaut. Rien n'est cassé — il n'y a tout simplement pas
+d'image à afficher.
+
+## Découvrir quels artistes n'en ont aucun
+
+La vérification la plus rapide consiste à examiner le système de fichiers : listez les sous-dossiers de votre répertoire d’artiste et recherchez
+
+ceux qui ne contiennent pas de fichier image. Sous Linux ou macOS :
 
 ```bash
 cd /music/Albums
@@ -58,15 +61,15 @@ for d in */; do
 done
 ```
 
-Everything it prints is an artist that will show the default icon.
+Tout ce qu'il affiche est un artiste qui affichera l'icône par défaut.
 
-Two causes are common. Either the folder really has no picture yet, or the folder name and the
-artist name in the tags have drifted apart — a guest artist, a different spelling, or a name written
-as _Surname, First name_ on disk but the other way round in the tags. The second case is worth
-checking before you go looking for a picture that is already there.
+Deux causes sont courantes. Soit le dossier ne contient effectivement encore aucune image, soit le nom du dossier et le
+nom de l'artiste figurant dans les balises ne correspondent plus — il peut s'agir d'un artiste invité, d'une orthographe différente, ou d'un nom écrit
+sous la forme _Nom, Prénom_ sur le disque, mais dans l'ordre inverse dans les balises. Dans ce deuxième cas, il vaut mieux
+vérifier avant de chercher une image qui se trouve déjà là.
 
-## Setting the directory from your control point
+## Définition du répertoire depuis votre point de contrôle
 
-If your control point supports it, you can point UMS at the artist directory by browsing to it and
-choosing it there, instead of editing the configuration file. UMS stores the path itself, so the
-setting survives a restart either way.
+Si votre point de contrôle le supporte, vous pouvez pointer UMS vers le répertoire d'artistes en naviguant vers lui et
+en le choisissant là, au lieu de modifier le fichier de configuration. UMS enregistre le chemin d'accès lui-même ; ainsi, le
+paramètre est conservé après un redémarrage, quelle que soit la méthode utilisée.

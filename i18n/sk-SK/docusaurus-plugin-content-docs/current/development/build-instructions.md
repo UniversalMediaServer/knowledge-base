@@ -3,7 +3,7 @@
 Tento dokument opisuje, ako zostaviť Universal Media Server zo zdrojových súborov.
 
 _Dôležitá poznámka:_
-Hotové vydania Universal Media Server si môžete stiahnuť z http://www.universalmediaserver.com/. Bežný používateľ preto tieto kroky NEMUSÍ vykonávať.
+Hotové vydania programu Universal Media Server si môžete stiahnuť z http://www.universalmediaserver.com/. Bežný používateľ preto tieto kroky NEMUSÍ vykonávať.
 
 Vyžadujú sa nasledujúce softvérové balíky:
 

@@ -84,7 +84,7 @@ Pri používaní Fedora CoreOS som narazil na chyby odmietnutia prístupu alebo 
 
 Namiesto toho sa môže odporúčať použitie pomenovaných zväzkov spravovaných Dockerom. Aby som sa vyhol tejto zložitosti, zistil som, že pridanie prípony `:Z` k hodnote voľby bind mount umožnilo kontajneru zapisovať do súborov hostiteľa. Možno použiť aj `:z`, no z bezpečnostného hľadiska sa môže odporúčať oddeliť prostriedky jednotlivých aplikácií a služieb namiesto ich zdieľania.
 
-Zodpovedajúce chybové hlásenia možno zobraziť pomocou journalctl, takže ide o problém so SELinux. Riešením by bolo spustiť `chcon -Rt svirt_sandbox_file_t` host_dir, ale zdá sa, že ani tento postup sa neodporúča.
+Zodpovedajúce chybové hlásenia možno zobraziť pomocou journalctl, takže ide o problém so SELinuxom. Riešením by bolo spustiť `chcon -Rt svirt_sandbox_file_t` host_dir, ale zdá sa, že ani tento postup sa neodporúča.
 
 Zaujímavé je, že na Fedora Workstation sa tento problém nevyskytuje. Predpokladám, že ručná inštalácia pridala balík, ktorý ho rieši. Zrejme ide o balík container-selinux.
 

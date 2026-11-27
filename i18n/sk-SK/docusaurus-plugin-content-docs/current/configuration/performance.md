@@ -22,7 +22,7 @@ Toto nastavenie určuje aj počet databázových pripojení. Ten sa udržiava na
 Databáza uchováva nedávno použité dátové stránky v pamäti. Dostupné množstvo pamäte sa určuje automaticky, čo je zvyčajne najvhodnejšie:
 
 ```
-# Vyrovnávacia pamäť databázy v KB. Predvolene -1, pri čom rozhodne UMS.
+# Vyrovnávacia pamäť databázy v KB. Predvolená hodnota -1 ponecháva rozhodnutie na UMS.
 database_media_cache_size = -1
 ```
 

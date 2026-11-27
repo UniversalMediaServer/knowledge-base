@@ -2,7 +2,7 @@
   "label": "Instalace",
   "position": 3,
   "link": {
-    "type": "generovaný index",
+    "type": "generated-index",
     "description": "U většiny operačních systémů a prostředí není návod k instalaci potřeba. Tato část je určena pro případy, které jej vyžadují."
   }
 }
